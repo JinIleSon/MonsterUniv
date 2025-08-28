@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* 전체 컨테이너 위치 조정 */
+        .container{
+            margin: 0 auto;
+            width: 1210px;
+        }
         hr{
             border: none;
             height: 2px;
@@ -35,10 +40,41 @@
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
+        /* 게시판 아래버튼 부분 */
+        .first-page{
+            background: url('images/btn-first-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .prev-page{
+            background: url('images/btn-prev-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-right: 7px;
+            width: 33px;
+            height: 30px;
+        }
+        .next-page{
+            background: url('images/btn-next-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-left: 7px;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .last-page{
+            background: url('images/btn-last-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+        }
+        
+        /* 게시판 아래버튼 부분 끝 */
     </style>
 </head>
 <body>
-    <div style="height: 600px;">
+    <div style="height: 600px;" class = "container">
         <div style="height:50px;"></div>
         <div style="display: flex; gap: 60px;">
             <div style=" width: 200px;">
@@ -101,28 +137,41 @@
                     </tr>
                     <tr style="height:60px;">
                         <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
                         <td style="border-bottom: 1px solid #b8b8b8;">학사지원실</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
                         <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                     <tr style="height:60px;">
                         <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
                         <td style="border-bottom: 1px solid #b8b8b8;">학사지원실</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
                         <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                     <tr style="height:60px;">
                         <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img src="./images/ico-new01.gif" alt=""> <a href="#" style="color:black;">&nbsp;2025학년도 1학기 그린장학회 장학생 신청 안내</a></td>
                         <td style="border-bottom: 1px solid #b8b8b8;">학사지원실</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
                         <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                 </table>
+                <div style=" height: 100px; margin-top:30px;">
+                <form action="" method="" style="text-align: center; display:flex; justify-content: center;">
+
+                    <input type="button" class="first-page">
+                    <input type="button" class="prev-page">
+
+                    <input type="button" value="1" style="border: 1px #eaeaea solid; background-color: #5198f9; color: white; height: 30px; width: 34px; margin-right:3px;">
+                    <input type="button" value="2" style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px; margin-right:3px;">
+                    <input type="button" value="3" style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px;">
+
+                    <input type="button" class="next-page">
+                    <input type="button" class="last-page">
+                </form>
+                </div>
             </div>
-            
         </div>
     </div>
 </body>
