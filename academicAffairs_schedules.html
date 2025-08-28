@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- moment lib -->
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
+    <!-- the moment-to-fullcalendar connector. must go AFTER the moment lib -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.19/index.global.min.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            height: 970,
+            headerToolbar: { start: '', center: 'title' }, // buttons for switching between views
+
+            views: {
+                dayGridMonth: { // name of view
+                titleFormat: 'YYYY.MM'
+                // other view-specific options here
+                }
+            }
+            });
+            calendar.render();
+        });
+      
+    </script>
+    <title>학사안내::학사일정</title>
+    <style>
+        /* div {border: 1px solid;} */
+        article {
+            width: 935px;
+        }
+
+        main div > .schedule_title {
+            border-bottom: 3px solid #595959;
+            font-size: 14pt;
+            line-height: 20px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        main div > #calendar {
+            width: 100%;
+        }
+
+        main > article > div > .schedule_notice {
+            margin-top: 10px;
+            font-size: 12pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="height: 140px;"></div>
+    </header>
+    <main>
+        <!-- 사이드 메뉴 -->
+         <div>
+            메뉴
+         </div>
+         <article>
+            <div>
+                <div class="schedule_title">
+                    <h2>학사일정</h2>
+                </div>
+                <div id="calendar"></div>
+                <p class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</p>
+            </div>
+         </article>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
