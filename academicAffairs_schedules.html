@@ -30,6 +30,27 @@
     <title>학사안내::학사일정</title>
     <style>
         /* div {border: 1px solid;} */
+        .container{
+            margin: 0 auto;
+            width: 1210px;
+            display: flex;
+            gap: 60px;
+        }
+        a {
+            text-decoration: none;
+        }
+        /* 배너 공간 */
+        .banner td {
+            height: 60px;
+            
+        }
+        .banner a {
+            display:block;
+            width:100%;
+            height:100%;
+            line-height: 60px;
+            margin-left:16px;
+        }
         article {
             width: 935px;
         }
@@ -58,19 +79,53 @@
         <div style="height: 140px;"></div>
     </header>
     <main>
-        <!-- 사이드 메뉴 -->
-         <div>
-            메뉴
-         </div>
-         <article>
-            <div>
-                <div class="schedule_title">
-                    <h2>학사일정</h2>
-                </div>
-                <div id="calendar"></div>
-                <p class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</p>
+        <div class="container">
+            <!-- 배너 메뉴 -->
+            <div style=" width: 200px;">
+                <b style="display:block; font-weight: 700; font-size:24pt; margin-bottom: 20px;">학사일정</b>
+                <table class="banner" style="border-collapse:collapse; width:100%; border-top:4px solid black;">
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">공지사항</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white; font-weight:300;">학사일정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">수강신청</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">성적</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">수료 및 졸업</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">자주하는 질문</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
-         </article>
+            <article>
+                <div>
+                    <div class="schedule_title">
+                        <h2>학사일정</h2>
+                    </div>
+                    <div id="calendar"></div>
+                    <p class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</p>
+                </div>
+            </article>
+         </div>
     </main>
     <footer>
 
