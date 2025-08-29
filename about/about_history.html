@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>대학소개</title>
+<style>
+  /* 색상 변수를 root에 등록 */
+  :root{
+    --blue:#3F97F6; /* 포인트 색상 (파랑) */
+    --line:#e5e7eb; /* 구분선 색상 */
+    --text:#111827; /* 본문 텍스트 색상*/
+  }
+
+  /* 기본 세팅 */
+  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",
+    system-ui,-apple-system,sans-serif; /* 글꼴 */
+    color:var(--text); /* 본문 글자색 */
+  }
+
+  /* 전체 레이아웃 */
+  .layout{
+    display:grid;                     /* CSS Grid 레이아웃 */
+    grid-template-columns:260px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
+    column-gap:48px;                  /* 컬럼 간격 */
+    width:100%;     
+    min-height:100vh;                 /* 화면 전체 높이 */
+    padding:32px 40px;                /* 여백 */
+  }
+
+  /* 사이드 */
+  .snb .title{
+    font-size:36px;
+    font-weight:800;
+    margin:0 0 0 0; /* 큰 제목 */
+  }
+
+  .snb .title::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:#111; /* 검은줄 */
+    margin-top: 8px;
+  }
+  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
+  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
+  .snb a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+  }
+
+  .snb a.active{          /* 현재 선택된 메뉴 */
+    background:var(--blue);
+    color:#fff;
+    border-top:none;
+  }
+  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
+    background:#3F97F6; 
+    color:#fff;
+  }
+
+  /* 콘텐츠 */
+  .content{max-width:100%}
+  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
+  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
+  .placeholder{color:#6b7280} /* 자리표시 텍스트 색상 */
+
+  /* 반응형 (가로폭 900px 이하) */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
+    .snb ul{width:100%} /* 메뉴도 전체 폭 */
+  }
+</style>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="snb" aria-label="대학소개 메뉴">
+      <h2 class="title">대학소개</h2>
+      <ul>
+        <li><a href="about_greeting.html">총장 인사말</a></li>
+        <li><a href="about_philosophy.html">교육이념</a></li>
+        <li><a href="active.html" class="active">연혁</a></li>
+        <li><a href="about_organization.html">조직도</a></li>
+        <li><a href="about_location.html">오시는길</a></li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <main class="content" role="main">
+      <h1>연혁</h1>
+      <div class="divider" aria-hidden="true"></div>
+   
+        <strong>1987년</strong>
+        <ul>
+          <li>그린대학교 설립 인가</li>
+          <li>초대 총장 취임, 인문·사회과학대학 개설</li>      
+          </ul><p></p>
+    
+      <strong>1995년</strong>
+        <ul>
+          <li>공과대학 신설, 지역 산업 맞춤형 학과 개편</li>
+          <li>대학원 석사과정 개설</li>
+        </ul><p></p>
+      <strong>2002년</strong>
+        <ul>
+          <li>국제교류처 설립, 해외 자매대학 10개교 협약 체결</li>
+          <li>정보통신관 준공</li>
+        </ul><p></p>      
+      <strong>2010년</strong>
+        <ul>
+          <li>교육역량강화사업 선정</li>
+          <li>산학협력단 설립, 산학 공동 연구 본격화</li>
+        </ul><p></p>       
+      <strong>2015년</strong>
+        <ul>
+          <li>글로벌 캠퍼스 개관</li>
+          <li>세계지식재산권기구(WIPO)·KOICA와 국제연수 프로그램 개시</li>
+        </ul><p></p>            
+       <strong>2020년</strong>
+        <ul>
+          <li>AI·데이터사이언스 학부 신설</li>
+          <li>온라인 원격교육 시스템 전면 도입</li>
+        </ul><p></p>    
+       <strong>2023년</strong>
+        <ul>
+          <li>‘지식재산 특성화 선도대학’ 선정</li>
+          <li>기업·연구소와 공동 특허 100건 돌파</li>
+        </ul><p></p>       
+       <strong>2025년</strong>
+        <ul>
+          <li>개교 38주년</li>
+          <li>4차 산업혁명 시대 융합 인재 양성 비전 선포</li>
+          <li>산학연계 AI융합연구원 개원</li>
+        </ul><p></p>        
+      </ul>
+    </div>
+    </main>
+
+</body>
+</html>
