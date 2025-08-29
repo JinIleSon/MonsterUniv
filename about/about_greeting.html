@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>대학소개</title>
+<style>
+  /* 색상 변수를 root에 등록 */
+  :root{
+    --blue:#3F97F6; /* 포인트 색상 (파랑) */
+    --line:#e5e7eb; /* 구분선 색상 */
+    --text:#111827; /* 본문 텍스트 색상*/
+  }
+
+  /* 기본 세팅 */
+  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",
+    system-ui,-apple-system,sans-serif; /* 글꼴 */
+    color:var(--text); /* 본문 글자색 */
+  }
+
+  /* 전체 레이아웃 */
+  .layout{
+    display:grid;                     /* CSS Grid 레이아웃 */
+    grid-template-columns:260px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
+    column-gap:48px;                  /* 컬럼 간격 */
+    width:100%;     
+    min-height:100vh;                 /* 화면 전체 높이 */
+    padding:32px 40px;                /* 여백 */
+  }
+
+  /* 사이드 */
+  .snb .title{
+    font-size:36px;
+    font-weight:800;
+    margin:0 0 0 0; /* 큰 제목 */
+  }
+
+  .snb .title::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:#111; /* 검은줄 */
+    margin-top: 8px;
+  }
+  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
+  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
+  .snb a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+  }
+
+  .snb a.active{          /* 현재 선택된 메뉴 */
+    background:var(--blue);
+    color:#fff;
+    border-top:none;
+  }
+  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
+    background:#3F97F6; 
+    color:#fff;
+  }
+
+  /* 콘텐츠 */
+  .content{max-width:100%}
+  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
+  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
+  .placeholder{} /* 자리표시 텍스트 색상 */
+
+  /* 반응형 (가로폭 900px 이하) */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
+    .snb ul{width:100%} /* 메뉴도 전체 폭 */
+  }
+</style>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="snb" aria-label="대학소개 메뉴">
+      <h2 class="title">대학소개</h2>
+      <ul>
+        <li><a href="#" class="active">총장 인사말</a></li>
+        <li><a href="about_philosophy.html">교육이념</a></li>
+        <li><a href="about_history.html">연혁</a></li>
+        <li><a href="about_organization.html">조직도</a></li>
+        <li><a href="about_location.html">오시는길</a></li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <main class="content" role="main">
+      <h1>총장 인사말</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="placeholder">😍
+        <b>존경하는 내외 귀빈과 학부모님, 그리고 사랑하는 학생 여러분.</b> <p></p>
+
+그린대학교는 1987년 설립 이래 4차 산업혁명 시대를 선도할 창의적이고 도전적인 인재를 양성하기 위해 끊임없이 노력해왔습니다. 오늘날 우리 사회는 인공지능, 빅데이터, 사물인터넷 등 첨단 기술의 융합 속에서 급격히 변화하고 있습니다. 이에 따라 컴퓨터공학의 중요성은 그 어느 때보다도 높아지고 있습니다.<p></p>
+
+우리 그린대학교 컴퓨터공학과는 이러한 변화에 발맞추어, 프로그래밍·알고리즘·데이터베이스·인공지능 등 기초와 응용을 아우르는 체계적 교육과정을 운영하고 있습니다. 더 나아가, 특허청과 연계한 지식재산 교육을 통해 기술과 지식재산을 동시에 이해하는 융합형 인재를 양성하고 있습니다.<p></p>
+
+또한 국내외 기업, 연구소, 국제기구와의 산학 협력과 맞춤형 연구 프로젝트를 통해 학생들이 산업 현장에서 요구되는 실무 역량을 갖추도록 지원하고 있습니다. 특히 세계지식재산권기구(WIPO) 및 한국국제협력단(KOICA)과의 협력은 우리 대학이 국제적 위상을 강화하고 글로벌 경쟁력을 확보하는 기반이 되고 있습니다.<p></p>
+
+앞으로도 그린대학교는 급변하는 환경 속에서 시대를 이끄는 창의적 리더를 길러내어 대한민국이 IT 선도국가로 도약하는 데 기여할 것입니다.<p></p>
+
+여러분의 변함없는 성원과 관심에 깊이 감사드리며, 우리 학생들이 세계 무대에서 마음껏 역량을 발휘할 수 있도록 최선을 다하겠습니다.<p></p>
+
+감사합니다.<p></p><p></p>
+
+<p align=right>
+  <b>그린대학교 총장 드림</b></b></p>
+  </div>
+</body>
+</html>

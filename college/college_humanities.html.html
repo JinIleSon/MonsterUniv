@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>대학·대학원</title>
+<style>
+  /* 색상 변수를 root에 등록 */
+  :root{
+    --blue:#3F97F6; /* 포인트 색상 (파랑) */
+    --line:#e5e7eb; /* 구분선 색상 */
+    --text:#111827; /* 본문 텍스트 색상*/
+  }
+
+  /* 기본 세팅 */
+  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",
+    system-ui,-apple-system,sans-serif; /* 글꼴 */
+    color:var(--text); /* 본문 글자색 */
+  }
+
+  /* 전체 레이아웃 */
+  .layout{
+    display:grid;                     /* CSS Grid 레이아웃 */
+    grid-template-columns:260px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
+    column-gap:48px;                  /* 컬럼 간격 */
+    width:100%;     
+    min-height:100vh;                 /* 화면 전체 높이 */
+    padding:32px 40px;                /* 여백 */
+  }
+
+  /* 사이드 */
+  .snb .title{
+    font-size:36px;
+    font-weight:800;
+    margin:0 0 0 0; /* 큰 제목 */
+  }
+
+  .snb .title::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:#111; /* 검은줄 */
+    margin-top: 8px;
+  }
+  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
+  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
+  .snb a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+  }
+
+  .snb a.active{          /* 현재 선택된 메뉴 */
+    background:var(--blue);
+    color:#fff;
+    border-top:none;
+  }
+  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
+    background:#3F97F6; 
+    color:#fff;
+  }
+
+  /* 콘텐츠 */
+  .content{max-width:100%}
+  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
+  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
+  .placeholder{} /* 자리표시 텍스트 색상 */
+
+  /* 반응형 (가로폭 900px 이하) */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
+    .snb ul{width:100%} /* 메뉴도 전체 폭 */
+  }
+</style>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="snb" aria-label="대학·대학원 메뉴">
+      <h2 class="title">대학·대학원</h2>
+      <ul>
+        <li><a href="#" class="active">인문사회대학</a></li>
+        <li><a href="college_science.html">자연과학대학</a></li>
+        <li><a href="college_engineering.html">공과대학</a></li>
+        <li><a href="college_education.html">사범대학</a></li>
+        <li><a href="college_graduateSchool.html">대학원</a></li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <main class="content" role="main">
+      <h1>인문사회대학</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="placeholder">
+      <section class="dept-intro">
+        <img src="../images/college-introduce-1.jpg" alt="인문사회 이미지" class="dept-img">
+
+        <div class="dept-text">
+          <div class="dept-subtitle">Humanities And Social Sciences</div>
+          <h2 class="dept-title">인문, 사회분야의 다양하고 심화된 이론을 연구</h2>
+          <p class="dept-desc">
+          인문사회과학대학은 민족의 문화적 유산과 전통을 창조적으로 계승·발전시킬 열린 민족인,
+          세계화된 지식, 정보사회를 주도할 수 있는 국제적인 식견을 갖춘 전문인, 법·정치·경제, 언론 등
+          우리사회의 중심을 이루는 영역에서 정의로운 사명감을 가지고 일할 양심적인 봉사자,
+          그리고 창의적인 디자인 활동을 할 개성적인 인재를 양성하기 위해 인문·사회·디자인 영역의
+          다양하고 심화된 이론과 실제를 교수·연구하는 데 교육목표를 둔다.
+          </p>
+        </div>
+
+        <img src=../images/bullet-h4.png> 학부 및 학과
+        <table border="1" width="100%">
+          <tr align="center">
+            <th>학과/전공</th>
+            <th>학과장</th>
+            <th>학과 사무실 번호</th>
+            <th>비고</th>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png></a> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          <tr align="center">
+            <td>국어국문학과 <a href="#"><img src=../images/ico_link.png> </td>
+            <td>김국어</td>
+            <td>051-123-1001</td>
+            <td> </td>
+          </tr>
+          
+        </table>
+
+      </section>
+ 
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>대학소개</title>
+<style>
+  /* 색상 변수를 root에 등록 */
+  :root{
+    --blue:#3F97F6; /* 포인트 색상 (파랑) */
+    --line:#e5e7eb; /* 구분선 색상 */
+    --text:#111827; /* 본문 텍스트 색상*/
+  }
+
+  /* 기본 세팅 */
+  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",
+    system-ui,-apple-system,sans-serif; /* 글꼴 */
+    color:var(--text); /* 본문 글자색 */
+  }
+
+  /* 전체 레이아웃 */
+  .layout{
+    display:grid;                     /* CSS Grid 레이아웃 */
+    grid-template-columns:260px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
+    column-gap:48px;                  /* 컬럼 간격 */
+    width:100%;     
+    min-height:100vh;                 /* 화면 전체 높이 */
+    padding:32px 40px;                /* 여백 */
+  }
+
+  /* 사이드 */
+  .snb .title{
+    font-size:36px;
+    font-weight:800;
+    margin:0 0 0 0; /* 큰 제목 */
+  }
+
+  .snb .title::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:#111; /* 검은줄 */
+    margin-top: 8px;
+  }
+  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
+  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
+  .snb a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+  }
+
+  .snb a.active{          /* 현재 선택된 메뉴 */
+    background:var(--blue);
+    color:#fff;
+    border-top:none;
+  }
+  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
+    background:#3F97F6; 
+    color:#fff;
+  }
+
+  /* 콘텐츠 */
+  .content{max-width:100%}
+  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
+  .content ul{font-size:20px;margin:0 0 0 0} /* 콘텐츠 내용 */
+  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
+  .placeholder{color:#6b7280; font-size:28px;} /* 자리표시 텍스트 색상 */ 
+  .divider ul li{
+        list-style: none;   /* 불릿 제거 */
+        padding-left: 0;    /* 기본 들여쓰기 제거 */
+        margin-left: 0;     /* 여백 초기화 */
+    }
+  .map-container {
+  margin-bottom: 20px;  /* 지도 아래쪽 여백 */
+}
+
+.address {
+  margin-top: 20px;     /* 글자 위쪽 여백 */
+  line-height: 1.6;     /* 줄 간격 */
+}
+
+  /* 반응형 (가로폭 900px 이하) */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
+    .snb ul{width:100%} /* 메뉴도 전체 폭 */
+  }
+
+
+</style>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="snb" aria-label="대학소개 메뉴">
+      <h2 class="title">대학소개</h2>
+      <ul>
+        <li><a href="about_greeting.html">총장 인사말</a></li>
+        <li><a href="about_philosophy.html">교육이념</a></li>
+        <li><a href="about_history.html">연혁</a></li>
+        <li><a href="about_organization.html">조직도</a></li>
+        <li><a href="#" class="active">오시는길</a></li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <main class="content" role="main">
+      <h1>오시는길</h1>  <p></p>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9715843010927!2d129.05824077180847!3d35.15732941792972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb6f070cf047%3A0x54dc3eff4b6043b6!2z7ISc66m07Jet!5e0!3m2!1sko!2skr!4v1755745409966!5m2!1sko!2skr"  
+        width="850" 
+        height="450" 
+        style="border:0; position:relative; top:10px;" 
+        allowfullscreen 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      </div>
+      <div class="address">
+        <p>주소 : 부산광역시 부산진구 중앙대로 지하 730 서면역 근처</p>
+        <p>전화번호 : 042) 601-4458~59, 4339, 4309</p>
+        <p>팩스 : 042) 862-5524, 3358</p>
+      </div>  
+    </main>
+  </div>
+</body>
+</html>
