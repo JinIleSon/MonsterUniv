@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>대학·대학원</title>
+<style>
+  /* 색상 변수를 root에 등록 */
+  :root{
+    --blue:#3F97F6; /* 포인트 색상 (파랑) */
+    --line:#e5e7eb; /* 구분선 색상 */
+    --text:#111827; /* 본문 텍스트 색상*/
+  }
+
+  /* 기본 세팅 */
+  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",
+    system-ui,-apple-system,sans-serif; /* 글꼴 */
+    color:var(--text); /* 본문 글자색 */
+  }
+
+  /* 전체 레이아웃 */
+  .layout{
+    display:grid;                     /* CSS Grid 레이아웃 */
+    grid-template-columns:240px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
+    column-gap:48px;                  /* 컬럼 간격 */
+    width:100%;     
+    min-height:100vh;                 /* 화면 전체 높이 */
+    padding:32px 40px;                /* 여백 */
+  }
+
+  /* 사이드 */
+  .snb .title{
+    font-size:36px;
+    font-weight:800;
+    margin:0 0 0 0; /* 큰 제목 */
+  }
+
+  .snb .title::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:#111; /* 검은줄 */
+    margin-top: 8px;
+  }
+  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
+  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
+  .snb a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:18px;
+  }
+
+  .snb a.active{          /* 현재 선택된 메뉴 */
+    background:var(--blue);
+    color:#fff;
+    border-top:none;
+  }
+  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
+    background:#3F97F6; 
+    color:#fff;
+  }
+
+  /* 콘텐츠 */
+  .content{max-width:100%}
+  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
+  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
+  .placeholder{} /* 자리표시 텍스트 색상 */
+
+  /* 반응형 (가로폭 900px 이하) */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
+    .snb ul{width:100%} /* 메뉴도 전체 폭 */
+  }
+</style>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- 사이드바 -->
+    <aside class="snb" aria-label="대학·대학원 메뉴">
+      <h2 class="title">대학·대학원</h2>
+      <ul>
+        <li><a href="#">인문사회대학</a></li>
+        <li><a href="#">자연과학대학</a></li>
+        <li><a href="#">공과대학</a></li>
+        <li><a href="#"  class="active">사범대학</a></li>
+        <li><a href="#">대학원</a></li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <main class="content" role="main">
+      <h1>사범대학</h1>
+      <div class="divider" aria-hidden="true"></div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; width: 1000px;">
+
+          <!-- 왼쪽 이미지 -->
+          <div style="flex: 0 0 320px;">
+            <img src="../images/college-introduce-4.jpg" alt="Humanities And Social Sciences" width="320" height="240">
+          </div>
+
+          <!-- 오른쪽 텍스트 -->
+          <div style="flex: 1;">
+            <p style="font-size: 14px; color:#5B6774; margin:0;">Education</p>
+            <h2 style="font-size:20px; color:#0066cc; margin:5px 0 15px 0;">
+              미래를 움직이는 큰 인재, 세계의 주역!
+            </h2>
+            <p style="line-height:1.6; font-size:14px; color:#333;">
+              전공영역은 물론 현대 교육에 대한 학문적 탐구의 자질 및 인격 도야에 중점을 두고 있습니
+            다. 원격강의 , 스튜디오, 원격교육강의실, 교육매체 제작실, 멀티미디어 강의실, 어학학습실,
+            수업행동 분석실 등 첨단 시설을 갖춘 교육지원센터를 운영하고 있습니다. 부속기관으로는
+            중등교육연수원, 과학교육연구소, 부설고등학교 등이 있습니다.
+            </p>
+          </div>
+
+</div>
+
+<!-- 학부 및 학과 섹션 시작 -->
+<div style="margin-bottom: 60px;"></div>
+
+<!-- 제목 부분: 아이콘 + 텍스트 -->
+<h4><img src="../images/bullet-h4.png" alt="학부 및 학과"> 학부 및 학과</h4>
+
+<!-- 학부 및 학과 테이블 -->
+<table style="border: 1px solid #dedede;  text-align: center; width:100%; border-collapse: collapse; border-top: 3px solid #071F4B;">
+  <!-- 테이블 헤더 -->
+  <tr style="height: 50px; background-color: #f4f8fc; box-shadow: 1px 1px #dedede;">
+    <th style="border: 1px solid #dedede; padding: 8px;">학과/전공</th>
+    <th style="border: 1px solid #dedede; padding: 8px;">학과장</th>
+    <th style="border: 1px solid #dedede; padding: 8px;">학과 사무실 번호</th>
+    <th style="border: 1px solid #dedede; padding: 8px;">비고</th>
+  </tr>
+
+  <!-- 데이터 행 (1) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      국어교육과 <a href="#"><img src="../images/ico_link.png" alt="국어교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김국어</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4001</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (2) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      영어교육과 <a href="#"><img src="../images/ico_link.png" alt="영어교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김영어</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4002</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (3) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      수학교육과 <a href="#"><img src="../images/ico_link.png" alt="수학교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김수학</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4003</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (4) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      윤리학과 <a href="#"><img src="../images/ico_link.png" alt="윤리학과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김윤리</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4004</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (5) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      교육학과 <a href="#"><img src="../images/ico_link.png" alt="교육학과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김교육</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4005</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (6) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      사회교육과 <a href="#"><img src="../images/ico_link.png" alt="사회교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김사회</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4006</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (7) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      역사교육과 <a href="#"><img src="../images/ico_link.png" alt="역사교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김역사</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4007</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (8) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      체육교육과 <a href="#"><img src="../images/ico_link.png" alt="체육교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김체육</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4008</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+
+  <!-- 데이터 행 (9) -->
+  <tr style="height: 45px;">
+    <td style="border: 1px solid #dedede; padding: 6px;">
+      특수교육과 <a href="#"><img src="../images/ico_link.png" alt="특수교육과"></a>
+    </td>
+    <td style="border: 1px solid #dedede; padding: 6px;">김특수</td>
+    <td style="border: 1px solid #dedede; padding: 6px;">051-123-4009</td>
+    <td style="border: 1px solid #dedede; padding: 6px;"></td>
+  </tr>
+ 
+  <!-- 필요한 만큼 추가 가능 -->
+</table>
+<!-- 학부 및 학과 섹션 끝 -->
+
+
+      </section>
+ 
+  </div>
+</body>
+</html>
