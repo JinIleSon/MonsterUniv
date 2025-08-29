@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 - 학과목록</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url('font/NotoSansKR-Regular.woff2') format('woff2');
+        }
+        body {
+            font-family: 'NotoSansKR', sans-serif;
+            font-size: 12px;
+            background-color: #f0f2f5;
+        }
+        
+        /* 메인 컨테이너 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 600px;
+        }
+        .container {
+            display: flex;
+            gap: 50px; 
+            padding-top: 35px;
+        }
+        
+        /* 사이드바 */
+        .sidebar {
+            width: 200px;
+            background-color: #f0f2f5; /* 사이드바 배경색 변경 */
+            padding: 15px 0;
+        }
+        .sidebar-category {
+            margin-bottom: 12px; /* 카테고리별 간격 */
+        }
+        .category-header {
+            color: black;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center; 
+            gap: 10px; 
+        }
+        .category-header img {
+            width: 20px; 
+            height: 20px;
+            object-fit: contain;
+        }
+
+        /* 서브메뉴 */
+        .submenu {
+            list-style-type: disc; 
+            margin-left: 70px; 
+            padding-left: 0;
+        }
+        .submenu li {
+            border-bottom: none; /* 기존 항목의 하단 선 제거 */
+        }
+        .submenu a {
+            display: block;
+            padding: 5px 0; /* 서브메뉴 항목 패딩 조정 */
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: normal; /* 서브메뉴 텍스트 굵기 조정 */
+        }
+        .submenu a:hover {
+            color: #4a90e2; /* 호버 시 색상 변경 */
+            background-color: transparent; /* 호버 시 배경색 제거 */
+        }
+        
+        /* 메인 컨텐츠 */
+        .main-content {
+            flex: 1;
+            padding: 0;
+        }
+        .content-header {
+            background-color: white;
+            border-bottom: 2px solid black;
+            padding: 20px 20px 20px 0;
+            font-size: 21px; 
+            font-weight: bold;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* 검색 영역 */
+        .search-section {
+            padding: 20px 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .search-btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #357abd;
+        }
+
+        /* 테이블 스타일 */
+        .department-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .department-table th {
+            background-color: #f8f9fa;
+            border-top: 1px solid #c4c3c3;
+            border-bottom: 1px solid #c4c3c3;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .department-table td {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .department-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .department-table tr:hover {
+            background-color: #f0f8ff;
+        }
+
+        .department-name {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .department-name:hover {
+            text-decoration: underline;
+        }
+
+        /* 페이지네이션 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-top: 30px;
+        }
+
+        .pagination a {
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 11px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .pagination a.active {
+            background-color: #4a90e2;
+            color: white;
+            border-color: #4a90e2;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #f5f5f5;
+        }
+
+        .pagination .nav-btn {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <!-- 사이드바 -->
+            <div class="sidebar">
+            <div class="sidebar-category">
+                <div class="category-header"><img src="images/ico-admin-setting.png" alt="환경설정 아이콘"> 환경설정</div>
+                <ul class="submenu">
+                    <li><a href="#">기본환경정보</a></li>
+                    <li><a href="#">약관관리</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-category">
+                <div class="category-header"><img src="images/ico-admin-academic.png" alt="학사운영 아이콘"> 학사운영</div>
+                <ul class="submenu">
+                    <li><a href="#">교육 운영 현황</a></li>
+                    <li><a href="#">학년별 학생 현황</a></li>
+                    <li><a href="#">학과별 학생 현황</a></li>
+                    <li><a href="#">강의 목록</a></li>
+                    <li><a href="#">강의 등록</a></li>
+                    <li><a href="#">수강 현황</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-category">
+                <div class="category-header"><img src="images/ico-admin-persons.png" alt="인사관리 아이콘"> 인사관리</div>
+                <ul class="submenu">
+                    <li><a href="#">학생 목록 및 등록</a></li>
+                    <li><a href="#">교수 목록 및 등록</a></li>
+                    <li><a href="#">임직원 목록 및 등록</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-category">
+                <div class="category-header"><img src="images/ico-admin-college.png" alt="대학 및 학과 아이콘"> 대학 및 학과</div>
+                <ul class="submenu">
+                    <li><a href="#">대학 및 학과 목록</a></li>
+                    <li><a href="#">대학 및 학과 등록</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-category">
+                <div class="category-header"><img src="images/ico-admin-board.png" alt="게시판관리 아이콘"> 게시판관리</div>
+                <ul class="submenu">
+                    <li><a href="#">입학안내 공지사항</a></li>
+                    <li><a href="#">학사안내 공지사항</a></li>
+                    <li><a href="#">커뮤니티 공지사항</a></li>
+                    <li><a href="#">입학상담</a></li>
+                    <li><a href="#">질문 및 답변</a></li>
+                    <li><a href="#">식단안내</a></li>
+                    <li><a href="#">자료실</a></li>
+                </ul>
+            </div>
+        </div>
+            
+            <!-- 메인 컨텐츠 -->
+            <div class="main-content">
+                <div class="content-header">
+                    <span>학과 목록</span>
+                    <div class="breadcrumb">대학 및 학과 > 학과 목록</div>
+                </div>
+                
+                <!-- 검색 영역 -->
+                <div class="search-section">
+                    <input type="text" class="search-input" placeholder="학과명">
+                    <input type="text" class="search-input" placeholder="키워드 입력">
+                    <button class="search-btn">검색</button>
+                </div>
+
+                <!-- 학과 목록 테이블 -->
+                <table class="department-table">
+                    <thead>
+                        <tr>
+                            <th width="8%">학과번호</th>
+                            <th width="15%">단과대학</th>
+                            <th width="12%">학과</th>
+                            <th width="10%">학과장</th>
+                            <th width="15%">학과 전화번호</th>
+                            <th width="10%">소속 교수 수</th>
+                            <th width="10%">소속 학생 수</th>
+                            <th width="10%">개설 강의 수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>인문사회대학</td>
+                            <td>국어학과</td>
+                            <td>김국어</td>
+                            <td>051-512-1010</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>인문사회대학</td>
+                            <td>영어영문학과</td>
+                            <td>김영어</td>
+                            <td>051-512-1011</td>
+                            <td>20</td>
+                            <td>312</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>자연과학대학</td>
+                            <td>생물학과</td>
+                            <td>김생물</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>자연과학대학</td>
+                            <td>물리학과</td>
+                            <td>김물리</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>공과대학</td>
+                            <td>기계공학과</td>
+                            <td>김기계</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>공과대학</td>
+                            <td>컴퓨터공학과</td>
+                            <td>김컴공</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>공과대학</td>
+                            <td>컴퓨터공학과</td>
+                            <td>김컴공</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>공과대학</td>
+                            <td>컴퓨터공학과</td>
+                            <td>김컴공</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>공과대학</td>
+                            <td>컴퓨터공학과</td>
+                            <td>김컴공</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>공과대학</td>
+                            <td>컴퓨터공학과</td>
+                            <td>김컴공</td>
+                            <td>051-512-1234</td>
+                            <td>23</td>
+                            <td>322</td>
+                            <td>42</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 페이지네이션 -->
+                <div class="pagination">
+                    <a href="#" class="nav-btn"><img src="images/btn-first-page.png" alt=""></a>
+                    <a href="#" class="nav-btn"><img src="images/btn-prev-page.png" alt=""></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#" class="nav-btn"><img src="images/btn-next-page.png" alt=""></a>
+                    <a href="#" class="nav-btn"><img src="images/btn-last-page.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
