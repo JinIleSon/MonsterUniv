@@ -57,7 +57,8 @@
         }
         .menu ul li {
             cursor: pointer;
-            height: 30px;
+            height: 26px;
+            /* height: 30px; */
         }
         .menu1 {
             width: 269px;
@@ -103,13 +104,16 @@
             gap: 5px;
         }
         .search-form #search-select {
+            appearance: none; 
+            border: 1px solid #959595;
             width: 100px;
             height: 35px;
+            padding-left: 10px;
         }
         .search-form #search-title {
             width: 200px;
             height: 35px;
-            border-color: #959595;
+            border: 1px solid #959595;
         }
         .search-btn {
             background-color: #1A528E;
@@ -130,44 +134,60 @@
             border-top: 1px solid #A3A3A3;
             border-bottom: 1px solid #A3A3A3;
             height: 45.5px;
+            
+        }
+        thead th span {
+            font-size: 13px;
             font-weight: 350;
         }
         thead th:nth-child(1) {
-            width: 130.8px;
+            width: 76.3px;
         }
         thead th:nth-child(2) {
-            width: 95.38px;
+            width: 54.5px;
         }
         thead th:nth-child(3) {
-            width: 196.19px;
+            width: 109px;
         }
         thead th:nth-child(4) {
-            width: 95.38px;
+            width: 87.19px;
         }
         thead th:nth-child(5) {
-            width: 95.38px;
+            width: 54.5px;
         }
         thead th:nth-child(6) {
-            width: 95.38px;
+            width: 109px;
         }
         thead th:nth-child(7) {
-            width: 95.38px;
+            width: 87.19px;
         }
         thead th:nth-child(8) {
-            width: 95.38px;
+            width: 174.45px;
         }
         thead th:nth-child(9) {
-            width: 95.38px;
+            width: 87.19px;
         }
         thead th:nth-child(9) {
-            width: 95.39px;
+            width: 87.19px;
+        }
+        thead th:nth-child(10) {
+            width: 87.19px;
+        }
+        thead th:nth-child(11) {
+            width: 54.5px;
+        }
+        thead th:nth-child(12) {
+            width: 109px;
         }
         tbody td {
             border-top: 1px solid #D8D8D8;
             border-bottom: 1px solid #D8D8D8;
             text-align: center;
         }
-
+        tbody td span {
+            font-size: 13px;
+            height: 19px;
+        }
         .pagenation {
             width: 1090px;
             height: 62px;
@@ -281,8 +301,8 @@
 
         <main class="main-content">
             <div class="main-title">
-                <h3>교육 운영 현황</h3>
-                <p>학사운영 > <span>교육 운영 현황</span></p>
+                <h3>수강 현황</h3>
+                <p>학사운영 &nbsp; > &nbsp; <span>수강 현황</span></p>
             </div>
             
             <form class="search-form">
@@ -296,138 +316,160 @@
             <table>
                 <thead>
                     <tr>
-                        <th>학과</th>
-                        <th>과목코드</th>
-                        <th>강의명</th>
-                        <th>학년</th>
-                        <th>담당교수</th>
-                        <th>구분</th>
-                        <th>학점</th>
-                        <th>강의실</th>
-                        <th>수강인원</th>
-                        <th>수강률</th>
+                        <th><span>년도</span></th>
+                        <th><span>학기</span></th>
+                        <th><span>학번</span></th>
+                        <th><span>이름</span></th>
+                        <th><span>학년</span></th>
+                        <th><span>학과</span></th>
+                        <th><span>과목코드</span></th>
+                        <th><span>과목명</span></th>
+                        <th><span>구분</span></th>
+                        <th><span>교수</span></th>
+                        <th><span>학점</span></th>
+                        <th><span>수강 신청일</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>국어국문학과</td>
-                        <td>120001</td>
-                        <td>고전소설1</td>
-                        <td>2학년</td>
-                        <td>김국어</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>인문관101</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830001</td>
-                        <td>프로그래밍의 이해</td>
-                        <td>1학년</td>
-                        <td>김코딩</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>공학관101</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                     <tr>
-                        <td>컴퓨터과학과</td>
-                        <td>830003</td>
-                        <td>자바프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>3</td>
-                        <td>컴퓨터실</td>
-                        <td>32/46</td>
-                        <td>70%</td>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
                     </tr>
                 </tbody>
             </table>
