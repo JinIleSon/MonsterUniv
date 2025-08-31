@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0E60B060-6AE7-5B3B-E394-01CAE1739F20" name="AA_grad_comp">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:33:22 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_45</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="sep" id="0FC9A4B3-1548-09D0-0E03-F0BB8037764C">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gradeSum" id="8128D490-4B2E-C540-D7BF-F0456D562A88">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="freshmen" id="40ABD5B4-AA9C-1ABC-E590-7C9180799266">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sophomore" id="09A58845-366F-F7C2-0B0A-B0E17124EAA9">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="third" id="6B312377-EA63-E8C8-D279-478E145EBEA9">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fourth" id="E98511DE-F60C-DAAD-1C29-8B641100C345">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4893A5E8-50B0-B0F4-CDBA-51D49EE9B8B0" name="AA_grad_comp_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:37:11 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0FC9A4B3-1548-09D0-0E03-F0BB8037764C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

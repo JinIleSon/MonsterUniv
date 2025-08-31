@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D4F39BAA-F3C5-83B6-601B-05E212730888" name="CL_menuGuide">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:12:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_43</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="date" id="C451FE72-AC86-F65A-513A-0B86DFC4B9C7">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="A2DCB3FF-114B-6618-3222-DF1C9D1950AA">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rice" id="0A509775-F5D7-77BD-54E4-B88A7EF5F78C">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="soup" id="5FF42DB4-0F8E-8041-82D7-28F9976DE2D1">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="side1" id="583049FB-BA69-E8AD-1910-F9180F712D62">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="side2" id="E95912D4-8614-5D50-C382-6D0EC8465B87">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="side3" id="A4ACE085-8D2F-A6D1-26EE-784128C65646">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="side4" id="79F5A677-EBDA-E5EC-ADF4-7DC8CE06F1CA">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:20:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A68AD01D-D04C-8F20-761D-8A0EAB08A038" name="CL_menuGuide_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:22:23 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C451FE72-AC86-F65A-513A-0B86DFC4B9C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
