@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>그린대학교 - 학과목록</title>
+    <title>그린대학교 - 대학 및 학과 등록</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         @font-face {
             font-family: 'NotoSansKR';
             src: url('font/NotoSansKR-Regular.woff2') format('woff2');
         }
+        
         body {
-            font-family: 'NotoSansKR', sans-serif;
-            font-size: 12px;
+            font-family: 'Malgun Gothic', 'NotoSansKR', Arial, sans-serif;
+            font-size: 13px;
             background-color: #f0f2f5;
+            color: #333;
         }
         
         /* 메인 컨테이너 */
@@ -25,58 +28,66 @@
             max-width: 1200px;
             margin: 0 auto;
             background-color: white;
-            min-height: 600px;
+            min-height: 100vh;
         }
+        
         .container {
             display: flex;
-            gap: 50px; 
+            gap: 50px;
             padding-top: 35px;
+            padding-bottom: 40px;
         }
         
         /* 사이드바 */
         .sidebar {
             width: 200px;
-            background-color: #f0f2f5; /* 사이드바 배경색 변경 */
+            background-color: #f0f2f5;
             padding: 15px 0;
         }
+        
         .sidebar-category {
-            margin-bottom: 12px; /* 카테고리별 간격 */
+            margin-bottom: 12px;
         }
+        
         .category-header {
             color: black;
             padding: 10px 20px;
             font-weight: bold;
             font-size: 14px;
             display: flex;
-            align-items: center; 
-            gap: 10px; 
+            align-items: center;
+            gap: 10px;
         }
+        
         .category-header img {
-            width: 20px; 
+            width: 20px;
             height: 20px;
             object-fit: contain;
         }
-
+        
         /* 서브메뉴 */
         .submenu {
-            list-style-type: disc; 
-            margin-left: 70px; 
+            list-style-type: disc;
+            margin-left: 70px;
             padding-left: 0;
         }
+        
         .submenu li {
-            border-bottom: none; /* 기존 항목의 하단 선 제거 */
+            border-bottom: none;
         }
+        
         .submenu a {
             display: block;
-            padding: 5px 0; /* 서브메뉴 항목 패딩 조정 */
+            padding: 5px 0;
             text-decoration: none;
             color: #333;
             font-size: 13px;
-            font-weight: normal; /* 서브메뉴 텍스트 굵기 조정 */
+            font-weight: normal;
         }
+        
         .submenu a:hover {
-            color: #4a90e2; /* 호버 시 색상 변경 */
-            background-color: transparent; /* 호버 시 배경색 제거 */
+            color: #4a90e2;
+            background-color: transparent;
         }
         
         /* 메인 컨텐츠 */
@@ -84,21 +95,237 @@
             flex: 1;
             padding: 0;
         }
+        
         .content-header {
             background-color: white;
             border-bottom: 2px solid black;
             padding: 20px 20px 20px 0;
-            font-size: 21px; 
+            font-size: 21px;
             font-weight: bold;
             height: 65px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
+        
         .breadcrumb {
             font-size: 12px;
             color: #666;
+        }
+        
+        /* 폼 컨테이너 */
+        .form-container {
+            padding: 30px 30px 0 0;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* 폼 섹션 스타일 */
+        .form-section {
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .section-title {
+            background-color: transparent;
+            color: #4472C4;
+            padding: 15px 0 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* 테이블 스타일 */
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            table-layout: fixed;
+        }
+        
+        .form-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+            font-size: 13px;
+        }
+        
+        .form-table td.label {
+            background-color: #f8f8f8;
+            font-weight: normal;
+            text-align: center;
+            color: #333;
+            border-right: 1px solid #ddd;
+        }
+        
+        /* 입력 요소 스타일 */
+        .form-table input[type="text"] {
+            width: 350px;
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            font-family: inherit;
+            background-color: white;
+        }
+        
+        .form-table input[type="date"] {
+            width: 350px;
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            font-family: inherit;
+            background-color: white;
+        }
+        
+        .form-table select {
+            width: 200px;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            font-family: inherit;
+            background-color: white;
+        }
+        
+        .form-table textarea {
+            width: 520px;
+            height: 100px;
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            font-family: inherit;
+            background-color: white;
+            resize: vertical;
+        }
+        
+        /* 대학소개 제목 입력필드 */
+        .intro-row input[type="text"] {
+            width: 520px;
+        }
+        
+        /* 4열 테이블의 짧은 입력필드 */
+        .four-column-table input[type="text"] {
+            width: 250px;
+        }
+        
+        .four-column-table input[type="date"] {
+            width: 250px;
+        }
+        
+        .four-column-table select {
+            width: 150px;
+        }
+        
+        /* 자동생성 텍스트 스타일 */
+        .auto-generated {
+            color: #c25c08;
+            font-size: 12px;
+            padding: 6px 10px;
+            background-color: transparent;
+        }
+        
+        /* 파일 업로드 영역 */
+        .file-upload-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-upload-btn {
+            padding: 4px 10px;
+            background-color: white;
+            border: 1px solid #999;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        /* 파일 업로드 안내 텍스트 */
+        .file-notice {
+            color: #c25c08;
+            font-size: 11px;
+            margin-left: 10px;
+        }
+        
+        /* 제출 버튼 스타일 */
+        .submit-btn {
+            background-color: #2e5a94;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 2px;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1e3a64;
+        }
+        
+        .submit-container {
+            text-align: right;
+            padding: 0;
+            margin-bottom: 30px;
+            clear: both;
+        }
+        
+        /* 2열 테이블 (대학 정보) */
+        .two-column-table {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .two-column-table td.label {
+            width: 150px;
+        }
+        
+        .two-column-table td:not(.label) {
+            width: calc(100% - 150px);
+        }
+        
+        /* 4열 테이블 (학과 정보) */
+        .four-column-table {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .four-column-table td.label {
+            width: 150px;
+        }
+        
+        .four-column-table td:nth-child(2) {
+            width: calc(50% - 150px);
+        }
+        
+        .four-column-table td:nth-child(3) {
+            width: 150px;
+            background-color: #f8f8f8;
+            font-weight: normal;
+            text-align: center;
+            color: #333;
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+        
+        .four-column-table td:nth-child(4) {
+            width: calc(50% - 150px);
+        }
+
+        /* 날짜 입력 스타일 */
+        input[type="date"] {
+            padding: 5px 10px;
+        }
+
+        /* 대학소개 행 특별 처리 */
+        .intro-row td:not(.label) {
+            padding: 8px 15px;
         }
     </style>
 </head>
@@ -107,139 +334,178 @@
         <div class="container">
             <!-- 사이드바 -->
             <div class="sidebar">
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-setting.png" alt="환경설정 아이콘"> 환경설정</div>
-                <ul class="submenu">
-                    <li><a href="#">기본환경정보</a></li>
-                    <li><a href="#">약관관리</a></li>
-                </ul>
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <img src="/images/ico-admin-setting.png" alt="환경설정 아이콘"> 환경설정
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#">기본환경정보</a></li>
+                        <li><a href="#">약관관리</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <img src="/images/ico-admin-academic.png" alt="학사운영 아이콘"> 학사운영
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#">교육 운영 현황</a></li>
+                        <li><a href="#">학년별 학생 현황</a></li>
+                        <li><a href="#">학과별 학생 현황</a></li>
+                        <li><a href="#">강의 목록</a></li>
+                        <li><a href="#">강의 등록</a></li>
+                        <li><a href="#">수강 현황</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <img src="/images/ico-admin-persons.png" alt="인사관리 아이콘"> 인사관리
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#">학생 목록 및 등록</a></li>
+                        <li><a href="#">교수 목록 및 등록</a></li>
+                        <li><a href="#">임직원 목록 및 등록</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <img src="/images/ico-admin-college.png" alt="대학 및 학과 아이콘"> 대학 및 학과
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#">대학 및 학과 목록</a></li>
+                        <li><a href="#">대학 및 학과 등록</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <img src="/images/ico-admin-board.png" alt="게시판관리 아이콘"> 게시판관리
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="#">입학안내 공지사항</a></li>
+                        <li><a href="#">학사안내 공지사항</a></li>
+                        <li><a href="#">커뮤니티 공지사항</a></li>
+                        <li><a href="#">입학상담</a></li>
+                        <li><a href="#">질문 및 답변</a></li>
+                        <li><a href="#">식단안내</a></li>
+                        <li><a href="#">자료실</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-academic.png" alt="학사운영 아이콘"> 학사운영</div>
-                <ul class="submenu">
-                    <li><a href="#">교육 운영 현황</a></li>
-                    <li><a href="#">학년별 학생 현황</a></li>
-                    <li><a href="#">학과별 학생 현황</a></li>
-                    <li><a href="#">강의 목록</a></li>
-                    <li><a href="#">강의 등록</a></li>
-                    <li><a href="#">수강 현황</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-persons.png" alt="인사관리 아이콘"> 인사관리</div>
-                <ul class="submenu">
-                    <li><a href="#">학생 목록 및 등록</a></li>
-                    <li><a href="#">교수 목록 및 등록</a></li>
-                    <li><a href="#">임직원 목록 및 등록</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-college.png" alt="대학 및 학과 아이콘"> 대학 및 학과</div>
-                <ul class="submenu">
-                    <li><a href="#">대학 및 학과 목록</a></li>
-                    <li><a href="#">대학 및 학과 등록</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-board.png" alt="게시판관리 아이콘"> 게시판관리</div>
-                <ul class="submenu">
-                    <li><a href="#">입학안내 공지사항</a></li>
-                    <li><a href="#">학사안내 공지사항</a></li>
-                    <li><a href="#">커뮤니티 공지사항</a></li>
-                    <li><a href="#">입학상담</a></li>
-                    <li><a href="#">질문 및 답변</a></li>
-                    <li><a href="#">식단안내</a></li>
-                    <li><a href="#">자료실</a></li>
-                </ul>
-            </div>
-        </div>
             <!-- 메인 컨텐츠 -->
             <div class="main-content">
                 <div class="content-header">
                     <span>대학 및 학과 등록</span>
-                    <div class="breadcrumb">대학 및 학과 > 학과 목록</div>
+                    <div class="breadcrumb">대학 및 학과 &gt; 대학 및 학과 등록</div>
                 </div>
 
-                <div>
-                    <div>대학 정보 입력</div>
-                    <div>
+                <div class="form-container">
+                    <!-- 대학 정보 입력 섹션 -->
+                    <div class="form-section">
+                        <div class="section-title"><img src="/images/bullet-h4.png" alt="">대학 정보 입력</div>
                         <form action="#" method="post">
-                            <table border="1">
+                            <table class="form-table two-column-table">
                                 <tr>
-                                    <td>대학명</td>
-                                    <td><input type="text" name="uniName" placeholder="예)인문사회대학"></td>
+                                    <td class="label">대학명</td>
+                                    <td>
+                                        <input type="text" name="uniName" placeholder="예) 인문사회대학">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>대학 영문명</td>
-                                    <td><input type="text" name="uniEname" placeholder="예)Computer"></td>
+                                    <td class="label">대학 영문명</td>
+                                    <td>
+                                        <input type="text" name="uniEname" placeholder="예) Humanities And Social Sciences">
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td rowspan="3">대학소개</td>
-                                    <td><input type="text" name="uniTitle" placeholder="대학 소개 제목 입력"></td>
+                                <tr class="intro-row">
+                                    <td class="label" rowspan="3">대학소개</td>
+                                    <td>
+                                        <input type="text" name="uniTitle" placeholder="대학 소개 제목입력">
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td><textarea name="uniIntroduction" id="" placeholder="대학 소개 내용 입력"></textarea></td>
+                                <tr class="intro-row">
+                                    <td>
+                                        <textarea name="uniIntroduction" placeholder="대학 소개 내용입력"></textarea>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td><input type="file"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"> <input type="submit" value="등록"></td>
+                                <tr class="intro-row">
+                                    <td>
+                                        <div class="file-upload-area">
+                                            <button type="button" class="file-upload-btn">Choose File</button>
+                                            <span>No file chosen</span>
+                                            <span class="file-notice">대학·대학원 소개 페이지 출력 이미지(320 x 240) 첨부</span>
+                                        </div>
+                                    </td>
                                 </tr>
                             </table>
+                            <div class="submit-container">
+                                <input type="submit" value="등록" class="submit-btn">
+                            </div>
                         </form>
                     </div>
-                    <div>
-                        <div>학과 정보 입력</div>
+
+                    <!-- 학과 정보 입력 섹션 -->
+                    <div class="form-section">
+                        <div class="section-title"><img src="/images/bullet-h4.png" alt="">학과 정보 입력</div>
                         <form action="#" method="post">
-                            <table border="1">
+                            <table class="form-table four-column-table">
                                 <tr>
-                                    <td>학과번호</td>
-                                    <td>고유 2자리숫자 자동생성</td>
-                                    <td>단과대학</td>
+                                    <td class="label">학과번호</td>
                                     <td>
-                                        <select name="" id="">
-                                            <option value="default">선택</option>
-                                            <option value="">단과1</option>
-                                            <option value="">단과2</option>
-                                            <option value="">단과3</option>
+                                        <div class="auto-generated">고유 2자리 숫자 자동생성</div>
+                                    </td>
+                                    <td class="label">단과대학</td>
+                                    <td>
+                                        <select name="college">
+                                            <option value="">선택</option>
+                                            <option value="humanities">인문사회대학</option>
+                                            <option value="engineering">공과대학</option>
+                                            <option value="business">경영대학</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>학과명</td>
-                                    <td><input type="text" name="deptName" placeholder="학과명 입력"></td>
-                                    <td>영문명</td>
-                                    <td><input type="text" name="deptEName" placeholder="학과 공식 영문 이름"></td>
+                                    <td class="label">학과명</td>
+                                    <td>
+                                        <input type="text" name="deptName" placeholder="학과명 입력">
+                                    </td>
+                                    <td class="label">영문명</td>
+                                    <td>
+                                        <input type="text" name="deptEName" placeholder="학과 공식 영문 이름">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>설립연도</td>
-                                    <td><input type="date" name="year"></td>
-                                    <td>학과장</td>
+                                    <td class="label">설립연도</td>
                                     <td>
-                                        <select name="" id="">
-                                            <option value="default">선택</option>
-                                            <option value="">학과장1</option>
-                                            <option value="">학과장2</option>
+                                        <input type="date" name="year">
+                                    </td>
+                                    <td class="label">학과장</td>
+                                    <td>
+                                        <select name="deptHead">
+                                            <option value="">선택</option>
+                                            <option value="prof1">김교수</option>
+                                            <option value="prof2">이교수</option>
+                                            <option value="prof3">박교수</option>
                                         </select>
                                     </td>
                                 </tr>
-                                 <tr>
-                                    <td>학과 연락처</td>
-                                    <td><input type="text" name="deptTel" placeholder="학과 연락처 입력"></td>
-                                    <td>학과 사무실</td>
-                                    <td><input type="text" name="deptOffice" placeholder="인문관 3층 306호"></td>
-                                </tr>
                                 <tr>
-                                    <td colspan="4">
-                                        <input type="submit" value="등록">
+                                    <td class="label">학과 연락처</td>
+                                    <td>
+                                        <input type="text" name="deptTel" placeholder="학과 연락처 입력">
+                                    </td>
+                                    <td class="label">학과 사무실</td>
+                                    <td>
+                                        <input type="text" name="deptOffice" placeholder="인문관 3층 306호">
                                     </td>
                                 </tr>
                             </table>
+                            <div class="submit-container">
+                                <input type="submit" value="등록" class="submit-btn">
+                            </div>
                         </form>
                     </div>
                 </div>
