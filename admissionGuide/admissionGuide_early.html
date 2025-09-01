@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린대학교 - 입학안내</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="./css/main.style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url('font/NotoSansKR-Regular.woff2') format('woff2');
+        }
+
+        body {
+            font-family: 'NotoSansKR', sans-serif;
+            font-size: 12px;
+            
+            /* padding: 10px; */
+        }
+
+        
+
+        .container {
+            display: flex;
+            gap: 50px; 
+            padding-top: 35px;
+        }
+
+        /* 사이드바 */
+        .sidebar {
+            width: 200px;
+            background-color: white;
+        }
+
+        .sidebar-header {
+            background-color: white;
+            color: black;
+            padding: 20px 20px 20px 0;
+            font-weight: bold;
+            font-size: 25px;
+            border-bottom: 2px solid black;
+            height: 65px; 
+            display: flex;
+            align-items: center; 
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .sidebar a.active {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .sidebar a:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+
+        /* 메인 컨텐츠 */
+        .main-content {
+            flex: 1;
+            padding: 0;
+        }
+
+        .content-header {
+            background-color: white;
+            border-bottom: 2px solid black;
+            padding: 20px 20px 20px 0;
+            font-size: 21px; 
+            font-weight: bold;
+            height: 65px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
 <!--1.헤더영역-->
 <header>
     <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
@@ -38,8 +128,6 @@
         </div>
     </div>
 </header>
-</head>
-<body>
     <!-- 브레드크럼 -->
     <!-- <div class="breadcrumb">
         <div class="breadcrumb-content">
@@ -48,7 +136,7 @@
     </div> -->
 
     <!-- 메인 컨테이너 -->
-    <div class="main-container">
+    <div class="inner">
         <div class="container">
             <!-- 사이드바 -->
             <div class="sidebar">

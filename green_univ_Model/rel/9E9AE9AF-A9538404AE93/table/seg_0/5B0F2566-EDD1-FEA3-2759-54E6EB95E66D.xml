@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B0F2566-EDD1-FEA3-2759-54E6EB95E66D" name="Main_acadAffairs">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:03:12 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B5375450-9075-3BF7-FBA1-16ED0FAF7D5D">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:44:25 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="identification" id="19BB8B87-A73E-CE7D-AEAA-84ED247755EB">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:23:34 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5CD0E1D-A6FB-F195-0575-6C5368057C6D" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
+</associations>
+</Column>
+<Column name="title" id="9ECCD8A6-8B5B-7FCE-A7BA-2553D77369CD">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:06:43 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="442CCFF2-A94B-885C-E93D-F23A6724FDF0">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:06:43 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D34E0C83-8A2B-5446-F870-99D7304FAE4D" name="main_academicAffairs_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:06:43 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5375450-9075-3BF7-FBA1-16ED0FAF7D5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="73D7401D-EA7F-AA58-4B89-39E6063D224F" name="main_AA_user_FK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:23:34 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19BB8B87-A73E-CE7D-AEAA-84ED247755EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

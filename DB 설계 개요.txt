@@ -1,0 +1,240 @@
+DB ERD 설계 구성
+
+통일성을 위해 영어 뜻이 조금 달라도 이해 부탁드려요!
+date, year, user <= 예약어인데 모르고 컬럼명으로 사용했어요.. 컬럼명으로 이용할 때는 "date", "year"처럼 사용해주시면 감사하겠습니다..
+------------------------------------------------
+
+사용자(User)
+identification -> PK
+password -> not null
+nickname(이름 및 테이블에 표기되는 닉네임) -> not null, UK
+phone -> not null
+email -> not null
+address
+
+------------------------------------------------
+
+메인_학사안내(Main_acadAffairs)
+id -> PK (테이블에는 표기안됨), AUTO INCREMENT
+identification -> not null, FK
+title -> not null
+date -> not null
+
+메인_공지사항(Main_notice)
+id -> PK (테이블에는 표기안됨), AUTO INCREMENT
+identification -> not null, FK
+title -> not null
+date -> not null
+
+------------------------------------------------
+
+입학안내_공지사항(Adm_notice)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+입학안내_입학상담(Adm_counsel)
+id -> PK, AUTO INCREMENT
+classify -> not null
+title -> not null
+nickname -> not null, FK
+date -> not null
+condition -> not null
+
+------------------------------------------------
+
+대학,대학원(College)
+major(전공) -> PK
+dean(학과장) -> not null
+phone -> not null
+note(비고)
+
+------------------------------------------------
+
+학사안내_공지사항(AA_notice)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+학사안내_학사일정(AA_schedules)
+id -> PK AUTO INCREMENT(테이블 표시 x)
+content -> not null
+nickname -> not null, FK
+
+학사안내_수강신청(AA_courReg)
+department(졸업학점이 ~인 학부(과)) -> PK
+grade(최저 ~ 학점, 최대 ~ 학점) -> not null
+targetDepartment(대상학부(과)) -> not null
+
+학사안내_성적(AA_grades)
+rating(등급) -> PK
+grade(평점) -> not null
+percentileRank(백분위 기준점수) -> not null
+note(비고)
+
+학사안내_수료 및 졸업_수료기준(AA_grad_comp) -> AcademicAffairs_graduation 축약
+sep(구분) - PK
+gradeSum(총 취득학점) - not null
+freshmen(1학년) - not null
+sophomore(2학년) - not null
+third(3학년) - not null
+fourth(4학년) - not null
+
+
+// 학사안내_수료 및 졸업_조기졸업은 DB 수정할 일이 없을 거 같아서 넣지 않았습니다!
+
+학사안내_수료 및 졸업_졸업(AA_grad_grad) -> AcademicAffairs_graduation 축약
+sep(소속 단과대학) - PK
+gradeSum(총 취득학점) - not null
+plurality(복수전공) - not null
+single(단일전공) - not null
+minor(부전공) - not null
+
+학사안내_자주묻는질문_휴복학 관련(AA_FAQ) -> AcademicAffairs_FAQ 축약
+id(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
+question(Q, 질문) - not null
+answer(A, 답변) - not null           ->>> 질문 란을 누르면 답변이 나오는 방식으로 되는 듯
+
+------------------------------------------------
+
+대학생활_식단안내(CL_menuGuide)
+date(날짜) - PK
+price(가격) - not null -> 일부러 NVARCHAR사용. ex) 5,500원으로 사용하기 위함
+rice(밥)
+soup(국)
+side1(반찬1)
+side2(반찬2)
+side3(반찬3)
+side4(반찬4)
+
+대학생활_갤러리(CL_gallery)
+imageRoute(이미지경로) - PK
+title(제목) - not null
+hits(조회수) - default 0
+where(위치) - not null
+regDate(등록일) - not null
+------------------------------------------------
+
+커뮤니티_공지사항(Commu_anno)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+커뮤니티_뉴스 및 칼럼(Commu_news)
+id -> PK, AUTO INCREMENT
+classify -> not null
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+커뮤니티_취업정보(Commu_emp) -> 파일명은 Community_employmentInformation(30자 이상이어서 줄임)
+id(번호) -> PK, AUTO INCREMENT
+condition(상태) -> not null
+nickname(업체) -> not null, FK
+title(채용정보) -> not null
+date(마감일) -> not null
+hits(조회) -> default 0
+
+커뮤니티_자유게시판(Commu_free)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+커뮤니티_질문과 답변(Commu_QnA)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+condition -> not null
+
+커뮤니티_자료실(Commu_refer)
+id -> PK, AUTO INCREMENT
+title -> not null
+nickname -> not null, FK
+date -> not null
+hits -> default 0
+
+------------------------------------------------
+
+학생지원_수강신청(SA_reg) -> StudentAssistance_courseRegistration 축약
+major(개설학과) -> PK, FK(복합 기본키) - curriculum
+code(코드) -> PK, FK(복합 기본키) - curriculum
+classify(구분) -> not null, UK(복합 UK)
+year(학년) -> not null, FK - curriculum
+subject(과목명) -> not null, FK - curriculum
+grade(학점) -> not null, FK - curriculum
+professor(담당교수) -> not null, UK(복합 UK)
+numOfPeople(수강인원) -> not null
+note(비고)
+
+학생지원_수강신청내역(SA_details) ->StudentAssistance_courceRegistrationDetails 축약
+code(교과목코드) -> PK, FK - curriculum
+subject(과목명) -> FK - curriculum
+year(대상학년) -> FK - curriculum
+professor(담당교수) -> FK - registration
+grade(학점) -> FK - curriculum
+classify(이수구분) -> FK - registration
+time(강의시간)
+where(강의장)
+
+학생지원_교과과정(SA_curriculum)
+code(코드번호) -> PK, UK(복합 UK)
+year(학년) -> not null, UK(복합 UK)
+complectionDivision(이수구분) -> not null
+subject(교과목명) -> not null, (복합 UK)
+grade(학점) -> not null, (복합 UK)
+
+학생지원_성적조회(SA_grade)
+code(교과목코드) -> PK, FK - details
+subject(과목명) -> FK - details
+year(대상학년) -> FK - details
+professor(담당교수) -> FK - details
+classify(이수구분) -> FK - details
+score(점수)
+// 등급은 score(점수로) 산출
+grade(취득학점) -> FK - details
+// 취득학점은 F일 시 0으로 산출
+
+학생지원_학적_기본정보(SA_record_info) -> studentAssistance_studentRecords 축약
+collegeNum(학번) -> PK
+nickname(이름) -> not null, FK - User
+phone(휴대폰) -> not null, FK - User
+year(학년) -> not null / term(학기) -> not null
+department(학과) -> not null
+resiNum(주민번호) -> not null
+email(이메일) -> not null, FK - User
+condition(상태) -> not null
+
+학생지원_학적_취득학점현황(SA_record_grade) -> studentAssistance_studentRecords 축약
+collegeNum(학번, 테이블에 표기 x) -> PK, FK
+major(전공) -> not null
+refinement(교양) -> not null
+select(선택) -> not null
+social(사회봉사) -> not null
+others(기타) -> not null
+// 총취득학점은 major + refinement + social + others 더하면 나옴
+requirement(졸업요건학점) -> not null
+
+학생지원_학적_년도/학기별 취득학점현황(SA_record_year) -> studentAssistance_studentRecords 축약
+collegeNum(학번, 테이블에 표기 x) -> PK, FK
+year(년도) - PK
+grade(학년) - PK
+term(학기) - PK
+request(신청학점) - not null
+major(전공학점) - not null
+select(선택학점) - not null
+others(기타학점) - not null
+// 총취득학점은 전공학점 + 선택학점
+avg(평점평균) - not null
+comment(기타)
+
+------------------------------------------------

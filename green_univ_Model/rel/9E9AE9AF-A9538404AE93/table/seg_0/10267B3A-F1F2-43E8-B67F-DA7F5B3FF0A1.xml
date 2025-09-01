@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10267B3A-F1F2-43E8-B67F-DA7F5B3FF0A1" name="Commu_emp">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="EF9AE453-0F83-F3EE-653F-C1AFA5F861C5">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Commu_emp_id</notNullConstraintName>
+</Column>
+<Column name="condition" id="9C7A6974-7FCC-577B-DDE9-CC4F2B816D6A">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nickname" id="9F45952F-C8AA-FDCF-423A-E7C26C1CF48F">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="49F15D0E-BC7F-DA8A-0AC8-F94BB3E23A2D" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
+</associations>
+</Column>
+<Column name="title" id="846DFA49-7DBA-FFF3-1BED-11ADFF01DFEE">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="70C3A32F-5EC7-6D94-B83F-30505F9FF888">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hits" id="B5BAD33B-11D2-E394-0FC0-F789898DAB91">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C8D9931-CD49-14F7-5AF8-2676C4CC6A2C" name="Commu_emp_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF9AE453-0F83-F3EE-653F-C1AFA5F861C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="076F96EE-DC54-2C2C-4E12-875988542AFF" name="Commu_emp_User_FK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:32:49 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F45952F-C8AA-FDCF-423A-E7C26C1CF48F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
