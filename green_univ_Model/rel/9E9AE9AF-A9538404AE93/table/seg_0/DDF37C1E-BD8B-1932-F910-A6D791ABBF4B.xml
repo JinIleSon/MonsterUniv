@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDF37C1E-BD8B-1932-F910-A6D791ABBF4B" name="Adm_notice">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:12:33 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="7E9C4A0E-9D5B-0A39-CC34-7049FA6F6D29">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:16:48 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="title" id="15BBA0FF-3EE8-117D-1243-DB0A7C7B13EC">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:16:48 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>300 BYTE</dataTypeSize>
+<ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nickname" id="CE14E6B9-0B6B-2FC4-3A56-3408254C8F54">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:57:18 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A77E1732-8B36-C3F2-2788-4663FC12A4DC" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
+</associations>
+</Column>
+<Column name="date" id="9AB3FBC9-7929-2471-E2C2-7236F8E464BA">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:16:48 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hits" id="F8B37278-3FDB-3186-09B5-409B6E662DBF">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:16:48 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34907F37-2C2B-8F20-136A-3D1D6D636B3D" name="adm_notice_PKv1">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:16:48 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E9C4A0E-9D5B-0A39-CC34-7049FA6F6D29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="33768646-6B5E-9364-F6B1-CBA5A7AF9D44" name="Adm_notice_User_FK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:57:22 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE14E6B9-0B6B-2FC4-3A56-3408254C8F54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

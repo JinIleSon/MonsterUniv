@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린대학교 - 입학안내</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="./css/main.style.css">
     <style>
         * {
             margin: 0;
@@ -19,16 +21,8 @@
         body {
             font-family: 'NotoSansKR', sans-serif;
             font-size: 12px;
-            background-color: #f0f2f5;
+            
             /* padding: 10px; */
-        }
-
-        /* 메인 컨테이너 */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            min-height: 600px;
         }
 
         .container {
@@ -100,6 +94,38 @@
     </style>
 </head>
 <body>
+  <!--1.헤더영역-->
+<header>
+    <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+    <div class="topbar">
+        <div class="inner">
+            <div class="log-area">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">학생지원</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mainNav">
+        <div class="inner">
+            <!--로고-->
+            <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+            <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+            <div class="menu-area">
+                <ul>
+                    <li><a href="#">대학소개</a></li>
+                    <li><a href="#">입학안내</a></li>
+                    <li><a href="#">대학·대학원</a></li>
+                    <li><a href="#">대학생활</a></li> 
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
     <!-- 브레드크럼 -->
     <!-- <div class="breadcrumb">
         <div class="breadcrumb-content">
@@ -108,7 +134,7 @@
     </div> -->
 
     <!-- 메인 컨테이너 -->
-    <div class="main-container">
+    <div class="inner">
         <div class="container">
             <!-- 사이드바 -->
             <div class="sidebar">
@@ -133,4 +159,45 @@
         </div>
     </div>
 </body>
+<!--3. 푸터영역-->
+<footer class="footer">
+    <!--상단-->
+    <div class="footer-high">
+        <div class="footer-high-inner">
+            <ul class="footer-high-quicklinks">
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">통합정보시스템</a></li>
+                <li><a href="#">학사일정</a></li>
+                <li><a href="#">주요인원 연락처</a></li>
+                <li><a href="#">교내공지사항</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--하단-->
+    <div class="footer-low">
+        <div class="footer-low-inner">
+            <div class="footer-logo">
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+            </div>
+            <div class="footer-info">
+                <p class="footer-uniname">몬스터대학교</p>
+                <p>
+                    [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                    대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                    팩스 : 051-123-3333
+                </p>
+                 <p class="copy">copyright ©Monster University All rights reserved.</p>
+            </div>
+            <div class="footer-select">
+                <label for="site-select" class="sr-only">주요사이트</label>
+                <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                    <option value="">주요사이트</option>
+                    <option value="https://www.moe.go.kr/">교육부</option>
+                    <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                    <option value="https://www.nrf.re.kr/">연구재단</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

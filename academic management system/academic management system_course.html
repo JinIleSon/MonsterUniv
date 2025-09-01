@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @font-face {
+            font-family: 'NotoSansKR-Light';
+            src: url('../font/NotoSansKR-Light.otf') format('opentype');
+            font-weight: 350;
+            font-style: DemiLight;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NotoSansKR-Light';
+        }
+        .container {
+            display: flex;
+            width: 1400px;
+            height: 840px;
+            margin: 0 auto;
+        }
+        .sidebar {
+            background-color: #eaeaea;
+            border: 1px solid #C0C0C0;
+            display:inline-block;
+            width: 269px;
+            height: 842px;
+            margin-left: 1px;
+        }
+        .menu {
+            margin-left:15px;
+        }
+        .sidebar .menu h3 {
+            margin:9px 0px 9px 0px;
+        }
+        .sidebar h3 img {
+             width: 1em;   
+            height: 1em;
+            vertical-align: middle; 
+            margin-right: 2px;
+        }
+        .sidebar .menu ul {
+            list-style: none; 
+            margin-top: 9px;
+            padding: 0px 0px 0px 30px;
+        }
+        .menu ul li::before {
+            content: "•";
+            font-size: 0.6em;
+            margin-right: 8px;
+            position: relative;
+            top: -2px;
+        }
+        .menu ul li {
+            cursor: pointer;
+            height: 26px;
+            /* height: 30px; */
+        }
+        .menu1 {
+            width: 269px;
+            height: 102px;
+        } 
+        .menu2 {
+            width: 269px;
+            height: 222px;
+        } 
+        .menu3 {
+            width: 269px;
+            height: 132px;
+        } 
+        .menu4 {
+            width: 269px;
+            height: 102px;
+        } 
+        .menu5 {
+            width: 269px;
+            height: 252px;
+        } 
+        .main-content {
+            flex: 1;
+        }
+        .main-title {
+            align-items: center;
+            border-bottom: 1px solid #C0C0C0;
+            display: flex;
+            height: 46px;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding-bottom: 10px;
+            width: 1090px;
+        }
+        .main-title p span {
+            color: #145074;
+        }
+        .search-form {
+            display: flex;
+            justify-content: flex-end;
+            margin: 10px 20px 0 0;
+            gap: 5px;
+        }
+        .search-form #search-select {
+            appearance: none; 
+            border: 1px solid #959595;
+            width: 100px;
+            height: 35px;
+            padding-left: 10px;
+        }
+        .search-form #search-title {
+            width: 200px;
+            height: 35px;
+            border: 1px solid #959595;
+        }
+        .search-btn {
+            background-color: #1A528E;
+            border: none;
+            color: white;
+            width: 60px;
+            height: 35px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 1090px;
+            height: 567px;
+            margin: 10px 20px 0 0;
+            margin-left: auto;
+        }
+        thead th {
+            background-color: #FAFAFA;
+            border-top: 1px solid #A3A3A3;
+            border-bottom: 1px solid #A3A3A3;
+            height: 45.5px;
+            
+        }
+        thead th span {
+            font-size: 13px;
+            font-weight: 350;
+        }
+        thead th:nth-child(1) {
+            width: 76.3px;
+        }
+        thead th:nth-child(2) {
+            width: 54.5px;
+        }
+        thead th:nth-child(3) {
+            width: 109px;
+        }
+        thead th:nth-child(4) {
+            width: 87.19px;
+        }
+        thead th:nth-child(5) {
+            width: 54.5px;
+        }
+        thead th:nth-child(6) {
+            width: 109px;
+        }
+        thead th:nth-child(7) {
+            width: 87.19px;
+        }
+        thead th:nth-child(8) {
+            width: 174.45px;
+        }
+        thead th:nth-child(9) {
+            width: 87.19px;
+        }
+        thead th:nth-child(10) {
+            width: 87.19px;
+        }
+        thead th:nth-child(11) {
+            width: 54.5px;
+        }
+        thead th:nth-child(12) {
+            width: 109px;
+        }
+        tbody td {
+            border-top: 1px solid #D8D8D8;
+            border-bottom: 1px solid #D8D8D8;
+            text-align: center;
+        }
+        tbody td span {
+            font-size: 13px;
+            height: 19px;
+        }
+        .pagenation {
+            width: 1090px;
+            height: 62px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+        }
+        .pagenation li {
+            border: 1px solid #DEDEDE;
+            display: inline-block;
+            list-style: none;
+            width: 32px;
+            height: 32px;
+        }
+        .pagenation .page1 {
+            background-color: #1A528E;
+            
+            color: white;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+        .pagenation .page2, .pagenation .page3 {
+            color: #888888;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+        .pagenation li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .pagenation li a span {
+            background-size: contain;
+            background-repeat: no-repeat;
+            display:inline-block;
+            width: 10px;
+            height: 10px;
+        }
+        .pagenation .first {
+            background-image: url('../images/btn-first-page.png');
+        }
+        .pagenation .prev {
+            background-image: url('../images/btn-prev-page.png');
+        }
+        .pagenation .next {
+            background-image: url('../images/btn-next-page.png');
+        }
+        .pagenation .last {
+            background-image: url('../images/btn-last-page.png');
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="menu menu1">
+                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <ul>
+                    <li class="menu-item">기본환경정보</li>
+                    <li class="menu-item">약관관리</li>
+                </ul>
+            </div>
+            <div class="menu menu2">
+                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <ul>
+                    <li class="menu-item">교육 운영 현황</li>
+                    <li class="menu-item">학년별 학생 현황</li>
+                    <li class="menu-item">학과별 학생 현황</li>
+                    <li class="menu-item">강의 목록</li>
+                    <li class="menu-item">강의 등록</li>
+                    <li class="menu-item" >수강 현황</li>
+                </ul>
+            </div>
+            <div class="menu menu3">
+                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <ul>
+                    <li class="menu-item">학생 목록 및 등록</li>
+                    <li class="menu-item">교수 목록 및 등록</li>
+                    <li class="menu-item">임직원 목록 및 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu4">
+                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <ul>
+                    <li class="menu-item">대학 및 학과 목록</li>
+                    <li class="menu-item">대학 및 학과 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu5">
+                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <ul>
+                    <li class="menu-item">입학안내 공지사항</li>
+                    <li class="menu-item">학사안내 공지사항</li>
+                    <li class="menu-item">커뮤니티 공지사항</li>
+                    <li class="menu-item">입학상담</li>
+                    <li class="menu-item">질문 및 답변</li>
+                    <li class="menu-item">식단안내</li>
+                    <li class="menu-item">자료실</li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="main-title">
+                <h3>수강 현황</h3>
+                <p>학사운영 &nbsp; > &nbsp; <span>수강 현황</span></p>
+            </div>
+            
+            <form class="search-form">
+                <select id="search-select">
+                    <option>검색조건</option>
+                </select>
+                <input type="text" id="search-title">
+                <input type="button" class="search-btn" value="검색">
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><span>년도</span></th>
+                        <th><span>학기</span></th>
+                        <th><span>학번</span></th>
+                        <th><span>이름</span></th>
+                        <th><span>학년</span></th>
+                        <th><span>학과</span></th>
+                        <th><span>과목코드</span></th>
+                        <th><span>과목명</span></th>
+                        <th><span>구분</span></th>
+                        <th><span>교수</span></th>
+                        <th><span>학점</span></th>
+                        <th><span>수강 신청일</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>2025</span></td>
+                        <td><span>1</span></td>
+                        <td><span>202001230</span></td>
+                        <td><span>홍길동</span></td>
+                        <td><span>1</span></td>
+                        <td><span>컴퓨터공학과</span></td>
+                        <td><span>3025112</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>2025-01-01</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="pagenation">
+                <li><a href="#"><span class="first"></span></a></li>
+                <li><a href="#"><span class="prev"></span></a></li>
+                <li><a href="#" class="page1">1</a></li>
+                <li><a href="#" class="page2">2</a></li>
+                <li><a href="#" class="page3">3</a></li>
+                <li><a href="#"><span class="next"></span></a></li>
+                <li><a href="#"><span class="last"></span></a></li>
+            </ul>
+        </main>
+    </div>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>
