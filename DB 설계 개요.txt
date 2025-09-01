@@ -12,6 +12,8 @@ phone -> not null
 email -> not null
 address
 
+// 이용약관은 html에 박아놓는 걸로..
+
 ------------------------------------------------
 
 메인_학사안내(Main_acadAffairs)
