@@ -67,7 +67,7 @@ header {
 
 /* ---------- 메인 네비게이션 ---------- */
 .mainNav .inner {
-  height: 77px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between; /* 로고 왼쪽 / 메뉴 오른쪽 */
@@ -83,7 +83,7 @@ header {
   text-decoration: none;
   font-size: 18px;
   color: #333;
-  padding: 10px;
+  padding-top: 20px;
   display: block;
 }
 .main-menu li a:hover {
@@ -94,14 +94,31 @@ header {
 .dropdown-bar {
   display: none;
   position: absolute;
-  top: 77px; /* 네비게이션 높이만큼 */
   left: 0;
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   border-top: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 20px 0;
   z-index: 1000;
+}
+
+/* 섹션 기본 */
+.dropdown-section {
+  flex: 1;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* 선택된 섹션 하이라이트 */
+.dropdown-section.active {
+  background-color: #d38c53; /* 포인트 컬러 */
+}
+
+/* active 섹션 글씨 색 */
+.dropdown-section.active h4,
+.dropdown-section.active ul li a {
+  color: #fff; /* 흰색 글씨 */
 }
 
 /* 내부 레이아웃 */
@@ -114,7 +131,7 @@ header {
 .dropdown-section h4 {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #333;
+  color: #000000;
 }
 
 .dropdown-section ul {
@@ -130,10 +147,11 @@ header {
 .dropdown-section ul li a {
   text-decoration: none;
   font-size: 14px;
-  color: #555;
+  color: #000000;
 }
+
 .dropdown-section ul li a:hover {
-  color: #2980b9;
+  color: #77c1f3;
 }
 
 /* 메인메뉴 hover 시 전체 드롭다운 표시 */
