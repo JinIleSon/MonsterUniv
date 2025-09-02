@@ -20,6 +20,11 @@ main{ background:var(--bg); color:var(--ink); }
 /* 상단 섹션들 간 기본 간격 */
 section{ padding:36px 0; }
 
+section.hero {
+  padding: 0; /* 상하 패딩 제거 */
+  margin-bottom: 60px;
+}
+
 /* -------- (1) 히어로/슬라이드 -------- */
 /* 히어로는 화면 가로 전체 쓰고 싶으니 inner 제한 해제 */
 .hero .inner{ max-width:none; padding:0; position:relative; }
@@ -160,7 +165,7 @@ section{ padding:36px 0; }
 
 /* -------- (4) 동아리 HELPER 풀배너 -------- */
 .helper-cta{
-  padding:0;  /* 풀배너 느낌 */
+  padding: 30px;  /* 풀배너 느낌 */
   background-color: #143b6a; 
   color:#fff;
 }

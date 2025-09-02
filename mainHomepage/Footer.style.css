@@ -40,7 +40,10 @@
 .footer-high-quicklinks a:hover { color: var(--footer-link-hover); }
 
 /* 하단 영역 */
-.footer-low { border-top: 1px solid var(--footer-line); }
+.footer-low { 
+  border-top: 1px solid var(--footer-line);
+  padding-bottom: 50px; 
+}
 .footer-low-inner {
   max-width: 1200px;
   margin: 0 auto;
