@@ -11,20 +11,22 @@
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.19/index.global.min.js'></script>
     <script>
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            height: 970,
-            headerToolbar: { start: '', center: 'title' }, // buttons for switching between views
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: { start: '', center: 'title' }, // buttons for switching between views
 
-            views: {
-                dayGridMonth: { // name of view
-                titleFormat: 'YYYY.MM'
-                // other view-specific options here
+                views: {
+                    dayGridMonth: { // name of view
+                    titleFormat: 'YYYY.MM',
+                    // other view-specific options here
+                    fixedWeekCount: false
+                    }
                 }
-            }
+
             });
             calendar.render();
+            
         });
       
     </script>
@@ -63,14 +65,56 @@
             width: 100%;
         }
 
-        main div > #calendar {
-            width: 100%;
+        .fc-dayGridMonth-view {
+            width: 930px;
+            height: 670px;
         }
 
         main > article > div > .schedule_notice {
             margin-top: 10px;
             font-size: 12pt;
             color: #666666;
+        }
+
+        #calendar .fc-daygrid-day-top {
+            width: 27.8px;
+            height: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 300;
+        }
+
+        .fc-day-today {
+            background-color: #E6EDF3 !important;
+        }
+
+        .fc-day-today .fc-daygrid-day-top {
+            background-color: #084A87;
+            color: white;
+        }
+
+        .fc {
+            font-family: "Noto Sans KR";
+        }
+
+        .fc-col-header-cell {
+            width: 132.78px;
+            height: 43px;
+            background-color: #084A87;
+            color: white;
+        }
+
+        .fc-col-header-cell > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .schedule_notice {
+            position: absolute; 
+            top: -12px;
         }
     </style>
 </head>
@@ -122,7 +166,9 @@
                         <h2>학사일정</h2>
                     </div>
                     <div id="calendar"></div>
-                    <p class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</p>
+                    <div style="position:relative;">
+                        <div class="schedule_notice" style="">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
+                    </div>
                 </div>
             </article>
          </div>
