@@ -67,36 +67,7 @@ id -> PK AUTO INCREMENT(테이블 표시 x)
 content -> not null
 nickname -> not null, FK
 
-학사안내_수강신청(AA_courReg)
-department(졸업학점이 ~인 학부(과)) -> PK
-grade(최저 ~ 학점, 최대 ~ 학점) -> not null
-targetDepartment(대상학부(과)) -> not null
-
-학사안내_성적(AA_grades)
-rating(등급) -> PK
-grade(평점) -> not null
-percentileRank(백분위 기준점수) -> not null
-note(비고)
-
-학사안내_수료 및 졸업_수료기준(AA_grad_comp) -> AcademicAffairs_graduation 축약
-sep(구분) - PK
-gradeSum(총 취득학점) - not null
-freshmen(1학년) - not null
-sophomore(2학년) - not null
-third(3학년) - not null
-fourth(4학년) - not null
-
-
-// 학사안내_수료 및 졸업_조기졸업은 DB 수정할 일이 없을 거 같아서 넣지 않았습니다!
-
-학사안내_수료 및 졸업_졸업(AA_grad_grad) -> AcademicAffairs_graduation 축약
-sep(소속 단과대학) - PK
-gradeSum(총 취득학점) - not null
-plurality(복수전공) - not null
-single(단일전공) - not null
-minor(부전공) - not null
-
-학사안내_자주묻는질문_휴복학 관련(AA_FAQ) -> AcademicAffairs_FAQ 축약
+학사안내_자주묻는질문(AA_FAQ) -> AcademicAffairs_FAQ 축약
 id(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
 question(Q, 질문) - not null
 answer(A, 답변) - not null           ->>> 질문 란을 누르면 답변이 나오는 방식으로 되는 듯
