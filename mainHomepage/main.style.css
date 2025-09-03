@@ -203,6 +203,45 @@ section.hero {
   margin:0 0 10px; text-align:center; font-weight:800; letter-spacing:.08em; color:var(--muted);
 }
 
+.smart-link_grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.bg-main-link {
+  width: 100px;
+  height: 100px;
+  background-color: #9399b8 !important;
+  border-radius: 50% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.bg-main-link:hover {
+  background-color: #1e2f46 !important; /* hover 효과 */
+}
+
+.bg-main-link img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  filter: brightness(0) invert(1); /* 아이콘을 흰색처럼 보이게 */
+}
+
+.bg-main-link span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #fff; 
+}
+
 /* 3x2 아이콘 그리드(내용 들어가면 자동 정렬) */
 .smart-link_grid{
   display:grid; gap:12px;
