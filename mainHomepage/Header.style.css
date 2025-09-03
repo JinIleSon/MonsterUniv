@@ -87,10 +87,11 @@ header {
   display: block;
 }
 .main-menu li a:hover {
-  color: #2980b9;
+  color: #249ae9;
 }
 
-/* 통합 드롭다운 바 */
+
+/* 통합 드롭다운 바*/ 
 .dropdown-bar {
   display: none;
   position: absolute;
@@ -102,26 +103,29 @@ header {
   padding: 20px 0;
   z-index: 1000;
 }
-
-/* 섹션 기본 */
+ 
+/* 섹션 기본*/ 
 .dropdown-section {
   flex: 1;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
 
-/* 선택된 섹션 하이라이트 */
-.dropdown-section.active {
-  background-color: #d38c53; /* 포인트 컬러 */
+.dropdown-section:hover {
+  background-color: #249ae9;
 }
 
-/* active 섹션 글씨 색 */
+.dropdown-section:hover h4 {
+  color: #ffffff;
+}
+
+/* active 섹션 글씨 색*/
 .dropdown-section.active h4,
 .dropdown-section.active ul li a {
-  color: #fff; /* 흰색 글씨 */
+  color: #000000; 
 }
 
-/* 내부 레이아웃 */
+/*내부 레이아웃*/
 .dropdown-bar .inner {
   display: flex;
   justify-content: space-between;
@@ -151,11 +155,15 @@ header {
 }
 
 .dropdown-section ul li a:hover {
-  color: #77c1f3;
+  color: #ffffff;
 }
 
-/* 메인메뉴 hover 시 전체 드롭다운 표시 */
+/* 메인메뉴 hover 시 전체 드롭다운 표시*/
 .mainNav:hover + .dropdown-bar,
 .dropdown-bar:hover {
   display: block;
 }
+
+
+
+
