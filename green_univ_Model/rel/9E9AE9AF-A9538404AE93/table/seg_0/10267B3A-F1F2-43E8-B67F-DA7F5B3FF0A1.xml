@@ -31,20 +31,6 @@
 <ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="9F45952F-C8AA-FDCF-423A-E7C26C1CF48F">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:32:49 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50 BYTE</dataTypeSize>
-<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="49F15D0E-BC7F-DA8A-0AC8-F94BB3E23A2D" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 <Column name="title" id="846DFA49-7DBA-FFF3-1BED-11ADFF01DFEE">
 <createdBy>Son</createdBy>
 <createdTime>2025-08-31 02:32:49 UTC</createdTime>
@@ -89,16 +75,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EF9AE453-0F83-F3EE-653F-C1AFA5F861C5"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="076F96EE-DC54-2C2C-4E12-875988542AFF" name="Commu_emp_User_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:32:49 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="9F45952F-C8AA-FDCF-423A-E7C26C1CF48F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

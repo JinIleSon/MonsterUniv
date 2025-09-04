@@ -2,29 +2,31 @@ DB ERD 설계 구성
 
 통일성을 위해 영어 뜻이 조금 달라도 이해 부탁드려요!
 date, year, user <= 예약어인데 모르고 컬럼명으로 사용했어요.. 컬럼명으로 이용할 때는 "date", "year"처럼 사용해주시면 감사하겠습니다..
+
+교직원 회원가입 - 학사관리 시스템 - 여러 등록들 구현
 ------------------------------------------------
 
-사용자(User)
+사용자(User) 
+// 일반 사용자는 role이 'guest' - 학생지원, 학사관리시스템 못들어감
+// 관리자는 아이디가 admin - 학생지원 못들어감
 identification -> PK
 password -> not null
 nickname(이름 및 테이블에 표기되는 닉네임) -> not null, UK
 phone -> not null
 email -> not null
 address
-
+role권한 - not null
 // 이용약관은 html에 박아놓는 걸로..
 
 ------------------------------------------------
-
+// 여기서부터 작성자 같은 경우는 sessUser로 가져오기!!!!
 메인_학사안내(Main_acadAffairs)
 id -> PK (테이블에는 표기안됨), AUTO INCREMENT
-identification -> not null, FK
 title -> not null
 date -> not null
 
 메인_공지사항(Main_notice)
 id -> PK (테이블에는 표기안됨), AUTO INCREMENT
-identification -> not null, FK
 title -> not null
 date -> not null
 
@@ -33,7 +35,6 @@ date -> not null
 입학안내_공지사항(Adm_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -41,31 +42,29 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
-nickname -> not null, FK
 date -> not null
 condition -> not null
 
 ------------------------------------------------
 
-대학,대학원(College)
-major(전공) -> PK
-dean(학과장) -> not null
-phone -> not null
-note(비고)
+대학,대학원(College) // SELECT로 CollMaj 테이블을 가져옴 / 
+★테이블 필요 x★
+deptName(학과명) 
+dean(학과장)
+deptTel(학과 연락처)
+note(비고) - dummy(아무 데이터)
 
 ------------------------------------------------
 
 학사안내_공지사항(AA_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 학사안내_학사일정(AA_schedules)
 id -> PK AUTO INCREMENT(테이블 표시 x)
 content -> not null
-nickname -> not null, FK
 
 학사안내_자주묻는질문(AA_FAQ) -> AcademicAffairs_FAQ 축약
 id(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
@@ -95,7 +94,6 @@ regDate(등록일) - not null
 커뮤니티_공지사항(Commu_anno)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -103,14 +101,13 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 커뮤니티_취업정보(Commu_emp) -> 파일명은 Community_employmentInformation(30자 이상이어서 줄임)
+// 업체도 sessUser로 가져오면 될 듯. 이름으로.
 id(번호) -> PK, AUTO INCREMENT
 condition(상태) -> not null
-nickname(업체) -> not null, FK
 title(채용정보) -> not null
 date(마감일) -> not null
 hits(조회) -> default 0
@@ -118,21 +115,18 @@ hits(조회) -> default 0
 커뮤니티_자유게시판(Commu_free)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 커뮤니티_질문과 답변(Commu_QnA)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 condition -> not null
 
 커뮤니티_자료실(Commu_refer)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -150,37 +144,150 @@ numOfPeople(수강인원) -> not null / FK - lecture(현재까지 추가한 인�
 note(비고)
 //////////현재 필요없는 테이블 끝/////////
 
-학생지원_수강신청내역(SA_details) ->StudentAssistance_courceRegistrationDetails 축약 // 학생지원_수강신청(SA_reg)에서 받은 학번을 현재 내 session의 학번과 비교해서 보여줘야하는데, 수업 시작의 yyyy부분과 개설학기를 선택 후 lecture의 수업 시작 yyyy과 개설학기를 조건절(on)으로 해서  join해서 리스트를 뽑는다.
-(학생학번) - PK, FK - lecture / 조건절로 들어감
-(수업 기간 - 수업 시작의 yyyy부분을 뽑아옴) - FK - lecture / 조건절로 들어감
-(개설학년 - 개설학기) - FK - lecture / 조건절로 들어감
-code(교과목코드) -> PK, FK - curriculum / FK - lecture의 과목코드로 join해서 수업 시작, 개설학기 뽑음
-subject(과목명) -> FK - curriculum / FK - lecture
-year(대상학년) -> FK - curriculum / FK - lecture
-professor(담당교수) -> FK - registration / FK - lecture
-grade(학점) -> FK - curriculum / FK - lecture
-classify(이수구분) -> FK - registration / FK - lecture
-time(강의시간) - FK -lecture(수업 요일 / 시작, 종료 필요)
-where(강의장) - FK - lecture
+학생지원_수강신청내역(SA_details) ->StudentAssistance_courceRegistrationDetails 축약
+snum(학생학번) - PK, FK - student(sname), not null / 조건절로 들어감
+yclasS(수업 기간 - 수업 시작의 yyyy부분을 뽑아옴) - FK - lecture(yclasS), not null / 조건절로 들어감
+semester(개설학년 - 개설학기) - FK - lecture(semester), not null / 조건절로 들어감
+deptCode(교과목코드) -> PK/ FK - lecture(deptCode)의 과목코드로 join해서 수업 시작, 개설학기 뽑음, not null
+lname(과목명) -> / FK - lecture(lname), not null
+year(대상학년) ->  / FK - lecture(year), not null
+prof(담당교수) -> / FK - lecture(prof), not null
+grade(학점) ->  / FK - lecture(grade), not null
+compDiv(이수구분) ->  / FK - lecture(compDiv), not null
+time(강의시간) - (수업 요일 / 시작, 종료 필요 - sql문으로 통합하여 넣기), not null
+room(강의장) - FK - lecture(room), not null
 
-학생지원_교과과정(SA_curriculum) // 로그인된 학생의 입학학과 = 개설학과를 통해 미리 만들어진 교과과정만 출력// 교과과정은 강의 등록과 연동되지 않게 했음. 이유 : 교과과정은 잘 바뀌지 않기 때문.
-(입학학과) -> PK, FK(테이블에 보여주지는 x)
+// ★테이블 필요 x★
+학생지원_교과과정(SA_curriculum) // Lecture(강의) 테이블에서 openMaj(개설학과), deptCode(코드번호), year(개설학년), compDiv(이수구분), lname(강의명), grade(학점)을 가져온다. / 이후 SELECT문을 통해 Lecture과 Student를 where절로 edept(학과)를 기준으로 가져옴
+// ★테이블 필요 x★
+edept(입학학과) -> PK, FK(테이블에 보여주지는 x) - student(edept)
 code(코드번호) -> PK, UK(복합 UK)
 year(학년) -> not null, UK(복합 UK)
 complectionDivision(이수구분) -> not null
 subject(교과목명) -> not null, (복합 UK)
 grade(학점) -> not null, (복합 UK)
 
-
 학생지원_성적조회(SA_grade)
-code(교과목코드) -> PK, FK - details
-subject(과목명) -> FK - details
-year(대상학년) -> FK - details
-professor(담당교수) -> FK - details
-classify(이수구분) -> FK - details
-score(점수)
-// 등급은 score(점수로) 산출
-grade(취득학점) -> FK - details
+snum(학생학번) - PK, FK - SA_details(snum)
+deptCode(교과목코드) -> PK, FK - SA_details(deptCode)
+lname(과목명) -> FK - Lecture(lname)
+year(대상학년) -> FK - SA_details(year)
+prof(담당교수) -> FK - SA_details(prof)
+compDiv(이수구분) -> FK - SA_details(compDiv)
+score(점수) - not null
+rating(등급) // 등급은 score(점수로) 산출, not null
+grade(취득학점) -> FK - SA_details(grade), not null
 // 취득학점은 F일 시 0으로 산출
+yclasS(수업 기간 - 수업 시작의 yyyy부분을 뽑아옴) - FK - SA_details(yclasS), not null / 조건절로 들어감
+semester(개설학년 - 개설학기) - FK - SA_details(semester), not null / 조건절로 들어감
 
 ------------------------------------------------
+
+-> lecture(강의 테이블)
+deptCode (과목코드)(학과코드+연도+학기+순번 조합 자동 생성) - PK
+
+개설학년 속성
+    year(개설학년)(개설학년 내부) - not null
+    semester(개설학기)(개설학년 내부) - not null
+
+compDiv(이수구분)(전공, 교양 구성) - not null
+lname(강의명) - not null
+lexpl(강의 설명) - not null
+
+개설학과 속성
+    openCol(개설대학)(개설학과 내부) - not null
+    openMaj(개설학과)(개설학과 내부) - not null
+grade(학점) - not null
+prof(담당교수) - not null
+
+수업 기간 속성
+    yclasS수업 시작(mm/dd/yyyy) -> 년도 여기서 뽑기 - not null
+    yclasE수업 종료(mm/dd/yyyy) - not null
+
+수업 시간 속성
+    timeS수업 시작 - not null
+    timeE수업 종료 - not null
+    timeD수업 요일 - not null
+
+evaWay평가방식 - not null
+book교재
+room강의실
+maxNum최대 수강인원
+nowNum현재 수강인원(추가)
+
+-> student(학생 테이블)
+snum학번(연도 + 학과 코드 + 순번 조합 자동생성) - PK
+sname이름 - not null
+sgender성별(식별번호 1, 2로 남, 여 구분) - not null
+stel휴대폰 - not null
+
+주소
+    szip우편번호 선택 - not null
+    saddr1기본주소 선택 - not null
+    saddr2상세주소 입력
+
+sregNo주민등록번호 - not null
+sengName영문명 - not null
+snation국적 - not null
+semail이메일 - not null
+eyear입학년도 - not null
+esort입학구분 - not null
+
+입학학년/학기
+    egrade입학학년 - not null
+    eterm입학학기 - not null
+
+gyear졸업년도 - not null
+
+입학학과(전공)
+    ecol입학대학 - not null
+    edept입학학과 - not null
+
+advProf지도교수 - not null
+role권한 - not null(insert 문에 고정으로 'student'이라고 줌) - 학사관리시스템 못들어감
+
+-> professor(교수 테이블)
+pnum교수번호(연도 + 학과 코드 + 순번 조합 자동생성) - PK
+pname이름 - not null
+pgender성별(식별번호. 남, 여) - not null
+ptel휴대폰 - not null
+
+주소
+    pzip우편번호 - not null
+    paddr1기본주소 - not null
+    paddr2상세주소
+
+pregNo주민등록번호 - not null
+pengName영문명 - not null
+pnation국적 - not null
+pemail이메일 - not null
+gradUn졸업대학 - not null
+gradDate졸업일 - not null
+
+담당학과
+    takeCol담당대학 - not null
+    takeDept담당학과 - not null
+
+major학문 분야(전공) - not null
+degree학위 - not null
+appDate임용일 - not null
+role권한 - not null(insert 문에 고정으로 'professor'라고 줌) - 학생지원 못들어감
+
+-> CollMaj(대학 및 학과 테이블)
+deptNum학과번호(고유 2자리 숫자 자동생성) - PK
+colName대학명 - not null
+colEng대학 영문명 - not null
+
+대학 소개
+    colTit대학 소개 제목 - not null
+    colCont대학 소개 내용 - not null
+    colImgO대학 소개 이미지 원본 - not null
+    colImgS대학 소개 이미지 세이브 - not null
+
+deptName학과명 - not null
+estYear설립연도 - not null
+deptTel학과 연락처 - not null
+unitCol단과대학 - not null
+engName영문명 - not null
+dean학과장- not null 
+deptOff학과 사무실 - not null

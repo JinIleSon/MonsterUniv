@@ -41,20 +41,6 @@
 <ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="AE2008DD-800B-B842-13DB-702F1C423118">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 01:22:42 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50 BYTE</dataTypeSize>
-<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="AFA147E7-EB8A-60E6-B5E1-12C1DA6C497E" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 <Column name="date" id="3FCA5D2F-7243-4846-8360-24AAD875303E">
 <createdBy>Son</createdBy>
 <createdTime>2025-08-31 01:22:42 UTC</createdTime>
@@ -87,16 +73,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4AA38F22-B3B1-ECA8-F87A-2BB87ACD38C3"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="D1F7AC39-9237-60E1-2CD5-961F11C9E309" name="Adm_counsel_User_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 01:23:13 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AE2008DD-800B-B842-13DB-702F1C423118"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

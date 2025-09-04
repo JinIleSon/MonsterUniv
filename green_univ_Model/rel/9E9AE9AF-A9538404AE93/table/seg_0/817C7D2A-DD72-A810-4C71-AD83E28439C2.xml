@@ -1,0 +1,198 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="817C7D2A-DD72-A810-4C71-AD83E28439C2" name="SA_grade">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:22:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_33</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="snum" id="3F224845-7BCB-DCDD-34B4-A07A0B99C11A">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="C9523245-83F1-2805-DD55-C62DEBFB5729"/>
+</associations>
+</Column>
+<Column name="deptCode" id="7CF4D13A-7EE8-3806-EDA9-007F63CC49CB">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="0D07C872-5824-1C39-5878-0D3FB2B12E9D"/>
+</associations>
+</Column>
+<Column name="lname" id="8BAC5FF2-4E47-AAAD-FC16-1017110608AB">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B45F3DF1-5F76-8E73-8C3E-8B7CCF204B9C" referredColumn="6CDC41EC-D8E3-541A-C06D-10355DFF6B7B"/>
+</associations>
+</Column>
+<Column name="year" id="9D7B56B6-5AB3-4A22-64D8-3473A077D4BD">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="7B5EA3B4-80BA-20E1-1656-9659A5CBD74D"/>
+</associations>
+</Column>
+<Column name="prof" id="31752CF1-3727-695C-166A-81E873CE7A47">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="1340624A-7B63-7857-618C-DCCBF83C79C2"/>
+</associations>
+</Column>
+<Column name="compDiv" id="710F2C29-FB37-6F8F-5EDE-A135559444B8">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="02BC1C15-85A9-0AB7-6FDD-B1190A33AFCE"/>
+</associations>
+</Column>
+<Column name="score" id="9EC6C999-1021-4FAE-AFA3-6D630DB389DA">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeScale>1</dataTypeScale>
+<ownDataTypeParameters>,,1</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rating" id="247EB794-840B-CCBE-EF77-8D3C4922FA8D">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:34:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="grade" id="2C532EA4-FE2D-5BC8-BFCF-E06D90F4BF7B">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:25:42 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="D3476674-1AEC-D30A-BF4B-2F814D7D6D5A"/>
+</associations>
+</Column>
+<Column name="yclasS" id="535E03E2-5C00-9E9F-61A6-08723AE33169">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:34:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="46026D01-5DAC-5417-DA60-7B37F99F8232"/>
+</associations>
+</Column>
+<Column name="semester" id="07E9667F-8676-24AD-5698-712D581CDBE8">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:34:58 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" referredColumn="F6B2F45E-352A-1E46-8A2D-DB05A5E403A7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9BDE83C9-A1FA-CCB1-F917-DDF7F21D894D" name="SA_grade_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:26:31 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F224845-7BCB-DCDD-34B4-A07A0B99C11A"/>
+<colUsage columnID="7CF4D13A-7EE8-3806-EDA9-007F63CC49CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C8C44FE2-B6F6-B68F-F039-FC87E8461B30" name="SA_grade_SA_details_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:44:43 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CF4D13A-7EE8-3806-EDA9-007F63CC49CB"/>
+<colUsage columnID="9D7B56B6-5AB3-4A22-64D8-3473A077D4BD"/>
+<colUsage columnID="31752CF1-3727-695C-166A-81E873CE7A47"/>
+<colUsage columnID="2C532EA4-FE2D-5BC8-BFCF-E06D90F4BF7B"/>
+<colUsage columnID="710F2C29-FB37-6F8F-5EDE-A135559444B8"/>
+<colUsage columnID="535E03E2-5C00-9E9F-61A6-08723AE33169"/>
+<colUsage columnID="07E9667F-8676-24AD-5698-712D581CDBE8"/>
+<colUsage columnID="3F224845-7BCB-DCDD-34B4-A07A0B99C11A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4239C181-587B-2428-D957-086651E2F632" name="SA_grade_Lecture_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:45:47 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BAC5FF2-4E47-AAAD-FC16-1017110608AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -30,20 +30,6 @@
 <ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="6929D950-8DFF-3655-21FD-207ADB16DBB1">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:01:56 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50 BYTE</dataTypeSize>
-<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="EC4F07EF-1493-8322-DE79-BCB66C79891A" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="F2284354-BADD-E9EE-D8A8-6EB9AC0D14C3" name="AA_schedules_PK">
@@ -55,16 +41,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="D149919A-BFBD-392D-D220-A26313B691D4"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="2DE3F5F9-06A1-52AA-CBFD-534C231CA761" name="AA_schedules_User_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:02:06 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="6929D950-8DFF-3655-21FD-207ADB16DBB1"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
