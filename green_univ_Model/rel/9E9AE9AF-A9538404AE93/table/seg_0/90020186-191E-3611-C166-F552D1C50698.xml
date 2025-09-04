@@ -31,20 +31,6 @@
 <ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="3E320D6C-8187-BC35-ECE3-EDD275587E4B">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 01:54:50 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50 BYTE</dataTypeSize>
-<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="B4EC4603-11B2-556E-EC8D-45FD3F043428" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 <Column name="date" id="73973E4D-ADBD-2393-F04D-3D2CA9F82193">
 <createdBy>Son</createdBy>
 <createdTime>2025-08-31 01:54:50 UTC</createdTime>
@@ -78,16 +64,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="04F33159-F5E0-05AB-D901-FEB61D91C7F2"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="8D5501EB-FEED-621A-013C-41E8F78DC87F" name="Addm_notice_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 01:54:50 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="3E320D6C-8187-BC35-ECE3-EDD275587E4B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

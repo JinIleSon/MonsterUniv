@@ -1,5 +1,5 @@
 -- 생성자 Oracle SQL Developer Data Modeler 24.3.1.347.1153
---   위치:        2025-09-04 19:52:19 KST
+--   위치:        2025-09-04 20:46:56 KST
 --   사이트:      Oracle Database 21c
 --   유형:      Oracle Database 21c
 
@@ -18,20 +18,18 @@ CREATE TABLE aa_faq (
 ALTER TABLE aa_faq ADD CONSTRAINT aa_faq_pk PRIMARY KEY ( id );
 
 CREATE TABLE aa_notice (
-    id       INTEGER
+    id     INTEGER
         CONSTRAINT nnc_adm_notice_id NOT NULL,
-    title    NVARCHAR2(300) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
-    "date"   DATE NOT NULL,
-    hits     INTEGER DEFAULT 0
+    title  NVARCHAR2(300) NOT NULL,
+    "date" DATE NOT NULL,
+    hits   INTEGER DEFAULT 0
 );
 
 ALTER TABLE aa_notice ADD CONSTRAINT addm_notice_pk PRIMARY KEY ( id );
 
 CREATE TABLE aa_schedules (
-    id       INTEGER NOT NULL,
-    content  NVARCHAR2(200) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL
+    id      INTEGER NOT NULL,
+    content NVARCHAR2(200) NOT NULL
 );
 
 ALTER TABLE aa_schedules ADD CONSTRAINT aa_schedules_pk PRIMARY KEY ( id );
@@ -40,7 +38,6 @@ CREATE TABLE adm_counsel (
     id        INTEGER NOT NULL,
     classify  NVARCHAR2(100) NOT NULL,
     title     NVARCHAR2(200) NOT NULL,
-    nickname  NVARCHAR2(50) NOT NULL,
     "date"    DATE NOT NULL,
     condition NVARCHAR2(100) NOT NULL
 );
@@ -48,11 +45,10 @@ CREATE TABLE adm_counsel (
 ALTER TABLE adm_counsel ADD CONSTRAINT adm_counsel_pk PRIMARY KEY ( id );
 
 CREATE TABLE adm_notice (
-    id       INTEGER NOT NULL,
-    title    NVARCHAR2(300) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
-    "date"   DATE NOT NULL,
-    hits     INTEGER DEFAULT 0
+    id     INTEGER NOT NULL,
+    title  NVARCHAR2(300) NOT NULL,
+    "date" DATE NOT NULL,
+    hits   INTEGER DEFAULT 0
 );
 
 ALTER TABLE adm_notice ADD CONSTRAINT adm_notice_pkv1 PRIMARY KEY ( id );
@@ -100,12 +96,11 @@ CREATE TABLE collmaj (
 ALTER TABLE collmaj ADD CONSTRAINT collmaj_pk PRIMARY KEY ( deptnum );
 
 CREATE TABLE commu_anno (
-    id       INTEGER
+    id     INTEGER
         CONSTRAINT nnc_commu_anno_id NOT NULL,
-    title    NVARCHAR2(300) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
-    "date"   DATE NOT NULL,
-    hits     INTEGER DEFAULT 0
+    title  NVARCHAR2(300) NOT NULL,
+    "date" DATE NOT NULL,
+    hits   INTEGER DEFAULT 0
 );
 
 ALTER TABLE commu_anno ADD CONSTRAINT commu_anno_pkv1 PRIMARY KEY ( id );
@@ -114,7 +109,6 @@ CREATE TABLE commu_emp (
     id        INTEGER
         CONSTRAINT nnc_commu_emp_id NOT NULL,
     condition NVARCHAR2(100) NOT NULL,
-    nickname  NVARCHAR2(50) NOT NULL,
     title     NVARCHAR2(200) NOT NULL,
     "date"    DATE NOT NULL,
     hits      INTEGER DEFAULT 0
@@ -123,12 +117,11 @@ CREATE TABLE commu_emp (
 ALTER TABLE commu_emp ADD CONSTRAINT commu_emp_pk PRIMARY KEY ( id );
 
 CREATE TABLE commu_free (
-    id       INTEGER
+    id     INTEGER
         CONSTRAINT nnc_commu_free_id NOT NULL,
-    title    NVARCHAR2(300) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
-    "date"   DATE NOT NULL,
-    hits     INTEGER DEFAULT 0
+    title  NVARCHAR2(300) NOT NULL,
+    "date" DATE NOT NULL,
+    hits   INTEGER DEFAULT 0
 );
 
 ALTER TABLE commu_free ADD CONSTRAINT commu_free_pk PRIMARY KEY ( id );
@@ -138,7 +131,6 @@ CREATE TABLE commu_news (
         CONSTRAINT nnc_commu_news_id NOT NULL,
     classify NVARCHAR2(100) NOT NULL,
     title    NVARCHAR2(200) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
     "date"   DATE NOT NULL,
     hits     INTEGER DEFAULT 0
 );
@@ -149,7 +141,6 @@ CREATE TABLE commu_qna (
     id        INTEGER
         CONSTRAINT nnc_commu_qna_id NOT NULL,
     title     NVARCHAR2(300) NOT NULL,
-    nickname  NVARCHAR2(50) NOT NULL,
     "date"    DATE NOT NULL,
     condition NVARCHAR2(100) DEFAULT '0' NOT NULL
 );
@@ -157,12 +148,11 @@ CREATE TABLE commu_qna (
 ALTER TABLE commu_qna ADD CONSTRAINT commu_qna_pk PRIMARY KEY ( id );
 
 CREATE TABLE commu_refer (
-    id       INTEGER
+    id     INTEGER
         CONSTRAINT nnc_commu_refer_id NOT NULL,
-    title    NVARCHAR2(300) NOT NULL,
-    nickname NVARCHAR2(50) NOT NULL,
-    "date"   DATE NOT NULL,
-    hits     INTEGER DEFAULT 0
+    title  NVARCHAR2(300) NOT NULL,
+    "date" DATE NOT NULL,
+    hits   INTEGER DEFAULT 0
 );
 
 ALTER TABLE commu_refer ADD CONSTRAINT commu_refer_pk PRIMARY KEY ( id );
@@ -207,19 +197,17 @@ ALTER TABLE lecture
 ALTER TABLE lecture ADD CONSTRAINT lecture__one UNIQUE ( lname );
 
 CREATE TABLE main_acadaffairs (
-    id             INTEGER NOT NULL,
-    identification NVARCHAR2(200) NOT NULL,
-    title          NVARCHAR2(100) NOT NULL,
-    "date"         DATE NOT NULL
+    id     INTEGER NOT NULL,
+    title  NVARCHAR2(100) NOT NULL,
+    "date" DATE NOT NULL
 );
 
 ALTER TABLE main_acadaffairs ADD CONSTRAINT main_academicaffairs_pk PRIMARY KEY ( id );
 
 CREATE TABLE main_notice (
-    id             INTEGER NOT NULL,
-    identification NVARCHAR2(200) NOT NULL,
-    title          NVARCHAR2(100) NOT NULL,
-    "date"         DATE NOT NULL
+    id     INTEGER NOT NULL,
+    title  NVARCHAR2(100) NOT NULL,
+    "date" DATE NOT NULL
 );
 
 ALTER TABLE main_notice ADD CONSTRAINT main_notice_pk PRIMARY KEY ( id );
@@ -242,7 +230,8 @@ CREATE TABLE professor (
     takedept NVARCHAR2(200) NOT NULL,
     major    NVARCHAR2(200) NOT NULL,
     degree   NVARCHAR2(200) NOT NULL,
-    appdate  DATE NOT NULL
+    appdate  DATE NOT NULL,
+    role     NVARCHAR2(100) NOT NULL
 );
 
 ALTER TABLE professor ADD CONSTRAINT professor_pk PRIMARY KEY ( pnum );
@@ -311,7 +300,8 @@ CREATE TABLE student (
     gyear    INTEGER NOT NULL,
     ecol     NVARCHAR2(200) NOT NULL,
     edept    NVARCHAR2(500) NOT NULL,
-    advprof  NVARCHAR2(100) NOT NULL
+    advprof  NVARCHAR2(100) NOT NULL,
+    role     NVARCHAR2(100) NOT NULL
 );
 
 ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY ( snum );
@@ -322,7 +312,8 @@ CREATE TABLE "User" (
     nickname       NVARCHAR2(50) NOT NULL,
     phone          NVARCHAR2(100) NOT NULL,
     email          NVARCHAR2(100) NOT NULL,
-    address        NVARCHAR2(300)
+    address        NVARCHAR2(300),
+    role           NVARCHAR2(100) NOT NULL
 );
 
 ALTER TABLE "User" ADD CONSTRAINT user_pkv2 PRIMARY KEY ( identification );
@@ -333,54 +324,6 @@ ALTER TABLE "User"
     ADD CONSTRAINT user__un UNIQUE ( nickname,
                                      phone,
                                      email );
-
-ALTER TABLE aa_schedules
-    ADD CONSTRAINT aa_schedules_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE aa_notice
-    ADD CONSTRAINT addm_notice_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE adm_counsel
-    ADD CONSTRAINT adm_counsel_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE adm_notice
-    ADD CONSTRAINT adm_notice_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_anno
-    ADD CONSTRAINT commu_anno_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_emp
-    ADD CONSTRAINT commu_emp_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_free
-    ADD CONSTRAINT commu_free_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_news
-    ADD CONSTRAINT commu_news_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_qna
-    ADD CONSTRAINT commu_qna_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE commu_refer
-    ADD CONSTRAINT commu_refer_user_fk FOREIGN KEY ( nickname )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE main_acadaffairs
-    ADD CONSTRAINT main_aa_user_fk FOREIGN KEY ( identification )
-        REFERENCES "User" ( identification );
-
-ALTER TABLE main_notice
-    ADD CONSTRAINT main_notice_user_fk FOREIGN KEY ( identification )
-        REFERENCES "User" ( identification );
 
 ALTER TABLE sa_details
     ADD CONSTRAINT sa_details_lecture_fk
@@ -568,7 +511,7 @@ END;
 -- 
 -- CREATE TABLE                            22
 -- CREATE INDEX                             0
--- ALTER TABLE                             43
+-- ALTER TABLE                             31
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0
