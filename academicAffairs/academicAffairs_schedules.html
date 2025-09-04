@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="./css/main.style.css">
     <!-- moment lib -->
     <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
@@ -14,7 +15,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                headerToolbar: { start: '', center: 'title' }, // buttons for switching between views
+                headerToolbar: { start: '', center: 'prev title next', end: '' }, // buttons for switching between views
 
                 views: {
                     dayGridMonth: { // name of view
@@ -31,96 +32,41 @@
       
     </script>
     <title>학사안내::학사일정</title>
-    <style>
-        .container{
-            margin: 0 auto;
-            width: 1210px;
-            display: flex;
-            gap: 60px;
-        }
-        a {
-            text-decoration: none;
-        }
-        /* 배너 공간 */
-        .banner td {
-            height: 60px;
-            
-        }
-        .banner a {
-            display:block;
-            width:100%;
-            height:100%;
-            line-height: 60px;
-            margin-left:16px;
-        }
-        article {
-            width: 935px;
-        }
-
-        main div > .schedule_title {
-            border-bottom: 3px solid #595959;
-            font-size: 14pt;
-            line-height: 20px;
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        .fc-dayGridMonth-view {
-            width: 930px;
-            height: 670px;
-        }
-
-        main > article > div > .schedule_notice {
-            margin-top: 10px;
-            font-size: 12pt;
-            color: #666666;
-        }
-
-        #calendar .fc-daygrid-day-top {
-            width: 27.8px;
-            height: 26px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 300;
-        }
-
-        .fc-day-today {
-            background-color: #E6EDF3 !important;
-        }
-
-        .fc-day-today .fc-daygrid-day-top {
-            background-color: #084A87;
-            color: white;
-        }
-
-        .fc {
-            font-family: "Noto Sans KR";
-        }
-
-        .fc-col-header-cell {
-            width: 132.78px;
-            height: 43px;
-            background-color: #084A87;
-            color: white;
-        }
-
-        .fc-col-header-cell > div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-
-        .schedule_notice {
-            position: absolute; 
-            top: -12px;
-        }
-    </style>
 </head>
 <body>
+     <!--1.헤더영역-->
     <header>
-        <div style="height: 140px;"></div>
+        <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+        <div class="topbar">
+            <div class="inner">
+                <div class="log-area">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">학생지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainNav">
+            <div class="inner">
+                <!--로고-->
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+
+                <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+                <div class="menu-area">
+                    <ul>
+                        <li><a href="#">대학소개</a></li>
+                        <li><a href="#">입학안내</a></li>
+                        <li><a href="#">대학·대학원</a></li>
+                        <li><a href="#">대학생활</a></li> 
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div class="container">

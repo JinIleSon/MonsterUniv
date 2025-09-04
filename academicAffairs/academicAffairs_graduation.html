@@ -5,56 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사안내::수료 및 졸업</title>
     <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="./css/main.style.css">
     <style>
-        .container{
-            margin: 0 auto;
-            width: 1210px;
-            display: flex;
-            gap: 60px;
-        }
-        a {
-            text-decoration: none;
-        }
-        /* 배너 공간 */
-        .banner td {
-            height: 60px;
-            
-        }
-        .banner a {
-            display:block;
-            width:100%;
-            height:100%;
-            line-height: 60px;
-            margin-left:16px;
-        }
-        article {
-            width: 1000px;
-        }
-
-        article > div > div > table {
-            border-top: 4px solid #071F4B;
-            text-align: center;
-        }
-
-        article > div > div > table th {
-            background-color: #F4F8FC;
-            box-shadow: 1px 1px #DEDEDE;
-        }
-        
-        article > div > div > table td {
-            box-shadow: 1px 1px #DEDEDE;
-            padding: 2px;
-        }
-
-        article > div > div > p {
-            color: #666666;
-        }
 
     </style>
 </head>
 <body>
+     <!--1.헤더영역-->
     <header>
-        <div style="height: 140px;"></div>
+        <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+        <div class="topbar">
+            <div class="inner">
+                <div class="log-area">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">학생지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainNav">
+            <div class="inner">
+                <!--로고-->
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+
+                <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+                <div class="menu-area">
+                    <ul>
+                        <li><a href="#">대학소개</a></li>
+                        <li><a href="#">입학안내</a></li>
+                        <li><a href="#">대학·대학원</a></li>
+                        <li><a href="#">대학생활</a></li> 
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div class="container">
@@ -94,7 +83,7 @@
                     </tr>
                 </table>
             </div>
-            <article>
+            <article class="graduation_article">
                 <div>
                     <div style="border-bottom: 3px solid #595959; font-size: 14pt; line-height: 20px; margin-bottom: 30px; width: 100%;">
                         <h2>수료 및 졸업</h2>
