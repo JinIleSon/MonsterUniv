@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2EEBC43A-1FF5-E745-C0F1-D0930115FA12" containerWithKeyObject="817C7D2A-DD72-A810-4C71-AD83E28439C2" localFKIndex="C8C44FE2-B6F6-B68F-F039-FC87E8461B30" name="SA_grade_SA_details_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 10:44:43 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<referredTableLongName>SA_details</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A3524E34-615C-C2F8-3B60-4EB3D90CF2DE</referredTableID>
+<keyObject>AEA6B21F-A4EB-D0BF-1C14-79E9D9965F95</keyObject>
+<referredKeyID>AEA6B21F-A4EB-D0BF-1C14-79E9D9965F95</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>deptCode,year,prof,grade,compDiv,yclasS,semester,snum</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
