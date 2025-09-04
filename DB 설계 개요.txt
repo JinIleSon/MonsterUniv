@@ -6,27 +6,27 @@ date, year, user <= 예약어인데 모르고 컬럼명으로 사용했어요.. 
 교직원 회원가입 - 학사관리 시스템 - 여러 등록들 구현
 ------------------------------------------------
 
-사용자(User)
+사용자(User) 
+// 일반 사용자는 role이 'guest' - 학생지원, 학사관리시스템 못들어감
+// 관리자는 아이디가 admin - 학생지원 못들어감
 identification -> PK
 password -> not null
 nickname(이름 및 테이블에 표기되는 닉네임) -> not null, UK
 phone -> not null
 email -> not null
 address
-
+role권한 - not null
 // 이용약관은 html에 박아놓는 걸로..
 
 ------------------------------------------------
-
+// 여기서부터 작성자 같은 경우는 sessUser로 가져오기!!!!
 메인_학사안내(Main_acadAffairs)
 id -> PK (테이블에는 표기안됨), AUTO INCREMENT
-identification -> not null, FK
 title -> not null
 date -> not null
 
 메인_공지사항(Main_notice)
 id -> PK (테이블에는 표기안됨), AUTO INCREMENT
-identification -> not null, FK
 title -> not null
 date -> not null
 
@@ -35,7 +35,6 @@ date -> not null
 입학안내_공지사항(Adm_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -43,7 +42,6 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
-nickname -> not null, FK
 date -> not null
 condition -> not null
 
@@ -61,14 +59,12 @@ note(비고) - dummy(아무 데이터)
 학사안내_공지사항(AA_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 학사안내_학사일정(AA_schedules)
 id -> PK AUTO INCREMENT(테이블 표시 x)
 content -> not null
-nickname -> not null, FK
 
 학사안내_자주묻는질문(AA_FAQ) -> AcademicAffairs_FAQ 축약
 id(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
@@ -98,7 +94,6 @@ regDate(등록일) - not null
 커뮤니티_공지사항(Commu_anno)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -106,14 +101,13 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 커뮤니티_취업정보(Commu_emp) -> 파일명은 Community_employmentInformation(30자 이상이어서 줄임)
+// 업체도 sessUser로 가져오면 될 듯. 이름으로.
 id(번호) -> PK, AUTO INCREMENT
 condition(상태) -> not null
-nickname(업체) -> not null, FK
 title(채용정보) -> not null
 date(마감일) -> not null
 hits(조회) -> default 0
@@ -121,21 +115,18 @@ hits(조회) -> default 0
 커뮤니티_자유게시판(Commu_free)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
 커뮤니티_질문과 답변(Commu_QnA)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 condition -> not null
 
 커뮤니티_자료실(Commu_refer)
 id -> PK, AUTO INCREMENT
 title -> not null
-nickname -> not null, FK
 date -> not null
 hits -> default 0
 
@@ -253,6 +244,7 @@ gyear졸업년도 - not null
     edept입학학과 - not null
 
 advProf지도교수 - not null
+role권한 - not null(insert 문에 고정으로 'student'이라고 줌) - 학사관리시스템 못들어감
 
 -> professor(교수 테이블)
 pnum교수번호(연도 + 학과 코드 + 순번 조합 자동생성) - PK
@@ -279,6 +271,7 @@ gradDate졸업일 - not null
 major학문 분야(전공) - not null
 degree학위 - not null
 appDate임용일 - not null
+role권한 - not null(insert 문에 고정으로 'professor'라고 줌) - 학생지원 못들어감
 
 -> CollMaj(대학 및 학과 테이블)
 deptNum학과번호(고유 2자리 숫자 자동생성) - PK

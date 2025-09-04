@@ -75,6 +75,17 @@
 <ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="role" id="1183E17B-149B-AAC3-560E-4289B9D81621">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 11:07:10 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="D2D0E333-243C-76BB-DED2-101FA56E15FA" name="user_PKv2">
