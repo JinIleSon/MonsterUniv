@@ -34,6 +34,15 @@ public class SearchListControlloer extends HttpServlet {
 		PagenationDTO pagenationDTO = lectureService.getPagenationInfo(pg, searchType, keyword);
 
 		int start = pagenationDTO.getStart();
+		if(searchType == null) {
+			List<LectureDTO> dtoList = lectureService.findAll(start);
+			req.setAttribute("dtoList", dtoList);
+			req.setAttribute("pagenationDTO", pagenationDTO);
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/educationOperation.jsp");
+			dispatcher.forward(req, resp);
+			return;
+		}
 		List<LectureDTO> dtoList = lectureService.findBySearch(start, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);

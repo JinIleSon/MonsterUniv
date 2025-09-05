@@ -22,7 +22,7 @@ public PagenationDTO getPagenationInfo(String pg, String searchType, String keyw
 		int total = 0;
 		
 		// 전체 게시물 갯수 구하기
-		if (keyword == null) {
+		if (keyword == null || searchType == null) {
 			total = dao.selectCountTotal();
 		} else {
 			total = dao.selectCountSearch(searchType, keyword);

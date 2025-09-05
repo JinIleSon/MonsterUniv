@@ -90,12 +90,15 @@ public class LectureDAO extends DBHelper {
 			break;
 		}
 
+		logger.debug(sql.toString());
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
 			psmt.setString(1, "%"+keyword+"%");
 			rs = psmt.executeQuery();
-			count = rs.getInt(1);
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
 			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
