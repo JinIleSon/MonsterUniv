@@ -2,6 +2,7 @@ package util;
 
 public class Sql {
 	
+<<<<<<< HEAD
 	// article
 	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM commu_anno";
 	
@@ -35,4 +36,6 @@ public class Sql {
 	// 파일 넣지않음
 //	public static final String INSERT_ARTICLE = "INSERT INTO TB_ARTICLE (title, content, file_cnt, writer, reg_ip, wdate) VALUES (?,?,?,?,?,sysdate)";
 		
+=======
+>>>>>>> origin/test
 }

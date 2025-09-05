@@ -7,6 +7,8 @@ html, body {
   box-sizing: border-box;
 }
 
+/* div {border: 1px solid;} */
+
 /* =========공통 컨테이너======= */
 .inner {
   max-width: 1200px;
@@ -102,6 +104,277 @@ header {
 /* ================================
    Main
 ================================ */
+
+/* 전체 컨테이너 위치 조정 */
+.container{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 1250px;
+    display: flex;
+    gap: 60px;
+}
+hr{
+    border: none;
+    height: 2px;
+    background-color: black;
+}
+a {
+    text-decoration: none;
+}
+/* 배너 공간 */
+.banner td {
+    height: 60px;
+    
+}
+.banner a {
+    display:block;
+    width:100%;
+    height:100%;
+    line-height: 60px;
+    margin-left:16px;
+}
+select {
+    color: #666666; /* 글씨 색 */
+    appearance: none;           /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url('../images/btn-sel-open01.png') 
+                no-repeat right 8px center/12px auto;
+    padding-right: 24px;  /* 화살표 공간 확보 */
+}
+
+/* -------------------------------------------- 공지사항 --------------------------------------------------------- */
+/* 게시판 아래버튼 부분 */
+.first-page{
+    background: url('../images/btn-first-page.png') no-repeat center;
+    border: 1px #eaeaea solid;
+    width: 33px;
+    height: 30px;
+    margin-right:3px;
+}
+.prev-page{
+    background: url('../images/btn-prev-page.png') no-repeat center;
+    border: 1px #eaeaea solid;
+    margin-right: 15px;
+    width: 33px;
+    height: 30px;
+}
+.next-page{
+    background: url('../images/btn-next-page.png') no-repeat center;
+    border: 1px #eaeaea solid;
+    margin-left: 15px;
+    width: 33px;
+    height: 30px;
+    margin-right:3px;
+}
+.last-page{
+    background: url('../images/btn-last-page.png') no-repeat center;
+    border: 1px #eaeaea solid;
+    width: 33px;
+    height: 30px;
+}
+
+
+/* -------------------------------------------- 학사일정 --------------------------------------------------------- */
+
+article {
+    width: 1000px;
+}
+
+main div > .schedule_title {
+    border-bottom: 2px solid #595959;
+    line-height: 17px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.fc {
+    font-family: "Noto Sans KR";
+}
+
+.fc-toolbar-chunk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-prev-button {
+    background-color: white !important;
+    border-style: none !important;
+    height: 32px;
+    transform: translate(-30px, 2.5px);
+}
+
+.fc-next-button {
+    background-color: white !important;
+    border-style: none !important;
+    height: 32px;
+    transform: translate(30px, 2.5px);
+}
+
+.fc-icon-chevron-left {
+    background-image: url('../images/btn-calendar-prev.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    text-indent: -9999px;
+    
+}
+
+.fc-icon-chevron-right {
+    background-image: url('../images/btn-calendar-next.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    text-indent: -9999px;
+    
+}
+
+.fc-toolbar-title {
+    color: #084A87;
+    font-weight: 500;
+}
+
+.fc-dayGridMonth-view {
+    width: 930px;
+    height: 670px;
+}
+
+main > article > div > .schedule_notice {
+    margin-top: 10px;
+    font-size: 12pt;
+    color: #666666;
+}
+
+#calendar .fc-daygrid-day-top {
+    width: 27.8px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
+.fc-scrollgrid-sync-inner {
+    font-weight: 500;
+}
+
+.fc-day-today {
+    background-color: #E6EDF3 !important;
+}
+
+.fc-day-today .fc-daygrid-day-top {
+    background-color: #084A87;
+    color: white;
+}
+
+.fc-col-header-cell {
+    width: 132.78px;
+    height: 43px;
+    background-color: #084A87;
+    color: white;
+}
+
+.fc-col-header-cell > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.schedule_notice {
+    position: absolute; 
+    top: -12px;
+}
+
+/* -------------------------------------------- 수강신청 --------------------------------------------------------- */
+
+.CR_article {
+    width: 935px;
+}
+/* -------------------------------------------- 성적 --------------------------------------------------------- */
+
+.grade_article {
+    width: 1000px;
+}
+
+.grade_article div div:nth-child(7) tr {
+    height: 52px;
+}
+.grade_article div div:nth-child(7) th {
+    box-shadow: 1px 1px #DEDEDE;
+    width: 25%;
+}
+
+.grade_article div div:nth-child(7) td {
+    box-shadow: 1px 1px #DEDEDE;
+}
+
+
+/* -------------------------------------------- 자주묻는질문 --------------------------------------------------------- */
+
+.graduation_article {
+    width: 1000px;
+}
+
+.graduation_article > div > div > table {
+    border-top: 4px solid #071F4B;
+    text-align: center;
+}
+
+.graduation_article > div > div > table th {
+    background-color: #F4F8FC;
+    box-shadow: 1px 1px #DEDEDE;
+}
+
+.graduation_article > div > div > table td {
+    box-shadow: 1px 1px #DEDEDE;
+    padding: 2px;
+}
+
+.graduation_article > div > div > p {
+    color: #666666;
+}
+
+/* -------------------------------------------- 자주묻는질문 --------------------------------------------------------- */
+.faq_article {
+    width: 1000px;
+}
+
+.faq_article > div > div td {
+    width: 100%;
+    height: 67px;
+    border-bottom: 1px solid #D8D8D8;
+    padding-left: 10px;
+}
+
+.faq_ico {
+    width: 30px; 
+    height: 30px; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    line-height: 10px;
+    margin-right: 10px;
+}
+
+.qstn {
+    background-color: #3282D3; 
+}
+
+.ansr {
+    background-color: #999999;
+}
+
+.ansr > td {
+    background-color: #EFEFEF;
+}
 
 
 
