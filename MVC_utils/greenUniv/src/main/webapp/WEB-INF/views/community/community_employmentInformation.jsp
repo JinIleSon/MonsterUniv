@@ -222,7 +222,7 @@
 	                            </div>
                         	</td>
 			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:10px; text-align: center;">${commu.nick}</td>
-			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:18px;"><a href="#" style="style="text-decoration:none; color:black;">${commu.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:18px;"><a href="#" style="text-decoration:none; color:black;">${commu.title}</a></td>
 			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.date}</td>
 			                <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${commu.hits}</td>
 			            </tr>
