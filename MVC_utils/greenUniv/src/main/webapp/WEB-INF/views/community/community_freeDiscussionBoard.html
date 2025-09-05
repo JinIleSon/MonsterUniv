@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>커뮤니티_자료실</title>
+    <title>커뮤니티_자유게시판</title>
     <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../community_css/main.style.css">
+    <link rel="stylesheet" href="./css/main.style.css">
     <style>
         /* 전체 컨테이너 위치 조정 */
         .container{
@@ -38,27 +38,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -66,7 +66,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -113,11 +113,11 @@
                               display:flex;
                               align-items: center;
                               ">
-                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
-                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:18px;">커뮤니티</span>
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:18px;">자료실</span>
+                                <img src="images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                                <img src="images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:12px;">
+                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:12px;">커뮤니티</span>
+                                <img src="images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:12px;">
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:12px;">자유게시판</span>
                             </div>
                         </li>
                     </ul>
@@ -127,7 +127,7 @@
     </header>
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
     </div>
-    <div style="height: 600px;" class = "inner">
+    <div style="height: 607px;" class = "inner">
         <div style="height:50px;"></div>
         <div style="display: flex; gap: 60px;">
             <div style=" width: 210px;">
@@ -149,8 +149,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">자유게시판</a>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white; font-weight:300;">자유게시판</a>
                         </td>
                     </tr>
                     <tr>
@@ -159,15 +159,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">자료실</a>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">자료실</a>
                         </td>
                     </tr>
                 </table>
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">자료실</b>
+                    <b style="font-weight: 700; font-size:26px;">자유게시판</b>
                 </div>
                 <hr style="border:none; border-top: 2px solid;">
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
@@ -184,32 +184,32 @@
                 </div>
                 <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
                     <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
-                        <td style="width: 90px;">번호</td>
-                        <td style="width: 530px;">제목</td>
-                        <td style="width: 130px;">작성자</td>
-                        <td style="">작성일</td>
-                        <td style="width: 90px;">조회수</td>
+                        <td style="width: 80px;">번호</td>
+                        <td style="width: 520px;">제목</td>
+                        <td style="">작성자</td>
+                        <td style="width: 130px;">작성일</td>
+                        <td style="width: 70px;">조회</td>
                     </tr>
                     <tr style="height:60px;">
                         <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left; align-items: center;"><a href="#" style="color:black; display:flex; align-items: center;">&nbsp;<img src="../images/ico-file01.png" alt="" style="margin-right:10px;margin-top:3px;">교원자격증 재교부 및 기재사항 정정신청 안내(서식)</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">학사관리과</td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
+                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">120</td>
+                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                     <tr style="height:60px;">
-                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"> <a href="#" style="color:black; display:flex; align-items: center;">&nbsp;<img src="../images/ico-file01.png" alt="" style="margin-right:10px;margin-top:3px;">2025 융합인재학부 오리엔테이션 자료</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">융합인재학부</td>
+                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">2</td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"> <a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
+                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">120</td>
+                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                     <tr style="height:60px;">
-                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black; display:flex; align-items: center;">&nbsp;<img src="../images/ico-file01.png" alt="" style="margin-right:10px;margin-top:3px;">2022년 2월 8일 면접 전략 특강 강의 자료</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">취업지원실</td>
+                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">1</td>
+                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
+                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
                         <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">120</td>
+                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
                     </tr>
                 </table>
                 <div style=" height: 100px; margin-top:30px;">
