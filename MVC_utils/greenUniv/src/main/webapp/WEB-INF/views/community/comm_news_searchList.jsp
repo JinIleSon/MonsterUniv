@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>커뮤니티_취업정보</title>
+    <title>커뮤니티_뉴스_및_칼럼</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../community_css/main.style.css">
     <style>
@@ -33,8 +33,8 @@
             margin-left:16px;
         }
         
-        .badge--news { background-color:#20A0B7; } /* 모집중 */
-  		.badge--default { background-color:#9B9A9A; } /* 마감 */
+        .badge--news { background-color:#991539; } /* 뉴스 전용 */
+  		.badge--default { background-color:#4383d6; } /* 기본(뉴스 외) */
         
         .board-select {
             color: #666666; /* 글씨 색 */
@@ -75,7 +75,7 @@
             width: 33px;
             height: 30px;
         }
-        /* 현재 위치 페이지 버튼 */
+         /* 현재 위치 페이지 버튼 */
         .current {
  		    border: 1px #eaeaea solid; 
  		    background-color: #5198f9; 
@@ -137,10 +137,10 @@
                               align-items: center;
                               ">
                                 <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">커뮤니티</span>
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">취업정보</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:11px;">
+                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:11px;">커뮤니티</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:11px;">
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:11px;">뉴스 및 칼럼</span>
                             </div>
                         </li>
                     </ul>
@@ -162,13 +162,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">뉴스 및 칼럼</a>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white; font-weight:300;">뉴스 및 칼럼</a>
                         </td>
                     </tr>
                     <tr>
-                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">취업정보</a>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">취업정보</a>
                         </td>
                     </tr>
                     <tr>
@@ -190,11 +190,11 @@
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">취업정보</b>
+                    <b style="font-weight: 700; font-size:26px;">뉴스 및 칼럼</b>
                 </div>
                 <hr style="border:none; border-top: 2px solid;">
                 <div style="display: flex; width:100%;  margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
-                    <form action="/greenUniv/community/comm_emp_search.do" style="display: flex;">
+                    <form action="/greenUniv/community/comm_news_search.do" method="get" style="display: flex;">
                         <select name="searchType" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
                             <option value="all">전체</option>
                             <option value="title">제목</option>
@@ -206,23 +206,23 @@
                 </div>
                 <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
                     <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
-                        <td style="width: 65px;">번호</td>
-                        <td style="width: 65px;">상태</td>
-                        <td style="width: 130px;">업체</td>
-                        <td style="width: 480px; ">채용정보</td>
-                        <td style="width: 140px;">마감일</td>
-                        <td style="width: 110px;">조회</td>
+                        <td style="width: 70px;">번호</td>
+                        <td style="width: 70px;">구분</td>
+                        <td style="width: 450px;">제목</td>
+                        <td style="width: 150px;">작성자</td>
+                        <td style="width: 100px;">작성일</td>
+                        <td style="width: 65px;">조회</td>
                     </tr>
                     <c:forEach var="commu" items="${dtoList}" varStatus="status">
 			            <tr style="height:60px;">
 			                <td style="border-bottom: 1px solid #b8b8b8;">${pagenationDTO.currentPageStartNum - status.index}</td>
 			                <td style="border-bottom: 1px solid #b8b8b8;">
 	                            <div style="display:flex; justify-content: center; align-items: center;">
-	                                <div class="${commu.condition eq '모집중' ? 'badge--news' : 'badge--default'}" style="height:28px; line-height: 28px; width:35px; font-size:9pt; border:none; color:white; font-weight: 300;">${commu.condition}</div>
+	                                <div class="${commu.classify eq '뉴스' ? 'badge--news' : 'badge--default'}" style="height:28px; line-height: 28px; width:35px; font-size:9pt; border:none; color:white; font-weight: 300;">${commu.classify}</div>
 	                            </div>
                         	</td>
-			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:10px; text-align: center;">${commu.nick}</td>
-			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:18px;"><a href="#" style="style="text-decoration:none; color:black;">${commu.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:10px;"><a href="#" style="color:black;">${commu.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.nick}</td>
 			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.date}</td>
 			                <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${commu.hits}</td>
 			            </tr>
@@ -230,9 +230,9 @@
 	           	 	</c:forEach>
                 </table>
                 <div style=" height: 100px; margin-top:30px;">
-                 <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
+                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
 
-                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_news_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}'" class="first-page">
 	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
 						<c:choose>
 						  <c:when test="${pagenationDTO.currentPage == 1}">
@@ -240,13 +240,13 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.currentPage-1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_news_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="prev-page">
 						  </c:otherwise>
 						</c:choose>
 						
 						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_news_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
 	                    </c:forEach>
 						
 						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
@@ -256,11 +256,11 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.currentPage+1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_news_search.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="next-page">
 						  </c:otherwise>
 						</c:choose>
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_news_search.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}'" class="last-page">
 	                </form>
                 </div>
             </div>
