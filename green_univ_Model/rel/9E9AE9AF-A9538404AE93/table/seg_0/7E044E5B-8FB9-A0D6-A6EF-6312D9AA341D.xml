@@ -31,20 +31,6 @@
 <ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="08D2B5E9-4A98-A4D0-26BC-51CC3D066852">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:25:40 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50 BYTE</dataTypeSize>
-<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5CB05A00-64B3-1D3C-F211-A0CE407A555B" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 <Column name="date" id="BD6B43BB-0241-9BCC-60C5-D5323C4CDEAA">
 <createdBy>Son</createdBy>
 <createdTime>2025-08-31 02:25:40 UTC</createdTime>
@@ -78,16 +64,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="ED283486-3389-9A5D-121E-3525EAF2EABC"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="7F7E628E-F659-2E9A-BB33-8A3AFE29165A" name="Commu_anno_User_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 02:25:40 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="08D2B5E9-4A98-A4D0-26BC-51CC3D066852"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

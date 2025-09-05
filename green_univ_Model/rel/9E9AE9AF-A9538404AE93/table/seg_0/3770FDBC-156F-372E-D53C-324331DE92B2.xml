@@ -19,21 +19,6 @@
 <autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="identification" id="9C96D6F1-B17C-9E56-4BA9-030C522CD2FA">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 00:26:24 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>200 BYTE</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="52054B6A-8D2D-D115-088E-043F497F9668" referredColumn="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
-</associations>
-</Column>
 <Column name="title" id="7FA9075B-61BE-961F-7E88-E3138663C3BD">
 <createdBy>Son</createdBy>
 <createdTime>2025-08-31 00:10:30 UTC</createdTime>
@@ -66,16 +51,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5758A74A-A79D-69AC-B868-7CB87E72B7FB"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="5E624053-4E74-A888-879E-D8CBA9441776" name="Main_notice_User_FK">
-<createdBy>Son</createdBy>
-<createdTime>2025-08-31 00:26:24 UTC</createdTime>
-<ownerDesignName>green_univ_Model</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="9C96D6F1-B17C-9E56-4BA9-030C522CD2FA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
