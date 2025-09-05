@@ -7,6 +7,8 @@ html, body {
   box-sizing: border-box;
 }
 
+/* div {border: 1px solid;} */
+
 /* =========공통 컨테이너======= */
 .inner {
   max-width: 1200px;
@@ -106,7 +108,8 @@ header {
 /* 전체 컨테이너 위치 조정 */
 .container{
     margin: 0 auto;
-    width: 1210px;
+    margin-top: 50px;
+    width: 1250px;
     display: flex;
     gap: 60px;
 }
@@ -176,14 +179,13 @@ select {
 /* -------------------------------------------- 학사일정 --------------------------------------------------------- */
 
 article {
-    width: 935px;
+    width: 1000px;
 }
 
 main div > .schedule_title {
-    border-bottom: 3px solid #595959;
-    font-size: 14pt;
-    line-height: 20px;
-    margin-bottom: 30px;
+    border-bottom: 2px solid #595959;
+    line-height: 17px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
