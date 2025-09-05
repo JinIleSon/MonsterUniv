@@ -480,7 +480,7 @@ tbody td span {
 	height: 32px;
 }
 
-.pagenation .page1 {
+.pagenation .current {
 	background-color: #1A528E;
 	color: white;
 	display: block;
@@ -490,7 +490,7 @@ tbody td span {
 	text-decoration: none;
 }
 
-.pagenation .page2, .pagenation .page3 {
+.pagenation .off {
 	color: #888888;
 	display: block;
 	width: 100%;
@@ -633,10 +633,18 @@ tbody td span {
 				</p>
 			</div>
 
-			<form class="search-form">
-				<select id="search-select">
-					<option>검색조건</option>
-				</select> <input type="text" id="search-title"> <input type="button"
+			<form class="search-form" action="/jboard/AMS/educationOperation/searchList.do" method="get">
+				<select id="search-select" name="searchType">
+					<option value="" disabled selected>검색조건</option>
+					<option value="openMaj">학과</option>
+					<option value="deptCode">과목코드</option>
+					<option value="lname">강의명</option>
+					<option value="year">학년</option>
+					<option value="prof">담당교수</option>
+					<option value="compDiv">구분</option>
+					<option value="grade">학점</option>
+					<option value="room">강의장</option>
+				</select> <input type="text" id="search-title" name="keyword"> <input type="submit"
 					class="search-btn" value="검색">
 			</form>
 
@@ -676,13 +684,13 @@ tbody td span {
 			</table>
 
 			<ul class="pagenation">
-				<li><a href="#"><span class="first"></span></a></li>
-				<li><a href="#"><span class="prev"></span></a></li>
-				<li><a href="#" class="page1">1</a></li>
-				<li><a href="#" class="page2">2</a></li>
-				<li><a href="#" class="page3">3</a></li>
-				<li><a href="#"><span class="next"></span></a></li>
-				<li><a href="#"><span class="last"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=1"><span class="first"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }"><span class="prev"></span></a></li>
+            <c:forEach var="num" begin="${ pagenationDTO.pageGroupStart }" end="${ pagenationDTO.pageGroupEnd }">
+				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ num }" class="${ pagenationDTO.currentPage == num ? 'current' : 'off' }">${ num }</a></li>
+			</c:forEach>
+				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }"><span class="next"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.lastPageNum }"><span class="last"></span></a></li>
 			</ul>
 		</main>
 	</div>

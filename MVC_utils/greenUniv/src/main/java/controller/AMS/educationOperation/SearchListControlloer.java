@@ -16,33 +16,29 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.AMS.LectureService;
 
-@WebServlet("/AMS/educationOperation/list.do")
-public class ListController extends HttpServlet {
+@WebServlet("/AMS/educationOperation/searchList.do")
+public class SearchListControlloer extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private LectureService lectureService = LectureService.INSTANCE;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 요청 페이지 번호 수신
+		String searchType = req.getParameter("searchType");
+		String keyword = req.getParameter("keyword");
 		String pg = req.getParameter("pg");
-		
 		// 페이지네이션 처리 요청
-		PagenationDTO pagenationDTO = lectureService.getPagenationInfo(pg, null, null);
-		
+		PagenationDTO pagenationDTO = lectureService.getPagenationInfo(pg, searchType, keyword);
+
 		int start = pagenationDTO.getStart();
-		logger.debug("start : "+start);
-		List<LectureDTO> dtoList = lectureService.findAll(start);
+		List<LectureDTO> dtoList = lectureService.findBySearch(start, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);
-		req.setAttribute("pagenationDTO", pagenationDTO);
 		
-		logger.debug(dtoList.toString());
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/educationOperation.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/educationOperation_search.jsp");
 		dispatcher.forward(req, resp);
 	}
 
