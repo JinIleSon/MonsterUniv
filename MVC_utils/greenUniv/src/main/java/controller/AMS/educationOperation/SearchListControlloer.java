@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.AMS.LectureService;
 
-@WebServlet("/AMS/educationOperation/searchList.do")
+@WebServlet("/AMS/educationOperation/search.do")
 public class SearchListControlloer extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -37,6 +37,9 @@ public class SearchListControlloer extends HttpServlet {
 		List<LectureDTO> dtoList = lectureService.findBySearch(start, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);
+		req.setAttribute("searchType", searchType);
+		req.setAttribute("keyword", keyword);
+		req.setAttribute("pagenationDTO", pagenationDTO);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/educationOperation_search.jsp");
 		dispatcher.forward(req, resp);

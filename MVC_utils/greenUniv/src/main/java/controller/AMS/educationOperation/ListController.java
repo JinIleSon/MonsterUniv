@@ -40,8 +40,6 @@ public class ListController extends HttpServlet {
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);
 		
-		logger.debug(dtoList.toString());
-		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/educationOperation.jsp");
 		dispatcher.forward(req, resp);
 	}

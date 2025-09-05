@@ -146,6 +146,7 @@ public class LectureDAO extends DBHelper {
 		sql.append(Sql.SEARCH_ORDER_DEPTCODE);
 		sql.append(Sql.SEARCH_OFFET_ROW);
 
+		logger.debug(sql.toString());
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
@@ -190,6 +191,8 @@ public class LectureDAO extends DBHelper {
 		List<LectureDTO> dtoList = new ArrayList<LectureDTO>();
 		
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ALL_LECTURES);
+		sql.append(Sql.SEARCH_ORDER_DEPTCODE);
+		sql.append(Sql.SEARCH_OFFET_ROW);
 
 		try {
 			conn = getConnection();

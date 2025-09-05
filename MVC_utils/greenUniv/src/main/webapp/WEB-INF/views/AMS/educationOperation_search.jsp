@@ -684,13 +684,13 @@ tbody td span {
 			</table>
 
 			<ul class="pagenation">
-				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=1"><span class="first"></span></a></li>
-				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }"><span class="prev"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/search.do?pg=1&searchType=${searchType}&keyword=${keyword}"><span class="first"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/search.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }&searchType=${searchType}&keyword=${keyword}"><span class="prev"></span></a></li>
             <c:forEach var="num" begin="${ pagenationDTO.pageGroupStart }" end="${ pagenationDTO.pageGroupEnd }">
-				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ num }" class="${ pagenationDTO.currentPage == num ? 'current' : 'off' }">${ num }</a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/search.do?pg=${ num }&searchType=${searchType}&keyword=${keyword}" class="${ pagenationDTO.currentPage == num ? 'current' : 'off' }">${ num }</a></li>
 			</c:forEach>
-				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }"><span class="next"></span></a></li>
-				<li><a href="/greenUniv/AMS/educationOperation/list.do?pg=${ pagenationDTO.lastPageNum }"><span class="last"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/search.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }&searchType=${searchType}&keyword=${keyword}"><span class="next"></span></a></li>
+				<li><a href="/greenUniv/AMS/educationOperation/search.do?pg=${ pagenationDTO.lastPageNum }&searchType=${searchType}&keyword=${keyword}"><span class="last"></span></a></li>
 			</ul>
 		</main>
 	</div>
