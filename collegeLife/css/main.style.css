@@ -99,6 +99,84 @@ header {
   color: rgb(80, 101, 133);
 }
 
+ /* 사이드바 */
+  .sidebar {
+      width: 210px;
+      background-color: white;
+  }
+
+  .sidebar-header {
+      background-color: white;
+      color: black;
+      padding: 20px 20px 20px 0;
+      font-weight: bold;
+      font-size: 32px;
+      border-bottom: 2px solid black;
+      height: 65px; 
+      display: flex;
+      align-items: center; 
+  }
+
+  .sidebar ul {
+      list-style: none;
+  }
+
+  .sidebar li {
+      border-bottom: 1px solid #eee;
+      height: 60px;
+  }
+
+  .sidebar a {
+      display: block;
+      padding: 20px 16px;
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      height: 100%;
+  }
+
+  .sidebar a.active {
+      background-color: #4a90e2;
+      color: white;
+  }
+
+  .sidebar a:hover:not(.active) {
+      background-color: #f0f0f0;
+  }
+
+/* 브레드 크럼 */
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 0 20px;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.breadcrumb span {
+    color: #666;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
 /* ================================
    Main
 ================================ */

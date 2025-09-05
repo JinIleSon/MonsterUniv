@@ -25,6 +25,32 @@
             gap: 50px; 
             padding-top: 35px;
         }
+
+        /* 브레드 크럼 */
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 11px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: right;
+            padding: 0 20px;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
         /* 사이드바 */
         .sidebar {
             width: 200px;

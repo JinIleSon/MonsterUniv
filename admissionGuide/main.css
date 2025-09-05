@@ -16,7 +16,7 @@
             /* padding: 10px; */
         }
 
-        /* 브레드크럼
+        /* 브레드크럼 */
         .breadcrumb {
             background-color: #f8f9fa;
             padding: 10px 0;
@@ -39,7 +39,7 @@
 
         .breadcrumb a:hover {
             text-decoration: underline;
-        } */
+        }
 
         /* 메인 컨테이너 */
         .main-container {
