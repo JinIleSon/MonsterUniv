@@ -201,7 +201,7 @@
                             <option value="nick">작성자</option>
                         </select>
                         <input type="text" name="keyword" placeholder="검색어를 입력해 주세요" style="border: 1px solid #e9e9e9; width:242px; height:32px; flex:1;padding-left:8px;"/>
-                        <input type="submit" value="검색" style="border: 1px solid #e9e9e9; background-color: #5198f9; width:60px; height:35px; color:white; font-weight: 200;">
+                        <input type="submit" value="검색" style=" border: 1px solid #e9e9e9; background-color: #5198f9; width:60px; height:35px; color:white; font-weight: 200;">
                     </form>
                 </div>
                 <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
@@ -222,7 +222,7 @@
 	                            </div>
                         	</td>
 			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:10px; text-align: center;">${commu.nick}</td>
-			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:18px;"><a href="#" style="style="text-decoration:none; color:black;">${commu.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8; text-align: left; padding-left:18px;"><a href="#" style="text-decoration : none; color : black;">${commu.title}</a></td>
 			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.date}</td>
 			                <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${commu.hits}</td>
 			            </tr>
@@ -232,7 +232,7 @@
                 <div style=" height: 100px; margin-top:30px;">
                  <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
 
-                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_emp_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}'" class="first-page">
 	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
 						<c:choose>
 						  <c:when test="${pagenationDTO.currentPage == 1}">
@@ -240,13 +240,13 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.currentPage-1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_emp_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="prev-page">
 						  </c:otherwise>
 						</c:choose>
 						
 						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_emp_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
 	                    </c:forEach>
 						
 						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
@@ -256,11 +256,11 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.currentPage+1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_emp_search.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="next-page">
 						  </c:otherwise>
 						</c:choose>
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_employmentInformation.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_emp_search.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}'" class="last-page">
 	                </form>
                 </div>
             </div>
