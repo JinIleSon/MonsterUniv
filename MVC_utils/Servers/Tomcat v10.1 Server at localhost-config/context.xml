@@ -27,7 +27,7 @@
     <Manager pathname="SESSIONS.ser" />
     -->
     <Resource
-    	name="jdbc/greandae3"
+    	name="jdbc/greendae3"
     	auth="Container"
     	type="javax.sql.DataSource"
     	driverClassName="com.mysql.cj.jdbc.Driver"
