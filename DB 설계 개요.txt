@@ -35,6 +35,7 @@ date -> not null
 입학안내_공지사항(Adm_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick -> not null
 date -> not null
 hits -> default 0
 
@@ -42,6 +43,7 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
+nick -> not null
 date -> not null
 condition -> not null
 
@@ -59,6 +61,7 @@ note(비고) - dummy(아무 데이터)
 학사안내_공지사항(AA_notice)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick → not null
 date -> not null
 hits -> default 0
 
@@ -94,6 +97,7 @@ regDate(등록일) - not null
 커뮤니티_공지사항(Commu_anno)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick -> not null
 date -> not null
 hits -> default 0
 
@@ -101,6 +105,7 @@ hits -> default 0
 id -> PK, AUTO INCREMENT
 classify -> not null
 title -> not null
+nick -> not null
 date -> not null
 hits -> default 0
 
@@ -108,6 +113,7 @@ hits -> default 0
 // 업체도 sessUser로 가져오면 될 듯. 이름으로.
 id(번호) -> PK, AUTO INCREMENT
 condition(상태) -> not null
+nick(업체) -> not null
 title(채용정보) -> not null
 date(마감일) -> not null
 hits(조회) -> default 0
@@ -115,18 +121,21 @@ hits(조회) -> default 0
 커뮤니티_자유게시판(Commu_free)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick -> not null
 date -> not null
 hits -> default 0
 
 커뮤니티_질문과 답변(Commu_QnA)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick -> not null
 date -> not null
 condition -> not null
 
 커뮤니티_자료실(Commu_refer)
 id -> PK, AUTO INCREMENT
 title -> not null
+nick -> not null
 date -> not null
 hits -> default 0
 
@@ -207,7 +216,7 @@ prof(담당교수) - not null
 수업 시간 속성
     timeS수업 시작 - not null
     timeE수업 종료 - not null
-    timeD수업 요일 - not null
+    timeD수업 요일 - not null : 속성 date → varchar로 변경
 
 evaWay평가방식 - not null
 book교재
