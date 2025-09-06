@@ -7,8 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학소개_총장 인사말</title>
-    <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/about_main.style.css">
+    <!--css연결-->
+    <link rel="stylesheet" href="../css/main_main.style.css">
+    <link rel="stylesheet" href="../css/Header.style.css">
+    <link rel="stylesheet" href="../css/Footer.style.css">
+    <!--부트스트랩 연결-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/fonts.css">
     <style>
         
         hr{
@@ -72,10 +78,12 @@
         }
         
         /* 게시판 아래버튼 부분 끝 */
+    main > :first-child{ margin-top: 0; }
+
+        
     </style>
 </head>
 <body>
-
     <!--1.헤더영역-->
     <header>
         <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
@@ -83,9 +91,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="#">HOME</a></li>
+                        <li><a href="./main.html">HOME</a></li>
                         <li><a href="#">사이트맵</a></li>
-                        <li><a href="#">로그인</a></li>
+                        <li><a href="../login/login.html">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -95,38 +103,102 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
-
+                <a href="./main.html"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
-                    <ul>
-                        <li><a href="#">대학소개</a></li>
-                        <li><a href="#">입학안내</a></li>
-                        <li><a href="#">대학·대학원</a></li>
-                        <li><a href="#">학사안내</a></li>
-                        <li><a href="#">대학생활</a></li>
-                        <li style="position: relative;">
-                            <a href="#">커뮤니티</a>
-                            <div style="width:197.25px; height:42px;
-                              position: absolute; top: 205%;
-                              transform: translateX(-65%);
-                              display:flex;
-                              align-items: center;
-                              ">
-                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">총장 인사말</span>
-                            </div>
-                        </li>
+                    <ul class="main-menu">
+                        <li data-menu="intro"><a href="../about/about_greeting.html">대학소개</a></li>
+                        <li data-menu="admission"><a href="../admissionGuide/admissionGuide_notice.html">입학안내</a></li>
+                        <li data-menu="college"><a href="../college/college_education.html">대학·대학원</a></li>
+                        <li data-menu="academic"><a href="../academicAffairs/academicAffairs_notice.html">학사안내</a></li>
+                        <li data-menu="life"><a href="../collegeLife/collegeLife_studentCouncil.html">대학생활</a></li>
+                        <li data-menu="community"><a href="../community/community_announcement.html">커뮤니티</a></li>
                     </ul>
                 </div>
-            </div>     
-        </div>   
+            </div>    
+        </div>
+
+        
+
+        <!-- 통합 드롭다운 바 -->
+        <div class="dropdown-bar">
+            <div class="inner">
+                    <div class="dropdown-section" data-menu="intro">
+                        <h4>대학소개</h4>
+                        <ul>
+                            <li><a href="../about/about_greeting.html">총장인사</a></li>
+                            <li><a href="../about/about_philosophy.html">교육이념</a></li>
+                            <li><a href="../about/about_history.html">연혁</a></li>
+                            <li><a href="../about/about_organization.html">조직도</a></li>
+                            <li><a href="../about/about_location.html">찾아오시는길</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" data-menu="admission">
+                        <h4>입학안내</h4>
+                        <ul>
+                            <li><a href="../admissionGuide/admissionGuide_early.html">수시모집</a></li>
+                            <li><a href="../admissionGuide/admissionGuide_regular.html">정시모집</a></li>
+                            <li><a href="../admissionGuide/admissionGuide_transfer.html">편입학</a></li>
+                            <li><a href="../admissionGuide/admissionGuide_counsel.html">입학상담</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" data-menu="college">
+                        <h4>대학·대학원</h4>
+                        <ul>
+                            <li><a href="../college/college_humanities.html">단과대학</a></li>
+                            <li><a href="../college/college_graduateSchool.html">대학원</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" data-menu="academic">
+                        <h4>학사안내</h4>
+                        <ul>
+                            <li><a href="../academicAffairs/academicAffairs_schedules.html">학사일정</a></li>
+                            <li><a href="../academicAffairs/academicAffairs_courseRegist.html">수강신청</a></li>
+                            <li><a href="../academicAffairs/academicAffairs_grades.html">성적관리</a></li>
+                            <li><a href="../academicAffairs/academicAffairs_graduation.html">졸업요건</a></li>
+                            <li><a href="../academicAffairs/academicAffairs_FAQ.html">F&Q</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" data-menu="life">
+                        <h4>대학생활</h4>
+                        <ul>
+                            <li><a href="../collegeLife/collegeLife_studentCouncil.html">학생회 소개</a></li>
+                            <li><a href="../collegeLife/collegeLife_clubStudy.html">동아리</a></li>
+                            <li><a href="../collegeLife/collegeLife_menuGuide.html">학생식당</a></li>
+                            <li><a href="../collegeLife/collegeLife_gallery.html">갤러리</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" data-menu="community">
+                        <h4>커뮤니티</h4>
+                        <ul style="">
+                            <li><a href="../community/community_announcement.html">공지사항</a></li>
+                            <li><a href="../community/community_newsAndColumn.html">뉴스 및 칼럼</a></li>
+                            <li><a href="../community/community_freeDiscussionBoard.html">자유게시판</a></li>
+                            <li><a href="../community/community_QnA.html">Q&amp;A</a></li>
+                            <li style="position: relative;"><a href="../community/community_referenceLibrary.html">자료실</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </div>
     </header>
+    
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
+        <div style="width:220px; height:42px;
+            position: absolute; 
+            transform: translateX(214%);
+            display:flex;
+            align-items: center;
+            ">
+                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
+                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">총장 인사말</span>
+        </div>
     </div>
+    
         <!-- 사이드바 시작-->
     <div style="height: 1088px;" class = "inner">
         <div style="height:50px; "></div>
