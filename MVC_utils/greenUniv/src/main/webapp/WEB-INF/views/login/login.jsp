@@ -167,9 +167,9 @@
                         <input type="password" name="" placeholder="비밀번호" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/>
                         <input type="submit" value="로그인" style="width: 100%; height: 50px; font-size: 13pt; background-color: #3F97F6; border: 1px solid #e5e5e5; color: white; font-weight: 100;"/>
                     </form>
-                <a href="" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
+                <a href="/greenUniv/login/terms.do" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
             </div>
-            <div style="position: absolute; top: 334px; width:600px;">
+            <div style="position: absolute; top: 334px; width:600px; z-index:-1;">
                 <ul style="list-style-type: '- '; padding-left: 10px;">
                     <li style="list-style-type: none; margin-left:-10px; margin-bottom: 8px; color:#215075; font-size: 13pt; font-weight: 500; display:flex; align-items: center;">
                         <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px;">아이디, 비밀번호 안내

@@ -140,7 +140,7 @@
             <p style="color: #3F97F6; font-weight: 500; font-size:20px; margin-bottom:3px; ">회원가입</p>
             <p style="color: #3F97F6; margin-top:0px; margin-bottom:0px;">반갑습니다. 몬스터대학교입니다. 회원가입 후 더 많은 정보를 이용하세요.</p>
             <p style="color: #3F97F6; margin-top:2px; margin-bottom:32px;">대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다.</p>
-            <form action="" method="">
+            <form action="/greenUniv/login/login.do" method="">
                 <table style="width:100%; border-collapse: collapse; ">
                     <tr style="border-bottom:1px #DDDDDD solid; border-top: 2px #071F4B solid;">
                         <td style="width:px; height:65px; background-color: #F4F8FC; text-align: center; font-weight: 350; border-right:1px solid #DEDEDE;">아이디<font style="color: red;">*</font></td>
