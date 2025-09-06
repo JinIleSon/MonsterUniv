@@ -205,7 +205,7 @@
                 <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">총장 인사말</a>
+                            <a href="/greenUniv/about/about_greeting.do" style="color:black;">총장 인사말</a>
                         </td>
                     </tr>
                     <tr>
@@ -215,17 +215,17 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">연혁</a>
+                            <a href="/greenUniv/about/about_history.do" style="color:black;">연혁</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">조직도</a>
+                            <a href="/greenUniv/about/about_organization.do" style="color:black;">조직도</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">오시는 길</a>
+                            <a href="/greenUniv/about/about_location.do" style="color: black;">오시는 길</a>
                         </td>
                     </tr>
                 </table>

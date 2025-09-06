@@ -144,17 +144,17 @@
                 <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">공지사항</a>
+                            <a href="/greenUniv/academicAffairs/academicAffairs_notice.do" style="color: black;">공지사항</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">학사일정</a>
+                            <a href="/greenUniv/academicAffairs/academicAffairs_schedules.do" style="color: black;">학사일정</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">수강신청</a>
+                            <a href="/greenUniv/academicAffairs/academicAffairs_courseRegist.do" style="color: black;">수강신청</a>
                         </td>
                     </tr>
                     <tr>
@@ -164,12 +164,12 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">수료 및 졸업</a>
+                            <a href="/greenUniv/academicAffairs/academicAffairs_graduation.do" style="color: black;">수료 및 졸업</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">자주묻는질문</a>
+                            <a href="/greenUniv/academicAffairs/academicAffairs_FAQ.do" style="color: black;">자주묻는질문</a>
                         </td>
                     </tr>
                 </table>
