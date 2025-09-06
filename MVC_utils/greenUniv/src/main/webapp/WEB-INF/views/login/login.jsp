@@ -167,7 +167,7 @@
                         <input type="password" name="" placeholder="비밀번호" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/>
                         <input type="submit" value="로그인" style="width: 100%; height: 50px; font-size: 13pt; background-color: #3F97F6; border: 1px solid #e5e5e5; color: white; font-weight: 100;"/>
                     </form>
-                <a href="#" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
+                <a href="" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
             </div>
             <div style="position: absolute; top: 334px; width:600px;">
                 <ul style="list-style-type: '- '; padding-left: 10px;">

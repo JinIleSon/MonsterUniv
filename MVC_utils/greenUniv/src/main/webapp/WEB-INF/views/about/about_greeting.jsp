@@ -213,22 +213,22 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">교육이념</a>
+                            <a href="/greenUniv/about/about_philosophy.do" style="color: black;">교육이념</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">연혁</a>
+                            <a href="/greenUniv/about/about_history.do" style="color:black;">연혁</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">조직도</a>
+                            <a href="/greenUniv/about/about_organization.do" style="color:black;">조직도</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">오시는 길</a>
+                            <a href="/greenUniv/about/about_location.do" style="color: black;">오시는 길</a>
                         </td>
                     </tr>
                 </table>
