@@ -36,6 +36,12 @@
 	<a href="/greenUniv/academicAffairs/academicAffairs_graduation.do">학사안내_수료 및 졸업</a><hr>
 	<a href="/greenUniv/academicAffairs/academicAffairs_FAQ.do">학사안내_자주묻는질문</a><hr>
 	<hr>
+	<h2>대학생활</h2>
+	<a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활_학생회 소개</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">대학생활_동아리/스터디</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">대학생활_식단안내</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_gallery.do">대학생활_갤러리</a><hr>
+	<hr>
 	<h2>커뮤니티</h2>
 	<a href="/greenUniv/community/community_announcement.do">커뮤니티_공지사항</a><hr>
 	<a href="/greenUniv/community/community_newsAndColumn.do">커뮤니티_뉴스 및 칼럼</a><hr>
