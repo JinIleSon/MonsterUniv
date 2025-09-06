@@ -50,5 +50,14 @@
 	<a href="/greenUniv/community/community_QnA.do">커뮤니티_질문과 답변</a><hr>
 	<a href="/greenUniv/community/community_referenceLibrary.do">커뮤니티_자료실</a><hr>
 	<hr>
+	<h2>학생지원</h2>
+	<h1>공사중</h1><br><br><br>
+	<h2>로그인</h2>
+	<a href="/greenUniv/login/login.do">로그인</a><hr>
+	<a href="/greenUniv/login/terms.do">약관안내</a><hr>
+	<a href="/greenUniv/login/join.do">회원가입</a><hr>
+	<hr>
+	<h2>학사관리시스템</h2>
+	<h1>공사중</h1><br><br><br>
 </body>
 </html>
