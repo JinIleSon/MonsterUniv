@@ -209,22 +209,22 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">자연과학대학</a>
+                            <a href="/greenUniv/college/college_science.do" style="color: black;">자연과학대학</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">공과대학</a>
+                            <a href="/greenUniv/college/college_engineering.do" style="color: black;">공과대학</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black;">사범대학</a>
+                            <a href="/greenUniv/college/college_education.do" style="color:black;">사범대학</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">대학원</a>
+                            <a href="/greenUniv/college/college_graduateSchool.do" style="color: black;">대학원</a>
                         </td>
                     </tr>
                 </table>
