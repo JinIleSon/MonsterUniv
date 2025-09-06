@@ -21,6 +21,13 @@
 	<a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">입학안내_편입학</a><hr>
 	<a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학안내_입학상담</a><hr>
 	<hr>
+	<h2>대학·대학원</h2>
+	<a href="/greenUniv/college/college_humanities.do">대학·대학원_인문사회대학</a><hr>
+	<a href="/greenUniv/college/college_science.do">대학·대학원_자연과학대학</a><hr>
+	<a href="/greenUniv/college/college_engineering.do">대학·대학원_공과대학</a><hr>
+	<a href="/greenUniv/college/college_education.do">대학·대학원_사범대학</a><hr>
+	<a href="/greenUniv/college/college_graduateSchool.do">대학·대학원_대학원</a><hr>
+	<hr>
 	<h2>학사안내</h2>
 	<a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내_공지사항</a><hr>
 	<a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사안내_학사일정</a><hr>
