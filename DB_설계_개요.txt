@@ -70,10 +70,9 @@ id -> PK AUTO INCREMENT(테이블 표시 x)
 content -> not null
 
 학사안내_자주묻는질문(AA_FAQ) -> AcademicAffairs_FAQ 축약
-id(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
-question(Q, 질문) - not null
-answer(A, 답변) - not null           ->>> 질문 란을 누르면 답변이 나오는 방식으로 되는 듯
-
+id(테이블에 표기 x) - Auto Increment
+what(식별번호, 테이블에 표기 x) - PK ->>> 식별번호 1이면 휴,복학 관련 / 식별번호 2면 교과 및 학사 관련 / 식별번호 3이면 수강신청 관련
+comment - 질문 또는 답변
 ------------------------------------------------
 
 대학생활_식단안내(CL_menuGuide)
