@@ -7,13 +7,20 @@
 <title>테스트</title>
 </head>
 <body>
-	<h3>테스트입니다.</h3>
-	
+	<h2>커뮤니티</h2>
 	<a href="/greenUniv/community/community_announcement.do">커뮤니티_공지사항</a><hr>
 	<a href="/greenUniv/community/community_newsAndColumn.do">커뮤니티_뉴스 및 칼럼</a><hr>
 	<a href="/greenUniv/community/community_employmentInformation.do">커뮤니티_취업정보</a><hr>
 	<a href="/greenUniv/community/community_freeDiscussionBoard.do">커뮤니티_자유게시판</a><hr>
 	<a href="/greenUniv/community/community_QnA.do">커뮤니티_질문과 답변</a><hr>
 	<a href="/greenUniv/community/community_referenceLibrary.do">커뮤니티_자료실</a><hr>
+	<hr>
+	<h2>학사안내</h2>
+	<a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내_공지사항</a><hr>
+	<a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사안내_학사일정</a><hr>
+	<a href="/greenUniv/academicAffairs/academicAffairs_courseRegist.do">학사안내_수강신청</a><hr>
+	<a href="/greenUniv/academicAffairs/academicAffairs_grades.do">학사안내_성적</a><hr>
+	<a href="/greenUniv/academicAffairs/academicAffairs_graduation.do">학사안내_수료 및 졸업</a><hr>
+	<a href="/greenUniv/academicAffairs/academicAffairs_FAQ.do">학사안내_자주묻는질문</a><hr>
 </body>
 </html>

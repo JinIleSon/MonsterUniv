@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,7 +174,7 @@
                         </div>
                     </div>
                     <div style="border: 1px solid gray; width: 150px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; padding-bottom: 3px;">
-                        <a href="#" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="/images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
+                        <a href="#" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="../images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
                     </div>
                     <div style="height:100px;"></div>
                 </div>
