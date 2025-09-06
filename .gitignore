@@ -37,3 +37,5 @@
 **/.#*
 **/CVS/**
 .metadata
+**/.classpath
+**/.settings

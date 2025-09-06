@@ -1,5 +1,5 @@
 package service;
 
-public class SA_detailsService {
+public enum SA_detailsService {
 
 }
