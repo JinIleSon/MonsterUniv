@@ -2,7 +2,6 @@ package util;
 
 public class Sql {
 	
-<<<<<<< HEAD
 	// article
 	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM commu_anno";
 	
@@ -36,6 +35,14 @@ public class Sql {
 	// 파일 넣지않음
 //	public static final String INSERT_ARTICLE = "INSERT INTO TB_ARTICLE (title, content, file_cnt, writer, reg_ip, wdate) VALUES (?,?,?,?,?,sysdate)";
 		
-=======
->>>>>>> origin/test
+	
+	//lecture 
+	public static final String INSERT_LECTURE = "INSERT INTO lecture (deptcode,`year`,semester,compdiv,lname,lexpl,opencol,openmaj,grade,prof,yclass,yclase,times,timee,timed,evaway,book,room,maxnum,nownum) " + 
+												"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,32)";
+	
+	public static final String SELECT_LECTURE_COUNT_TOTAL = "SELECT COUNT(*) FROM lecture";
+	public static final String SELECT_LECTURE_COUNT_SEARCH = "SELECT COUNT(*) FROM lecture";
+	public static final String SELECT_LECTURE_ALL = "SELECT * FROM lecture\r\n"
+													+ "ORDER BY deptcode DESC\r\n"
+													+ "LIMIT 10 OFFSET ?";
 }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -515,7 +516,7 @@
                 <input type="text" id="search-title" placeholder="키워드 입력">
                 <input type="button" class="search-btn" value="검색">
             </form>
-
+            
             <table>
                 <thead>
                     <tr>

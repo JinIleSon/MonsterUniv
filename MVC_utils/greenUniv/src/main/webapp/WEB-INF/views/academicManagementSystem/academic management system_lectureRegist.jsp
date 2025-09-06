@@ -868,8 +868,9 @@
             <form action="/greenUniv/academicManagementSystem/AMS_lectureRegist.do" method="post">
 	            <div class="main-lecture1">
 	                <div class="list1">
-	                    <div>과목코드</div>
-	                    <div>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</div>
+	                    <div>과목코드</div>	            
+	                    <div><input type="hidden" name="deptcode" value="120000"></div>
+	                    <!-- <div>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</div>  -->
 	                    <div>개설학과</div>
 	                    <div>
 	                        <select name="openCol">
@@ -884,16 +885,22 @@
 	                    <div>개설학년</div>
 	                    <div>
 	                        <select name="year">
-	                            <option>1학년</option>
+	                            <option value="1">1학년</option>
+	                            <option value="2">2학년</option>
+	                            <option value="3">3학년</option>
+	                            <option value="4">4학년</option>
 	                        </select>
 	                        <select name="semester" style="margin-left: 2px;">
-	                            <option value="1학기">1학기</option>
+	                            <option value="1">1학기</option>
+	                            <option value="2">2학기</option>
 	                        </select>
 	                    </div>
 	                    <div>학점</div>
 	                    <div>
 	                        <select name="grade">
-	                            <option>3학점</option>
+		                        <option value="1">1학점</option>
+		                        <option value="2">2학점</option>
+	                            <option value="3" selected>3학점</option>
 	                        </select>
 	                    </div>
 	                </div>
@@ -901,13 +908,16 @@
 	                    <div>이수구분</div>
 	                    <div>
 	                        <select name="compDiv">
-	                            <option>전공 선택</option>
+		                        <option value="교양 선택">교양 선택</option>
+		                        <option value="교양 필수">교양 필수</option>	                   
+	                            <option value="전공 선택" selected>전공 선택</option>
+	                            <option value="전공 필수">전공 필수</option>
 	                        </select>
 	                    </div>
 	                    <div>담당교수</div>
 	                    <div>
 	                        <select name="prof">
-	                            <option>김유신</option>
+	                            <option value="김유신">김유신</option>
 	                        </select>
 	                    </div>
 	                </div>
