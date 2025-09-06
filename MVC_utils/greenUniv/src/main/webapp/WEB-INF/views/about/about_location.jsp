@@ -104,12 +104,12 @@
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
                     <ul class="main-menu">
-                        <li data-menu="intro"><a href="../about/about_greeting.html">대학소개</a></li>
-                        <li data-menu="admission"><a href="../admissionGuide/admissionGuide_notice.html">입학안내</a></li>
-                        <li data-menu="college"><a href="../college/college_education.html">대학·대학원</a></li>
-                        <li data-menu="academic"><a href="../academicAffairs/academicAffairs_notice.html">학사안내</a></li>
-                        <li data-menu="life"><a href="../collegeLife/collegeLife_studentCouncil.html">대학생활</a></li>
-                        <li data-menu="community"><a href="../community/community_announcement.html">커뮤니티</a></li>
+                        <li data-menu="intro"><a href="/greenUniv/about/about_greeting.do">대학소개</a></li>
+                        <li data-menu="admission"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
+                        <li data-menu="college"><a href="/greenUniv/college/college_education.do">대학·대학원</a></li>
+                        <li data-menu="academic"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내</a></li>
+                        <li data-menu="life"><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활</a></li>
+                        <li data-menu="community"><a href="/greenUniv/community/community_announcement.do">커뮤니티</a></li>
                     </ul>
                 </div>
             </div>    
@@ -123,56 +123,56 @@
                     <div class="dropdown-section" data-menu="intro">
                         <h4>대학소개</h4>
                         <ul>
-                            <li><a href="../about/about_greeting.html">총장인사</a></li>
-                            <li><a href="../about/about_philosophy.html">교육이념</a></li>
-                            <li><a href="../about/about_history.html">연혁</a></li>
-                            <li><a href="../about/about_organization.html">조직도</a></li>
-                            <li><a href="../about/about_location.html">찾아오시는길</a></li>
+                            <li><a href="/greenUniv/about/about_greeting.do">총장인사</a></li>
+                            <li><a href="/greenUniv/about/about_philosophy.do">교육이념</a></li>
+                            <li><a href="/greenUniv/about/about_history.do">연혁</a></li>
+                            <li><a href="/greenUniv/about/about_organization.do">조직도</a></li>
+                            <li><a href="/greenUniv/about/about_location.do">찾아오시는길</a></li>
                         </ul>
                     </div>
                     <div class="dropdown-section" data-menu="admission">
                         <h4>입학안내</h4>
                         <ul>
-                            <li><a href="../admissionGuide/admissionGuide_early.html">수시모집</a></li>
-                            <li><a href="../admissionGuide/admissionGuide_regular.html">정시모집</a></li>
-                            <li><a href="../admissionGuide/admissionGuide_transfer.html">편입학</a></li>
-                            <li><a href="../admissionGuide/admissionGuide_counsel.html">입학상담</a></li>
+                            <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do">수시모집</a></li>
+                            <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do">정시모집</a></li>
+                            <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">편입학</a></li>
+                            <li><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
                         </ul>
                     </div>
                     <div class="dropdown-section" data-menu="college">
                         <h4>대학·대학원</h4>
                         <ul>
-                            <li><a href="../college/college_humanities.html">단과대학</a></li>
-                            <li><a href="../college/college_graduateSchool.html">대학원</a></li>
+                            <li><a href="/greenUniv/college/college_humanities.do">단과대학</a></li>
+                            <li><a href="/greenUniv/college/college_graduateSchool.do">대학원</a></li>
                         </ul>
                     </div>
                     <div class="dropdown-section" data-menu="academic">
                         <h4>학사안내</h4>
                         <ul>
-                            <li><a href="../academicAffairs/academicAffairs_schedules.html">학사일정</a></li>
-                            <li><a href="../academicAffairs/academicAffairs_courseRegist.html">수강신청</a></li>
-                            <li><a href="../academicAffairs/academicAffairs_grades.html">성적관리</a></li>
-                            <li><a href="../academicAffairs/academicAffairs_graduation.html">졸업요건</a></li>
-                            <li><a href="../academicAffairs/academicAffairs_FAQ.html">F&Q</a></li>
+                            <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+                            <li><a href="/greenUniv/academicAffairs/academicAffairs_courseRegist.do">수강신청</a></li>
+                            <li><a href="/greenUniv/academicAffairs/academicAffairs_grades.do">성적</a></li>
+                            <li><a href="/greenUniv/academicAffairs/academicAffairs_graduation.do">졸업요건</a></li>
+                            <li><a href="/greenUniv/academicAffairs/academicAffairs_FAQ.do">F&Q</a></li>
                         </ul>
                     </div>
                     <div class="dropdown-section" data-menu="life">
                         <h4>대학생활</h4>
                         <ul>
-                            <li><a href="../collegeLife/collegeLife_studentCouncil.html">학생회 소개</a></li>
-                            <li><a href="../collegeLife/collegeLife_clubStudy.html">동아리</a></li>
-                            <li><a href="../collegeLife/collegeLife_menuGuide.html">학생식당</a></li>
-                            <li><a href="../collegeLife/collegeLife_gallery.html">갤러리</a></li>
+                            <li><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">학생회 소개</a></li>
+                            <li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">동아리</a></li>
+                            <li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">학생식당</a></li>
+                            <li><a href="/greenUniv/collegeLife/collegeLife_gallery.do">갤러리</a></li>
                         </ul>
                     </div>
                     <div class="dropdown-section" data-menu="community">
                         <h4>커뮤니티</h4>
                         <ul style="">
-                            <li><a href="../community/community_announcement.html">공지사항</a></li>
-                            <li><a href="../community/community_newsAndColumn.html">뉴스 및 칼럼</a></li>
-                            <li><a href="../community/community_freeDiscussionBoard.html">자유게시판</a></li>
-                            <li><a href="../community/community_QnA.html">Q&amp;A</a></li>
-                            <li style="position: relative;"><a href="../community/community_referenceLibrary.html">자료실</a></li>
+                            <li><a href="/greenUniv/community/community_announcement.do">공지사항</a></li>
+                            <li><a href="/greenUniv/community/community_newsAndColumn.do">뉴스 및 칼럼</a></li>
+                            <li><a href="/greenUniv/community/community_freeDiscussionBoard.do">자유게시판</a></li>
+                            <li><a href="/greenUniv/community/community_QnA.do">Q&amp;A</a></li>
+                            <li style="position: relative;"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
                         </ul>
                     </div>
                 </div>
