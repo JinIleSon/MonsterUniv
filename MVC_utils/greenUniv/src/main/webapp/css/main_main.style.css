@@ -1,0 +1,274 @@
+/* ================================
+   Main
+================================ */
+
+/* -------- 공통 레이아웃 -------- */
+:root{
+  --brand:#1e5aa8;          /* 포인트 블루 */
+  --brand-dark:#143b6a;     /* 딥블루 배경 */
+  --ink:#2b2f36;            /* 본문 텍스트 */
+  --muted:#8a96a6;          /* 서브 텍스트 */
+  --bg:#f2f5f9;             /* 페이지 배경 */
+  --card:#ffffff;           /* 카드 배경 */
+  --radius:12px;
+  --shadow:0 10px 24px rgba(24,39,75,.12);
+}
+
+main{ background:var(--bg); color:var(--ink); }
+.inner{ max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* 상단 섹션들 간 기본 간격 */
+section{ padding:36px 0; }
+
+section.hero {
+  padding: 0; /* 상하 패딩 제거 */
+  margin-bottom: 60px;
+}
+
+/* -------- (1) 히어로/슬라이드 -------- */
+/* 히어로는 화면 가로 전체 쓰고 싶으니 inner 제한 해제 */
+.hero .inner{ max-width:none; padding:0; position:relative; }
+
+/* 캐러셀 래퍼 */
+.hero_slider{
+  position:relative;
+  height: 420px;            /* 데스크톱 기준 높이 */
+  overflow:hidden;
+}
+
+/* 각 슬라이드 아이템을 동일 높이로 */
+.hero_slider .carousel-item{
+  height: 420px;
+  position:relative;
+}
+.hero_slider .carousel-item img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;         /* 이미지 꽉 채우기 */
+  display:block;
+}
+
+/* 상단을 살짝 어둡게 만드는 오버레이 */
+.hero_slider::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(6,18,34,.35) 0%, rgba(6,18,34,.55) 70%);
+  pointer-events:none;       /* 클릭 방해 X */
+  z-index:2;
+}
+
+/* 인디케이터/화살표가 오버레이 위에 보이도록 */
+.hero_slider .carousel-indicators,
+.hero_slider .carousel-control-prev,
+.hero_slider .carousel-control-next{
+  z-index:3;
+}
+
+/* 가운데 CTA 버튼 */
+.hero_cta{
+  position:absolute; left:50%; bottom:28%;
+  transform:translateX(-50%);
+  padding:12px 22px;
+  background:rgba(255,255,255,.92);
+  border:0; border-radius:999px;
+  font-weight:700; letter-spacing:.02em;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  cursor:pointer; z-index:4;
+}
+.hero_cta:hover{ background:#fff; }
+
+/* 반응형 높이 조정 */
+@media (max-width: 1024px){
+  .hero_slider, .hero_slider .carousel-item{ height:360px; }
+}
+@media (max-width: 600px){
+  .hero_slider, .hero_slider .carousel-item{ height:300px; }
+  .hero_cta{ bottom:22%; padding:10px 18px; }
+}
+
+/* -------- (2) 공지 보드 2단 -------- */
+/* 히어로 하단에 겹쳐 보이게 */
+.boards{ margin-top:-60px; position:relative; z-index:5; }
+.boards_grid{
+  background:transparent;
+  display:grid; gap:16px;
+  grid-template-columns:1fr 1fr;
+}
+
+/* 공통 보드 카드 */
+.board{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.board_header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 16px;
+  background:#eaf2ff;
+}
+.board_title{ margin:0; font-size:18px; font-weight:800; }
+.board_more{
+  width:28px; height:28px; line-height:28px;
+  border-radius:8px; border:0; cursor:pointer;
+  background:#fff; box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+  font-weight:700;
+}
+.board_list{ list-style:none; margin:0; padding:10px 16px 16px; }
+.board_list li{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 0; border-bottom:1px dashed #e5e9f0;
+  font-size:14px; color:#253041;
+}
+.board_list li:last-child{ border-bottom:0; }
+
+/* 좌측(학사안내) – 기본 카드 그대로 사용 */
+.board--notice .board_header{ background:#eaf2ff; }
+
+/* 우측(공지사항) – 파란 카드 */
+.board_announce{
+  background:var(--brand);
+  color:#fff;
+}
+.board_announce .board_header{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+.board_announce .board_more{
+  background:rgba(255,255,255,.85);
+}
+.board_announce .board_list li{
+  border-color:rgba(255,255,255,.28);
+  color:#fff;
+}
+
+/* -------- (3) 포토 갤러리 4칸 -------- */
+.gallery .section_header{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:12px;
+}
+.section_header h3{ margin:0; font-size:14px; letter-spacing:.12em; color:var(--muted); }
+.section_more{
+  width:28px; height:28px; border-radius:8px; border:0; cursor:pointer;
+  background:#fff; box-shadow:var(--shadow);
+  font-weight:700;
+}
+
+.gallery_grid{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(4, 1fr);
+}
+.gallery_grid img{
+  width:100%; height:150px; object-fit:cover; display:block;
+  border-radius:10px;
+  box-shadow:0 6px 14px rgba(16,24,40,.08);
+}
+
+/* -------- (4) 동아리 HELPER 풀배너 -------- */
+.helper-cta{
+  padding: 30px;  /* 풀배너 느낌 */
+  background-color: #143b6a; 
+  color:#fff;
+}
+.helper-cta .inner{ padding:0 20px; }
+.helper-cta_box{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:28px 0;
+}
+.helper-cta_box h3{ margin:0; font-size:20px; font-weight:800; }
+.helper-cta_box p{ margin:0; opacity:.95; line-height:1.6; }
+.helper-cta .btn{
+  display:inline-block; padding:10px 18px;
+  border:1.5px solid rgba(255,255,255,.9);
+  border-radius:999px; color:#fff; text-decoration:none;
+}
+.helper-cta .btn:hover{ background:rgba(255,255,255,.1); }
+
+/* -------- (5) 뉴스 & 스마트링크 2단 -------- */
+.news-smart_grid{
+  display:grid; gap:16px;
+  grid-template-columns:2fr 1fr;
+}
+
+/* 좌측 뉴스는 보드 재사용 */
+.news .board_header{ background:#eef4ff; }
+
+/* 우측 스마트링크 */
+.smart-link{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+.smart-link_title{
+  margin:0 0 10px; text-align:center; font-weight:800; letter-spacing:.08em; color:var(--muted);
+}
+
+.smart-link_grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.bg-main-link {
+  width: 100px;
+  height: 100px;
+  background-color: #9399b8 !important;
+  border-radius: 50% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.bg-main-link:hover {
+  background-color: #1e2f46 !important; /* hover 효과 */
+}
+
+.bg-main-link img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  filter: brightness(0) invert(1); /* 아이콘을 흰색처럼 보이게 */
+}
+
+.bg-main-link span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #fff; 
+}
+
+/* 3x2 아이콘 그리드(내용 들어가면 자동 정렬) */
+.smart-link_grid{
+  display:grid; gap:12px;
+  grid-template-columns:repeat(3, 1fr);
+}
+.smart-link_grid a{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; padding:14px 8px; text-decoration:none; color:var(--ink);
+  border-radius:14px; background:#f8fbff;
+  box-shadow:inset 0 0 0 1px #e6eefc;
+}
+.smart-link_grid a .icon{
+  width:56px; height:56px; border-radius:50%;
+  background:#fff; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 10px rgba(16,24,40,.08);
+  font-weight:800; /* 아이콘 대체용 텍스트 */
+}
+
+/* -------- 반응형 -------- */
+@media (max-width: 1024px){
+  .boards_grid{ grid-template-columns:1fr; }
+  .gallery_grid{ grid-template-columns:repeat(2, 1fr); }
+  .news-smart_grid{ grid-template-columns:1fr; }
+  .hero_slider{ height:360px; }
+}
+@media (max-width: 600px){
+  .gallery_grid{ grid-template-columns:1fr; }
+  .helper-cta_box{ flex-direction:column; align-items:flex-start; }
+  .hero_cta{ bottom:22%; }
+}
