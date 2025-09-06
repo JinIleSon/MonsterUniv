@@ -5,18 +5,16 @@ import java.util.List;
 
 import dto.Commu_freeDTO;
 import dto.PagenationDTO;
-import dto.UserDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import service.Commu_freeService;
 
-@WebServlet("/community/community_freeDiscussionBoard.do")
-public class ListController extends HttpServlet{
+@WebServlet("/community/comm_free_search.do")
+public class SearchListController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
@@ -24,34 +22,22 @@ public class ListController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		// 요청 페이지 번호 수신
 		String pg = req.getParameter("pg");
-				
-		// 페이지네이션 처리 요청
-		PagenationDTO pagenationDTO = commu_freeService.getPagenationDTO(pg, null, null);
-
-		// 글 목록 조회
+		String searchType = req.getParameter("searchType");
+		String keyword = req.getParameter("keyword");
+		
+	
+		PagenationDTO pagenationDTO = commu_freeService.getPagenationDTO(pg, searchType, keyword);
+		
 		int start = pagenationDTO.getStart();
-		List<Commu_freeDTO> dtoList = commu_freeService.findAll(start);
+		List<Commu_freeDTO> dtoList = commu_freeService.findAllSearch(start, searchType, keyword);
 		
-		// 현재 사용자 권한 확인
-//		HttpSession session = req.getSession();
-//		UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
-		
-		// 사용자 생성 시 바꾸기
-//		String role = sessUser.getUs_role();
-		
-		// request 공유참조(JSP에서 출력)
 		req.setAttribute("dtoList", dtoList);
-		
-		// 사용자 생성 시 바꾸기
-//		req.setAttribute("role", role);
-		
+		req.setAttribute("searchType", searchType);
+		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/community/community_freeDiscussionBoard.jsp");
+				
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/community/comm_free_searchList.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

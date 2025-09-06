@@ -1,13 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>커뮤니티_자료실</title>
+    <title>커뮤니티_질문과_답변</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../community_css/main.style.css">
     <style>
@@ -75,7 +75,6 @@
             width: 33px;
             height: 30px;
         }
-        
         /* 현재 위치 페이지 버튼 */
         .current {
  		    border: 1px #eaeaea solid; 
@@ -95,7 +94,6 @@
         	width: 34px; 
         	margin-right:3px;
         }
-        
         
         /* 게시판 아래버튼 부분 끝 */
     </style>
@@ -139,10 +137,10 @@
                               align-items: center;
                               ">
                                 <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
-                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:18px;">커뮤니티</span>
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:18px;">자료실</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:11px;">
+                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:11px;">커뮤니티</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:11px;">
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:11px;">질문과 답변</span>
                             </div>
                         </li>
                     </ul>
@@ -179,24 +177,24 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">질문과 답변</a>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white; font-weight:300;">질문과 답변</a>
                         </td>
                     </tr>
                     <tr>
-                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">자료실</a>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">자료실</a>
                         </td>
                     </tr>
                 </table>
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">자료실</b>
+                    <b style="font-weight: 700; font-size:26px;">질문과 답변</b>
                 </div>
                 <hr style="border:none; border-top: 2px solid;">
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
-                    <form action="/greenUniv/community/comm_refer_search.do" style="display: flex;">
+                    <form action="/greenUniv/community/comm_QnA_search.do" style="display: flex;">
                         <select name="searchType" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
                             <option value="all">전체</option>
                             <option value="title">제목</option>
@@ -210,26 +208,107 @@
                     <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
                         <td style="width: 90px;">번호</td>
                         <td style="width: 530px;">제목</td>
-                        <td style="width: 130px;">작성자</td>
+                        <td style="">작성자</td>
                         <td style="">작성일</td>
-                        <td style="width: 90px;">조회수</td>
+                        <td style="width:140px;">상태</td>
                     </tr>
                     <c:forEach var="commu" items="${dtoList}" varStatus="status">
-			            <tr style="height:60px;">
-			                <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">${pagenationDTO.currentPageStartNum - status.index}</td>
-			                <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black; display:flex; align-items: center;">&nbsp;<img src="../images/ico-file01.png" alt="" style="margin-right:10px;margin-top:3px;">${commu.title}</a></td>
-			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.nick}</td>
-			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.date}</td>
-			                <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${commu.hits}</td>
-			            </tr>
-		           		<c:set var="currentPageStartNum" value="${currentPageStartNum-1}" />
-	           	 	</c:forEach>
-                    
+					    <c:choose>
+					        <%-- 답변글 (제목에 RE 포함) --%>
+					        <c:when test="${fn:contains(commu.title, 'RE')}">
+					            <tr style="height:60px; background-color:#efefef;">
+					                <td style="width:80px; border-bottom:1px solid #b8b8b8; background-color:#efefef;">
+					                    ${pagenationDTO.currentPageStartNum - status.index}
+					                </td>
+					                <td style="width:500px; border-bottom:1px solid #b8b8b8; text-align:left; background-color:#efefef;">
+					                    <a href="#" style="color:black; display:flex; align-items:center;">
+					                        &nbsp;<img src="../images/ico-reply.png" alt="" style="height:10px; width:15px; margin-right:6px;">
+					                        ${commu.title}
+					                    </a>
+					                </td>
+					                <td style="border-bottom:1px solid #b8b8b8; background-color:#efefef;">${commu.nick}</td>
+					                <td style="border-bottom:1px solid #b8b8b8; background-color:#efefef;">${commu.date}</td>
+					                <td style="width:65px; border-bottom:1px solid #b8b8b8; background-color:#efefef;">
+					                    <c:choose>
+					                        <c:when test="${commu.condition eq '답변완료'}">
+					                            <b style="color:#3f9524; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:when test="${commu.condition eq '답변대기'}">
+					                            <b style="color:red; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:otherwise>
+					                            ${commu.condition}
+					                        </c:otherwise>
+					                    </c:choose>
+					                </td>
+					            </tr>
+					        </c:when>
+					
+					        <%-- 문의글 (제목에 '문의' 포함) --%>
+					        <c:when test="${fn:contains(commu.title, '문의')}">
+					            <tr style="height:60px;">
+					                <td style="width:80px; border-bottom:1px solid #b8b8b8;">
+					                    ${pagenationDTO.currentPageStartNum - status.index}
+					                </td>
+					                <td style="width:500px; border-bottom:1px solid #b8b8b8; text-align:left;">
+					                    <a href="#" style="color:black; display:flex; align-items:center;">
+					                        &nbsp;<img src="../images/ico-lock.png" alt="" style="margin-right:7px;">
+					                        ${commu.title}
+					                    </a>
+					                </td>
+					                <td style="border-bottom:1px solid #b8b8b8;">${commu.nick}</td>
+					                <td style="border-bottom:1px solid #b8b8b8;">${commu.date}</td>
+					                <td style="width:65px; border-bottom:1px solid #b8b8b8;">
+					                    <c:choose>
+					                        <c:when test="${commu.condition eq '답변완료'}">
+					                            <b style="color:#3f9524; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:when test="${commu.condition eq '답변대기'}">
+					                            <b style="color:red; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:otherwise>
+					                            ${commu.condition}
+					                        </c:otherwise>
+					                    </c:choose>
+					                </td>
+					            </tr>
+					        </c:when>
+					
+					        <%-- 일반 글 --%>
+					        <c:otherwise>
+					            <tr style="height:60px;">
+					                <td style="width:80px; border-bottom:1px solid #b8b8b8;">
+					                    ${pagenationDTO.currentPageStartNum - status.index}
+					                </td>
+					                <td style="width:500px; border-bottom:1px solid #b8b8b8; text-align:left;">
+					                    <a href="#" style="color:black; display:flex; align-items:center;">
+					                        ${commu.title}
+					                    </a>
+					                </td>
+					                <td style="border-bottom:1px solid #b8b8b8;">${commu.nick}</td>
+					                <td style="border-bottom:1px solid #b8b8b8;">${commu.date}</td>
+					                <td style="width:65px; border-bottom:1px solid #b8b8b8;">
+					                    <c:choose>
+					                        <c:when test="${commu.condition eq '답변완료'}">
+					                            <b style="color:#3f9524; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:when test="${commu.condition eq '답변대기'}">
+					                            <b style="color:red; font-weight:500;">${commu.condition}</b>
+					                        </c:when>
+					                        <c:otherwise>
+					                            ${commu.condition}
+					                        </c:otherwise>
+					                    </c:choose>
+					                </td>
+					            </tr>
+					        </c:otherwise>
+					    </c:choose>
+					</c:forEach>
                 </table>
                 <div style=" height: 100px; margin-top:30px;">
-                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
+	                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
 	
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_referenceLibrary.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_QnA_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}'" class="first-page">
 	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
 						<c:choose>
 						  <c:when test="${pagenationDTO.currentPage == 1}">
@@ -237,13 +316,13 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_referenceLibrary.do?pg=${pagenationDTO.currentPage-1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_QnA_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="prev-page">
 						  </c:otherwise>
 						</c:choose>
 						
 						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_referenceLibrary.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_QnA_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
 	                    </c:forEach>
 						
 						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
@@ -253,11 +332,11 @@
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/community/community_referenceLibrary.do?pg=${pagenationDTO.currentPage+1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/community/comm_QnA_search.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="next-page">
 						  </c:otherwise>
 						</c:choose>
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_referenceLibrary.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/comm_QnA_search.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}'" class="last-page">
 	                </form>
                 </div>
             </div>
