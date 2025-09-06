@@ -178,7 +178,13 @@ public class LectureDTO {
 	public void setMaxnum(int maxnum) {
 		this.maxnum = maxnum;
 	}
-
+	
+	public void setMaxnum(String maxnum) {
+		if(maxnum != null) {
+			this.maxnum = Integer.parseInt(maxnum);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "LectureDTO [deptcode=" + deptcode + ", year=" + year + ", semester=" + semester + ", compdiv=" + compdiv
