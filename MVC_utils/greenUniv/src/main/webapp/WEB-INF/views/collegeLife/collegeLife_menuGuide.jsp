@@ -1,9 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대학생활_동아리/스터디</title>
+    <title>대학생활_식단안내</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/collegeLife_main.style.css">
     <style>
@@ -168,7 +171,7 @@
             <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
             <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
             <a href="#">대학생활</a>
-            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>동아리/스터디</span> 
+            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>식단안내</span> 
         </div>
     </div>
     <div class="inner">
@@ -178,85 +181,112 @@
                 <div class="sidebar-header">대학생활</div>
                 <ul>
                     <li><a href="#">학생회 소개</a></li>
-                    <li><a href="#"  class="active">동아리/스터디</a></li>
-                    <li><a href="#">식단안내</a></li>
+                    <li><a href="#">동아리/스터디</a></li>
+                    <li><a href="#" class="active">식단안내</a></li>
                     <li><a href="#">갤러리</a></li>
                 </ul>
             </div>
             <!-- 메인 컨텐츠 -->
             <div class="main-content">
-                <div class="content-header">동아리/스터디</div>
+                <div class="content-header">식단안내</div>
                 
                 <div class="meal-section">
+                    <!-- 날짜 네비게이션 -->
+                    <div class="date-navigation">
+                        <span class="nav-arrow"><img src="../images/btn-calendar-prev.gif" alt=""></span>
+                        <span>2025.03.10 ~ 2025.03.14</span>
+                        <span class="nav-arrow"><img src="../images/btn-calendar-next.gif" alt=""></span>
+                    </div>
 
- 
-
-    <!-- 동아리 목록 -->
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;">
-
-        <!-- 동아리 카드 -->
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/ironbar.jpg" alt="IronBar" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">IronBar(IB)</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>맨몸운동</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b></p>
-            </div>
-        </div>
-
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/wave.jpg" alt="WAVE" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">WAVE</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>서핑</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b></p>
-            </div>
-        </div>
-
-
-        <!-- 동아리(1)-->
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/greenneomer.jpg" alt="그린너머" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">그린너머</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>지속가능발전</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b>위치</p>
-            </div>
-        </div>
-
-         <!-- 동아리(2)-->    
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/nohitno.jpg" alt="노히트노런" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">노히트노런</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>야구관람</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b>위치</p>
-            </div>
-        </div>
-        
-        <!-- 동아리(3)-->
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/greenneomer.jpg" alt="SFC" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">SFC</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>기독교</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b>위치 </p>
-            </div>
-        </div>
-
-         <!-- 동아리(4)-->    
-        <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/nohitno.jpg" alt="라이브" style="width:150px; height:100px; object-fit:cover;">
-            <div style="padding:10px;">
-                <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">라이브</h3>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>음악</p>
-                <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 동아리방 위치 </b></p>
-            </div>
-        </div>
-
-    </div>
-</div>
-                    
+                    <!-- 식단표 -->
+                    <table class="meal-table">
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>2025.3.10(월)</th>
+                                <th>2025.3.11(화)</th>
+                                <th>2025.3.12(수)</th>
+                                <th>2025.3.13(목)</th>
+                                <th>2025.3.14(금)</th>
+                                <th>2025.3.15(토)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="meal-type">조식</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                            </tr>
+                            <tr>
+                                <td class="meal-type">중식</td>
+                                <td class="meal-content">
+                                    <span class="price-tag">정식 5,500원</span><br>
+                                    <span class="menu-item">백미밥</span>
+                                    <span class="menu-item">바지락미역국</span>
+                                    <span class="menu-item">닭안심매콤조림</span>
+                                    <span class="menu-item">야끼우동</span>
+                                    <span class="menu-item">두부간장</span>
+                                    <span class="menu-item">상추겉절이</span>
+                                    <span class="menu-item">포기김치</span>
+                                </td>
+                                <td class="meal-content">
+                                    <span class="price-tag">정식 5,500원</span><br>
+                                    <span class="menu-item">백미밥</span>
+                                    <span class="menu-item">바지락미역국</span>
+                                    <span class="menu-item">닭안심매콤조림</span>
+                                    <span class="menu-item">야끼우동</span>
+                                    <span class="menu-item">두부간장</span>
+                                    <span class="menu-item">상추겉절이</span>
+                                    <span class="menu-item">포기김치</span>
+                                </td>
+                                <td class="meal-content">
+                                    <span class="price-tag">정식 5,500원</span><br>
+                                    <span class="menu-item">백미밥</span>
+                                    <span class="menu-item">바지락미역국</span>
+                                    <span class="menu-item">닭안심매콤조림</span>
+                                    <span class="menu-item">야끼우동</span>
+                                    <span class="menu-item">두부간장</span>
+                                    <span class="menu-item">상추겉절이</span>
+                                    <span class="menu-item">포기김치</span>
+                                </td>
+                                <td class="meal-content">
+                                    <span class="price-tag">정식 5,500원</span><br>
+                                    <span class="menu-item">백미밥</span>
+                                    <span class="menu-item">바지락미역국</span>
+                                    <span class="menu-item">닭안심매콤조림</span>
+                                    <span class="menu-item">야끼우동</span>
+                                    <span class="menu-item">두부간장</span>
+                                    <span class="menu-item">상추겉절이</span>
+                                    <span class="menu-item">포기김치</span>
+                                </td>
+                                <td class="meal-content">
+                                    <span class="price-tag">정식 5,500원</span><br>
+                                    <span class="menu-item">백미밥</span>
+                                    <span class="menu-item">바지락미역국</span>
+                                    <span class="menu-item">닭안심매콤조림</span>
+                                    <span class="menu-item">야끼우동</span>
+                                    <span class="menu-item">두부간장</span>
+                                    <span class="menu-item">상추겉절이</span>
+                                    <span class="menu-item">포기김치</span>
+                                </td>
+                                <td class="meal-content">미운영</td>
+                            </tr>
+                            <tr>
+                                <td class="meal-type">석식</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                                <td class="meal-content">미운영</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="notice">※항상 그린식당을 이용해 주셔서 감사합니다.</span>
                 </div>
             </div>
         </div>

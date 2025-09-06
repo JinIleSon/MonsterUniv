@@ -21,6 +21,13 @@
 	<a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">입학안내_편입학</a><hr>
 	<a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학안내_입학상담</a><hr>
 	<hr>
+	<h2>대학·대학원</h2>
+	<a href="/greenUniv/college/college_humanities.do">대학·대학원_인문사회대학</a><hr>
+	<a href="/greenUniv/college/college_science.do">대학·대학원_자연과학대학</a><hr>
+	<a href="/greenUniv/college/college_engineering.do">대학·대학원_공과대학</a><hr>
+	<a href="/greenUniv/college/college_education.do">대학·대학원_사범대학</a><hr>
+	<a href="/greenUniv/college/college_graduateSchool.do">대학·대학원_대학원</a><hr>
+	<hr>
 	<h2>학사안내</h2>
 	<a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내_공지사항</a><hr>
 	<a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사안내_학사일정</a><hr>
@@ -28,6 +35,12 @@
 	<a href="/greenUniv/academicAffairs/academicAffairs_grades.do">학사안내_성적</a><hr>
 	<a href="/greenUniv/academicAffairs/academicAffairs_graduation.do">학사안내_수료 및 졸업</a><hr>
 	<a href="/greenUniv/academicAffairs/academicAffairs_FAQ.do">학사안내_자주묻는질문</a><hr>
+	<hr>
+	<h2>대학생활</h2>
+	<a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활_학생회 소개</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">대학생활_동아리/스터디</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">대학생활_식단안내</a><hr>
+	<a href="/greenUniv/collegeLife/collegeLife_gallery.do">대학생활_갤러리</a><hr>
 	<hr>
 	<h2>커뮤니티</h2>
 	<a href="/greenUniv/community/community_announcement.do">커뮤니티_공지사항</a><hr>
@@ -37,5 +50,14 @@
 	<a href="/greenUniv/community/community_QnA.do">커뮤니티_질문과 답변</a><hr>
 	<a href="/greenUniv/community/community_referenceLibrary.do">커뮤니티_자료실</a><hr>
 	<hr>
+	<h2>학생지원</h2>
+	<h1>공사중</h1><br><br><br>
+	<h2>로그인</h2>
+	<a href="/greenUniv/login/login.do">로그인</a><hr>
+	<a href="/greenUniv/login/terms.do">약관안내</a><hr>
+	<a href="/greenUniv/login/join.do">회원가입</a><hr>
+	<hr>
+	<h2>학사관리시스템</h2>
+	<h1>공사중</h1><br><br><br>
 </body>
 </html>
