@@ -227,17 +227,17 @@
                 <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9">
-                            <a href="#" style="color: black;">공지사항</a>
+                            <a href="/greenUniv/community/community_announcement.do" style="color: black;">공지사항</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">뉴스 및 칼럼</a>
+                            <a href="/greenUniv/community/community_newsAndColumn.do" style="color: black;">뉴스 및 칼럼</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">취업정보</a>
+                            <a href="/greenUniv/community/community_employmentInformation.do" style="color: black;">취업정보</a>
                         </td>
                     </tr>
                     <tr>
@@ -247,12 +247,12 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">질문과 답변</a>
+                            <a href="/greenUniv/community/community_QnA.do" style="color: black;">질문과 답변</a>
                         </td>
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">자료실</a>
+                            <a href="/greenUniv/community/community_referenceLibrary.do" style="color: black;">자료실</a>
                         </td>
                     </tr>
                 </table>

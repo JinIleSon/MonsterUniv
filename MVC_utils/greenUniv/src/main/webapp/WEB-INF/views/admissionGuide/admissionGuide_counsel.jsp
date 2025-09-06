@@ -300,10 +300,10 @@
             <div class="sidebar">
                 <div class="sidebar-header">입학안내</div>
                 <ul>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">수시모집</a></li>
-                    <li><a href="#">정시모집</a></li>
-                    <li><a href="#">편입학</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">공지사항</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do">수시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do">정시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">편입학</a></li>
                     <li><a href="#" class="active">입학상담</a></li>
                 </ul>
             </div>
