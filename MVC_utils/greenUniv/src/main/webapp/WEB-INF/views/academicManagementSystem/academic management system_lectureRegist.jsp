@@ -1,15 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>강의 등록</title>
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('../font/NotoSansKR-Light.otf') format('opentype');
+            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -790,7 +789,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -808,14 +807,14 @@
     <div class="container">
         <nav class="sidebar">
             <div class="menu menu1">
-                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
                     <li class="menu-item">기본환경정보</li>
                     <li class="menu-item">약관관리</li>
                 </ul>
             </div>
             <div class="menu menu2">
-                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
                     <li class="menu-item">교육 운영 현황</li>
                     <li class="menu-item">학년별 학생 현황</li>
@@ -826,7 +825,7 @@
                 </ul>
             </div>
             <div class="menu menu3">
-                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
                     <li class="menu-item">학생 목록 및 등록</li>
                     <li class="menu-item">교수 목록 및 등록</li>
@@ -834,14 +833,14 @@
                 </ul>
             </div>
             <div class="menu menu4">
-                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
                     <li class="menu-item">대학 및 학과 목록</li>
                     <li class="menu-item">대학 및 학과 등록</li>
                 </ul>
             </div>
             <div class="menu menu5">
-                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
                     <li class="menu-item">입학안내 공지사항</li>
                     <li class="menu-item">학사안내 공지사항</li>
@@ -865,116 +864,118 @@
                     <span>기본정보 입력</span>
                 </div>
             </div>
-
-            <div class="main-lecture1">
-                <div class="list1">
-                    <div>과목코드</div>
-                    <div>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</div>
-                    <div>개설학과</div>
-                    <div>
-                        <select>
-                            <option>인문사회대학</option>
-                        </select>
-                        <select style="margin-left: 2px;">
-                            <option>국어국문학과</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="list2">
-                    <div>개설학년</div>
-                    <div>
-                        <select>
-                            <option>1학년</option>
-                        </select>
-                        <select style="margin-left: 2px;">
-                            <option>1학기</option>
-                        </select>
-                    </div>
-                    <div>학점</div>
-                    <div>
-                        <select>
-                            <option>3학점</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="list3">
-                    <div>이수구분</div>
-                    <div>
-                        <select>
-                            <option>전공 선택</option>
-                        </select>
-                    </div>
-                    <div>담당교수</div>
-                    <div>
-                        <select>
-                            <option>김유신</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="list4">
-                    <div>강의명</div>
-                    <div><input type="text" placeholder="강좌명 입력"></div>
-                </div>
-                <div class="list5">
-                    <div>강의 설명</div>
-                    <div>
-                        <textarea placeholder="강의 개요 및 목표, 학습 내용 등"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="class-info1">
-                <div class="class-info2">
-                    <span>수업정보 입력</span>
-                </div>
-            </div>
-
-            <div class="main-lecture2">
-                <div class="list6">
-                    <div>수업 기간</div>
-                    <div>
-                        <input type="date">
-                        <span style="margin-left: 2px; margin-right: 2px;"> ~ </span>
-                        <input type="date">
-                    </div>
-                </div>
-                <div class="list7">
-                    <div>수업 시간</div>
-                    <div>
-                        <input type="time" value="10:00">
-                        <span style="margin-left: 2px; margin-right: 2px;"> ~ </span>
-                        <input type="time" value="12:00" style="margin-right: 5px;">
-                        <label><input type="checkbox">월</label>
-                        <label><input type="checkbox">화</label>
-                        <label><input type="checkbox">수</label>
-                        <label><input type="checkbox">목</label>
-                        <label><input type="checkbox">금</label>
-                    </div>
-                </div>
-                <div class="list8">
-                    <div>평가방식</div>
-                    <div>
-                        <input type="text" placeholder="출석 10%, 과제 30%, 시험 60%">
-                    </div>
-                </div>
-                <div class="list9">
-                    <div>교재</div>
-                    <div>
-                        <input type="text" placeholder="출판사 - 도서명 - 저자 입력">
-                    </div>
-                </div>
-                <div class="list10">
-                    <div>강의실</div>
-                    <div>
-                        <input type="text" placeholder="인문관 301호">
-                    </div>
-                    <div>최대 수강인원</div>
-                    <div>
-                        <input type="text">
-                    </div>
-                </div>
-
-                <button id="regist-button">등록</button>
+            
+            <form action="/greenUniv/academicManagementSystem/AMS_lectureRegist.do" method="post">
+	            <div class="main-lecture1">
+	                <div class="list1">
+	                    <div>과목코드</div>
+	                    <div>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</div>
+	                    <div>개설학과</div>
+	                    <div>
+	                        <select name="openCol">
+	                            <option>인문사회대학</option>
+	                        </select>
+	                        <select name="openMaj" style="margin-left: 2px;">
+	                            <option>국어국문학과</option>
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="list2">
+	                    <div>개설학년</div>
+	                    <div>
+	                        <select name="year">
+	                            <option>1학년</option>
+	                        </select>
+	                        <select name="semester" style="margin-left: 2px;">
+	                            <option value="1학기">1학기</option>
+	                        </select>
+	                    </div>
+	                    <div>학점</div>
+	                    <div>
+	                        <select name="grade">
+	                            <option>3학점</option>
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="list3">
+	                    <div>이수구분</div>
+	                    <div>
+	                        <select name="compDiv">
+	                            <option>전공 선택</option>
+	                        </select>
+	                    </div>
+	                    <div>담당교수</div>
+	                    <div>
+	                        <select name="prof">
+	                            <option>김유신</option>
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="list4">
+	                    <div>강의명</div>
+	                    <div><input type="text" name="lname" placeholder="강좌명 입력"></div>
+	                </div>
+	                <div class="list5">
+	                    <div>강의 설명</div>
+	                    <div>
+	                        <textarea name="lexpl" placeholder="강의 개요 및 목표, 학습 내용 등"></textarea>
+	                    </div>
+	                </div>
+	            </div>
+	
+	            <div class="class-info1">
+	                <div class="class-info2">
+	                    <span>수업정보 입력</span>
+	                </div>
+	            </div>
+	
+	            <div class="main-lecture2">
+	                <div class="list6">
+	                    <div>수업 기간</div>
+	                    <div>
+	                        <input type="date" name="yclass">
+	                        <span style="margin-left: 2px; margin-right: 2px;"> ~ </span>
+	                        <input type="date" name="yclase">
+	                    </div>
+	                </div>
+	                <div class="list7">
+	                    <div>수업 시간</div>
+	                    <div>
+	                        <input type="time" name="times" value="10:00">
+	                        <span style="margin-left: 2px; margin-right: 2px;"> ~ </span>
+	                        <input type="time" name="timee" value="12:00" style="margin-right: 5px;">
+	                        <label><input type="checkbox" name="timed" value="월">월</label>
+	                        <label><input type="checkbox" name="timed" value="화">화</label>
+	                        <label><input type="checkbox" name="timed" value="수">수</label>
+	                        <label><input type="checkbox" name="timed" value="목">목</label>
+	                        <label><input type="checkbox" name="timed" value="금">금</label>
+	                    </div>
+	                </div>
+	                <div class="list8">
+	                    <div>평가방식</div>
+	                    <div>
+	                        <input type="text" name="evaway" placeholder="출석 10%, 과제 30%, 시험 60%">
+	                    </div>
+	                </div>
+	                <div class="list9">
+	                    <div>교재</div>
+	                    <div>
+	                        <input type="text" name="book" placeholder="출판사 - 도서명 - 저자 입력">
+	                    </div>
+	                </div>
+	                <div class="list10">
+	                    <div>강의실</div>
+	                    <div>
+	                        <input type="text" name="room" placeholder="인문관 301호">
+	                    </div>
+	                    <div>최대 수강인원</div>
+	                    <div>
+	                        <input type="text" name="maxnum">
+	                    </div>
+	                </div>
+					
+	                <button id="regist-button">등록</button>
+                </form>
             </div>
         </main>
     </div>
@@ -997,7 +998,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

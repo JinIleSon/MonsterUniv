@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
@@ -318,38 +316,40 @@
             border-top: 1px solid #A3A3A3;
             border-bottom: 1px solid #A3A3A3;
             height: 45.5px;
-            
         }
         thead th span {
             font-size: 13px;
             font-weight: 350;
         }
         thead th:nth-child(1) {
-            width: 130.8px;
+            width: 109px;
         }
         thead th:nth-child(2) {
             width: 109px;
         }
         thead th:nth-child(3) {
-            width: 141.69px;
+            width: 54.5px;
         }
         thead th:nth-child(4) {
-            width: 141.69px;
-        }
-        thead th:nth-child(5) {
-            width: 261.64px;
-        }
-        thead th:nth-child(6) {
             width: 109px;
         }
+        thead th:nth-child(5) {
+            width: 163.5px;
+        }
+        thead th:nth-child(6) {
+            width: 90.83px;
+        }
         thead th:nth-child(7) {
-            width: 54.5px;
+            width: 90.83px;
         }
         thead th:nth-child(8) {
-            width: 54.5px;
+            width: 163.5px;
         }
         thead th:nth-child(9) {
-            width: 87.19px;
+            width: 90.84px;
+        }
+        thead th:nth-child(10) {
+            width: 109px;
         }
         tbody td {
             border-top: 1px solid #D8D8D8;
@@ -360,19 +360,7 @@
             font-size: 13px;
             height: 19px;
         }
-        tbody td .status-green {
-            color: #008000;
-        }
-        tbody td .status-red {
-            color: #FF0000;
-        }
-        tbody td .status-yellow {
-            color: #FFA500;
-        }
-        tbody td .status-blue {
-            color: #0000FF;
-        }
-        
+
         .pagenation {
             width: 1090px;
             height: 62px;
@@ -428,20 +416,6 @@
         }
         .pagenation .last {
             background-image: url('../images/btn-last-page.png');
-        }
-
-        #button-setting{
-            position: relative;
-        }
-        #regist-button {
-            border: 1px solid #08305A;
-            background-color: #1A528E;
-            color: white;
-            height: 33px;
-            width: 100px;
-            position: absolute;
-            right: 0;
-            margin-right: 20px;
         }
     </style>
 </head>
@@ -530,8 +504,8 @@
 
         <main class="main-content">
             <div class="main-title">
-                <h3>학생 목록</h3>
-                <p>인사관리 &nbsp; > &nbsp; <span>학생 목록</span></p>
+                <h3>강의 목록</h3>
+                <p>학사운영 &nbsp; > &nbsp; <span>강의 목록</span></p>
             </div>
             
             <form class="search-form">
@@ -541,148 +515,155 @@
                 <input type="text" id="search-title" placeholder="키워드 입력">
                 <input type="button" class="search-btn" value="검색">
             </form>
-            
+
             <table>
                 <thead>
                     <tr>
-                        <th><span>학번</span></th>
-                        <th><span>이름</span></th>
-                        <th><span>주민번호</span></th>
-                        <th><span>휴대폰</span></th>
-                        <th><span>이메일</span></th>
+                        <th><span>과목코드</span></th>
                         <th><span>학과</span></th>
                         <th><span>학년</span></th>
-                        <th><span>학기</span></th>
-                        <th><span>상태</span></th>
+                        <th><span>구분</span></th>
+                        <th><span>과목명</span></th>
+                        <th><span>교수</span></th>
+                        <th><span>학점</span></th>
+                        <th><span>수업시간</span></th>
+                        <th><span>강의실</span></th>
+                        <th><span>최대 수강 인원</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-red">자퇴</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-red">제적</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-yellow">휴학중</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                     <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
+                        <td><span>3025112</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
                         <td><span>1</span></td>
-                        <td><span class="status-blue">졸업</span></td>
+                        <td><span>전공선택</span></td>
+                        <td><span>프로그래밍 개론</span></td>
+                        <td><span>김컴공</span></td>
+                        <td><span>3</span></td>
+                        <td><span>월,수 10:00 ~ 12:00</span></td>
+                        <td><span>컴퓨터실</span></td>
+                        <td><span>30</span></td>
                     </tr>
                 </tbody>
             </table>
 
-            <div id="button-setting">
-                <ul class="pagenation">
-                    <li><a href="#"><span class="first"></span></a></li>
-                    <li><a href="#"><span class="prev"></span></a></li>
-                    <li><a href="#" class="page1">1</a></li>
-                    <li><a href="#" class="page2">2</a></li>
-                    <li><a href="#" class="page3">3</a></li>
-                    <li><a href="#"><span class="next"></span></a></li>
-                    <li><a href="#"><span class="last"></span></a></li>
-                    <button id="regist-button">등록</button>
-                </ul>
-            </div>
-            
+            <ul class="pagenation">
+                <li><a href="#"><span class="first"></span></a></li>
+                <li><a href="#"><span class="prev"></span></a></li>
+                <li><a href="#" class="page1">1</a></li>
+                <li><a href="#" class="page2">2</a></li>
+                <li><a href="#" class="page3">3</a></li>
+                <li><a href="#"><span class="next"></span></a></li>
+                <li><a href="#"><span class="last"></span></a></li>
+            </ul>
         </main>
     </div>
     

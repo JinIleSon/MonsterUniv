@@ -75,6 +75,25 @@
             width: 33px;
             height: 30px;
         }
+        /* 현재 위치 페이지 버튼 */
+        .current {
+ 		    border: 1px #eaeaea solid; 
+ 		    background-color: #5198f9; 
+ 		    color: white; 
+ 		    height: 30px; 
+ 		    width: 34px; 
+ 		    margin-right:3px;
+		}
+        
+        /* 다른 페이지 버튼 */
+        .off {
+        	border: 1px #eaeaea solid; 
+        	background-color: #ffffff; 
+        	color: #a6a6a6; 
+        	height: 30px; 
+        	width: 34px; 
+        	margin-right:3px;
+        }
         
         /* 게시판 아래버튼 부분 끝 */
     </style>
@@ -131,7 +150,7 @@
     </header>
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
     </div>
-    <div style="height: 607px;" class = "inner">
+    <div style="" class = "inner">
         <div style="height:50px;"></div>
         <div style="display: flex; gap: 60px;">
             <div style=" width: 210px;">
@@ -175,14 +194,13 @@
                 </div>
                 <hr style="border:none; border-top: 2px solid;">
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
-                    <form action="" style="display: flex;">
-                        <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
-                            <option value="" style="">전체</option>
-                            <option value="">고치기</option>
-                            <option value="">고치기</option>
-                            <option value="">고치기</option>
+                    <form action="/greenUniv/community/comm_free_search.do" method="get" style="display: flex;">
+                        <select name="searchType" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
+                            <option value="all">전체</option>
+                            <option value="title">제목</option>
+                            <option value="nick">작성자</option>
                         </select>
-                        <input type="text" placeholder="검색어를 입력해 주세요" style="border: 1px solid #e9e9e9; width:242px; height:32px; padding-left:8px; flex:1;"/>
+                        <input type="text" name="keyword" placeholder="검색어를 입력해 주세요" style="border: 1px solid #e9e9e9; width:242px; height:32px; padding-left:8px; flex:1;"/>
                         <input type="submit" value="검색" style="border: 1px solid #e9e9e9; background-color: #5198f9; width:60px; height:35px; color:white; font-weight: 200;">
                     </form>
                 </div>
@@ -194,41 +212,50 @@
                         <td style="width: 130px;">작성일</td>
                         <td style="width: 70px;">조회</td>
                     </tr>
-                    <tr style="height:60px;">
-                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-                    </tr>
-                    <tr style="height:60px;">
-                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">2</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"> <a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-                    </tr>
-                    <tr style="height:60px;">
-                        <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">1</td>
-                        <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black;">&nbsp;2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모···</a></td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">홍길동</td>
-                        <td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-                        <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-                    </tr>
+                    <c:forEach var="commu" items="${dtoList}" varStatus="status">
+			            <tr style="height:60px;">
+			                <td style="width: 80px; border-bottom: 1px solid #b8b8b8;">${pagenationDTO.currentPageStartNum - status.index}</td>
+			                <td style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a href="#" style="color:black;">&nbsp;${commu.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.nick}</td>
+			                <td style="border-bottom: 1px solid #b8b8b8;">${commu.date}</td>
+			                <td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${commu.hits}</td>
+			            </tr>
+		           		<c:set var="currentPageStartNum" value="${currentPageStartNum-1}" />
+	           	 	</c:forEach>
                 </table>
                 <div style=" height: 100px; margin-top:30px;">
-                <form action="" method="" style="text-align: center; display:flex; justify-content: center;">
+                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
 
-                    <input type="button" class="first-page">
-                    <input type="button" class="prev-page">
-
-                    <input type="button" value="1" style="border: 1px #eaeaea solid; background-color: #5198f9; color: white; height: 30px; width: 34px; margin-right:3px;">
-                    <input type="button" value="2" style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px; margin-right:3px;">
-                    <input type="button" value="3" style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px;">
-
-                    <input type="button" class="next-page">
-                    <input type="button" class="last-page">
-                </form>
+                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_freeDiscussionBoard.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
+						<c:choose>
+						  <c:when test="${pagenationDTO.currentPage == 1}">
+						    <input type="button" class="prev-page" disabled>
+						  </c:when>
+						  <c:otherwise>
+						    <input type="button"
+						           onclick="location.href='${pageContext.request.contextPath}/community/community_freeDiscussionBoard.do?pg=${pagenationDTO.currentPage-1}'"
+						           class="prev-page">
+						  </c:otherwise>
+						</c:choose>
+						
+						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_freeDiscussionBoard.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    </c:forEach>
+						
+						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
+            			<c:choose>
+						  <c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+						    <input type="button" class="next-page" disabled>
+						  </c:when>
+						  <c:otherwise>
+						    <input type="button"
+						           onclick="location.href='${pageContext.request.contextPath}/community/community_freeDiscussionBoard.do?pg=${pagenationDTO.currentPage+1}'"
+						           class="next-page">
+						  </c:otherwise>
+						</c:choose>
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/community/community_freeDiscussionBoard.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                </form>
                 </div>
             </div>
         </div>
