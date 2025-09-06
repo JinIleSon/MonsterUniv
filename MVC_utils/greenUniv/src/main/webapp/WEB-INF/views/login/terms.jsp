@@ -224,7 +224,7 @@
                 </tr>
             </table>
             <div>
-                <form action="" method="" >
+                <form action="/greenUniv/login/join.do" method="" >
                     <label for="" style="display: flex; align-items: center; justify-items: center; margin-top:6px;">
                         <input type="checkbox" name="" id="" style="border:1px #767676 solid; width:20px; height: 20px; margin-right:5px; margin-left:0px;"><span>위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.</span>
                     </label>
@@ -233,7 +233,7 @@
                             <input type="button" value="취소" style="background-color: #8B8B8B; border:none; color:white; width: 56px; height: 48px; font-size: 18px; font-weight: 200;">
                         </label>
                         <label for="">
-                            <input type="button" value="다음" style="background-color: #3F97F6; border:none; color:white; width: 56px; height: 48px; font-size: 18px; font-weight: 200;">
+                            <input type="submit" value="다음" style="background-color: #3F97F6; border:none; color:white; width: 56px; height: 48px; font-size: 18px; font-weight: 200;">
                         </label>
                     </div>
                 </form>
