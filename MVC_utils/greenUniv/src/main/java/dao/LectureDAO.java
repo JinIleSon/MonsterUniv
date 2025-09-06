@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 
 import dto.LectureDTO;
 import util.DBHelper;
-import util.Sql;
+import util.Sql_lecture;
 
-public class LectureDAO extends DBHelper {
+public class LectureDAO extends DBHelper { //여기있는 Sql -> Sql_lecture
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private final static LectureDAO INSTANCE = new LectureDAO();
@@ -23,7 +23,7 @@ public class LectureDAO extends DBHelper {
 	public void insert(LectureDTO dto) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.INSERT_LECTURE);
+			psmt = conn.prepareStatement(Sql_lecture.INSERT_LECTURE);
 			psmt.setString(1, dto.getDeptcode());
 			psmt.setString(2, dto.getYear());
 			psmt.setString(3, dto.getSemester());
@@ -57,7 +57,7 @@ public class LectureDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql.SELECT_LECTURE_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_lecture.SELECT_LECTURE_COUNT_TOTAL);
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -78,7 +78,7 @@ public class LectureDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.SELECT_LECTURE_ALL);
+			psmt = conn.prepareStatement(Sql_lecture.SELECT_LECTURE_ALL);
 			psmt.setInt(1, start);
 
 			rs = psmt.executeQuery();
@@ -117,14 +117,14 @@ public class LectureDAO extends DBHelper {
 	
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql.SELECT_COUNT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COUNT_SEARCH);
 		
 		if(searchType.equals("title")) {
-			sql.append(Sql.SEARCH_WHERE_TITLE);
+			sql.append(Sql_lecture.SEARCH_WHERE_TITLE);
 		} else if(searchType.equals("all")) {
-			sql.append(Sql.SEARCH_WHERE_ALL);
+			sql.append(Sql_lecture.SEARCH_WHERE_ALL);
 		} else if(searchType.equals("nick")) {
-			sql.append(Sql.SEARCH_WHERE_NICK);
+			sql.append(Sql_lecture.SEARCH_WHERE_NICK);
 		}
 		
 		try {
