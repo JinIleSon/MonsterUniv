@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.Commu_annoDTO;
 import util.DBHelper;
-import util.Sql;
+import util.Sql_comm_anno;
 
 public class Commu_annoDAO extends DBHelper{
 
@@ -27,7 +27,7 @@ public class Commu_annoDAO extends DBHelper{
 		try {
 			conn = getConnection();			
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql.SELECT_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_comm_anno.SELECT_COUNT_TOTAL);
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -44,7 +44,7 @@ public class Commu_annoDAO extends DBHelper{
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.SELECT_ARTICLE_ALL);
+			psmt = conn.prepareStatement(Sql_comm_anno.SELECT_ARTICLE_ALL);
 			psmt.setInt(1, start);
 			
 			rs = psmt.executeQuery();
@@ -69,16 +69,16 @@ public class Commu_annoDAO extends DBHelper{
 	public int selectCountSearch(String searchType, String keyword) {
 		
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql.SELECT_COUNT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_comm_anno.SELECT_COUNT_SEARCH);
 		
 		boolean allOrNot = false;
 		if(searchType.equals("title")) {
-			sql.append(Sql.SEARCH_WHERE_TITLE);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_TITLE);
 		}else if(searchType.equals("all")) {
-			sql.append(Sql.SEARCH_WHERE_ALL);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_ALL);
 			allOrNot = true;
 		}else if(searchType.equals("nick")) {
-			sql.append(Sql.SEARCH_WHERE_NICK);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_NICK);
 		}
 		
 		try {
@@ -109,18 +109,18 @@ public class Commu_annoDAO extends DBHelper{
 	public List<Commu_annoDTO> selectArticleSearch(int start, String searchType, String keyword){
 		List<Commu_annoDTO> dtoList = new ArrayList<Commu_annoDTO>();
 		
-		StringBuilder sql = new StringBuilder(Sql.SELECT_ARTICLE_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_comm_anno.SELECT_ARTICLE_SEARCH);
 		boolean allOrNot = false;
 		if(searchType.equals("title")) {
-			sql.append(Sql.SEARCH_WHERE_TITLE);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_TITLE);
 		}else if(searchType.equals("all")) {
-			sql.append(Sql.SEARCH_WHERE_ALL);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_ALL);
 			allOrNot = true;
 		}else if(searchType.equals("nick")) {
-			sql.append(Sql.SEARCH_WHERE_NICK);
+			sql.append(Sql_comm_anno.SEARCH_WHERE_NICK);
 		}
-		sql.append(Sql.SEARCH_ORDER_ID);
-		sql.append(Sql.SEARCH_OFFEST_ROW);
+		sql.append(Sql_comm_anno.SEARCH_ORDER_ID);
+		sql.append(Sql_comm_anno.SEARCH_OFFEST_ROW);
 		
 		
 		try {
@@ -154,6 +154,5 @@ public class Commu_annoDAO extends DBHelper{
 		}
 		return dtoList;
 	}
-	
 	
 }

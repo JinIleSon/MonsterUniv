@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사안내::성적</title>
     <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="./css/main.style.css">
+    <link rel="stylesheet" href="../css/academicAffairs_main.style.css">
 </head>
 <body>
      <!--1.헤더영역-->
@@ -45,10 +45,10 @@
                               display:flex;
                               align-items: center;
                               ">
-                                <img src="images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">학사안내</span>
-                                <img src="images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청</span>
                             </div>
                         </li>
@@ -205,9 +205,51 @@
                 </div>
              </article>
         </div>
+        <div style="height: 100px;"></div>
     </main>
-    <footer>
+    <!--3. 푸터영역-->    
+    <footer class="footer">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
 
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
+
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
