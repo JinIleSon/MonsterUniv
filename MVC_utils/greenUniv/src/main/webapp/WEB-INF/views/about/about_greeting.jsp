@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,7 +151,7 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black; black;">조직도</a>
+                            <a href="#" style="color:black;">조직도</a>
                         </td>
                     </tr>
                     <tr>

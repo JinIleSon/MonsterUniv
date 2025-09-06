@@ -1,9 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>입학안내_정시모집</title>
+    <title>입학안내_편입학</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/admissionGuide_main.style.css">
     <style>
@@ -13,17 +16,14 @@
             box-sizing: border-box;
         }
 
-        @font-face {
-            font-family: 'NotoSansKR';
-            src: url('font/NotoSansKR-Regular.woff2') format('woff2');
-        }
+        
 
         body {
             font-family: 'NotoSansKR', sans-serif;
             font-size: 12px;
-            
+           
             /* padding: 10px; */
-        }
+        }       
 
         .container {
             display: flex;
@@ -90,7 +90,7 @@
             <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
             <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
             <a href="#">입학안내</a>
-            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>정시모집</span> 
+            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>편입학</span> 
         </div>
     </div>
 
@@ -103,15 +103,15 @@
                 <ul>
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">수시모집</a></li>
-                    <li><a href="#" class="active">정시모집</a></li>
-                    <li><a href="#">편입학</a></li>
+                    <li><a href="#">정시모집</a></li>
+                    <li><a href="#" class="active">편입학</a></li>
                     <li><a href="#">입학상담</a></li>
                 </ul>
             </div>
 
             <!-- 메인 컨텐츠 -->
             <div class="main-content">
-                <div class="content-header">정시모집</div> 
+                <div class="content-header">편입학</div> 
 
                 <div>
                     <div style="display:flex; gap:20px; margin:20px;" >  
@@ -119,28 +119,17 @@
                     <!-- 수시(1) 면접고사 사전 공지 -->
                     <a href="#" style="text-decoration:none;">
                     <div style="border:1px solid #ddd; border-radius:8px; width:280px; padding:16px; background:#fff;">
-                        <div style="display:inline-block; padding:4px 8px; font-size:12px; font-weight:bold; border-radius:4px; margin-bottom:8px; color:#fff; background:#1b4b89;">
-                            정시
+                        <div style="display:inline-block; padding:4px 8px; font-size:12px; font-weight:bold; border-radius:4px; margin-bottom:8px; color:#fff; background:#006600;">
+                            편입학
                         </div>
                         <div>
                             <p style="font-size:14px; color:#555; margin:0 0 6px 0;">일반전형, 지역인재전형</p>
-                            <h3 style="font-size:16px; font-weight:bold; margin:0;color:black;">필기고사 안내</h3>
+                            <h3 style="font-size:16px; font-weight:bold; margin:0;color:black;">편입학 필기고사 안내</h3>
                         </div>
                     </div>
                     </a>
 
-                    <!-- 수시(2) 면접고사 사전 공지 -->
-                    <a href="#" style="text-decoration:none;">
-                    <div style="border:1px solid #ddd; border-radius:8px; width:280px; padding:16px; background:#fff;">
-                        <div style="display:inline-block; padding:4px 8px; font-size:12px; font-weight:bold; border-radius:4px; margin-bottom:8px; color:#fff; background:#1b4b89;">
-                            정시
-                        </div>
-                        <div>
-                            <p style="font-size:14px; color:#555; margin:0 0 6px 0;">일반전형, 지역인재전형</p>
-                            <h3 style="font-size:16px; font-weight:bold; margin:0;color:black;">필기고사 안내</h3>
-                        </div>
-                    </div>
-                    </a>
+ 
 
 
                     </div>

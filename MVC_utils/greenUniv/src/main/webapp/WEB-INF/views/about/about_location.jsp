@@ -1,9 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대학소개_총장 인사말</title>
+    <title>대학소개_오시는 길</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/about_main.style.css">
     <style>
@@ -34,7 +37,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('images/btn-sel-open01.png') 
+            background: url('../images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
@@ -114,7 +117,7 @@
                                 <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
                                 <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">총장 인사말</span>
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">오시는 길</span>
                             </div>
                         </li>
                     </ul>
@@ -125,20 +128,20 @@
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
     </div>
         <!-- 사이드바 시작-->
-    <div style="height: 1088px;" class = "inner">
+    <div style="height: 800px;" class = "inner">
         <div style="height:50px; "></div>
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px; ">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
                 <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
-                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:white">총장 인사말</a>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color:black;">총장 인사말</a>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">교육이념</a>
+                        <td style="border-bottom: 1px solid #e9e9e9; ">
+                            <a href="#" style="color: black">교육이념</a>
                         </td>
                     </tr>
                     <tr>
@@ -148,54 +151,48 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black; black;">조직도</a>
+                            <a href="#" style="color: black;">조직도</a>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">오시는 길</a>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white;">오시는 길</a>
                         </td>
                     </tr>
                 </table>
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">총장 인사말</b>
+                    <b style="font-weight: 700; font-size:26px;">오시는 길</b>
                 </div>
                     <!-- 사이드바 끝-->
+
                     <!-- 본문 시작-->
                <hr style="border:none; border-top: 2px solid;">
-               <div style="height:290px; margin-top:30px; display: flex; gap:23px;">
-                  <img src="..//images/college-introduce-4.jpg" alt="" style="width:320px; height:240px;">
-                  <div style="">
+               <div style="height:0px; margin-top:30px; display: flex; gap:23px;"> 
+ 
+                </div> 
+       <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9715843010927!2d129.05824077180847!3d35.15732941792972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb6f070cf047%3A0x54dc3eff4b6043b6!2z7ISc66m07Jet!5e0!3m2!1sko!2skr!4v1755745409966!5m2!1sko!2skr"  
+        width="850" 
+        height="450" 
+        style="border:0; position:relative; top:10px;" 
+        allowfullscreen 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
 
-                    <div style="font-weight: 350; font-size: 26px; color:#3B88D4; margin-bottom:11px;"></div>
-                    <div style="font-weight: 350; font-size: 16px; color:#666666;"></div>
-                  </div>
-                </div>
-                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <span style="color:#145074; font-size:18px; font-weight: 500;">😍존경하는 내외 귀빈과 학부모님, 그리고 사랑하는 학생 여러분.</span>
-                </div>
-                <div style="">
-                  <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
-                      <tr style="height:50px; font-weight: 700; background-color: #F4F8FC; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
-                         
-                         몬스터대학교는 1987년 설립 이래 4차 산업혁명 시대를 선도할 창의적이고 도전적인 인재를 양성하기 위해 끊임없이 노력해왔습니다. 오늘날 우리 사회는 인공지능, 빅데이터, 사물인터넷 등 첨단 기술의 융합 속에서 급격히 변화하고 있습니다. 이에 따라 컴퓨터공학의 중요성은 그 어느 때보다도 높아지고 있습니다.<p></p>
+      <ul>
+        <li>주소 : 부산광역시 부산진구 중앙대로 지하 730 서면역 근처</li>
+        <li>전화번호 : 042) 601-4458~59, 4339, 4309</li>
+        <li>팩스 : 042) 862-5524, 3358    </li>
+      </ul>
+       
+       
+                              
 
-우리 몬스터대학교 컴퓨터공학과는 이러한 변화에 발맞추어, 프로그래밍·알고리즘·데이터베이스·인공지능 등 기초와 응용을 아우르는 체계적 교육과정을 운영하고 있습니다. 더 나아가, 특허청과 연계한 지식재산 교육을 통해 기술과 지식재산을 동시에 이해하는 융합형 인재를 양성하고 있습니다.<p></p>
 
-또한 국내외 기업, 연구소, 국제기구와의 산학 협력과 맞춤형 연구 프로젝트를 통해 학생들이 산업 현장에서 요구되는 실무 역량을 갖추도록 지원하고 있습니다. 특히 세계지식재산권기구(WIPO) 및 한국국제협력단(KOICA)과의 협력은 우리 대학이 국제적 위상을 강화하고 글로벌 경쟁력을 확보하는 기반이 되고 있습니다.<p></p>
 
-앞으로도 몬스터대학교는 급변하는 환경 속에서 시대를 이끄는 창의적 리더를 길러내어 대한민국이 IT 선도국가로 도약하는 데 기여할 것입니다.<p></p>
-
-여러분의 변함없는 성원과 관심에 깊이 감사드리며, 우리 학생들이 세계 무대에서 마음껏 역량을 발휘할 수 있도록 최선을 다하겠습니다.<p></p>
-
-감사합니다.<p></p><p></p>
-
-<p align=right>
-  <b>몬스터대학교 총장 드림</b></b></p></tr>
-                  </table>
-                </div>
               </div>
           </div>
     </div>

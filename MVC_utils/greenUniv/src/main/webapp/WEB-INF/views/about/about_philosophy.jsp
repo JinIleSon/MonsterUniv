@@ -1,9 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대학소개_총장 인사말</title>
+    <title>대학소개_교육이념</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/about_main.style.css">
     <style>
@@ -34,7 +37,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('images/btn-sel-open01.png') 
+            background: url('../images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
@@ -114,7 +117,7 @@
                                 <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
                                 <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">총장 인사말</span>
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">교육이념</span>
                             </div>
                         </li>
                     </ul>
@@ -132,13 +135,13 @@
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
                 <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
-                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:white">총장 인사말</a>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color:black;">총장 인사말</a>
                         </td>
                     </tr>
                     <tr>
-                        <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: black;">교육이념</a>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white">교육이념</a>
                         </td>
                     </tr>
                     <tr>
@@ -148,7 +151,7 @@
                     </tr>
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:black; black;">조직도</a>
+                            <a href="#" style="color:black;">조직도</a>
                         </td>
                     </tr>
                     <tr>
@@ -160,42 +163,52 @@
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">총장 인사말</b>
+                    <b style="font-weight: 700; font-size:26px;">교육이념</b>
                 </div>
                     <!-- 사이드바 끝-->
+
                     <!-- 본문 시작-->
                <hr style="border:none; border-top: 2px solid;">
-               <div style="height:290px; margin-top:30px; display: flex; gap:23px;">
-                  <img src="..//images/college-introduce-4.jpg" alt="" style="width:320px; height:240px;">
+               <div style="height:100px; margin-top:30px; display: flex; gap:23px;"> 
                   <div style="">
-
-                    <div style="font-weight: 350; font-size: 26px; color:#3B88D4; margin-bottom:11px;"></div>
-                    <div style="font-weight: 350; font-size: 16px; color:#666666;"></div>
+                    <div style="font-weight: 350; font-size: 26px; color:#3B88D4; margin-bottom:11px;">그린대학교 교육이념</div>
                   </div>
                 </div>
+
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <span style="color:#145074; font-size:18px; font-weight: 500;">😍존경하는 내외 귀빈과 학부모님, 그리고 사랑하는 학생 여러분.</span>
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">교육목표</span>
                 </div>
-                <div style="">
-                  <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
-                      <tr style="height:50px; font-weight: 700; background-color: #F4F8FC; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
-                         
-                         몬스터대학교는 1987년 설립 이래 4차 산업혁명 시대를 선도할 창의적이고 도전적인 인재를 양성하기 위해 끊임없이 노력해왔습니다. 오늘날 우리 사회는 인공지능, 빅데이터, 사물인터넷 등 첨단 기술의 융합 속에서 급격히 변화하고 있습니다. 이에 따라 컴퓨터공학의 중요성은 그 어느 때보다도 높아지고 있습니다.<p></p>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 창의적 탐구 능력 배양, 학문과 실무의 융합적 인재 양성, 비판적 사고와 창의적 문제해결 역량 함양을 핵심 목표로 삼습니다. 이를 위해 첨단 IT·지식재산 교육, 미래 융합기술 기반의 교과과정, 산학협력 프로젝트, 글로벌 연계 교육을 추진하여 교육 이념을 실현하고 교육 목표를 달성하고자 합니다.
+                
+                    <ul>
+                      <li>학문적 기초와 실무 능력을 겸비한 전문 인재 양성</li>
+                      <li>국제 협력과 교류를 통한 글로벌 리더십 배양</li>
+                      <li>지역사회와 함께 성장하는 교육 모델 확립</li>
+                    </ul>                                      
+                </div> 
 
-우리 몬스터대학교 컴퓨터공학과는 이러한 변화에 발맞추어, 프로그래밍·알고리즘·데이터베이스·인공지능 등 기초와 응용을 아우르는 체계적 교육과정을 운영하고 있습니다. 더 나아가, 특허청과 연계한 지식재산 교육을 통해 기술과 지식재산을 동시에 이해하는 융합형 인재를 양성하고 있습니다.<p></p>
-
-또한 국내외 기업, 연구소, 국제기구와의 산학 협력과 맞춤형 연구 프로젝트를 통해 학생들이 산업 현장에서 요구되는 실무 역량을 갖추도록 지원하고 있습니다. 특히 세계지식재산권기구(WIPO) 및 한국국제협력단(KOICA)과의 협력은 우리 대학이 국제적 위상을 강화하고 글로벌 경쟁력을 확보하는 기반이 되고 있습니다.<p></p>
-
-앞으로도 몬스터대학교는 급변하는 환경 속에서 시대를 이끄는 창의적 리더를 길러내어 대한민국이 IT 선도국가로 도약하는 데 기여할 것입니다.<p></p>
-
-여러분의 변함없는 성원과 관심에 깊이 감사드리며, 우리 학생들이 세계 무대에서 마음껏 역량을 발휘할 수 있도록 최선을 다하겠습니다.<p></p>
-
-감사합니다.<p></p><p></p>
-
-<p align=right>
-  <b>몬스터대학교 총장 드림</b></b></p></tr>
-                  </table>
+                <div style="padding-bottom:50px;"></div>
+                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">역할과 기능</span>
                 </div>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 지역과 사회의 미래 인재들을 조기에 발굴하고, 최신 학문과 산업 지식을 제공하여 학생들이 지식·기술·가치관을 균형 있게 갖출 수 있도록 지원합니다.
+                    <ul> 
+                      <li>교육 기능: 독창적이고 인간적인 교육 프로그램 운영을 통해 전인적 인재 양성</li>
+                      <li>연구 기능: 학문과 산업을 연계한 연구 활성화, 창의적 지식재산 창출</li>
+                      <li>지역사회와 함께 성장하는 교육 모델 확립</li>
+                    </ul>                                      
+                </div>
+ 
+                
+                <div style="padding-bottom:50px;"></div>
+                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">종합 지향점</span>
+                </div>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 미래 유능한 인재로서의 가치관·지식·역량의 기초 형성을 최종 목표로 합니다. 이를 통해 학생들은 급변하는 4차 산업혁명 시대에 필요한 창의적 리더, 융합형 전문가, 사회적 책임을 다하는 글로벌 인재로 성장하게 될 것입니다.
+                </div>
+                </div>
+
+                
               </div>
           </div>
     </div>

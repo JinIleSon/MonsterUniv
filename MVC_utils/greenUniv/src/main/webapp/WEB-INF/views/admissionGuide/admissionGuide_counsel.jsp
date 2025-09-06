@@ -1,9 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>입학안내_공지사항</title>
+    <title>입학안내_입학상담</title>
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/admissionGuide_main.style.css">
     <style>
@@ -24,6 +27,8 @@
             
             /* padding: 10px; */
         }
+        /* 메인 컨테이너 */
+        
 
         .container {
             display: flex;
@@ -205,7 +210,7 @@
             <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
             <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
             <a href="#">입학안내</a>
-            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>공지사항</span> 
+            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>입학상담</span> 
         </div>
     </div>
 
@@ -216,17 +221,17 @@
             <div class="sidebar">
                 <div class="sidebar-header">입학안내</div>
                 <ul>
-                    <li><a href="#" class="active">공지사항</a></li>
+                    <li><a href="#">공지사항</a></li>
                     <li><a href="#">수시모집</a></li>
                     <li><a href="#">정시모집</a></li>
                     <li><a href="#">편입학</a></li>
-                    <li><a href="#">입학상담</a></li>
+                    <li><a href="#" class="active">입학상담</a></li>
                 </ul>
             </div>
 
             <!-- 메인 컨텐츠 -->
             <div class="main-content">
-                <div class="content-header">공지사항</div>
+                <div class="content-header">입학상담</div>
                 
                 <div class="search-section">
                     <div class="search-box">
@@ -243,41 +248,42 @@
                         <thead>
                             <tr>
                                 <th width="60">번호</th>
-                                <th>제목</th>
+                                <th width="50%">제목</th>
                                 <th width="80">작성자</th>
                                 <th width="80">작성일</th>
-                                <th width="60">조회</th>
+                                <th width="80">상태</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>3</td>
                                 <td class="title-cell">
-                                    <img src="../images/ico-new01.gif" alt="new">
-                                    <a href="#">2025학년도 신입학 3차 추가모집 모집요강 및 모집...</a>
+                                    <img src="../images/ico-lock.png" alt="ico-lock">
+                                    <a href="#">정시모집 관련해 문의드립니다.</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>
-                                <td>160</td>
+                                <td style="color: red;">답변대기</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td class="title-cell">
-                                    <img src="../images/ico-new01.gif" alt="new">
-                                    <a href="#">2025학년도 신입학 2차 추가모집 모집요강 및 모집...</a>
+                                    <img src="../images/ico-lock.png" alt="ico-lock">
+                                    <a href="#">정시모집 관련해 문의드립니다.</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>
-                                <td>160</td>
+                                <td style="color: green;">답변완료</td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td class="title-cell">
-                                    2025학년도 신입학 추가모집 모집요강 및 모집일정 공지
+                                    <img src="../images/ico-lock.png" alt="ico-lock">
+                                    <a href="#">정시모집 관련해 문의드립니다.</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>
-                                <td>160</td>
+                                <td style="color: green;">답변완료</td>
                             </tr>
                         </tbody>
                     </table>
