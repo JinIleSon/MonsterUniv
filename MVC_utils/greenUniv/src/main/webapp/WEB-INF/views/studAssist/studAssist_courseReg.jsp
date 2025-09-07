@@ -143,7 +143,7 @@
 	                        <td>${ lecture.prof }</td>
 	                        <td>${ lecture.nowNum }/${ lecture.maxNum }</td>
 	                        <td></td>
-	                        <form action="" method="">
+	                        <form action="/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }" method="get">
 	                            <td>
 	                                <input type="button" value="신청" style="background-color: #132f73; color: white; font-weight: 300; height:30px; border:none;">
 	                            </td>

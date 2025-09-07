@@ -1,12 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학생지원_수강신청내역</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../studentAssistance_css/main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/studAssist_css/main.style.css">
     <style>
         
         hr{
@@ -35,27 +36,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('/greenUniv/images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -63,7 +64,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -92,7 +93,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -110,10 +111,10 @@
                               display:flex;
                               align-items: center;
                               ">
-                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:9px;">
+                                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:9px;">
                                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:9px;">학생지원</span>
-                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:9px;">
+                                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:9px;">
                                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:9px;">수강신청내역</span>
                             </div>
                         </li>
@@ -195,96 +196,23 @@
                         <td style="">강의장</td>
                         <td style="width: 98px;">관리</td>
                     </tr>
+                    <c:forEach var="regDetail" items="${ dtoList }">
                     <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자바 프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>3</td>
-                        <td>전공</td>
-                        <td>화 1,2,3</td>
-                        <td>컴퓨터실</td>
+                        <td>${ regDetail.deptCode }</td>
+                        <td>${ regDetail.lname }</td>
+                        <td>${ regDetail.year }학년</td>
+                        <td>${ regDetail.prof }</td>
+                        <td>${ regDetail.grade }</td>
+                        <td>${ regDetail.compDiv }</td>
+                        <td>${ regDetail.timeD } ${ regDetail.lTimes }</td>
+                        <td>${ regDetail.room }</td>
                         <form action="" method="">
                             <td>
                                 <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none; ">
                             </td>
                         </form>
                     </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자료구조</td>
-                        <td>2학년</td>
-                        <td>김자료</td>
-                        <td>3</td>
-                        <td>전공</td>
-                        <td>화 1,2,3</td>
-                        <td>컴퓨터실</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>대학영어</td>
-                        <td>2학년</td>
-                        <td>김영어</td>
-                        <td>3</td>
-                        <td>교양</td>
-                        <td>화 1,2,3</td>
-                        <td>강의장1</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>알고리즘</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>3</td>
-                        <td>전공</td>
-                        <td>화 1,2,3</td>
-                        <td>컴퓨터실</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>세계의역사</td>
-                        <td>2학년</td>
-                        <td>김역사</td>
-                        <td>3</td>
-                        <td>교양</td>
-                        <td>화 1,2,3</td>
-                        <td>강의실2</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>데이터베이스</td>
-                        <td>2학년</td>
-                        <td>김디비</td>
-                        <td>3</td>
-                        <td>전공</td>
-                        <td>화 1,2,3</td>
-                        <td>컴퓨터실</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
+                    </c:forEach>
                     
                     
                 </table>
@@ -311,7 +239,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

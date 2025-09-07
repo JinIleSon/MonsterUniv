@@ -30,4 +30,7 @@ public class Sql {
 	public static final String WITH_ROOM = " WHERE ROOM like ?";
 	public static final String SEARCH_ORDER_DEPTCODE = " ORDER BY DEPTCODE";
 	public static final String SEARCH_OFFET_ROW = " LIMIT 10 OFFSET ?";
+	
+	// regDetails
+	public static final String SELECT_REGDETAILS_WITH_SNUM = "SELECT * FROM sa_details WHERE SNUM = ?";
 }
