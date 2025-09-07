@@ -28,7 +28,7 @@
             width:100%;
             height:100%;
             line-height: 60px;
-            margin-left:16px;
+            padding-left:16px;
         }
         .board-select {
             color: #666666; /* 글씨 색 */
@@ -71,7 +71,20 @@
         }
         
         /* 게시판 아래버튼 부분 끝 */
-     main > :first-child{ margin-top: 0; }
+	     main > :first-child{ margin-top: 0; }
+	     .sidebar a {
+			    text-decoration: none;
+			    font-size: 15px;
+			}
+			
+			.sidebar a.active {
+			    background-color: #4a90e2;
+			    color: white;
+			}
+			
+			.sidebar a:hover:not(.active) {
+			    background-color: #f0f0f0;
+			}
     </style>
 </head>
 <body>
@@ -191,11 +204,11 @@
     </div>
         <!-- 사이드바 시작-->
     <div style="height: 800px;" class = "inner">
-        <div style="height:50px; "></div>
+        <div style="height:48px; "></div>
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px; ">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/about/about_greeting.do" style="color:black;">총장 인사말</a>
@@ -218,7 +231,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white;">오시는 길</a>
+                            <a href="#" style="color: white;" class="active">오시는 길</a>
                         </td>
                     </tr>
                 </table>
@@ -230,13 +243,13 @@
                     <!-- 사이드바 끝-->
 
                     <!-- 본문 시작-->
-               <hr style="border:none; border-top: 2px solid black;">
-               <div style="height:0px; margin-top:30px; display: flex; gap:23px;"> 
+               <hr style="border:none; margin-top:6px; border-top: 2px solid black !important; opacity:1 !important;">
+               <div style="height:0px; margin-top:30px; display: flex;"> 
  
                 </div> 
        <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9715843010927!2d129.05824077180847!3d35.15732941792972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb6f070cf047%3A0x54dc3eff4b6043b6!2z7ISc66m07Jet!5e0!3m2!1sko!2skr!4v1755745409966!5m2!1sko!2skr"  
-        width="920" 
+        width="870" 
         height="450" 
         style="border:0; position:relative; top:10px;" 
         allowfullscreen 

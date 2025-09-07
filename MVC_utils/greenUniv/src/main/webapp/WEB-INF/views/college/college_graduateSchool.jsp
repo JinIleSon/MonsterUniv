@@ -33,7 +33,7 @@
             width:100%;
             height:100%;
             line-height: 60px;
-            margin-left:16px;
+            padding-left:16px;
         }
         .board-select {
             color: #666666; /* 글씨 색 */
@@ -76,8 +76,21 @@
         }
         
         /* 게시판 아래버튼 부분 끝 */
-    main > :first-child{ margin-top: 0; }
+    	main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
+		.sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
     </style>
 </head>
 <body>
@@ -201,7 +214,7 @@
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px; ">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학·대학원</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/college/college_humanities.do" style="color: black;">인문사회대학</a>
@@ -224,7 +237,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white;">대학원</a>
+                            <a href="#" style="color: white;" class="active">대학원</a>
                         </td>
                     </tr>
                 </table>

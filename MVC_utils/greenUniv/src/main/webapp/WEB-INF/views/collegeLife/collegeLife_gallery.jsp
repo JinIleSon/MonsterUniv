@@ -385,7 +385,7 @@
                     <div class="dropdown-section" data-menu="community">
                         <h4>커뮤니티</h4>
                         <ul style="">
-                            <li><a href="/greenUniv/collegeLife/collegeLife_gallery.do">공지사항</a></li>
+                            <li><a href="/greenUniv/community/community_announcement.do">공지사항</a></li>
                             <li><a href="/greenUniv/community/community_newsAndColumn.do">뉴스 및 칼럼</a></li>
                             <li><a href="/greenUniv/community/community_freeDiscussionBoard.do">자유게시판</a></li>
                             <li><a href="/greenUniv/community/community_QnA.do">Q&amp;A</a></li>
@@ -417,9 +417,9 @@
             <div class="sidebar">
                 <div class="sidebar-header">대학생활</div>
                 <ul>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">학생회 소개</a></li>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">동아리/스터디</a></li>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do" style="color: black !important;">학생회 소개</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do" style="color: black !important;">동아리/스터디</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do" style="color: black !important;">식단안내</a></li>
                     <li><a href="#" class="active">갤러리</a></li>
                 </ul>
             </div>
