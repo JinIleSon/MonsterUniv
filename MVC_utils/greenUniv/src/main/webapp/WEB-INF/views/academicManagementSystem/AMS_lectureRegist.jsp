@@ -769,6 +769,27 @@
             margin-top: 20px;
         }
     </style>
+<script>
+	document.addEventListener('DOMContentLoaded', function(e) {
+		let cnt = 1;
+		
+		const form = document.querySelector('form');
+	    form.addEventListener('submit', function(e) {
+	    	const deptcodeInput = document.getElementsByName('deptcode')[0];    
+	        const openMaj = document.getElementById('openMaj').value; //학과 코드
+	        
+	        const today = new Date();     
+	        const year = today.getFullYear().toString().substring(2); //연도
+	        console.log('year 선택값:', year);
+	        
+	        const semester = document.getElementById('semester').value; //학기
+			const randomNum = cnt; //순번
+			cnt++;
+			
+	        deptcodeInput.value = openMaj + year + semester + randomNum;
+	    });
+	});
+</script>
 </head>
 <body>
     <header>
@@ -869,28 +890,27 @@
 	            <div class="main-lecture1">
 	                <div class="list1">
 	                    <div>과목코드</div>	            
-	                    <div><input type="hidden" name="deptcode" value="120000"></div>
-	                    <!-- <div>학과 코드 + 연도 + 학기 + 순번 조합 자동생성</div>  -->
+	                    <div><input type="hidden" name="deptcode"></div>
 	                    <div>개설학과</div>
 	                    <div>
 	                        <select name="openCol">
 	                            <option>인문사회대학</option>
 	                        </select>
-	                        <select name="openMaj" style="margin-left: 2px;">
-	                            <option>국어국문학과</option>
+	                        <select name="openMaj" id="openMaj" style="margin-left: 2px;">
+	                            <option value="10">국어국문학과</option>
 	                        </select>
 	                    </div>
 	                </div>
 	                <div class="list2">
 	                    <div>개설학년</div>
 	                    <div>
-	                        <select name="year">
+	                        <select name="year" id="year">
 	                            <option value="1">1학년</option>
 	                            <option value="2">2학년</option>
 	                            <option value="3">3학년</option>
 	                            <option value="4">4학년</option>
 	                        </select>
-	                        <select name="semester" style="margin-left: 2px;">
+	                        <select name="semester" id="semester" style="margin-left: 2px;">
 	                            <option value="1">1학기</option>
 	                            <option value="2">2학기</option>
 	                        </select>
@@ -984,7 +1004,7 @@
 	                    </div>
 	                </div>
 					
-	                <button id="regist-button">등록</button>
+	                <button type="submit" id="regist-button">등록</button>
                 </form>
             </div>
         </main>

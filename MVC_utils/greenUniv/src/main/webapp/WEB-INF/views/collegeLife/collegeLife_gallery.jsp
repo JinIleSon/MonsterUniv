@@ -59,7 +59,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(200px, 250px));
+            grid-template-columns: repeat(3, minmax(250px, 300px));
             gap: 20px;
             margin-bottom: 30px;
             
@@ -241,7 +241,58 @@
             color: #2c5aa0;
             font-weight: bold;
         }
-    main > :first-child{ margin-top: 0; }
+        
+        /* 게시판 아래버튼 부분 */
+        .first-page{
+            background: url('../images/btn-first-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .prev-page{
+            background: url('../images/btn-prev-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-right: 15px;
+            width: 33px;
+            height: 30px;
+        }
+        .next-page{
+            background: url('../images/btn-next-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-left: 15px;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .last-page{
+            background: url('../images/btn-last-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+        }
+        
+        /* 현재 위치 페이지 버튼 */
+        .current {
+ 		    border: 1px #eaeaea solid; 
+ 		    background-color: #5198f9; 
+ 		    color: white; 
+ 		    height: 30px; 
+ 		    width: 34px; 
+ 		    margin-right:3px;
+		}
+        
+        /* 다른 페이지 버튼 */
+        .off {
+        	border: 1px #eaeaea solid; 
+        	background-color: #ffffff; 
+        	color: #a6a6a6; 
+        	height: 30px; 
+        	width: 34px; 
+        	margin-right:3px;
+        }
+        
+    	main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
     </style>
 </head>
@@ -253,9 +304,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -265,7 +316,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="./main.html"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -275,7 +326,7 @@
                         <li data-menu="college"><a href="/greenUniv/college/college_education.do">대학·대학원</a></li>
                         <li data-menu="academic"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내</a></li>
                         <li data-menu="life"><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활</a></li>
-                        <li data-menu="community"><a href="/greenUniv/community/community_announcement.do">커뮤니티</a></li>
+                        <li data-menu="community"><a href="/greenUniv/collegeLife/collegeLife_gallery.do">커뮤니티</a></li>
                     </ul>
                 </div>
             </div>    
@@ -334,7 +385,7 @@
                     <div class="dropdown-section" data-menu="community">
                         <h4>커뮤니티</h4>
                         <ul style="">
-                            <li><a href="/greenUniv/community/community_announcement.do">공지사항</a></li>
+                            <li><a href="/greenUniv/collegeLife/collegeLife_gallery.do">공지사항</a></li>
                             <li><a href="/greenUniv/community/community_newsAndColumn.do">뉴스 및 칼럼</a></li>
                             <li><a href="/greenUniv/community/community_freeDiscussionBoard.do">자유게시판</a></li>
                             <li><a href="/greenUniv/community/community_QnA.do">Q&amp;A</a></li>
@@ -374,100 +425,69 @@
             </div>
             
             <!-- 메인 컨텐츠 -->
-            <div class="main-content">
+            <div class="main-content" style="">
                 <div class="content-header">갤러리</div>
                 <div class="gallery-section">
                     <!-- 갤러리 그리드 -->
-                    <div class="gallery-grid">
-                        <!-- 갤러리 아이템 1 -->
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="../images/gallary_sample1.jpg" alt="">
-                            </div>
-                            <div class="gallery-info">
-                                <div class="gallery-title">제40회 1995학년도 학위수여식</div>
-                                <div class="gallery-meta">
-                                    <span>조회수 23</span>
-                                    <span>갤러리</span>
-                                    <span>25.02.20</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 갤러리 아이템 2 -->
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="../images/gallary_sample2.jpg" alt="">
-                            </div>
-                            <div class="gallery-info">
-                                <div class="gallery-title">제40회 1995학년도 학위수여식</div>
-                                <div class="gallery-meta">
-                                    <span>조회수 23</span>
-                                    <span>갤러리</span>
-                                    <span>25.02.20</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 갤러리 아이템 3 -->
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="../images/gallary_sample3.jpg" alt="">
-                            </div>
-                            <div class="gallery-info">
-                                <div class="gallery-title">제40회 1995학년도 학위수여식</div>
-                                <div class="gallery-meta">
-                                    <span>조회수 23</span>
-                                    <span>갤러리</span>
-                                    <span>25.02.20</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 갤러리 아이템 4 -->
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="../images/gallary_sample4.png" alt="">
-                            </div>
-                            <div class="gallery-info">
-                                <div class="gallery-title">제40회 1995학년도 학위수여식</div>
-                                <div class="gallery-meta">
-                                    <span>조회수 23</span>
-                                    <span>갤러리</span>
-                                    <span>25.02.20</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 갤러리 아이템 5 -->
-                        <div class="gallery-item">
-                            <div class="gallery-image">
-                                <img src="../images/gallary_sample5.jpg" alt="">
-                            </div>
-                            <div class="gallery-info">
-                                <div class="gallery-title">제40회 1995학년도 학위수여식</div>
-                                <div class="gallery-meta">
-                                    <span>조회수 23</span>
-                                    <span>갤러리</span>
-                                    <span>25.02.20</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 페이지네이션 -->
-                    <div class="pagination">
-                        <a href="#" class="nav-btn">«</a>
-                        <a href="#" class="nav-btn">‹</a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#" class="nav-btn">›</a>
-                        <a href="#" class="nav-btn">»</a>
-                    </div>
+                    <div class="gallery-grid" style="">
+                        <!-- 갤러리 아이템  -->
+                        <c:forEach var="gallery" items="${dtoList}" varStatus="status">
+                        	<div class="gallery-item" style="">
+	                            <div class="gallery-image">
+	                                <img src="${gallery.imageroute}" alt="">
+	                            </div>
+	                            <div class="gallery-info">
+	                                <div class="gallery-title">${gallery.title}</div>
+	                                <div class="gallery-meta">
+	                                    <span>조회수 ${gallery.hits}</span>
+	                                    <span>${gallery.where}</span>
+	                                    <span>${gallery.regdate}</span>
+	                                </div>
+	                            </div>
+	                            <c:set var="currentPageStartNum" value="${currentPageStartNum-1}" />
+                        	</div>
+                        </c:forEach>
+						<!-- 갤러리 아이템 끝 -->
+                  <!-- 페이지네이션 -->
+                  
                 </div>
             </div>
-        </div>
+            <div style=" height: 100px;">
+                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
+
+                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/collegeLife/collegeLife_gallery.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
+					<c:choose>
+					  <c:when test="${pagenationDTO.currentPage == 1}">
+					    <input type="button" class="prev-page" disabled>
+					  </c:when>
+					  <c:otherwise>
+					    <input type="button"
+					           onclick="location.href='${pageContext.request.contextPath}/collegeLife/collegeLife_gallery.do?pg=${pagenationDTO.currentPage-1}'"
+					           class="prev-page">
+					  </c:otherwise>
+					</c:choose>
+					
+					<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/collegeLife/collegeLife_gallery.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+                    </c:forEach>
+					
+					<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
+           			<c:choose>
+					  <c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+					    <input type="button" class="next-page" disabled>
+					  </c:when>
+					  <c:otherwise>
+					    <input type="button"
+					           onclick="location.href='${pageContext.request.contextPath}/collegeLife/collegeLife_gallery.do?pg=${pagenationDTO.currentPage+1}'"
+					           class="next-page">
+					  </c:otherwise>
+					</c:choose>
+                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/collegeLife/collegeLife_gallery.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+               	 </form>
+               </div>
+        	</div>
+    	</div>
     </div>
 </body>
 <!--3. 푸터영역-->
@@ -478,9 +498,9 @@
             <ul class="footer-high-quicklinks">
                 <li><a href="#">개인정보처리방침</a></li>
                 <li><a href="#">통합정보시스템</a></li>
-                <li><a href="#">학사일정</a></li>
+                <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                 <li><a href="#">주요인원 연락처</a></li>
-                <li><a href="#">교내공지사항</a></li>
+                <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
             </ul>
         </div>
     </div>

@@ -24,8 +24,8 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
                         <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
@@ -36,7 +36,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="./main.html"><img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -244,15 +244,15 @@
                 <aside class="smart-link"> 
                     <h3 class="smart-link_title">SMART LINK</h3>
                     <nav class="smart-link_grid">
-                        <a href="#" class="bg-main-link">
+                        <a href="/greenUniv/admissionGuide/admissionGuide_notice.do" class="bg-main-link">
                             <img src="images/bg-main-link01.png" alt="입학안내 아이콘">
                             <span>입학안내</span>
                         </a>
-                        <a href="#" class="bg-main-link">
+                        <a href="/greenUniv/academicAffairs/academicAffairs_schedules.do" class="bg-main-link">
                             <img src="images/bg-main-link02.png" alt="학사일정 아이콘">
                             <span>학사일정</span>
                         </a>
-                        <a href="#" class="bg-main-link">
+                        <a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do" class="bg-main-link">
                             <img src="images/bg-main-link03.png" alt="학생회 아이콘">
                             <span>학생회</span>
                         </a>
@@ -260,7 +260,7 @@
                             <img src="images/bg-main-link04.png" alt="교과과정 아이콘">
                             <span>교과과정</span>
                         </a>
-                        <a href="#" class="bg-main-link">
+                        <a href="/greenUniv/community/community_employmentInformation.do" class="bg-main-link">
                             <img src="images/bg-main-link05.png" alt="취업안내 아이콘">
                             <span>취업안내</span>
                         </a>
@@ -278,9 +278,9 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
-                    <li><a href="#">교내공지사항</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
         </div>

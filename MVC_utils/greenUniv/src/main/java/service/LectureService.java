@@ -58,6 +58,10 @@ public enum LectureService {
 		return dto;
 	}
 	
+	public List<LectureDTO> findAllSearch(int start, String searchType, String keyword) {
+		return dao.selectLectureSearch(start, searchType, keyword);
+	}
+	
 	public void register(LectureDTO dto) {
 		dao.insert(dto);
 	}

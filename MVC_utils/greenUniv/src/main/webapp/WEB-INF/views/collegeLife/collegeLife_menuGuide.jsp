@@ -139,9 +139,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -151,7 +151,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="./main.html"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -295,56 +295,17 @@
                             </tr>
                             <tr>
                                 <td class="meal-type">중식</td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
+                                <c:forEach var="menu" items="${dtoList}">
+	                                <td class="meal-content">
+	                                    <span class="price-tag">${menu.price}</span><br>
+	                                    <span class="menu-item">${menu.rice}</span>
+	                                    <span class="menu-item">${menu.soup}</span>
+	                                    <span class="menu-item">${menu.side1}</span>
+	                                    <span class="menu-item">${menu.side2}</span>
+	                                    <span class="menu-item">${menu.side3}</span>
+	                                    <span class="menu-item">${menu.side4}</span>
+	                                </td>
+                                </c:forEach>
                                 <td class="meal-content">미운영</td>
                             </tr>
                             <tr>
@@ -372,9 +333,9 @@
             <ul class="footer-high-quicklinks">
                 <li><a href="#">개인정보처리방침</a></li>
                 <li><a href="#">통합정보시스템</a></li>
-                <li><a href="#">학사일정</a></li>
+                <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                 <li><a href="#">주요인원 연락처</a></li>
-                <li><a href="#">교내공지사항</a></li>
+                <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
             </ul>
         </div>
     </div>

@@ -37,5 +37,11 @@
 **/.#*
 **/CVS/**
 .metadata
+<<<<<<< HEAD
 **/.classpath
 **/.settings
+=======
+**/Tomcat v10.1 Server at localhost-config/**
+.classpath
+.settings
+>>>>>>> e3da35972db9612728e4be8cb5fa61e781adb4db
