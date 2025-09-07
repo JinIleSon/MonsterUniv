@@ -20,6 +20,19 @@
     	a {text-decoration:none;}
 	    main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
+		.sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
     </style>
 </head>
 <body>
@@ -138,15 +151,14 @@
         </div>
     </div>
     <main style="margin-top:50px;">
-        <div style="height: 600px;" class = "container">
-            <div style="height:50px;"></div>
+        <div style="height: 600px; width:1200px !important;" class = "container">
             <div style="display: flex; gap: 60px;">
-                <div style=" width: 200px;">
-                    <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 10px;">학사안내</b>
-                    <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <div style=" width: 210px;">
+                    <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 10px; color:black !important;"">학사안내</b>
+                    <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                         <tr>
                             <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                                <a href="#" style="color: white; font-weight:300;">공지사항</a>
+                                <a href="#" style="color: white; font-weight:300;" class="active">공지사항</a>
                             </td>
                         </tr>
                         <tr>
@@ -176,8 +188,8 @@
                         </tr>
                     </table>
                 </div>
-                <div style="padding-top:10px; width: 950px;">
-                    <b style="font-weight: 700; font-size:26px;">공지사항</b>
+                <div style="padding-top:10px; width: 900px;">
+                    <b style="font-weight: 700; font-size:26px; color:black !important;">공지사항</b>
                     <hr style="border:none; border-bottom: 2px solid black !important; opacity:1 !important;">
                     <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
                         <form action="" style="display: flex;">

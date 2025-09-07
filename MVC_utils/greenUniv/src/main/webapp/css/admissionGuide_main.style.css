@@ -117,32 +117,50 @@ header {
       align-items: center; 
   }
 
-  .sidebar ul {
-      list-style: none;
-  }
+ .sidebar ul {
+     list-style: none;
+ }
 
-  .sidebar li {
-      border-bottom: 1px solid #eee;
-      height: 60px;
-  }
+ .sidebar li {
+     border-bottom: 1px solid #eee;
+     height: 60px;
+ }
 
-  .sidebar a {
-      display: block;
-      padding: 20px 16px;
-      text-decoration: none;
-      color: #333;
-      font-size: 15px;
-      height: 100%;
-  }
+ .sidebar a {
+     text-decoration: none;
+     font-size: 15px;
+     
+ }
 
-  .sidebar a.active {
-      background-color: #4a90e2;
-      color: white;
-  }
+ .sidebar a.active {
+     background-color: #4a90e2;
+     color: white;
+ }
 
-  .sidebar a:hover:not(.active) {
-      background-color: #f0f0f0;
-  }
+ .sidebar a:hover:not(.active) {
+     background-color: #f0f0f0;
+ }
+ 
+ .sidebar li a {
+   display: block;          /* 블록화 → li 크기 전체 차지 */
+   width: 100%;             /* 부모(li) 너비 다 차지 */
+   height: 100%;            /* 부모(li) 높이 다 차지 */
+   line-height: 60px;       /* li 높이(60px)와 맞춰 세로 중앙 정렬 */
+   padding-left: 16px;      /* 좌측 여백 */
+   font-size: 15px;
+   text-decoration: none;
+}
+
+/* hover */
+.sidebar li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* active (현재 페이지) */
+.sidebar li a.active {
+    background-color: #4a90e2;
+    color: white;
+}
 
 /* 브레드 크럼 */
 .breadcrumb {

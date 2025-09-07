@@ -44,6 +44,19 @@
     	a {text-decoration:none;}
 	    main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
+		.sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
     </style>
 </head>
 <body>
@@ -166,8 +179,8 @@
         <div class="container" style="padding-left: 60px;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
-                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">학사안내</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/academicAffairs/academicAffairs_notice.do" style="color: black;">공지사항</a>
@@ -175,7 +188,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">학사일정</a>
+                            <a href="#" style="color: white; font-weight:300;" class="active">학사일정</a>
                         </td>
                     </tr>
                     <tr>
@@ -203,7 +216,7 @@
             <article>
                 <div>
                     <div class="schedule_title" style="border-bottom: 2px solid black;">
-                        <h2 style="font-weight: 700; font-size: 26px;">학사일정</h2>
+                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">학사일정</h2>
                     </div>
                     <div id="calendar"></div>
                     <div style="position:relative;">

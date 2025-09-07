@@ -129,14 +129,11 @@
         }
 
         .title-cell a {
-            color: #333;
-            text-decoration: none;
+            color:black;
+            text-decoration:none;
         }
 
-        .title-cell a:hover {
-            text-decoration: underline;
-            color: #4a90e2;
-        }
+        
 
         /* 페이지네이션 */
         .pagination {
@@ -294,14 +291,16 @@
     <div class="inner">
         <div class="container">
             <!-- 사이드바 -->
-            <div class="sidebar">
-                <div class="sidebar-header">입학안내</div>
+            <div class="sidebar" style="">
+            	<div style=""></div>
+                <div class="sidebar-header" style="">입학안내</div>
+                
                 <ul>
                     <li><a href="#" class="active">공지사항</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do">수시모집</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do">정시모집</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">편입학</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do" style="color: black !important;">수시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do" style="color: black !important;">정시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do" style="color: black !important;">편입학</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do" style="color: black !important;">입학상담</a></li>
                 </ul>
             </div>
 
@@ -354,7 +353,7 @@
                             <tr>
                                 <td>1</td>
                                 <td class="title-cell">
-                                    2025학년도 신입학 추가모집 모집요강 및 모집일정 공지
+                                    <a href="#">2025학년도 신입학 추가모집 모집요강 및 모집일정 공지</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>

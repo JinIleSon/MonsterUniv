@@ -131,14 +131,11 @@
         }
 
         .title-cell a {
-            color: #333;
             text-decoration: none;
+            color: black;
         }
 
-        .title-cell a:hover {
-            text-decoration: underline;
-            color: #4a90e2;
-        }
+        
 
         /* 페이지네이션 */
         .pagination {
@@ -300,10 +297,10 @@
             <div class="sidebar">
                 <div class="sidebar-header">입학안내</div>
                 <ul>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">공지사항</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do">수시모집</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do">정시모집</a></li>
-                    <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do">편입학</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_notice.do" style="color: black !important;">공지사항</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_early.do" style="color: black !important;">수시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_regular.do" style="color: black !important;">정시모집</a></li>
+                    <li><a href="/greenUniv/admissionGuide/admissionGuide_transfer.do" style="color: black !important;">편입학</a></li>
                     <li><a href="#" class="active">입학상담</a></li>
                 </ul>
             </div>
@@ -338,7 +335,7 @@
                                 <td>3</td>
                                 <td class="title-cell">
                                     <img src="../images/ico-lock.png" alt="ico-lock">
-                                    <a href="#">정시모집 관련해 문의드립니다.</a>
+                                    <a href="#" >정시모집 관련해 문의드립니다.</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>

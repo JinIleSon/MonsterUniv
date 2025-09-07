@@ -19,6 +19,19 @@
     	a {text-decoration:none;}
     	main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
+		.sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
     </style>
 </head>
 <body>
@@ -140,8 +153,8 @@
         <div class="container" style="padding-left: 60px;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
-                <b style="display:block; font-weight: 700; font-size: 32px; margin-bottom: 14px;">학사안내</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <b style="display:block; font-weight: 700; font-size: 32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/academicAffairs/academicAffairs_notice.do" style="color: black;">공지사항</a>
@@ -164,7 +177,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">수료 및 졸업</a>
+                            <a href="#" style="color: white; font-weight:300;" class="active">수료 및 졸업</a>
                         </td>
                     </tr>
                     <tr>
@@ -177,7 +190,7 @@
             <article class="graduation_article">
                 <div>
                     <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px; width: 100%;">
-                        <h2 style="font-weight: 700; font-size: 26px;">수료 및 졸업</h2>
+                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">수료 및 졸업</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
                         <img src="../images/bullet-h4.png" alt="수료기준" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수료기준</h4>

@@ -34,7 +34,7 @@
             width:100%;
             height:100%;
             line-height: 60px;
-            margin-left:16px;
+            padding-left:16px;
         }
         
         .badge--news { background-color:#20A0B7; } /* 모집중 */
@@ -98,9 +98,21 @@
         	width: 34px; 
         	margin-right:3px;
         }
-        
+        .sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
         /* 게시판 아래버튼 부분 끝 */
-    main > :first-child{ margin-top: 0; }
+    	main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
     </style>
 </head>
@@ -224,7 +236,7 @@
         <div style="display: flex; gap: 60px;">
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">커뮤니티</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/community/community_announcement.do" style="color: black;">공지사항</a>
@@ -237,7 +249,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">취업정보</a>
+                            <a href="#" style="color: white; font-weight:300;" class="active">취업정보</a>
                         </td>
                     </tr>
                     <tr>
