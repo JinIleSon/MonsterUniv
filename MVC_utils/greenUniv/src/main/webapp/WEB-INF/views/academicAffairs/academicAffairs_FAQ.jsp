@@ -190,7 +190,7 @@
             </div>
             <article class="faq_article">
                 <div style="width:917px !important;">
-                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 45px; width: 100%;">
+                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 45px; width: 100%; margin-top: 22.5px;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">자주묻는질문</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
