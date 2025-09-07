@@ -234,12 +234,13 @@
                 </table>
             </div>
             <div style="padding-top:9px; width: 930px;">
-                <div style="padding-bottom:6px;">
+                <div style="padding-bottom:0px;">
                     <b style="font-weight: 700; font-size:26px;">총장 인사말</b>
+                    <hr style="border:none; margin-top:12px; border-top: 2px solid black !important; opacity:1 !important;">
                 </div>
                     <!-- 사이드바 끝-->
                     <!-- 본문 시작-->
-               <hr style="border:none; border-top: 2px solid;">
+               
                <div style="height:290px; margin-top:30px; display: flex; gap:23px;">
                   <img src="..//images/college-introduce-4.jpg" alt="" style="width:320px; height:240px;">
                   <div style="">

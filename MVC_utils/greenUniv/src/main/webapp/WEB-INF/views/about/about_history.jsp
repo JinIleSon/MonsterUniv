@@ -238,7 +238,7 @@
                     <!-- 사이드바 끝-->
 
                     <!-- 본문 시작-->
-               <hr style="border:none; border-top: 2px solid;">
+               <hr style="border:none; margin-top:6px; border-top: 2px solid black !important; opacity:1 !important;">
                <div style="height:0px; margin-top:30px; display: flex; gap:23px;"> 
  
                 </div>

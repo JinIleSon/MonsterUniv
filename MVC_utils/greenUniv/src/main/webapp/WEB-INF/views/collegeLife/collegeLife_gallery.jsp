@@ -385,7 +385,7 @@
                     <div class="dropdown-section" data-menu="community">
                         <h4>커뮤니티</h4>
                         <ul style="">
-                            <li><a href="/greenUniv/collegeLife/collegeLife_gallery.do">공지사항</a></li>
+                            <li><a href="/greenUniv/community/community_announcement.do">공지사항</a></li>
                             <li><a href="/greenUniv/community/community_newsAndColumn.do">뉴스 및 칼럼</a></li>
                             <li><a href="/greenUniv/community/community_freeDiscussionBoard.do">자유게시판</a></li>
                             <li><a href="/greenUniv/community/community_QnA.do">Q&amp;A</a></li>

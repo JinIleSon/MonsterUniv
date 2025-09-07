@@ -230,13 +230,13 @@
                     <!-- 사이드바 끝-->
 
                     <!-- 본문 시작-->
-               <hr style="border:none; border-top: 2px solid black;">
-               <div style="height:0px; margin-top:30px; display: flex; gap:23px;"> 
+               <hr style="border:none; margin-top:6px; border-top: 2px solid black !important; opacity:1 !important;">
+               <div style="height:0px; margin-top:30px; display: flex;"> 
  
                 </div> 
        <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9715843010927!2d129.05824077180847!3d35.15732941792972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb6f070cf047%3A0x54dc3eff4b6043b6!2z7ISc66m07Jet!5e0!3m2!1sko!2skr!4v1755745409966!5m2!1sko!2skr"  
-        width="920" 
+        width="870" 
         height="450" 
         style="border:0; position:relative; top:10px;" 
         allowfullscreen 
