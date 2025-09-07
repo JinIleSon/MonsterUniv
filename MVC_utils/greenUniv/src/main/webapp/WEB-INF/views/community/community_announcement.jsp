@@ -109,7 +109,7 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
                         <li><a href="#">사이트맵</a></li>
                         <li><a href="../login/login.html">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
