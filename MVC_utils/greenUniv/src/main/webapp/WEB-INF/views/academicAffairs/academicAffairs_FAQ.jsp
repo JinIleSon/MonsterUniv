@@ -150,7 +150,7 @@
         </div>
     </div>
     <main style="margin-top:50px;">
-        <div class="container" style="padding-left: 60px;">
+        <div class="container" style="padding-left: 73px; gap:38px !important;">
             
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
@@ -189,7 +189,7 @@
                 </table>
             </div>
             <article class="faq_article">
-                <div>
+                <div style="width:917px !important;">
                     <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 45px; width: 100%;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">자주묻는질문</h2>
                     </div>

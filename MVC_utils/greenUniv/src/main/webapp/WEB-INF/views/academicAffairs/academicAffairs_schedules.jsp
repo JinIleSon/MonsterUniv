@@ -176,7 +176,7 @@
     </div>
     <main style="margin-top:50px;">
     	
-        <div class="container" style="padding-left: 60px;">
+        <div class="container" style="gap:42px !important; padding-left:37px;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
@@ -214,18 +214,18 @@
                 </table>
             </div>
             <article>
-                <div>
-                    <div class="schedule_title" style="border-bottom: 2px solid black;">
+                <div style="">
+                    <div class="schedule_title" style="border-bottom: 2px solid black; width:928px;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">학사일정</h2>
                     </div>
-                    <div id="calendar"></div>
+                    <div id="calendar" style=""></div>
                     <div style="position:relative;">
                         <div class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
                     </div>
                 </div>
             </article>
          </div>
-         <div style="height: 100px;"></div>
+         <div style="height: 100px; border:1px solid;"></div>
     </main>
     <!--3. 푸터영역-->    
     <footer class="footer">

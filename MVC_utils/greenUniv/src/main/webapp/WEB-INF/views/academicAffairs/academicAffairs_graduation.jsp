@@ -150,7 +150,7 @@
         </div>
     </div>
     <main style="margin-top:50px;">
-        <div class="container" style="padding-left: 60px;">
+        <div class="container" style="padding-left: 74px; gap:40px !important;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size: 32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
@@ -188,8 +188,8 @@
                 </table>
             </div>
             <article class="graduation_article">
-                <div>
-                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px; width: 100%;">
+                <div style="width: 916px !important;">
+                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px; ">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">수료 및 졸업</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
