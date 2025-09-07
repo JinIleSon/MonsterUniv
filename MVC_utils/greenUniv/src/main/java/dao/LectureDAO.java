@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.LectureDTO;
+import service.LectureService;
 import util.DBHelper;
 import util.Sql_lecture;
 
@@ -85,8 +86,6 @@ public class LectureDAO extends DBHelper { //여기있는 Sql -> Sql_lecture
 
 			while(rs.next()) {
 				LectureDTO dto = new LectureDTO();
-				System.out.println("grade: " + rs.getInt(9));
-			    System.out.println("maxnum: " + rs.getString(19));
 				dto.setDeptcode(rs.getString(1));
 				dto.setYear(rs.getString(2));
 				dto.setSemester(rs.getString(3));
@@ -99,8 +98,8 @@ public class LectureDAO extends DBHelper { //여기있는 Sql -> Sql_lecture
 				dto.setProf(rs.getString(10));			
 				dto.setYclass(rs.getString(11));
 				dto.setYclase(rs.getString(12));
-				dto.setTimes(rs.getString(13));
-				dto.setTimee(rs.getString(14));
+				dto.setTimes(rs.getString(13).substring(10,16));
+				dto.setTimee(rs.getString(14).substring(10,16));
 				dto.setTimed(rs.getString(15));
 				dto.setEvaway(rs.getString(16));
 				dto.setBook(rs.getString(17));
@@ -119,20 +118,26 @@ public class LectureDAO extends DBHelper { //여기있는 Sql -> Sql_lecture
 		int total = 0;
 		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COUNT_SEARCH);
 		
-		if(searchType.equals("title")) {
-			sql.append(Sql_lecture.SEARCH_WHERE_TITLE);
-		} else if(searchType.equals("all")) {
-			sql.append(Sql_lecture.SEARCH_WHERE_ALL);
-		} else if(searchType.equals("nick")) {
-			sql.append(Sql_lecture.SEARCH_WHERE_NICK);
+		if(searchType.equals("lname")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
+		} else if(searchType.equals("prof")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_PROF);
 		}
-		
+//		else if(searchType.equals("all")) {
+//			sql.append(Sql_lecture.SEARCH_WHERE_ALL);
+//		}
 		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(sql.toString());
-			psmt.setString(1, "%" + keyword + "%");
+			if(keyword != null && !keyword.trim().isEmpty()) {
+				conn = getConnection();
+				psmt = conn.prepareStatement(sql.toString());
+				psmt.setString(1, "%" + keyword + "%");
+				rs = psmt.executeQuery();
+			} else {
+				conn = getConnection();
+				psmt = conn.prepareStatement(sql.toString());
+				rs = psmt.executeQuery();
+			}
 			
-			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -140,11 +145,72 @@ public class LectureDAO extends DBHelper { //여기있는 Sql -> Sql_lecture
 			
 			closeAll();
 		} catch(Exception e) {
-			logger.error(e.getMessage());
+			logger.error(e.getMessage() + "버그 selectCountSearch");
 		}
 		return total;
 	}
 	
+	public List<LectureDTO> selectLectureSearch(int start, String searchType, String keyword) {
+		List<LectureDTO> dtoList = new ArrayList<LectureDTO>();
+		
+		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_LECTURE_SEARCH);
+		
+		if(searchType.equals("lname")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
+		} else if(searchType.equals("prof")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_PROF);
+		}
+//		else if(searchType.equals("all")) {
+//			sql.append(Sql_lecture.SEARCH_WHERE_ALL);
+//		}
+		
+		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE); 
+		sql.append(Sql_lecture.SEARCH_OFFEST_ROW); 
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(sql.toString());
+			
+			if(keyword != null && !keyword.trim().isEmpty()) {
+				psmt.setString(1, "%"+keyword+"%");
+				psmt.setInt(2, start);
+				rs = psmt.executeQuery();
+			} else {
+				psmt.setInt(1, start);
+				rs = psmt.executeQuery();
+			}
+			
+			
+			while(rs.next()) {
+				LectureDTO dto = new LectureDTO();
+				dto.setDeptcode(rs.getString(1));
+				dto.setYear(rs.getString(2));
+				dto.setSemester(rs.getString(3));
+				dto.setCompdiv(rs.getString(4));	
+				dto.setLname(rs.getString(5));
+				dto.setLexpl(rs.getString(6));
+				dto.setOpencol(rs.getString(7));
+				dto.setOpenmaj(rs.getString(8));
+				dto.setGrade(rs.getInt(9));						
+				dto.setProf(rs.getString(10));			
+				dto.setYclass(rs.getString(11));
+				dto.setYclase(rs.getString(12));
+				dto.setTimes(rs.getString(13).substring(10,16));
+				dto.setTimee(rs.getString(14).substring(10,16));
+				dto.setTimed(rs.getString(15));
+				dto.setEvaway(rs.getString(16));
+				dto.setBook(rs.getString(17));
+				dto.setRoom(rs.getString(18));
+				dto.setMaxnum(rs.getInt(19));
+				dtoList.add(dto);
+			}
+			
+			closeAll();
+		} catch(Exception e) {
+			logger.error(e.getMessage() + "버그 selectLectureSearch");
+		}
+		return dtoList;
+	}
 	public void update(LectureDTO dto) {
 		
 	}

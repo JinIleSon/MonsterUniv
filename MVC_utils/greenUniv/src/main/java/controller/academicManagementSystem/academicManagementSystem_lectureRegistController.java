@@ -19,7 +19,7 @@ public class academicManagementSystem_lectureRegistController extends HttpServle
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/academicManagementSystem/academic management system_lectureRegist.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/academicManagementSystem/AMS_lectureRegist.jsp");
 		dispatcher.forward(req, resp);
 	}
 	@Override
