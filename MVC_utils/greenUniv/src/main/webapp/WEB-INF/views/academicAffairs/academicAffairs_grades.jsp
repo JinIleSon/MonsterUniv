@@ -181,7 +181,7 @@
                         <h2 style="font-weight: 700; font-size: 26px;">성적</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="시험" style="margin-right: 5px;"><h4>시험</h4>
+                        <img src="../images/bullet-h4.png" alt="시험" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">시험</h4>
                     </div>
                     <div style="margin-bottom: 30px;">
                         <h6 style="font-size: 12pt; margin: 0; color: #0067B3;">- 시험은 정기시험, 비정기시험, 추가시험, 재시험 등으로 구분</h6>
@@ -202,7 +202,7 @@
                         </p>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="성적" style="margin-right: 5px;"><h4>성적</h4>
+                        <img src="../images/bullet-h4.png" alt="성적" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">성적</h4>
                     </div>
                     <div style="margin-bottom: 30px;">
                         <h6 style="font-size: 12pt; margin: 0; color: #0067B3;">- 평가내용</h6>
