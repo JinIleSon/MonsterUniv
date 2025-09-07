@@ -151,7 +151,7 @@
     </div>
     <main style="margin-top:50px;">
         
-        <div class="container" style="padding-left: 60px;">
+        <div class="container" style="padding-left:30px; display:flex; gap:45px !important; justify-content: center;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
@@ -189,7 +189,7 @@
                 </table>
             </div>
             <article class="CR_article">
-                <div style=" width: 930px;">
+                <div style=" width: 910px;">
                     <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">수강신청</h2>
                     </div>
