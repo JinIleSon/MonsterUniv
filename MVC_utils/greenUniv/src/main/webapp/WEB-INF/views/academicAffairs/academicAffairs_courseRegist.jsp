@@ -151,10 +151,10 @@
     </div>
     <main style="margin-top:50px;">
         
-        <div class="container" style="padding-left:30px; display:flex; gap:45px !important; justify-content: center;">
+        <div class="container" style="padding-left:30px; display:flex; gap:60px !important; justify-content: center; min-width: 1200px;">
             <!-- 배너 메뉴 -->
-            <div style=" width: 210px;">
-                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
+            <div style=" width: 210px; flex-shrink: 0;">
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;">학사안내</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
@@ -190,8 +190,9 @@
             </div>
             <article class="CR_article">
                 <div style=" width: 910px;">
-                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px;">
-                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">수강신청</h2>
+                    <div style="font-size: 14pt; line-height: 17px; margin-bottom: 30px; margin-top: 14px;">
+                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;">수강신청</h2>
+                        <hr style="opacity: 1; height: 0; background-color: none; border-top: 2px solid black;">
                     </div>
                     <div style="margin-bottom: 60px; margin-top: 30px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">

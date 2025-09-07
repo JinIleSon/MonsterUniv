@@ -176,9 +176,9 @@
     </div>
     <main style="margin-top:50px;">
     	
-        <div class="container" style="gap:42px !important; padding-left:37px;">
+        <div class="container" style="gap:60px !important; padding-left:37px; display: flex; justify-content: center; min-width: 1200px">
             <!-- 배너 메뉴 -->
-            <div style=" width: 210px;">
+            <div style=" width: 210px; flex-shrink: 0;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
@@ -225,7 +225,7 @@
                 </div>
             </article>
          </div>
-         <div style="height: 100px; border:1px solid;"></div>
+         <div style="height: 100px;"></div>
     </main>
     <!--3. 푸터영역-->    
     <footer class="footer">
