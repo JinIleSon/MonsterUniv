@@ -215,7 +215,7 @@
         <div style="height:48px; "></div>
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px; ">
-                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">대학소개</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
@@ -246,7 +246,7 @@
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:6px;">
-                    <b style="font-weight: 700; font-size:26px;">연혁</b>
+                    <b style="font-weight: 700; font-size:26px; color:black !important;"">연혁</b>
                 </div>
                     <!-- 사이드바 끝-->
 

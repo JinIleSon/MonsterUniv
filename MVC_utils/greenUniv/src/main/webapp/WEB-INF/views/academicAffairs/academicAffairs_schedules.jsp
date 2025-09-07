@@ -179,7 +179,7 @@
         <div class="container" style="padding-left: 60px;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
-                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">학사안내</b>
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
@@ -216,7 +216,7 @@
             <article>
                 <div>
                     <div class="schedule_title" style="border-bottom: 2px solid black;">
-                        <h2 style="font-weight: 700; font-size: 26px;">학사일정</h2>
+                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">학사일정</h2>
                     </div>
                     <div id="calendar"></div>
                     <div style="position:relative;">

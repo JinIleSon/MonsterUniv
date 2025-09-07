@@ -219,7 +219,7 @@
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px;">
             	<div>
-                	<b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
+                	<b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;">대학소개</b>
                 </div>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
@@ -251,7 +251,7 @@
             </div>
             <div style="padding-top:9px; width: 930px;">
                 <div style="padding-bottom:0px;">
-                    <b style="font-weight: 700; font-size:26px;">총장 인사말</b>
+                    <b style="font-weight: 700; font-size:26px; color:black !important;"">총장 인사말</b>
                     <hr style="border:none; margin-top:12px; border-top: 2px solid black !important; opacity:1 !important;">
                 </div>
                     <!-- 사이드바 끝-->
