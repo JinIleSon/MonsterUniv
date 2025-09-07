@@ -13,25 +13,30 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.LectureService;
 
-@WebServlet("/academicManagementSystem/AMS_lectureList.do")
-public class academicManagementSystem_lectureListController extends HttpServlet {
+@WebServlet("/academicManagementSystem/AMS_lectureList_search.do")
+public class academicManagementSystem_lectureList_searchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 	private LectureService lectureService = LectureService.INSTANCE;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pg = req.getParameter("pg");
+		String searchType = req.getParameter("searchType");
+		String keyword = req.getParameter("keyword");
 		
-		PagenationDTO pagenationDTO = lectureService.getPagenationDTO(pg, null, null);
+		PagenationDTO pagenationDTO = lectureService.getPagenationDTO(pg, searchType, keyword);
 		
 		int start = pagenationDTO.getStart();
-		List<LectureDTO> dtoList = lectureService.findAll(start);
+		List<LectureDTO> dtoList = lectureService.findAllSearch(start, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);
+		req.setAttribute("searchType", searchType);
+		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/academicManagementSystem/AMS_lectureList.jsp");
-		dispatcher.forward(req, resp);	
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/academicManagementSystem/AMS_lectureList_search.jsp");
+		dispatcher.forward(req, resp);
 	}
 	
 	@Override

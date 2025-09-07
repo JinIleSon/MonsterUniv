@@ -509,12 +509,15 @@
                 <p>학사운영 &nbsp; > &nbsp; <span>강의 목록</span></p>
             </div>
             
-            <form class="search-form">
-                <select id="search-select">
+            <form action="/greenUniv/academicManagementSystem/AMS_lectureList_search.do" method="get" class="search-form">
+                <select id="search-select" name="searchType">
                     <option>검색조건</option>
+                    <option value="all">전체</option>
+                    <option value="lname">과목명</option>
+                    <option value="prof">교수명</option>
                 </select>
-                <input type="text" id="search-title" placeholder="키워드 입력">
-                <input type="button" class="search-btn" value="검색">
+                <input type="text" name="keyword" id="search-title" placeholder="키워드 입력">
+                <input type="submit" class="search-btn" value="검색" style="cursor:pointer">
             </form>
             
             <table>
@@ -533,137 +536,47 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>3025112</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>1</span></td>
-                        <td><span>전공선택</span></td>
-                        <td><span>프로그래밍 개론</span></td>
-                        <td><span>김컴공</span></td>
-                        <td><span>3</span></td>
-                        <td><span>월,수 10:00 ~ 12:00</span></td>
-                        <td><span>컴퓨터실</span></td>
-                        <td><span>30</span></td>
-                    </tr>
+                	<c:forEach var="lecture" items="${dtoList}" varStatus="status">
+	                    <tr>
+	                        <td><span>${lecture.deptcode}</span></td>
+	                        <td><span>${lecture.openmaj}</span></td>
+	                        <td><span>${lecture.year}</span></td>
+	                        <td><span>${lecture.compdiv}</span></td>
+	                        <td><span>${lecture.lname}</span></td>
+	                        <td><span>${lecture.prof}</span></td>
+	                        <td><span>${lecture.grade}</span></td>
+	                        <td><span>${lecture.timed} ${lecture.times} ~ ${lecture.timee}</span></td> <!-- test -->
+	                        <td><span>${lecture.room}</span></td>
+	                        <td><span>${lecture.maxnum}</span></td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
 
             <ul class="pagenation">
-                <li><a href="#"><span class="first"></span></a></li>
-                <li><a href="#"><span class="prev"></span></a></li>
-                <li><a href="#" class="page1">1</a></li>
-                <li><a href="#" class="page2">2</a></li>
-                <li><a href="#" class="page3">3</a></li>
-                <li><a href="#"><span class="next"></span></a></li>
-                <li><a href="#"><span class="last"></span></a></li>
+                <li><a href="${pageContext.request.contextPath}/academicManagementSystem/AMS_lectureList_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}"><span class="first"></span></a></li>
+                <c:choose>
+                	<c:when test="${pagenationDTO.currentPage == 1}">
+                		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
+                	</c:when>
+                	<c:otherwise>
+                		<li><a href="${pageContext.request.contextPath}/academicManagementSystem/AMS_lectureList_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}"><span class="prev"></span></a></li>
+                	</c:otherwise>
+                </c:choose>
+                
+                <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                	<li><a href="${pageContext.request.contextPath}/academicManagementSystem/AMS_lectureList_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+                </c:forEach>
+                
+                <c:choose>
+                	<c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+                		<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
+                	</c:when>
+                	<c:otherwise>
+                		<li><a href="${pageContext.request.contextPath}/academicManagementSystem/AMS_lectureList.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}"><span class="next"></span></a></li>
+                	</c:otherwise>
+                </c:choose>
+                <li><a href="${pageContext.request.contextPath}/academicManagementSystem/AMS_lectureList.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}"><span class="last"></span></a></li>      
             </ul>
         </main>
     </div>
