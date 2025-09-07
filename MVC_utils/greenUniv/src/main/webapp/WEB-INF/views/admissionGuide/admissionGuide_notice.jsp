@@ -129,14 +129,11 @@
         }
 
         .title-cell a {
-            color: #333;
-            text-decoration: none;
+            color:black;
+            text-decoration:none;
         }
 
-        .title-cell a:hover {
-            text-decoration: underline;
-            color: #4a90e2;
-        }
+        
 
         /* 페이지네이션 */
         .pagination {
@@ -356,7 +353,7 @@
                             <tr>
                                 <td>1</td>
                                 <td class="title-cell">
-                                    2025학년도 신입학 추가모집 모집요강 및 모집일정 공지
+                                    <a href="#">2025학년도 신입학 추가모집 모집요강 및 모집일정 공지</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>

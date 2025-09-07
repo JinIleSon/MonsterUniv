@@ -131,14 +131,11 @@
         }
 
         .title-cell a {
-            color: #333;
             text-decoration: none;
+            color: black;
         }
 
-        .title-cell a:hover {
-            text-decoration: underline;
-            color: #4a90e2;
-        }
+        
 
         /* 페이지네이션 */
         .pagination {
@@ -338,7 +335,7 @@
                                 <td>3</td>
                                 <td class="title-cell">
                                     <img src="../images/ico-lock.png" alt="ico-lock">
-                                    <a href="#">정시모집 관련해 문의드립니다.</a>
+                                    <a href="#" >정시모집 관련해 문의드립니다.</a>
                                 </td>
                                 <td>담당자</td>
                                 <td>24.04.09</td>
