@@ -192,7 +192,7 @@
                     <li><a href="#">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
-                    <li><a href="#">교내공지사항</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
         </div>
