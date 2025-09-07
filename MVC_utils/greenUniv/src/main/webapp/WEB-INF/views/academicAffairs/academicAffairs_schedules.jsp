@@ -44,6 +44,19 @@
     	a {text-decoration:none;}
 	    main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
+		.sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
     </style>
 </head>
 <body>
@@ -167,7 +180,7 @@
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">학사안내</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9;">
                             <a href="/greenUniv/academicAffairs/academicAffairs_notice.do" style="color: black;">공지사항</a>
@@ -175,7 +188,7 @@
                     </tr>
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color: white; font-weight:300;">학사일정</a>
+                            <a href="#" style="color: white; font-weight:300;" class="active">학사일정</a>
                         </td>
                     </tr>
                     <tr>

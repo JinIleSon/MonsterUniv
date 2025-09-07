@@ -35,7 +35,7 @@
             width:100%;
             height:100%;
             line-height: 60px;
-            margin-left:16px;
+            padding-left:16px;
         }
         .board-select {
             color: #666666; /* 글씨 색 */
@@ -78,7 +78,21 @@
         }
         
         /* 게시판 아래버튼 부분 끝 */
-    main > :first-child{ margin-top: 0; }
+        .sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
+        
+    	main > :first-child{ margin-top: 0; }
 
         
     </style>
@@ -201,14 +215,16 @@
     
         <!-- 사이드바 시작-->
     <div style="height: 1088px;" class = "inner">
-        <div style="height:50px; "></div>
+        <div style="height:48px; "></div>
         <div style="display: flex; gap: 60px; ">
-            <div style=" width: 210px; ">
-                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+            <div style=" width: 210px;">
+            	<div>
+                	<b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
+                </div>
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-                            <a href="#" style="color:white">총장 인사말</a>
+                            <a href="#" style="color:white" class="active">총장 인사말</a>
                         </td>
                     </tr>
                     <tr>

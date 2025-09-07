@@ -127,12 +127,9 @@ header {
   }
 
   .sidebar a {
-      display: block;
-      padding: 20px 16px;
       text-decoration: none;
-      color: #333;
       font-size: 15px;
-      height: 100%;
+      
   }
 
   .sidebar a.active {

@@ -417,9 +417,9 @@
             <div class="sidebar">
                 <div class="sidebar-header">대학생활</div>
                 <ul>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">학생회 소개</a></li>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">동아리/스터디</a></li>
-                    <li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do" style="color: black !important;">학생회 소개</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do" style="color: black !important;">동아리/스터디</a></li>
+                    <li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do" style="color: black !important;">식단안내</a></li>
                     <li><a href="#" class="active">갤러리</a></li>
                 </ul>
             </div>
