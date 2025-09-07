@@ -182,7 +182,7 @@
                     </div>
                     <div style="margin-bottom: 60px; margin-top: 30px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청기간" style="margin-right: 5px;"><h4>수강신청기간</h4>
+                            <img src="../images/bullet-h4.png" alt="수강신청기간" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청기간</h4>
                         </div>
                         <div>
                                 - 매학기 수강신청은 개강 전에 실시, 학생은 수강신청 공고를 충분히 숙지한 다음, 수강신청 기간에 인터넷을 통해 신청과목을 입력<br>
@@ -192,13 +192,13 @@
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청 학점" style="margin-right: 5px;"><h4>수강신청 학점</h4>
+                            <img src="../images/bullet-h4.png" alt="수강신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 학점</h4>
                         </div>
                         <div>- 학기당 이수학점 : 18학점 이내(논문과목 별도) [대학 학칙 제20조]</div>
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="학부(과)별 신청 학점" style="margin-right: 5px;"><h4>학부(과)별 신청 학점</h4>
+                            <img src="../images/bullet-h4.png" alt="학부(과)별 신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">학부(과)별 신청 학점</h4>
                         </div>
                         <div style="border-top: 2px solid #0d1f4c;">
                             <table style="text-align: center;">
@@ -235,7 +235,7 @@
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청 변경 및 수강과목 철회" style="margin-right: 5px;"><h4>수강신청 변경 및 수강과목 철회</h4>
+                            <img src="../images/bullet-h4.png" alt="수강신청 변경 및 수강과목 철회" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 변경 및 수강과목 철회</h4>
                         </div>
                         <div>
                             <p>

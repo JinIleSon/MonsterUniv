@@ -295,56 +295,17 @@
                             </tr>
                             <tr>
                                 <td class="meal-type">중식</td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
-                                <td class="meal-content">
-                                    <span class="price-tag">정식 5,500원</span><br>
-                                    <span class="menu-item">백미밥</span>
-                                    <span class="menu-item">바지락미역국</span>
-                                    <span class="menu-item">닭안심매콤조림</span>
-                                    <span class="menu-item">야끼우동</span>
-                                    <span class="menu-item">두부간장</span>
-                                    <span class="menu-item">상추겉절이</span>
-                                    <span class="menu-item">포기김치</span>
-                                </td>
+                                <c:forEach var="menu" items="${dtoList}">
+	                                <td class="meal-content">
+	                                    <span class="price-tag">${menu.price}</span><br>
+	                                    <span class="menu-item">${menu.rice}</span>
+	                                    <span class="menu-item">${menu.soup}</span>
+	                                    <span class="menu-item">${menu.side1}</span>
+	                                    <span class="menu-item">${menu.side2}</span>
+	                                    <span class="menu-item">${menu.side3}</span>
+	                                    <span class="menu-item">${menu.side4}</span>
+	                                </td>
+                                </c:forEach>
                                 <td class="meal-content">미운영</td>
                             </tr>
                             <tr>
