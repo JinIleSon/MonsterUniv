@@ -41,7 +41,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="./main.html"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -180,7 +180,7 @@
                         <h2 style="font-weight: 700; font-size: 26px;">수료 및 졸업</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="수료기준" style="margin-right: 5px;"><h4>수료기준</h4>
+                        <img src="../images/bullet-h4.png" alt="수료기준" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수료기준</h4>
                     </div>
                     <div style="margin-bottom: 60px;">
                         <table style="width: 100%; height: 370px;">
@@ -241,7 +241,7 @@
                         </p>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="조기졸업" style="margin-right: 5px;"><h4>조기졸업</h4>
+                        <img src="../images/bullet-h4.png" alt="조기졸업" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">조기졸업</h4>
                     </div>
                     <div style="margin-bottom: 60px;">
                         <table style="height: 210px;">
@@ -264,7 +264,7 @@
                         <p>※ 편입생 제외</p>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="졸업" style="margin-right: 5px;"><h4>졸업</h4>
+                        <img src="../images/bullet-h4.png" alt="졸업" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">졸업</h4>
                     </div>
                     <div>
                         <table style="width: 100%; height: 390px;">

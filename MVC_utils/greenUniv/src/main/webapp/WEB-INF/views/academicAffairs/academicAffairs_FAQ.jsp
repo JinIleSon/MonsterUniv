@@ -41,7 +41,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="./main.html"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -181,128 +181,98 @@
                         <h2 style="font-weight: 700; font-size: 26px;">자주묻는질문</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="휴·복학 관련" style="margin-right: 5px;"><h4>휴·복학 관련</h4>
+                        <img src="../images/bullet-h4.png" alt="휴·복학 관련" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">휴·복학 관련</h4>
                     </div>
                     <div style="margin-bottom: 50px;">
-                        <table style="width: 100%; border-collapse: collapse; border-top: 4px solid black;">
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        일반휴학 연장은 몇 학기까지 가능한가요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="ansr">
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico ansr">A</div>
-                                        휴학연장은 1회에 2학기 가능하고 총 6학기 휴학 가능합니다.
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        복학하려고 하는데 어떻게 신청하나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        등록금 납부해서 등록 후 일반 휴학 가능한가요? 환불은 언제 되나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        군휴학 내려면 입영통지서 말고 어떤 서류가 필요하나요?
-                                    </a>
-                                </td>
-                            </tr>
+                        <table style="width: 100%; border-collapse: collapse; border-top: 2px solid black;">
+	                        <c:forEach var="faq" items="${dtoList}" varStatus="st">
+					            <c:choose>
+							      <c:when test="${st.index % 2 == 0 && faq.what == 1}">
+							        <tr class="q-row">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico qstn">Q</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							      <c:when test="${st.index % 2 == 1 && faq.what == 1}">
+							        <tr class="a-row" style="background-color:#EFEFEF;">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico ansr">A</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							    </c:choose>
+							    
+							</c:forEach>
+                            
                         </table>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="교과 및 학사 관련" style="margin-right: 5px;"><h4>교과 및 학사 관련</h4>
+                        <img src="../images/bullet-h4.png" alt="교과 및 학사 관련" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">교과 및 학사 관련</h4>
                     </div>
                     <div style="margin-bottom: 50px;">
-                        <table style="width: 100%; border-collapse: collapse; border-top: 4px solid black;">
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        학과별 교과과정과 학사안내를 확인하고 싶은데, 어떻게 확인할 수 있나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="ansr">
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico ansr">A</div>
-                                        홈페이지 내 대학요람(대학생활 안내)를 통해 해당 입학년도, 해당학과의 교과과정과 학사안내를 확인하세요.
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        복수전공 취소 또는 부전공 전환 신청은 어떻게 하나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        수강 신청은 어떻게 하나요?
-                                    </a>
-                                </td>
-                            </tr>
+                        <table style="width: 100%; border-collapse: collapse; border-top: 2px solid black;">
+	                        <c:forEach var="faq" items="${dtoList}" varStatus="st">
+	                           <c:choose>
+							      <c:when test="${st.index % 2 == 0 && faq.what == 2}">
+							        <tr class="q-row">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico qstn">Q</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							      <c:when test="${st.index % 2 == 1 && faq.what == 2}">
+							        <tr class="a-row" style="background-color:#EFEFEF;">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico ansr">A</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							    </c:choose>
+						    </c:forEach>
                         </table>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
-                        <img src="../images/bullet-h4.png" alt="휴·복학 관련" style="margin-right: 5px;"><h4>휴·복학 관련</h4>
+                        <img src="../images/bullet-h4.png" alt="휴·복학 관련" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">휴·복학 관련</h4>
                     </div>
                     <div style="margin-bottom: 50px;">
-                        <table style="width: 100%; border-collapse: collapse; border-top: 4px solid black;">
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        4학년 2학기에도 최소 12학점을 수강해야 하나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        9학기 이상 등록자는 수강신청학점에 따라 등록금이 달라지나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico qstn">Q</div>
-                                        수강 신청은 어떻게 하나요?
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="ansr">
-                                <td>
-                                    <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
-                                        <div class="faq_ico ansr">A</div>
-                                        수강신청 안내를 참고하시기 바랍니다.
-                                    </a>
-                                </td>
-                            </tr>
+                        <table style="width: 100%; border-collapse: collapse; border-top: 2px solid black;">
+                        	<c:forEach var="faq" items="${dtoList}" varStatus="st">
+                            	<c:choose>
+							      <c:when test="${st.index % 2 == 0 && faq.what == 3}">
+							        <tr class="q-row">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico qstn">Q</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							      <c:when test="${st.index % 2 == 1 && faq.what == 3}">
+							        <tr class="a-row" style="background-color:#EFEFEF;">
+							          <td>
+							            <a href="#" style="display: flex; align-items: center; line-height: 10px; color: black;">
+							                <div class="faq_ico ansr">A</div>
+							                <span>${faq.comment}</span>
+							            </a>
+							          </td>
+							        </tr>
+							      </c:when>
+							    </c:choose>
+		           	 		</c:forEach>
                         </table>
                     </div>
                 </div>
