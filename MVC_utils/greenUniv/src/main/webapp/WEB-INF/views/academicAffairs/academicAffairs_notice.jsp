@@ -30,9 +30,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -178,7 +178,7 @@
                 </div>
                 <div style="padding-top:10px; width: 950px;">
                     <b style="font-weight: 700; font-size:26px;">공지사항</b>
-                    <hr style="border:none; border-top: 2px solid;">
+                    <hr style="border:none; border-bottom: 2px solid black !important; opacity:1 !important;">
                     <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
                         <form action="" style="display: flex;">
                             <select name="" id="" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;">
@@ -248,7 +248,7 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
                     <li><a href="#">교내공지사항</a></li>
                 </ul>

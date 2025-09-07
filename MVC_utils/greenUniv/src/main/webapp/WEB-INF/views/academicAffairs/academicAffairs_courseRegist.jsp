@@ -29,9 +29,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -177,7 +177,7 @@
             </div>
             <article class="CR_article">
                 <div style=" width: 930px;">
-                    <div style="border-bottom: 2px solid #595959; font-size: 14pt; line-height: 17px; margin-bottom: 30px;">
+                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px;">
                         <h2 style="font-weight: 700; font-size: 26px;">수강신청</h2>
                     </div>
                     <div style="margin-bottom: 60px; margin-top: 30px;">
@@ -200,7 +200,7 @@
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
                             <img src="../images/bullet-h4.png" alt="학부(과)별 신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">학부(과)별 신청 학점</h4>
                         </div>
-                        <div style="border-top: 2px solid #0d1f4c;">
+                        <div style="border-top: 2px solid black;">
                             <table style="text-align: center;">
                                 <tr style="height: 50px; background-color: #f4f8fc; box-shadow: 1px 1px #dedede;">
                                     <td colspan="2" style="box-shadow: 1px 1px #dedede;">수강신청 학점수</td>
@@ -261,7 +261,7 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
                     <li><a href="#">교내공지사항</a></li>
                 </ul>

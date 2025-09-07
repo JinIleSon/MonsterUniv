@@ -88,9 +88,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -347,7 +347,7 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
                     <li><a href="#">교내공지사항</a></li>
                 </ul>

@@ -15,11 +15,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         
-        hr{
-            border: none;
-            height: 2px;
-            background-color: black;
-        } 
         a {
             text-decoration: none;
         }
@@ -87,9 +82,9 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="./main.html">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -235,13 +230,13 @@
                     <!-- 사이드바 끝-->
 
                     <!-- 본문 시작-->
-               <hr style="border:none; border-top: 2px solid;">
+               <hr style="border:none; border-top: 2px solid black;">
                <div style="height:0px; margin-top:30px; display: flex; gap:23px;"> 
  
                 </div> 
        <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.9715843010927!2d129.05824077180847!3d35.15732941792972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb6f070cf047%3A0x54dc3eff4b6043b6!2z7ISc66m07Jet!5e0!3m2!1sko!2skr!4v1755745409966!5m2!1sko!2skr"  
-        width="850" 
+        width="920" 
         height="450" 
         style="border:0; position:relative; top:10px;" 
         allowfullscreen 
@@ -249,9 +244,9 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
 
-      <ul>
-        <li>주소 : 부산광역시 부산진구 중앙대로 지하 730 서면역 근처</li>
-        <li>전화번호 : 042) 601-4458~59, 4339, 4309</li>
+      <ul style="margin-top:40px;">
+        <li style="margin-bottom:3px;">주소 : 부산광역시 부산진구 중앙대로 지하 730 서면역 근처</li>
+        <li style="margin-bottom:3px;">전화번호 : 042) 601-4458~59, 4339, 4309</li>
         <li>팩스 : 042) 862-5524, 3358    </li>
       </ul>
        
@@ -271,7 +266,7 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
                     <li><a href="#">교내공지사항</a></li>
                 </ul>
