@@ -151,10 +151,9 @@
         </div>
     </div>
     <main style="margin-top:50px;">
-        <div style="height: 600px;" class = "container">
-            <div style="height:50px;"></div>
+        <div style="height: 600px; width:1200px !important;" class = "container">
             <div style="display: flex; gap: 60px;">
-                <div style=" width: 200px;">
+                <div style=" width: 210px;">
                     <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 10px; color:black !important;"">학사안내</b>
                     <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                         <tr>
@@ -189,7 +188,7 @@
                         </tr>
                     </table>
                 </div>
-                <div style="padding-top:10px; width: 950px;">
+                <div style="padding-top:10px; width: 900px;">
                     <b style="font-weight: 700; font-size:26px; color:black !important;">공지사항</b>
                     <hr style="border:none; border-bottom: 2px solid black !important; opacity:1 !important;">
                     <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
