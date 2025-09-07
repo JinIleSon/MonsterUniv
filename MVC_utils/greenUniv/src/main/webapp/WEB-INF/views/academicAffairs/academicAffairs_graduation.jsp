@@ -30,8 +30,8 @@
                 <div class="log-area">
                     <ul>
                         <li><a href="/greenUniv/main.jsp">HOME</a></li>
-                        <li><a href="#">사이트맵</a></li>
-                        <li><a href="../login/login.html">로그인</a></li>
+                        <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
                         <li><a href="#">학생지원</a></li>
                     </ul>
                 </div>
@@ -176,15 +176,15 @@
             </div>
             <article class="graduation_article">
                 <div>
-                    <div style="border-bottom: 2px solid #595959; font-size: 14pt; line-height: 17px; margin-bottom: 30px; width: 100%;">
+                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px; width: 100%;">
                         <h2 style="font-weight: 700; font-size: 26px;">수료 및 졸업</h2>
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
                         <img src="../images/bullet-h4.png" alt="수료기준" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수료기준</h4>
                     </div>
                     <div style="margin-bottom: 60px;">
-                        <table style="width: 100%; height: 370px;">
-                            <tr>
+                        <table style="width: 100%; height: 370px; border:none; border-top: 2px solid black !important; opacity:1 !important;">
+                            <tr >
                                 <th rowspan="2">구분</th>
                                 <th rowspan="2">총 취득학점</th>
                                 <th colspan="4">수료 학점</th>
@@ -244,7 +244,7 @@
                         <img src="../images/bullet-h4.png" alt="조기졸업" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">조기졸업</h4>
                     </div>
                     <div style="margin-bottom: 60px;">
-                        <table style="height: 210px;">
+                        <table style="height: 210px; border:none; border-top: 2px solid black !important; opacity:1 !important; ">
                             <tr>
                                 <th colspan="3">자격</th>
                                 <th rowspan="2" style="width: 30%;">신청절차</th>
@@ -267,7 +267,7 @@
                         <img src="../images/bullet-h4.png" alt="졸업" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">졸업</h4>
                     </div>
                     <div>
-                        <table style="width: 100%; height: 390px;">
+                        <table style="width: 100%; height: 390px; border:none; border-top: 2px solid black !important; opacity:1 !important;">
                             <tr style="height: 50px;">
                                 <th rowspan="2" style="width: 30%;">소속 단과대학</th>
                                 <th rowspan="2" style="width: 15%;">총 취득학점</th>
@@ -333,7 +333,7 @@
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="#">주요인원 연락처</a></li>
                     <li><a href="#">교내공지사항</a></li>
                 </ul>

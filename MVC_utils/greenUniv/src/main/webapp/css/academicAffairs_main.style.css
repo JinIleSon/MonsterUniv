@@ -323,7 +323,7 @@ main > article > div > .schedule_notice {
 }
 
 .graduation_article > div > div > table {
-    border-top: 4px solid #071F4B;
+	border:none;
     text-align: center;
 }
 
