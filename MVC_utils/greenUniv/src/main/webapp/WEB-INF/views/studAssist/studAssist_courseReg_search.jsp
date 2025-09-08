@@ -149,7 +149,7 @@
 								<form
 									action="/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }"
 									method="get">
-									<input type="button" value="신청"
+									<input type="submit" value="신청" 
 										style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
 								</form>
 							</td>

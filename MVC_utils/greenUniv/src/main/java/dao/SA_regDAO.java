@@ -82,8 +82,8 @@ public class SA_regDAO extends DBHelper {
 				dto.setBook(rs.getString(17));
 				dto.setRoom(rs.getString(18));
 				dto.setMaxNum(rs.getInt(19));
-				dto.setNowNum(rs.getInt(19));
-				dto.setLecture_hash(rs.getString(20));
+				dto.setNowNum(rs.getInt(20));
+				dto.setLecture_hash(rs.getString(21));
 			}
 			logger.debug("SA_regDAO - select\n"+dto.toString());
 			closeAll();

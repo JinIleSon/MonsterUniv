@@ -32,9 +32,9 @@ public class RegisterController extends HttpServlet {
 		// 로그인 정보에서 학번 가져오기(임시번호 201001)
 //		HttpSession sessUser = req.getSession();
 		
+		logger.debug("registerController\n"+deptCode);
 		regService.registerToDetail(201001, dto);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/greenUniv/studAssist/courseReg/list.do");
-		dispatcher.forward(req, resp);
+		resp.sendRedirect("/greenUniv/studAssist/courseReg/list.do");
 	}
 }
