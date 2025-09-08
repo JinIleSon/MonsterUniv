@@ -224,19 +224,43 @@
                 </tr>
             </table>
             <div>
-                <form action="/greenUniv/login/join.do" method="" >
-                    <label for="" style="display: flex; align-items: center; justify-items: center; margin-top:6px;">
-                        <input type="checkbox" name="" id="" style="border:1px #767676 solid; width:20px; height: 20px; margin-right:5px; margin-left:0px;"><span>위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.</span>
-                    </label>
-                    <div style="float:right; margin-top:-1px;">
-                        <label for="">
-                            <input type="button" value="취소" style="background-color: #8B8B8B; border:none; color:white; width: 56px; height: 48px; font-size: 18px; font-weight: 200;">
-                        </label>
-                        <label for="">
-                            <input type="submit" value="다음" style="background-color: #3F97F6; border:none; color:white; width: 56px; height: 48px; font-size: 18px; font-weight: 200;">
-                        </label>
-                    </div>
-                </form>
+                <form action="/greenUniv/login/join.do" method="get" onsubmit="return validateTerms()">
+			  <label style="display:flex; align-items:center; margin-top:6px;">
+			    <input type="checkbox" name="agreeAll" id="agreeAll" required
+			           style="border:1px #767676 solid; width:20px; height:20px; margin-right:5px;">
+			    <span>위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.</span>
+			  </label>
+			
+			  <div style="float:right; margin-top:-1px;">
+			    <input type="button" value="취소"
+			           onclick="history.back()"
+			           style="background-color:#8B8B8B; border:none; color:white; width:56px; height:48px; font-size:18px;">
+			    <!-- id 추가! -->
+			    <input type="submit" id="nextBtn" value="다음" disabled
+			           style="background-color:#3F97F6; border:none; color:white; width:56px; height:48px; font-size:18px;">
+			  </div>
+			</form>
+                
+                <script>
+			// 체크되면 '다음' 활성화
+			const agree = document.getElementById('agreeAll');
+			const nextBtn = document.getElementById('nextBtn');
+			
+			agree.addEventListener('change', function () {
+			  nextBtn.disabled = !this.checked;
+			});
+			
+			// 안전하게 한 번 더 검증 (required가 막아주지만 UX용)
+			function validateTerms() {
+			  if (!agree.checked) {
+			    alert('약관 및 개인정보 수집·이용에 동의해주세요.');
+			    return false;
+			  }
+			  return true;
+			}
+			</script>
+			
+			
             </div>
             <div>
 
