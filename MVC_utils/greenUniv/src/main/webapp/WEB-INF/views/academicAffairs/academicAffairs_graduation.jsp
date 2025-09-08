@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사안내::수료 및 졸업</title>
-    <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/academicAffairs_main.style.css">
 	<!--css연결-->
     <link rel="stylesheet" href="../css/main_main.style.css">
@@ -15,6 +14,7 @@
     <link rel="stylesheet" href="../css/Footer.style.css">
     <!--부트스트랩 연결-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
     	a {text-decoration:none;}
     	main > :first-child{ margin-top: 0; }
@@ -149,9 +149,9 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수료 및 졸업</span>
         </div>
     </div>
-        <div class="container" style="margin-top:50px;padding-left: 74px; gap:40px !important;">
+        <div class="container" style="margin-top: 50px; padding-left: 74px; gap:60px !important; display: flex; justify-content: center; min-width: 1200px;">
             <!-- 배너 메뉴 -->
-            <div style=" width: 210px;">
+            <div style=" width: 210px; flex-shrink: 0;">
                 <b style="display:block; font-weight: 700; font-size: 32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
@@ -188,8 +188,9 @@
             </div>
             <article class="graduation_article">
                 <div style="width: 916px !important;">
-                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 30px; ">
+                    <div style="font-size: 14pt; line-height: 17px; margin-bottom: 30px; margin-top: 13px;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">수료 및 졸업</h2>
+                        <hr style="height: 0; background-color: none; opacity: 1; border-top: 2px solid black;">
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
                         <img src="../images/bullet-h4.png" alt="수료기준" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수료기준</h4>

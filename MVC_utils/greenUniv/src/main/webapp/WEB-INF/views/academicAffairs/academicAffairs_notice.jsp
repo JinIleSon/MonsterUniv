@@ -187,9 +187,9 @@
                         </tr>
                     </table>
                 </div>
-                <div style="padding-top:10px; width: 900px;">
+                <div style="padding-top:1px; width: 900px;">
                     <b style="font-weight: 700; font-size:26px; color:black !important;">공지사항</b>
-                    <hr style="border:none; border-bottom: 2px solid black !important; opacity:1 !important;">
+                    <hr style="border:none; hieght: 0; background-color: none; border-top: 2px solid black !important; opacity:1 !important;">
                     <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
                         <form action="" style="display: flex;">
                             <select name="" id="" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;">

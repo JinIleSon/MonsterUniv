@@ -149,10 +149,10 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">자주묻는질문</span>
         </div>
     </div>
-        <div class="container" style="margin-top:50px; padding-left: 73px; gap:38px !important;">
+        <div class="container" style="margin-top: 50px; padding-left: 73px; gap:60px !important; display: flex; justify-content: center; min-width: 1200px">
             
             <!-- 배너 메뉴 -->
-            <div style=" width: 210px;">
+            <div style=" width: 210px; flex-shrink: 0;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>
                 <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top: 2px solid black;">
                     <tr>
@@ -189,8 +189,9 @@
             </div>
             <article class="faq_article">
                 <div style="width:917px !important;">
-                    <div style="border-bottom: 2px solid black; font-size: 14pt; line-height: 17px; margin-bottom: 45px; width: 100%;">
-                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">자주묻는질문</h2>
+                    <div style="font-size: 14pt; line-height: 17px; margin-bottom: 45px; width: 100%; margin-top: 13px;">
+                        <h2 style="font-weight: 700; font-size: 26px; color:black !important;">자주묻는질문</h2>
+                        <hr style="height: 0; background-color: none; opacity: 1; border-top: 2px solid black;">
                     </div>
                     <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 10px; color: #145074; display: flex; align-items: center;">
                         <img src="../images/bullet-h4.png" alt="휴·복학 관련" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">휴·복학 관련</h4>

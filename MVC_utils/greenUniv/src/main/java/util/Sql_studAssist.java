@@ -1,6 +1,6 @@
 package util;
 
-public class Sql {
+public class Sql_studAssist {
 	
 	// terms
 //	public static final String SELECT_TERMS = "SELECT * FROM TB_TERMS where NO=?";
@@ -17,9 +17,11 @@ public class Sql {
 	//										+ "VALUES (?,STANDARD_HASH(?, 'SHA256'),?,?,?,?,?,?,?,?,SYSDATE)";
 
 	
-	// lecture
+	// courseReg
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM lecture";
 	public static final String SELECT_ALL_LECTURES = "SELECT * FROM lecture";
+	public static final String SELECT_COUNT_WITH_CCODE = "SELECT COUNT(*) FROM lecture";
+	public static final String SELECT_ALL_LECTURES_WITH_CCODE = "SELECT * FROM lecture";
 	public static final String WITH_OPENMAJ = " WHERE OPENMAJ like ?";
 	public static final String WITH_DEPTCODE = " WHERE DEPTCODE like ?";
 	public static final String WITH_LNAME = " WHERE LNAME like ?";
@@ -29,8 +31,5 @@ public class Sql {
 	public static final String WITH_GRADE = " WHERE GRADE = REGEXP_REPLACE(?, '[^0-9]', '')";
 	public static final String WITH_ROOM = " WHERE ROOM like ?";
 	public static final String SEARCH_ORDER_DEPTCODE = " ORDER BY DEPTCODE";
-	public static final String SEARCH_OFFET_ROW = " LIMIT 10 OFFSET ?";
-	
-	// regDetails
-	public static final String SELECT_REGDETAILS_WITH_SNUM = "SELECT * FROM sa_details WHERE SNUM = ?";
+	public static final String SEARCH_OFFET_ROW = " LIMIT 5 OFFSET ?";
 }
