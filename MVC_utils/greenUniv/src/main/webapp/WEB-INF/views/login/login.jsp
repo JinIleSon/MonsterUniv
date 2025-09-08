@@ -150,21 +150,40 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">로그인</span>
         </div>
     </div>
+    
+    <%-- login.jsp 상단, 폼 위쪽 어딘가 --%>
+	<c:choose>
+	  <%-- 1) URL 파라미터로 온 성공/실패 메시지 --%>
+	  <c:when test="${not empty param.msg}">
+	    <div style="background:#f8f9fa; border:1px solid #ddd; padding:10px; margin:12px 0;
+	                color:${param.code == '200' ? '#087f5b' : '#d6336c'};">
+	      ${param.msg}
+	    </div>
+	  </c:when>
+	
+	  <%-- 2) 컨트롤러에서 forward로 준 에러 메시지 (request attribute) --%>
+	  <c:when test="${not empty error}">
+	    <div style="background:#fff5f5; border:1px solid #ff8787; padding:10px; margin:12px 0; color:#d6336c;">
+	      ${error}
+	    </div>
+	  </c:when>
+	</c:choose>
+                    
     <div class="inner" style="display: flex; justify-content: center; align-items: center; ">
         <div style="height: 630px; position: relative; ">
             <div style="height:41px;"></div>
             <p style="color: #3F97F6; font-weight: 500; font-size:15pt; margin-bottom:5px;">LOGIN</p>
             <p style="color: #3F97F6; margin-top: 0;">로그인을 하시면 더 다양한 서비스를 받으실 수 있습니다.</p>
-            <div style=" height: 220px; width: 495px; padding-top:12px; ">
-                    <form action="" method="">
+            <div style=" height: 220px; width: 495px; padding-top:12px; ">                                                                 
+                    <form action="${pageContext.request.contextPath}/login/login.do" method="post" accept-charset="UTF-8" autocomplete="off" novalidate>
                         <div style="display: flex; align-items: center; margin-bottom:10px;">
-                            <input type="radio" name="userType" value="" class="whoIs"><span style="margin-right:10px;">학부생</span> <!-- radio 타입 input name속성 바꿀 것-->
-                            <input type="radio" name="userType" value="" class="whoIs"><span style="margin-right:10px;">교직원</span>
-                            <input type="radio" name="userType" value="" class="whoIs"><span style="margin-right:10px;">일반인</span>
+                            <input type="radio" name="userType" value="STUDENT" class="whoIs"><span style="margin-right:10px;">학부생</span> <!-- radio 타입 input name속성 바꿀 것-->
+                            <input type="radio" name="userType" value="STAFF" class="whoIs"><span style="margin-right:10px;">교직원</span>
+                            <input type="radio" name="userType" value="GUEST" class="whoIs"><span style="margin-right:10px;">일반인</span>
                             <a href="#" style="text-decoration: none; color: black; margin-left:95px;">아이디/비밀번호 찾기</a>
                         </div>
-                        <input type="text" name="" placeholder="아이디" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/><br>
-                        <input type="password" name="" placeholder="비밀번호" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/>
+                        <input type="text" name="identification" placeholder="아이디" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/><br>
+                        <input type="password" name="password" placeholder="비밀번호" style="width: 100%; height: 40px; padding-left: 10px; margin-bottom:9px; border: 1px solid #e5e5e5;"/>
                         <input type="submit" value="로그인" style="width: 100%; height: 50px; font-size: 13pt; background-color: #3F97F6; border: 1px solid #e5e5e5; color: white; font-weight: 100;"/>
                     </form>
                 <a href="/greenUniv/login/terms.do" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
@@ -182,6 +201,7 @@
             </div>
         </div>
     </div>
+    
     <!--3. 푸터영역-->    
     <footer class="footer">
         <!--상단-->
