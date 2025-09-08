@@ -2,7 +2,7 @@ package util;
 
 public class Sql_user {
 
-    // INSERT
+	// INSERT
     public static final String INSERT =
         "INSERT INTO `User` (`identification`, `password`, `nickname`, `phone`, `email`, `address`, `role`) " +
         "VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -24,4 +24,5 @@ public class Sql_user {
     public static final String SELECT_BY_ID1 =
         "SELECT identification, password, nickname, phone, email, address, role " +
         "FROM `User` WHERE identification=?";
+
 }

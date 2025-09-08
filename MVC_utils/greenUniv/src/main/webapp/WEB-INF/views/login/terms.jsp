@@ -44,7 +44,7 @@
                 <div class="menu-area">
                     <ul class="main-menu">
                         <li data-menu="intro"><a href="/greenUniv/about/about_greeting.do">대학소개</a></li>
-                        <li data-menu="admission"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내</a></li>
+                        <li data-menu="admission"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
                         <li data-menu="college"><a href="/greenUniv/college/college_education.do">대학·대학원</a></li>
                         <li data-menu="academic"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내</a></li>
                         <li data-menu="life"><a href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활</a></li>
@@ -223,9 +223,8 @@
                     </td>
                 </tr>
             </table>
-        <div>
-            
-            <form action="/greenUniv/login/join.do" method="get" onsubmit="return validateTerms()">
+            <div>
+                <form action="/greenUniv/login/join.do" method="get" onsubmit="return validateTerms()">
 			  <label style="display:flex; align-items:center; margin-top:6px;">
 			    <input type="checkbox" name="agreeAll" id="agreeAll" required
 			           style="border:1px #767676 solid; width:20px; height:20px; margin-right:5px;">
@@ -242,7 +241,7 @@
 			  </div>
 			</form>
                 
-            <script>
+                <script>
 			// 체크되면 '다음' 활성화
 			const agree = document.getElementById('agreeAll');
 			const nextBtn = document.getElementById('nextBtn');
@@ -260,9 +259,10 @@
 			  return true;
 			}
 			</script>
-
-          </div>
-       <div>
+			
+			
+            </div>
+            <div>
 
             </div>
         </div>

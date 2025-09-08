@@ -3,20 +3,20 @@ package controller.join;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+import dao.UserDAO;
+import dto.UserDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import dao.UserDAO;
-import dto.UserDTO;
 import util.ResultCode;
 
 @WebServlet("/login/join.do")
-public class ListController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+public class ListController extends HttpServlet{
+
+	private static final long serialVersionUID = 1L;
 
     private final UserDAO userDAO = new UserDAO();
 
