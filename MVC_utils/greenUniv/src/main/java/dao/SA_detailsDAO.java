@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import dto.SA_detailsDTO;
 import util.DBHelper;
 import util.Sql;
+import util.Sql_studAssist;
 
 public class SA_detailsDAO extends DBHelper {
 
@@ -75,11 +76,71 @@ public class SA_detailsDAO extends DBHelper {
 		return dtoList;
 	}
 	
-	public List<SA_detailsDTO> selectAllWithKeywords(String year, String semester) {
-		return null;
+	public List<SA_detailsDTO> selectAllWithKeywords(int snum, String year, String semester) {
+		List<SA_detailsDTO> dtoList = new ArrayList<SA_detailsDTO>();
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_WITH_YEAR_AND_SEM);
+			psmt.setString(1, year);
+			psmt.setString(2, semester);
+			psmt.setInt(3, snum);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				SA_detailsDTO dto = new SA_detailsDTO();
+				dto.setSnum(rs.getInt("snum"));
+				dto.setLname(rs.getString("lname"));
+				dto.setYear(rs.getString("year"));
+				dto.setProf(rs.getString("prof"));
+				dto.setGrade(rs.getInt("grade"));
+				dto.setCompDiv(rs.getString("compdiv"));
+				dto.setTimeS(rs.getString("times"));
+				dto.setTimeE(rs.getString("timee"));
+				dto.setTimeD(rs.getString("timed"));
+				dto.setRoom(rs.getString("room"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
+		return dtoList;
 	}
 	
-	public void delete(String deptCode) {
-		
+	public int countWithKeywords(int snum, String year, String semester) {
+		int count = 0;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_WITH_YEAR_AND_SEM);
+			psmt.setString(1, year);
+			psmt.setString(2, semester);
+			psmt.setInt(3, snum);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return count;
+	}
+	
+	public void delete(int snum, String deptCode) {
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false);
+			psmt = conn.prepareStatement(Sql_studAssist.DELETE_LECTURE);
+			psmt.setString(1, deptCode);
+			psmt.setInt(2, snum);
+			psmt.executeUpdate();
+			
+			stmt = conn.createStatement();
+			stmt.executeUpdate(Sql_studAssist.MINUS_NOWNUM +"'"+deptCode+"'");
+			conn.commit();
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
 	}
 }

@@ -44,4 +44,14 @@ public class Sql_studAssist {
 	
 	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	public static final String PLUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM+1 WHERE DEPTCODE = ";
+	
+	
+	// courseRegDetails
+	public static final String DELETE_LECTURE = "DELETE FROM sa_details WHERE deptcode = ? AND snum = ?";
+	public static final String MINUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM-1 WHERE DEPTCODE = ";
+	public static final String SELECT_WITH_YEAR_AND_SEM = "SELECT * FROM sa_details WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
+	
+	
+	
+	// curric
 }

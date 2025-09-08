@@ -24,11 +24,11 @@ public enum SA_detailsService {
 		return dao.selectWithSnum(snum);
 	}
 	
-	public List<SA_detailsDTO> findAllWithKeywords(String year, String semester) {
-		return dao.selectAllWithKeywords(year, semester);
+	public List<SA_detailsDTO> findAllWithKeywords(int snum, String year, String semester) {
+		return dao.selectAllWithKeywords(snum, year, semester);
 	}
 	
-	public void cancel(String deptCode) {
-		dao.delete(deptCode);
+	public void cancel(int snum, String deptCode) {
+		dao.delete(snum, deptCode);
 	}
 }

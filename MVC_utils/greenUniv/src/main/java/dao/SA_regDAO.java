@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import dto.SA_regDTO;
 import util.DBHelper;
-import util.Sql;
 import util.Sql_studAssist;
 
 public class SA_regDAO extends DBHelper {

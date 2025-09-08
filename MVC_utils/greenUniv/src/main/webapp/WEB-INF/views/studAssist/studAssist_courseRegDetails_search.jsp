@@ -8,18 +8,6 @@
 <title>학생지원_수강신청내역</title>
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <link rel="stylesheet" href="/greenUniv/studAssist_css/main.style.css">
-<script>
-	document.addEventListener("DOMContentLoaded", function(){
-		const selectedValues = document.getElementsByTagName("select");
-		const year = selectedValues[0];
-		const semester = selectedValues[1];
-		console.log(year);
-		year.addEventListener("change", function() {
-			alert("옵션 변경");
-			console.log("year : " + year.value);
-		});
-	});
-</script>
 <style>
 hr {
 	border: none;
@@ -181,7 +169,7 @@ a {
 					<form action="" style="display: flex;">
 						<select name="" id="" class="board-select"
 							style="border: 1px solid #e9e9e9; height: 40px; width: 100px; margin-right: 4px; padding-left: 10px;">
-							<option value="2025" selected>2025</option>
+							<option value="2025">2025</option>
 							<option value="2024">2024</option>
 							<option value="2023">2023</option>
 							<option value="2022">2022</option>
@@ -190,10 +178,10 @@ a {
 						</select> <span style="line-height: 40px; margin-right: 8px;">년</span> <select
 							name="" id="" class="board-select"
 							style="border: 1px solid #e9e9e9; height: 40px; width: 50px; margin-right: 4px; padding-left: 10px;">
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="여름계절">여름계절</option>
-							<option value="겨울계절">겨울계절</option>
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">여름계절</option>
+							<option value="">겨울계절</option>
 						</select> <span style="line-height: 40px;">학기</span>
 					</form>
 					<span
@@ -225,7 +213,7 @@ a {
 							<td>${ regDetail.timeD }${ regDetail.lTimes }</td>
 							<td>${ regDetail.room }</td>
 							<td><input type="button" value="취소"
-								onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"
+							onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"
 								style="background-color: #942626; color: white; font-weight: 300; height: 30px; width: 37px; border: none;">
 							</td>
 						</tr>
