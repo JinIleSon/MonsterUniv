@@ -134,7 +134,7 @@
             </div>  
         </div>
     </header>
-    
+    <main style="background-color:white !important;">
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:220px; height:42px;
             position: absolute; 
@@ -149,9 +149,7 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청</span>
         </div>
     </div>
-    <main style="margin-top:50px;">
-        
-        <div class="container" style="padding-left:30px; display:flex; gap:45px !important; justify-content: center;">
+        <div class="container" style="margin-top:50px; padding-left:30px; display:flex; gap:45px !important; justify-content: center;">
             <!-- 배너 메뉴 -->
             <div style=" width: 210px;">
                 <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px; color:black !important;"">학사안내</b>

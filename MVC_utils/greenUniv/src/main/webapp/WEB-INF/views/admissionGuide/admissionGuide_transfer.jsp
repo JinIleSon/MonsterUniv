@@ -156,7 +156,7 @@
             </div>  
         </div>
     </header>
-    
+    <main style="background-color:white !important;">
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:220px; height:42px;
             position: absolute; 
@@ -171,7 +171,6 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">편입학</span>
         </div>
     </div>
-
     <!-- 메인 컨테이너 -->
     <div class="inner">
         <div class="container">
@@ -219,6 +218,7 @@
         </div>
     </div>
     <div style="height:100px;"></div>
+    </main>
 </body>
 <!--3. 푸터영역-->
 <footer class="footer">
