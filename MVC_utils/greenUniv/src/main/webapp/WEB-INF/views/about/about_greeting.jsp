@@ -108,7 +108,7 @@
                         <li><a href="/greenUniv/main.jsp">HOME</a></li>
                         <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
                         <li><a href="/greenUniv/login/login.do">로그인</a></li>
-                        <li><a href="#">학생지원</a></li>
+                        <li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
                     </ul>
                 </div>
             </div>
