@@ -20,8 +20,6 @@ public class Sql_studAssist {
 	// courseReg
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM lecture";
 	public static final String SELECT_ALL_LECTURES = "SELECT * FROM lecture";
-	public static final String SELECT_COUNT_WITH_CCODE = "SELECT COUNT(*) FROM lecture";
-	public static final String SELECT_ALL_LECTURES_WITH_CCODE = "SELECT * FROM lecture";
 	public static final String WITH_OPENMAJ = " WHERE OPENMAJ like ?";
 	public static final String WITH_DEPTCODE = " WHERE DEPTCODE like ?";
 	public static final String WITH_LNAME = " WHERE LNAME like ?";
@@ -30,6 +28,19 @@ public class Sql_studAssist {
 	public static final String WITH_COMPDIV = " WHERE COMPDIV like ?";
 	public static final String WITH_GRADE = " WHERE GRADE = REGEXP_REPLACE(?, '[^0-9]', '')";
 	public static final String WITH_ROOM = " WHERE ROOM like ?";
+	
+	public static final String SELECT_COUNT_WITH_CCODE = "SELECT COUNT(*) FROM lecture WHERE ccode = ?";
+	public static final String SELECT_ALL_LECTURES_WITH_CCODE = "SELECT * FROM lecture WHERE ccode = ?";
+	public static final String AND_OPENMAJ = " AND OPENMAJ like ?";
+	public static final String AND_DEPTCODE = " AND DEPTCODE like ?";
+	public static final String AND_LNAME = " AND LNAME like ?";
+	public static final String AND_YEAR = " AND YEAR = REGEXP_REPLACE(?, '[^0-9]', '')";
+	public static final String AND_PROF = " AND PROF like ?";
+	public static final String AND_COMPDIV = " AND COMPDIV like ?";
+	public static final String AND_GRADE = " AND GRADE = REGEXP_REPLACE(?, '[^0-9]', '')";
+	public static final String AND_ROOM = " AND ROOM like ?";
 	public static final String SEARCH_ORDER_DEPTCODE = " ORDER BY DEPTCODE";
 	public static final String SEARCH_OFFET_ROW = " LIMIT 5 OFFSET ?";
+	
+	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 }

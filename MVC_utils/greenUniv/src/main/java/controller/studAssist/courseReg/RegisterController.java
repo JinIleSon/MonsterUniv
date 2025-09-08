@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.SA_regDTO;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,7 +26,9 @@ public class RegisterController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String deptCode = req.getParameter("deptCode");
 		
-//		SA_regDTO dto = regService.findByCode(deptCode);
+		SA_regDTO dto = regService.findByCode(deptCode);
+		
+		regService.registerToDetail(dto);
 		
 		resp.sendRedirect("/greenUniv/studAssist/courseReg/list.do");
 	}
