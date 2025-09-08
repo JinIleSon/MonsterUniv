@@ -8,6 +8,40 @@
 <title>학생지원_수강신청내역</title>
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <link rel="stylesheet" href="/greenUniv/studAssist_css/main.style.css">
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+		function getQueryParam(param) {
+		    const urlParams = new URLSearchParams(window.location.search);
+		    return urlParams.get(param);  // 'name' 또는 'age' 같은 파라미터 이름을 넣으면 해당 값을 반환
+	 	}
+		
+		const selectedYear = getQueryParam("year");
+		const selectedSemester = getQueryParam("semester");
+		console.log(selectedYear);
+		
+		const optionYear = document.querySelector('option[value="'+selectedYear+'"]');
+		const optionSemester = document.querySelector('option[value="'+selectedSemester+'"]');
+		
+		optionYear.selected = true;
+		optionSemester.selected = true;
+		
+		const selectedValues = document.getElementsByTagName("select");
+		const year = selectedValues[0];
+		const semester = selectedValues[1];
+		
+		year.addEventListener("change", function() {
+			console.log("year : " + year.value);
+			console.log("semester: " + semester.value);
+			location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
+		});
+		
+		semester.addEventListener("change", function() {
+			console.log("year : " + year.value);
+			console.log("semester: " + semester.value);
+			location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
+		});
+	});
+</script>
 <style>
 hr {
 	border: none;
@@ -178,10 +212,10 @@ a {
 						</select> <span style="line-height: 40px; margin-right: 8px;">년</span> <select
 							name="" id="" class="board-select"
 							style="border: 1px solid #e9e9e9; height: 40px; width: 50px; margin-right: 4px; padding-left: 10px;">
-							<option value="">1</option>
-							<option value="">2</option>
-							<option value="">여름계절</option>
-							<option value="">겨울계절</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="여름계절">여름계절</option>
+							<option value="겨울계절">겨울계절</option>
 						</select> <span style="line-height: 40px;">학기</span>
 					</form>
 					<span

@@ -15,8 +15,14 @@
 		const semester = selectedValues[1];
 		console.log(year);
 		year.addEventListener("change", function() {
-			alert("옵션 변경");
 			console.log("year : " + year.value);
+			console.log("semester: " + semester.value);
+			location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
+		});
+		semester.addEventListener("change", function() {
+			console.log("year : " + year.value);
+			console.log("semester: " + semester.value);
+			location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
 		});
 	});
 </script>

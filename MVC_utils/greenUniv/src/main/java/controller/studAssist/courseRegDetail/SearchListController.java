@@ -34,6 +34,8 @@ public class SearchListController extends HttpServlet {
 		List<SA_detailsDTO> dtoList = detailsService.findAllWithKeywords(201001, year, semester);
 
 		req.setAttribute("dtoList", dtoList);
+		req.setAttribute("year", year);
+		req.setAttribute("semester", semester);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/studAssist/studAssist_courseRegDetails_search.jsp");
 		dispatcher.forward(req, resp);

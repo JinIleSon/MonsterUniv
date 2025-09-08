@@ -88,6 +88,7 @@ public class SA_detailsDAO extends DBHelper {
 			while (rs.next()) {
 				SA_detailsDTO dto = new SA_detailsDTO();
 				dto.setSnum(rs.getInt("snum"));
+				dto.setDeptCode(rs.getString("deptcode"));
 				dto.setLname(rs.getString("lname"));
 				dto.setYear(rs.getString("year"));
 				dto.setProf(rs.getString("prof"));
