@@ -7,6 +7,11 @@ public enum ResultCode {
 	LOGOUT_SUCCESS(102, "로그아웃했습니다. 안녕히 가십시오."),
 	ROLE_NOT_ENOUGH(103, "권한이 없습니다. 관리자에게 문의하세요."),
 	LOGIN_REQUIRE(104, "로그인을 하셔야 합니다."),
+	//로그인 추가
+	LOGIN_SUCCESS(105, "로그인에 성공했습니다."),
+	LOGIN_FAILED(106, "아이디, 비밀번호 또는 권한이 올바르지 않습니다."),
+    LOGIN_INPUT_EMPTY(107, "아이디/비밀번호를 입력해 주세요."),
+    //
 	WRITER_SUCCESS(200, "글 작성 완료했습니다."),
 	DELETE_SUCCESS(201, "글 삭제 완료했습니다."),
 	COMMENT_SUCCESS(300, "댓글작성 완료했습니다.");
