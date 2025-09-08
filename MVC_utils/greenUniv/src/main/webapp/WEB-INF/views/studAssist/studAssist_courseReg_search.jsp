@@ -147,9 +147,10 @@
 							<td></td>
 							<td>
 								<form
-									action="/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }"
+									action=""
 									method="get">
-									<input type="submit" value="신청" 
+									<input type="button" value="신청" 
+									onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
 										style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
 								</form>
 							</td>

@@ -33,7 +33,7 @@ public class SearchListController extends HttpServlet {
 		
 		if(searchType == null) {
 			// 수정 필요 : 로그인 구현과 연동
-			// cCode(G01940)는 student의 학과명과 collmaj의 학과명을 비교하여 collmaj 테이블에서 들고옴.
+			// cCode(G01940)는 student의 학과명과 collmaj의 학과명을 비교하여 collmaj 테이블에서 들고옴
 			PagenationDTO pagenationDTO = regService.getPagenationInfo("G01940", pg, null, null);
 			
 			int start = pagenationDTO.getStart();
