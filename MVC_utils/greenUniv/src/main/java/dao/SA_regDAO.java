@@ -23,10 +23,31 @@ public class SA_regDAO extends DBHelper {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	public void insert(SA_regDTO dto) {
+	public void insertAndPlusNowNum(int snum, SA_regDTO dto) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_studAssist.)
+			conn.setAutoCommit(false);
+			psmt = conn.prepareStatement(Sql_studAssist.INSERT_TO_DETAIL);
+			psmt.setInt(1, snum);
+			psmt.setString(2, dto.getYclasS());
+			psmt.setString(3, dto.getSemester());
+			psmt.setString(4, dto.getDeptCode());
+			psmt.setString(5, dto.getLname());
+			psmt.setString(6, dto.getYear());
+			psmt.setString(7, dto.getProf());
+			psmt.setInt(8, dto.getGrade());
+			psmt.setString(9, dto.getCompDiv());
+			psmt.setString(10, dto.getTimeS());
+			psmt.setString(11, dto.getTimeE());
+			psmt.setString(12, dto.getTimeD());
+			psmt.setString(13, dto.getRoom());
+			psmt.setString(14, dto.getLecture_hash());
+			psmt.executeUpdate();
+			
+			stmt = conn.createStatement();
+			stmt.executeUpdate(Sql_studAssist.PLUS_NOWNUM + "'"+dto.getDeptCode()+"'");
+			conn.commit();
+			closeAll();
 		} catch (Exception e) {
 			 logger.error(e.getMessage());
 		}
@@ -65,10 +86,11 @@ public class SA_regDAO extends DBHelper {
 				dto.setLecture_hash(rs.getString(20));
 			}
 			logger.debug("SA_regDAO - select\n"+dto.toString());
+			closeAll();
 		} catch (Exception e) {
 			 logger.error(e.getMessage());
 		}
-		return null;
+		return dto;
 	}
 
 	public int selectCountTotal(String cCode) {

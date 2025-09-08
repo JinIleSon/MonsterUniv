@@ -6,11 +6,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.SA_regDTO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpSession;
 import service.SA_regService;
 
 @WebServlet("/studAssist/courseReg/register.do")
@@ -27,9 +29,12 @@ public class RegisterController extends HttpServlet {
 		String deptCode = req.getParameter("deptCode");
 		
 		SA_regDTO dto = regService.findByCode(deptCode);
+		// 로그인 정보에서 학번 가져오기(임시번호 201001)
+//		HttpSession sessUser = req.getSession();
 		
-		regService.registerToDetail(dto);
+		regService.registerToDetail(201001, dto);
 		
-		resp.sendRedirect("/greenUniv/studAssist/courseReg/list.do");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/greenUniv/studAssist/courseReg/list.do");
+		dispatcher.forward(req, resp);
 	}
 }

@@ -43,4 +43,5 @@ public class Sql_studAssist {
 	public static final String SEARCH_OFFET_ROW = " LIMIT 5 OFFSET ?";
 	
 	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public static final String PLUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM+1 WHERE DEPTCODE = ";
 }

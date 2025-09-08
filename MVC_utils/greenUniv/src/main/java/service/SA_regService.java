@@ -68,8 +68,8 @@ public enum SA_regService {
 		return dto;
 	}
 
-	public void registerToDetail(SA_regDTO dto) {
-		dao.insert(dto);
+	public void registerToDetail(int snum, SA_regDTO dto) {
+		dao.insertAndPlusNowNum(snum, dto);
 	}
 
 	public SA_regDTO findByCode(String deptCode) {
