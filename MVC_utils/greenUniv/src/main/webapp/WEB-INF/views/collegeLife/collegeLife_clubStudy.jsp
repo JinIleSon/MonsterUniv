@@ -311,7 +311,7 @@
         
         <!-- 동아리(3)-->
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/greenneomer.jpg" alt="SFC" style="width:150px; height:100px; object-fit:cover;">
+            <img src="../images/sfc.jpg" alt="SFC" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">SFC</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>기독교</p>
@@ -321,7 +321,7 @@
 
          <!-- 동아리(4)-->    
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/nohitno.jpg" alt="라이브" style="width:150px; height:100px; object-fit:cover;">
+            <img src="../images/live.jpg" alt="라이브" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">라이브</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>음악</p>
