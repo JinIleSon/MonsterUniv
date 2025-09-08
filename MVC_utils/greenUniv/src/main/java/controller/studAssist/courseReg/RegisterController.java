@@ -12,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpSession;
 import service.SA_regService;
 
 @WebServlet("/studAssist/courseReg/register.do")
@@ -27,7 +28,12 @@ public class RegisterController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String deptCode = req.getParameter("deptCode");
 		
-//		SA_regDTO dto = regService.findByCode(deptCode);
+		SA_regDTO dto = regService.findByCode(deptCode);
+		// 로그인 정보에서 학번 가져오기(임시번호 201001)
+//		HttpSession sessUser = req.getSession();
+		
+		logger.debug("registerController\n"+deptCode);
+		regService.registerToDetail(201001, dto);
 		
 		resp.sendRedirect("/greenUniv/studAssist/courseReg/list.do");
 	}

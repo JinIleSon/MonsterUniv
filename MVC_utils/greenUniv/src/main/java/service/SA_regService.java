@@ -16,15 +16,15 @@ public enum SA_regService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	public PagenationDTO getPagenationInfo(String pg, String searchType, String keyword) {
+	public PagenationDTO getPagenationInfo(String cCode, String pg, String searchType, String keyword) {
 
 		int total = 0;
 
 		// 전체 게시물 갯수 구하기
 		if (keyword == null || searchType == null) {
-			total = dao.selectCountTotal();
+			total = dao.selectCountTotal(cCode);
 		} else {
-			total = dao.selectCountSearch(searchType, keyword);
+			total = dao.selectCountSearch(cCode, searchType, keyword);
 		}
 
 		// 마지막 페이지 번호 구하기
@@ -68,20 +68,20 @@ public enum SA_regService {
 		return dto;
 	}
 
-	public void insert(SA_regDTO dto) {
-		dao.insert(dto);
+	public void registerToDetail(int snum, SA_regDTO dto) {
+		dao.insertAndPlusNowNum(snum, dto);
 	}
 
 	public SA_regDTO findByCode(String deptCode) {
 		return dao.select(deptCode);
 	}
 
-	public List<SA_regDTO> findBySearch(int start, String searchType, String keyword) {
-		return dao.selectWithSearch(start, searchType, keyword);
+	public List<SA_regDTO> findBySearch(String cCode, int start, String searchType, String keyword) {
+		return dao.selectWithSearch(cCode, start, searchType, keyword);
 	}
 
-	public List<SA_regDTO> findAll(int start) {
-		return dao.selectAll(start);
+	public List<SA_regDTO> findAll(int start, String cCode) {
+		return dao.selectAll(start, cCode);
 	}
 
 	public void modify(SA_regDTO dto) {

@@ -145,12 +145,14 @@
 							<td>${ lecture.prof }</td>
 							<td>${ lecture.nowNum }/${ lecture.maxNum }</td>
 							<td></td>
-							<form action="" method="get">
-								<td><input type="button" value="신청"
-									onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
-									style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
-								</td>
-							</form>
+							<td>
+								<form
+									action="/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }"
+									method="get">
+									<input type="submit" value="신청" 
+										style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
+								</form>
+							</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -158,19 +160,19 @@
 					<form action="" method="get"
 						style="text-align: center; display: flex; justify-content: center;">
 						<input type="button" class="first-page"
-							onclick="window.location.href='/greenUniv/studAssist/courseReg/list.do?pg=1';">
+							onclick="window.location.href='/greenUniv/studAssist/courseReg/search.do?pg=1&searchType=${ searchType }&keyword=${ keyword }';">
 						<input type="button" class="prev-page"
-							onclick="window.location.href='/greenUniv/studAssist/courseReg/list.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }';">
+							onclick="window.location.href='/greenUniv/studAssist/courseReg/search.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }&searchType=${ searchType }&keyword=${ keyword }';">
 						<c:forEach var="num" begin="${ pagenationDTO.pageGroupStart }"
 							end="${ pagenationDTO.pageGroupEnd }">
 							<input type="button" value="${ num }"
 								class="${ pagenationDTO.currentPage == num ? 'current' : 'off' }"
-								onclick="window.location.href='/greenUniv/studAssist/courseReg/list.do?pg=${ num }';">
+								onclick="window.location.href='/greenUniv/studAssist/courseReg/search.do?pg=${ num }&searchType=${ searchType }&keyword=${ keyword }';">
 						</c:forEach>
 						<input type="button" class="next-page"
-							onclick="window.location.href='/greenUniv/studAssist/courseReg/list.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }';">
+							onclick="window.location.href='/greenUniv/studAssist/courseReg/search.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }&searchType=${ searchType }&keyword=${ keyword }';">
 						<input type="button" class="last-page"
-							onclick="window.location.href='/greenUniv/studAssist/courseReg/list.do?pg=${ pagenationDTO.lastPageNum }';">
+							onclick="window.location.href='/greenUniv/studAssist/courseReg/search.do?pg=${ pagenationDTO.lastPageNum }&searchType=${ searchType }&keyword=${ keyword }';">
 					</form>
 				</div>
 			</div>
