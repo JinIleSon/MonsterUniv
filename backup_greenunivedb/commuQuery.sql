@@ -66,3 +66,35 @@ OR `condition` LIKE 10
 OR nick LIKE 10
 OR title LIKE 10
 OR DATE LIKE 10
+
+SELECT * FROM collmaj
+where unitcol='자연과학대학'
+order by deptnum DESC
+
+SELECT * FROM lecture
+WHERE ccode = 'G01940'
+
+SELECT * FROM aa_notice
+ORDER BY id DESC
+LIMIT 5
+
+ALTER TABLE student
+MODIFY COLUMN snum INT AUTO_INCREMENT;
+
+USE greendae3;
+
+/* 학사관리시스템 메인 */
+
+/* 학과별 전체 학생 현황*/
+SELECT COUNT(*), edept FROM student
+GROUP BY edept;
+
+/* 학과별 재학생 현황 */
+SELECT COUNT(*), edept FROM student
+GROUP BY edept
+WHERE CONDITION = '재학중';
+
+/* 학과별 휴학생 현황 */
+SELECT COUNT(*), edept FROM student
+GROUP BY edept
+WHERE CONDITION = '휴학중';
