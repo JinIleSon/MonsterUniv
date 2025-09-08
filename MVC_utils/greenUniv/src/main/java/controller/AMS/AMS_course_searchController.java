@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.AMS_LectureService;
 
-@WebServlet("/AMS/AMS_lectureList_search.do")
-public class AMS_lectureList_searchController extends HttpServlet {
+@WebServlet("/AMS/AMS_course_search.do")
+public class AMS_course_searchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AMS_LectureService lectureService = AMS_LectureService.INSTANCE;
 	
@@ -34,7 +34,7 @@ public class AMS_lectureList_searchController extends HttpServlet {
 		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_lectureList_search.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_course_search.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

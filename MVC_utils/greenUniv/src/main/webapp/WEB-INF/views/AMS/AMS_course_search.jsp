@@ -523,7 +523,7 @@
                     <option value="lname">과목명</option>
                     <option value="prof">교수명</option>
                 </select>
-                <input type="text" id="search-title">
+                <input type="text" name="keyword" id="search-title">
                 <input type="button" class="search-btn" value="검색" style="cursor:pointer">
             </form>
 
