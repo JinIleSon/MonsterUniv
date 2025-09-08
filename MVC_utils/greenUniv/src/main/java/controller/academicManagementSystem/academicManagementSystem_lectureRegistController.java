@@ -1,7 +1,6 @@
 package controller.academicManagementSystem;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import dto.LectureDTO;
 import jakarta.servlet.RequestDispatcher;

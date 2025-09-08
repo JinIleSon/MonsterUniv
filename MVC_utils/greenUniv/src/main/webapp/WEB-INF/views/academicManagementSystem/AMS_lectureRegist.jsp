@@ -775,8 +775,14 @@
 		
 		const form = document.querySelector('form');
 	    form.addEventListener('submit', function(e) {
-	    	const deptcodeInput = document.getElementsByName('deptcode')[0];    
-	        const openMaj = document.getElementById('openMaj').value; //학과 코드
+	    	const deptcodeInput = document.getElementsByName('deptcode')[0];  
+	    	const openMaj = document.getElementById('openMaj').value; //학과 코드
+	    	let openMajNum = 0;
+	    	switch(openMaj) {
+	        case "국어국문학과":
+	        	openMajNum = 10;
+	        	break;
+	        }
 	        
 	        const today = new Date();     
 	        const year = today.getFullYear().toString().substring(2); //연도
@@ -785,8 +791,7 @@
 	        const semester = document.getElementById('semester').value; //학기
 			const randomNum = cnt; //순번
 			cnt++;
-			
-	        deptcodeInput.value = openMaj + year + semester + randomNum;
+	        deptcodeInput.value = openMajNum + year + semester + randomNum;
 	    });
 	});
 </script>
@@ -893,13 +898,45 @@
 	                    <div><input type="hidden" name="deptcode"></div>
 	                    <div>개설학과</div>
 	                    <div>
-	                        <select name="openCol">
-	                            <option>인문사회대학</option>
+	                        <select name="openCol" id="openCol">
+	                            <option value="인문사회대학" selected>인문사회대학</option>
+	                            <option value="자연과학대학">자연과학대학</option>
+	                            <option value="공과대학">공과대학</option>
+	                            <option value="사범대학">사범대학</option>
 	                        </select>
-	                        <select name="openMaj" id="openMaj" style="margin-left: 2px;">
-	                            <option value="10">국어국문학과</option>
+	                        <select name="openMaj" id="openMaj" style="margin-left: 2px;">	                   
 	                        </select>
 	                    </div>
+	                    <script>
+		                    document.addEventListener('DOMContentLoaded', function() {
+		                    	const openMaj_box = {
+		                    			"인문사회대학": ["국어국문학과", "영어영문학과", "사학과"],
+		                    	        "자연과학대학": ["수학과", "물리학과", "화학과"],
+		                    	        "공과대학": ["기계공학과", "전기전자공학과", "컴퓨터공학과"],
+		                    	        "사범대학": ["교육학과", "체육교육과", "국어교육과"]
+		                    	};
+		                    	
+		                    	const openCol = document.getElementById("openCol");
+		                    	const openMaj = document.getElementById("openMaj");
+		                    	
+		                    	openCol.addEventListener("change", function() {
+		                    		const selected = this.value;			                 
+		                    		
+		                    		openMaj.innerHTML = "<option value=''>-- 학과 선택 --</option>";
+		                    		
+		                    		if(openMaj_box[selected]) {
+		                    			openMaj_box[selected].forEach(openMaj_item => {
+		                    				const option = document.createElement("option");
+		                    				option.value = openMaj_item;
+		                    				option.textContent = openMaj_item;
+		                    				openMaj.appendChild(option);
+		                    			});
+		                    		}
+		                    	});
+		                    });
+
+	                    </script>
+	                    
 	                </div>
 	                <div class="list2">
 	                    <div>개설학년</div>
