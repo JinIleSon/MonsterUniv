@@ -85,6 +85,19 @@
 			.sidebar a:hover:not(.active) {
 			    background-color: #f0f0f0;
 			}
+			/* Header Footer 상단 하단 고정 */
+			html, body {
+			  height: 100% !important;      /* 화면 전체 높이 */
+			  margin: 0;         /* 기본 여백 제거 */
+			  display: flex;
+			  flex-direction: column;
+			}
+			
+			/* main 영역은 남은 공간 차지 */
+			main {
+			  flex: 1;
+			}
+			/* Header Footer 상단 하단 고정 */
     </style>
 </head>
 <body>
@@ -187,7 +200,7 @@
             </div>  
         </div>
     </header>
-    
+    <main style="background-color:white !important;">
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:220px; height:42px;
             position: absolute; 
@@ -203,7 +216,7 @@
         </div>
     </div>
         <!-- 사이드바 시작-->
-    <div style="height: 800px;" class = "inner">
+    <div style="" class = "inner">
         <div style="height:48px; "></div>
         <div style="display: flex; gap: 60px; ">
             <div style=" width: 210px; ">
@@ -262,15 +275,10 @@
         <li style="margin-bottom:3px;">전화번호 : 042) 601-4458~59, 4339, 4309</li>
         <li>팩스 : 042) 862-5524, 3358    </li>
       </ul>
-       
-       
-                              
-
-
-
               </div>
           </div>
     </div>
+    </main>
     <!--3. 푸터영역-->    
     <footer class="footer">
         <!--상단-->

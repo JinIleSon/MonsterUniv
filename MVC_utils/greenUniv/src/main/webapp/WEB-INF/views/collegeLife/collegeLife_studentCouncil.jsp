@@ -158,7 +158,7 @@
             </div>  
         </div>
     </header>
-    
+    <main style="background-color:white !important;">
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:250px; height:42px;
             position: absolute; 
@@ -238,9 +238,9 @@
             
             </div>
         </div>
-
-                <div style="display: flex; width:100%; height: 40px; margin-bottom:28px; align-items: center;"> 
-                </div>    </div>
+        <div style="display: flex; width:100%; height: 40px; margin-bottom:28px; align-items: center;"> 
+        </div>   
+    </main>
 </body>
 <!--3. 푸터영역-->
 <footer class="footer">
