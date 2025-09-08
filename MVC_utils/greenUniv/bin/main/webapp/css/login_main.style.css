@@ -1,0 +1,212 @@
+/* =========기본 리셋======= */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* =========공통 컨테이너======= */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+/* ================================
+   Header
+================================ */
+header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---------- 상단 유틸바 ---------- */
+.topbar {
+  background-color: #1e2732;
+  margin: 0;
+}
+.topbar .inner {
+  height: 27px;
+  display: flex;
+  align-items: center;
+}
+
+/* 로그인/회원 등 오른쪽 메뉴 */
+.log-area {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin-left: auto; /* 오른쪽 끝으로 */
+}
+.log-area ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.log-area a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #b8c2cf;
+  transition: color 0.2s ease;
+}
+.log-area a:hover {
+  color: #fff;
+}
+
+/* ---------- 로고 ---------- */
+.logo {
+  height: 77px;
+  display: block;
+}
+
+/* ---------- 메인 네비게이션 ---------- */
+.mainNav .inner {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 로고 왼쪽 / 메뉴 오른쪽 */
+}
+
+/* 메뉴 그룹 */
+.menu-area {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-area ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-area a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.2s ease;
+}
+.menu-area a:hover {
+  color: rgb(80, 101, 133);
+}
+
+/* ================================
+   Main
+================================ */
+
+/* Header Footer 상단 하단 고정 */
+html, body {
+  height: 100%;      /* 화면 전체 높이 */
+  margin: 0;         /* 기본 여백 제거 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* main 영역은 남은 공간 차지 */
+main {
+  flex: 1;
+}
+/* Header Footer 상단 하단 고정 */
+
+/* ================================
+   footer
+================================ */
+/* 색상 변수 */
+:root {
+  --footer-bg: #141b23;          /* 메인 배경 */
+  --footer-top-bg: #1e2732;      /* 상단 퀵링크 배경 */
+  --footer-text: #b8c2cf;        /* 기본 텍스트 */
+  --footer-muted: #8893a1;       /* 흐린 텍스트 */
+  --footer-line: rgba(255,255,255,0.2);
+  --footer-link: #d7dee8;
+  --footer-link-hover: white;    /* 호버 텍스트 */
+}
+
+.footer { background: var(--footer-bg); color: var(--footer-text); }
+
+/* 상단 퀵링크 */
+.footer-high { background: var(--footer-top-bg); }
+.footer-high-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-high-quicklinks {
+  display: flex; justify-content: center; gap: 32px;
+  list-style: none; margin: 0; padding: 12px 0;
+  position: relative;
+}
+.footer-high-quicklinks li {
+  position: relative; padding: 6px 0 8px;
+}
+.footer-high-quicklinks li + li::before {
+  content: ""; position: absolute; left: -16px; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 16px; background: var(--footer-line);
+}
+.footer-high-quicklinks a {
+  color: var(--footer-link); text-decoration: none; font-size: 14px;
+}
+.footer-high-quicklinks a:hover { color: var(--footer-link-hover); }
+
+/* 하단 영역 */
+.footer-low { border-top: 1px solid var(--footer-line); }
+.footer-low-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 36px;
+  display: grid;
+  grid-template-columns: 160px 1fr 220px; /* 로고 / 정보 / 셀렉트 */
+  gap: 24px;
+  align-items: start;
+}
+
+/* 로고 */
+.footer-logo img {
+  display: block; width: 140px; height: auto; opacity: .85;
+}
+
+/* 학교 정보 */
+.footer-info { line-height: 1.7; }
+.footer-info .footer-uniname {
+  margin: 0 0 6px; color: #e5ecf5; font-weight: 600; font-size: 15px;
+}
+.footer-info p {
+  margin: 0 0 6px; color: var(--footer-text); font-size: 13px;
+}
+.footer-info .copy {
+  margin-top: 10px; color: var(--footer-muted); font-size: 12px;
+}
+
+/* 셀렉트 박스 */
+.footer-select {
+  margin-left: auto; display: flex; justify-content: flex-end;
+}
+.footer-select select {
+  width: 100%; max-width: 220px; height: 36px;
+  border: 0; outline: none;
+  background: #111820; color: #dfe6f1;
+  padding: 0 12px; border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+.footer-select select:hover {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+  cursor: pointer;
+}
+
+/* 접근성용 라벨 */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
