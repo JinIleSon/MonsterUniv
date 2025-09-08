@@ -134,7 +134,7 @@
             </div>  
         </div>
     </header>
-    
+    <main style="background-color:white !important;">
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:240x; height:42px;
             position: absolute; 
@@ -149,8 +149,7 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">자주묻는질문</span>
         </div>
     </div>
-    <main style="margin-top:50px;">
-        <div class="container" style="padding-left: 73px; gap:60px !important; display: flex; justify-content: center; min-width: 1200px">
+        <div class="container" style="margin-top: 50px; padding-left: 73px; gap:60px !important; display: flex; justify-content: center; min-width: 1200px">
             
             <!-- 배너 메뉴 -->
             <div style=" width: 210px; flex-shrink: 0;">

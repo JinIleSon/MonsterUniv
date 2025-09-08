@@ -17,9 +17,11 @@ public class Sql_studAssist {
 	//										+ "VALUES (?,STANDARD_HASH(?, 'SHA256'),?,?,?,?,?,?,?,?,SYSDATE)";
 
 	
-	// lecture
+	// courseReg
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM lecture";
 	public static final String SELECT_ALL_LECTURES = "SELECT * FROM lecture";
+	public static final String SELECT_COUNT_WITH_CCODE = "SELECT COUNT(*) FROM lecture";
+	public static final String SELECT_ALL_LECTURES_WITH_CCODE = "SELECT * FROM lecture";
 	public static final String WITH_OPENMAJ = " WHERE OPENMAJ like ?";
 	public static final String WITH_DEPTCODE = " WHERE DEPTCODE like ?";
 	public static final String WITH_LNAME = " WHERE LNAME like ?";

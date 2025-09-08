@@ -58,4 +58,11 @@ WHERE id = 5
 OR title LIKE '%의료%'
 OR nick LIKE '%제우스%'
 OR DATE LIKE '%2024%'
-OR hits = 120
+OR hits = 120commu_emp
+
+SELECT * FROM commu_emp
+WHERE id = 20
+OR `condition` LIKE 10
+OR nick LIKE 10
+OR title LIKE 10
+OR DATE LIKE 10
