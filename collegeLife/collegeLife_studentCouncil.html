@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>그린대학교 - 대학생활</title>
+    <title>대학생활_학생회 소개</title>
     <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="./css/main.style.css">
+    <link rel="stylesheet" href="../css/collegeLife_main.style.css">
     <style>
         * {
             margin: 0;
@@ -29,49 +29,6 @@
             display: flex;
             gap: 50px; 
             padding-top: 35px;
-        }
-
-        /* 사이드바 */
-        .sidebar {
-            width: 200px;
-            background-color: white;
-        }
-
-        .sidebar-header {
-            background-color: white;
-            color: black;
-            padding: 20px 20px 20px 0;
-            font-weight: bold;
-            font-size: 25px;
-            border-bottom: 2px solid black;
-            height: 65px; 
-            display: flex;
-            align-items: center; 
-        }
-
-        .sidebar ul {
-            list-style: none;
-        }
-
-        .sidebar li {
-            border-bottom: 1px solid #eee;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: #333;
-            font-size: 13px;
-        }
-
-        .sidebar a.active {
-            background-color: #4a90e2;
-            color: white;
-        }
-
-        .sidebar a:hover:not(.active) {
-            background-color: #f0f0f0;
         }
 
         /* 메인 컨텐츠 */
@@ -117,6 +74,7 @@
                     <li><a href="#">대학소개</a></li>
                     <li><a href="#">입학안내</a></li>
                     <li><a href="#">대학·대학원</a></li>
+                    <li><a href="#">학사안내</a></li>
                     <li><a href="#">대학생활</a></li> 
                     <li><a href="#">커뮤니티</a></li>
                 </ul>
@@ -126,12 +84,14 @@
 </header>
 <body>
     <!-- 브레드크럼 -->
-    <!-- <div class="breadcrumb">
+    <div class="breadcrumb">
         <div class="breadcrumb-content">
-            🏠 > <a href="#">입학안내</a> > 공지사항
+            <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+            <a href="#">대학생활</a>
+            <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;"><span>학생회 소개</span> 
         </div>
-    </div> -->
-
+    </div>
     <!-- 메인 컨테이너 -->
     <div class="inner">
         <div class="container">
@@ -150,12 +110,56 @@
             <div class="main-content">
                 <div class="content-header">학생회 소개</div>
                 
-                <div>
-                    <p>컨텐츠 내용 꾸미기</p>
+                
+                <div style="display: flex; width:100%;  margin-top:0px; margin-bottom:28px; align-items: center;"> 
                 </div>
+                <div style="">
+                    <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
+                    <!-- 제목 -->  
+                    <tr style="height:50px; font-weight: 700; background-color: #F4F8FC; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;">직책</td>
+                        <td style="width:80%; border: 1px solid #b8b8b8;">업무</td>
+                    </tr>
+
+                    <!-- 데이터 행 (1) -->                     
+                    <tr style="height: 50px;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">학생회장</p></td>
+                        <td style="width:80%; border: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">학생회의 대표로 학생회의 전반적 사항을 총괄 감독하고 타 학생회와 협력, 학교, 교수님들에게 학생들의 의견을 대표자로서 전달한다.</p></td>
+                    </tr>
+
+                    <!-- 데이터 행 (2) -->                     
+                    <tr style="height: 50px;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">부학생회장</p></td>
+                        <td style="width:80%; border: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">학생회장을 도와 학생회에서 결정된 전반전 업무의 세부사항을 처리하고 학생회장의 업무를 보조하고 학생회장 부재시 학생회장의 임무를 대리 수행한다.</p></td>
+                    </tr>
+
+                    <!-- 데이터 행 (3) -->                     
+                    <tr style="height: 50px;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">총무</p></td>
+                        <td style="width:80%; border: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">행사 진행에 필요한 물품을 대여하고, 행사 사업 준비를 진행한다.</p></td>
+                    </tr>
+
+                    <!-- 데이터 행 (4) -->                     
+                    <tr style="height: 50px;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">홍보</p></td>
+                        <td style="width:80%;; border: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">학교 행사와 관련된 정보를 가장 빠르고 정확하게 각종 매체를 통해 대내외적으로 홍보한다.</p></td>
+                    </tr>
+
+                    <!-- 데이터 행 (5) -->                     
+                    <tr style="height: 50px;">
+                        <td style="width:20%; border: 1px solid #b8b8b8; border-right: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">기획</p></td>
+                        <td style="width:80%; border: 1px solid #b8b8b8;"><p style="margin:3px 0; font-size:14px; color:#333;">학과 행사 및 복지에 필요한 장소와 비용을 관리하며, 예산안을 짜고 행사 기획안을 작성한다.</p></td>
+                    </tr>
+                    </table>
+
+                </div>
+              </div>
+            
             </div>
         </div>
-    </div>
+
+                <div style="display: flex; width:100%; height: 40px; margin-bottom:28px; align-items: center;"> 
+                </div>    </div>
 </body>
 <!--3. 푸터영역-->
 <footer class="footer">

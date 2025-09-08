@@ -21,6 +21,10 @@ public class SA_regDTO {
 	private String room;
 	private int maxNum;
 	private int nowNum;
+<<<<<<< HEAD
+=======
+	private String lecture_hash;
+>>>>>>> origin/test
 
 	public String getDeptCode() {
 		return deptCode;
@@ -181,6 +185,7 @@ public class SA_regDTO {
 	public void setNowNum(int nowNum) {
 		this.nowNum = nowNum;
 	}
+<<<<<<< HEAD
 
 	@Override
 	public String toString() {
@@ -189,5 +194,23 @@ public class SA_regDTO {
 				+ grade + ", prof=" + prof + ", yclasS=" + yclasS + ", yclasE=" + yclasE + ", timeS=" + timeS
 				+ ", timeE=" + timeE + ", timeD=" + timeD + ", evaWay=" + evaWay + ", book=" + book + ", room=" + room
 				+ ", maxNum=" + maxNum + ", nowNum=" + nowNum + "]";
+=======
+	
+	public String getLecture_hash() {
+		return lecture_hash;
+	}
+	
+	public void setLecture_hash(String lecture_hash) {
+		this.lecture_hash = lecture_hash;
+	}
+
+	@Override
+	public String toString() {
+		return "SA_regDTO [deptCode=" + deptCode + ", year=" + year + ", semester=" + semester + ", compDiv=" + compDiv
+				+ ", lname=" + lname + ", lexpl=" + lexpl + ", openCol=" + openCol + ", openMaj=" + openMaj + ", grade="
+				+ grade + ", prof=" + prof + ", yclasS=" + yclasS + ", yclasE=" + yclasE + ", timeS=" + timeS
+				+ ", timeE=" + timeE + ", timeD=" + timeD + ", evaWay=" + evaWay + ", book=" + book + ", room=" + room
+				+ ", maxNum=" + maxNum + ", nowNum=" + nowNum + ", lecture_hash=" + lecture_hash + "]";
+>>>>>>> origin/test
 	}
 }

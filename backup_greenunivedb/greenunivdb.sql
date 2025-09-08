@@ -39,7 +39,7 @@ CREATE TABLE `aa_courreg` (
 LOCK TABLES `aa_courreg` WRITE;
 /*!40000 ALTER TABLE `aa_courreg` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aa_courreg` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK TABLES;lecturelecture
 
 --
 -- Table structure for table `aa_faq`

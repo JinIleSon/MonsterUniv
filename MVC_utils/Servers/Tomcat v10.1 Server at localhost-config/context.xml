@@ -27,6 +27,7 @@
     <Manager pathname="SESSIONS.ser" />
     -->
     <Resource
+<<<<<<< HEAD
     	name="jdbc/greandae3"
     	auth="Container"
     	type="javax.sql.DataSource"
@@ -39,4 +40,17 @@
     	maxWaitMillis="3000"
     />
     
+=======
+       name="jdbc/greendae3"
+       auth="Container"
+       type="javax.sql.DataSource"
+       driverClassName="com.mysql.cj.jdbc.Driver"
+       url="jdbc:mysql://13.125.98.52:3306/greendae3"
+       username="thswlsdlf0000"
+       password="abc1234!"
+       maxTotal="13"
+       maxIdle="13"
+       maxWaitMillis="3000"
+    />
+>>>>>>> origin/test
 </Context>

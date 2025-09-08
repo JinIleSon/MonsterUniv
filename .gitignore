@@ -36,3 +36,10 @@
 **/*.rvi
 **/.#*
 **/CVS/**
+.metadata
+**/.classpath
+**/.settings
+**/.settings/
+**/Tomcat v10.1 Server at localhost-config/**
+.classpath
+.settings
