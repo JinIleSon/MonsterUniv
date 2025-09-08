@@ -210,5 +210,37 @@ public class AMS_mainDAO extends DBHelper{
 		}
 		return dtoList;
 	}
+	// 대학 운영 현황
+	public List<AMS_mainDTO> selectAllRun(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.SELECT_COLLEGE_RUN);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setOpenMaj(rs.getString("openmaj"));
+				dto.setDeptCode(rs.getString("deptcode"));
+				dto.setLname(rs.getString("lname"));
+				dto.setYear(rs.getString("year"));
+				dto.setProf(rs.getString("prof"));
+				dto.setCompDiv(rs.getString("compdiv"));
+				dto.setGrade(rs.getInt("grade"));
+				dto.setRoom(rs.getString("room"));
+				dto.setNowNum(rs.getInt("nowNum"));
+				dto.setMaxNum(rs.getInt("maxNum"));
+				dto.setPercent(rs.getInt("percent"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
 
 }

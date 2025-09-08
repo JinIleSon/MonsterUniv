@@ -50,5 +50,9 @@ public enum AMS_mainService {
 		return dao.selectAllStuLeaveEgrade();
 	}
 	/////////////////////////////////////////////
+	// 대학 운영 현황 - 강의(lecture)
+	public List<AMS_mainDTO> findAllRun(){
+		return dao.selectAllRun();
+	}
 		
 }

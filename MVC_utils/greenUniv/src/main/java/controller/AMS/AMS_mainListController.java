@@ -30,6 +30,7 @@ public class AMS_mainListController extends HttpServlet{
 		List<AMS_mainDTO> dtoList6 = ams_mainService.findAllStuEgrade();
 		List<AMS_mainDTO> dtoList7 = ams_mainService.findAllStuLeaveEgrade();
 		List<AMS_mainDTO> dtoList8 = ams_mainService.findAllStuInEgrade();
+		List<AMS_mainDTO> dtoList9 = ams_mainService.findAllRun();
 		
 		// 현재 사용자 권한 확인
 //		HttpSession session = req.getSession();
@@ -47,6 +48,7 @@ public class AMS_mainListController extends HttpServlet{
 		req.setAttribute("dtoList6", dtoList6);
 		req.setAttribute("dtoList7", dtoList7);
 		req.setAttribute("dtoList8", dtoList8);
+		req.setAttribute("dtoList9", dtoList9);
 		
 		// 사용자 생성 시 바꾸기
 //		req.setAttribute("role", role);

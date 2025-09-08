@@ -41,4 +41,10 @@ public class Sql_AMS_main {
 																+ "GROUP BY egrade "
 																+ "ORDER BY egrade";
 	
+	// 대학 운영 현황
+	public static final String SELECT_COLLEGE_RUN = "SELECT openmaj, deptcode, lname, `year`, prof, \r\n"
+													+ "compdiv, grade, room, nownum, maxnum, \r\n"
+													+ "(round(nownum/maxnum*100, 0) + '%') AS percent \r\n"
+													+ "FROM lecture\r\n"
+													+ "LIMIT 5 OFFSET 0";
 }
