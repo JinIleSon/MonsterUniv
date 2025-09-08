@@ -283,19 +283,20 @@ role권한 - not null(insert 문에 고정으로 'professor'라고 줌) - 학생
 
 -> CollMaj(대학 및 학과 테이블)
 deptNum학과번호(고유 2자리 숫자 자동생성) - PK
-colName대학명 - not null
-colEng대학 영문명 - not null
+colName대학명 
+colEng대학 영문명 
 
 대학 소개
-    colTit대학 소개 제목 - not null
-    colCont대학 소개 내용 - not null
-    colImgO대학 소개 이미지 원본 - not null
-    colImgS대학 소개 이미지 세이브 - not null
+    colTit대학 소개 제목
+    colCont대학 소개 내용 
+    colImgO대학 소개 이미지 원본 
+    colImgS대학 소개 이미지 세이브 
 
-deptName학과명 - not null
-estYear설립연도 - not null
-deptTel학과 연락처 - not null
-unitCol단과대학 - not null
-engName영문명 - not null
-dean학과장- not null 
-deptOff학과 사무실 - not null
+deptName학과명 -
+estYear설립연도
+deptTel학과 연락처
+unitCol단과대학 
+engName영문명 
+dean학과장
+deptOff학과 사무실 
+cCode코드번호
