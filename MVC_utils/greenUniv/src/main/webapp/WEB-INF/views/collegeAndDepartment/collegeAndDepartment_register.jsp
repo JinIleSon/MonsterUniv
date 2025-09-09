@@ -629,7 +629,7 @@
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
@@ -639,7 +639,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src=/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

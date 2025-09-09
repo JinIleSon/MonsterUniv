@@ -8,13 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <!-- head 안에 추가 -->
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/login_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/login_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
+    	html, body {
+		  height: 100%;      /* 화면 전체 높이 */
+		  margin: 0;         /* 기본 여백 제거 */
+		  display: flex;
+		  flex-direction: column;
+		}
+		
+		
 		main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
     </style>
@@ -135,12 +143,7 @@
         </div>
     </div>
     
-    
-     <!-- 상단 옅은 바 -->
-    <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;"></div>
-    
-    
-    <div class="inner" style="height: 910px; position: relative; margin: 0 auto; display: flex; justify-content: center;">
+    <div class="inner" style="height: 910px; position: relative; margin: 0 auto; display: flex; justify-content: center; height:100% !important;">
         <div style="width: 990px;">
             <div style="height:41px;"></div>
 
@@ -278,9 +281,9 @@
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
@@ -290,7 +293,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
@@ -315,5 +318,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

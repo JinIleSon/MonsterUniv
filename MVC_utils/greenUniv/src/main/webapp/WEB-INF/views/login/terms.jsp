@@ -7,13 +7,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관안내</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/login_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/login_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
+	    html, body {
+		  height: 100%;      /* 화면 전체 높이 */
+		  margin: 0;         /* 기본 여백 제거 */
+		  display: flex;
+		  flex-direction: column;
+		}
+		
+		/* main 영역은 남은 공간 차지 */
+		main {
+		  flex: 1;
+		}
 		main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
     </style>
@@ -133,7 +144,7 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">약관안내</span>
         </div>
     </div>
-    <div class="inner" style="height: 820px; position: relative; margin: 0 auto; display: flex; justify-content: center;">
+    <div class="inner" style="height: 820px; position: relative; margin: 0 auto; display: flex; justify-content: center; height:100% !important;">
         <div style="width: 990px;">
             <div style="height:42px;"></div>
             <p style="color: #3F97F6; font-weight: 500; font-size:20px; margin-bottom:3px; font-weight: 500;">약관안내</p>
@@ -275,9 +286,9 @@
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
@@ -287,7 +298,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
@@ -312,5 +323,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
