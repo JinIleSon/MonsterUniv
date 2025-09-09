@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--css연결-->
-	<link rel="stylesheet" href="../css/Header.style.css">
-	<link rel="stylesheet" href="../css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('../font/NotoSansKR-Light.otf') format('opentype');
+            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -420,16 +420,16 @@
             height: 10px;
         }
         .pagenation .first {
-            background-image: url('../images/btn-first-page.png');
+            background-image: url('/greenUniv/images/btn-first-page.png');
         }
         .pagenation .prev {
-            background-image: url('../images/btn-prev-page.png');
+            background-image: url('/greenUniv/images/btn-prev-page.png');
         }
         .pagenation .next {
-            background-image: url('../images/btn-next-page.png');
+            background-image: url('/greenUniv/images/btn-next-page.png');
         }
         .pagenation .last {
-            background-image: url('../images/btn-last-page.png');
+            background-image: url('/greenUniv/images/btn-last-page.png');
         }
 
         #button-setting{
@@ -571,14 +571,14 @@
     <div class="container">
         <nav class="sidebar">
             <div class="menu menu1">
-                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
                     <li class="menu-item">기본환경정보</li>
                     <li class="menu-item">약관관리</li>
                 </ul>
             </div>
             <div class="menu menu2">
-                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
                     <li class="menu-item">교육 운영 현황</li>
                     <li class="menu-item">학년별 학생 현황</li>
@@ -589,7 +589,7 @@
                 </ul>
             </div>
             <div class="menu menu3">
-                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
                     <li class="menu-item">학생 목록 및 등록</li>
                     <li class="menu-item">교수 목록 및 등록</li>
@@ -597,14 +597,14 @@
                 </ul>
             </div>
             <div class="menu menu4">
-                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
                     <li class="menu-item">대학 및 학과 목록</li>
                     <li class="menu-item">대학 및 학과 등록</li>
                 </ul>
             </div>
             <div class="menu menu5">
-                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
                     <li class="menu-item">입학안내 공지사항</li>
                     <li class="menu-item">학사안내 공지사항</li>
@@ -624,8 +624,9 @@
             </div>
             
             <form class="search-form">
-                <select id="search-select">
-                    <option>검색조건</option>
+                <!-- <select id="search-select"> -->
+                <select name="searchType">
+                    <option value="default">검색조건</option>
                 </select>
                 <input type="text" id="search-title" placeholder="키워드 입력">
                 <input type="button" class="search-btn" value="검색">
@@ -657,105 +658,6 @@
                         <td><span class="status-green">재직중</span></td>
                         <td><span >2025-01-01</span></td>
                     </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-yellow">휴직</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-red">퇴직</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-red">퇴직</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
                 </tbody>
             </table>
 
@@ -782,7 +684,7 @@
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>

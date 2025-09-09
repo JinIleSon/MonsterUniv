@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사관리시스템::강의등록</title>
     <!--css연결-->
-	<link rel="stylesheet" href="../css/Header.style.css">
-	<link rel="stylesheet" href="../css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
@@ -1152,7 +1152,7 @@
 			<div class="footer-high-inner">
 				<ul class="footer-high-quicklinks">
 					<li><a href="#">개인정보처리방침</a></li>
-					<li><a href="#">통합정보시스템</a></li>
+					<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
 					<li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>

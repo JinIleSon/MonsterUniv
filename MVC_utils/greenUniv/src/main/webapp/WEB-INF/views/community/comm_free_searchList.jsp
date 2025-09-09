@@ -8,12 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤니티_자유게시판</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../community_css/main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/community_css/main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         /* 전체 컨테이너 위치 조정 */
         .container{
@@ -46,27 +46,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('/greenUniv/images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -74,7 +74,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -138,7 +138,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -226,10 +226,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">커뮤니티</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">자유게시판</span>
         </div>
     </div>
@@ -363,7 +363,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
