@@ -23,6 +23,10 @@ public class Sql_comm_anno {
 	public static final String SELECT_ARTICLE_ALL = "SELECT * FROM commu_anno\r\n"
 													+ "ORDER BY id DESC\r\n"
 													+ "LIMIT 10 OFFSET ?";
+	// main에 들어감
+	public static final String SELECT_ARTICLE_THREE = "SELECT * FROM commu_anno\r\n"
+														+ "ORDER BY id DESC\r\n"
+														+ "LIMIT 3 OFFSET 1";
 	// 파일 부분
 //	public final static String SELECT_ARTICLE_WITH_FILE = "SELECT A.*, U.NICK, F.*\r\n"
 //														+ "FROM TB_ARTICLE A\r\n"

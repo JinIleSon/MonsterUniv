@@ -79,5 +79,9 @@ public enum Commu_annoService {
 	public List<Commu_annoDTO> findAllSearch(int start, String searchType, String keyword){
 		return dao.selectArticleSearch(start, searchType, keyword);
 	}
+	// main에서 불러옴
+	public List<Commu_annoDTO> findAllThree(){
+		return dao.selectAllThree();
+	}
 		
 }
