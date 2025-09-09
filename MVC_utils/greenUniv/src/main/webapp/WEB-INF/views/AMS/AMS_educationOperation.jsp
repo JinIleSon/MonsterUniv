@@ -9,8 +9,8 @@
 <title>학사관리시스템::교육운영현황</title>
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <!--css연결-->
-<link rel="stylesheet" href="../css/Header.style.css">
-<link rel="stylesheet" href="../css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <style>
 @font-face {
 	font-family: 'NotoSansKR-Light';
@@ -538,7 +538,7 @@ tbody td span {
 	<header>
 		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
 		<div class="topbar" style="">
-			<div class="inner" style=" max-width:1365px !important;">
+			<div class="inner" style=" max-width:1400px !important;">
 				<div class="log-area" style="">
 					<ul>
 						<li><a href="/greenUniv/main.jsp">HOME</a></li>
@@ -551,11 +551,11 @@ tbody td span {
 		</div>
 
 		<div class="mainNav" style="">
-			<div class="inner" style="display: flex; justify-content:center; max-width:1600px !important;">
+			<div class="inner" style="display: flex; justify-content:center; max-width:1700px !important;">
 				<!--로고-->
-				<div style=" margin-right:630px; margin-left:15px;">
+				<div style=" margin-right:665px; margin-left:15px;">
 				<a href="/greenUniv/main.jsp"><img
-					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
@@ -783,50 +783,52 @@ tbody td span {
 		</main>
 	</div>
 
-	<!--3. 푸터영역-->    
-    <footer class="footer" style="margin-top:50px;">
-        <!--상단-->
-        <div class="footer-high">
-            <div class="footer-high-inner">
-                <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
-                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
-                </ul>
-            </div>
-        </div>
+	<!--3. 푸터영역-->
+	<footer class="footer" style="margin-top: 50px;">
+		<!--상단-->
+		<div class="footer-high">
+			<div class="footer-high-inner">
+				<ul class="footer-high-quicklinks">
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">통합정보시스템</a></li>
+					<li><a
+						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+					<li><a href="#">주요인원 연락처</a></li>
+					<li><a
+						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
+				</ul>
+			</div>
+		</div>
 
-        <!--하단-->
-        <div class="footer-low">
-            <div class="footer-low-inner">
-                <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
-                </div>
+		<!--하단-->
+		<div class="footer-low">
+			<div class="footer-low-inner">
+				<div class="footer-logo">
+					<img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
+						class="logo" />
+				</div>
 
-                <div class="footer-info">
-                    <p class="footer-uniname">몬스터대학교</p>
-                    <p>
-                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
-                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
-                        팩스 : 051-123-3333
-                    </p>
-                     <p class="copy">copyright ©Monster University All rights reserved.</p>
-                </div>
+				<div class="footer-info">
+					<p class="footer-uniname">몬스터대학교</p>
+					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
+						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
+					<p class="copy">copyright ©Monster University All rights
+						reserved.</p>
+				</div>
 
-                <div class="footer-select">
-                    <label for="site-select" class="sr-only">주요사이트</label>
-                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
-                        <option value="">주요사이트</option>
-                        <option value="https://www.moe.go.kr/">교육부</option>
-                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
-                        <option value="https://www.nrf.re.kr/">연구재단</option>
-                    </select>    
-                </div>
-            </div>
-        </div>
-    </footer>
+				<div class="footer-select">
+					<label for="site-select" class="sr-only">주요사이트</label> <select
+						id="site-select"
+						onchange="if(this.value) window.open(this.value, '_blank')">
+						<option value="">주요사이트</option>
+						<option value="https://www.moe.go.kr/">교육부</option>
+						<option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+						<option value="https://www.nrf.re.kr/">연구재단</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 </body>
 </html>
