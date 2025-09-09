@@ -1,31 +1,36 @@
 package dto;
 
 public class AA_schedulesDTO {
-	private int id;
-	private String content;
-	private String date;
-	
-	public int getId() {
-		return id;
+	private String title;
+	private String start;
+	private String end;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getContent() {
-		return content;
+
+	public String getStart() {
+		return start;
 	}
-	public void setContent(String content) {
-		this.content = content;
+
+	public void setStart(String start) {
+		this.start = start;
 	}
-	public String getDate() {
-		return date;
+
+	public String getEnd() {
+		return end;
 	}
-	public void setDate(String date) {
-		this.date = date;
+
+	public void setEnd(String end) {
+		this.end = end;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "AA_schedulesDTO [id=" + id + ", content=" + content + ", date=" + date + "]";
+		return "AA_schedulesDTO [title=" + title + ", start=" + start + ", end=" + end + "]";
 	}
 }

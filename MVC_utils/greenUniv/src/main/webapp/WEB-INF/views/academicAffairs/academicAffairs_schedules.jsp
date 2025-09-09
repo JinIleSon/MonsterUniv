@@ -34,7 +34,7 @@
                 
                 events: function(info, successCallback, failureCallback) {
                     // 서버에서 이벤트 데이터를 받아옵니다.
-                    fetch('/api/events')  // 이벤트를 가져오는 서버 API
+                    fetch('/greenUniv/AA_schedules/getEvents.do')  // 이벤트를 가져오는 서버 API
                         .then(response => response.json())
                         .then(data => successCallback(data))
                         .catch(error => failureCallback(error));
