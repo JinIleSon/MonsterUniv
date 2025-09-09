@@ -31,6 +31,14 @@ public class AMS_mainListController extends HttpServlet{
 		List<AMS_mainDTO> dtoList7 = ams_mainService.findAllStuLeaveEgrade();
 		List<AMS_mainDTO> dtoList8 = ams_mainService.findAllStuInEgrade();
 		List<AMS_mainDTO> dtoList9 = ams_mainService.findAllRun();
+		List<AMS_mainDTO> dtoList10 = ams_mainService.findAllMajor();
+		List<AMS_mainDTO> dtoList11 = ams_mainService.findAllLecture();
+		List<AMS_mainDTO> dtoList12 = ams_mainService.findAllProf();
+		List<AMS_mainDTO> dtoList13 = ams_mainService.findAllAdmin();
+		List<AMS_mainDTO> dtoList14 = ams_mainService.findAllStu();
+		List<AMS_mainDTO> dtoList15 = ams_mainService.selectAllStudentLeave();
+		List<AMS_mainDTO> dtoList16 = ams_mainService.findAllGradSchool();
+		List<AMS_mainDTO> dtoList17 = ams_mainService.selectAllGraduation();
 		
 		// 현재 사용자 권한 확인
 //		HttpSession session = req.getSession();
@@ -49,6 +57,14 @@ public class AMS_mainListController extends HttpServlet{
 		req.setAttribute("dtoList7", dtoList7);
 		req.setAttribute("dtoList8", dtoList8);
 		req.setAttribute("dtoList9", dtoList9);
+		req.setAttribute("dtoList10", dtoList10);
+		req.setAttribute("dtoList11", dtoList11);
+		req.setAttribute("dtoList12", dtoList12);
+		req.setAttribute("dtoList13", dtoList13);
+		req.setAttribute("dtoList14", dtoList14);
+		req.setAttribute("dtoList15", dtoList15);
+		req.setAttribute("dtoList16", dtoList16);
+		req.setAttribute("dtoList17", dtoList17);
 		
 		// 사용자 생성 시 바꾸기
 //		req.setAttribute("role", role);

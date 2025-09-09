@@ -54,5 +54,37 @@ public enum AMS_mainService {
 	public List<AMS_mainDTO> findAllRun(){
 		return dao.selectAllRun();
 	}
-		
+	////////////////////////////////////////////
+	// 대학 운영 현황 - 개설학과 개수
+	public List<AMS_mainDTO> findAllMajor(){
+		return dao.selectAllMajor();
+	}
+	// 대학 운영 현황 - 개설강좌 개수
+	public List<AMS_mainDTO> findAllLecture(){
+		return dao.selectAllLecture();
+	}
+	// 대학 운영 현황 - 전체교수 인원
+	public List<AMS_mainDTO> findAllProf(){
+		return dao.selectAllProf();
+	}
+	// 대학 운영 현황 - 임직원 인원
+	public List<AMS_mainDTO> findAllAdmin(){
+		return dao.selectAllAdmin();
+	}
+	// 대학 운영 현황 - 학생 인원
+	public List<AMS_mainDTO> findAllStu(){
+		return dao.selectAllStu();
+	}
+	// 대학 운영 현황 - 휴학생 인원
+	public List<AMS_mainDTO> selectAllStudentLeave(){
+		return dao.selectAllStudentLeave();
+	}
+	// 대학 운영 현황 - 대학원생 인원
+	public List<AMS_mainDTO> findAllGradSchool(){
+		return dao.selectAllGradSchool();
+	}
+	// 대학 운영 현황 - 졸업생 인원
+	public List<AMS_mainDTO> selectAllGraduation(){
+		return dao.selectAllGraduation();
+	}
 }

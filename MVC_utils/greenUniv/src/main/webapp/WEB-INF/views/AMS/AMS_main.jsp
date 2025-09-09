@@ -374,7 +374,7 @@ footer div p {
 								<col style="width: 12.5%;">
 								<col style="width: 12.5%;">
 							</colgroup>
-							<tr class="thead">
+							<tr class="thead" style="height:45px;">
 								<th>개설학과</th>
 								<th>개설강좌</th>
 								<th>전체교수</th>
@@ -384,20 +384,22 @@ footer div p {
 								<th>대학원생</th>
 								<th>졸업생</th>
 							</tr>
-							<tr>
-								<td>53</td>
-								<td>214</td>
-								<td>64</td>
-								<td>24</td>
-								<td>2047</td>
-								<td>127</td>
-								<td>364</td>
-								<td>5680</td>
-							</tr>
+							<c:forEach var="COL" items="${dtoList10}" varStatus="st">
+								<tr style="height: 52px;">
+									<td style="">${COL.countDept}</td>
+									<td style="">${dtoList11[st.index].countLname}</td>
+									<td style="">${dtoList12[st.index].countPnum}</td>
+									<td style="">${dtoList13[st.index].countUser}</td>
+									<td style="">${dtoList14[st.index].countStuAll}</td>
+									<td style="">${dtoList15[st.index].countStuLeave}</td>
+									<td style="">${dtoList16[st.index].countStuGradSchool}</td>
+									<td style="">${dtoList17[st.index].countStuGraduation}</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div class="sub-title">
-						<h4>대학 운영 현황</h4>
+						<h4>교육 운영 현황</h4>
 						<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
 					</div>
 					<div>

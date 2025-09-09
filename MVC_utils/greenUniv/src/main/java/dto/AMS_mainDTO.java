@@ -2,7 +2,98 @@ package dto;
 
 public class AMS_mainDTO {
 
-	// 대학 운영 현황(lecture)
+	// 대학 운영 현황(collMaj, lecture, professor, `User`, student)
+	private int countDept;
+	private int countLname;
+	private int countPnum;
+	private int countUser;
+	private int countStuAll;
+	private int countStuLeave;
+	private int countStuGradSchool;  // 대학원생
+	private int countStuGraduation;  // 졸업생
+	
+	public int getCountDept() {
+		return countDept;
+	}
+	public void setCountDept(int countDept) {
+		this.countDept = countDept;
+	}
+	public void setCountDept(String countDept) {
+		if (countDept != null)
+			this.countDept = Integer.parseInt(countDept);
+	}
+	public int getCountLname() {
+		return countLname;
+	}
+	public void setCountLname(int countLname) {
+		this.countLname = countLname;
+	}
+	public void setCountLname(String countLname) {
+		if (countLname != null)
+			this.countLname = Integer.parseInt(countLname);
+	}
+	public int getCountPnum() {
+		return countPnum;
+	}
+	public void setCountPnum(int countPnum) {
+		this.countPnum = countPnum;
+	}
+	public void setCountPnum(String countPnum) {
+		if (countPnum != null)
+			this.countPnum = Integer.parseInt(countPnum);
+	}
+	public int getCountUser() {
+		return countUser;
+	}
+	public void setCountUser(int countUser) {
+		this.countUser = countUser;
+	}
+	public void setCountUser(String countUser) {
+		if (countUser != null)
+			this.countUser = Integer.parseInt(countUser);
+	}
+	public int getCountStuAll() {
+		return countStuAll;
+	}
+	public void setCountStuAll(int countStuAll) {
+		this.countStuAll = countStuAll;
+	}
+	public void setCountStuAll(String countStuAll) {
+		if (countStuAll != null)
+			this.countStuAll = Integer.parseInt(countStuAll);
+	}
+	public int getCountStuLeave() {
+		return countStuLeave;
+	}
+	public void setCountStuLeave(int countStuLeave) {
+		this.countStuLeave = countStuLeave;
+	}
+	public void setCountStuLeave(String countStuLeave) {
+		if (countStuLeave != null)
+			this.countStuLeave = Integer.parseInt(countStuLeave);
+	}
+	public int getCountStuGradSchool() {
+		return countStuGradSchool;
+	}
+	public void setCountStuGradSchool(int countStuGradSchool) {
+		this.countStuGradSchool = countStuGradSchool;
+	}
+	public void setCountStuGradSchool(String countStuGradSchool) {
+		if (countStuGradSchool != null)
+			this.countStuGradSchool = Integer.parseInt(countStuGradSchool);
+	}
+	public int getCountStuGraduation() {
+		return countStuGraduation;
+	}
+	public void setCountStuGraduation(int countStuGraduation) {
+		this.countStuGraduation = countStuGraduation;
+	}
+	public void setCountStuGraduation(String countStuGraduation) {
+		if (countStuGraduation != null)
+			this.countStuGraduation = Integer.parseInt(countStuGraduation);
+	}
+
+	// 교육 운영 현황(lecture)
 	private String openMaj;
 	private String deptCode;
 	private String lname;
