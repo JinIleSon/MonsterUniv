@@ -65,9 +65,8 @@ public class AMS_studentRegistController extends HttpServlet {
 		studentDTO.setEterm(eterm);
 		studentDTO.setAdvprof(advprof);
 		
-		System.out.println("test: " + studentDTO);
+		studentService.register(studentDTO);
 		
-		//studentService.register(studentDTO);
-		//resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
+		resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
 	}
 }
