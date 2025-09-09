@@ -43,12 +43,6 @@ public class AMS_studentRegistController extends HttpServlet {
 		String egrade = req.getParameter("egrade");
 		String eterm = req.getParameter("eterm");
 		String advprof = req.getParameter("advprof");
-<<<<<<< HEAD
-
-		//AMS_studentDTO  studentDTO = new AMS_studentDTO(); //다른 dto확인
-
-		//resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
-=======
 		
 		AMS_studentDTO  studentDTO = new AMS_studentDTO();
 		studentDTO.setSnum(snum);
@@ -74,6 +68,5 @@ public class AMS_studentRegistController extends HttpServlet {
 		studentService.register(studentDTO);
 		
 		resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
->>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 	}
 }
