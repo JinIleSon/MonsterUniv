@@ -309,7 +309,7 @@ main {
 					</div>
 					<div style="">
 						<table
-							style="border-collapse: collapse; width: 898px !important; text-align: center; border: none;">
+							style="border-collapse: collapse; width: 898px !important; text-align: center; border: none; margin-bottom:100px !important;">
 							<tr
 								style="height: 50px; font-weight: 700; background-color: #F4F8FC; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
 								<td style="width: 240px; border-right: 1px solid #b8b8b8;">학과/전공</td>
@@ -337,16 +337,9 @@ main {
 				</div>
 			</div>
 		</div>
-
-		</table>
-
-		</div>
-		</div>
-		</div>
-		</div>
 	</main>
 	<!--3. 푸터영역-->
-	<footer class="footer">
+	<footer style="position: static !important; margin-top:100px !important;" class="footer">
 		<!--상단-->
 		<div class="footer-high">
 			<div class="footer-high-inner">
