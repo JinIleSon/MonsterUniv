@@ -39,8 +39,9 @@ public class UserService {
    
    
    public ResultCode loginCheck(String identification, String plainPassword, String role) {
-       if (identification == null || identification.isEmpty() ||
-           plainPassword == null || plainPassword.isEmpty()) {
+       if (identification == null || identification.isEmpty() 
+    	   ||plainPassword == null || plainPassword.isEmpty()
+    	   || role == null || role.isEmpty()){
            return ResultCode.LOGIN_INPUT_EMPTY;
        }
 
@@ -50,8 +51,8 @@ public class UserService {
        boolean pwOk = plainPassword.equals(found.getPassword());
        if (!pwOk) return ResultCode.LOGIN_FAILED;
 
-       if (role != null && !role.isEmpty() &&
-           (found.getRole() == null || !found.getRole().equalsIgnoreCase(role))) {
+       //if (role != null && !role.isEmpty() &&
+    		   if(found.getRole() == null || !found.getRole().equalsIgnoreCase(role)) {
            return ResultCode.LOGIN_FAILED;
        }
        return ResultCode.LOGIN_SUCCESS;

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>   
-
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
+<!--로그인 성공 팝업-->
+<c:if test="${not empty sessionScope.FLASH_MSG}">
+  <script>
+    alert('${fn:replace(fn:escapeXml(sessionScope.FLASH_MSG), "\'", "\\\'")}');
+  </script>
+  <c:remove var="FLASH_MSG" scope="session"/>
+</c:if>
     <!--1.헤더영역-->
     <header>
         <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
@@ -26,7 +33,14 @@
                     <ul>
                         <li><a href="/greenUniv/main.jsp">HOME</a></li>
                         <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
+                        <c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
                         <li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
                     </ul>
                 </div>

@@ -265,12 +265,27 @@
                     </div>
                 </div>
             </form>
-
+            
+            <!-- Daum 우편번호 API 로드 -->
+			<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+			
+			<script>
+			  document.getElementById("btnPostcode").addEventListener("click", function(){
+			    new daum.Postcode({
+			      oncomplete: function(data) {
+			        // 선택한 우편번호와 주소 정보를 input에 넣기
+			        document.getElementById("zip").value   = data.zonecode;   // 우편번호
+			        document.getElementById("addr1").value = data.address;    // 기본주소
+			        document.getElementById("addr2").focus();                 // 상세주소로 커서 이동
+			      }
+			    }).open();
+			  });
+			</script>
+            
             <div></div>
         </div>
     </div>
 
-    </div>
     <!--3. 푸터영역-->    
     <footer class="footer">
         <!--상단-->
