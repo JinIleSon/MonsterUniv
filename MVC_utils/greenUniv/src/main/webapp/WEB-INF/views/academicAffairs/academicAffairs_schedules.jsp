@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/academicAffairs_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/academicAffairs_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
-    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <!-- moment lib -->
     <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
@@ -79,7 +79,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -167,10 +167,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">학사안내</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">학사일정</span>
         </div>
     </div>
@@ -245,7 +245,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

@@ -12,7 +12,7 @@
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('../../font/NotoSansKR-Light.otf') format('opentype');
+            src: url('/greenUniv//greenUniv/font/NotoSansKR-Light.otf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -313,16 +313,16 @@
             height: 10px;
         }
         .pagenation .first {
-            background-image: url('../images/btn-first-page.png');
+            background-image: url('/greenUniv/images/btn-first-page.png');
         }
         .pagenation .prev {
-            background-image: url('../images/btn-prev-page.png');
+            background-image: url('/greenUniv/images/btn-prev-page.png');
         }
         .pagenation .next {
-            background-image: url('../images/btn-next-page.png');
+            background-image: url('/greenUniv/images/btn-next-page.png');
         }
         .pagenation .last {
-            background-image: url('../images/btn-last-page.png');
+            background-image: url('/greenUniv/images/btn-last-page.png');
         }
         
         /* ================================
@@ -537,14 +537,14 @@
     <div class="container">
         <nav class="sidebar">
             <div class="menu menu1">
-                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
                     <li class="menu-item">기본환경정보</li>
                     <li class="menu-item">약관관리</li>
                 </ul>
             </div>
             <div class="menu menu2">
-                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
                     <li class="menu-item">교육 운영 현황</li>
                     <li class="menu-item">학년별 학생 현황</li>
@@ -555,7 +555,7 @@
                 </ul>
             </div>
             <div class="menu menu3">
-                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
                     <li class="menu-item">학생 목록 및 등록</li>
                     <li class="menu-item">교수 목록 및 등록</li>
@@ -563,14 +563,14 @@
                 </ul>
             </div>
             <div class="menu menu4">
-                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
                     <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
                     <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
-                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
                     <li class="menu-item">입학안내 공지사항</li>
                     <li class="menu-item">학사안내 공지사항</li>
@@ -729,7 +729,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

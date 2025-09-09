@@ -7,17 +7,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>학사안내::공지사항</title>
-<link rel="stylesheet" href="../css/fonts.css">
-<link rel="stylesheet" href="../css/academicAffairs_main.style.css">
+<link rel="stylesheet" href="/greenUniv/css/fonts.css">
+<link rel="stylesheet" href="/greenUniv/css/academicAffairs_main.style.css">
 <!--css연결-->
-<link rel="stylesheet" href="../css/main_main.style.css">
-<link rel="stylesheet" href="../css/Header.style.css">
-<link rel="stylesheet" href="../css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <!--부트스트랩 연결-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <style>
 a {
 	text-decoration: none;
@@ -67,7 +67,7 @@ main {
 			<div class="inner">
 				<!--로고-->
 				<a href="/greenUniv/main.jsp"><img
-					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area">
@@ -171,12 +171,12 @@ main {
 			style="background-color: #ECF2F6; height: 42px; display: flex; align-items: center; justify-content: center;">
 			<div
 				style="width: 220px; height: 42px; position: absolute; transform: translateX(221%); display: flex; align-items: center;">
-				<img src="../images/ico-home.png" alt="홈"
+				<img src="/greenUniv/images/ico-home.png" alt="홈"
 					style="width: 23px; height: 20px;"> <img
-					src="../images/bg-path-arrow.png" alt="화살표"
+					src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
 					style="width: 8px; height: 13px; margin-left: 15px;"> <span
 					style="font-weight: 350; font-size: 14px; color: #333333; margin-left: 15px;">학사안내</span>
-				<img src="../images/bg-path-arrow.png" alt="화살표"
+				<img src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
 					style="width: 8px; height: 13px; margin-left: 15px;"> <span
 					style="font-weight: 350; font-size: 14px; color: #071F4B; margin-left: 15px;">공지사항</span>
 			</div>
@@ -258,7 +258,7 @@ main {
 							<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
 							<td
 								style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img
-								src="../images/ico-new01.gif" alt=""> <a href="#"
+								src="/greenUniv/images/ico-new01.gif" alt=""> <a href="#"
 								style="color: black;">&nbsp;2025학년도 신입학 3차 추가모집 모집요강 및 모집⋯</a></td>
 							<td style="border-bottom: 1px solid #b8b8b8;">담당자</td>
 							<td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
@@ -268,7 +268,7 @@ main {
 							<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">2</td>
 							<td
 								style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img
-								src="../images/ico-new01.gif" alt=""> <a href="#"
+								src="/greenUniv/images/ico-new01.gif" alt=""> <a href="#"
 								style="color: black;">&nbsp;2025학년도 신입학 2차 추가모집 모집요강 및 모집⋯</a></td>
 							<td style="border-bottom: 1px solid #b8b8b8;">담당자</td>
 							<td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
@@ -326,7 +326,7 @@ main {
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

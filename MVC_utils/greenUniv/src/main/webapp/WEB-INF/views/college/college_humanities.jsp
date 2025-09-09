@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학·대학원_인문사회대학</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/college_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/college_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         
         hr{
@@ -41,27 +41,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('/greenUniv/images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -69,7 +69,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -113,7 +113,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -201,10 +201,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학·대학원</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">인문사회대학</span>
         </div>
     </div>
@@ -250,7 +250,7 @@
                     <!-- 본문 시작-->
                <hr style="border:none; border-top: 2px solid;">
                <div style="height:290px; margin-top:30px; display: flex; gap:23px;">
-                  <img src="../images/college-introduce-1.jpg" alt="" style="width:320px; height:240px;">
+                  <img src="/greenUniv/images/college-introduce-1.jpg" alt="" style="width:320px; height:240px;">
                   <div style="">
                     <div style="font-weight: 350; font-size: 16px; color:#5B6774; margin-bottom:8px;">Humanities And Social Sciences</div>
                     <div style="font-weight: 350; font-size: 26px; color:#3B88D4; margin-bottom:11px;">인문, 사회분야의 다양하고 심화된 이론을 연구</div>
@@ -259,7 +259,7 @@
                   </div>
                 </div>
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">학부 및 학과</span>
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">학부 및 학과</span>
                 </div>
                 <div style="">
                   <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
@@ -271,7 +271,7 @@
                       </tr>
                       <tr style="height: 50px;">
                         <td style="border-right: 1px solid #b8b8b8; padding: 6px;">
-                          국어국문학과 <a href="#"><img src="../images/ico_link.png" alt="국어국문학과"></a>
+                          국어국문학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="국어국문학과"></a>
                         </td>
                         <td style="border-right: 1px solid #b8b8b8; padding: 6px;">김국어</td>
                         <td style="border-right: 1px solid #b8b8b8; padding: 6px;">051-123-1001</td>
@@ -281,7 +281,7 @@
                       <!-- 데이터 행 (2) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px; border-left:none;">
-                          영어영문학과 <a href="#"><img src="../images/ico_link.png" alt="영어영문학과"></a>
+                          영어영문학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="영어영문학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김영어</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1002</td>
@@ -291,7 +291,7 @@
                       <!-- 데이터 행 (3) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          일어일문학과 <a href="#"><img src="../images/ico_link.png" alt="일어일문학과"></a>
+                          일어일문학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="일어일문학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김일어</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1003</td>
@@ -301,7 +301,7 @@
                       <!-- 데이터 행 (4) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          중어중문학과 <a href="#"><img src="../images/ico_link.png" alt="중어중문학과"></a>
+                          중어중문학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="중어중문학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김중어</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1004</td>
@@ -311,7 +311,7 @@
                       <!-- 데이터 행 (5) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          역사학과 <a href="#"><img src="../images/ico_link.png" alt="역사학과"></a>
+                          역사학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="역사학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김역사</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1005</td>
@@ -321,7 +321,7 @@
                       <!-- 데이터 행 (6) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          경제학과 <a href="#"><img src="../images/ico_link.png" alt="경제학과"></a>
+                          경제학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="경제학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김경제</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1006</td>
@@ -331,7 +331,7 @@
                       <!-- 데이터 행 (7) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          경영학과 <a href="#"><img src="../images/ico_link.png" alt="경영학과"></a>
+                          경영학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="경영학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김경영</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1007</td>
@@ -341,7 +341,7 @@
                       <!-- 데이터 행 (8) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          법학과 <a href="#"><img src="../images/ico_link.png" alt="법학과"></a>
+                          법학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="법학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김법학</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1008</td>
@@ -351,7 +351,7 @@
                       <!-- 데이터 행 (9) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          철학과 <a href="#"><img src="../images/ico_link.png" alt="철학과"></a>
+                          철학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="철학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김철학</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1009</td>
@@ -361,7 +361,7 @@
                       <!-- 데이터 행 (10) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          정치외교학과 <a href="#"><img src="../images/ico_link.png" alt="정치외교학과"></a>
+                          정치외교학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="정치외교학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김정치</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1010</td>
@@ -372,7 +372,7 @@
                       <!-- 데이터 행 (11) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          행정학과 <a href="#"><img src="../images/ico_link.png" alt="행정학과"></a>
+                          행정학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="행정학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김행정</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1011</td>
@@ -382,7 +382,7 @@
                       <!-- 데이터 행 (12) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          사회복지학과 <a href="#"><img src="../images/ico_link.png" alt="사회복지학과"></a>
+                          사회복지학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="사회복지학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김사회</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1012</td>
@@ -392,7 +392,7 @@
                       <!-- 데이터 행 (13) -->
                       <tr style="height: 50px;">
                         <td style="border: 1px solid #b8b8b8; padding: 6px;border-left:none;">
-                          유아교육학과 <a href="#"><img src="../images/ico_link.png" alt="유아교육학과"></a>
+                          유아교육학과 <a href="#"><img src="/greenUniv/images/ico_link.png" alt="유아교육학과"></a>
                         </td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">김유아</td>
                         <td style="border: 1px solid #b8b8b8; padding: 6px;">051-123-1013</td>
@@ -424,7 +424,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학소개_교육이념</title>
-    <link rel="stylesheet" href="../css/about_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/about_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <!--부트스트랩 연결-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
         
         hr{
@@ -43,27 +43,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('/greenUniv/images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -71,7 +71,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -114,7 +114,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -202,10 +202,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">교육이념</span>
         </div>
     </div>
@@ -258,7 +258,7 @@
                 </div>
 
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">교육목표</span>
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">교육목표</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 창의적 탐구 능력 배양, 학문과 실무의 융합적 인재 양성, 비판적 사고와 창의적 문제해결 역량 함양을 핵심 목표로 삼습니다. 이를 위해 첨단 IT·지식재산 교육, 미래 융합기술 기반의 교과과정, 산학협력 프로젝트, 글로벌 연계 교육을 추진하여 교육 이념을 실현하고 교육 목표를 달성하고자 합니다.
                 
@@ -271,7 +271,7 @@
 
                 <div style="padding-bottom:50px;"></div>
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">역할과 기능</span>
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">역할과 기능</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 지역과 사회의 미래 인재들을 조기에 발굴하고, 최신 학문과 산업 지식을 제공하여 학생들이 지식·기술·가치관을 균형 있게 갖출 수 있도록 지원합니다.
                     <ul> 
@@ -284,7 +284,7 @@
                 
                 <div style="padding-bottom:50px;"></div>
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">종합 지향점</span>
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">종합 지향점</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 미래 유능한 인재로서의 가치관·지식·역량의 기초 형성을 최종 목표로 합니다. 이를 통해 학생들은 급변하는 4차 산업혁명 시대에 필요한 창의적 리더, 융합형 전문가, 사회적 책임을 다하는 글로벌 인재로 성장하게 될 것입니다.
                 </div>
@@ -314,7 +314,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

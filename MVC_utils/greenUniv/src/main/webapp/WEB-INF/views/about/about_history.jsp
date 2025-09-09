@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학소개_연혁</title>
-    <link rel="stylesheet" href="../css/about_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/about_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <!--부트스트랩 연결-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
         
         hr{
@@ -44,27 +44,27 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('../images/btn-sel-open01.png') 
+            background: url('/greenUniv/images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('../images/btn-first-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('../images/btn-prev-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('../images/btn-next-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -72,7 +72,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('../images/btn-last-page.png') no-repeat center;
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -115,7 +115,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -203,10 +203,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">연혁</span>
         </div>
     </div>
@@ -258,7 +258,7 @@
 
                 <!--연혁(1)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">1987년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -273,7 +273,7 @@
 
                 <!--연혁(2)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">1995년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -289,7 +289,7 @@
                 
                 <!--연혁(3)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2002년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -305,7 +305,7 @@
                 
                 <!--연혁(4)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2010년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -321,7 +321,7 @@
                 
                 <!--연혁(5)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2015년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -337,7 +337,7 @@
                 
                 <!--연혁(6)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2020년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -353,7 +353,7 @@
                 
                 <!--연혁(7)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2023년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -370,7 +370,7 @@
                 
                 <!--연혁(8)-->
                 <div style="display: flex; width:100%; margin-top:0px; margin-bottom:3px; align-items: center;">
-                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
+                      <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;">
                       <span style="color:#145074; font-size:18px; font-weight: 500;">2025년</span>
                 </div>
                 <div style="font-weight: 350; font-size: 16px; color:#666666;"> 
@@ -408,7 +408,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

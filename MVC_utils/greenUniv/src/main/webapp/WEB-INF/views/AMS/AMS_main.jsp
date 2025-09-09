@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>몬스터대학교 학사관리시스템</title>
 <!--css연결-->
-<link rel="stylesheet" href="../css/Header.style.css">
-<link rel="stylesheet" href="../css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 </head>
 <style>
 html, body {
@@ -210,7 +210,7 @@ aside ol {
 				<!--로고-->
 				<div style=" margin-right:630px; margin-left:15px;">
 				<a href="/greenUniv/main.jsp"><img
-					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
@@ -317,7 +317,7 @@ aside ol {
 					<nav class="sidebar">
 						<div class="menu menu1">
 							<h3>
-								<img src='../images/ico-admin-setting.png'><a href="#">환경설정</a>
+								<img src='/greenUniv/images/ico-admin-setting.png'><a href="#">환경설정</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="#">기본환경정보</a></li>
@@ -326,7 +326,7 @@ aside ol {
 						</div>
 						<div class="menu menu2">
 							<h3>
-								<img src='../images/ico-admin-academic.png'><a href="#">학사운영</a>
+								<img src='/greenUniv/images/ico-admin-academic.png'><a href="#">학사운영</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="#">교육 운영 현황</a></li>
@@ -339,7 +339,7 @@ aside ol {
 						</div>
 						<div class="menu menu3">
 							<h3>
-								<img src='../images/ico-admin-persons.png'><a href="#">학생
+								<img src='/greenUniv/images/ico-admin-persons.png'><a href="#">학생
 									목록 및 등록</a>
 							</h3>
 							<ul>
@@ -350,7 +350,7 @@ aside ol {
 						</div>
 						<div class="menu menu4">
 							<h3>
-								<img src='../images/ico-admin-college.png'><a href="#">인사관리</a>
+								<img src='/greenUniv/images/ico-admin-college.png'><a href="#">인사관리</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="#">대학 및 학과 목록</a></li>
@@ -359,7 +359,7 @@ aside ol {
 						</div>
 						<div class="menu menu5">
 							<h3>
-								<img src='../images/ico-admin-board.png'><a href="#">게시판관리</a>
+								<img src='/greenUniv/images/ico-admin-board.png'><a href="#">게시판관리</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="#">입학안내 공지사항</a></li>
@@ -423,7 +423,7 @@ aside ol {
 					</div>
 					<div class="sub-title">
 						<h4>교육 운영 현황</h4>
-						<a href="/greenUniv/AMS/AMS_educationOperation/list.do"><img src="../images/bg-viewmore01.png" alt=""></a>
+						<a href="/greenUniv/AMS/AMS_educationOperation/list.do"><img src="/greenUniv/images/bg-viewmore01.png" alt=""></a>
 					</div>
 					<div>
 						<table style="height: 307px;">
@@ -508,7 +508,7 @@ aside ol {
 						<div style="width: 534.09px;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>학과별 학생 현황</h4>
-								<a href="/greenUniv/collegeAndDepartment/list.do"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/collegeAndDepartment/list.do"><img src="/greenUniv/images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 300px;">
@@ -550,7 +550,7 @@ aside ol {
 						<div style="width: 534.09px; margin-right: auto;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>학사안내 공지사항</h4>
-								<a href="/greenUniv/academicAffairs/academicAffairs_notice.do"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/academicAffairs/academicAffairs_notice.do"><img src="/greenUniv/images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 307px; font-weight: 350;">
@@ -575,7 +575,7 @@ aside ol {
 						<div style="width: 534.09px;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>입학상담</h4>
-								<a href="/greenUniv/admissionGuide/admissionGuide_counsel.do"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/admissionGuide/admissionGuide_counsel.do"><img src="/greenUniv/images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 307px; font-weight: 350;">
@@ -623,7 +623,7 @@ aside ol {
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
