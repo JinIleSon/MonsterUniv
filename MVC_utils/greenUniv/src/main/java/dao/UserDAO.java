@@ -3,7 +3,9 @@ package dao;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Optional;
+
 import javax.naming.NamingException;
+
 import dto.UserDTO;
 import util.DBHelper;
 import util.Sql_user;
@@ -16,7 +18,7 @@ public class UserDAO extends DBHelper{
         DUPLICATE_COMBO,       // unique (nick,phone,email) : user__un
         ERROR
     }
-    
+
     /** 로그인용 조회 메서드 */
     public UserDTO findById1(String identification) {
         try {
@@ -37,7 +39,7 @@ public class UserDAO extends DBHelper{
             }
         } catch (Exception e) {
             e.printStackTrace(); // 로깅 권장
-        } 
+        }
         return null;
     }
 
@@ -61,9 +63,15 @@ public class UserDAO extends DBHelper{
             // 제약명으로 구분
             String msg = dup.getMessage();
             if (msg != null) {
-                if (msg.contains("user_pkv2"))          return InsertResult.DUPLICATE_ID;
-                if (msg.contains("user__un_nickname"))  return InsertResult.DUPLICATE_NICKNAME;
-                if (msg.contains("user__un"))           return InsertResult.DUPLICATE_COMBO;
+                if (msg.contains("user_pkv2")) {
+					return InsertResult.DUPLICATE_ID;
+				}
+                if (msg.contains("user__un_nickname")) {
+					return InsertResult.DUPLICATE_NICKNAME;
+				}
+                if (msg.contains("user__un")) {
+					return InsertResult.DUPLICATE_COMBO;
+				}
             }
             return InsertResult.ERROR;
 

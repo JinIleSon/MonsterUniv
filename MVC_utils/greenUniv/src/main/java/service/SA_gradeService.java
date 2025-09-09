@@ -24,8 +24,8 @@ public enum SA_gradeService {
 		return dao.select(snum);
 	}
 
-	public List<SA_gradeDTO> selectAll() {
-		return dao.selectAll();
+	public List<SA_gradeDTO> selectAll(int snum) {
+		return dao.selectAll(snum);
 	}
 
 	public void modify(SA_gradeDTO dto) {

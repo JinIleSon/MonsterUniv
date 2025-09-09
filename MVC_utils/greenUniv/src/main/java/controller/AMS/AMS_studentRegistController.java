@@ -18,7 +18,7 @@ public class AMS_studentRegistController extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studentRegist.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String snum = req.getParameter("snum");
@@ -40,9 +40,9 @@ public class AMS_studentRegistController extends HttpServlet {
 		String egrade = req.getParameter("egrade");
 		String eterm = req.getParameter("eterm");
 		String advprof = req.getParameter("advprof");
-		
+
 		//AMS_studentDTO  studentDTO = new AMS_studentDTO(); //다른 dto확인
-		
+
 		//resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
 	}
 }

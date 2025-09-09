@@ -16,12 +16,12 @@ import service.AMS_mainService;
 public class AMS_mainListController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private AMS_mainService ams_mainService = AMS_mainService.INSTANCE;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		List<AMS_mainDTO> dtoList1 = ams_mainService.findAllAA();
 		List<AMS_mainDTO> dtoList2 = ams_mainService.findAllAdm();
 		List<AMS_mainDTO> dtoList3 = ams_mainService.findAllStuEdept();
@@ -39,14 +39,14 @@ public class AMS_mainListController extends HttpServlet{
 		List<AMS_mainDTO> dtoList15 = ams_mainService.selectAllStudentLeave();
 		List<AMS_mainDTO> dtoList16 = ams_mainService.findAllGradSchool();
 		List<AMS_mainDTO> dtoList17 = ams_mainService.selectAllGraduation();
-		
+
 		// 현재 사용자 권한 확인
 //		HttpSession session = req.getSession();
 //		UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
-		
+
 		// 사용자 생성 시 바꾸기
 //		String role = sessUser.getUs_role();
-		
+
 		// request 공유참조(JSP에서 출력)
 		req.setAttribute("dtoList1", dtoList1);
 		req.setAttribute("dtoList2", dtoList2);
@@ -65,14 +65,14 @@ public class AMS_mainListController extends HttpServlet{
 		req.setAttribute("dtoList15", dtoList15);
 		req.setAttribute("dtoList16", dtoList16);
 		req.setAttribute("dtoList17", dtoList17);
-		
+
 		// 사용자 생성 시 바꾸기
 //		req.setAttribute("role", role);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_main.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}

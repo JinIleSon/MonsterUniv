@@ -19,7 +19,7 @@ public class Sql_user {
     // (nickname, phone, email) 복합 unique 중복 확인
     public static final String EXISTS_COMBO =
         "SELECT 1 FROM `User` WHERE `nickname` = ? AND `phone` = ? AND `email` = ? LIMIT 1";
-    
+
     // --- 로그인용 (id로 단건 조회) ---
     public static final String SELECT_BY_ID1 =
         "SELECT identification, password, nickname, phone, email, address, role " +

@@ -6,7 +6,7 @@ public class Coll_scienceDTO {
 	private String dean;
 	private String deptTel;
 	private String colcont;
-	
+
 	public String getColcont() {
 		return colcont;
 	}
@@ -37,11 +37,11 @@ public class Coll_scienceDTO {
 	public void setDeptTel(String deptTel) {
 		this.deptTel = deptTel;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Coll_scienceDTO [unitCol=" + unitCol + ", deptName=" + deptName + ", dean=" + dean + ", deptTel="
 				+ deptTel + ", colcont=" + colcont + "]";
 	}
-	
+
 }

@@ -2,7 +2,7 @@ package dto;
 
 public class UserDTO {
 	 private String identification;
-	    private String password;   
+	    private String password;
 	    private String nickname;
 	    private String phone;
 	    private String email;

@@ -17,27 +17,27 @@ import service.AMS_LectureService;
 public class AMS_course_searchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AMS_LectureService lectureService = AMS_LectureService.INSTANCE;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pg = req.getParameter("pg");
 		String searchType = req.getParameter("searchType");
 		String keyword = req.getParameter("keyword");
-		
+
 		PagenationDTO pagenationDTO = lectureService.getPagenationDTO(pg, searchType, keyword);
-		
+
 		int start = pagenationDTO.getStart();
 		List<AMS_lectureDTO> dtoList = lectureService.findAllSearch(start, searchType, keyword);
-		
+
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("searchType", searchType);
 		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_course_search.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}

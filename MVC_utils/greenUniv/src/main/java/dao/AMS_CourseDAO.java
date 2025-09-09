@@ -12,14 +12,14 @@ import util.Sql_lecture;
 
 public class AMS_CourseDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	private final static AMS_CourseDAO INSTANCE = new AMS_CourseDAO();
 	public static AMS_CourseDAO getInstance() {
 		return INSTANCE;
 	}
-	
+
 	private AMS_CourseDAO() {}
-	
+
 	public void insert(AMS_lectureDTO dto) {
 		try {
 			conn = getConnection();
@@ -44,21 +44,21 @@ public class AMS_CourseDAO extends DBHelper {
 			psmt.setString(18, dto.getRoom());
 			psmt.setInt(19, dto.getMaxNum());
 			psmt.executeUpdate();
-			
+
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
 		}
 	}
-	
+
 	public int selectCountTotal() {
 		int total = 0;
-		
+
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(Sql_lecture.SELECT_LECTURE_COUNT_TOTAL);
-			
+
 			if(rs.next()) {
 				total = rs.getInt(1);
 			}
@@ -68,14 +68,14 @@ public class AMS_CourseDAO extends DBHelper {
 		}
 		return total;
 	}
-	
+
 	public void select(AMS_lectureDTO dto) {
-		
+
 	}
-	
+
 	public List<AMS_lectureDTO> selectAll(int start) {
-		List<AMS_lectureDTO> dtoList = new ArrayList<AMS_lectureDTO>();
-		
+		List<AMS_lectureDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_lecture.SELECT_LECTURE_ALL);
@@ -88,13 +88,13 @@ public class AMS_CourseDAO extends DBHelper {
 				dto.setDeptCode(rs.getString(1));
 				dto.setYear(rs.getString(2));
 				dto.setSemester(rs.getString(3));
-				dto.setCompDiv(rs.getString(4));	
+				dto.setCompDiv(rs.getString(4));
 				dto.setLname(rs.getString(5));
 				dto.setLexpl(rs.getString(6));
 				dto.setOpenCol(rs.getString(7));
 				dto.setOpenMaj(rs.getString(8));
-				dto.setGrade(rs.getInt(9));						
-				dto.setProf(rs.getString(10));			
+				dto.setGrade(rs.getInt(9));
+				dto.setProf(rs.getString(10));
 				dto.setYclasS(rs.getString(11));
 				dto.setYclasE(rs.getString(12));
 				dto.setTimeS(rs.getString(13).substring(10,16));
@@ -103,7 +103,7 @@ public class AMS_CourseDAO extends DBHelper {
 				dto.setEvaWay(rs.getString(16));
 				dto.setBook(rs.getString(17));
 				dto.setRoom(rs.getString(18));
-				dto.setMaxNum(rs.getInt(19));		
+				dto.setMaxNum(rs.getInt(19));
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -112,11 +112,11 @@ public class AMS_CourseDAO extends DBHelper {
 		}
 		return dtoList;
 	}
-	
+
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
 		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COUNT_SEARCH);
-		
+
 		if(searchType.equals("lname")) {
 			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
@@ -134,37 +134,37 @@ public class AMS_CourseDAO extends DBHelper {
 				psmt = conn.prepareStatement(sql.toString());
 				rs = psmt.executeQuery();
 			}
-			
-			
+
+
 			if(rs.next()) {
 				total = rs.getInt(1);
 			}
-			
+
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
 		}
 		return total;
 	}
-	
+
 	public List<AMS_lectureDTO> selectLectureSearch(int start, String searchType, String keyword) {
-		List<AMS_lectureDTO> dtoList = new ArrayList<AMS_lectureDTO>();
-		
+		List<AMS_lectureDTO> dtoList = new ArrayList<>();
+
 		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_LECTURE_SEARCH);
-		
+
 		if(searchType.equals("lname")) {
 			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
 			sql.append(Sql_lecture.SEARCH_WHERE_PROF);
 		}
-		
-		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE); 
-		sql.append(Sql_lecture.SEARCH_OFFEST_ROW); 
-		
+
+		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE);
+		sql.append(Sql_lecture.SEARCH_OFFEST_ROW);
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
-			
+
 			if(keyword != null && !keyword.trim().isEmpty()) {
 				psmt.setString(1, "%"+keyword+"%");
 				psmt.setInt(2, start);
@@ -173,20 +173,20 @@ public class AMS_CourseDAO extends DBHelper {
 				psmt.setInt(1, start);
 				rs = psmt.executeQuery();
 			}
-			
-			
+
+
 			while(rs.next()) {
 				AMS_lectureDTO dto = new AMS_lectureDTO();
 				dto.setDeptCode(rs.getString(1));
 				dto.setYear(rs.getString(2));
 				dto.setSemester(rs.getString(3));
-				dto.setCompDiv(rs.getString(4));	
+				dto.setCompDiv(rs.getString(4));
 				dto.setLname(rs.getString(5));
 				dto.setLexpl(rs.getString(6));
 				dto.setOpenCol(rs.getString(7));
 				dto.setOpenMaj(rs.getString(8));
-				dto.setGrade(rs.getInt(9));						
-				dto.setProf(rs.getString(10));			
+				dto.setGrade(rs.getInt(9));
+				dto.setProf(rs.getString(10));
 				dto.setYclasS(rs.getString(11));
 				dto.setYclasE(rs.getString(12));
 				dto.setTimeS(rs.getString(13).substring(10,16));
@@ -198,7 +198,7 @@ public class AMS_CourseDAO extends DBHelper {
 				dto.setMaxNum(rs.getInt(19));
 				dtoList.add(dto);
 			}
-			
+
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
@@ -206,10 +206,10 @@ public class AMS_CourseDAO extends DBHelper {
 		return dtoList;
 	}
 	public void update(AMS_lectureDTO dto) {
-		
+
 	}
-	
+
 	public void delete(AMS_lectureDTO dto) {
-		
+
 	}
 }

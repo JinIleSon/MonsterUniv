@@ -57,6 +57,6 @@ public class PagenationDTO {
 				+ lastPageNum + ", pageGroupStart=" + pageGroupStart + ", pageGroupEnd=" + pageGroupEnd
 				+ ", currentPageStartNum=" + currentPageStartNum + "]";
 	}
-	
-	
+
+
 }

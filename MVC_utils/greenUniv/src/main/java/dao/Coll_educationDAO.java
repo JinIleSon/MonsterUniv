@@ -17,19 +17,19 @@ public class Coll_educationDAO extends DBHelper{
 		return INSTANCE;
 	}
 	private Coll_educationDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	// 기본 리스트 뿌려주기
 	public List<Coll_educationDTO> selectAll(){
-		List<Coll_educationDTO> dtoList = new ArrayList<Coll_educationDTO>();
-		
+		List<Coll_educationDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_coll_education.SELECT_ARTICLE_ALL);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				Coll_educationDTO dto = new Coll_educationDTO();
 				dto.setUnitCol(rs.getString("unitcol"));
@@ -37,7 +37,7 @@ public class Coll_educationDAO extends DBHelper{
 				dto.setDean(rs.getString("dean"));
 				dto.setDeptTel(rs.getString("depttel"));
 				dto.setColcont(rs.getString("colcont"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -46,5 +46,5 @@ public class Coll_educationDAO extends DBHelper{
 		}
 		return dtoList;
 	}
-	
+
 }

@@ -9,7 +9,7 @@ public class CAD_deptListDTO {
 	private int proCount;
 	private int stuCount;
 	private int lecCount;
-	
+
 	public int getDeptnum() {
 		return deptnum;
 	}
@@ -58,13 +58,13 @@ public class CAD_deptListDTO {
 	public void setLecCount(int lecCount) {
 		this.lecCount = lecCount;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "CAD_deptListDTO [deptnum=" + deptnum + ", unitcol=" + unitcol + ", deptname=" + deptname + ", dean="
 				+ dean + ", depttel=" + depttel + ", proCount=" + proCount + ", stuCount=" + stuCount + ", lecCount="
 				+ lecCount + "]";
 	}
-	
-	
+
+
 }

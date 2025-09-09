@@ -17,20 +17,20 @@ public class CL_menuGuideDAO extends DBHelper{
 		return INSTANCE;
 	}
 	private CL_menuGuideDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	
+
+
 	// 기본 리스트 뿌려주기
 	public List<CL_menuGuideDTO> selectALL(){
-		List<CL_menuGuideDTO> dtoList = new ArrayList<CL_menuGuideDTO>();
-		
+		List<CL_menuGuideDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_CL_menuGuide.SELECT_ARTICLE_ALL);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				CL_menuGuideDTO dto = new CL_menuGuideDTO();
 				dto.setDate(rs.getString(1));
@@ -41,7 +41,7 @@ public class CL_menuGuideDAO extends DBHelper{
 				dto.setSide2(rs.getString(6));
 				dto.setSide3(rs.getString(7));
 				dto.setSide4(rs.getString(8));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -50,7 +50,7 @@ public class CL_menuGuideDAO extends DBHelper{
 		}
 		return dtoList;
 	}
-	
-	
-	
+
+
+
 }

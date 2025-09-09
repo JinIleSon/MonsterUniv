@@ -1,18 +1,16 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dao.AMS_mainDAO;
 import dto.AMS_mainDTO;
-import util.Sql_AMS_main;
 
 public enum AMS_mainService {
-	
+
 	INSTANCE;
-	
+
 	private AMS_mainDAO dao = AMS_mainDAO.getInstance();
-	
+
 	/////////////////////////////////////////////
 	// 학사안내_공지사항(AA_notice)
 	public List<AMS_mainDTO> findAllAA( ){

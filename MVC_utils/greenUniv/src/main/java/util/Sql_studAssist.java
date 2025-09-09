@@ -82,5 +82,8 @@ public class Sql_studAssist {
 															+ "and year = 1 "
 															+ "and compDiv = '선택'";
 
+
+
+	// chkGrades
 	public static final String SELECT_GRADE_WITH_SNUM = "SELECT * FROM sa_grade WHERE SNUM = ?";
 }

@@ -28,16 +28,38 @@ public class SA_gradeDAO extends DBHelper {
 		return null;
 	}
 
-	public List<SA_gradeDTO> selectAll() {
+	public List<SA_gradeDTO> selectAll(int snum) {
 		List<SA_gradeDTO> dtoList = new ArrayList<>();
 
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_studAssist)
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_GRADE_WITH_SNUM);
+			psmt.setInt(1, snum);
+
+			logger.debug("SA_gradeDAO - selectAll");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
+
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				SA_gradeDTO dto = new SA_gradeDTO();
+				dto.setSnum(rs.getInt("snum"));
+				dto.setDeptCode(rs.getString("deptcode"));
+				dto.setLname(rs.getString("lname"));
+				dto.setYear(rs.getString("year"));
+				dto.setProf(rs.getString("prof"));
+				dto.setCompDiv(rs.getString("compdiv"));
+				dto.setScore(rs.getInt("score"));
+				dto.setRating(rs.getString("rating"));
+				dto.setGrade(rs.getInt("grade"));
+
+				logger.debug("dto : " + dto);
+				dtoList.add(dto);
+			}
+			closeAll();
 		} catch (Exception e) {
 			 logger.error(e.getMessage());
 		}
-		return null;
+		return dtoList;
 	}
 
 	public void modify(SA_gradeDTO dto) {

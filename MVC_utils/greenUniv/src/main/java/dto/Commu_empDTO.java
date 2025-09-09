@@ -8,7 +8,7 @@ public class Commu_empDTO {
 	private String title;
 	private String date;
 	private int hits;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -16,8 +16,9 @@ public class Commu_empDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getCondition() {
 		return condition;
@@ -50,14 +51,15 @@ public class Commu_empDTO {
 		this.hits = hits;
 	}
 	public void setHits(String hits) {
-		if (hits != null)
+		if (hits != null) {
 			this.hits = Integer.parseInt(hits);
+		}
 	}
 	@Override
 	public String toString() {
 		return "Commu_empDTO [id=" + id + ", condition=" + condition + ", nick=" + nick + ", title=" + title + ", date="
 				+ date + ", hits=" + hits + "]";
 	}
-	
-	
+
+
 }
