@@ -1,15 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>몬스터대학교 - 학과목록</title>
+    <title>학사관리시스템 - 학과목록</title>
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('../font/NotoSansKR-Light.otf') format('opentype');
+            src: url('../../font/NotoSansKR-Light.otf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -161,6 +161,14 @@
         .menu4 { width: 269px; height: 102px; } 
         .menu5 { width: 269px; height: 252px; }
         
+        .sidebar a {
+        	text-decoration: none;
+        }
+        
+        .sidebar a:visited { 
+        	color:black; 
+        }
+        
         /* ================================
         Main Content
         ================================ */
@@ -189,6 +197,17 @@
             justify-content: flex-end;
             gap: 5px;
             margin: 20px 20px 0 0;
+        }
+        .search-section form {
+            display: flex;
+            gap: 5px;
+        }
+        .search-section select {
+            padding: 8px 12px;
+            border: 1px solid #959595;
+            font-size: 12px;
+            width: 120px;
+            height: 35px;
         }
         .search-input {
             padding: 8px 12px;
@@ -457,8 +476,8 @@
             <div class="menu menu4">
                 <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item">대학 및 학과 목록</li>
-                    <li class="menu-item">대학 및 학과 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
@@ -483,15 +502,23 @@
             
             <!-- 검색 영역 -->
             <div class="search-section">
-                <input type="text" class="search-input" placeholder="학과명">
-                <input type="text" class="search-input" placeholder="키워드 입력">
-                <button class="search-btn">검색</button>
+                <form action="/greenUniv/collegeAndDepartment/list.do" method="get">
+                    <select name="searchType">
+                        <option value="">선택</option>
+                        <option value="unitcol" ${searchType eq 'unitcol' ? 'selected' : ''}>단과대학</option>
+                        <option value="deptname" ${searchType eq 'deptname' ? 'selected' : ''}>학과</option>
+                        <option value="dean" ${searchType eq 'dean' ? 'selected' : ''}>학과장</option>
+                    </select>
+                    <input type="text" name="keyword" class="search-input" placeholder="키워드 입력" value="${keyword}">
+                    <button type="submit" class="search-btn">검색</button>
+                </form>
             </div>
 
             <!-- 학과 목록 테이블 -->
             <table class="department-table">
                 <thead>
                     <tr>
+                        <th width="8%">번호</th>
                         <th width="8%">학과번호</th>
                         <th width="15%">단과대학</th>
                         <th width="12%">학과</th>
@@ -503,118 +530,93 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>10</td>
-                        <td>인문사회대학</td>
-                        <td>국어학과</td>
-                        <td>김국어</td>
-                        <td>051-512-1010</td>
-                        <td>23</td>
-                        <td>322</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>인문사회대학</td>
-                        <td>영어영문학과</td>
-                        <td>김영어</td>
-                        <td>051-512-1011</td>
-                        <td>20</td>
-                        <td>312</td>
-                        <td>23</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>자연과학대학</td>
-                        <td>생물학과</td>
-                        <td>김생물</td>
-                        <td>051-512-1234</td>
-                        <td>23</td>
-                        <td>322</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>21</td>
-                        <td>자연과학대학</td>
-                        <td>물리학과</td>
-                        <td>김물리</td>
-                        <td>051-512-1234</td>
-                        <td>23</td>
-                        <td>322</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>30</td>
-                        <td>공과대학</td>
-                        <td>기계공학과</td>
-                        <td>김기계</td>
-                        <td>051-512-1234</td>
-                        <td>23</td>
-                        <td>322</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>31</td>
-                        <td>공과대학</td>
-                        <td>컴퓨터공학과</td>
-                        <td>김컴공</td>
-                        <td>051-512-1234</td>
-                        <td>23</td>
-                        <td>322</td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td>32</td>
-                        <td>공과대학</td>
-                        <td>전자공학과</td>
-                        <td>김전자</td>
-                        <td>051-512-1235</td>
-                        <td>18</td>
-                        <td>285</td>
-                        <td>38</td>
-                    </tr>
-                    <tr>
-                        <td>33</td>
-                        <td>공과대학</td>
-                        <td>화학공학과</td>
-                        <td>김화학</td>
-                        <td>051-512-1236</td>
-                        <td>15</td>
-                        <td>265</td>
-                        <td>35</td>
-                    </tr>
-                    <tr>
-                        <td>40</td>
-                        <td>경영대학</td>
-                        <td>경영학과</td>
-                        <td>김경영</td>
-                        <td>051-512-1240</td>
-                        <td>25</td>
-                        <td>450</td>
-                        <td>48</td>
-                    </tr>
-                    <tr>
-                        <td>41</td>
-                        <td>경영대학</td>
-                        <td>회계학과</td>
-                        <td>김회계</td>
-                        <td>051-512-1241</td>
-                        <td>12</td>
-                        <td>180</td>
-                        <td>25</td>
-                    </tr>
+                	<c:forEach var="dept" items="${deptList}" varStatus="status">
+	                    <tr>
+	                        <td>${pagenationDTO.currentPageStartNum - status.index}</td>
+	                        <td>${dept.deptnum}</td>
+	                        <td>${dept.unitcol}</td>
+	                        <td>${dept.deptname}</td>
+	                        <td>${dept.dean}</td>
+	                        <td>${dept.depttel}</td>
+	                        <td>${dept.proCount}</td>
+	                        <td>${dept.stuCount}</td>
+	                        <td>${dept.lecCount}</td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
 
             <!-- 페이지네이션 -->
             <ul class="pagenation">
-                <li><a href="#"><span class="first"></span></a></li>
-                <li><a href="#"><span class="prev"></span></a></li>
-                <li><a href="#" class="page1">1</a></li>
-                <li><a href="#" class="page2">2</a></li>
-                <li><a href="#" class="page3">3</a></li>
-                <li><a href="#"><span class="next"></span></a></li>
-                <li><a href="#"><span class="last"></span></a></li>
+                <!-- 처음 페이지 -->
+                <c:if test="${pagenationDTO.currentPage > 1}">
+                    <li>
+                        <c:url var="firstUrl" value="/collegeAndDepartment/list.do">
+                            <c:param name="pg" value="1"/>
+                            <c:if test="${not empty keyword}">
+                                <c:param name="searchType" value="${searchType}"/>
+                                <c:param name="keyword" value="${keyword}"/>
+                            </c:if>
+                        </c:url>
+                        <a href="${firstUrl}"><span class="first"></span></a>
+                    </li>
+                </c:if>
+                
+                <!-- 이전 그룹 -->
+                <c:if test="${pagenationDTO.pageGroupStart > 1}">
+                    <li>
+                        <c:url var="prevUrl" value="/collegeAndDepartment/list.do">
+                            <c:param name="pg" value="${pagenationDTO.pageGroupStart-1}"/>
+                            <c:if test="${not empty keyword}">
+                                <c:param name="searchType" value="${searchType}"/>
+                                <c:param name="keyword" value="${keyword}"/>
+                            </c:if>
+                        </c:url>
+                        <a href="${prevUrl}"><span class="prev"></span></a>
+                    </li>
+                </c:if>
+                
+                <!-- 페이지 번호 -->
+                <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                    <li>
+                        <c:url var="pageUrl" value="/collegeAndDepartment/list.do">
+                            <c:param name="pg" value="${num}"/>
+                            <c:if test="${not empty keyword}">
+                                <c:param name="searchType" value="${searchType}"/>
+                                <c:param name="keyword" value="${keyword}"/>
+                            </c:if>
+                        </c:url>
+                        <a href="${pageUrl}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a>
+                    </li>
+                </c:forEach>
+                
+                <!-- 다음 그룹 -->
+                <c:if test="${pagenationDTO.pageGroupEnd < pagenationDTO.lastPageNum}">
+                    <li>
+                        <c:url var="nextUrl" value="/collegeAndDepartment/list.do">
+                            <c:param name="pg" value="${pagenationDTO.pageGroupEnd+1}"/>
+                            <c:if test="${not empty keyword}">
+                                <c:param name="searchType" value="${searchType}"/>
+                                <c:param name="keyword" value="${keyword}"/>
+                            </c:if>
+                        </c:url>
+                        <a href="${nextUrl}"><span class="next"></span></a>
+                    </li>
+                </c:if>
+                
+                <!-- 마지막 페이지 -->
+                <c:if test="${pagenationDTO.currentPage < pagenationDTO.lastPageNum}">
+                    <li>
+                        <c:url var="lastUrl" value="/collegeAndDepartment/list.do">
+                            <c:param name="pg" value="${pagenationDTO.lastPageNum}"/>
+                            <c:if test="${not empty keyword}">
+                                <c:param name="searchType" value="${searchType}"/>
+                                <c:param name="keyword" value="${keyword}"/>
+                            </c:if>
+                        </c:url>
+                        <a href="${lastUrl}"><span class="last"></span></a>
+                    </li>
+                </c:if>
             </ul>
         </main>
     </div>
