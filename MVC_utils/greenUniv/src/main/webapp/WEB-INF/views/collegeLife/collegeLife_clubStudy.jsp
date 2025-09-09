@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대학생활_동아리/스터디</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/collegeLife_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/collegeLife_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         * {
             margin: 0;
@@ -151,7 +151,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -239,10 +239,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학생활</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">동아리/스터디</span>
         </div>
     </div>
@@ -271,7 +271,7 @@
 
         <!-- 동아리 카드 -->
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/ironbar.jpg" alt="IronBar" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/ironbar.jpg" alt="IronBar" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">IronBar(IB)</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>맨몸운동</p>
@@ -280,7 +280,7 @@
         </div>
 
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/wave.jpg" alt="WAVE" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/wave.jpg" alt="WAVE" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">WAVE</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>서핑</p>
@@ -291,7 +291,7 @@
 
         <!-- 동아리(1)-->
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/greenneomer.jpg" alt="그린너머" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/greenneomer.jpg" alt="그린너머" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">그린너머</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>지속가능발전</p>
@@ -301,7 +301,7 @@
 
          <!-- 동아리(2)-->    
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/nohitno.jpg" alt="노히트노런" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/nohitno.jpg" alt="노히트노런" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">노히트노런</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>야구관람</p>
@@ -311,7 +311,7 @@
         
         <!-- 동아리(3)-->
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/sfc.jpg" alt="SFC" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/sfc.jpg" alt="SFC" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">SFC</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>기독교</p>
@@ -321,7 +321,7 @@
 
          <!-- 동아리(4)-->    
         <div style="display:flex; background:#fff; border:1px solid #ddd; border-radius:8px; overflow:hidden;">
-            <img src="../images/live.jpg" alt="라이브" style="width:150px; height:100px; object-fit:cover;">
+            <img src="/greenUniv/images/live.jpg" alt="라이브" style="width:150px; height:100px; object-fit:cover;">
             <div style="padding:10px;">
                 <h3 style="margin:0 0 5px 0; font-size:16px; font-weight:bold;">라이브</h3>
                 <p style="margin:3px 0; font-size:14px; color:#333;"><b>· 전문성 </b>음악</p>
@@ -357,7 +357,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

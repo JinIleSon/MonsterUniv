@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사관리시스템::강의등록</title>
     <!--css연결-->
-	<link rel="stylesheet" href="../css/Header.style.css">
-	<link rel="stylesheet" href="../css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';

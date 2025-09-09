@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학사안내::수강신청</title>
-    <link rel="stylesheet" href="../css/academicAffairs_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/academicAffairs_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <!--부트스트랩 연결-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
     	a {text-decoration:none;}
     	main > :first-child{ margin-top: 0; }
@@ -54,7 +54,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -142,10 +142,10 @@
             display:flex;
             align-items: center;
             ">
-                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">학사안내</span>
-                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청</span>
         </div>
     </div>
@@ -195,7 +195,7 @@
                     </div>
                     <div style="margin-bottom: 60px; margin-top: 30px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청기간" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청기간</h4>
+                            <img src="/greenUniv/images/bullet-h4.png" alt="수강신청기간" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청기간</h4>
                         </div>
                         <div>
                                 - 매학기 수강신청은 개강 전에 실시, 학생은 수강신청 공고를 충분히 숙지한 다음, 수강신청 기간에 인터넷을 통해 신청과목을 입력<br>
@@ -205,13 +205,13 @@
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 학점</h4>
+                            <img src="/greenUniv/images/bullet-h4.png" alt="수강신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 학점</h4>
                         </div>
                         <div>- 학기당 이수학점 : 18학점 이내(논문과목 별도) [대학 학칙 제20조]</div>
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="학부(과)별 신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">학부(과)별 신청 학점</h4>
+                            <img src="/greenUniv/images/bullet-h4.png" alt="학부(과)별 신청 학점" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">학부(과)별 신청 학점</h4>
                         </div>
                         <div style="border-top: 2px solid black;">
                             <table style="text-align: center;">
@@ -248,7 +248,7 @@
                     </div>
                     <div style="margin-bottom: 60px;">
                         <div style="font-size: 14pt; height: 20px; line-height: 20px; margin-bottom: 5px; color: #145074; display: flex; align-items: center;">
-                            <img src="../images/bullet-h4.png" alt="수강신청 변경 및 수강과목 철회" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 변경 및 수강과목 철회</h4>
+                            <img src="/greenUniv/images/bullet-h4.png" alt="수강신청 변경 및 수강과목 철회" style="margin-right: 5px; margin-bottom:6px;"><h4 style="font-size:18px; font-weight:500; color:#145074;">수강신청 변경 및 수강과목 철회</h4>
                         </div>
                         <div>
                             <p>
@@ -259,7 +259,7 @@
                         </div>
                     </div>
                     <div style="border: 1px solid gray; width: 150px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; padding-bottom: 3px;">
-                        <a href="#" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="../images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
+                        <a href="#" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="/greenUniv/images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
                     </div>
                     <div style="height:100px;"></div>
                 </div>
@@ -285,7 +285,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

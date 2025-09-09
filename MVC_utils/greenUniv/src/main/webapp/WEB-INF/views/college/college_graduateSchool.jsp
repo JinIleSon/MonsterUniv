@@ -7,12 +7,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>대학·대학원_대학원</title>
-<link rel="stylesheet" href="../css/fonts.css">
-<link rel="stylesheet" href="../css/college_main.style.css">
+<link rel="stylesheet" href="/greenUniv/css/fonts.css">
+<link rel="stylesheet" href="/greenUniv/css/college_main.style.css">
 <!--css연결-->
-<link rel="stylesheet" href="../css/main_main.style.css">
-<link rel="stylesheet" href="../css/Header.style.css">
-<link rel="stylesheet" href="../css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <style>
 hr {
 	border: none;
@@ -41,13 +41,13 @@ a {
 	appearance: none; /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: url('../images/btn-sel-open01.png') no-repeat right 8px
+	background: url('/greenUniv/images/btn-sel-open01.png') no-repeat right 8px
 		center/12px auto;
 	padding-right: 24px; /* 화살표 공간 확보 */
 }
 /* 게시판 아래버튼 부분 */
 .first-page {
-	background: url('../images/btn-first-page.png') no-repeat center;
+	background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
 	border: 1px #eaeaea solid;
 	width: 33px;
 	height: 30px;
@@ -55,7 +55,7 @@ a {
 }
 
 .prev-page {
-	background: url('../images/btn-prev-page.png') no-repeat center;
+	background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
 	border: 1px #eaeaea solid;
 	margin-right: 15px;
 	width: 33px;
@@ -63,7 +63,7 @@ a {
 }
 
 .next-page {
-	background: url('../images/btn-next-page.png') no-repeat center;
+	background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
 	border: 1px #eaeaea solid;
 	margin-left: 15px;
 	width: 33px;
@@ -72,7 +72,7 @@ a {
 }
 
 .last-page {
-	background: url('../images/btn-last-page.png') no-repeat center;
+	background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
 	border: 1px #eaeaea solid;
 	width: 33px;
 	height: 30px;
@@ -123,7 +123,7 @@ main {
 			<div class="inner">
 				<!--로고-->
 				<a href="/greenUniv/main.jsp"><img
-					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area">
@@ -228,12 +228,12 @@ main {
 			style="background-color: #ECF2F6; height: 42px; display: flex; align-items: center; justify-content: center;">
 			<div
 				style="width: 250px; height: 42px; position: absolute; transform: translateX(198%); display: flex; align-items: center;">
-				<img src="../images/ico-home.png" alt="홈"
+				<img src="/greenUniv/images/ico-home.png" alt="홈"
 					style="width: 23px; height: 20px;"> <img
-					src="../images/bg-path-arrow.png" alt="화살표"
+					src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
 					style="width: 8px; height: 13px; margin-left: 15px;"> <span
 					style="font-weight: 350; font-size: 14px; color: #333333; margin-left: 15px;">대학·대학원</span>
-				<img src="../images/bg-path-arrow.png" alt="화살표"
+				<img src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
 					style="width: 8px; height: 13px; margin-left: 15px;"> <span
 					style="font-weight: 350; font-size: 14px; color: #071F4B; margin-left: 15px;">대학원</span>
 			</div>
@@ -284,7 +284,7 @@ main {
 					<hr style="border: none; border-top: 2px solid;">
 					<div
 						style="height: 290px; margin-top: 30px; display: flex; gap: 23px;">
-						<img src="../images/college-introduce-5.jpg" alt=""
+						<img src="/greenUniv/images/college-introduce-5.jpg" alt=""
 							style="width: 320px; height: 240px;">
 						<div style="">
 							<div
@@ -304,7 +304,7 @@ main {
 					</div>
 					<div
 						style="display: flex; width: 100%; margin-top: 0px; margin-bottom: 28px; align-items: center;">
-						<img src="../images/bullet-h4.png" alt=""
+						<img src="/greenUniv/images/bullet-h4.png" alt=""
 							style="margin-right: 6px; width: 4px; height: 18px; margin-top: 5px;"><span
 							style="color: #145074; font-size: 18px; font-weight: 500;">학부
 							및 학과</span>
@@ -325,7 +325,7 @@ main {
 									<td
 										style="border-right: 1px solid #b8b8b8; padding: 6px; border-bottom: 1px solid #b8b8b8;">
 										${college.deptName}<a href="#"><img
-											src="../images/ico_link.png" alt="수학과"></a>
+											src="/greenUniv/images/ico_link.png" alt="수학과"></a>
 									</td>
 									<td
 										style="border-right: 1px solid #b8b8b8; border-bottom: 1px solid #b8b8b8; padding: 6px;">${college.dean}</td>
@@ -359,7 +359,7 @@ main {
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
