@@ -1023,7 +1023,7 @@
                     <div></div>
                     <div>주소</div>
                     <div>
-                        <input type="text" name="address1" id="address1" placeholder="우편번호 선택">
+                        <input type="text" name="pzip" id="address1" placeholder="우편번호 선택">
                         <input type="text" name="address2" id="address2" placeholder="기본주소 선택">
                         <input type="text" name="address3" id="address3" placeholder="상세주소 선택">
                     </div>
