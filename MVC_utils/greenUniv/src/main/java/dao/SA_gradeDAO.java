@@ -64,6 +64,32 @@ public class SA_gradeDAO extends DBHelper {
 		return dtoList;
 	}
 
+	public int selectCount(int snum, String year, String semester) {
+		int count = 0;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_COUNT_WITH_SNUM_AND_YEAR_AND_SEM);
+			psmt.setInt(1, snum);
+			psmt.setString(2, year);
+			psmt.setString(3, semester);
+			
+			logger.debug("SA_gradeDAO - selectAll");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
+			
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+				
+				logger.debug("count : " + count);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return count;
+	}
+	
 	public void modify(SA_gradeDTO dto) {
 
 	}
