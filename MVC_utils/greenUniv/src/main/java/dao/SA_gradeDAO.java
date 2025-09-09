@@ -90,6 +90,32 @@ public class SA_gradeDAO extends DBHelper {
 		return count;
 	}
 	
+	public int selectSum(int snum, String year, String semester) {
+		int sum = 0;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_SUM_WITH_SNUM_AND_YEAR_AND_SEM);
+			psmt.setInt(1, snum);
+			psmt.setString(2, year);
+			psmt.setString(3, semester);
+			
+			logger.debug("SA_gradeDAO - selectAll");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
+			
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				sum = rs.getInt(1);
+				
+				logger.debug("sum : " + sum);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return sum;
+	}
+	
 	public void modify(SA_gradeDTO dto) {
 
 	}

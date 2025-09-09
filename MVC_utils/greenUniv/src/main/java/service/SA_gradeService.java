@@ -23,6 +23,10 @@ public enum SA_gradeService {
 	public int countSubNum(int snum, String year, String semester) {
 		return dao.selectCount(snum, year, semester);
 	}
+	
+	public int getGradeSum(int snum, String year, String semester) {
+		return dao.selectSum(snum, year, semester);
+	}
 
 	public SA_gradeDTO select(int snum) {
 		return dao.select(snum);

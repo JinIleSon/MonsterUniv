@@ -33,6 +33,7 @@ public class ListController extends HttpServlet {
 		
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("subNum", subNum);
+		req.setAttribute("gradeSum", gradeSum);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/studAssist/studAssist_chkGrades.jsp");
 		dispatcher.forward(req, resp);
