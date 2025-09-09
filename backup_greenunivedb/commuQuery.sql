@@ -66,3 +66,59 @@ OR `condition` LIKE 10
 OR nick LIKE 10
 OR title LIKE 10
 OR DATE LIKE 10
+
+SELECT * FROM collmaj
+where unitcol='자연과학대학'
+order by deptnum DESC
+
+SELECT * FROM lecture
+WHERE ccode = 'G01940'
+
+SELECT * FROM aa_notice
+ORDER BY id DESC
+LIMIT 5
+
+ALTER TABLE student
+MODIFY COLUMN snum INT AUTO_INCREMENT;
+
+USE greendae3;
+
+/* 학사관리시스템 메인 */
+
+/* 학과별 전체 학생 현황*/
+SELECT COUNT(*), edept FROM student
+GROUP BY edept;
+
+/* 학과별 재학생 현황 */
+SELECT COUNT(*), edept FROM student
+GROUP BY edept
+WHERE CONDITION = '재학중';
+
+/* 학과별 휴학생 현황 */
+SELECT COUNT(*), edept FROM student
+GROUP BY edept
+WHERE CONDITION = '휴학중';
+
+/* 대학 운영 현황 - 개설학과 개수 */
+SELECT COUNT(DISTINCT deptname) AS countdept FROM collmaj
+
+/* 대학 운영 현황 - 개설강좌 개수 */
+SELECT COUNT(DISTINCT lname) AS countlname FROM lecture
+
+/* 대학 운영 현황 - 전체교수 인원 */
+SELECT COUNT(DISTINCT pnum) AS countpnum FROM professor
+
+/* 대학 운영 현황 - 임직원 인원 */
+SELECT COUNT(*) AS countuser FROM `User` WHERE identification = 'admin'
+
+/* 대학 운영 현황 - 학생 인원 */
+SELECT COUNT(DISTINCT snum) AS countstuall FROM student
+
+/* 대학 운영 현황 - 휴학생 인원 */
+SELECT COUNT(DISTINCT snum) AS countstuleave FROM student WHERE `condition` = '휴학중'
+
+/* 대학 운영 현황 - 대학원생 인원 */
+SELECT COUNT(DISTINCT snum) AS countstugradschool FROM student WHERE ecol LIKE '%대학원%'
+
+/* 대학 운영 현황 - 졸업생 인원 */
+SELECT COUNT(DISTINCT snum) AS countstugraduation FROM student WHERE `condition` = '졸업'

@@ -44,4 +44,26 @@ public class Sql_studAssist {
 	
 	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	public static final String PLUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM+1 WHERE DEPTCODE = ";
+	
+	// curric
+	public static final String SELECT_ARTICLE_curricAll1 = "SELECT * FROM lecture\r\n"
+															+ "WHERE ccode = ? "
+															+ "and year = 1 "
+															+ "and compDiv = '전공'";
+	public static final String SELECT_ARTICLE_curricAll2 = "SELECT * FROM lecture\r\n"
+															+ "WHERE ccode = ? "
+															+ "and year = 2 "
+															+ "and compDiv = '전공'";
+	public static final String SELECT_ARTICLE_curricAll3 = "SELECT * FROM lecture\r\n"
+															+ "WHERE ccode = ? "
+															+ "and year = 3 "
+															+ "and compDiv = '전공'";
+	public static final String SELECT_ARTICLE_curricAll4 = "SELECT * FROM lecture\r\n"
+															+ "WHERE ccode = ? "
+															+ "and year = 4 "
+															+ "and compDiv = '전공'";
+	public static final String SELECT_ARTICLE_curricAllCommon = "SELECT * FROM lecture\r\n"
+															+ "WHERE ccode = ? "
+															+ "and year = 1 "
+															+ "and compDiv = '선택'";
 }

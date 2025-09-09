@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.AMS_LectureService;
 
-@WebServlet("/AMS/AMS_lectureRegist.do")
+@WebServlet("/AMS/AMS_lectureRegist.do") //강의 등록 lecture 테이블 사용
 public class AMS_lectureRegistController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AMS_LectureService lectureService = AMS_LectureService.INSTANCE;
