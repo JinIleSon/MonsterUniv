@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,24 @@
     <!--css연결-->
     <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const selectedValues = document.getElementsByTagName("select");
+            const year = selectedValues[0];
+            const semester = selectedValues[1];
+            console.log(year);
+            year.addEventListener("change", function() {
+                console.log("year : " + year.value);
+                console.log("semester: " + semester.value);
+                location.href = '/greenUniv/studAssist/chkGrades/search.do?year=' + year.value + '&semester=' + semester.value;
+            });
+            semester.addEventListener("change", function() {
+                console.log("year : " + year.value);
+                console.log("semester: " + semester.value);
+                location.href = '/greenUniv/studAssist/chkGrades/search.do?year=' + year.value + '&semester=' + semester.value;
+            });
+        });
+    </script>
     <style>
     	html, body {
 		  height: 100%;      /* 화면 전체 높이 */
@@ -244,23 +263,23 @@
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px;">
                     <form action="" style="display: flex;">
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 100px; margin-right:4px;padding-left:10px;">
-                            <option value="">2025</option>
-                            <option value="">2024</option>
-                            <option value="">2023</option>
-                            <option value="">2022</option>
-                            <option value="">2021</option>
-                            <option value="">2020</option>
+                            <option value="2025">2025</option>
+							<option value="2024">2024</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2020">2020</option>
                         </select>
                         <span style="line-height: 40px; margin-right:8px;">년</span>
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 50px; margin-right:4px;padding-left:10px;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">여름계절</option>
-                            <option value="">겨울계절</option>
+                            <option value="1">1</option>
+							<option value="2">2</option>
+							<option value="여름계절">여름계절</option>
+							<option value="겨울계절">겨울계절</option>
                         </select>
                         <span style="line-height: 40px;">학기</span>
                     </form>
-                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">이수과목수 5과목, 총 신청학점 <font color="#ae2725">15</font>학점</span>
+                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">이수과목수 ${ subNum }과목, 총 취득학점 <font color="#ae2725">${ gradeSum }</font>학점</span>
                 </div>
                 <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
                     <tr style="height:60px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
@@ -274,96 +293,21 @@
                         <td style="width: 98px;">취득학점</td>
                         <td style="width: 98px;">기타</td>
                     </tr>
+                    <c:forEach var="gradeObj" items="${ dtoList }">
                     <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자바 프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>99.0</td>
-                        <td>A+</td>
-                        <td>3</td>
-                        <form action="" method="">
+                        <td>${ gradeObj.deptCode }</td>
+                        <td>${ gradeObj.lname }</td>
+                        <td>${ gradeObj.year }학년</td>
+                        <td>${ gradeObj.prof }</td>
+                        <td>${ gradeObj.compDiv }</td>
+                        <td>${ gradeObj.score }</td>
+                        <td>${ gradeObj.rating }</td>
+                        <td>${ gradeObj.grade }</td>
                             <td>
                                 <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none; ">
                             </td>
-                        </form>
                     </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자료구조</td>
-                        <td>2학년</td>
-                        <td>김자료</td>
-                        <td>전공</td>
-                        <td>86.2</td>
-                        <td>B</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>대학영어</td>
-                        <td>2학년</td>
-                        <td>김영어</td>
-                        <td>교양</td>
-                        <td>92.6</td>
-                        <td>A</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>알고리즘</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>56.2</td>
-                        <td>F</td>
-                        <td>0</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>세계의역사</td>
-                        <td>2학년</td>
-                        <td>김역사</td>
-                        <td>교양</td>
-                        <td>80.0</td>
-                        <td>B</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>데이터베이스</td>
-                        <td>2학년</td>
-                        <td>김디비</td>
-                        <td>전공</td>
-                        <td>88.8</td>
-                        <td>B+</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
+                    </c:forEach>
                 </table>
                 <div style="margin-top:10px;"></div>
                 <span style="color:#666666; font-size:16px;">※ 점수 이의신청은 학생지원실에 문의하시기 바랍니다.</span>
@@ -392,17 +336,13 @@
                 <div class="footer-logo">
                     <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
-
-                <div class="footer-info">
-                    <p class="footer-uniname">몬스터대학교</p>
-                    <p>
-                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
-                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
-                        팩스 : 051-123-3333
-                    </p>
-                     <p class="copy">copyright ©Monster University All rights reserved.</p>
-                </div>
-
+				<div class="footer-info">
+					<p class="footer-uniname">몬스터대학교</p>
+					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
+						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
+					<p class="copy">copyright ©Monster University All rights
+						reserved.</p>
+				</div>
                 <div class="footer-select">
                     <label for="site-select" class="sr-only">주요사이트</label>
                     <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
@@ -415,6 +355,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

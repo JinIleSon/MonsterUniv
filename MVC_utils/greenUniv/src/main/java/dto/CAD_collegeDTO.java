@@ -7,7 +7,7 @@ public class CAD_collegeDTO {
 	private String colcont;
 	private String colimgo;
 	private String colimgs;
-	
+
 	public String getColname() {
 		return colname;
 	}
@@ -44,12 +44,12 @@ public class CAD_collegeDTO {
 	public void setColimgs(String colimgs) {
 		this.colimgs = colimgs;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "CAD_collegeDTO [colname=" + colname + ", coleng=" + coleng + ", coltit=" + coltit + ", colcont="
 				+ colcont + ", colimgo=" + colimgo + ", colimgs=" + colimgs + "]";
 	}
-	
-	
+
+
 }

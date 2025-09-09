@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,24 @@
     <!--css연결-->
     <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const selectedValues = document.getElementsByTagName("select");
+            const year = selectedValues[0];
+            const semester = selectedValues[1];
+            console.log(year);
+            year.addEventListener("change", function() {
+                console.log("year : " + year.value);
+                console.log("semester: " + semester.value);
+                location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
+            });
+            semester.addEventListener("change", function() {
+                console.log("year : " + year.value);
+                console.log("semester: " + semester.value);
+                location.href = '/greenUniv/studAssist/courseRegDetails/search.do?year=' + year.value + '&semester=' + semester.value;
+            });
+        });
+    </script>
     <style>
 		html, body {
 		  height: 100%;      /* 화면 전체 높이 */
@@ -48,43 +66,45 @@
             appearance: none;           /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
             -webkit-appearance: none;
             -moz-appearance: none;
+	background: url('/greenUniv/images/btn-sel-open01.png') no-repeat right
+		8px center/12px auto;
+	padding-right: 24px; /* 화살표 공간 확보 */
+}
+/* 게시판 아래버튼 부분 */
+.first-page {
+	background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	width: 33px;
+	height: 30px;
+	margin-right: 3px;
+}
 
-            background: url('/greenUniv/images/btn-sel-open01.png') 
-                        no-repeat right 8px center/12px auto;
-            padding-right: 24px;  /* 화살표 공간 확보 */
-        }
-        /* 게시판 아래버튼 부분 */
-        .first-page{
-            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
-            border: 1px #eaeaea solid;
-            width: 33px;
-            height: 30px;
-            margin-right:3px;
-        }
-        .prev-page{
-            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
-            border: 1px #eaeaea solid;
-            margin-right: 15px;
-            width: 33px;
-            height: 30px;
-        }
-        .next-page{
-            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
-            border: 1px #eaeaea solid;
-            margin-left: 15px;
-            width: 33px;
-            height: 30px;
-            margin-right:3px;
-        }
-        .last-page{
-            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
-            border: 1px #eaeaea solid;
-            width: 33px;
-            height: 30px;
-        }
-        
-        /* 게시판 아래버튼 부분 끝 */
-    </style>
+.prev-page {
+	background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	margin-right: 15px;
+	width: 33px;
+	height: 30px;
+}
+
+.next-page {
+	background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	margin-left: 15px;
+	width: 33px;
+	height: 30px;
+	margin-right: 3px;
+}
+
+.last-page {
+	background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	width: 33px;
+	height: 30px;
+}
+
+/* 게시판 아래버튼 부분 끝 */
+</style>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -242,19 +262,19 @@
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; ">
                     <form action="" style="display: flex;">
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 100px; margin-right:4px;padding-left:10px;">
-                            <option value="">2025</option>
-                            <option value="">2024</option>
-                            <option value="">2023</option>
-                            <option value="">2022</option>
-                            <option value="">2021</option>
-                            <option value="">2020</option>
+                            <option value="2025">2025</option>
+							<option value="2024">2024</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2020">2020</option>
                         </select>
                         <span style="line-height: 40px; margin-right:8px;">년</span>
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 50px; margin-right:4px;padding-left:10px;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">여름계절</option>
-                            <option value="">겨울계절</option>
+                            <option value="1">1</option>
+							<option value="2">2</option>
+							<option value="여름계절">여름계절</option>
+							<option value="겨울계절">겨울계절</option>
                         </select>
                         <span style="line-height: 40px;">학기</span>
                     </form>
@@ -311,24 +331,21 @@
                 </ul>
             </div>
         </div>
+		<!--하단-->
+		<div class="footer-low">
+			<div class="footer-low-inner">
+				<div class="footer-logo">
+					<img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
+						class="logo" />
+				</div>
 
-        <!--하단-->
-        <div class="footer-low">
-            <div class="footer-low-inner">
-                <div class="footer-logo">
-                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
-                </div>
-
-                <div class="footer-info">
-                    <p class="footer-uniname">몬스터대학교</p>
-                    <p>
-                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
-                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
-                        팩스 : 051-123-3333
-                    </p>
-                     <p class="copy">copyright ©Monster University All rights reserved.</p>
-                </div>
-
+				<div class="footer-info">
+					<p class="footer-uniname">몬스터대학교</p>
+					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
+						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
+					<p class="copy">copyright ©Monster University All rights
+						reserved.</p>
+				</div>
                 <div class="footer-select">
                     <label for="site-select" class="sr-only">주요사이트</label>
                     <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">

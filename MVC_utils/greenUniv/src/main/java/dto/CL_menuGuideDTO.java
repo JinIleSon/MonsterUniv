@@ -10,7 +10,7 @@ public class CL_menuGuideDTO {
 	private String side2;
 	private String side3;
 	private String side4;
-	
+
 	public String getDate() {
 		return date;
 	}

@@ -1,12 +1,12 @@
 package dto;
 
 public class AA_noticeDTO {
-	private int id; 
-	private String title; 
-	private String nick; 
-	private String date; 
+	private int id;
+	private String title;
+	private String nick;
+	private String date;
 	private int hits;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -14,8 +14,9 @@ public class AA_noticeDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getTitle() {
 		return title;
@@ -42,8 +43,9 @@ public class AA_noticeDTO {
 		this.hits = hits;
 	}
 	public void setHits(String hits) {
-		if (hits != null)
+		if (hits != null) {
 			this.hits = Integer.parseInt(hits);
+		}
 	}
 	@Override
 	public String toString() {

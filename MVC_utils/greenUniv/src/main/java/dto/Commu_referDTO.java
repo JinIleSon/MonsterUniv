@@ -13,8 +13,9 @@ public class Commu_referDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getTitle() {
 		return title;
@@ -41,14 +42,15 @@ public class Commu_referDTO {
 		this.hits = hits;
 	}
 	public void setHits(String hits) {
-		if (hits != null)
+		if (hits != null) {
 			this.hits = Integer.parseInt(hits);
+		}
 	}
 	@Override
 	public String toString() {
 		return "Commu_referDTO [id=" + id + ", title=" + title + ", nick=" + nick + ", date=" + date + ", hits=" + hits
 				+ "]";
 	}
-	
-	
+
+
 }

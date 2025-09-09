@@ -11,7 +11,7 @@ public class AMS_mainDTO {
 	private int countStuLeave;
 	private int countStuGradSchool;  // 대학원생
 	private int countStuGraduation;  // 졸업생
-	
+
 	public int getCountDept() {
 		return countDept;
 	}
@@ -19,8 +19,9 @@ public class AMS_mainDTO {
 		this.countDept = countDept;
 	}
 	public void setCountDept(String countDept) {
-		if (countDept != null)
+		if (countDept != null) {
 			this.countDept = Integer.parseInt(countDept);
+		}
 	}
 	public int getCountLname() {
 		return countLname;
@@ -29,8 +30,9 @@ public class AMS_mainDTO {
 		this.countLname = countLname;
 	}
 	public void setCountLname(String countLname) {
-		if (countLname != null)
+		if (countLname != null) {
 			this.countLname = Integer.parseInt(countLname);
+		}
 	}
 	public int getCountPnum() {
 		return countPnum;
@@ -39,8 +41,9 @@ public class AMS_mainDTO {
 		this.countPnum = countPnum;
 	}
 	public void setCountPnum(String countPnum) {
-		if (countPnum != null)
+		if (countPnum != null) {
 			this.countPnum = Integer.parseInt(countPnum);
+		}
 	}
 	public int getCountUser() {
 		return countUser;
@@ -49,8 +52,9 @@ public class AMS_mainDTO {
 		this.countUser = countUser;
 	}
 	public void setCountUser(String countUser) {
-		if (countUser != null)
+		if (countUser != null) {
 			this.countUser = Integer.parseInt(countUser);
+		}
 	}
 	public int getCountStuAll() {
 		return countStuAll;
@@ -59,8 +63,9 @@ public class AMS_mainDTO {
 		this.countStuAll = countStuAll;
 	}
 	public void setCountStuAll(String countStuAll) {
-		if (countStuAll != null)
+		if (countStuAll != null) {
 			this.countStuAll = Integer.parseInt(countStuAll);
+		}
 	}
 	public int getCountStuLeave() {
 		return countStuLeave;
@@ -69,8 +74,9 @@ public class AMS_mainDTO {
 		this.countStuLeave = countStuLeave;
 	}
 	public void setCountStuLeave(String countStuLeave) {
-		if (countStuLeave != null)
+		if (countStuLeave != null) {
 			this.countStuLeave = Integer.parseInt(countStuLeave);
+		}
 	}
 	public int getCountStuGradSchool() {
 		return countStuGradSchool;
@@ -79,8 +85,9 @@ public class AMS_mainDTO {
 		this.countStuGradSchool = countStuGradSchool;
 	}
 	public void setCountStuGradSchool(String countStuGradSchool) {
-		if (countStuGradSchool != null)
+		if (countStuGradSchool != null) {
 			this.countStuGradSchool = Integer.parseInt(countStuGradSchool);
+		}
 	}
 	public int getCountStuGraduation() {
 		return countStuGraduation;
@@ -89,8 +96,9 @@ public class AMS_mainDTO {
 		this.countStuGraduation = countStuGraduation;
 	}
 	public void setCountStuGraduation(String countStuGraduation) {
-		if (countStuGraduation != null)
+		if (countStuGraduation != null) {
 			this.countStuGraduation = Integer.parseInt(countStuGraduation);
+		}
 	}
 
 	// 교육 운영 현황(lecture)
@@ -104,11 +112,11 @@ public class AMS_mainDTO {
 	private String room;
 	private int nowNum;
 	private int maxNum;
-	
+
 	// 추가 컬럼 - 수강률
 	private int percent;
-	
-	
+
+
 	public String getOpenMaj() {
 		return openMaj;
 	}
@@ -152,8 +160,9 @@ public class AMS_mainDTO {
 		this.grade = grade;
 	}
 	public void setGrade(String grade) {
-		if (grade != null)
+		if (grade != null) {
 			this.grade = Integer.parseInt(grade);
+		}
 	}
 	public String getRoom() {
 		return room;
@@ -168,8 +177,9 @@ public class AMS_mainDTO {
 		this.nowNum = nowNum;
 	}
 	public void setNowNum(String nowNum) {
-		if (nowNum != null)
+		if (nowNum != null) {
 			this.nowNum = Integer.parseInt(nowNum);
+		}
 	}
 	public int getMaxNum() {
 		return maxNum;
@@ -178,8 +188,9 @@ public class AMS_mainDTO {
 		this.maxNum = maxNum;
 	}
 	public void setMaxNum(String maxNum) {
-		if (maxNum != null)
+		if (maxNum != null) {
 			this.maxNum = Integer.parseInt(maxNum);
+		}
 	}
 	public int getPercent() {
 		return percent;
@@ -188,14 +199,15 @@ public class AMS_mainDTO {
 		this.percent = percent;
 	}
 	public void setPercent(String percent) {
-		if (percent != null)
+		if (percent != null) {
 			this.percent = Integer.parseInt(percent);
+		}
 	}
 
-	
-	
+
+
 	// 학년별 학생 현황(student)
-	
+
 	private int egrade;
 	private int egradeCount;
 
@@ -206,8 +218,9 @@ public class AMS_mainDTO {
 		this.egrade = egrade;
 	}
 	public void setEgrade(String egrade) {
-		if (egrade != null)
+		if (egrade != null) {
 			this.egrade = Integer.parseInt(egrade);
+		}
 	}
 	public int getEgradeCount() {
 		return egradeCount;
@@ -216,15 +229,16 @@ public class AMS_mainDTO {
 		this.egradeCount = egradeCount;
 	}
 	public void setEgradeCount(String egradeCount) {
-		if (egradeCount != null)
+		if (egradeCount != null) {
 			this.egradeCount = Integer.parseInt(egradeCount);
+		}
 	}
-	
+
 	// 학과별 학생 현황(student)
 
 	private String edept;       // 학과
 	private int edeptCount; // 학과별 학생수
-	
+
 	public String getEdept() {
 		return edept;
 	}
@@ -239,12 +253,12 @@ public class AMS_mainDTO {
 	}
 
 	// 학사안내_공지사항(AA_notice)
-	
-	private int id; 
-	private String title; 
-	private String nick; 
+
+	private int id;
+	private String title;
+	private String nick;
 	private String date;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -252,8 +266,9 @@ public class AMS_mainDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getTitle() {
 		return title;
@@ -273,14 +288,14 @@ public class AMS_mainDTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
+
 	// 입학안내_입학상담(Adm_counsel)
-	
+
 	private int adm_id;
 	private String adm_title;
 	private String adm_date;
 	private String adm_condition;
-	
+
 	public int getAdm_id() {
 		return adm_id;
 	}
@@ -305,7 +320,7 @@ public class AMS_mainDTO {
 	public void setAdm_condition(String adm_condition) {
 		this.adm_condition = adm_condition;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "AMS_mainDTO [openMaj=" + openMaj + ", deptCode=" + deptCode + ", lname=" + lname + ", year=" + year
@@ -315,6 +330,6 @@ public class AMS_mainDTO {
 				+ ", nick=" + nick + ", date=" + date + ", adm_id=" + adm_id + ", adm_title=" + adm_title
 				+ ", adm_date=" + adm_date + ", adm_condition=" + adm_condition + "]";
 	}
-	
-	
+
+
 }
