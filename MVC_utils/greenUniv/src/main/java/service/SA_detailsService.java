@@ -20,12 +20,20 @@ public enum SA_detailsService {
 		dao.insert(dto);
 	}
 	
-	public List<SA_detailsDTO> findWithSnum(String snum) {
+	public List<SA_detailsDTO> findWithSnum(int snum) {
 		return dao.selectWithSnum(snum);
 	}
 	
 	public List<SA_detailsDTO> findAllWithKeywords(int snum, String year, String semester) {
 		return dao.selectAllWithKeywords(snum, year, semester);
+	}
+	
+	public int findCount(int snum) {
+		return dao.countWithSnum(snum);
+	}
+	
+	public int countWithKeywords(int snum, String year, String semester) {
+		return dao.countWithKeywords(snum, year, semester);
 	}
 	
 	public void cancel(int snum, String deptCode) {

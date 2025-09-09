@@ -204,7 +204,7 @@ a {
 					</form>
 					<span
 						style="margin-top: 15px; margin-left: 370px; font-weight: 700; font-size: 14pt;">신청과목수
-						6과목, 총 신청학점 18학점</span>
+						${ subNum }과목, 총 신청학점 18학점</span>
 				</div>
 				<table
 					style="border-collapse: collapse; border: 1px solid; width: 100%; text-align: center; border: none;">

@@ -27,12 +27,13 @@ public class ListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		String snum = req.getParameter("snum");
-		// 로그인 정보에서 가져옴.
-		String snum = "201001";
+		// 로그인 정보에서 가져옴(임시 값 : 2010001)
 		
-		List<SA_detailsDTO> dtoList = detailsService.findWithSnum(snum);
+		List<SA_detailsDTO> dtoList = detailsService.findWithSnum(201001);
+		int subNum = detailsService.findCount(201001);
 		
 		req.setAttribute("dtoList", dtoList);
+		req.setAttribute("subNum", subNum);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/studAssist/studAssist_courseRegDetails.jsp");
 		dispatcher.forward(req, resp);

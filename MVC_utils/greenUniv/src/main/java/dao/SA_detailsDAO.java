@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import dto.SA_detailsDTO;
 import util.DBHelper;
-import util.Sql;
 import util.Sql_studAssist;
 
 public class SA_detailsDAO extends DBHelper {
@@ -25,13 +24,13 @@ public class SA_detailsDAO extends DBHelper {
 		
 	}
 	
-	public List<SA_detailsDTO> selectWithSnum(String snum) {
+	public List<SA_detailsDTO> selectWithSnum(int snum) {
 		List<SA_detailsDTO> dtoList = new ArrayList<SA_detailsDTO>();
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.SELECT_REGDETAILS_WITH_SNUM);
-			psmt.setString(1, snum);
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_REGDETAILS_WITH_SNUM);
+			psmt.setInt(1, snum);
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
@@ -76,6 +75,26 @@ public class SA_detailsDAO extends DBHelper {
 		return dtoList;
 	}
 	
+	public int countWithSnum(int snum) {
+		int count = 0;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_DETAILS_COUNT_WITH_SNUM);
+			psmt.setInt(1, snum);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return count;
+	}
+	
 	public List<SA_detailsDTO> selectAllWithKeywords(int snum, String year, String semester) {
 		List<SA_detailsDTO> dtoList = new ArrayList<SA_detailsDTO>();
 		try {
@@ -112,7 +131,7 @@ public class SA_detailsDAO extends DBHelper {
 		int count = 0;
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_studAssist.SELECT_WITH_YEAR_AND_SEM);
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_DETAILS_COUNT_WITH_YEAR_AND_SEM);
 			psmt.setString(1, year);
 			psmt.setString(2, semester);
 			psmt.setInt(3, snum);
@@ -120,12 +139,17 @@ public class SA_detailsDAO extends DBHelper {
 			if (rs.next()) {
 				count = rs.getInt(1);
 			}
+			logger.debug("SA_detailsDAO countWithKeywords");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":") + 2));
+			logger.debug("year : " + year + ", semester : " + semester + ", snum : " + snum);
+			logger.debug("count : "+count);
 			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
 		return count;
 	}
+	
 	
 	public void delete(int snum, String deptCode) {
 		try {
