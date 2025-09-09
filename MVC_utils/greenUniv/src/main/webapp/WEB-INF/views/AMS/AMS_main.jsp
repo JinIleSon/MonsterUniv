@@ -7,74 +7,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>몬스터대학교 학사관리시스템</title>
+<!--css연결-->
+<link rel="stylesheet" href="../css/Header.style.css">
+<link rel="stylesheet" href="../css/Footer.style.css">
 </head>
 <style>
 html, body {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-}
-/* header */
-header {
-	width: 100%;
-	height: 120px;
-}
-
-header>div {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	background-color: #1F2838;
-}
-
-header nav a {
-	text-decoration: none;
-	color: white;
-}
-
-header nav div {
-	background-color: #00518C;
-	width: 100%;
-	height: 30px;
-	position: relative;
-}
-
-header nav div div ul {
-	padding-left: 0;
-	width: 100%;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-}
-
-header nav div div ul li {
-	display: inline-flex;
-	font-size: 12px;
-	padding: 0;
-	position: relative;
-	align-items: center;
-}
-
-header nav div div ul li div {
-	border: 1px solid white;
-	width: 1px;
-	height: 11px;
-	display: inline;
-	position: inherit;
-	left: 15px;
-	box-sizing: border-box;
-}
-
-header div img {
-	height: 52px;
-	left: 265px;
-	top: 16px;
-	position: relative;
 }
 
 /* main */
 main {
-	width: 1400px;
-	height: 1300px;
 	margin: 0 auto;
 }
 
@@ -243,52 +187,131 @@ aside ol {
 	border-bottom-color: initial;
 	border-bottom-color: #A3A3A3;
 }
-
-/* footer */
-footer {
-	width: 100%;
-	height: 60px;
-}
-
-footer div {
-	width: inherit;
-	height: 100%;
-	background-color: #19202D;
-	position: relative;
-	display: flex;
-	align-items: center;
-}
-
-footer div p {
-	color: white;
-	position: absolute;
-	left: 260px;
-	font-size: 12px;
-}
 </style>
 <body>
+	<!--1.헤더영역-->
 	<header>
-		<div>
-			<nav>
-				<div>
-					<div
-						style="width: 189px; height: 28px; align-items: center; display: flex; position: relative; left: 76%;">
-						<ul>
-							<li style="margin-right: 25px;"><a
-								href="/greenUniv/main.jsp">HOME</a>
-								<div></div></li>
-							<li style="margin-right: 25px;"><a href="#">사이트맵</a>
-								<div></div></li>
-							<li><a href="#">로그아웃</a></li>
-						</ul>
-					</div>
+		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+		<div class="topbar" style="">
+			<div class="inner" style=" max-width:1365px !important;">
+				<div class="log-area" style="">
+					<ul>
+						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
+						<li><a href="/greenUniv/login/login.do">로그인</a></li>
+						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
+					</ul>
 				</div>
-			</nav>
-			<img src="../images/mainpage-logo.webp" alt="">
+			</div>
+		</div>
+
+		<div class="mainNav" style="">
+			<div class="inner" style="display: flex; justify-content:center; max-width:1600px !important;">
+				<!--로고-->
+				<div style=" margin-right:630px; margin-left:15px;">
+				<a href="/greenUniv/main.jsp"><img
+					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+				</div>
+				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
+					<ul class="main-menu">
+						<li data-menu="intro"><a
+							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
+						<li data-menu="admission"><a
+							href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
+						<li data-menu="college"><a
+							href="/greenUniv/college/college_education.do">대학·대학원</a></li>
+						<li data-menu="academic"><a
+							href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내</a></li>
+						<li data-menu="life"><a
+							href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">대학생활</a></li>
+						<li data-menu="community"><a
+							href="/greenUniv/community/community_announcement.do">커뮤니티</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- 통합 드롭다운 바 -->
+		<div class="dropdown-bar" style="">
+			<div class="inner" style="">
+				<div class="dropdown-section" data-menu="intro" style="">
+					<h4>대학소개</h4>
+					<ul>
+						<li><a href="/greenUniv/about/about_greeting.do">총장인사</a></li>
+						<li><a href="/greenUniv/about/about_philosophy.do">교육이념</a></li>
+						<li><a href="/greenUniv/about/about_history.do">연혁</a></li>
+						<li><a href="/greenUniv/about/about_organization.do">조직도</a></li>
+						<li><a href="/greenUniv/about/about_location.do">찾아오시는길</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-section" data-menu="admission">
+					<h4>입학안내</h4>
+					<ul>
+						<li><a
+							href="/greenUniv/admissionGuide/admissionGuide_early.do">수시모집</a></li>
+						<li><a
+							href="/greenUniv/admissionGuide/admissionGuide_regular.do">정시모집</a></li>
+						<li><a
+							href="/greenUniv/admissionGuide/admissionGuide_transfer.do">편입학</a></li>
+						<li><a
+							href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-section" data-menu="college">
+					<h4>대학·대학원</h4>
+					<ul>
+						<li><a href="/greenUniv/college/college_humanities.do">단과대학</a></li>
+						<li><a href="/greenUniv/college/college_graduateSchool.do">대학원</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-section" data-menu="academic">
+					<h4>학사안내</h4>
+					<ul>
+						<li><a
+							href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+						<li><a
+							href="/greenUniv/academicAffairs/academicAffairs_courseRegist.do">수강신청</a></li>
+						<li><a
+							href="/greenUniv/academicAffairs/academicAffairs_grades.do">성적</a></li>
+						<li><a
+							href="/greenUniv/academicAffairs/academicAffairs_graduation.do">졸업요건</a></li>
+						<li><a
+							href="/greenUniv/academicAffairs/academicAffairs_FAQ.do">F&Q</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-section" data-menu="life">
+					<h4>대학생활</h4>
+					<ul>
+						<li><a
+							href="/greenUniv/collegeLife/collegeLife_studentCouncil.do">학생회
+								소개</a></li>
+						<li><a href="/greenUniv/collegeLife/collegeLife_clubStudy.do">동아리</a></li>
+						<li><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">학생식당</a></li>
+						<li><a href="/greenUniv/collegeLife/collegeLife_gallery.do">갤러리</a></li>
+					</ul>
+				</div>
+				<div class="dropdown-section" data-menu="community">
+					<h4>커뮤니티</h4>
+					<ul style="">
+						<li><a href="/greenUniv/community/community_announcement.do">공지사항</a></li>
+						<li><a href="/greenUniv/community/community_newsAndColumn.do">뉴스
+								및 칼럼</a></li>
+						<li><a
+							href="/greenUniv/community/community_freeDiscussionBoard.do">자유게시판</a></li>
+						<li><a href="/greenUniv/community/community_QnA.do">Q&amp;A</a></li>
+						<li style="position: relative;"><a
+							href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</header>
-	<main>
-		<div class="container" style="margin-left: 0;">
+	<main style="background-color: white !important;">
+		
+		<div class="container" style="margin-left: 0; display:flex; justify-content:center;">
 			<aside>
 				<div>
 					<nav class="sidebar">
@@ -352,7 +375,7 @@ footer div p {
 				</div>
 			</aside>
 			<section>
-				<div style="width: 1130px; height: 1300px;">
+				<div style="width: 1130px; ">
 					<div class="main-title">
 						<h3>운영현황 메인</h3>
 						<p style="font-size: 14px;">
@@ -374,7 +397,7 @@ footer div p {
 								<col style="width: 12.5%;">
 								<col style="width: 12.5%;">
 							</colgroup>
-							<tr class="thead">
+							<tr class="thead" style="height: 45px;">
 								<th>개설학과</th>
 								<th>개설강좌</th>
 								<th>전체교수</th>
@@ -384,20 +407,22 @@ footer div p {
 								<th>대학원생</th>
 								<th>졸업생</th>
 							</tr>
-							<tr>
-								<td>53</td>
-								<td>214</td>
-								<td>64</td>
-								<td>24</td>
-								<td>2047</td>
-								<td>127</td>
-								<td>364</td>
-								<td>5680</td>
-							</tr>
+							<c:forEach var="COL" items="${dtoList10}" varStatus="st">
+								<tr style="height: 52px;">
+									<td style="">${COL.countDept}</td>
+									<td style="">${dtoList11[st.index].countLname}</td>
+									<td style="">${dtoList12[st.index].countPnum}</td>
+									<td style="">${dtoList13[st.index].countUser}</td>
+									<td style="">${dtoList14[st.index].countStuAll}</td>
+									<td style="">${dtoList15[st.index].countStuLeave}</td>
+									<td style="">${dtoList16[st.index].countStuGradSchool}</td>
+									<td style="">${dtoList17[st.index].countStuGraduation}</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div class="sub-title">
-						<h4>대학 운영 현황</h4>
+						<h4>교육 운영 현황</h4>
 						<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
 					</div>
 					<div>
@@ -424,66 +449,20 @@ footer div p {
 								<th>수강인원</th>
 								<th>수강률</th>
 							</tr>
-							<tr>
-								<td>국어국문학과</td>
-								<td>120001</td>
-								<td>고전소설1</td>
-								<td>2학년</td>
-								<td>김국어</td>
-								<td>전공</td>
-								<td>3</td>
-								<td>인문관101</td>
-								<td>32/46</td>
-								<td>70%</td>
-							</tr>
-							<tr>
-								<td>컴퓨터과학과</td>
-								<td>830003</td>
-								<td>자바프로그래밍</td>
-								<td>2학년</td>
-								<td>김자바</td>
-								<td>전공</td>
-								<td>3</td>
-								<td>컴퓨터실</td>
-								<td>32/46</td>
-								<td>70%</td>
-							</tr>
-							<tr>
-								<td>컴퓨터과학과</td>
-								<td>830001</td>
-								<td>프로그래밍의 이해</td>
-								<td>1학년</td>
-								<td>김코딩</td>
-								<td>전공</td>
-								<td>3</td>
-								<td>공학관101</td>
-								<td>32/46</td>
-								<td>70%</td>
-							</tr>
-							<tr>
-								<td>컴퓨터과학과</td>
-								<td>830003</td>
-								<td>자바프로그래밍</td>
-								<td>2학년</td>
-								<td>김자바</td>
-								<td>전공</td>
-								<td>3</td>
-								<td>컴퓨터실</td>
-								<td>32/46</td>
-								<td>70%</td>
-							</tr>
-							<tr>
-								<td>컴퓨터과학과</td>
-								<td>830003</td>
-								<td>자바프로그래밍</td>
-								<td>2학년</td>
-								<td>김자바</td>
-								<td>전공</td>
-								<td>3</td>
-								<td>컴퓨터실</td>
-								<td>32/46</td>
-								<td>70%</td>
-							</tr>
+							<c:forEach var="RUN" items="${dtoList9}" varStatus="status">
+								<tr style="height: 52px;">
+									<td style="">${RUN.openMaj}</td>
+									<td style="">${RUN.deptCode}</td>
+									<td style="">${RUN.lname}</td>
+									<td style="">${RUN.year}</td>
+									<td style="">${RUN.prof}</td>
+									<td style="">${RUN.compDiv}</td>
+									<td style="">${RUN.grade}</td>
+									<td style="">${RUN.room}</td>
+									<td style="">${RUN.nowNum}/${RUN.maxNum}</td>
+									<td style="">${RUN.percent}%</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div style="display: flex; height: 350px;">
@@ -503,9 +482,12 @@ footer div p {
 									<c:set var="totalLeave" value="0" />
 									<c:set var="totalAll" value="0" />
 									<c:forEach var="StuEgrade" items="${dtoList6}" varStatus="st">
-										<c:set var="totalIn" value="${totalIn + dtoList8[st.index].egradeCount}" />
-										<c:set var="totalLeave" value="${totalLeave + dtoList7[st.index].egradeCount}" />
-										<c:set var="totalAll" value="${totalAll + StuEgrade.egradeCount}" />
+										<c:set var="totalIn"
+											value="${totalIn + dtoList8[st.index].egradeCount}" />
+										<c:set var="totalLeave"
+											value="${totalLeave + dtoList7[st.index].egradeCount}" />
+										<c:set var="totalAll"
+											value="${totalAll + StuEgrade.egradeCount}" />
 										<tr style="height: 52px;">
 											<td style="width: 133px;">${StuEgrade.egrade}학년</td>
 											<td style="width: 133px;"><a href="#"
@@ -514,7 +496,7 @@ footer div p {
 											<td>${StuEgrade.egradeCount}</td>
 										</tr>
 									</c:forEach>
-									<tr class="tfoot" style="height:45px;">
+									<tr class="tfoot" style="height: 45px;">
 										<td>총합</td>
 										<td>${totalIn}</td>
 										<td>${totalLeave}</td>
@@ -540,9 +522,12 @@ footer div p {
 									<c:set var="totalLeave" value="0" />
 									<c:set var="totalAll" value="0" />
 									<c:forEach var="StuEdept" items="${dtoList3}" varStatus="st">
-										<c:set var="totalIn" value="${totalIn + dtoList5[st.index].edeptCount}" />
-										<c:set var="totalLeave" value="${totalLeave + dtoList4[st.index].edeptCount}" />
-										<c:set var="totalAll" value="${totalAll + StuEdept.edeptCount}" />
+										<c:set var="totalIn"
+											value="${totalIn + dtoList5[st.index].edeptCount}" />
+										<c:set var="totalLeave"
+											value="${totalLeave + dtoList4[st.index].edeptCount}" />
+										<c:set var="totalAll"
+											value="${totalAll + StuEdept.edeptCount}" />
 										<tr style="height: 52px;">
 											<td style="width: 133px;">${StuEdept.edept}</td>
 											<td style="width: 133px;"><a href="#"
@@ -551,7 +536,7 @@ footer div p {
 											<td>${StuEdept.edeptCount}</td>
 										</tr>
 									</c:forEach>
-									<tr class="tfoot" style="height:45px;">
+									<tr class="tfoot" style="height: 45px;">
 										<td>총합</td>
 										<td>${totalIn}</td>
 										<td>${totalLeave}</td>
@@ -619,11 +604,49 @@ footer div p {
 			</section>
 		</div>
 	</main>
-	<footer>
-		<div>
-			<p>Copyright ©Green University All rights reserved. ADMINISTRATOR
-				Version 1.4.1</p>
-		</div>
-	</footer>
+	<!--3. 푸터영역-->    
+    <footer class="footer" style="margin-top:50px;">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
+
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
