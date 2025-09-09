@@ -158,17 +158,10 @@ public class AMS_LectureDAO extends DBHelper {
 		} else if(searchType.equals("prof")) {
 			sql.append(Sql_lecture.SEARCH_WHERE_PROF);
 		}
-<<<<<<< HEAD
-
-		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE);
-		sql.append(Sql_lecture.SEARCH_OFFEST_ROW);
-
-=======
 		
 		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE); 
 		sql.append(Sql_lecture.SEARCH_OFFSET_ROW); 
 		
->>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());

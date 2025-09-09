@@ -15,12 +15,8 @@ import service.Professor_registerService;
 public class RegisterController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-
-=======
 	private Professor_registerService service = Professor_registerService.INSTANCE;
 	
->>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/professor/professorRegist.jsp");
@@ -29,9 +25,6 @@ public class RegisterController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<<<<<<< HEAD
-
-=======
 		
 		String pregno     = req.getParameter("pregno");
 		String pname      = req.getParameter("pname");
@@ -76,6 +69,5 @@ public class RegisterController extends HttpServlet{
 		service.register(dto);
 		
 		resp.sendRedirect("/greenUniv/professor/register.do");
->>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 	}
 }

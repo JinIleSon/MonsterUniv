@@ -17,7 +17,7 @@ public enum AMS_StudentService {
 		if(keyword == null) {
 			total = dao.selectCountTotal();
 		} else {
-			total = dao.selectCountSearch(searchType, keyword);
+//			total = dao.selectCountSearch(searchType, keyword);
 		}
 		
 		int lastPageNum = 0;
