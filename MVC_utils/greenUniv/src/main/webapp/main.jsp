@@ -180,7 +180,7 @@
                 </div>
 
                 <!-- 가운데 버튼 (네가 쓰던 것 유지) -->
-                <button class="hero_cta">학과소개 바로가기</button>
+                <button class="hero_cta" onclick="location.href='/greenUniv/college/college_humanities.do'">학과소개 바로가기</button>
             </div>
         </section>
 
@@ -191,7 +191,7 @@
                 <article class="board board--notice">
                     <header class="board_header">
                         <h3 class="board_title">학사안내</h3>
-                        <button class="board_more">+</button>
+                        <button class="board_more" onclick="location.href='/greenUniv/academicAffairs/academicAffairs_notice.do'">+</button>
                     </header>
                     <ul class="board_list">
                         <li>교과목 폐지 및 신설안내</li>
@@ -203,7 +203,7 @@
                 <article class="board board_announce">
                     <header class="board_header">
                         <h3 class="board_title">공지사항</h3>
-                        <button class="board_more" aria-label="더보기">+</button>
+                        <button class="board_more" aria-label="더보기" onclick="location.href='/greenUniv/community/community_announcement.do'">+</button>
                     </header>
                     <ul class="board_list">
                         <li>교과목 폐지 및 신설안내</li>
@@ -219,7 +219,7 @@
             <div class="inner">
                 <header class="section_header">
                     <h3>PHOTO GALLERY</h3>
-                    <button class="section_more">+</button>
+                    <button class="section_more" onclick="location.href='/greenUniv/collegeLife/collegeLife_gallery.do'">+</button>
                 </header>
                 <div class="gallery_grid">
                     <img src="images/uni_inside_img1.jpg" alt="photo gallery 1"/>
@@ -236,7 +236,7 @@
                 <h3>동아리 HELPER</h3>
                 <p>공무원 시험 준비반을 운용함으로써 정치행정학과에서 공무원 시험을 준비하는 학생들에게<br>
                 인터넷 강의, 교재를 제공하고 스터디 그룹의 활동을 도와주고 있습니다.</p>
-                <a class="btn" href="#">자세히보기</a>
+                <a class="btn" href="/greenUniv/collegeLife/collegeLife_clubStudy.do">자세히보기</a>
             </div>
         </section>
 
@@ -246,7 +246,7 @@
                 <article class="news board">
                     <header class="board_header">
                         <h3 class="board_title">뉴스 및 칼럼</h3>
-                        <button class="board_more">+</button>
+                        <button class="board_more" onclick="location.href='/greenUniv/community/community_newsAndColumn.do'">+</button>
                     </header>
                     <ul class="board_list">
                         <li>교과목 폐지 및 신설안내</li>
