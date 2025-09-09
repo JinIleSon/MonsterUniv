@@ -325,7 +325,7 @@ main {
 							style="text-align: center; display: flex; justify-content: center;">
 
 							<input type="button"
-								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.pageGroupStart}'"
+								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}'"
 								class="first-page">
 							<!-- 이전 페이지: 1페이지일 때 비활성화 -->
 							<c:choose>
@@ -334,7 +334,7 @@ main {
 								</c:when>
 								<c:otherwise>
 									<input type="button"
-										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.currentPage-1}'"
+										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}'"
 										class="prev-page">
 								</c:otherwise>
 							</c:choose>
@@ -342,7 +342,7 @@ main {
 							<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 								end="${pagenationDTO.pageGroupEnd}">
 								<input type="button"
-									onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${num}'"
+									onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}'"
 									value="${num}"
 									class="${pagenationDTO.currentPage == num ? 'current' : 'off'}"
 									style="">
@@ -356,12 +356,12 @@ main {
 								</c:when>
 								<c:otherwise>
 									<input type="button"
-										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.currentPage+1}'"
+										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice_search.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}'"
 										class="next-page">
 								</c:otherwise>
 							</c:choose>
 							<input type="button"
-								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.pageGroupEnd}'"
+								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice_search.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}'"
 								class="last-page">
 						</form>
 					</div>
