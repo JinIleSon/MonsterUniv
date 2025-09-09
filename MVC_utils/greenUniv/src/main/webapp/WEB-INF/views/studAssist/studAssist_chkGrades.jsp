@@ -261,7 +261,7 @@
                         </select>
                         <span style="line-height: 40px;">학기</span>
                     </form>
-                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">이수과목수 5과목, 총 신청학점 <font color="#ae2725">15</font>학점</span>
+                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">이수과목수 ${ subNum }과목, 총 신청학점 <font color="#ae2725">15</font>학점</span>
                 </div>
                 <table style="border-collapse: collapse; width:100%; text-align: center; border:none;">
                     <tr style="height:60px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
