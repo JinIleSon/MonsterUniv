@@ -12,7 +12,7 @@ public class SA_gradeDTO {
 	private int grade;
 	private String yclasS;
 	private String semester;
-	
+
 	public int getSnum() {
 		return snum;
 	}
@@ -79,7 +79,7 @@ public class SA_gradeDTO {
 	public void setSemester(String semester) {
 		this.semester = semester;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "SA_gradeDTO [snum=" + snum + ", deptCode=" + deptCode + ", lname=" + lname + ", year=" + year

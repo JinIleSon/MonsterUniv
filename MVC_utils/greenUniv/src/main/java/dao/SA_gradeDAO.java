@@ -17,20 +17,20 @@ public class SA_gradeDAO extends DBHelper {
 		return INSTANCE;
 	}
 	private SA_gradeDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	public void insert(SA_gradeDTO dto) {
-		
+
 	}
-	
+
 	public SA_gradeDTO select(int snum) {
 		return null;
 	}
-	
+
 	public List<SA_gradeDTO> selectAll() {
-		List<SA_gradeDTO> dtoList = new ArrayList<SA_gradeDTO>();
-		
+		List<SA_gradeDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist)
@@ -39,12 +39,12 @@ public class SA_gradeDAO extends DBHelper {
 		}
 		return null;
 	}
-	
+
 	public void modify(SA_gradeDTO dto) {
-		
+
 	}
-	
+
 	public void delete(int snum) {
-		
+
 	}
 }

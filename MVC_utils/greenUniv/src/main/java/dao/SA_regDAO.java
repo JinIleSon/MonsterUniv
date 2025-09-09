@@ -42,7 +42,7 @@ public class SA_regDAO extends DBHelper {
 			psmt.setString(13, dto.getRoom());
 			psmt.setString(14, dto.getLecture_hash());
 			psmt.executeUpdate();
-			
+
 			stmt = conn.createStatement();
 			stmt.executeUpdate(Sql_studAssist.PLUS_NOWNUM + "'"+dto.getDeptCode()+"'");
 			conn.commit();
@@ -54,7 +54,7 @@ public class SA_regDAO extends DBHelper {
 
 	public SA_regDTO select(String deptCode) {
 		SA_regDTO dto = null;
-		
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ALL_LECTURES + Sql_studAssist.WITH_DEPTCODE);
@@ -170,7 +170,7 @@ public class SA_regDAO extends DBHelper {
 	}
 
 	public List<SA_regDTO> selectWithSearch(String cCode, int start, String searchType, String keyword) {
-		List<SA_regDTO> dtoList = new ArrayList<SA_regDTO>();
+		List<SA_regDTO> dtoList = new ArrayList<>();
 
 		StringBuilder sql = new StringBuilder(Sql_studAssist.SELECT_ALL_LECTURES_WITH_CCODE);
 		switch (searchType) {
@@ -255,7 +255,7 @@ public class SA_regDAO extends DBHelper {
 	}
 
 	public List<SA_regDTO> selectAll(int start, String cCode) {
-		List<SA_regDTO> dtoList = new ArrayList<SA_regDTO>();
+		List<SA_regDTO> dtoList = new ArrayList<>();
 
 		StringBuilder sql = new StringBuilder(Sql_studAssist.SELECT_ALL_LECTURES_WITH_CCODE);
 		sql.append(Sql_studAssist.SEARCH_ORDER_DEPTCODE);

@@ -182,11 +182,11 @@ public class SA_regDTO {
 	public void setNowNum(int nowNum) {
 		this.nowNum = nowNum;
 	}
-	
+
 	public String getLecture_hash() {
 		return lecture_hash;
 	}
-	
+
 	public void setLecture_hash(String lecture_hash) {
 		this.lecture_hash = lecture_hash;
 	}

@@ -38,14 +38,15 @@ public class SA_curriculumDTO {
 		this.grade = grade;
 	}
 	public void setGrade(String grade) {
-		if (grade != null)
+		if (grade != null) {
 			this.grade = Integer.parseInt(grade);
+		}
 	}
 	@Override
 	public String toString() {
 		return "SA_curriculumDTO [year=" + year + ", cCode=" + cCode + ", compDiv=" + compDiv + ", lname=" + lname
 				+ ", grade=" + grade + "]";
 	}
-	
-	
+
+
 }

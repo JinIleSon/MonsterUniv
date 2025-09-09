@@ -17,21 +17,21 @@ public class SA_curriculumDAO extends DBHelper{
 		return INSTANCE;
 	}
 	private SA_curriculumDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	
+
+
 	// 기본 리스트 뿌려주기
 	public List<SA_curriculumDTO> selectAll1(String cCode){
-		List<SA_curriculumDTO> dtoList = new ArrayList<SA_curriculumDTO>();
-		
+		List<SA_curriculumDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ARTICLE_curricAll1);
 			psmt.setString(1, cCode);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_curriculumDTO dto = new SA_curriculumDTO();
 				dto.setYear(rs.getString("year"));
@@ -39,7 +39,7 @@ public class SA_curriculumDAO extends DBHelper{
 				dto.setCompDiv(rs.getString("compdiv"));
 				dto.setLname(rs.getString("lname"));
 				dto.setGrade(rs.getInt("grade"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -49,15 +49,15 @@ public class SA_curriculumDAO extends DBHelper{
 		return dtoList;
 	}
 	public List<SA_curriculumDTO> selectAll2(String cCode){
-		List<SA_curriculumDTO> dtoList = new ArrayList<SA_curriculumDTO>();
-		
+		List<SA_curriculumDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ARTICLE_curricAll2);
 			psmt.setString(1, cCode);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_curriculumDTO dto = new SA_curriculumDTO();
 				dto.setYear(rs.getString("year"));
@@ -65,7 +65,7 @@ public class SA_curriculumDAO extends DBHelper{
 				dto.setCompDiv(rs.getString("compdiv"));
 				dto.setLname(rs.getString("lname"));
 				dto.setGrade(rs.getInt("grade"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -75,15 +75,15 @@ public class SA_curriculumDAO extends DBHelper{
 		return dtoList;
 	}
 	public List<SA_curriculumDTO> selectAll3(String cCode){
-		List<SA_curriculumDTO> dtoList = new ArrayList<SA_curriculumDTO>();
-		
+		List<SA_curriculumDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ARTICLE_curricAll3);
 			psmt.setString(1, cCode);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_curriculumDTO dto = new SA_curriculumDTO();
 				dto.setYear(rs.getString("year"));
@@ -91,7 +91,7 @@ public class SA_curriculumDAO extends DBHelper{
 				dto.setCompDiv(rs.getString("compdiv"));
 				dto.setLname(rs.getString("lname"));
 				dto.setGrade(rs.getInt("grade"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -101,15 +101,15 @@ public class SA_curriculumDAO extends DBHelper{
 		return dtoList;
 	}
 	public List<SA_curriculumDTO> selectAll4(String cCode){
-		List<SA_curriculumDTO> dtoList = new ArrayList<SA_curriculumDTO>();
-		
+		List<SA_curriculumDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ARTICLE_curricAll4);
 			psmt.setString(1, cCode);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_curriculumDTO dto = new SA_curriculumDTO();
 				dto.setYear(rs.getString("year"));
@@ -117,7 +117,7 @@ public class SA_curriculumDAO extends DBHelper{
 				dto.setCompDiv(rs.getString("compdiv"));
 				dto.setLname(rs.getString("lname"));
 				dto.setGrade(rs.getInt("grade"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -127,15 +127,15 @@ public class SA_curriculumDAO extends DBHelper{
 		return dtoList;
 	}
 	public List<SA_curriculumDTO> selectAllCommon(String cCode){
-		List<SA_curriculumDTO> dtoList = new ArrayList<SA_curriculumDTO>();
-		
+		List<SA_curriculumDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_studAssist.SELECT_ARTICLE_curricAllCommon);
 			psmt.setString(1, cCode);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_curriculumDTO dto = new SA_curriculumDTO();
 				dto.setYear(rs.getString("year"));
@@ -143,7 +143,7 @@ public class SA_curriculumDAO extends DBHelper{
 				dto.setCompDiv(rs.getString("compdiv"));
 				dto.setLname(rs.getString("lname"));
 				dto.setGrade(rs.getInt("grade"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();

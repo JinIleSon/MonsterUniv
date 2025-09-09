@@ -6,11 +6,11 @@ import dao.SA_curriculumDAO;
 import dto.SA_curriculumDTO;
 
 public enum SA_curriculumService {
-	
+
 	INSTANCE;
-	
+
 	private SA_curriculumDAO dao = SA_curriculumDAO.getInstance();
-	
+
 	// 기본 리스트 뿌려주기
 	public List<SA_curriculumDTO> findAll1(String cCode){
 		return dao.selectAll1(cCode);
@@ -27,6 +27,6 @@ public enum SA_curriculumService {
 	public List<SA_curriculumDTO> findAllCommon(String cCode){
 		return dao.selectAllCommon(cCode);
 	}
-	
-		
+
+
 }
