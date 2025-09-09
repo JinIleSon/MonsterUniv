@@ -70,5 +70,6 @@
 	<a href="/greenUniv/AMS/AMS_main.do">메인</a><hr>
 	<a href="/greenUniv/AMS/AMS_studentList.do">학생목록</a><hr>
 	<br><br><br>
+
 </body>
 </html>
