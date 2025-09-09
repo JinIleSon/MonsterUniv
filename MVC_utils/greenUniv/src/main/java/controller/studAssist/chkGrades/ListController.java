@@ -27,7 +27,7 @@ public class ListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 로그인 정보에서 학번 들고오기(임시번호 : 201001)
-		List<SA_gradeDTO> dtoList = gradeService.selectAll(201001);
+		List<SA_gradeDTO> dtoList = gradeService.findAllWithSnumYearSeme(201001, '2025', '1');
 		
 		req.setAttribute("dtoList", dtoList);
 

@@ -85,5 +85,5 @@ public class Sql_studAssist {
 
 
 	// chkGrades
-	public static final String SELECT_GRADE_WITH_SNUM = "SELECT * FROM sa_grade WHERE SNUM = ?";
+	public static final String SELECT_GRADE_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT * FROM sa_grade WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
 }
