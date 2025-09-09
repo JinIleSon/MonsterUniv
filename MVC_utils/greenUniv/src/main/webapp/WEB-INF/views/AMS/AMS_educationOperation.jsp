@@ -647,7 +647,7 @@ tbody td span {
 					class="search-btn" value="검색">
 			</form>
 
-			<table>
+			<table style="height: auto !important;">
 				<thead>
 					<tr>
 						<th><span>학과</span></th>
@@ -664,16 +664,16 @@ tbody td span {
 				</thead>
 				<tbody>
 					<c:forEach var="lecture" items="${ dtoList }">
-						<tr>
-							<td><span>${ lecture.openMaj }</span></td>
-							<td><span>${ lecture.deptCode }</span></td>
+						<tr style="height:52px;">
+							<td ><span>${ lecture.openMaj }</span></td>
+							<td ><span>${ lecture.deptCode }</span></td>
 							<td><span>${ lecture.lname }</span></td>
-							<td><span>${ lecture.year }</span></td>
-							<td><span>${ lecture.prof }</span></td>
-							<td><span>${ lecture.compDiv }</span></td>
-							<td><span>${ lecture.grade }</span></td>
-							<td><span>${ lecture.room }</span></td>
-							<td><span>${ lecture.nowNum }/${ lecture.maxNum }</span></td>
+							<td ><span>${ lecture.year }</span></td>
+							<td ><span>${ lecture.prof }</span></td>
+							<td ><span>${ lecture.compDiv }</span></td>
+							<td ><span>${ lecture.grade }</span></td>
+							<td ><span>${ lecture.room }</span></td>
+							<td ><span>${ lecture.nowNum }/${ lecture.maxNum }</span></td>
 							<td><span>
 								<fmt:formatNumber value="${ lecture.nowNum / lecture.maxNum * 100 }" maxFractionDigits="0" />%
 							</span></td>
