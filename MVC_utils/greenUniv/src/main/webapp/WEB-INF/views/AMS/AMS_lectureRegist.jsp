@@ -820,7 +820,6 @@
 		        
 		        const today = new Date();     
 		        const year = today.getFullYear().toString().substring(2); //연도
-		        console.log('year 선택값:', year);
 		        
 		        const semester = document.getElementById('semester').value; //학기
 				const randomNum = cnt; //순번

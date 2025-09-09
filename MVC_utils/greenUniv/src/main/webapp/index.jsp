@@ -51,17 +51,31 @@
 	<a href="/greenUniv/community/community_referenceLibrary.do">커뮤니티_자료실</a><hr>
 	<hr>
 	<h2>학생지원</h2>
-	<h1>공사중</h1><br><br><br>
+	<a href="/greenUniv/studAssist/courseReg/list.do">학생지원_수강신청</a><hr>
+	<a href="/greenUniv/studAssist/courseRegDetails/list.do">학생지원_수강신청내역</a><hr>
+	<a href="/greenUniv/studAssist/curric/list.do">학생지원_교과과정</a><hr>
+	<a href="#">학생지원_성적조회</a><hr>
+	<a href="#">학생지원_학적</a><hr>
+
+	<br><br><br>
 	<h2>로그인</h2>
 	<a href="/greenUniv/login/login.do">로그인</a><hr>
 	<a href="/greenUniv/login/terms.do">약관안내</a><hr>
 	<a href="/greenUniv/login/join.do">회원가입</a><hr>
 	<hr>
 	<h2>학사관리시스템</h2>
-	<h1>공사중</h1><br>
-	<a href="/greenUniv/professor/register.do">교수등록</a><hr>
-	<a href="/greenUniv/professor/list.do">교수목록</a><hr>
-	<a href="/greenUniv/collegeAndDepartment/register.do">대학및학과등록</a><hr>
-	<a href="/greenUniv/collegeAndDepartment/list.do">학과목록</a><hr>
+	<a href="/greenUniv/AMS/AMS_main.do">메인</a><hr>
+	<a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육운영현황</a><hr>
+	<a href="/greenUniv/AMS/AMS_lectureList.do">강의목록</a><hr>
+	<a href="/greenUniv/AMS/AMS_lectureRegist.do">강의등록</a><hr>
+	<a href="/greenUniv/AMS/AMS_course.do">수강현황</a><hr>
+	<a href="/greenUniv/AMS/AMS_studentList.do">학생목록</a><hr>
+	<a href="/greenUniv/AMS/AMS_studentRegist.do">학생 등록</a><hr>
+	<a href="/greenUniv/professor/list.do">교수 목록 - 공사중</a>
+	<a href="/greenUniv/professor/register.do">교수 등록</a><hr>
+	<a href="/greenUniv/collegeAndDepartment/list.do">학과 목록</a><hr>
+	<a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록 - 공사중</a><hr>
+	<br><br><br>
+
 </body>
 </html>

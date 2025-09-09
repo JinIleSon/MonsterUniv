@@ -790,6 +790,65 @@
             margin-top: 20px;
         }
     </style>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(e) {
+			const ecol_edept = { //학과 설정
+	    			"인문사회대학": ["국어국문학과", "영어영문학과", "일어일문학과","중어중문학과","역사학과","경제학과","경영학과","법학과","철학과","정치외교학과","행정학과","사회복지학과","유아교육학과"],
+	    	        "자연과학대학": ["수학과", "물리학과", "화학과","천문학과","지구과학학과","생명과학과","미생물학과","해양학과"],
+	    	        "공과대학": ["기계공학과", "전자공학과", "전기공학과", "컴퓨터공학과", "건축공학과", "재료공학과","화학공학과"],
+	    	        "사범대학": ["국어교육과", "영어교육과", "수학교육과", "윤리학과", "교육학과", "사회교육과", "역사교육과", "체육교육과", "특수교육과"]
+	    	};
+			
+			const ecol = document.getElementById("ecol");
+	    	const edept = document.getElementById("edept");
+	    	
+	    	ecol.addEventListener("change", function() {
+	    		const selected = this.value;
+	    		
+	    		edept.innerHTML = "";
+	    		
+	    		if(ecol_edept[selected]) {
+	    			ecol_edept[selected].forEach(item => {
+	    				const option = document.createElement("option");
+	    				option.value = item;
+	    				option.textContent = item;
+	    				edept.appendChild(option);
+	    			});
+	    		}
+	    	});
+	    	
+	    	let cnt = 1;
+	    	const form = document.querySelector('form');
+	    	form.addEventListener('submit', function(e) { //학번
+	    		const eyear = document.getElementById('eyear').value;
+	    		const snumInput = document.getElementsByName('snum')[0];
+	    		
+	    		let num = 0;
+	    		switch(ecol.value) {
+		    		case "인문사회대학":
+		    			num = 10;
+			        	break;
+			        case "자연과학대학":
+			        	num = 20;
+			        	break;
+			        case "공과대학":
+			        	num = 30;
+			        	break;
+			        case "사범대학":
+			        	num = 40;
+			        	break;
+	    		}
+	    		
+	    		if(cnt < 10) {
+	    			snumInput.value = eyear + "" + num + "0" + cnt;
+	    		} else {
+	    			snumInput.value = eyear + "" + num + cnt;
+	    		}
+
+	    		cnt++;
+	    	});
+		});
+	</script>
 </head>
 <body>
     <header>
@@ -886,13 +945,14 @@
                 </div>
             </div>
             
-            <div class="main-lecture1">
+            <form action="" method="post">
+            	<div class="main-lecture1">
                 <div class="profile-photo">
                     <img src="../images/icon-avatar.png" alt="프로필 사진">
                 </div>
                 <div class="list1">
                     <div>학번</div>
-                    <div>연도 + 학과 코드 + 순번 조합 자동생성</div>
+                    <div><input type="hidden" name="snum"></div>
                     <div>주민등록번호</div>
                     <div><input type="text" name="sregno" placeholder="- 포함 14자리 입력"></div>
                 </div>
@@ -909,93 +969,119 @@
                 <div class="list3">
                     <div>성별</div>
                     <div>
-                        <label><input name="sgender" type="radio">남</label>
-                        <label><input name="sgender" type="radio">여</label>
+                        <label><input name="sgender" type="radio" value="남자">남</label>
+                        <label><input name="sgender" type="radio" value="여자">여</label>
                     </div>
                     <div>국적</div>
                     <div>
-                        <select>
+                        <select name="snation">
                             <option>선택</option>
-                            <option>한국</option>
-                            <option>중국</option>
-                            <option>일본</option>
+                            <option value="한국">한국</option>
+                            <option value="중국">중국</option>
+                            <option value="일본">일본</option>
                         </select>
                     </div>
-                </div>
-                <div class="list4">
-                    <div>휴대폰</div>
-                    <div><input type="text" placeholder="휴대폰 번호 입력"></div>
-                    <div>이메일</div>
-                    <div><input type="text" placeholder="이메일 입력"></div>
-                </div>
-                <div class="list5">
-                    <div></div>
-                    <div>주소</div>
-                    <div>
-                        <input type="text" id="address1" placeholder="우편번호 선택">
-                        <input type="text" id="address2" placeholder="기본주소 선택">
-                        <input type="text" id="address3" placeholder="상세주소 선택">
-                    </div>
-                </div>
-            </div>
+	                </div>
+	                <div class="list4">
+	                    <div>휴대폰</div>
+	                    <div><input type="text" name="stel" placeholder="휴대폰 번호 입력"></div>
+	                    <div>이메일</div>
+	                    <div><input type="text" name="semail" placeholder="이메일 입력"></div>
+	                </div>
+	                <div class="list5">
+	                    <div></div>
+	                    <div>주소</div>
+	                    <div>
+	                        <input type="text" id="address1" name="szip" placeholder="우편번호 선택">
+	                        <input type="text" id="address2" name="saddr1" placeholder="기본주소 선택">
+	                        <input type="text" id="address3" name="saddr2" placeholder="상세주소 선택">
+	                    </div>
+	                </div>
+	            </div>
 
-            <div class="class-info1">
-                <div class="class-info2">
-                    <span>학적정보 입력</span>
-                </div>
-            </div>
+	            <div class="class-info1">
+	                <div class="class-info2">
+	                    <span>학적정보 입력</span>
+	                </div>
+	            </div>
 
             <div class="main-lecture2">
                 <div class="list6">
                     <div>입학년도</div>
                     <div>
-                        <select>
+                        <select name="eyear" id="eyear">
                             <option>선택</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
                         </select>
                     </div>
                     <div>졸업년도</div>
                     <div>
-                        <select>
+                        <select name="gyear" id="gyear">
                             <option>선택</option>
+                            <option value="2025">2023</option>
+                            <option value="2025">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2025">2026</option>
+                            <option value="2025">2027</option>
+                            <option value="2025">2028</option>
                         </select>
                     </div>
-                </div>
-                <div class="list7">
-                    <div>입학구분</div>
-                    <div>
-                        <select>
-                            <option>수시</option>
-                        </select>
-                    </div>
-                    <div>입학학과(전공)</div>
-                    <div>
-                        <select>
-                            <option>인문사회대학</option>
-                        </select>
-                        <select style="margin-left: 2px;">
-                            <option>영어영문학과</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="list8">
-                    <div>입학학년/학기</div>
-                    <div>
-                        <select>
-                            <option>1학년</option>
-                        </select>
-                        <select style="margin-left: 2px;">
-                            <option>1학기</option>
-                        </select>
-                    </div>
-                    <div>지도교수</div>
-                    <div>
-                        <select>
-                            <option>선택</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button id="regist-button">등록</button>
+	                </div>
+	                <div class="list7">
+	                    <div>입학구분</div>
+	                    <div>
+	                        <select name="esort">
+	                            <option value="수시">수시</option>
+	                            <option value="정시">정시</option>
+	                        </select>
+	                    </div>
+	                    <div>입학학과(전공)</div>
+	                    <div>
+	                        <select name="ecol" id="ecol">
+	                            <option value="인문사회대학" selected>인문사회대학</option>
+	                            <option value="자연과학대학">자연과학대학</option>
+	                            <option value="공과대학">공과대학</option>
+	                            <option value="사범대학">사범대학</option>                            
+	                        </select>
+	                        <select name="edept" id="edept" style="margin-left: 2px;">
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="list8">
+	                    <div>입학학년/학기</div>
+	                    <div>
+	                        <select name="egrade">
+	                            <option value="1">1학년</option>
+	                            <option value="2">2학년</option>
+	                            <option value="3">3학년</option>
+	                            <option value="4">4학년</option>
+	                        </select>
+	                        <select name="eterm" style="margin-left: 2px;">
+	                            <option value="1">1학기</option>
+	                            <option value="2">2학기</option>
+	                        </select>
+	                    </div>
+	                    <div>지도교수</div>
+	                    <div>
+	                        <select name="advprof">
+	                            <option>선택</option>
+	                            <option value="김유신">김유신</option>
+	                            <option value="김국어">김국어</option>
+	                            <option value="김수학">김수학</option>
+	                            <option value="김영어">김영어</option>
+	                            <option value="김코딩">김코딩</option>
+	                            <option value="김교육">김교육</option>
+	                        </select>
+	                    </div>
+	                </div>
+	
+	                <button type="submit" id="regist-button">등록</button>
+            	</form>  	
             </div>
         </main>
     </div>

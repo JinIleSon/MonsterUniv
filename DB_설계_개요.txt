@@ -222,6 +222,7 @@ book교재
 room강의실
 maxNum최대 수강인원
 nowNum현재 수강인원(추가)
+cCode코드번호
 
 -> student(학생 테이블)
 snum학번(연도 + 학과 코드 + 순번 조합 자동생성) - PK
@@ -292,7 +293,7 @@ colEng대학 영문명
     colImgO대학 소개 이미지 원본 
     colImgS대학 소개 이미지 세이브 
 
-deptName학과명 -
+deptName학과명
 estYear설립연도
 deptTel학과 연락처
 unitCol단과대학 
