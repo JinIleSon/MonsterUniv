@@ -71,10 +71,10 @@
 	<a href="/greenUniv/AMS/AMS_course.do">수강현황</a><hr>
 	<a href="/greenUniv/AMS/AMS_studentList.do">학생목록</a><hr>
 	<a href="/greenUniv/AMS/AMS_studentRegist.do">학생 등록</a><hr>
-	<a href="/greenUniv/professor/list.do">교수 목록 - 공사중</a>
+	<a href="/greenUniv/professor/list.do">교수 목록 - 공사중</a><hr>
 	<a href="/greenUniv/professor/register.do">교수 등록</a><hr>
 	<a href="/greenUniv/collegeAndDepartment/list.do">학과 목록</a><hr>
-	<a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록 - 공사중</a><hr>
+	<a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a><hr>
 	<br><br><br>
 
 </body>

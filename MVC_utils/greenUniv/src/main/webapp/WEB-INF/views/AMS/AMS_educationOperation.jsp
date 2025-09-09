@@ -9,8 +9,8 @@
 <title>학사관리시스템::교육운영현황</title>
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <!--css연결-->
-<link rel="stylesheet" href="../css/Header.style.css">
-<link rel="stylesheet" href="../css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <style>
 @font-face {
 	font-family: 'NotoSansKR-Light';
@@ -555,7 +555,7 @@ tbody td span {
 				<!--로고-->
 				<div style=" margin-right:630px; margin-left:15px;">
 				<a href="/greenUniv/main.jsp"><img
-					src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
@@ -563,7 +563,7 @@ tbody td span {
 						<li data-menu="intro"><a
 							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
 						<li data-menu="admission"><a
-							href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
+							href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내</a></li>
 						<li data-menu="college"><a
 							href="/greenUniv/college/college_education.do">대학·대학원</a></li>
 						<li data-menu="academic"><a
@@ -802,7 +802,7 @@ tbody td span {
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
