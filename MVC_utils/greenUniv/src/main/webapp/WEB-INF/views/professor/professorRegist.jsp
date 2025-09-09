@@ -979,7 +979,7 @@
             <form action="/greenUniv/professor/register.do" method="post">
 	            <div class="main-lecture1">
 	                <div class="profile-photo">
-	                    <img src="./images/icon-avatar.png" alt="프로필 사진">
+	                    <img src="../images/icon-avatar.png" alt="프로필 사진">
 	                </div>
 	                <div class="list1">
 	                    <div>교수번호</div>
