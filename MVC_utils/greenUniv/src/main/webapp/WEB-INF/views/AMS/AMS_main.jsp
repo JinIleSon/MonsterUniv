@@ -196,7 +196,7 @@ aside ol {
 			<div class="inner" style=" max-width:1365px !important;">
 				<div class="log-area" style="">
 					<ul>
-						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
 						<li><a href="/greenUniv/login/login.do">로그인</a></li>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
@@ -209,7 +209,7 @@ aside ol {
 			<div class="inner" style="display: flex; justify-content:center; max-width:1600px !important;">
 				<!--로고-->
 				<div style=" margin-right:630px; margin-left:15px;">
-				<a href="/greenUniv/main.jsp"><img
+				<a href="/greenUniv/main.do"><img
 					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->

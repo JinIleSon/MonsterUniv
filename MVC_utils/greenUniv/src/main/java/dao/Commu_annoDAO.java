@@ -19,7 +19,30 @@ public class Commu_annoDAO extends DBHelper{
 	private Commu_annoDAO() {}
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
+	
+	// 기본 리스트 뿌려주기
+	public List<Commu_annoDTO> selectAllThree(){
+		List<Commu_annoDTO> dtoList = new ArrayList<Commu_annoDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_comm_anno.SELECT_ARTICLE_THREE);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				Commu_annoDTO dto = new Commu_annoDTO();
+				dto.setId(rs.getInt("id"));
+				dto.setTitle(rs.getString("title"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
 	// 검색 안 했을 때 나오는 테이블 왼쪽 인덱싱
 	public int selectCountTotal() {
 		int total = 0;
