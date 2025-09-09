@@ -7,13 +7,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관안내</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/login_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+    <link rel="stylesheet" href="/greenUniv/css/login_main.style.css">
     <!--css연결-->
-    <link rel="stylesheet" href="../css/main_main.style.css">
-    <link rel="stylesheet" href="../css/Header.style.css">
-    <link rel="stylesheet" href="../css/Footer.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
+    <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
     <style>
+	    html, body {
+		  height: 100%;      /* 화면 전체 높이 */
+		  margin: 0;         /* 기본 여백 제거 */
+		  display: flex;
+		  flex-direction: column;
+		}
+		
+		/* main 영역은 남은 공간 차지 */
+		main {
+		  flex: 1;
+		}
 		main > :first-child{ margin-top: 0; }
 		main {background-color: white;}
     </style>
@@ -133,7 +144,7 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">약관안내</span>
         </div>
     </div>
-    <div class="inner" style="height: 820px; position: relative; margin: 0 auto; display: flex; justify-content: center;">
+    <div class="inner" style="height: 820px; position: relative; margin: 0 auto; display: flex; justify-content: center; height:100% !important;">
         <div style="width: 990px;">
             <div style="height:42px;"></div>
             <p style="color: #3F97F6; font-weight: 500; font-size:20px; margin-bottom:3px; font-weight: 500;">약관안내</p>
@@ -224,7 +235,7 @@
                 </tr>
             </table>
             <div>
-                <form action="/greenUniv/login/join.do" method="get" onsubmit="return validateTerms()">
+            <form id="termsForm" action="/greenUniv/login/join.do" method="get">
 			  <label style="display:flex; align-items:center; margin-top:6px;">
 			    <input type="checkbox" name="agreeAll" id="agreeAll" required
 			           style="border:1px #767676 solid; width:20px; height:20px; margin-right:5px;">
@@ -235,29 +246,27 @@
 			    <input type="button" value="취소"
 			           onclick="history.back()"
 			           style="background-color:#8B8B8B; border:none; color:white; width:56px; height:48px; font-size:18px;">
-			    <!-- id 추가! -->
-			    <input type="submit" id="nextBtn" value="다음" disabled
+			           
+			    <input type="button" id="nextBtn" value="다음" 
 			           style="background-color:#3F97F6; border:none; color:white; width:56px; height:48px; font-size:18px;">
 			  </div>
 			</form>
                 
-                <script>
-			// 체크되면 '다음' 활성화
-			const agree = document.getElementById('agreeAll');
-			const nextBtn = document.getElementById('nextBtn');
-			
-			agree.addEventListener('change', function () {
-			  nextBtn.disabled = !this.checked;
+            <script>
+            
+            const form   = document.getElementById('termsForm');
+            const agree  = document.getElementById('agreeAll');
+            const nextBtn= document.getElementById('nextBtn');     
+				        		
+			nextBtn.addEventListener('click', () => {
+		    if (agree.checked) {
+		      form.submit();             
+		    } else {
+		      alert('약관 및 개인정보 수집·이용에 동의해주세요.');
+		      nextBtn.style.transform = 'scale(0.98)';
+		      setTimeout(()=> nextBtn.style.transform = 'scale(1)', 120);
+		    }
 			});
-			
-			// 안전하게 한 번 더 검증 (required가 막아주지만 UX용)
-			function validateTerms() {
-			  if (!agree.checked) {
-			    alert('약관 및 개인정보 수집·이용에 동의해주세요.');
-			    return false;
-			  }
-			  return true;
-			}
 			</script>
 			
 			
@@ -275,9 +284,9 @@
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
                     <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
@@ -287,7 +296,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">
@@ -312,5 +321,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

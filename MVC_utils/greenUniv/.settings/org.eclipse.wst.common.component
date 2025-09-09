@@ -8,6 +8,7 @@
     
     
     <wb-module deploy-name="greenUniv">
+<<<<<<< HEAD
                                 
         
         
@@ -20,6 +21,12 @@
         
         <wb-resource deploy-path="/" source-path="/src"/>
                 
+=======
+
+
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+>>>>>>> 48ecc233d984f270e5b74df424067d8821a3edc7
         <wb-resource deploy-path="/" source-path="/"/>
                                                                         
         

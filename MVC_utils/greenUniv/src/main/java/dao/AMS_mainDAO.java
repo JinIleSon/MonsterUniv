@@ -210,5 +210,213 @@ public class AMS_mainDAO extends DBHelper{
 		}
 		return dtoList;
 	}
+	// 교육 운영 현황
+	public List<AMS_mainDTO> selectAllRun(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.SELECT_LECTURE_RUN);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setOpenMaj(rs.getString("openmaj"));
+				dto.setDeptCode(rs.getString("deptcode"));
+				dto.setLname(rs.getString("lname"));
+				dto.setYear(rs.getString("year"));
+				dto.setProf(rs.getString("prof"));
+				dto.setCompDiv(rs.getString("compdiv"));
+				dto.setGrade(rs.getInt("grade"));
+				dto.setRoom(rs.getString("room"));
+				dto.setNowNum(rs.getInt("nowNum"));
+				dto.setMaxNum(rs.getInt("maxNum"));
+				dto.setPercent(rs.getInt("percent"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 개설학과 개수
+	public List<AMS_mainDTO> selectAllMajor(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_MAJOR);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountDept(rs.getInt("countdept"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 개설강좌 개수
+	public List<AMS_mainDTO> selectAllLecture(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_LECTURE);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountLname(rs.getInt("countlname"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 전체교수 인원
+	public List<AMS_mainDTO> selectAllProf(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_PROFESSOR);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountPnum(rs.getInt("countpnum"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 임직원 인원
+	public List<AMS_mainDTO> selectAllAdmin(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_STAFF);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountUser(rs.getInt("countuser"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 학생 인원
+	public List<AMS_mainDTO> selectAllStu(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_STUDENT_ALL);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountStuAll(rs.getInt("countstuall"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 휴학생 인원
+	public List<AMS_mainDTO> selectAllStudentLeave(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_STUDENT_LEAVE);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountStuLeave(rs.getInt("countstuleave"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 대학원생 인원
+	public List<AMS_mainDTO> selectAllGradSchool(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_STUDENT_GRADSCHOOL);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountStuGradSchool(rs.getInt("countstugradschool"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	// 대학 운영 현황 - 졸업생 인원
+	public List<AMS_mainDTO> selectAllGraduation(){
+		List<AMS_mainDTO> dtoList = new ArrayList<AMS_mainDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_AMS_main.COUNT_COLLEGE_RUN_STUDENT_GRADUATION);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				AMS_mainDTO dto = new AMS_mainDTO();
+				dto.setCountStuGraduation(rs.getInt("countstugraduation"));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
 
 }
