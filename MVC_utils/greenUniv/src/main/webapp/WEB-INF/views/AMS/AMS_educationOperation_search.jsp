@@ -538,7 +538,7 @@ tbody td span {
 	<header>
 		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
 		<div class="topbar" style="">
-			<div class="inner" style="max-width: 1365px !important;">
+			<div class="inner" style=" max-width:1400px !important;">
 				<div class="log-area" style="">
 					<ul>
 						<li><a href="/greenUniv/main.jsp">HOME</a></li>
@@ -551,15 +551,14 @@ tbody td span {
 		</div>
 
 		<div class="mainNav" style="">
-			<div class="inner"
-				style="display: flex; justify-content: center; max-width: 1600px !important;">
+			<div class="inner" style="display: flex; justify-content:center; max-width:1700px !important;">
 				<!--로고-->
-				<div style="margin-right: 630px; margin-left: 15px;">
-					<a href="/greenUniv/main.jsp"><img
-						src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+				<div style=" margin-right:665px; margin-left:15px;">
+				<a href="/greenUniv/main.jsp"><img
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
-				<div class="menu-area" style="margin-right: 30px; flex-shrink: 0;">
+				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
 					<ul class="main-menu">
 						<li data-menu="intro"><a
 							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
