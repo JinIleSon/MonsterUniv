@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -274,96 +275,21 @@
                         <td style="width: 98px;">취득학점</td>
                         <td style="width: 98px;">기타</td>
                     </tr>
+                    <c:forEach var="gradeObj" items="${ dtoList }">
                     <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자바 프로그래밍</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>99.0</td>
-                        <td>A+</td>
-                        <td>3</td>
-                        <form action="" method="">
+                        <td>${ gradeObj.deptCode }</td>
+                        <td>${ gradeObj.lname }</td>
+                        <td>${ gradeObj.year }학년</td>
+                        <td>${ gradeObj.prof }</td>
+                        <td>${ gradeObj.compDiv }</td>
+                        <td>${ gradeObj.score }</td>
+                        <td>${ gradeObj.rating }</td>
+                        <td>${ gradeObj.grade }</td>
                             <td>
                                 <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none; ">
                             </td>
-                        </form>
                     </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>자료구조</td>
-                        <td>2학년</td>
-                        <td>김자료</td>
-                        <td>전공</td>
-                        <td>86.2</td>
-                        <td>B</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>대학영어</td>
-                        <td>2학년</td>
-                        <td>김영어</td>
-                        <td>교양</td>
-                        <td>92.6</td>
-                        <td>A</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>알고리즘</td>
-                        <td>2학년</td>
-                        <td>김자바</td>
-                        <td>전공</td>
-                        <td>56.2</td>
-                        <td>F</td>
-                        <td>0</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>세계의역사</td>
-                        <td>2학년</td>
-                        <td>김역사</td>
-                        <td>교양</td>
-                        <td>80.0</td>
-                        <td>B</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
-                    <tr style="height:70px; border-bottom: 1px solid #b8b8b8;">
-                        <td>830003</td>
-                        <td>데이터베이스</td>
-                        <td>2학년</td>
-                        <td>김디비</td>
-                        <td>전공</td>
-                        <td>88.8</td>
-                        <td>B+</td>
-                        <td>3</td>
-                        <form action="" method="">
-                            <td>
-                                <input type="button" value="상세확인" style="background-color: #092E71; color: white; font-weight: 300; height:30px; width:64px; border:none;">
-                            </td>
-                        </form>
-                    </tr>
+                    </c:forEach>
                 </table>
                 <div style="margin-top:10px;"></div>
                 <span style="color:#666666; font-size:16px;">※ 점수 이의신청은 학생지원실에 문의하시기 바랍니다.</span>
