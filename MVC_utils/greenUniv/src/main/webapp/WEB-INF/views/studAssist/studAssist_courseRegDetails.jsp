@@ -262,19 +262,19 @@
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; ">
                     <form action="" style="display: flex;">
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 100px; margin-right:4px;padding-left:10px;">
-                            <option value="">2025</option>
-                            <option value="">2024</option>
-                            <option value="">2023</option>
-                            <option value="">2022</option>
-                            <option value="">2021</option>
-                            <option value="">2020</option>
+                            <option value="2025">2025</option>
+							<option value="2024">2024</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2020">2020</option>
                         </select>
                         <span style="line-height: 40px; margin-right:8px;">년</span>
                         <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:40px; width: 50px; margin-right:4px;padding-left:10px;">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">여름계절</option>
-                            <option value="">겨울계절</option>
+                            <option value="1">1</option>
+							<option value="2">2</option>
+							<option value="여름계절">여름계절</option>
+							<option value="겨울계절">겨울계절</option>
                         </select>
                         <span style="line-height: 40px;">학기</span>
                     </form>
