@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>학사관리시스템::학생등록</title>
     <!--css연결-->
 	<link rel="stylesheet" href="../css/Header.style.css">
 	<link rel="stylesheet" href="../css/Footer.style.css">
@@ -1059,14 +1059,14 @@
                 <div class="list3">
                     <div>성별</div>
                     <div>
-                        <label><input name="sgender" type="radio" value="남자">남</label>
-                        <label><input name="sgender" type="radio" value="여자">여</label>
+                        <label><input name="sgender" type="radio" value="남성">남</label>
+                        <label><input name="sgender" type="radio" value="여성">여</label>
                     </div>
                     <div>국적</div>
                     <div>
                         <select name="snation">
                             <option>선택</option>
-                            <option value="한국">한국</option>
+                            <option value="대한민국">대한민국</option>
                             <option value="중국">중국</option>
                             <option value="일본">일본</option>
                         </select>
@@ -1146,14 +1146,14 @@
 	                    <div>입학학년/학기</div>
 	                    <div>
 	                        <select name="egrade">
-	                            <option value="1">1학년</option>
-	                            <option value="2">2학년</option>
-	                            <option value="3">3학년</option>
-	                            <option value="4">4학년</option>
+	                            <option value="1학년">1학년</option>
+	                            <option value="2학년">2학년</option>
+	                            <option value="3학년">3학년</option>
+	                            <option value="4학년">4학년</option>
 	                        </select>
 	                        <select name="eterm" style="margin-left: 2px;">
-	                            <option value="1">1학기</option>
-	                            <option value="2">2학기</option>
+	                            <option value="1학기">1학기</option>
+	                            <option value="2학기">2학기</option>
 	                        </select>
 	                    </div>
 	                    <div>지도교수</div>

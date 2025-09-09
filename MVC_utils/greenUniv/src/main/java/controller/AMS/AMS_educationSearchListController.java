@@ -3,9 +3,6 @@ package controller.AMS;
 import java.io.IOException;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import dto.AMS_lectureDTO;
 import dto.PagenationDTO;
 import jakarta.servlet.RequestDispatcher;
@@ -20,8 +17,6 @@ import service.AMS_EducationService;
 public class AMS_educationSearchListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private AMS_EducationService lectureService = AMS_EducationService.INSTANCE;
 

@@ -62,6 +62,7 @@ public class AMS_LectureDAO extends DBHelper {
 			if(rs.next()) {
 				total = rs.getInt(1);
 			}
+			
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
