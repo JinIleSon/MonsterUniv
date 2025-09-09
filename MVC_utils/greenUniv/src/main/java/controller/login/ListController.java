@@ -21,7 +21,20 @@ public class ListController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<<<<<<< HEAD
 
+=======
+		
+		HttpSession session = req.getSession(false);
+        if (session != null) {
+            Object flash = session.getAttribute("FLASH_MSG");
+            if (flash != null) {
+                req.setAttribute("flash", flash.toString()); // request로 옮기고
+                session.removeAttribute("FLASH_MSG");         // 세션에서 즉시 제거(1회성)
+            }
+        }
+        
+>>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -32,26 +45,35 @@ public class ListController extends HttpServlet{
 
         String id    = trim(req.getParameter("identification"));
         String pw    = nvl(req.getParameter("password"));
+<<<<<<< HEAD
         String role  = nvl(req.getParameter("role"));  // STUDENT/STAFF/GUEST
 
+=======
+        String role  = nvl(req.getParameter("userType"));  // STUDENT/STAFF/GUEST
+        
+>>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
         ResultCode result = userService.loginCheck(id, pw, role);
 
         switch (result) {
         case LOGIN_SUCCESS:
+        	UserDTO user = userService.getUser(id);   // DB에서 role 포함 조회        
             HttpSession session = req.getSession(true);
-            session.setAttribute("LOGIN_USER", userService.getUser(id)); // 필요 시 유저 객체 반환
-            session.setMaxInactiveInterval(60 * 30);
-            resp.sendRedirect(req.getContextPath() + "/index.jsp?code=" + result.getCode()
-                    + "&msg=" + urlEnc(result.getMessage()));
+            session.setAttribute("LOGIN_USER", user);
+            session.setAttribute("FLASH_MSG",user.getNickname() + "님 환영합니다!");
+            resp.sendRedirect(req.getContextPath() + "/main.jsp");
             return;
 
         case LOGIN_INPUT_EMPTY:
+        	HttpSession session1 = req.getSession(true);
+        	session1.setAttribute("FLASH_MSG", "아이디/비밀번호를 입력해 주세요");
             resp.sendRedirect(req.getContextPath() + "/login/login.do?code=" + result.getCode()
                     + "&msg=" + urlEnc(result.getMessage()));
             return;
 
         case LOGIN_FAILED:
         default:
+        	HttpSession session2 = req.getSession(true);
+        	session2.setAttribute("FLASH_MSG", "아이디, 비밀번호 또는 권한이 올바르지 않습니다");
             resp.sendRedirect(req.getContextPath() + "/login/login.do?code=" + result.getCode()
                     + "&msg=" + urlEnc(result.getMessage()));
             return;

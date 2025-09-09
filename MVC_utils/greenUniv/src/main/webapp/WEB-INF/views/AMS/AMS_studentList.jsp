@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>학사관리시스템::학생목록</title>
+    
     <!--css연결-->
 	<link rel="stylesheet" href="../css/Header.style.css">
 	<link rel="stylesheet" href="../css/Footer.style.css">
@@ -445,6 +447,16 @@
             margin-right: 20px;
         }
     </style>
+    <script>
+    	document.addEventListener("DOMContentLoaded", function() {
+    		const studentRegist_btn = document.getElementById("regist-button");
+    		
+    		studentRegist_btn.addEventListener("click", function() {
+    			window.location.href = "/greenUniv/AMS/AMS_studentRegist.do";
+    		});
+    	});
+    	
+    </script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -622,12 +634,15 @@
                 <p>인사관리 &nbsp; > &nbsp; <span>학생 목록</span></p>
             </div>
             
-            <form class="search-form">
-                <select id="search-select">
+            <form action="/greenUniv/AMS/AMS_studentList_search.do" method="get" class="search-form">
+                <select id="search-select" name="searchType">
                     <option>검색조건</option>
+                    <option value="all">전체</option>
+                    <option value="">학번</option>
+                    <option value="">학생명</option>
                 </select>
-                <input type="text" id="search-title" placeholder="키워드 입력">
-                <input type="button" class="search-btn" value="검색">
+                <input type="text" name="keyword" id="search-title" placeholder="키워드 입력">
+                <input type="submit" class="search-btn" value="검색">
             </form>
             
             <table>
@@ -645,129 +660,48 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-red">자퇴</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-red">제적</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-yellow">휴학중</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-blue">졸업</span></td>
-                    </tr>
+                	<c:forEach var="student" items="${dtoList}" varStatus="status">
+	                	<tr>
+	                        <td><span>202001230</span></td>
+	                        <td><span>홍길동</span></td>
+	                        <td><span>900103-1234567</span></td>
+	                        <td><span>010-1234-1001</span></td>
+	                        <td><span>hong1001@naver.com</span></td>
+	                        <td><span>컴퓨터공학과</span></td>
+	                        <td><span>3</span></td>
+	                        <td><span>1</span></td>
+	                        <td><span class="status-green">재학중</span></td>
+	                    </tr>
+                	</c:forEach>              
                 </tbody>
             </table>
 
             <div id="button-setting">
                 <ul class="pagenation">
-                    <li><a href="#"><span class="first"></span></a></li>
-                    <li><a href="#"><span class="prev"></span></a></li>
-                    <li><a href="#" class="page1">1</a></li>
-                    <li><a href="#" class="page2">2</a></li>
-                    <li><a href="#" class="page3">3</a></li>
-                    <li><a href="#"><span class="next"></span></a></li>
-                    <li><a href="#"><span class="last"></span></a></li>
-                    <button id="regist-button">등록</button>
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
+                    <c:choose>
+                    	<c:when test="${pagenationDTO.currentPage == 1}">
+                    		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
+                    	</c:when>        
+                    	<c:otherwise>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
+                    	</c:otherwise>       	
+                    </c:choose>
+                    
+                    <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                    	<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+                    </c:forEach>
+                    
+                    <c:choose>
+                    	<c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+                    		<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
+                    	</c:otherwise>
+                    </c:choose>                   
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
+                    <button id="regist-button" style="cursor:pointer">등록</button>
                 </ul>
             </div>
             
@@ -784,7 +718,7 @@
 					<li><a href="#">통합정보시스템</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-					<li><a href="#">주요인원 연락처</a></li>
+					<li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
 				</ul>

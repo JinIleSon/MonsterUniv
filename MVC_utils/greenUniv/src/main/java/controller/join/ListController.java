@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import util.ResultCode;
 
 @WebServlet("/login/join.do")
@@ -98,11 +99,12 @@ public class ListController extends HttpServlet{
 
         switch (result) {
             case SUCCESS:
-                // 성공: 로그인 페이지로 (코드값으로 메시지 사용하거나 msg 직접 사용)
-                String msg = ResultCode.REGISTER_SUCCESS.getMessage();
-                resp.sendRedirect(req.getContextPath() + "/login/login.do?code=" + ResultCode.REGISTER_SUCCESS.getCode()
-                        + "&msg=" + urlEnc(msg));
-                return;
+            	 // 플래시 메시지 설정 후 로그인 페이지로 PRG
+                HttpSession session = req.getSession(); // 새로 만들어도 OK
+                session.setAttribute("FLASH_MSG", "회원가입 성공");
+                // (기존 code/msg 파라미터 방식이 필요하면 유지 가능하지만 플래시가 더 깔끔)
+                resp.sendRedirect(req.getContextPath() + "/login/login.do");
+                return; // ★ 반드시 즉시 종료
 
             case DUPLICATE_ID:
                 keepInputs(req, null, name, phone, email, zip, addr1, addr2); // 아이디만 다시 입력 유도

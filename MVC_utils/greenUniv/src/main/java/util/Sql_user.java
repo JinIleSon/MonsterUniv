@@ -24,5 +24,21 @@ public class Sql_user {
     public static final String SELECT_BY_ID1 =
         "SELECT identification, password, nickname, phone, email, address, role " +
         "FROM `User` WHERE identification=?";
+    
+    // 아이디 찾기
+    public static final String FIND_ID_BY_NAME_PHONE =
+        "SELECT identification FROM `User` WHERE nickname=? AND phone=? LIMIT 1";
+
+    public static final String FIND_ID_BY_NAME_EMAIL =
+        "SELECT identification FROM `User` WHERE nickname=? AND email=? LIMIT 1";
+
+    // 아이디+이메일 일치 조회
+    public static final String SELECT_BY_ID_AND_EMAIL =
+        "SELECT identification, password, nickname, phone, email, address, role " +
+        "FROM `User` WHERE identification=? AND email=?";
+
+    // 비밀번호 업데이트
+    public static final String UPDATE_PASSWORD =
+        "UPDATE `User` SET `password`=? WHERE `identification`=?";
 
 }

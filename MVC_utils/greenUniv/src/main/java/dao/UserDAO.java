@@ -145,4 +145,80 @@ public class UserDAO extends DBHelper{
             try { closeAll(); } catch (SQLException ignore) {}
         }
     }
+    
+ // --- 아이디 찾기 ---
+    public String findIdByNameAndPhone(String name, String phone) {
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(util.Sql_user.FIND_ID_BY_NAME_PHONE);
+            psmt.setString(1, name);
+            psmt.setString(2, phone);
+            rs = psmt.executeQuery();
+            if (rs.next()) return rs.getString(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { closeAll(); } catch (Exception ignore) {}
+        }
+        return null;
+    }
+
+    public String findIdByNameAndEmail(String name, String email) {
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(util.Sql_user.FIND_ID_BY_NAME_EMAIL);
+            psmt.setString(1, name);
+            psmt.setString(2, email);
+            rs = psmt.executeQuery();
+            if (rs.next()) return rs.getString(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { closeAll(); } catch (Exception ignore) {}
+        }
+        return null;
+    }
+
+    // --- 비밀번호 재설정(아이디+이메일 일치 확인) ---
+    public UserDTO findByIdAndEmail(String identification, String email) {
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(util.Sql_user.SELECT_BY_ID_AND_EMAIL);
+            psmt.setString(1, identification);
+            psmt.setString(2, email);
+            rs = psmt.executeQuery();
+            if (rs.next()) {
+                UserDTO u = new UserDTO();
+                u.setIdentification(rs.getString("identification"));
+                u.setPassword(rs.getString("password"));
+                u.setNickname(rs.getString("nickname"));
+                u.setPhone(rs.getString("phone"));
+                u.setEmail(rs.getString("email"));
+                u.setAddress(rs.getString("address"));
+                u.setRole(rs.getString("role"));
+                return u;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { closeAll(); } catch (Exception ignore) {}
+        }
+        return null;
+    }
+    
+    // --- 비밀번호 업데이트 ---
+    public boolean updatePassword(String identification, String newHashedPassword) {
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(util.Sql_user.UPDATE_PASSWORD);
+            psmt.setString(1, newHashedPassword);
+            psmt.setString(2, identification);
+            return psmt.executeUpdate() == 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { closeAll(); } catch (Exception ignore) {}
+        }
+        return false;
+    }
 }

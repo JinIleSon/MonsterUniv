@@ -573,14 +573,14 @@
             text-align: center;
             width: 762.31px;
         }
-        #address1 {
+        #pzip {
             width: 150px;
             height: 33px;
             margin-top: 6.5px;
             margin-bottom: 2px;
             padding-left: 6px;
         }
-        #address2, #address3 {
+        #paddr1, #paddr2 {
             width: 400px;
             height: 33px;
             margin-bottom: 2px;
@@ -976,110 +976,112 @@
                     <span>기본정보 입력</span>
                 </div>
             </div>
-            
-            <div class="main-lecture1">
-                <div class="profile-photo">
-                    <img src="./images/icon-avatar.png" alt="프로필 사진">
-                </div>
-                <div class="list1">
-                    <div>교수번호</div>
-                    <div>연도 + 학과 코드 + 순번 조합 자동생성</div>
-                    <div>주민등록번호</div>
-                    <div><input type="text" name="pregNo" placeholder="- 포함 14자리 입력"></div>
-                </div>
-                <div class="list2">
-                    <div>이름</div>
-                    <div>
-                        <input type="text" name="pname" placeholder="교수 이름 입력">
-                    </div>
-                    <div>영문명</div>
-                    <div>
-                        <input type="text" name="pengName" placeholder="여권 등과 동일한 영문 이름">
-                    </div>
-                </div>
-                <div class="list3">
-                    <div>성별</div>
-                    <div>
-                        <label><input type="radio" name="pgender" value="남">남</label>
-                        <label><input type="radio" name="pgender" value="여">여</label>
-                    </div>
-                    <div>국적</div>
-                    <div>
-                        <select name="pnation">
-                            <option value="dafault">선택</option>
-                            <option value="한국">한국</option>	
-                            <option value="일본">일본</option>	
-                            <option value="중국">중국</option>		
-                        </select>
-                    </div>
-                </div>
-                <div class="list4">
-                    <div>휴대폰</div>
-                    <div><input type="text" name="ptel" placeholder="휴대폰 번호 입력"></div>
-                    <div>이메일</div>
-                    <div><input type="text" name="pemail" placeholder="이메일 입력"></div>
-                </div>
-                <div class="list5">
-                    <div></div>
-                    <div>주소</div>
-                    <div>
-                        <input type="text" name="pzip" id="address1" placeholder="우편번호 선택">
-                        <input type="text" name="address2" id="address2" placeholder="기본주소 선택">
-                        <input type="text" name="address3" id="address3" placeholder="상세주소 선택">
-                    </div>
-                </div>
-            </div>
-
-            <div class="class-info1">
-                <div class="class-info2">
-                    <span>학적정보 입력</span>
-                </div>
-            </div>
-
-            <div class="main-lecture2">
-                <div class="list6">
-                    <div>졸업대학</div>
-                    <div>
-                        <input type="text" name="gradUn" placeholder="대학교 이름 입력">
-                    </div>
-                    <div>학문 분야(전공)</div>
-                    <div>
-                        <input type="text" name="major" placeholder="전공 입력">
-                    </div>
-                </div>
-                <div class="list7">
-                    <div>졸업일</div>
-                    <div>
-                        <input type="date" name="gradDate">
-                    </div>
-                    <div>학위</div>
-                    <div>
-                        <select name="degree">
-                            <option value="default">선택</option>
-                            <option value="박사">박사</option>
-                            <option value="학사">학사</option>
-                        </select>
-
-                    </div>
-                </div>
-                <div class="list8">
-                    <div>담당학과</div>
-                    <div>
-                        <select name="takeCol">
-                            <option value="default">대학선택</option>
-                        </select>
-                        <select name="takeDept" style="margin-left: 2px;">
-                            <option value="default">학과선택</option>
-                        </select>
-                    </div>
-                    <div>임용일</div>
-                    <div>
-                        <input type="date" name="appDate">
-                    </div>
-                </div>
-
-                <button id="regist-button">등록</button>
-            </div>
+            <form action="/greenUniv/professor/register.do" method="post">
+	            <div class="main-lecture1">
+	                <div class="profile-photo">
+	                    <img src="./images/icon-avatar.png" alt="프로필 사진">
+	                </div>
+	                <div class="list1">
+	                    <div>교수번호</div>
+	                    <div>연도 + 학과 코드 + 순번 조합 자동생성</div>
+	                    <div>주민등록번호</div>
+	                    <div><input type="text" name="pregno" placeholder="- 포함 14자리 입력"></div>
+	                </div>
+	                <div class="list2">
+	                    <div>이름</div>
+	                    <div>
+	                        <input type="text" name="pname" placeholder="교수 이름 입력">
+	                    </div>
+	                    <div>영문명</div>
+	                    <div>
+	                        <input type="text" name="pengname" placeholder="여권 등과 동일한 영문 이름">
+	                    </div>
+	                </div>
+	                <div class="list3">
+	                    <div>성별</div>
+	                    <div>
+	                        <label><input type="radio" name="pgender" value="남">남</label>
+	                        <label><input type="radio" name="pgender" value="여">여</label>
+	                    </div>
+	                    <div>국적</div>
+	                    <div>
+	                        <select name="pnation">
+	                            <option value="dafault">선택</option>
+	                            <option value="한국">한국</option>	
+	                            <option value="일본">일본</option>	
+	                            <option value="중국">중국</option>		
+	                        </select>
+	                    </div>
+	                </div>
+	                <div class="list4">
+	                    <div>휴대폰</div>
+	                    <div><input type="text" name="ptel" placeholder="휴대폰 번호 입력"></div>
+	                    <div>이메일</div>
+	                    <div><input type="text" name="pemail" placeholder="이메일 입력"></div>
+	                </div>
+	                <div class="list5">
+	                    <div></div>
+	                    <div>주소</div>
+	                    <div>
+	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호 선택">
+	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소 선택">
+	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소 선택">
+	                    </div>
+	                </div>
+	            </div>
+	
+	            <div class="class-info1">
+	                <div class="class-info2">
+	                    <span>학적정보 입력</span>
+	                </div>
+	            </div>
+	
+	            <div class="main-lecture2">
+	                <div class="list6">
+	                    <div>졸업대학</div>
+	                    <div>
+	                        <input type="text" name="gradun" placeholder="대학교 이름 입력">
+	                    </div>
+	                    <div>학문 분야(전공)</div>
+	                    <div>
+	                        <input type="text" name="major" placeholder="전공 입력">
+	                    </div>
+	                </div>
+	                <div class="list7">
+	                    <div>졸업일</div>
+	                    <div>
+	                        <input type="date" name="graddate">
+	                    </div>
+	                    <div>학위</div>
+	                    <div>
+	                        <select name="degree">
+	                            <option value="default">선택</option>
+	                            <option value="박사">박사</option>
+	                            <option value="학사">학사</option>
+	                        </select>
+	
+	                    </div>
+	                </div>
+	                <div class="list8">
+	                    <div>담당학과</div>
+	                    <div>
+	                        <select name="takecol">
+	                            <option value="default">대학선택</option>
+	                            <option value="공과대학">공과대학</option>
+	                        </select>
+	                        <select name="takedept" style="margin-left: 2px;">
+	                            <option value="default">학과선택</option>
+	                            <option value="정보통신공학과">정보통신공학과</option>
+	                        </select>
+	                    </div>
+	                    <div>임용일</div>
+	                    <div>
+	                        <input type="date" name="appdate">
+	                    </div>
+	                </div>
+	            </div>
+            	<button id="regist-button" type="submit">등록</button>
+            </form>
         </main>
     </div>
     
@@ -1093,7 +1095,7 @@
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
                 </ul>
             </div>
@@ -1103,7 +1105,7 @@
         <div class="footer-low">
             <div class="footer-low-inner">
                 <div class="footer-logo">
-                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
                 </div>
 
                 <div class="footer-info">

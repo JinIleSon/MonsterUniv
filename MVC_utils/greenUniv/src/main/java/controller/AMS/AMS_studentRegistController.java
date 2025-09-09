@@ -2,17 +2,20 @@ package controller.AMS;
 
 import java.io.IOException;
 
+import dto.AMS_studentDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.AMS_StudentService;
 
 @WebServlet("/AMS/AMS_studentRegist.do") //학생 등록 student테이블 사용
 public class AMS_studentRegistController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private AMS_StudentService studentService =  AMS_StudentService.INSTANCE;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studentRegist.jsp");
@@ -40,9 +43,37 @@ public class AMS_studentRegistController extends HttpServlet {
 		String egrade = req.getParameter("egrade");
 		String eterm = req.getParameter("eterm");
 		String advprof = req.getParameter("advprof");
+<<<<<<< HEAD
 
 		//AMS_studentDTO  studentDTO = new AMS_studentDTO(); //다른 dto확인
 
 		//resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
+=======
+		
+		AMS_studentDTO  studentDTO = new AMS_studentDTO();
+		studentDTO.setSnum(snum);
+		studentDTO.setSregno(sregno);
+		studentDTO.setSname(sname);
+		studentDTO.setSengname(sengname);
+		studentDTO.setSgender(sgender);
+		studentDTO.setSnation(snation);
+		studentDTO.setStel(stel);
+		studentDTO.setSemail(semail);
+		studentDTO.setSzip(szip);
+		studentDTO.setSaddr1(saddr1);
+		studentDTO.setSaddr2(saddr2);
+		studentDTO.setEyear(eyear);
+		studentDTO.setGyear(gyear);
+		studentDTO.setEsort(esort);
+		studentDTO.setEcol(ecol);
+		studentDTO.setEdept(edept);
+		studentDTO.setEgrade(egrade);
+		studentDTO.setEterm(eterm);
+		studentDTO.setAdvprof(advprof);
+		
+		studentService.register(studentDTO);
+		
+		resp.sendRedirect("/greenUniv/AMS/AMS_studentList.do");
+>>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 	}
 }
