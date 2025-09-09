@@ -43,6 +43,17 @@
 	});
 </script>
 <style>
+html, body {
+  height: 100%;      /* 화면 전체 높이 */
+  margin: 0;         /* 기본 여백 제거 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* main 영역은 남은 공간 차지 */
+main {
+  flex: 1;
+}
 hr {
 	border: none;
 	height: 2px;
