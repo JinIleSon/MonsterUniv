@@ -323,7 +323,7 @@ hr{
                 <div style=" height: 100px; margin-top:30px;">
 	                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
 	
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel_search.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}'" class="first-page">
 	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
 						<c:choose>
 						  <c:when test="${pagenationDTO.currentPage == 1}">
@@ -331,13 +331,13 @@ hr{
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.currentPage-1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel_search.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="prev-page">
 						  </c:otherwise>
 						</c:choose>
 						
 						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel_search.do?pg=${num}&searchType=${searchType}&keyword=${keyword}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
 	                    </c:forEach>
 						
 						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
@@ -347,11 +347,11 @@ hr{
 						  </c:when>
 						  <c:otherwise>
 						    <input type="button"
-						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.currentPage+1}'"
+						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel_search.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}'"
 						           class="next-page">
 						  </c:otherwise>
 						</c:choose>
-	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel_search.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}'" class="last-page">
 	                </form>
                 </div>
             </div>
