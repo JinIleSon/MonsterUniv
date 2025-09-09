@@ -13,6 +13,8 @@ html, body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
+	height:100%;
+	flex: 1;
 }
 
 /* ================================
@@ -109,6 +111,10 @@ header {
    Main
 ================================ */
 
+
+
+/* Header Footer 상단 하단 고정 */
+
 hr {
 	border: none;
 	height: 2px;
@@ -197,7 +203,7 @@ form .off {
 /* ================================
    footer
 ================================ */
-/* 색상 변수 */
+
 :root {
 	--footer-bg: #141b23; /* 메인 배경 */
 	--footer-top-bg: #1e2732; /* 상단 퀵링크 배경 */

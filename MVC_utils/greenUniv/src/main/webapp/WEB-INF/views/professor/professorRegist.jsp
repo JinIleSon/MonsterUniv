@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -615,12 +616,12 @@
         /* 입학년도, 졸업년도 */
         .main-lecture2 .list6 {
             display:flex;
-            height: 48.5px;
+            height: 46.5px;
             width: 1089px;
         }   
         .main-lecture2 .list6 div {
             display:flex;
-            height: 48.5px;
+            height: 46.5px;
         }
         .main-lecture2 .list6 div:nth-child(1) {
             align-items: center;  
@@ -640,10 +641,10 @@
             text-align: center;
             width: 381.16px;
         }
-        .main-lecture2 .list6 div:nth-child(2) select {
+        .main-lecture2 .list6 div:nth-child(2) input[type=text] {
             height: 35px;
             padding-left: 6px;
-            width:150px;
+            width:200px;
         }
 
         .main-lecture2 .list6 div:nth-child(3) {
@@ -664,10 +665,10 @@
             text-align: center;
             width: 381.16px;
         }
-        .main-lecture2 .list6 div:nth-child(4) select {
+        .main-lecture2 .list6 div:nth-child(4) input[type=text] {
             height: 35px;
             padding-left: 6px;
-            width:150px;
+            width:200px;
         }
 
         /* 입학구분, 입학학과 */
@@ -698,10 +699,10 @@
             text-align: center;
             width: 381.16px;
         }
-        .main-lecture2 .list7 div:nth-child(2) select {
+        .main-lecture2 .list7 div:nth-child(2) input[type=date] {
             height: 35px;
             padding-left: 6px;
-            width:150px;
+            width:200px;
         }
 
         .main-lecture2 .list7 div:nth-child(3) {
@@ -776,9 +777,9 @@
             text-align: center;
             width: 381.16px;
         }
-        .main-lecture2 .list8 div:nth-child(4) select {
+        .main-lecture2 .list8 div:nth-child(4) input[type=date] {
             height: 35px;
-            width: 150px;
+            width: 200px;
             padding-left: 6px;
         }
 
@@ -793,65 +794,6 @@
             margin-top: 20px;
         }
     </style>
-	<script>
-		document.addEventListener('DOMContentLoaded', function(e) {
-			const ecol_edept = { //학과 설정
-	    			"인문사회대학": ["국어국문학과", "영어영문학과", "일어일문학과","중어중문학과","역사학과","경제학과","경영학과","법학과","철학과","정치외교학과","행정학과","사회복지학과","유아교육학과"],
-	    	        "자연과학대학": ["수학과", "물리학과", "화학과","천문학과","지구과학학과","생명과학과","미생물학과","해양학과"],
-	    	        "공과대학": ["기계공학과", "전자공학과", "전기공학과", "컴퓨터공학과", "건축공학과", "재료공학과","화학공학과"],
-	    	        "사범대학": ["국어교육과", "영어교육과", "수학교육과", "윤리학과", "교육학과", "사회교육과", "역사교육과", "체육교육과", "특수교육과"]
-	    	};
-			
-			const ecol = document.getElementById("ecol");
-	    	const edept = document.getElementById("edept");
-	    	
-	    	ecol.addEventListener("change", function() {
-	    		const selected = this.value;
-	    		
-	    		edept.innerHTML = "";
-	    		
-	    		if(ecol_edept[selected]) {
-	    			ecol_edept[selected].forEach(item => {
-	    				const option = document.createElement("option");
-	    				option.value = item;
-	    				option.textContent = item;
-	    				edept.appendChild(option);
-	    			});
-	    		}
-	    	});
-	    	
-	    	let cnt = 1;
-	    	const form = document.querySelector('form');
-	    	form.addEventListener('submit', function(e) { //학번
-	    		const eyear = document.getElementById('eyear').value;
-	    		const snumInput = document.getElementsByName('snum')[0];
-	    		
-	    		let num = 0;
-	    		switch(ecol.value) {
-		    		case "인문사회대학":
-		    			num = 10;
-			        	break;
-			        case "자연과학대학":
-			        	num = 20;
-			        	break;
-			        case "공과대학":
-			        	num = 30;
-			        	break;
-			        case "사범대학":
-			        	num = 40;
-			        	break;
-	    		}
-	    		
-	    		if(cnt < 10) {
-	    			snumInput.value = eyear + "" + num + "0" + cnt;
-	    		} else {
-	    			snumInput.value = eyear + "" + num + cnt;
-	    		}
-
-	    		cnt++;
-	    	});
-		});
-	</script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -1025,8 +967,8 @@
 
         <main class="main-content">
             <div class="main-title">
-                <h3>학생 등록</h3>
-                <p>인사관리 &nbsp; > &nbsp; <span>학생 등록</span></p>
+                <h3>교수 등록</h3>
+                <p>인사관리 &nbsp; > &nbsp; <span>교수 등록</span></p>
             </div>
 
             <div class="basic-info1">
@@ -1035,192 +977,156 @@
                 </div>
             </div>
             
-            <form action="" method="post">
-            	<div class="main-lecture1">
+            <div class="main-lecture1">
                 <div class="profile-photo">
-                    <img src="../images/icon-avatar.png" alt="프로필 사진">
+                    <img src="./images/icon-avatar.png" alt="프로필 사진">
                 </div>
                 <div class="list1">
-                    <div>학번</div>
-                    <div><input type="hidden" name="snum"></div>
+                    <div>교수번호</div>
+                    <div>연도 + 학과 코드 + 순번 조합 자동생성</div>
                     <div>주민등록번호</div>
-                    <div><input type="text" name="sregno" placeholder="- 포함 14자리 입력"></div>
+                    <div><input type="text" name="pregNo" placeholder="- 포함 14자리 입력"></div>
                 </div>
                 <div class="list2">
                     <div>이름</div>
                     <div>
-                        <input type="text" name="sname" placeholder="학생 이름 입력">
+                        <input type="text" name="pname" placeholder="교수 이름 입력">
                     </div>
                     <div>영문명</div>
                     <div>
-                        <input type="text" name="sengname" placeholder="여권 등과 동일한 영문 이름">
+                        <input type="text" name="pengName" placeholder="여권 등과 동일한 영문 이름">
                     </div>
                 </div>
                 <div class="list3">
                     <div>성별</div>
                     <div>
-                        <label><input name="sgender" type="radio" value="남자">남</label>
-                        <label><input name="sgender" type="radio" value="여자">여</label>
+                        <label><input type="radio" name="pgender" value="남">남</label>
+                        <label><input type="radio" name="pgender" value="여">여</label>
                     </div>
                     <div>국적</div>
                     <div>
-                        <select name="snation">
-                            <option>선택</option>
-                            <option value="한국">한국</option>
-                            <option value="중국">중국</option>
-                            <option value="일본">일본</option>
+                        <select name="pnation">
+                            <option value="dafault">선택</option>
+                            <option value="한국">한국</option>	
+                            <option value="일본">일본</option>	
+                            <option value="중국">중국</option>		
                         </select>
                     </div>
-	                </div>
-	                <div class="list4">
-	                    <div>휴대폰</div>
-	                    <div><input type="text" name="stel" placeholder="휴대폰 번호 입력"></div>
-	                    <div>이메일</div>
-	                    <div><input type="text" name="semail" placeholder="이메일 입력"></div>
-	                </div>
-	                <div class="list5">
-	                    <div></div>
-	                    <div>주소</div>
-	                    <div>
-	                        <input type="text" id="address1" name="szip" placeholder="우편번호 선택">
-	                        <input type="text" id="address2" name="saddr1" placeholder="기본주소 선택">
-	                        <input type="text" id="address3" name="saddr2" placeholder="상세주소 선택">
-	                    </div>
-	                </div>
-	            </div>
+                </div>
+                <div class="list4">
+                    <div>휴대폰</div>
+                    <div><input type="text" name="ptel" placeholder="휴대폰 번호 입력"></div>
+                    <div>이메일</div>
+                    <div><input type="text" name="pemail" placeholder="이메일 입력"></div>
+                </div>
+                <div class="list5">
+                    <div></div>
+                    <div>주소</div>
+                    <div>
+                        <input type="text" name="pzip" id="address1" placeholder="우편번호 선택">
+                        <input type="text" name="address2" id="address2" placeholder="기본주소 선택">
+                        <input type="text" name="address3" id="address3" placeholder="상세주소 선택">
+                    </div>
+                </div>
+            </div>
 
-	            <div class="class-info1">
-	                <div class="class-info2">
-	                    <span>학적정보 입력</span>
-	                </div>
-	            </div>
+            <div class="class-info1">
+                <div class="class-info2">
+                    <span>학적정보 입력</span>
+                </div>
+            </div>
 
             <div class="main-lecture2">
                 <div class="list6">
-                    <div>입학년도</div>
+                    <div>졸업대학</div>
                     <div>
-                        <select name="eyear" id="eyear">
-                            <option>선택</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
+                        <input type="text" name="gradUn" placeholder="대학교 이름 입력">
+                    </div>
+                    <div>학문 분야(전공)</div>
+                    <div>
+                        <input type="text" name="major" placeholder="전공 입력">
+                    </div>
+                </div>
+                <div class="list7">
+                    <div>졸업일</div>
+                    <div>
+                        <input type="date" name="gradDate">
+                    </div>
+                    <div>학위</div>
+                    <div>
+                        <select name="degree">
+                            <option value="default">선택</option>
+                            <option value="박사">박사</option>
+                            <option value="학사">학사</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="list8">
+                    <div>담당학과</div>
+                    <div>
+                        <select name="takeCol">
+                            <option value="default">대학선택</option>
+                        </select>
+                        <select name="takeDept" style="margin-left: 2px;">
+                            <option value="default">학과선택</option>
                         </select>
                     </div>
-                    <div>졸업년도</div>
+                    <div>임용일</div>
                     <div>
-                        <select name="gyear" id="gyear">
-                            <option>선택</option>
-                            <option value="2025">2023</option>
-                            <option value="2025">2024</option>
-                            <option value="2025">2025</option>
-                            <option value="2025">2026</option>
-                            <option value="2025">2027</option>
-                            <option value="2025">2028</option>
-                        </select>
+                        <input type="date" name="appDate">
                     </div>
-	                </div>
-	                <div class="list7">
-	                    <div>입학구분</div>
-	                    <div>
-	                        <select name="esort">
-	                            <option value="수시">수시</option>
-	                            <option value="정시">정시</option>
-	                        </select>
-	                    </div>
-	                    <div>입학학과(전공)</div>
-	                    <div>
-	                        <select name="ecol" id="ecol">
-	                            <option value="인문사회대학" selected>인문사회대학</option>
-	                            <option value="자연과학대학">자연과학대학</option>
-	                            <option value="공과대학">공과대학</option>
-	                            <option value="사범대학">사범대학</option>                            
-	                        </select>
-	                        <select name="edept" id="edept" style="margin-left: 2px;">
-	                        </select>
-	                    </div>
-	                </div>
-	                <div class="list8">
-	                    <div>입학학년/학기</div>
-	                    <div>
-	                        <select name="egrade">
-	                            <option value="1">1학년</option>
-	                            <option value="2">2학년</option>
-	                            <option value="3">3학년</option>
-	                            <option value="4">4학년</option>
-	                        </select>
-	                        <select name="eterm" style="margin-left: 2px;">
-	                            <option value="1">1학기</option>
-	                            <option value="2">2학기</option>
-	                        </select>
-	                    </div>
-	                    <div>지도교수</div>
-	                    <div>
-	                        <select name="advprof">
-	                            <option>선택</option>
-	                            <option value="김유신">김유신</option>
-	                            <option value="김국어">김국어</option>
-	                            <option value="김수학">김수학</option>
-	                            <option value="김영어">김영어</option>
-	                            <option value="김코딩">김코딩</option>
-	                            <option value="김교육">김교육</option>
-	                        </select>
-	                    </div>
-	                </div>
-	
-	                <button type="submit" id="regist-button">등록</button>
-            	</form>  	
+                </div>
+
+                <button id="regist-button">등록</button>
             </div>
         </main>
     </div>
     
-    <!--3. 푸터영역-->
-	<footer class="footer" style="margin-top: 50px;">
-		<!--상단-->
-		<div class="footer-high">
-			<div class="footer-high-inner">
-				<ul class="footer-high-quicklinks">
-					<li><a href="#">개인정보처리방침</a></li>
-					<li><a href="#">통합정보시스템</a></li>
-					<li><a
-						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-					<li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
-					<li><a
-						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
-				</ul>
-			</div>
-		</div>
+    
+    <!--3. 푸터영역-->    
+    <footer class="footer" style="margin-top:50px;">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
 
-		<!--하단-->
-		<div class="footer-low">
-			<div class="footer-low-inner">
-				<div class="footer-logo">
-					<img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
-						class="logo" />
-				</div>
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
 
-				<div class="footer-info">
-					<p class="footer-uniname">몬스터대학교</p>
-					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
-						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
-					<p class="copy">copyright ©Monster University All rights
-						reserved.</p>
-				</div>
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
 
-				<div class="footer-select">
-					<label for="site-select" class="sr-only">주요사이트</label> <select
-						id="site-select"
-						onchange="if(this.value) window.open(this.value, '_blank')">
-						<option value="">주요사이트</option>
-						<option value="https://www.moe.go.kr/">교육부</option>
-						<option value="https://www.kocca.kr/">콘텐츠진흥원</option>
-						<option value="https://www.nrf.re.kr/">연구재단</option>
-					</select>
-				</div>
-			</div>
-		</div>
-	</footer>
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -326,7 +327,7 @@
             font-weight: 350;
         }
         thead th:nth-child(1) {
-            width: 130.8px;
+            width: 109px;
         }
         thead th:nth-child(2) {
             width: 109px;
@@ -338,19 +339,19 @@
             width: 141.69px;
         }
         thead th:nth-child(5) {
-            width: 261.64px;
+            width: 174.44px;
         }
         thead th:nth-child(6) {
             width: 109px;
         }
         thead th:nth-child(7) {
-            width: 54.5px;
+            width: 109px;
         }
         thead th:nth-child(8) {
-            width: 54.5px;
+            width: 87.19px;
         }
         thead th:nth-child(9) {
-            width: 87.19px;
+            width: 109px;
         }
         tbody td {
             border-top: 1px solid #D8D8D8;
@@ -618,8 +619,8 @@
 
         <main class="main-content">
             <div class="main-title">
-                <h3>학생 목록</h3>
-                <p>인사관리 &nbsp; > &nbsp; <span>학생 목록</span></p>
+                <h3>교수 목록</h3>
+                <p>인사관리 &nbsp; > &nbsp; <span>교수 목록</span></p>
             </div>
             
             <form class="search-form">
@@ -633,15 +634,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th><span>학번</span></th>
+                        <th><span>교수번호</span></th>
                         <th><span>이름</span></th>
                         <th><span>주민번호</span></th>
                         <th><span>휴대폰</span></th>
                         <th><span>이메일</span></th>
                         <th><span>학과</span></th>
-                        <th><span>학년</span></th>
-                        <th><span>학기</span></th>
-                        <th><span>상태</span></th>
+                        <th><span>학위</span></th>
+                        <th><span>재직여부</span></th>
+                        <th><span>임용일</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -652,9 +653,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -663,9 +664,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -674,9 +675,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -685,9 +686,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -696,9 +697,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -707,9 +708,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-green">재학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -718,9 +719,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-red">자퇴</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-green">재직중</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -729,9 +730,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-red">제적</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-yellow">휴직</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -740,9 +741,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-yellow">휴학중</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-red">퇴직</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                     <tr>
                         <td><span>202001230</span></td>
@@ -751,9 +752,9 @@
                         <td><span>010-1234-1001</span></td>
                         <td><span>hong1001@naver.com</span></td>
                         <td><span>컴퓨터공학과</span></td>
-                        <td><span>3</span></td>
-                        <td><span>1</span></td>
-                        <td><span class="status-blue">졸업</span></td>
+                        <td><span>정교수</span></td>
+                        <td><span class="status-red">퇴직</span></td>
+                        <td><span >2025-01-01</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -774,51 +775,49 @@
         </main>
     </div>
     
-    <!--3. 푸터영역-->
-	<footer class="footer" style="margin-top: 50px;">
-		<!--상단-->
-		<div class="footer-high">
-			<div class="footer-high-inner">
-				<ul class="footer-high-quicklinks">
-					<li><a href="#">개인정보처리방침</a></li>
-					<li><a href="#">통합정보시스템</a></li>
-					<li><a
-						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-					<li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
-					<li><a
-						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
-				</ul>
-			</div>
-		</div>
+     <!--3. 푸터영역-->    
+    <footer class="footer" style="margin-top:50px;">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
+                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
 
-		<!--하단-->
-		<div class="footer-low">
-			<div class="footer-low-inner">
-				<div class="footer-logo">
-					<img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
-						class="logo" />
-				</div>
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
 
-				<div class="footer-info">
-					<p class="footer-uniname">몬스터대학교</p>
-					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
-						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
-					<p class="copy">copyright ©Monster University All rights
-						reserved.</p>
-				</div>
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
 
-				<div class="footer-select">
-					<label for="site-select" class="sr-only">주요사이트</label> <select
-						id="site-select"
-						onchange="if(this.value) window.open(this.value, '_blank')">
-						<option value="">주요사이트</option>
-						<option value="https://www.moe.go.kr/">교육부</option>
-						<option value="https://www.kocca.kr/">콘텐츠진흥원</option>
-						<option value="https://www.nrf.re.kr/">연구재단</option>
-					</select>
-				</div>
-			</div>
-		</div>
-	</footer>
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
