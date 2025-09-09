@@ -423,7 +423,7 @@ aside ol {
 					</div>
 					<div class="sub-title">
 						<h4>교육 운영 현황</h4>
-						<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
+						<a href="/greenUniv/AMS/AMS_educationOperation/list.do"><img src="../images/bg-viewmore01.png" alt=""></a>
 					</div>
 					<div>
 						<table style="height: 307px;">
