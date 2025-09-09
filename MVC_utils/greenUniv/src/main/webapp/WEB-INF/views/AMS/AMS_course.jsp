@@ -541,7 +541,7 @@ tbody td span {
 </style>
 </head>
 <body>
-	<!--1.헤더영역-->
+<!--1.헤더영역-->
 	<header>
 		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
 		<div class="topbar" style="">
@@ -663,168 +663,140 @@ tbody td span {
 			</div>
 		</div>
 	</header>
-	<div class="container">
-		<nav class="sidebar">
-			<div class="menu menu1">
-				<h3>
-					<img src='../images/ico-admin-setting.png'>환경설정
-				</h3>
-				<ul>
-					<li class="menu-item">기본환경정보</li>
-					<li class="menu-item">약관관리</li>
-				</ul>
-			</div>
-			<div class="menu menu2">
-				<h3>
-					<img src='../images/ico-admin-academic.png'>학사운영
-				</h3>
-				<ul>
-					<li class="menu-item">교육 운영 현황</li>
-					<li class="menu-item">학년별 학생 현황</li>
-					<li class="menu-item">학과별 학생 현황</li>
-					<li class="menu-item">강의 목록</li>
-					<li class="menu-item">강의 등록</li>
-					<li class="menu-item">수강 현황</li>
-				</ul>
-			</div>
-			<div class="menu menu3">
-				<h3>
-					<img src='../images/ico-admin-persons.png'>인사관리
-				</h3>
-				<ul>
-					<li class="menu-item">학생 목록 및 등록</li>
-					<li class="menu-item">교수 목록 및 등록</li>
-					<li class="menu-item">임직원 목록 및 등록</li>
-				</ul>
-			</div>
-			<div class="menu menu4">
-				<h3>
-					<img src='../images/ico-admin-college.png'>대학 및 학과
-				</h3>
-				<ul>
-					<li class="menu-item">대학 및 학과 목록</li>
-					<li class="menu-item">대학 및 학과 등록</li>
-				</ul>
-			</div>
-			<div class="menu menu5">
-				<h3>
-					<img src='../images/ico-admin-board.png'>게시판관리
-				</h3>
-				<ul>
-					<li class="menu-item">입학안내 공지사항</li>
-					<li class="menu-item">학사안내 공지사항</li>
-					<li class="menu-item">커뮤니티 공지사항</li>
-					<li class="menu-item">입학상담</li>
-					<li class="menu-item">질문 및 답변</li>
-					<li class="menu-item">식단안내</li>
-					<li class="menu-item">자료실</li>
-				</ul>
-			</div>
-		</nav>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="menu menu1">
+                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <ul>
+                    <li class="menu-item">기본환경정보</li>
+                    <li class="menu-item">약관관리</li>
+                </ul>
+            </div>
+            <div class="menu menu2">
+                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <ul>
+                    <li class="menu-item">교육 운영 현황</li>
+                    <li class="menu-item">학년별 학생 현황</li>
+                    <li class="menu-item">학과별 학생 현황</li>
+                    <li class="menu-item">강의 목록</li>
+                    <li class="menu-item">강의 등록</li>
+                    <li class="menu-item" >수강 현황</li>
+                </ul>
+            </div>
+            <div class="menu menu3">
+                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <ul>
+                    <li class="menu-item">학생 목록 및 등록</li>
+                    <li class="menu-item">교수 목록 및 등록</li>
+                    <li class="menu-item">임직원 목록 및 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu4">
+                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <ul>
+                    <li class="menu-item">대학 및 학과 목록</li>
+                    <li class="menu-item">대학 및 학과 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu5">
+                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <ul>
+                    <li class="menu-item">입학안내 공지사항</li>
+                    <li class="menu-item">학사안내 공지사항</li>
+                    <li class="menu-item">커뮤니티 공지사항</li>
+                    <li class="menu-item">입학상담</li>
+                    <li class="menu-item">질문 및 답변</li>
+                    <li class="menu-item">식단안내</li>
+                    <li class="menu-item">자료실</li>
+                </ul>
+            </div>
+        </nav>
 
-		<main class="main-content">
-			<div class="main-title">
-				<h3>수강 현황</h3>
-				<p>
-					학사운영 &nbsp; > &nbsp; <span>수강 현황</span>
-				</p>
-			</div>
+        <main class="main-content">
+            <div class="main-title">
+                <h3>수강 현황</h3>
+                <p>학사운영 &nbsp; > &nbsp; <span>수강 현황</span></p>
+            </div>
+            
+            <form action="/greenUniv/AMS/AMS_course_search.do" method="get" class="search-form">
+                <select id="search-select" name="searchType">
+                    <option>검색조건</option>
+                    <option value="all">전체</option>
+                    <option value="lname">과목명</option>
+                    <option value="prof">교수명</option>
+                </select>
+                <input type="text" name="keyword" id="search-title">
+                <input type="submit" class="search-btn" value="검색" style="cursor:pointer">
+            </form>
 
-			<form action="/greenUniv/AMS/AMS_course_search.do" method="get"
-				class="search-form">
-				<select id="search-select" name="searchType">
-					<option>검색조건</option>
-					<option value="all">전체</option>
-					<option value="lname">과목명</option>
-					<option value="prof">교수명</option>
-				</select> <input type="text" id="search-title"> <input type="button"
-					class="search-btn" value="검색" style="cursor: pointer">
-			</form>
+            <table>
+                <thead>
+                    <tr>
+                        <th><span>년도</span></th>
+                        <th><span>학기</span></th>
+                        <th><span>학번</span></th>
+                        <th><span>이름</span></th>
+                        <th><span>학년</span></th>
+                        <th><span>학과</span></th>
+                        <th><span>과목코드</span></th>
+                        <th><span>과목명</span></th>
+                        <th><span>구분</span></th>
+                        <th><span>교수</span></th>
+                        <th><span>학점</span></th>
+                        <th><span>수강 신청일</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<c:forEach var="course" items="${dtoList}" varStatus="status">
+                		<tr>
+                			<td>
+							    <span><fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyy"/></span>
+							</td>
+	                        <td><span>${course.semester}</span></td>
+	                        <td><span>${course.snum}</span></td> <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.sname}</span></td>      <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.year}</span></td>
+	                        <td><span>${course.edept}</span></td>
+	                        <td><span>${course.deptcode}</span></td>
+	                        <td><span>${course.lname}</span></td>
+	                        <td><span>${course.compdiv}</span></td>
+	                        <td><span>${course.prof}</span></td>
+	                        <td><span>${course.grade}</span></td>
+	                        <td><span>${course.application}</span></td> <!-- 수강신청 데이터 필요 -->
+                    	</tr>               
+                	</c:forEach>                  
+                </tbody>
+            </table>
 
-			<table style="height: auto !important;">
-				<thead>
-					<tr>
-						<th><span>년도</span></th>
-						<th><span>학기</span></th>
-						<th><span>학번</span></th>
-						<th><span>이름</span></th>
-						<th><span>학년</span></th>
-						<th><span>학과</span></th>
-						<th><span>과목코드</span></th>
-						<th><span>과목명</span></th>
-						<th><span>구분</span></th>
-						<th><span>교수</span></th>
-						<th><span>학점</span></th>
-						<th><span>수강 신청일</span></th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="course" items="${dtoList}" varStatus="status">
-						<tr style="height: 52px;">
-							<td><span><fmt:formatDate
-										value="<%=new java.util.Date()%>" pattern="yyyy" /></span></td>
-							<td><span>${course.semester}</span></td>
-							<td><span>202001230</span></td>
-							<!-- 학생 데이터 필요 -->
-							<td><span>홍길동</span></td>
-							<!-- 학생 데이터 필요 -->
-							<td><span>${course.year}</span></td>
-							<td><span>${course.openMaj}</span></td>
-							<td><span>${course.deptCode}</span></td>
-							<td><span>${course.lname}</span></td>
-							<td><span>${course.compDiv}</span></td>
-							<td><span>${course.prof}</span></td>
-							<td><span>${course.grade}</span></td>
-							<td><span>2025-01-01</span></td>
-							<!-- 수강신청 데이터 필요 -->
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-
-			<ul class="pagenation">
-				<li><a
-					href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.pageGroupStart}"><span
-						class="first"></span></a></li>
-				<c:choose>
-					<c:when test="${pagenationDTO.currentPage == 1}">
-						<li><a href="#" style="pointer-events: none;"><span
-								class="prev"></span></a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a
-							href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.currentPage-1}"><span
-								class="prev"></span></a></li>
-					</c:otherwise>
-				</c:choose>
-
-				<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
-					end="${pagenationDTO.pageGroupEnd}">
-					<li><a
-						href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${num}"
-						class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
-				</c:forEach>
-
-				<c:choose>
-					<c:when
-						test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
-						<li><a href="#" style="pointer-events: none;"><span
-								class="next"></span></a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a
-							href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.currentPage+1}"><span
-								class="next"></span></a></li>
-					</c:otherwise>
-				</c:choose>
-				<li><a
-					href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.pageGroupEnd}"><span
-						class="last"></span></a></li>
-			</ul>
-		</main>
-	</div>
-
-	<!--3. 푸터영역-->
+            <ul class="pagenation">
+                <li><a href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
+                <c:choose>
+                	<c:when test="${pagenationDTO.currentPage == 1}">
+                		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
+                	</c:when>
+                	<c:otherwise>
+                		<li><a href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
+                	</c:otherwise>
+                </c:choose>
+               	
+               	<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+               		<li><a href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+               	</c:forEach>
+               	
+               	<c:choose>
+               		<c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+               			<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
+               		</c:when>
+               		<c:otherwise>
+               			<li><a href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
+               		</c:otherwise>
+               	</c:choose>             
+                <li><a href="${pageContext.request.contextPath}/AMS/AMS_course.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
+            </ul>
+        </main>
+    </div>
+    
+    <!--3. 푸터영역-->
 	<footer class="footer" style="margin-top: 50px;">
 		<!--상단-->
 		<div class="footer-high">
@@ -870,5 +842,6 @@ tbody td span {
 			</div>
 		</div>
 	</footer>
+
 </body>
 </html>

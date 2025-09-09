@@ -614,7 +614,7 @@
                     <option value="prof">교수명</option>
                 </select>
                 <input type="text" name="keyword" id="search-title">
-                <input type="button" class="search-btn" value="검색" style="cursor:pointer">
+                <input type="submit" class="search-btn" value="검색" style="cursor:pointer">
             </form>
 
             <table style="height: auto !important;">
@@ -641,16 +641,16 @@
 							    <span><fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyy"/></span>
 							</td>
 	                        <td><span>${course.semester}</span></td>
-	                        <td><span>202001230</span></td> <!-- 학생 데이터 필요 -->
-	                        <td><span>홍길동</span></td>      <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.snum}</span></td> <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.sname}</span></td>      <!-- 학생 데이터 필요 -->
 	                        <td><span>${course.year}</span></td>
-	                        <td><span>${course.openMaj}</span></td>
-	                        <td><span>${course.deptCode}</span></td>
+	                        <td><span>${course.edept}</span></td>
+	                        <td><span>${course.deptcode}</span></td>
 	                        <td><span>${course.lname}</span></td>
-	                        <td><span>${course.compDiv}</span></td>
+	                        <td><span>${course.compdiv}</span></td>
 	                        <td><span>${course.prof}</span></td>
 	                        <td><span>${course.grade}</span></td>
-	                        <td><span>2025-01-01</span></td> <!-- 수강신청 데이터 필요 -->
+	                        <td><span>${course.application}</span></td> <!-- 수강신청 데이터 필요 -->
                     	</tr>               
                 	</c:forEach>                  
                 </tbody>
