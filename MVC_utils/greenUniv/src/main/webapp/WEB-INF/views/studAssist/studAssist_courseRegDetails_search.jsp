@@ -244,7 +244,7 @@ a {
 							<td>${ regDetail.prof }</td>
 							<td>${ regDetail.grade }</td>
 							<td>${ regDetail.compDiv }</td>
-							<td>${ regDetail.timeD }${ regDetail.lTimes }</td>
+							<td>${ regDetail.timeD } ${ regDetail.lTimes }</td>
 							<td>${ regDetail.room }</td>
 							<td><input type="button" value="취소"
 							onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"

@@ -204,7 +204,7 @@ a {
 					</form>
 					<span
 						style="margin-top: 15px; margin-left: 370px; font-weight: 700; font-size: 14pt;">신청과목수
-						${ subNum }과목, 총 신청학점 18학점</span>
+						${ subNum }과목, 총 신청학점 ${ gradeSum }학점</span>
 				</div>
 				<table
 					style="border-collapse: collapse; border: 1px solid; width: 100%; text-align: center; border: none;">
@@ -228,7 +228,7 @@ a {
 							<td>${ regDetail.prof }</td>
 							<td>${ regDetail.grade }</td>
 							<td>${ regDetail.compDiv }</td>
-							<td>${ regDetail.timeD }${ regDetail.lTimes }</td>
+							<td>${ regDetail.timeD } ${ regDetail.lTimes }</td>
 							<td>${ regDetail.room }</td>
 							<td><input type="button" value="취소"
 								onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"

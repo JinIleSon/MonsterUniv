@@ -118,6 +118,21 @@ public class SA_detailsDAO extends DBHelper {
 				dto.setTimeD(rs.getString("timed"));
 				dto.setRoom(rs.getString("room"));
 				
+				// 시간 계산
+				int startTime = Integer.parseInt(dto.getTimeS().substring(11, 13));
+		        int endtTime = Integer.parseInt(dto.getTimeE().substring(11, 13));
+		        int timeDiff = endtTime - startTime;
+		        
+		        StringBuilder times = new StringBuilder();
+				for (int i = 0; i < timeDiff; i++) {
+					if (i < timeDiff - 1) {
+						times.append(i+1+",");
+					} else {
+						times.append(i+1);
+					}
+				}
+				dto.setlTimes(times.toString());
+				
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -150,6 +165,31 @@ public class SA_detailsDAO extends DBHelper {
 		return count;
 	}
 	
+	public int gradeSumWithKeywords(int snum, String year, String semester) {
+		int gradeSum = 0;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.GRADESUM_WITH_YEAR_AND_SEM);
+			psmt.setInt(1, snum);
+			psmt.setString(2, year);
+			psmt.setString(3, semester);
+			
+			logger.debug("SA_details gradeSumWithKeywords");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":") + 2));
+			
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				gradeSum = rs.getInt(1);
+				logger.debug("gradeSum : "+gradeSum);
+			}
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
+		return gradeSum;
+	}
 	
 	public void delete(int snum, String deptCode) {
 		try {

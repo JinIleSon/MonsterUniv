@@ -36,6 +36,10 @@ public enum SA_detailsService {
 		return dao.countWithKeywords(snum, year, semester);
 	}
 	
+	public int gradeSumWithYearSemester(int snum, String year, String semester) {
+		return dao.gradeSumWithKeywords(snum, year, semester);
+	}
+	
 	public void cancel(int snum, String deptCode) {
 		dao.delete(snum, deptCode);
 	}

@@ -51,6 +51,10 @@ public class Sql_studAssist {
 	public static final String SELECT_DETAILS_COUNT_WITH_SNUM = "SELECT COUNT(*) FROM sa_details WHERE SNUM = ?";
 	public static final String SELECT_DETAILS_COUNT_WITH_YEAR_AND_SEM = "SELECT COUNT(*) FROM sa_details WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
 	
+	public static final String GRADESUM_WITH_YEAR_AND_SEM = "SELECT SUM(GRADE) FROM sa_details "
+															+ "WHERE SNUM = ? AND YEAR(TIMES) = ? AND SEMESTER = ? "
+															+ "GROUP BY SNUM, YEAR(TIMES), SEMESTER";
+	
 	public static final String DELETE_LECTURE = "DELETE FROM sa_details WHERE deptcode = ? AND snum = ?";
 	public static final String MINUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM-1 WHERE DEPTCODE = ";
 	
@@ -77,4 +81,6 @@ public class Sql_studAssist {
 															+ "WHERE ccode = ? "
 															+ "and year = 1 "
 															+ "and compDiv = '선택'";
+	
+	public static final String SELECT_GRADE_WITH_SNUM = "SELECT * FROM sa_grade WHERE SNUM = ?";
 }

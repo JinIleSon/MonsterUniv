@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.SA_gradeDTO;
 import util.DBHelper;
+import util.Sql_studAssist;
 
 public class SA_gradeDAO extends DBHelper {
 
@@ -27,6 +29,14 @@ public class SA_gradeDAO extends DBHelper {
 	}
 	
 	public List<SA_gradeDTO> selectAll() {
+		List<SA_gradeDTO> dtoList = new ArrayList<SA_gradeDTO>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist)
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
 		return null;
 	}
 	
