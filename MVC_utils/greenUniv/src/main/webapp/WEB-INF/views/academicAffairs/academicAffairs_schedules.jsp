@@ -30,6 +30,20 @@
                     // other view-specific options here
                     fixedWeekCount: false
                     }
+                },
+                
+                events: function(info, successCallback, failureCallback) {
+                    // 서버에서 이벤트 데이터를 받아옵니다.
+                    fetch('/greenUniv/AA_schedules/getEvents.do')  // 이벤트를 가져오는 서버 API
+                        .then(response => response.json())
+                        .then(data => {
+                        	console.log(data);
+                        	successCallback(data);
+                        })
+                        .catch(error => {
+                        	console.error("error 발생 : " + error);
+                        	failureCallback(error);
+                        });
                 }
 
             });
