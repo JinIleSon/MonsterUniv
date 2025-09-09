@@ -24,17 +24,17 @@ public class ListController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-    	
+
     	// terms.jsp에서 넘어온 동의 체크
         String agreeAll = req.getParameter("agreeAll");
-        
+
         if (agreeAll == null) {
             req.setAttribute("error", "약관 및 개인정보 수집·이용에 동의해야 다음 단계로 진행할 수 있습니다.");
             // 약관 페이지로 되돌리기
             req.getRequestDispatcher("/WEB-INF/views/login/terms.jsp").forward(req, resp);
             return;
         }
-        
+
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/login/join.jsp");
         rd.forward(req, resp);
     }
@@ -142,10 +142,16 @@ public class ListController extends HttpServlet{
 
     private static String buildAddress(String zip, String addr1, String addr2) {
         StringBuilder sb = new StringBuilder();
-        if (!trim(zip).isEmpty())  sb.append("(").append(trim(zip)).append(") ");
-        if (!trim(addr1).isEmpty()) sb.append(trim(addr1));
+        if (!trim(zip).isEmpty()) {
+			sb.append("(").append(trim(zip)).append(") ");
+		}
+        if (!trim(addr1).isEmpty()) {
+			sb.append(trim(addr1));
+		}
         if (!trim(addr2).isEmpty()) {
-            if (sb.length() > 0) sb.append(", ");
+            if (sb.length() > 0) {
+				sb.append(", ");
+			}
             sb.append(trim(addr2));
         }
         return sb.toString();
@@ -155,13 +161,27 @@ public class ListController extends HttpServlet{
                                    String identification, String name,
                                    String phone, String email,
                                    String zip, String addr1, String addr2) {
-        if (identification != null) req.setAttribute("identification_val", identification);
-        if (name != null)           req.setAttribute("name_val", name);
-        if (phone != null)          req.setAttribute("phone_val", phone);
-        if (email != null)          req.setAttribute("email_val", email);
-        if (zip != null)            req.setAttribute("zip_val", zip);
-        if (addr1 != null)          req.setAttribute("addr1_val", addr1);
-        if (addr2 != null)          req.setAttribute("addr2_val", addr2);
+        if (identification != null) {
+			req.setAttribute("identification_val", identification);
+		}
+        if (name != null) {
+			req.setAttribute("name_val", name);
+		}
+        if (phone != null) {
+			req.setAttribute("phone_val", phone);
+		}
+        if (email != null) {
+			req.setAttribute("email_val", email);
+		}
+        if (zip != null) {
+			req.setAttribute("zip_val", zip);
+		}
+        if (addr1 != null) {
+			req.setAttribute("addr1_val", addr1);
+		}
+        if (addr2 != null) {
+			req.setAttribute("addr2_val", addr2);
+		}
     }
 
     private static String urlEnc(String s) {
@@ -170,14 +190,27 @@ public class ListController extends HttpServlet{
     }
 
     private static String validate(String id, String pw, String pwc, String name, String phone, String email) {
-        if (id.isEmpty() || pw.isEmpty() || pwc.isEmpty() || name.isEmpty() || phone.isEmpty() || email.isEmpty())
-            return "필수 항목을 모두 입력해 주세요.";
-        if (!pw.equals(pwc)) return "비밀번호와 비밀번호 확인이 일치하지 않습니다.";
-        if (!id.matches("^[A-Za-z0-9]{4,10}$")) return "아이디는 영문/숫자 4~10자여야 합니다.";
-        if (pw.length() < 8 || pw.length() > 16) return "비밀번호는 8~16자여야 합니다.";
-        if (!pw.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,16}$")) return "비밀번호는 영문/숫자/특수문자를 포함해야 합니다.";
-        if (!phone.matches("^01[0-9]-\\d{3,4}-\\d{4}$")) return "휴대폰 형식이 올바르지 않습니다. 예) 010-1234-5678";
-        if (!email.contains("@") || !email.contains(".")) return "이메일 형식이 올바르지 않습니다.";
+        if (id.isEmpty() || pw.isEmpty() || pwc.isEmpty() || name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
+			return "필수 항목을 모두 입력해 주세요.";
+		}
+        if (!pw.equals(pwc)) {
+			return "비밀번호와 비밀번호 확인이 일치하지 않습니다.";
+		}
+        if (!id.matches("^[A-Za-z0-9]{4,10}$")) {
+			return "아이디는 영문/숫자 4~10자여야 합니다.";
+		}
+        if (pw.length() < 8 || pw.length() > 16) {
+			return "비밀번호는 8~16자여야 합니다.";
+		}
+        if (!pw.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,16}$")) {
+			return "비밀번호는 영문/숫자/특수문자를 포함해야 합니다.";
+		}
+        if (!phone.matches("^01[0-9]-\\d{3,4}-\\d{4}$")) {
+			return "휴대폰 형식이 올바르지 않습니다. 예) 010-1234-5678";
+		}
+        if (!email.contains("@") || !email.contains(".")) {
+			return "이메일 형식이 올바르지 않습니다.";
+		}
         return null;
     }
 }

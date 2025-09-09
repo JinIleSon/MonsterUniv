@@ -21,7 +21,7 @@ public class AMS_lectureDTO {
 	private String room;
 	private int maxNum;
 	private int nowNum;
-	
+
 	public String getDeptCode() {
 		return deptCode;
 	}
@@ -29,7 +29,7 @@ public class AMS_lectureDTO {
 	public void setDeptCode(String deptCode) {
 		this.deptCode = deptCode;
 	}
-	
+
 	public String getYear() {
 		return year;
 	}
@@ -45,7 +45,7 @@ public class AMS_lectureDTO {
 	public void setSemester(String semester) {
 		this.semester = semester;
 	}
-	
+
 	public String getCompDiv() {
 		return compDiv;
 	}
@@ -61,7 +61,7 @@ public class AMS_lectureDTO {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-	
+
 	public String getLexpl() {
 		return lexpl;
 	}
@@ -77,7 +77,7 @@ public class AMS_lectureDTO {
 	public void setOpenCol(String openCol) {
 		this.openCol = openCol;
 	}
-	
+
 	public String getOpenMaj() {
 		return openMaj;
 	}
@@ -93,13 +93,13 @@ public class AMS_lectureDTO {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	
+
 	public void setGrade(String grade) {
 		if(grade != null) {
 			this.grade = Integer.parseInt(grade);
-		}	
+		}
 	}
-	
+
 	public String getProf() {
 		return prof;
 	}
@@ -107,7 +107,7 @@ public class AMS_lectureDTO {
 	public void setProf(String prof) {
 		this.prof = prof;
 	}
-	
+
 	public String getYclasS() {
 		return yclasS;
 	}
@@ -115,7 +115,7 @@ public class AMS_lectureDTO {
 	public void setYclasS(String yclasS) {
 		this.yclasS = yclasS;
 	}
-	
+
 	public String getYclasE() {
 		return yclasE;
 	}
@@ -131,7 +131,7 @@ public class AMS_lectureDTO {
 	public void setTimeS(String timeS) {
 		this.timeS = timeS;
 	}
-	
+
 	public String getTimeE() {
 		return timeE;
 	}
@@ -147,7 +147,7 @@ public class AMS_lectureDTO {
 	public void setTimeD(String timeD) {
 		this.timeD = timeD;
 	}
-	
+
 	public String getEvaWay() {
 		return evaWay;
 	}
@@ -163,7 +163,7 @@ public class AMS_lectureDTO {
 	public void setBook(String book) {
 		this.book = book;
 	}
-	
+
 	public String getRoom() {
 		return room;
 	}
@@ -171,7 +171,7 @@ public class AMS_lectureDTO {
 	public void setRoom(String room) {
 		this.room = room;
 	}
-	
+
 	public int getMaxNum() {
 		return maxNum;
 	}
@@ -179,7 +179,7 @@ public class AMS_lectureDTO {
 	public void setMaxNum(int maxNum) {
 		this.maxNum = maxNum;
 	}
-	
+
 	public void setMaxNum(String maxNum) {
 		if(maxNum != null) {
 			this.maxNum = Integer.parseInt(maxNum);
@@ -193,7 +193,7 @@ public class AMS_lectureDTO {
 	public void setNowNum(int nowNum) {
 		this.nowNum = nowNum;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "LectureDTO [deptCode=" + deptCode + ", year=" + year + ", semester=" + semester + ", compDiv=" + compDiv

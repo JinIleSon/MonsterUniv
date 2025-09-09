@@ -20,26 +20,26 @@ import service.AMS_EducationService;
 public class AMS_educationListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	private AMS_EducationService lectureService = AMS_EducationService.INSTANCE;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 요청 페이지 번호 수신
 		String pg = req.getParameter("pg");
-		
+
 		// 페이지네이션 처리 요청
 		PagenationDTO pagenationDTO = lectureService.getPagenationInfo(pg, null, null);
-		
+
 		int start = pagenationDTO.getStart();
 		logger.debug("start : "+start);
 		List<AMS_lectureDTO> dtoList = lectureService.findAll(start);
-		
+
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_educationOperation.jsp");
 		dispatcher.forward(req, resp);
 	}

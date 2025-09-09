@@ -17,19 +17,19 @@ public class Coll_graduateSchoolDAO extends DBHelper{
 		return INSTANCE;
 	}
 	private Coll_graduateSchoolDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	// 기본 리스트 뿌려주기
 	public List<Coll_graduateSchoolDTO> selectAll(){
-		List<Coll_graduateSchoolDTO> dtoList = new ArrayList<Coll_graduateSchoolDTO>();
-		
+		List<Coll_graduateSchoolDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql_coll_graduateSchool.SELECT_ARTICLE_ALL);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				Coll_graduateSchoolDTO dto = new Coll_graduateSchoolDTO();
 				dto.setUnitCol(rs.getString("unitcol"));
@@ -37,7 +37,7 @@ public class Coll_graduateSchoolDAO extends DBHelper{
 				dto.setDean(rs.getString("dean"));
 				dto.setDeptTel(rs.getString("depttel"));
 				dto.setColcont(rs.getString("colcont"));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -46,5 +46,5 @@ public class Coll_graduateSchoolDAO extends DBHelper{
 		}
 		return dtoList;
 	}
-	
+
 }

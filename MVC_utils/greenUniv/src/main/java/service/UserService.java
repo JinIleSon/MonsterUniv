@@ -6,7 +6,7 @@ import util.ResultCode;
 
 public class UserService {
 	private final UserDAO userDAO = new UserDAO();
-    
+
     // UserService.java
    public UserDTO getUser(String identification) {
        return userDAO.findById1(identification);
@@ -17,7 +17,9 @@ public class UserService {
     */
    public UserDTO login(String identification, String plainPassword, String role) {
        UserDTO found = userDAO.findById1(identification);
-       if (found == null) return null;
+       if (found == null) {
+		return null;
+	   }
 
        // (A) 평문 비교 (현재 DB가 평문일 때)
        boolean pwOk = plainPassword.equals(found.getPassword());
@@ -25,7 +27,9 @@ public class UserService {
        // (B) 해시 비교(향후)
        // boolean pwOk = BCrypt.checkpw(plainPassword, found.getPassword());
 
-       if (!pwOk) return null;
+       if (!pwOk) {
+		return null;
+	   }
 
        // 역할 체크가 필요 없다면 주석 처리 가능
        if (role != null && !role.isEmpty()) {
@@ -36,8 +40,8 @@ public class UserService {
        }
        return found;
    }
-   
-   
+
+
    public ResultCode loginCheck(String identification, String plainPassword, String role) {
        if (identification == null || identification.isEmpty() 
     	   ||plainPassword == null || plainPassword.isEmpty()
@@ -46,10 +50,14 @@ public class UserService {
        }
 
        UserDTO found = userDAO.findById1(identification);
-       if (found == null) return ResultCode.LOGIN_FAILED;
+       if (found == null) {
+		return ResultCode.LOGIN_FAILED;
+	   }
 
        boolean pwOk = plainPassword.equals(found.getPassword());
-       if (!pwOk) return ResultCode.LOGIN_FAILED;
+       if (!pwOk) {
+		return ResultCode.LOGIN_FAILED;
+	   }
 
        //if (role != null && !role.isEmpty() &&
     		   if(found.getRole() == null || !found.getRole().equalsIgnoreCase(role)) {

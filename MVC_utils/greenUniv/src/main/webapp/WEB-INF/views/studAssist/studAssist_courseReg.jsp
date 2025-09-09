@@ -223,12 +223,10 @@ main {
 							<td>${ lecture.prof }</td>
 							<td>${ lecture.nowNum }/${ lecture.maxNum }</td>
 							<td></td>
-							<form action="" method="get">
-								<td><input type="button" value="신청"
-									onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
-									style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
-								</td>
-							</form>
+							<td><input type="button" value="신청"
+								onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
+								style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
+							</td>
 						</tr>
 					</c:forEach>
 				</table>

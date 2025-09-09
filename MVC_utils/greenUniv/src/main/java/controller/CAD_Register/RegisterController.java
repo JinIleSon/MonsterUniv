@@ -18,49 +18,49 @@ public class RegisterController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	private CAD_registerSrevice service = CAD_registerSrevice.INSTANCE;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		List<String> deptList = service.getDeptName();
 		req.setAttribute("deptList", deptList);
-		
+
 		RequestDispatcher dispatcher=  req.getRequestDispatcher("/WEB-INF/views/collegeAndDepartment/collegeAndDepartment_register.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		String formType = req.getParameter("formType");
-		
+
 		if(formType.equals("college")) {
-			
+
 			String colname = req.getParameter("colname");
 			String coleng = req.getParameter("coleng");
-			String coltit = req.getParameter("coltit"); 
+			String coltit = req.getParameter("coltit");
 			String colcont = req.getParameter("colcont");
 			//String colimgo = req.getParameter("colimgo");
 			//String colimgs = req.getParameter("colimgs");
-			
+
 			CAD_collegeDTO dto = new CAD_collegeDTO();
-			
+
 			dto.setColname(colname);
 			dto.setColeng(coleng);
 			dto.setColtit(coltit);
 			dto.setColcont(colcont);
-			
+
 			service.collRegister(dto);
-			
+
 		}else if(formType.equals("dept")) {
-			String unitcol = req.getParameter("unitcol"); 
+			String unitcol = req.getParameter("unitcol");
 			String deptname = req.getParameter("deptname");
-			String engname = req.getParameter("engname"); 
-			String estyear = req.getParameter("estyear"); 
-			String dean = req.getParameter("dean");    
-			String depttel = req.getParameter("depttel"); 
-			String deptoff = req.getParameter("deptoff"); 
-			
+			String engname = req.getParameter("engname");
+			String estyear = req.getParameter("estyear");
+			String dean = req.getParameter("dean");
+			String depttel = req.getParameter("depttel");
+			String deptoff = req.getParameter("deptoff");
+
 			CAD_deptDTO dto = new CAD_deptDTO();
 			dto.setUnitcol(unitcol);
 			dto.setDeptname(deptname);
@@ -69,12 +69,12 @@ public class RegisterController extends HttpServlet{
 			dto.setDean(dean);
 			dto.setDepttel(depttel);
 			dto.setDeptoff(deptoff);
-			
+
 			service.deptRegister(dto);
 		}
-			
-		
-		
+
+
+
 		resp.sendRedirect("/greenUniv/collegeAndDepartment/register.do");
 	}
 

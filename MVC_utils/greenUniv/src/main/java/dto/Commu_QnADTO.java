@@ -14,8 +14,9 @@ public class Commu_QnADTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getTitle() {
 		return title;
@@ -46,6 +47,6 @@ public class Commu_QnADTO {
 		return "Commu_QnADTO [id=" + id + ", title=" + title + ", nick=" + nick + ", date=" + date + ", condition="
 				+ condition + "]";
 	}
-	
-	
+
+
 }

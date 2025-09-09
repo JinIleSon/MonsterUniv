@@ -3,7 +3,6 @@ package controller.login;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-import dto.UserDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,6 +21,9 @@ public class ListController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<<<<<<< HEAD
+
+=======
 		
 		HttpSession session = req.getSession(false);
         if (session != null) {
@@ -32,18 +34,24 @@ public class ListController extends HttpServlet{
             }
         }
         
+>>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding(StandardCharsets.UTF_8.name());
 
         String id    = trim(req.getParameter("identification"));
         String pw    = nvl(req.getParameter("password"));
+<<<<<<< HEAD
+        String role  = nvl(req.getParameter("role"));  // STUDENT/STAFF/GUEST
+
+=======
         String role  = nvl(req.getParameter("userType"));  // STUDENT/STAFF/GUEST
         
+>>>>>>> 6561f2c7f8ec4f6dfbee052a4bbabca5bf0e32a6
         ResultCode result = userService.loginCheck(id, pw, role);
 
         switch (result) {
@@ -71,7 +79,7 @@ public class ListController extends HttpServlet{
             return;
             }
     }
-	
+
 	private static String trim(String s) {
 	    return (s == null) ? "" : s.trim();
 	}

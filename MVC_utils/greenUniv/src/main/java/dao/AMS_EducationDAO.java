@@ -61,7 +61,7 @@ public class AMS_EducationDAO extends DBHelper {
 		case "deptCode":
 			sql.append(Sql.WITH_DEPTCODE);
 			break;
-			
+
 		case "lname":
 			sql.append(Sql.WITH_LNAME);
 			break;
@@ -107,7 +107,7 @@ public class AMS_EducationDAO extends DBHelper {
 	}
 
 	public List<AMS_lectureDTO> selectWithSearch(int start, String searchType, String keyword) {
-		List<AMS_lectureDTO> dtoList = new ArrayList<AMS_lectureDTO>();
+		List<AMS_lectureDTO> dtoList = new ArrayList<>();
 
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ALL_LECTURES);
 		switch (searchType) {
@@ -118,7 +118,7 @@ public class AMS_EducationDAO extends DBHelper {
 		case "deptCode":
 			sql.append(Sql.WITH_DEPTCODE);
 			break;
-			
+
 		case "lname":
 			sql.append(Sql.WITH_LNAME);
 			break;
@@ -191,8 +191,8 @@ public class AMS_EducationDAO extends DBHelper {
 	}
 
 	public List<AMS_lectureDTO> selectAll(int start) {
-		List<AMS_lectureDTO> dtoList = new ArrayList<AMS_lectureDTO>();
-		
+		List<AMS_lectureDTO> dtoList = new ArrayList<>();
+
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ALL_LECTURES);
 		sql.append(Sql.SEARCH_ORDER_DEPTCODE);
 		sql.append(Sql.SEARCH_OFFET_ROW);
@@ -202,7 +202,7 @@ public class AMS_EducationDAO extends DBHelper {
 			logger.debug(sql.toString());
 			psmt = conn.prepareStatement(sql.toString());
 			psmt.setInt(1, start);
-			
+
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {

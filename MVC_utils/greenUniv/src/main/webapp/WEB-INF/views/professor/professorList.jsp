@@ -624,8 +624,9 @@
             </div>
             
             <form class="search-form">
-                <select id="search-select">
-                    <option>검색조건</option>
+                <!-- <select id="search-select"> -->
+                <select name="searchType">
+                    <option value="default">검색조건</option>
                 </select>
                 <input type="text" id="search-title" placeholder="키워드 입력">
                 <input type="button" class="search-btn" value="검색">
@@ -655,105 +656,6 @@
                         <td><span>컴퓨터공학과</span></td>
                         <td><span>정교수</span></td>
                         <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-yellow">휴직</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-red">퇴직</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-red">퇴직</span></td>
                         <td><span >2025-01-01</span></td>
                     </tr>
                 </tbody>
