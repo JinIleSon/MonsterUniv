@@ -60,6 +60,7 @@
 	<h2>학사관리시스템</h2>
 	<h1>공사중</h1><br>
 	<a href="/greenUniv/professor/register.do">교수등록</a><hr>
+	<a href="/greenUniv/professor/list.do">교수목록</a><hr>
 	<a href="/greenUniv/collegeAndDepartment/register.do">대학및학과등록</a><hr>
 	<a href="/greenUniv/collegeAndDepartment/list.do">학과목록</a><hr>
 </body>
