@@ -28,13 +28,15 @@ public class SA_gradeDAO extends DBHelper {
 		return null;
 	}
 
-	public List<SA_gradeDTO> selectAll(int snum) {
+	public List<SA_gradeDTO> selectAll(int snum, String year, String semester) {
 		List<SA_gradeDTO> dtoList = new ArrayList<>();
 
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_studAssist.SELECT_GRADE_WITH_SNUM);
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_GRADE_WITH_SNUM_AND_YEAR_AND_SEM);
 			psmt.setInt(1, snum);
+			psmt.setString(2, year);
+			psmt.setString(3, semester);
 
 			logger.debug("SA_gradeDAO - selectAll");
 			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));

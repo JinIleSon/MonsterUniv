@@ -24,8 +24,8 @@ public enum SA_gradeService {
 		return dao.select(snum);
 	}
 
-	public List<SA_gradeDTO> selectAll(int snum) {
-		return dao.selectAll(snum);
+	public List<SA_gradeDTO> findAllWithSnumYearSeme(int snum, String year, String semester) {
+		return dao.selectAll(snum, year, semester);
 	}
 
 	public void modify(SA_gradeDTO dto) {
