@@ -82,7 +82,7 @@ public class AMS_LectureDAO extends DBHelper {
 			psmt.setInt(1, start);
 
 			rs = psmt.executeQuery();
-
+			
 			while(rs.next()) {
 				AMS_lectureDTO dto = new AMS_lectureDTO();
 				dto.setDeptCode(rs.getString(1));
@@ -159,7 +159,7 @@ public class AMS_LectureDAO extends DBHelper {
 		}
 		
 		sql.append(Sql_lecture.SEARCH_ORDER_DEPTCODE); 
-		sql.append(Sql_lecture.SEARCH_OFFEST_ROW); 
+		sql.append(Sql_lecture.SEARCH_OFFSET_ROW); 
 		
 		try {
 			conn = getConnection();
