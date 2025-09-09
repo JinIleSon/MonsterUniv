@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>몬스터대학교 - 대학 및 학과 등록</title>
+    <title>학사관리시스템 - 대학 및 학과 등록</title>
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
@@ -162,6 +162,14 @@
         .menu4 { width: 269px; height: 102px; } 
         .menu5 { width: 269px; height: 252px; }
         
+        .sidebar a {
+        	text-decoration: none;
+        }
+        
+        .sidebar a:visited { 
+        	color:black; 
+        }
+        
         /* ================================
         Main Content
         ================================ */
@@ -250,7 +258,7 @@
             background-color: #357abd;
         }
         .center-cell {
-            text-align: center;
+            text-align: right;
             padding: 15px !important;
         }
         
@@ -408,8 +416,8 @@
             <div class="menu menu4">
                 <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item">대학 및 학과 목록</li>
-                    <li class="menu-item">대학 및 학과 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">

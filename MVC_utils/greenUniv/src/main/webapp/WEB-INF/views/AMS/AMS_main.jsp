@@ -423,7 +423,7 @@ aside ol {
 					</div>
 					<div class="sub-title">
 						<h4>교육 운영 현황</h4>
-						<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
+						<a href="/greenUniv/AMS/AMS_educationOperation/list.do"><img src="../images/bg-viewmore01.png" alt=""></a>
 					</div>
 					<div>
 						<table style="height: 307px;">
@@ -508,7 +508,7 @@ aside ol {
 						<div style="width: 534.09px;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>학과별 학생 현황</h4>
-								<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/collegeAndDepartment/list.do"><img src="../images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 300px;">
@@ -550,7 +550,7 @@ aside ol {
 						<div style="width: 534.09px; margin-right: auto;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>학사안내 공지사항</h4>
-								<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/academicAffairs/academicAffairs_notice.do"><img src="../images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 307px; font-weight: 350;">
@@ -575,7 +575,7 @@ aside ol {
 						<div style="width: 534.09px;">
 							<div class="sub-title" style="width: 100%; margin-left: 0;">
 								<h4>입학상담</h4>
-								<a href="#"><img src="../images/bg-viewmore01.png" alt=""></a>
+								<a href="/greenUniv/admissionGuide/admissionGuide_counsel.do"><img src="../images/bg-viewmore01.png" alt=""></a>
 							</div>
 							<div>
 								<table style="height: 307px; font-weight: 350;">
