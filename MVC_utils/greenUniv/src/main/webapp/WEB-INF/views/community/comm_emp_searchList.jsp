@@ -285,8 +285,8 @@
                     <form action="/greenUniv/community/comm_emp_search.do" style="display: flex;">
                         <select name="searchType" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
                             <option value="all">전체</option>
-                            <option value="title">제목</option>
-                            <option value="nick">작성자</option>
+                            <option value="title">채용정보</option>
+                            <option value="nick">업체</option>
                         </select>
                         <input type="text" name="keyword" placeholder="검색어를 입력해 주세요" style="border: 1px solid #e9e9e9; width:242px; height:32px; flex:1;padding-left:8px;"/>
                         <input type="submit" value="검색" style=" border: 1px solid #e9e9e9; background-color: #5198f9; width:60px; height:35px; color:white; font-weight: 200;">

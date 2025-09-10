@@ -272,9 +272,7 @@
                 <div class="meal-section">
                     <!-- 날짜 네비게이션 -->
                     <div class="date-navigation">
-                        <span class="nav-arrow"><img src="/greenUniv/images/btn-calendar-prev.gif" alt=""></span>
                         <span>2025.03.10 ~ 2025.03.14</span>
-                        <span class="nav-arrow"><img src="/greenUniv/images/btn-calendar-next.gif" alt=""></span>
                     </div>
 
                     <!-- 식단표 -->
