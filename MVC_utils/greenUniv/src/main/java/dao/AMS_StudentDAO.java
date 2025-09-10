@@ -57,7 +57,7 @@ public class AMS_StudentDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql_lecture.SELECT_LECTURE_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_lecture.SELECT_STUDENT_COUNT_TOTAL);
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -75,9 +75,105 @@ public class AMS_StudentDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_lecture.SELECT_LECTURE_ALL);
+			psmt = conn.prepareStatement(Sql_lecture.SELECT_STUDENT_ALL);
 			psmt.setInt(1, start);
 			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				AMS_studentDTO dto = new AMS_studentDTO();
+				dto.setSnum(rs.getInt(1));
+				dto.setSname(rs.getString(2));
+				dto.setSregno(rs.getString(3));
+				dto.setStel(rs.getString(4));
+				dto.setSemail(rs.getString(5));
+				dto.setEdept(rs.getString(6));
+				dto.setEgrade(rs.getString(7));
+				dto.setEterm(rs.getString(8));
+				dto.setCondition(rs.getString(9));
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+	
+	public int selectCountSearch(String searchType, String keyword) {
+		int total = 0;
+		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COUNTSTUDENT_SEARCH);
+		
+		if(searchType.equals("snum")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
+		} else if(searchType.equals("sname")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_SNAME);
+		}
+		
+		try {
+			if(keyword != null && !keyword.trim().isEmpty()) {
+				conn = getConnection();
+				psmt = conn.prepareStatement(sql.toString());
+				psmt.setString(1, "%" + keyword + "%");
+				rs = psmt.executeQuery();
+			} else {
+				conn = getConnection();
+				psmt = conn.prepareStatement(sql.toString());
+				rs = psmt.executeQuery();
+			}
+			
+			if(rs.next()) {
+				total = rs.getInt(1);
+			}
+			
+			closeAll();
+		} catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return total;
+	}
+	
+	public List<AMS_studentDTO> selectStudentSearch(int start, String searchType, String keyword) {
+		List<AMS_studentDTO> dtoList = new ArrayList<AMS_studentDTO>();
+		
+		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_STUDENT_SEARCH);
+		
+		if(searchType.equals("snum")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_SNUM);
+		} else if(searchType.equals("sname")) {
+			sql.append(Sql_lecture.SEARCH_WHERE_SNAME);
+		}
+		
+		sql.append(Sql_lecture.STUDENT_SEARCH_ORDER_SNUM); 
+		sql.append(Sql_lecture.SEARCH_OFFSET_ROW); 
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(sql.toString());
+			
+			if(keyword != null && !keyword.trim().isEmpty()) {
+				psmt.setString(1, "%"+keyword+"%");
+				psmt.setInt(2, start);
+				rs = psmt.executeQuery();
+			} else {
+				psmt.setInt(1, start);
+				rs = psmt.executeQuery();
+			}
+
+			while(rs.next()) {
+				AMS_studentDTO dto = new AMS_studentDTO();
+				dto.setSnum(rs.getInt(1));
+				dto.setSname(rs.getString(2));
+				dto.setSregno(rs.getString(3));
+				dto.setStel(rs.getString(4));
+				dto.setSemail(rs.getString(5));
+				dto.setEdept(rs.getString(6));
+				dto.setEgrade(rs.getString(7));
+				dto.setEterm(rs.getString(8));
+				dto.setCondition(rs.getString(9));
+				dtoList.add(dto);
+			}
+			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
 		}

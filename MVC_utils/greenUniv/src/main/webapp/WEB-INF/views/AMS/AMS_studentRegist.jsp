@@ -1179,7 +1179,7 @@
 	                    </div>
 	                </div>
 	
-	                <button type="submit" id="regist-button">등록</button>
+	                <button type="submit" id="regist-button" style="cursor:pointer">등록</button>
             	</form>  	
             </div>
         </main>

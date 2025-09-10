@@ -25,6 +25,7 @@ public class AMS_studentListController extends HttpServlet {
 		PagenationDTO pagenationDTO = studentService.getPagenationDTO(pg, null, null);
 		
 		int start = pagenationDTO.getStart();
+		
 		List<AMS_studentDTO> dtoList = studentService.findAll(start);
 		
 		req.setAttribute("dtoList", dtoList);
