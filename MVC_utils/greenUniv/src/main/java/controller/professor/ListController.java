@@ -43,6 +43,7 @@ public class ListController extends HttpServlet{
 			// 일반 조회
 			professorList = service.professorList(start);
 		}
+			
 		
 		// request 공유참조(JSP 출력)
 		req.setAttribute("professorList", professorList);

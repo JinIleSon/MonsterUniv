@@ -2,6 +2,9 @@ package service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import dao.ProfessorListDAO;
 import dto.PagenationDTO;
 import dto.ProfessorListDTO;
@@ -10,6 +13,7 @@ public enum  Professor_listService {
 	INSTANCE;
 	
 	private ProfessorListDAO dao = ProfessorListDAO.getInstance();
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	// 페이지네이션 처리 메서드
 	public PagenationDTO getPagenationDTO(String pg, String searchType, String keyword) {

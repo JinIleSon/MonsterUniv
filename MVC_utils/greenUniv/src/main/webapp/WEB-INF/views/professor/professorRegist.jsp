@@ -811,8 +811,9 @@
         }
     </style>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/greenUniv/js/validation.js"></script>
     <script >
-	    function sample6_execDaumPostcode() {
+	    function postcode() {
 	        new daum.Postcode({
 	            oncomplete: function(data) {
 	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -1028,7 +1029,7 @@
                     <span>기본정보 입력</span>
                 </div>
             </div>
-            <form action="/greenUniv/professor/register.do" method="post">
+            <form action="/greenUniv/professor/register.do" method="post" name="regForm">
 	            <div class="main-lecture1">
 	                <div class="profile-photo">
 	                    <img src="../images/icon-avatar.png" alt="프로필 사진">
@@ -1076,7 +1077,7 @@
 	                    <div>주소</div>
 	                    <div>
 	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호" readonly>
-	                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+	                        <input type="button" onclick="postcode()" value="우편번호 찾기">
 	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소" readonly>
 	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소">
 	                    </div>
@@ -1120,11 +1121,15 @@
 	                    <div>
 	                        <select name="takecol">
 	                            <option value="default">대학선택</option>
-	                            <option value="공과대학">공과대학</option>
+	                            <c:forEach var="col" items="${listColName}">
+	                            	<option value="${col}">${col}</option>
+	                            </c:forEach>
 	                        </select>
 	                        <select name="takedept" style="margin-left: 2px;">
 	                            <option value="default">학과선택</option>
-	                            <option value="정보통신공학과">정보통신공학과</option>
+	                            <c:forEach var="dept" items="${listDeptName}">
+	                            	<option value="${dept}">${dept}</option>
+	                            </c:forEach>
 	                        </select>
 	                    </div>
 	                    <div>임용일</div>

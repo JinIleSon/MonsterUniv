@@ -132,6 +132,31 @@ public class AA_noticeDAO extends DBHelper{
 		
 		return total;
 	}
+	
+	// 메인 공지사항 
+	public List<AA_noticeDTO> selectRecent(int limit) {
+	    List<AA_noticeDTO> list = new ArrayList<>();
+	    String sql = "SELECT id, title, `date` FROM aa_notice ORDER BY id DESC LIMIT ?";
+
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(sql);
+	        psmt.setInt(1, limit);
+	        rs = psmt.executeQuery();
+	        while (rs.next()) {
+	            AA_noticeDTO dto = new AA_noticeDTO();
+	            dto.setId(rs.getInt("id"));
+	            dto.setTitle(rs.getString("title"));
+	            dto.setDate(rs.getString("date"));
+	            list.add(dto);
+	        }
+	    } catch (Exception e) {               // NamingException/SQLException 포함
+	        e.printStackTrace();
+	    }
+	    return list;
+	}
+
+
 	// 검색한 결과
 	public List<AA_noticeDTO> selectArticleSearch(int start, String searchType, String keyword){
 		List<AA_noticeDTO> dtoList = new ArrayList<AA_noticeDTO>();

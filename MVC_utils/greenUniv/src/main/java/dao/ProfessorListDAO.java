@@ -158,6 +158,5 @@ public class ProfessorListDAO extends DBHelper{
 			logger.error(e.getMessage());
 		}
 		return dtoList;
-	}	
-	
+	}		
 }
