@@ -325,7 +325,6 @@
             </div>
         </section>
     </main>
-
     <!--3. 푸터영역-->    
     <footer class="footer">
         <!--상단-->
