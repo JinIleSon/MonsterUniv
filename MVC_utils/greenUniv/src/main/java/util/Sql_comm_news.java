@@ -24,6 +24,11 @@ public class Sql_comm_news {
 	public static final String SELECT_ARTICLE_ALL = "SELECT * FROM commu_news\r\n"
 													+ "ORDER BY id DESC\r\n"
 													+ "LIMIT 10 OFFSET ?";
+	
+	// 메인 전용
+	public static final String SELECT_ARTICLE_RECENT_FIVE = "SELECT * FROM commu_news "
+															+ "ORDER BY id DESC "
+															+ "LIMIT 5";
 	// 파일 부분
 //	public final static String SELECT_ARTICLE_WITH_FILE = "SELECT A.*, U.NICK, F.*\r\n"
 //														+ "FROM TB_ARTICLE A\r\n"

@@ -79,5 +79,9 @@ public enum Commu_newsService {
 	public List<Commu_newsDTO> findAllSearch(int start, String searchType, String keyword){
 		return dao.selectArticleSearch(start, searchType, keyword);
 	}
+	// 기본 리스트 뿌려주기 (메인페이지 전용)
+	public List<Commu_newsDTO> findAllFive(){
+		return dao.selectRecentFive();
+	}
 
 }
