@@ -236,6 +236,7 @@
         
         .sidebar a {
         	text-decoration: none;
+        	color: black;
         }
         
         .sidebar a:visited { 
