@@ -8,6 +8,9 @@
 <title>학생지원_수강신청내역</title>
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <link rel="stylesheet" href="/greenUniv/studAssist_css/main.style.css">
+<!--css연결--> 
+<link rel="stylesheet" href="/greenUniv/css/Header.style.css"> 
+<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <script>
 	document.addEventListener("DOMContentLoaded", function(){
 		function getQueryParam(param) {
@@ -227,6 +230,107 @@ a {
                 </div>
             </div>  
     </header>
+    <div
+		style="background-color: #ECF2F6; height: 42px; display: flex; align-items: center; justify-content: center;">
+	</div>
+	<div style="height: 791px;" class="inner">
+		<div style="height: 54px;"></div>
+		<div style="display: flex; gap: 60px;">
+			<div style="width: 210px;">
+				<b
+					style="display: block; font-weight: 700; font-size: 32px; margin-bottom: 14px;">학생지원</b>
+				<table class="banner"
+					style="border-collapse: collapse; width: 100%; border-top: 2px solid black;">
+					<tr>
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+							style="color: black;">수강신청</a></td>
+					</tr>
+					<tr>
+						<td
+							style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+							<a href="#" style="color: white; font-weight: 300;">수강신청내역</a>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+							style="color: black;">교과과정</a></td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+							style="color: black;">성적조회</a></td>
+					</tr>
+					<tr>
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+							style="color: black;">학적</a></td>
+					</tr>
+				</table>
+			</div>
+			<div style="padding-top: 9px; width: 930px;">
+				<div style="padding-bottom: 6px;">
+					<b style="font-weight: 700; font-size: 26px;">수강신청내역</b>
+				</div>
+				<hr style="border: none; border-top: 2px solid;">
+				<div
+					style="display: flex; width: 100%; margin-top: 30px; margin-bottom: 20px;">
+					<form action="" style="display: flex;">
+						<select name="" id="" class="board-select"
+							style="border: 1px solid #e9e9e9; height: 40px; width: 100px; margin-right: 4px; padding-left: 10px;">
+							<option value="2025">2025</option>
+							<option value="2024">2024</option>
+							<option value="2023">2023</option>
+							<option value="2022">2022</option>
+							<option value="2021">2021</option>
+							<option value="2020">2020</option>
+						</select> <span style="line-height: 40px; margin-right: 8px;">년</span> <select
+							name="" id="" class="board-select"
+							style="border: 1px solid #e9e9e9; height: 40px; width: 50px; margin-right: 4px; padding-left: 10px;">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="여름계절">여름계절</option>
+							<option value="겨울계절">겨울계절</option>
+						</select> <span style="line-height: 40px;">학기</span>
+					</form>
+					<span
+						style="margin-top: 15px; margin-left: 370px; font-weight: 700; font-size: 14pt;">신청과목수
+						${ subNum }과목, 총 신청학점 ${ gradeSum }학점</span>
+				</div>
+				<table
+					style="border-collapse: collapse; border: 1px solid; width: 100%; text-align: center; border: none;">
+					<tr
+						style="height: 60px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
+						<td style="width: 110px;">교과목코드</td>
+						<td style="width: 130px;">과목명</td>
+						<td style="width: 100px;">대상학년</td>
+						<td style="width: 90px;">담당교수</td>
+						<td style="width: 100px;">학점</td>
+						<td>이수구분</td>
+						<td style="">강의시간</td>
+						<td style="">강의장</td>
+						<td style="width: 98px;">관리</td>
+					</tr>
+					<c:forEach var="regDetail" items="${ dtoList }">
+						<tr style="height: 70px; border-bottom: 1px solid #b8b8b8;">
+							<td>${ regDetail.deptCode }</td>
+							<td>${ regDetail.lname }</td>
+							<td>${ regDetail.year }학년</td>
+							<td>${ regDetail.prof }</td>
+							<td>${ regDetail.grade }</td>
+							<td>${ regDetail.compDiv }</td>
+							<td>${ regDetail.timeD } ${ regDetail.lTimes }</td>
+							<td>${ regDetail.room }</td>
+							<td><input type="button" value="취소"
+							onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"
+								style="background-color: #942626; color: white; font-weight: 300; height: 30px; width: 37px; border: none;">
+							</td>
+						</tr>
+					</c:forEach>
+
+
+				</table>
+
+			</div>
+		</div>
+	</div>
 	<!--3. 푸터영역-->
 	<footer class="footer">
 		<!--상단-->
