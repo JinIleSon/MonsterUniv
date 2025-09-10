@@ -206,9 +206,9 @@
                         <button class="board_more" aria-label="더보기" onclick="location.href='/greenUniv/community/community_announcement.do'">+</button>
                     </header>
                     <ul class="board_list">
-                        <li>교과목 폐지 및 신설안내</li>
-                        <li>2019-2학기 진로취업 프로그램 설계를 위한 학생 대상...</li>
-                        <li>제8회 KNDA 학술논문상 공모</li>
+                    	<c:forEach var="announce" items="${ annoList }">
+	                        <li>${ announce.title }</li>
+                        </c:forEach>
                     </ul>
                 </article>
             </div>

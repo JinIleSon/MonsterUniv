@@ -7,12 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.AA_noticeDTO;
+import dto.Commu_annoDTO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.Main_acadAffairsService;
+import service.AA_noticeService;
+import service.Commu_annoService;
 
 @WebServlet("/main.do")
 public class Listcontroller extends HttpServlet{
@@ -21,14 +23,18 @@ public class Listcontroller extends HttpServlet{
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private Main_acadAffairsService affairsService = Main_acadAffairsService.INSATCE;
+	private AA_noticeService noticeService = AA_noticeService.INSTANCE;
+	private Commu_annoService annoService = Commu_annoService.INSTANCE;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<AA_noticeDTO> AA_noticeList = affairsService.findRecentThree();
+		List<AA_noticeDTO> noticeList = noticeService.findAllThree();
+		List<Commu_annoDTO> annoList = annoService.findAllThree();
 		
-		req.setAttribute("noticeList", AA_noticeList);
-		logger.debug(AA_noticeList.toString());
+		req.setAttribute("noticeList", noticeList);
+		req.setAttribute("annoList", annoList);
+		logger.debug(noticeList.toString());
+		logger.debug(annoList.toString());
 		
 		req.getRequestDispatcher("/main.jsp").forward(req, resp);
 		
