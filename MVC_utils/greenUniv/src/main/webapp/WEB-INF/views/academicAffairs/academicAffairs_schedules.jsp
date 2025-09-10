@@ -19,38 +19,34 @@
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.19/index.global.min.js'></script>
     <script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                headerToolbar: { start: '', center: 'prev title next', end: '' }, // buttons for switching between views
+    document.addEventListener('DOMContentLoaded', function () {
+    	  const calendarEl = document.getElementById('calendar');
 
-                views: {
-                    dayGridMonth: { // name of view
-                    titleFormat: 'YYYY.MM',
-                    // other view-specific options here
-                    fixedWeekCount: false
-                    }
-                },
-                
-                events: function(info, successCallback, failureCallback) {
-                    // 서버에서 이벤트 데이터를 받아옵니다.
-                    fetch('/greenUniv/AA_schedules/getEvents.do')  // 이벤트를 가져오는 서버 API
-                        .then(response => response.json())
-                        .then(data => {
-                        	console.log(data);
-                        	successCallback(data);
-                        })
-                        .catch(error => {
-                        	console.error("error 발생 : " + error);
-                        	failureCallback(error);
-                        });
-                }
-                
-            });
-            
-            calendar.render();
-            
-        });
+    	  const calendar = new FullCalendar.Calendar(calendarEl, {
+    	    initialView: 'dayGridMonth',
+    	    headerToolbar: { start: '', center: 'prev title next', end: '' },
+
+    	    // 셀 높이를 고정해도 테이블이 자동으로 늘어나도록
+    	    height: 'auto',
+    	    expandRows: false,       // 빈 공간 맞추려고 행 높이 늘리지 않음
+    	    fixedWeekCount: false,   // 5주/6주 유동
+
+    	    views: {
+    	      dayGridMonth: {
+    	        titleFormat: 'YYYY.MM'
+    	      }
+    	    },
+
+    	    events: function (info, success, failure) {
+    	      fetch('/greenUniv/AA_schedules/getEvents.do')
+    	        .then(r => r.json())
+    	        .then(data => success(data))
+    	        .catch(err => failure(err));
+    	    }
+    	  });
+
+    	  calendar.render();
+    	});
       
     </script>
     <title>학사안내::학사일정</title>
@@ -72,6 +68,20 @@
 		.sidebar a:hover:not(.active) {
 		    background-color: #f0f0f0;
 		}
+		
+		/* 주(week) 행과 날짜 셀 높이 고정 */
+		#calendar .fc-daygrid-body table tr { height: 128px !important; }
+		#calendar .fc-daygrid-day { height: 128px !important; }
+		#calendar .fc-daygrid-day-frame { height: 100% !important; }
+		
+		/* 캘린더가 자체 스크롤러로 높이를 가두지 않게 (버전별 필요시) */
+		#calendar .fc-scroller,
+		#calendar .fc-scroller-harness,
+		#calendar .fc-scroller-liquid-absolute { overflow: visible !important; }
+		
+		/* 혹시 남은 공간 채우기용 그리드 높이가 고정되면 풀어줌(보완) */
+		#calendar .fc-scrollgrid,
+		#calendar .fc-daygrid-body { height: auto !important; }
     </style>
 </head>
 <body>
@@ -235,18 +245,15 @@
                 </table>
             </div>
             <article>
-                <div style="">
+                <div style="height:100% !important;">
                     <div class="schedule_title" style="border-bottom: 2px solid black; width:928px;">
                         <h2 style="font-weight: 700; font-size: 26px; color:black !important;"">학사일정</h2>
                     </div>
                     <div id="calendar" style=""></div>
-                    <div style="position:relative;">
-                        <div class="schedule_notice">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
-                    </div>
+                    <div style=" height:300px; display:flex; align-items:flex-end; padding-bottom:120px;" >※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</div>
                 </div>
             </article>
          </div>
-         <div style="height: 100px;"></div>
     </main>
     <!--3. 푸터영역-->    
     <footer class="footer">
