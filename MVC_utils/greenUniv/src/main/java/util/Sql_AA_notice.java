@@ -36,6 +36,13 @@ public class Sql_AA_notice {
 	
 	public static final String SELECT_MAX_ID = "SELECT MAX(id) FROM aa_notice";
 	
+	// main에 들어감 - 최신 3건
+	public static final String SELECT_RECENT_THREE =
+	    "SELECT * FROM aa_notice " +
+	    "ORDER BY id DESC " +
+	    "LIMIT 3";
+
+	
 	// 파일 넣지않음
 //	public static final String INSERT_ARTICLE = "INSERT INTO TB_ARTICLE (title, content, file_cnt, writer, reg_ip, wdate) VALUES (?,?,?,?,?,sysdate)";
 		

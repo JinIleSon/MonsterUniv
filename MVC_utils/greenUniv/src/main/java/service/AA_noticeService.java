@@ -83,5 +83,7 @@ public enum AA_noticeService {
 	public List<AA_noticeDTO> findAllThree(){
 		return dao.selectAllThree();
 	}
+
+	public List<AA_noticeDTO> getRecent(int limit) { return dao.selectRecent(limit); }
 		
 }

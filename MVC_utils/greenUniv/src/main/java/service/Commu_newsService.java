@@ -79,5 +79,11 @@ public enum Commu_newsService {
 	public List<Commu_newsDTO> findAllSearch(int start, String searchType, String keyword){
 		return dao.selectArticleSearch(start, searchType, keyword);
 	}
+	
+	//메인화면 최근 3개 
+	public List<Commu_newsDTO> getRecent(int limit) {
+	    return dao.selectRecent(limit);
+	}
+
 
 }
