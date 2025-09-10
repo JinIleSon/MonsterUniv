@@ -64,8 +64,6 @@ public class RegisterController extends HttpServlet{
 		dto.setTakedept(takedept);                                                     
 		dto.setAppdate(appdate);                                                      
 		
-		System.out.println("@@@@@@@@@@@@@@@@@@ : " + dto.toString());
-		
 		service.register(dto);
 		
 		resp.sendRedirect("/greenUniv/professor/register.do");
