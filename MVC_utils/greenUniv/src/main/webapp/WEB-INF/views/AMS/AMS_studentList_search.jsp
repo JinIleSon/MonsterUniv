@@ -220,6 +220,9 @@
         .menu {
             margin-left:15px;
         }
+        .menu-item a {
+        	text-decoration: none;
+        }
         .sidebar .menu h3 {
             margin:9px 0px 9px 0px;
         }
@@ -246,6 +249,9 @@
             height: 26px;
             /* height: 30px; */
         }
+        .menu ul li a {
+			color: #111111;
+		}
         .menu1 {
             width: 269px;
             height: 102px;

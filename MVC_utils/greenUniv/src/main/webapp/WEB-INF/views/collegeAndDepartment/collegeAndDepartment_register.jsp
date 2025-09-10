@@ -134,6 +134,9 @@
         .menu {
             margin-left: 15px;
         }
+        .menu-item a {
+		    text-decoration: none;
+		}
         .sidebar .menu h3 {
             margin: 9px 0px 9px 0px;
         }
@@ -159,6 +162,9 @@
             cursor: pointer;
             height: 26px;
         }
+        .menu ul li a {
+			color: #111111;
+		}
         .menu1 { width: 269px; height: 102px; } 
         .menu2 { width: 269px; height: 222px; } 
         .menu3 { width: 269px; height: 132px; } 
@@ -516,7 +522,7 @@
                 <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
                     <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
-                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
+					<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
