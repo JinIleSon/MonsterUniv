@@ -76,6 +76,10 @@
 	<a href="/greenUniv/collegeAndDepartment/list.do">학과 목록</a><hr>
 	<a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a><hr>
 	<br><br><br>
+	
+	<h2>교과과정</h2>
+	<a href="/greenUniv/main/curriculum.do">교과과정</a><hr>
+	<hr>
 
 </body>
 </html>
