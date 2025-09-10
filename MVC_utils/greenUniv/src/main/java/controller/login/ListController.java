@@ -1,6 +1,7 @@
 package controller.login;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
 import dto.UserDTO;
@@ -32,6 +33,16 @@ public class ListController extends HttpServlet{
             }
         }
         
+        UserDTO user = (session == null) ? null : (UserDTO) session.getAttribute("LOGIN_USER");
+
+        if (user != null && "admin".equalsIgnoreCase(user.getIdentification())) {
+            req.setAttribute("flash", user.getIdentification() + "님 환영합니다!");
+            req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_main.jsp").forward(req, resp);
+            return;
+        }
+
+        // 기존 코드 유지: 로그인 페이지로 포워드
+        
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -53,6 +64,10 @@ public class ListController extends HttpServlet{
         	HttpSession session = req.getSession(true);
             session.setAttribute("LOGIN_USER", user.getIdentification());    
             session.setAttribute("FLASH_MSG",user.getNickname() + "님 환영합니다!");
+            if (id.equals("admin")) {
+            	resp.sendRedirect(req.getContextPath() + "/AMS/AMS_main.do");
+            	return;
+            }
             resp.sendRedirect(req.getContextPath() + "/main.jsp");
             return;
 
