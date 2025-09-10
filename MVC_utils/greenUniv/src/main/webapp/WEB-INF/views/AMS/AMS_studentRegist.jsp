@@ -994,28 +994,28 @@
             <div class="menu menu1">
                 <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
-                    <li class="menu-item">기본환경정보</li>
-                    <li class="menu-item">약관관리</li>
+                    <li class="menu-item"><a href="#">기본환경정보</a></li>
+                    <li class="menu-item"><a href="#">약관관리</a></li>
                 </ul>
             </div>
             <div class="menu menu2">
                 <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
-                    <li class="menu-item">교육 운영 현황</li>
-                    <li class="menu-item">학년별 학생 현황</li>
-                    <li class="menu-item">학과별 학생 현황</li>
-                    <li class="menu-item">강의 목록</li>
-                    <li class="menu-item">강의 등록</li>
-                    <li class="menu-item" >수강 현황</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
                 </ul>
             </div>
             <div class="menu menu3">
                 <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
-                    <li class="menu-item">학생 목록 및 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
                     <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
                     <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
-                    <li class="menu-item">임직원 목록 및 등록</li>
+                    <li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu4">
@@ -1028,13 +1028,13 @@
             <div class="menu menu5">
                 <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
-                    <li class="menu-item">입학안내 공지사항</li>
-                    <li class="menu-item">학사안내 공지사항</li>
-                    <li class="menu-item">커뮤니티 공지사항</li>
-                    <li class="menu-item">입학상담</li>
-                    <li class="menu-item">질문 및 답변</li>
-                    <li class="menu-item">식단안내</li>
-                    <li class="menu-item">자료실</li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
                 </ul>
             </div>
         </nav>
