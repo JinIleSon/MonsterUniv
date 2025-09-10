@@ -42,9 +42,16 @@
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/main.do">HOME</a></li>
                         <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
+                        <c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
                         <li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
                     </ul>
                 </div>
@@ -54,7 +61,7 @@
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.do"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -259,7 +266,7 @@
                         </div>
                     </div>
                     <div style="border: 1px solid gray; width: 150px; height: 40px; text-align: center; display: flex; align-items: center; justify-content: center; padding-bottom: 3px;">
-                        <a href="#" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="/greenUniv/images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
+                        <a href="/greenUniv/studAssist/courseReg/list.do" style="color: black; display: flex; align-items: center;">수강신청하기&nbsp;&nbsp;&nbsp;<img src="/greenUniv/images/bg-link.png" alt="수강신청하기" style="margin-top: 3px;"></a>
                     </div>
                     <div style="height:100px;"></div>
                 </div>
@@ -272,7 +279,7 @@
         <div class="footer-high">
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
                     <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>

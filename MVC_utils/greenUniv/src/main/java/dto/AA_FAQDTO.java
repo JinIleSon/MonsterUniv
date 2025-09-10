@@ -4,7 +4,7 @@ public class AA_FAQDTO {
 	private int id;
 	private int what;
 	private String comment;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -12,8 +12,9 @@ public class AA_FAQDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public int getWhat() {
 		return what;
@@ -22,8 +23,9 @@ public class AA_FAQDTO {
 		this.what = what;
 	}
 	public void setWhat(String what) {
-		if (what != null)
+		if (what != null) {
 			this.what = Integer.parseInt(what);
+		}
 	}
 	public String getComment() {
 		return comment;

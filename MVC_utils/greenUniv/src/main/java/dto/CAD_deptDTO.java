@@ -8,7 +8,7 @@ public class CAD_deptDTO {
 	private String dean;
 	private String depttel;
 	private String deptoff;
-	
+
 	public String getUnitcol() {
 		return unitcol;
 	}
@@ -51,11 +51,11 @@ public class CAD_deptDTO {
 	public void setDeptoff(String deptoff) {
 		this.deptoff = deptoff;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "CAD_deptDTO [unitcol=" + unitcol + ", deptname=" + deptname + ", engname=" + engname + ", estyear="
 				+ estyear + ", dean=" + dean + ", depttel=" + depttel + ", deptoff=" + deptoff + "]";
 	}
-	
+
 }

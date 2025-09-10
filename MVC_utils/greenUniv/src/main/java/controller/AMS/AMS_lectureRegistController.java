@@ -15,7 +15,7 @@ import service.AMS_LectureService;
 public class AMS_lectureRegistController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private AMS_LectureService lectureService = AMS_LectureService.INSTANCE;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_lectureRegist.jsp");
@@ -37,14 +37,14 @@ public class AMS_lectureRegistController extends HttpServlet {
 		String yclase = req.getParameter("yclase");
 		String times = "2025-09-01 " + req.getParameter("times");
 		String timee = "2025-12-24 " + req.getParameter("timee");
-		
+
 		//요일
 		String[] timedArr = req.getParameterValues("timed");
 		String timed = "";
 	    if (timedArr != null && timedArr.length > 0) {
 	        timed = String.join(",", timedArr);
 	    }
-		
+
 		String evaway = req.getParameter("evaway");
 		String book = req.getParameter("book");
 		String room = req.getParameter("room");
@@ -70,9 +70,9 @@ public class AMS_lectureRegistController extends HttpServlet {
 		lectureDTO.setBook(book);
 		lectureDTO.setRoom(room);
 		lectureDTO.setMaxNum(maxnum);
-		
+
 		lectureService.register(lectureDTO);
-		
+
 		resp.sendRedirect("/greenUniv/AMS/AMS_lectureList.do");
 	}
 }

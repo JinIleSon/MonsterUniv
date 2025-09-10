@@ -13,17 +13,17 @@ import util.Sql_lecture;
 
 public class AMS_CourseDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	private final static AMS_CourseDAO INSTANCE = new AMS_CourseDAO();
 	public static AMS_CourseDAO getInstance() {
 		return INSTANCE;
 	}
-	
+
 	private AMS_CourseDAO() {}
 	
 	public int selectCountTotal() {
 		int total = 0;
-		
+
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
@@ -72,7 +72,7 @@ public class AMS_CourseDAO extends DBHelper {
 		}
 		return dtoList;
 	}
-	
+
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
 		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COURSECOUNT_SEARCH);
@@ -94,12 +94,12 @@ public class AMS_CourseDAO extends DBHelper {
 				psmt = conn.prepareStatement(sql.toString());
 				rs = psmt.executeQuery();
 			}
-			
-			
+
+
 			if(rs.next()) {
 				total = rs.getInt(1);
 			}
-			
+
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());
@@ -124,7 +124,7 @@ public class AMS_CourseDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
-			
+
 			if(keyword != null && !keyword.trim().isEmpty()) {
 				psmt.setString(1, "%"+keyword+"%");
 				psmt.setInt(2, start);
@@ -133,8 +133,8 @@ public class AMS_CourseDAO extends DBHelper {
 				psmt.setInt(1, start);
 				rs = psmt.executeQuery();
 			}
-			
-			
+
+
 			while(rs.next()) {
 				AMS_courseDTO dto = new AMS_courseDTO();
 				dto.setSemester(rs.getString(1));
@@ -152,7 +152,7 @@ public class AMS_CourseDAO extends DBHelper {
 				dto.setApplication(today.toString());		
 				dtoList.add(dto);
 			}
-			
+
 			closeAll();
 		} catch(Exception e) {
 			logger.error(e.getMessage());

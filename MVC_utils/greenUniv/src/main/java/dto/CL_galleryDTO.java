@@ -8,8 +8,8 @@ public class CL_galleryDTO {
 	private int hits;
 	private String where;
 	private String regdate;
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -17,8 +17,9 @@ public class CL_galleryDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getImageroute() {
 		return imageroute;

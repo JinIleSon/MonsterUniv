@@ -33,18 +33,18 @@ public class AMS_educationSearchListController extends HttpServlet {
 			List<AMS_lectureDTO> dtoList = lectureService.findAll(start);
 			req.setAttribute("dtoList", dtoList);
 			req.setAttribute("pagenationDTO", pagenationDTO);
-			
+
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_educationOperation.jsp");
 			dispatcher.forward(req, resp);
 			return;
 		}
 		List<AMS_lectureDTO> dtoList = lectureService.findBySearch(start, searchType, keyword);
-		
+
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("searchType", searchType);
 		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_educationOperation_search.jsp");
 		dispatcher.forward(req, resp);
 	}

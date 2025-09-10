@@ -260,6 +260,21 @@ section.hero {
   font-weight:800; /* 아이콘 대체용 텍스트 */
 }
 
+
+.hero-logo {
+  position: absolute;
+  top: 20%; /* 화면 높이 기준 위쪽 */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hero-logo img {
+  max-width: 200px; /* 로고 크기 조절 */
+}
+
+
+
 /* -------- 반응형 -------- */
 @media (max-width: 1024px){
   .boards_grid{ grid-template-columns:1fr; }

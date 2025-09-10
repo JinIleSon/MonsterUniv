@@ -12,36 +12,36 @@ import util.DBHelper;
 import util.Sql_CAD_register;
 
 public class CAD_registerDAO extends DBHelper{
-	
+
 	private final static CAD_registerDAO INSTANCE = new CAD_registerDAO();
 	public static CAD_registerDAO getInstance() {
 		return INSTANCE;
 	}
-	
+
 	private CAD_registerDAO() {}
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());	
-	
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	public List<String> selectDeptName() {
-		List<String> deptList = new ArrayList<String>();
-		
+		List<String> deptList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(Sql_CAD_register.SELECT_DEPTNAME);
-			
+
 			while(rs.next()) {
 				deptList.add(rs.getString("colname"));
 			}
-			
+
 			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
+
 		return deptList;
 	}
-	
+
 	public void collInsert(CAD_collegeDTO dto) {
 		try {
 			conn = getConnection();
@@ -50,17 +50,19 @@ public class CAD_registerDAO extends DBHelper{
 			psmt.setString(2, dto.getColeng());
 			psmt.setString(3, dto.getColtit());
 			psmt.setString(4, dto.getColcont());
-			
+			psmt.setString(5, dto.getColimgo());
+			psmt.setString(6, dto.getColimgs());
+
 			psmt.executeUpdate();
-			
+
 			closeAll();
-			
+
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
+
 	}
-	
+
 	public void deptInsert(CAD_deptDTO dto) {
 		try {
 			conn = getConnection();
@@ -72,14 +74,14 @@ public class CAD_registerDAO extends DBHelper{
 			psmt.setString(5, dto.getEngname());
 			psmt.setString(6, dto.getDean());
 			psmt.setString(7, dto.getDeptoff());
-			
+
 			psmt.executeUpdate();
-			
+
 			closeAll();
-			
+
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
+
 	}
 }

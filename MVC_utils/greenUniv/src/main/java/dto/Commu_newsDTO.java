@@ -15,8 +15,9 @@ public class Commu_newsDTO {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if (id != null)
+		if (id != null) {
 			this.id = Integer.parseInt(id);
+		}
 	}
 	public String getClassify() {
 		return classify;
@@ -49,8 +50,9 @@ public class Commu_newsDTO {
 		this.hits = hits;
 	}
 	public void setHits(String hits) {
-		if (hits != null)
+		if (hits != null) {
 			this.hits = Integer.parseInt(hits);
+		}
 	}
 	@Override
 	public String toString() {

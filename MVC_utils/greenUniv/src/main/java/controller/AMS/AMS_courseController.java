@@ -21,19 +21,19 @@ public class AMS_courseController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pg = req.getParameter("pg");
-		
+
 		PagenationDTO pagenationDTO = lectureService.getPagenationDTO(pg, null, null);
-		
+
 		int start = pagenationDTO.getStart();
 		List<AMS_courseDTO> dtoList = lectureService.findAll(start);
 		
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_course.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}

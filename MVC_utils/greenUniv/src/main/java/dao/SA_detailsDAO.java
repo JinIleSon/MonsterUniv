@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.SA_detailsDTO;
 import util.DBHelper;
-import util.Sql;
+import util.Sql_studAssist;
 
 public class SA_detailsDAO extends DBHelper {
 
@@ -17,22 +17,22 @@ public class SA_detailsDAO extends DBHelper {
 		return INSTANCE;
 	}
 	private SA_detailsDAO() {}
-	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	public void insert(SA_detailsDTO dto) {
-		
+
 	}
-	
-	public List<SA_detailsDTO> selectWithSnum(String snum) {
-		List<SA_detailsDTO> dtoList = new ArrayList<SA_detailsDTO>();
-		
+
+	public List<SA_detailsDTO> selectWithSnum(int snum) {
+		List<SA_detailsDTO> dtoList = new ArrayList<>();
+
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.SELECT_REGDETAILS_WITH_SNUM);
-			psmt.setString(1, snum);
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_REGDETAILS_WITH_SNUM);
+			psmt.setInt(1, snum);
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				SA_detailsDTO dto = new SA_detailsDTO();
 				dto.setSnum(rs.getInt(1));
@@ -48,12 +48,12 @@ public class SA_detailsDAO extends DBHelper {
 				dto.setTimeE(rs.getString(11));
 				dto.setTimeD(rs.getString(12));
 				dto.setRoom(rs.getString(13));
-				
+
 				// 시간 계산
 				int startTime = Integer.parseInt(dto.getTimeS().substring(11, 13));
 		        int endtTime = Integer.parseInt(dto.getTimeE().substring(11, 13));
 		        int timeDiff = endtTime - startTime;
-		        
+
 		        StringBuilder times = new StringBuilder();
 				for (int i = 0; i < timeDiff; i++) {
 					if (i < timeDiff - 1) {
@@ -63,23 +63,149 @@ public class SA_detailsDAO extends DBHelper {
 					}
 				}
 				dto.setlTimes(times.toString());
-			
+
 				dtoList.add(dto);
 				logger.debug(dto.toString());
 			}
-			
+
 			closeAll();
 		} catch (Exception e) {
 			 logger.error(e.getMessage());
 		}
 		return dtoList;
 	}
-	
-	public List<SA_detailsDTO> selectAllWithKeywords(String year, String semester) {
-		return null;
+
+	public int countWithSnum(int snum) {
+		int count = 0;
+
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_DETAILS_COUNT_WITH_SNUM);
+			psmt.setInt(1, snum);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return count;
 	}
-	
-	public void delete(String deptCode) {
-		
+
+	public List<SA_detailsDTO> selectAllWithKeywords(int snum, String year, String semester) {
+		List<SA_detailsDTO> dtoList = new ArrayList<>();
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_WITH_YEAR_AND_SEM);
+			psmt.setString(1, year);
+			psmt.setString(2, semester);
+			psmt.setInt(3, snum);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				SA_detailsDTO dto = new SA_detailsDTO();
+				dto.setSnum(rs.getInt("snum"));
+				dto.setDeptCode(rs.getString("deptcode"));
+				dto.setLname(rs.getString("lname"));
+				dto.setYear(rs.getString("year"));
+				dto.setProf(rs.getString("prof"));
+				dto.setGrade(rs.getInt("grade"));
+				dto.setCompDiv(rs.getString("compdiv"));
+				dto.setTimeS(rs.getString("times"));
+				dto.setTimeE(rs.getString("timee"));
+				dto.setTimeD(rs.getString("timed"));
+				dto.setRoom(rs.getString("room"));
+
+				// 시간 계산
+				int startTime = Integer.parseInt(dto.getTimeS().substring(11, 13));
+		        int endtTime = Integer.parseInt(dto.getTimeE().substring(11, 13));
+		        int timeDiff = endtTime - startTime;
+
+		        StringBuilder times = new StringBuilder();
+				for (int i = 0; i < timeDiff; i++) {
+					if (i < timeDiff - 1) {
+						times.append(i+1+",");
+					} else {
+						times.append(i+1);
+					}
+				}
+				dto.setlTimes(times.toString());
+
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
+
+	public int countWithKeywords(int snum, String year, String semester) {
+		int count = 0;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.SELECT_DETAILS_COUNT_WITH_YEAR_AND_SEM);
+			psmt.setString(1, year);
+			psmt.setString(2, semester);
+			psmt.setInt(3, snum);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+			logger.debug("SA_detailsDAO countWithKeywords");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":") + 2));
+			logger.debug("year : " + year + ", semester : " + semester + ", snum : " + snum);
+			logger.debug("count : "+count);
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return count;
+	}
+
+	public int gradeSumWithKeywords(int snum, String year, String semester) {
+		int gradeSum = 0;
+
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_studAssist.GRADESUM_WITH_YEAR_AND_SEM);
+			psmt.setInt(1, snum);
+			psmt.setString(2, year);
+			psmt.setString(3, semester);
+
+			logger.debug("SA_details gradeSumWithKeywords");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":") + 2));
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				gradeSum = rs.getInt(1);
+				logger.debug("gradeSum : "+gradeSum);
+			}
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
+		return gradeSum;
+	}
+
+	public void delete(int snum, String deptCode) {
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false);
+			psmt = conn.prepareStatement(Sql_studAssist.DELETE_LECTURE);
+			psmt.setString(1, deptCode);
+			psmt.setInt(2, snum);
+			psmt.executeUpdate();
+
+			stmt = conn.createStatement();
+			stmt.executeUpdate(Sql_studAssist.MINUS_NOWNUM +"'"+deptCode+"'");
+			conn.commit();
+			closeAll();
+		} catch (Exception e) {
+			 logger.error(e.getMessage());
+		}
 	}
 }

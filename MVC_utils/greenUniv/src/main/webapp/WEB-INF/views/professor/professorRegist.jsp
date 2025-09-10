@@ -12,7 +12,7 @@
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
+            src: url('/greenUniv/font/NotoSansKR-Medium.ttf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -27,6 +27,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         /* ================================
         Header
         ================================ */
@@ -219,6 +220,9 @@
         .menu {
             margin-left:15px;
         }
+        .menu-item a {
+		    text-decoration: none;
+		}
         .sidebar .menu h3 {
             margin:9px 0px 9px 0px;
         }
@@ -233,6 +237,15 @@
             margin-top: 9px;
             padding: 0px 0px 0px 30px;
         }
+        .sidebar a {
+        	text-decoration: none;
+        	color: black;
+        }
+        
+        .sidebar a:visited { 
+        	color:black; 
+        }
+        
         .menu ul li::before {
             content: "•";
             font-size: 0.6em;
@@ -245,6 +258,9 @@
             height: 26px;
             /* height: 30px; */
         }
+        .menu ul li a {
+			color: #111111;
+		}
         .menu1 {
             width: 269px;
             height: 102px;
@@ -794,6 +810,35 @@
             margin-top: 20px;
         }
     </style>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/greenUniv/js/validation.js"></script>
+    <script >
+	    function postcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+	
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('pzip').value = data.zonecode;
+	                document.getElementById("paddr1").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("paddr2").focus();
+	            }
+	        }).open();
+	    }
+    </script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -803,9 +848,16 @@
 			<div class="inner" style=" max-width:1400px !important;">
 				<div class="log-area" style="">
 					<ul>
-						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-						<li><a href="/greenUniv/login/login.do">로그인</a></li>
+						<c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
 				</div>
@@ -816,7 +868,7 @@
 			<div class="inner" style="display: flex; justify-content:center; max-width:1700px !important;">
 				<!--로고-->
 				<div style=" margin-right:665px; margin-left:15px;">
-				<a href="/greenUniv/main.jsp"><img
+				<a href="/greenUniv/main.do"><img
 					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
@@ -921,46 +973,47 @@
             <div class="menu menu1">
                 <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
-                    <li class="menu-item">기본환경정보</li>
-                    <li class="menu-item">약관관리</li>
+                    <li class="menu-item"><a href="#">기본환경정보</a></li>
+                    <li class="menu-item"><a href="#">약관관리</a></li>
                 </ul>
             </div>
             <div class="menu menu2">
                 <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
-                    <li class="menu-item">교육 운영 현황</li>
-                    <li class="menu-item">학년별 학생 현황</li>
-                    <li class="menu-item">학과별 학생 현황</li>
-                    <li class="menu-item">강의 목록</li>
-                    <li class="menu-item">강의 등록</li>
-                    <li class="menu-item" >수강 현황</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
                 </ul>
             </div>
             <div class="menu menu3">
                 <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
-                    <li class="menu-item">학생 목록 및 등록</li>
-                    <li class="menu-item">교수 목록 및 등록</li>
-                    <li class="menu-item">임직원 목록 및 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
+                    <li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu4">
                 <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item">대학 및 학과 목록</li>
-                    <li class="menu-item">대학 및 학과 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
                 <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
-                    <li class="menu-item">입학안내 공지사항</li>
-                    <li class="menu-item">학사안내 공지사항</li>
-                    <li class="menu-item">커뮤니티 공지사항</li>
-                    <li class="menu-item">입학상담</li>
-                    <li class="menu-item">질문 및 답변</li>
-                    <li class="menu-item">식단안내</li>
-                    <li class="menu-item">자료실</li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
                 </ul>
             </div>
         </nav>
@@ -976,7 +1029,7 @@
                     <span>기본정보 입력</span>
                 </div>
             </div>
-            <form action="/greenUniv/professor/register.do" method="post">
+            <form action="/greenUniv/professor/register.do" method="post" name="regForm">
 	            <div class="main-lecture1">
 	                <div class="profile-photo">
 	                    <img src="../images/icon-avatar.png" alt="프로필 사진">
@@ -1006,7 +1059,7 @@
 	                    <div>국적</div>
 	                    <div>
 	                        <select name="pnation">
-	                            <option value="dafault">선택</option>
+	                            <option value="default"  selected>선택</option>
 	                            <option value="한국">한국</option>	
 	                            <option value="일본">일본</option>	
 	                            <option value="중국">중국</option>		
@@ -1023,9 +1076,10 @@
 	                    <div></div>
 	                    <div>주소</div>
 	                    <div>
-	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호 선택">
-	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소 선택">
-	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소 선택">
+	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호" readonly>
+	                        <input type="button" onclick="postcode()" value="우편번호 찾기">
+	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소" readonly>
+	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소">
 	                    </div>
 	                </div>
 	            </div>
@@ -1055,7 +1109,7 @@
 	                    <div>학위</div>
 	                    <div>
 	                        <select name="degree">
-	                            <option value="default">선택</option>
+	                            <option value="default" selected>선택</option>
 	                            <option value="박사">박사</option>
 	                            <option value="학사">학사</option>
 	                        </select>
@@ -1067,11 +1121,15 @@
 	                    <div>
 	                        <select name="takecol">
 	                            <option value="default">대학선택</option>
-	                            <option value="공과대학">공과대학</option>
+	                            <c:forEach var="col" items="${listColName}">
+	                            	<option value="${col}">${col}</option>
+	                            </c:forEach>
 	                        </select>
 	                        <select name="takedept" style="margin-left: 2px;">
 	                            <option value="default">학과선택</option>
-	                            <option value="정보통신공학과">정보통신공학과</option>
+	                            <c:forEach var="dept" items="${listDeptName}">
+	                            	<option value="${dept}">${dept}</option>
+	                            </c:forEach>
 	                        </select>
 	                    </div>
 	                    <div>임용일</div>
@@ -1080,7 +1138,7 @@
 	                    </div>
 	                </div>
 	            </div>
-            	<button id="regist-button" type="submit">등록</button>
+            	<button id="regist-button" type="submit" name="btnSubmit">등록</button>
             </form>
         </main>
     </div>
@@ -1092,7 +1150,7 @@
         <div class="footer-high">
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
                     <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>

@@ -23,9 +23,9 @@ public class AMS_course_searchController extends HttpServlet {
 		String pg = req.getParameter("pg");
 		String searchType = req.getParameter("searchType");
 		String keyword = req.getParameter("keyword");
-		
+
 		PagenationDTO pagenationDTO = lectureService.getPagenationDTO(pg, searchType, keyword);
-		
+
 		int start = pagenationDTO.getStart();
 		List<AMS_courseDTO> dtoList = lectureService.findAllSearch(start, searchType, keyword);
 		
@@ -33,11 +33,11 @@ public class AMS_course_searchController extends HttpServlet {
 		req.setAttribute("searchType", searchType);
 		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_course_search.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}

@@ -33,9 +33,16 @@ main {
             <div class="inner">
                 <div class="log-area">
                     <ul>
-                        <li><a href="/greenUniv/main.jsp">HOME</a></li>
+                        <li><a href="/greenUniv/main.do">HOME</a></li>
                         <li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-                        <li><a href="/greenUniv/login/login.do">로그인</a></li>
+                        <c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
                         <li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
                     </ul>
                 </div>
@@ -45,7 +52,7 @@ main {
         <div class="mainNav">
             <div class="inner">
                 <!--로고-->
-                <a href="/greenUniv/main.jsp"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
+                <a href="/greenUniv/main.do"><img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/></a>
                 
                 <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
                 <div class="menu-area">
@@ -151,23 +158,23 @@ main {
 					<tr>
 						<td
 							style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-							<a href="#" style="color: white; font-weight: 300;">수강신청</a>
+							<a href="/greenUniv/studAssist/courseReg/list.do" style="color: white; font-weight: 300;">수강신청</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/courseRegDetails/list.do"
 							style="color: black;">수강신청내역</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/curric/list.do"
 							style="color: black;">교과과정</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/chkGrades/list.do"
 							style="color: black;">성적조회</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/studRecords/list.do"
 							style="color: black;">학적</a></td>
 					</tr>
 				</table>
@@ -223,12 +230,10 @@ main {
 							<td>${ lecture.prof }</td>
 							<td>${ lecture.nowNum }/${ lecture.maxNum }</td>
 							<td></td>
-							<form action="" method="get">
-								<td><input type="button" value="신청"
-									onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
-									style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
-								</td>
-							</form>
+							<td><input type="button" value="신청"
+								onclick="window.location.href='/greenUniv/studAssist/courseReg/register.do?deptCode=${ lecture.deptCode }';"
+								style="background-color: #132f73; color: white; font-weight: 300; height: 30px; border: none;">
+							</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -261,7 +266,7 @@ main {
         <div class="footer-high">
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
                     <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>

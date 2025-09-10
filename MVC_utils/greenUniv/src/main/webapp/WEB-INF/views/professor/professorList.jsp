@@ -219,6 +219,9 @@
         .menu {
             margin-left:15px;
         }
+        .menu-item a {
+		    text-decoration: none;
+		}
         .sidebar .menu h3 {
             margin:9px 0px 9px 0px;
         }
@@ -233,6 +236,16 @@
             margin-top: 9px;
             padding: 0px 0px 0px 30px;
         }
+        
+        .sidebar a {
+        	text-decoration: none;
+        	color: black;
+        }
+        
+        .sidebar a:visited { 
+        	color:black; 
+        }
+        
         .menu ul li::before {
             content: "•";
             font-size: 0.6em;
@@ -245,6 +258,9 @@
             height: 26px;
             /* height: 30px; */
         }
+        .menu ul li a {
+			color: #111111;
+		}
         .menu1 {
             width: 269px;
             height: 102px;
@@ -289,7 +305,7 @@
             gap: 5px;
         }
         .search-form #search-select {
-            appearance: none; 
+            
             border: 1px solid #959595;
             width: 100px;
             height: 35px;
@@ -380,6 +396,7 @@
             height: 62px;
             margin: 30px auto 0 auto;
             text-align: center;
+            text-decoration: none;
         }
         .pagenation li {
             border: 1px solid #DEDEDE;
@@ -387,30 +404,27 @@
             list-style: none;
             width: 32px;
             height: 32px;
+            text-decoration: none;
         }
-        .pagenation .page1 {
+
+        .pagenation .current {
             background-color: #1A528E;
-            
             color: white;
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            text-decoration: none;
-        }
-        .pagenation .page2, .pagenation .page3 {
-            color: #888888;
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            text-decoration: none;
         }
         .pagenation li a {
             display: block;
             width: 100%;
             height: 100%;
             text-align: center;
+            line-height: 32px;
+            text-decoration: none;
+            color: #888888;
+        }
+        .pagenation .current a {
+            color: white;
+        }
+        .pagenation li a:hover {
+            background-color: #f0f0f0;
         }
         .pagenation li a span {
             background-size: contain;
@@ -418,6 +432,7 @@
             display:inline-block;
             width: 10px;
             height: 10px;
+            vertical-align: middle;
         }
         .pagenation .first {
             background-image: url('/greenUniv/images/btn-first-page.png');
@@ -455,9 +470,16 @@
 			<div class="inner" style=" max-width:1400px !important;">
 				<div class="log-area" style="">
 					<ul>
-						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-						<li><a href="/greenUniv/login/login.do">로그인</a></li>
+						<c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
 				</div>
@@ -468,7 +490,7 @@
 			<div class="inner" style="display: flex; justify-content:center; max-width:1700px !important;">
 				<!--로고-->
 				<div style=" margin-right:665px; margin-left:15px;">
-				<a href="/greenUniv/main.jsp"><img
+				<a href="/greenUniv/main.do"><img
 					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
@@ -573,46 +595,47 @@
             <div class="menu menu1">
                 <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
-                    <li class="menu-item">기본환경정보</li>
-                    <li class="menu-item">약관관리</li>
+                    <li class="menu-item"><a href="#">기본환경정보</a></li>
+                    <li class="menu-item"><a href="#">약관관리</a></li>
                 </ul>
             </div>
             <div class="menu menu2">
                 <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
-                    <li class="menu-item">교육 운영 현황</li>
-                    <li class="menu-item">학년별 학생 현황</li>
-                    <li class="menu-item">학과별 학생 현황</li>
-                    <li class="menu-item">강의 목록</li>
-                    <li class="menu-item">강의 등록</li>
-                    <li class="menu-item" >수강 현황</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
                 </ul>
             </div>
             <div class="menu menu3">
                 <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
-                    <li class="menu-item">학생 목록 및 등록</li>
-                    <li class="menu-item">교수 목록 및 등록</li>
-                    <li class="menu-item">임직원 목록 및 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
+                    <li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu4">
                 <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item">대학 및 학과 목록</li>
-                    <li class="menu-item">대학 및 학과 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
                 <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
-                    <li class="menu-item">입학안내 공지사항</li>
-                    <li class="menu-item">학사안내 공지사항</li>
-                    <li class="menu-item">커뮤니티 공지사항</li>
-                    <li class="menu-item">입학상담</li>
-                    <li class="menu-item">질문 및 답변</li>
-                    <li class="menu-item">식단안내</li>
-                    <li class="menu-item">자료실</li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
                 </ul>
             </div>
         </nav>
@@ -623,55 +646,143 @@
                 <p>인사관리 &nbsp; > &nbsp; <span>교수 목록</span></p>
             </div>
             
-            <form class="search-form">
-                <!-- <select id="search-select"> -->
-                <select name="searchType">
-                    <option value="default">검색조건</option>
+            <!-- 검색 폼 수정 -->
+            <form class="search-form" action="/greenUniv/professor/list.do" method="get">
+                <select id="search-select" name="searchType">
+                    <option value="">검색조건</option>
+                    <option value="pnum" ${searchType eq 'pnum' ? 'selected' : ''}>교수번호</option>
+                    <option value="pname" ${searchType eq 'pname' ? 'selected' : ''}>이름</option>
+                    <option value="department" ${searchType eq 'department' ? 'selected' : ''}>학과</option>
+                    <option value="status" ${searchType eq 'status' ? 'selected' : ''}>재직상태</option>
                 </select>
-                <input type="text" id="search-title" placeholder="키워드 입력">
-                <input type="button" class="search-btn" value="검색">
+                <input type="text" id="search-title" name="keyword" placeholder="키워드 입력" value="${keyword}">
+                <button type="submit" class="search-btn">검색</button>
             </form>
             
+            <!-- 테이블 수정 -->
             <table>
                 <thead>
                     <tr>
-                        <th><span>교수번호</span></th>
-                        <th><span>이름</span></th>
-                        <th><span>주민번호</span></th>
-                        <th><span>휴대폰</span></th>
-                        <th><span>이메일</span></th>
-                        <th><span>학과</span></th>
-                        <th><span>학위</span></th>
-                        <th><span>재직여부</span></th>
-                        <th><span>임용일</span></th>
+                        <th width="5%"><span>번호</span></th>
+                        <th width="10%"><span>교수번호</span></th>
+                        <th width="8%"><span>이름</span></th>
+                        <th width="13%"><span>주민번호</span></th>
+                        <th width="12%"><span>휴대폰</span></th>
+                        <th width="18%"><span>이메일</span></th>
+                        <th width="12%"><span>학과</span></th>
+                        <th width="8%"><span>직위</span></th>
+                        <th width="8%"><span>재직여부</span></th>
+                        <th width="10%"><span>임용일</span></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><span>202001230</span></td>
-                        <td><span>홍길동</span></td>
-                        <td><span>900103-1234567</span></td>
-                        <td><span>010-1234-1001</span></td>
-                        <td><span>hong1001@naver.com</span></td>
-                        <td><span>컴퓨터공학과</span></td>
-                        <td><span>정교수</span></td>
-                        <td><span class="status-green">재직중</span></td>
-                        <td><span >2025-01-01</span></td>
-                    </tr>
+                    <c:forEach var="professor" items="${professorList}" varStatus="status">
+                        <tr>
+                            <td><span>${pagenationDTO.currentPageStartNum - status.index}</span></td>
+                            <td><span>${professor.pnum}</span></td>
+                            <td><span>${professor.pname}</span></td>
+                            <td><span>${professor.pid}</span></td>
+                            <td><span>${professor.ptel}</span></td>
+                            <td><span>${professor.pemail}</span></td>
+                            <td><span>${professor.department}</span></td>
+                            <td><span>${professor.prank}</span></td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${professor.pstatus eq '재직중'}">
+                                        <span class="status-green">${professor.pstatus}</span>
+                                    </c:when>
+                                    <c:when test="${professor.pstatus eq '휴직'}">
+                                        <span class="status-yellow">${professor.pstatus}</span>
+                                    </c:when>
+                                    <c:when test="${professor.pstatus eq '퇴직'}">
+                                        <span class="status-red">${professor.pstatus}</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span>${professor.pstatus}</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </td>
+                            <td><span>${professor.pdate}</span></td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
 
+            <!-- 페이지네이션 수정 -->
             <div id="button-setting">
                 <ul class="pagenation">
-                    <li><a href="#"><span class="first"></span></a></li>
-                    <li><a href="#"><span class="prev"></span></a></li>
-                    <li><a href="#" class="page1">1</a></li>
-                    <li><a href="#" class="page2">2</a></li>
-                    <li><a href="#" class="page3">3</a></li>
-                    <li><a href="#"><span class="next"></span></a></li>
-                    <li><a href="#"><span class="last"></span></a></li>
-                    <button id="regist-button">등록</button>
+                    <!-- 처음 페이지 -->
+                    <c:if test="${pagenationDTO.currentPage > 1}">
+                        <li>
+                            <c:url var="firstUrl" value="/professor/list.do">
+                                <c:param name="pg" value="1"/>
+                                <c:if test="${not empty keyword}">
+                                    <c:param name="searchType" value="${searchType}"/>
+                                    <c:param name="keyword" value="${keyword}"/>
+                                </c:if>
+                            </c:url>
+                            <a href="${firstUrl}"><span class="first"></span></a>
+                        </li>
+                    </c:if>
+                    
+                    <!-- 이전 그룹 -->
+                    <c:if test="${pagenationDTO.pageGroupStart > 1}">
+                        <li>
+                            <c:url var="prevUrl" value="/professor/list.do">
+                                <c:param name="pg" value="${pagenationDTO.pageGroupStart-1}"/>
+                                <c:if test="${not empty keyword}">
+                                    <c:param name="searchType" value="${searchType}"/>
+                                    <c:param name="keyword" value="${keyword}"/>
+                                </c:if>
+                            </c:url>
+                            <a href="${prevUrl}"><span class="prev"></span></a>
+                        </li>
+                    </c:if>
+                    
+                    <!-- 페이지 번호 -->
+                    <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                        <li class="${pagenationDTO.currentPage == num ? 'current' : ''}">
+                            <c:url var="pageUrl" value="/professor/list.do">
+                                <c:param name="pg" value="${num}"/>
+                                <c:if test="${not empty keyword}">
+                                    <c:param name="searchType" value="${searchType}"/>
+                                    <c:param name="keyword" value="${keyword}"/>
+                                </c:if>
+                            </c:url>
+                            <a href="${pageUrl}">${num}</a>
+                        </li>
+                    </c:forEach>
+                    
+                    <!-- 다음 그룹 -->
+                    <c:if test="${pagenationDTO.pageGroupEnd < pagenationDTO.lastPageNum}">
+                        <li>
+                            <c:url var="nextUrl" value="/professor/list.do">
+                                <c:param name="pg" value="${pagenationDTO.pageGroupEnd+1}"/>
+                                <c:if test="${not empty keyword}">
+                                    <c:param name="searchType" value="${searchType}"/>
+                                    <c:param name="keyword" value="${keyword}"/>
+                                </c:if>
+                            </c:url>
+                            <a href="${nextUrl}"><span class="next"></span></a>
+                        </li>
+                    </c:if>
+                    
+                    <!-- 마지막 페이지 -->
+                    <c:if test="${pagenationDTO.currentPage < pagenationDTO.lastPageNum}">
+                        <li>
+                            <c:url var="lastUrl" value="/professor/list.do">
+                                <c:param name="pg" value="${pagenationDTO.lastPageNum}"/>
+                                <c:if test="${not empty keyword}">
+                                    <c:param name="searchType" value="${searchType}"/>
+                                    <c:param name="keyword" value="${keyword}"/>
+                                </c:if>
+                            </c:url>
+                            <a href="${lastUrl}"><span class="last"></span></a>
+                        </li>
+                    </c:if>
                 </ul>
+                
+                <button id="regist-button" onclick="location.href='/professor/register.do'">등록</button>
             </div>
             
         </main>
@@ -683,7 +794,7 @@
         <div class="footer-high">
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
                     <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>

@@ -21,19 +21,26 @@ public class ListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
+
 	private SA_detailsService detailsService = SA_detailsService.INSTANCE;
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		String snum = req.getParameter("snum");
-		// 로그인 정보에서 가져옴.
-		String snum = "201001";
-		
-		List<SA_detailsDTO> dtoList = detailsService.findWithSnum(snum);
-		
+		// 로그인 정보에서 가져옴(임시 값 : 2010001)
+
+		// 추후 날짜 연동 기능 추가
+		String nowYear = "2025";
+		String nowSemester = "1";
+
+		List<SA_detailsDTO> dtoList = detailsService.findAllWithKeywords(201001, nowYear, nowSemester);
+		int subNum = detailsService.countWithKeywords(201001, nowYear, nowSemester);
+		int gradeSum = detailsService.gradeSumWithYearSemester(201001, nowYear, nowSemester);
+
 		req.setAttribute("dtoList", dtoList);
-		
+		req.setAttribute("subNum", subNum);
+		req.setAttribute("gradeSum", gradeSum);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/studAssist/studAssist_courseRegDetails.jsp");
 		dispatcher.forward(req, resp);
 	}

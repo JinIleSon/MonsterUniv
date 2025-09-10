@@ -7,16 +7,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>학사안내::공지사항</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
-<link rel="stylesheet" href="/greenUniv/css/academicAffairs_main.style.css">
+<link rel="stylesheet"
+	href="/greenUniv/css/academicAffairs_main.style.css">
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <!--부트스트랩 연결-->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <style>
 a {
@@ -44,6 +46,57 @@ main {
 .sidebar a:hover:not(.active) {
 	background-color: #f0f0f0;
 }
+/* 게시판 아래버튼 부분 */
+.first-page {
+	background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	width: 33px;
+	height: 30px;
+	margin-right: 3px;
+}
+
+.prev-page {
+	background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	margin-right: 15px;
+	width: 33px;
+	height: 30px;
+}
+
+.next-page {
+	background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	margin-left: 15px;
+	width: 33px;
+	height: 30px;
+	margin-right: 3px;
+}
+
+.last-page {
+	background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
+	border: 1px #eaeaea solid;
+	width: 33px;
+	height: 30px;
+}
+/* 현재 위치 페이지 버튼 */
+.current {
+	border: 1px #eaeaea solid;
+	background-color: #5198f9;
+	color: white;
+	height: 30px;
+	width: 34px;
+	margin-right: 3px;
+}
+
+/* 다른 페이지 버튼 */
+.off {
+	border: 1px #eaeaea solid;
+	background-color: #ffffff;
+	color: #a6a6a6;
+	height: 30px;
+	width: 34px;
+	margin-right: 3px;
+}
 </style>
 </head>
 <body>
@@ -54,9 +107,16 @@ main {
 			<div class="inner">
 				<div class="log-area">
 					<ul>
-						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-						<li><a href="/greenUniv/login/login.do">로그인</a></li>
+						<c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
 				</div>
@@ -66,8 +126,9 @@ main {
 		<div class="mainNav">
 			<div class="inner">
 				<!--로고-->
-				<a href="/greenUniv/main.jsp"><img
-					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+				<a href="/greenUniv/main.do"><img
+					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
+					class="logo" /></a>
 
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
 				<div class="menu-area">
@@ -181,8 +242,7 @@ main {
 					style="font-weight: 350; font-size: 14px; color: #071F4B; margin-left: 15px;">공지사항</span>
 			</div>
 		</div>
-		<div
-			style="margin-top: 50px; height: 600px; width: 1200px !important;"
+		<div style="margin-top: 50px; width: 1200px !important;"
 			class="container">
 			<div style="display: flex; gap: 60px;">
 				<div style="width: 210px;">
@@ -231,14 +291,13 @@ main {
 						style="border: none; hieght: 0; background-color: none; border-top: 2px solid black !important; opacity: 1 !important;">
 					<div
 						style="display: flex; width: 100%; margin-top: 30px; margin-bottom: 20px; justify-content: flex-end;">
-						<form action="" style="display: flex;">
-							<select name="" id=""
+						<form action="/greenUniv/academicAffairs/academicAffairs_notice_search.do" style="display: flex;">
+							<select name="searchType" id=""
 								style="border: 1px solid #e9e9e9; height: 35px; width: 140px; margin-right: 4px;">
-								<option value="">전체</option>
-								<option value="">제목</option>
-								<option value="">작성자</option>
-								<option value="">고치기</option>
-							</select> <input type="text" placeholder="검색어를 입력해 주세요"
+								<option value="all">전체</option>
+	                            <option value="title">제목</option>
+	                            <option value="nick">작성자</option>
+							</select> <input type="text" name="keyword" placeholder="검색어를 입력해 주세요"
 								style="border: 1px solid #e9e9e9; width: 200px; height: 32px; flex: 1;" />
 							<input type="submit" value="검색"
 								style="border: 1px solid #e9e9e9; background-color: #5198f9; width: 60px; height: 35px; color: white; font-weight: 200;">
@@ -254,52 +313,63 @@ main {
 							<td>작성일</td>
 							<td style="width: 65px;">조회</td>
 						</tr>
-						<tr style="height: 60px;">
-							<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">3</td>
-							<td
-								style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img
-								src="/greenUniv/images/ico-new01.gif" alt=""> <a href="#"
-								style="color: black;">&nbsp;2025학년도 신입학 3차 추가모집 모집요강 및 모집⋯</a></td>
-							<td style="border-bottom: 1px solid #b8b8b8;">담당자</td>
-							<td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-							<td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-						</tr>
-						<tr style="height: 60px;">
-							<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">2</td>
-							<td
-								style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><img
-								src="/greenUniv/images/ico-new01.gif" alt=""> <a href="#"
-								style="color: black;">&nbsp;2025학년도 신입학 2차 추가모집 모집요강 및 모집⋯</a></td>
-							<td style="border-bottom: 1px solid #b8b8b8;">담당자</td>
-							<td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-							<td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-						</tr>
-						<tr style="height: 60px;">
-							<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">1</td>
-							<td
-								style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a
-								href="#" style="color: black;">2025학년도 신입학 추가모집 모집요강 및 모집인원
-									공지</a></td>
-							<td style="border-bottom: 1px solid #b8b8b8;">담당자</td>
-							<td style="border-bottom: 1px solid #b8b8b8;">24.04.09</td>
-							<td style="width: 65px; border-bottom: 1px solid #b8b8b8;">160</td>
-						</tr>
+						<c:forEach var="notice" items="${dtoList}" varStatus="status">
+							<tr style="height: 60px;">
+								<td style="width: 80px; border-bottom: 1px solid #b8b8b8;">${pagenationDTO.currentPageStartNum - status.index}</td>
+								<td
+									style="width: 500px; border-bottom: 1px solid #b8b8b8; text-align: left;"><a
+									href="#"><img src="/greenUniv/images/ico-new01.gif" alt="">
+										<a href="#" style="color: black;">${notice.title}</a></td>
+								<td style="border-bottom: 1px solid #b8b8b8;">${notice.nick}</td>
+								<td style="border-bottom: 1px solid #b8b8b8;">${notice.date}</td>
+								<td style="width: 65px; border-bottom: 1px solid #b8b8b8;">${notice.hits}</td>
+							</tr>
+							<c:set var="currentPageStartNum" value="${currentPageStartNum-1}" />
+						</c:forEach>
 					</table>
 					<div style="height: 100px; margin-top: 30px;">
-						<form action="" method=""
+						<form action="" method="get"
 							style="text-align: center; display: flex; justify-content: center;">
 
-							<input type="button" class="first-page"> <input
-								type="button" class="prev-page"> <input type="button"
-								value="1"
-								style="border: 1px #eaeaea solid; background-color: #5198f9; color: white; height: 30px; width: 34px; margin-right: 3px;">
-							<input type="button" value="2"
-								style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px; margin-right: 3px;">
-							<input type="button" value="3"
-								style="border: 1px #eaeaea solid; background-color: #ffffff; color: #a6a6a6; height: 30px; width: 34px;">
+							<input type="button"
+								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.pageGroupStart}'"
+								class="first-page">
+							<!-- 이전 페이지: 1페이지일 때 비활성화 -->
+							<c:choose>
+								<c:when test="${pagenationDTO.currentPage == 1}">
+									<input type="button" class="prev-page" disabled>
+								</c:when>
+								<c:otherwise>
+									<input type="button"
+										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.currentPage-1}'"
+										class="prev-page">
+								</c:otherwise>
+							</c:choose>
 
-							<input type="button" class="next-page"> <input
-								type="button" class="last-page">
+							<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
+								end="${pagenationDTO.pageGroupEnd}">
+								<input type="button"
+									onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${num}'"
+									value="${num}"
+									class="${pagenationDTO.currentPage == num ? 'current' : 'off'}"
+									style="">
+							</c:forEach>
+
+							<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->
+							<c:choose>
+								<c:when
+									test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+									<input type="button" class="next-page" disabled>
+								</c:when>
+								<c:otherwise>
+									<input type="button"
+										onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.currentPage+1}'"
+										class="next-page">
+								</c:otherwise>
+							</c:choose>
+							<input type="button"
+								onclick="location.href='${pageContext.request.contextPath}/academicAffairs/academicAffairs_notice.do?pg=${pagenationDTO.pageGroupEnd}'"
+								class="last-page">
 						</form>
 					</div>
 				</div>
@@ -307,50 +377,53 @@ main {
 		</div>
 
 	</main>
-	<!--3. 푸터영역-->    
-    <footer class="footer">
-        <!--상단-->
-        <div class="footer-high">
-            <div class="footer-high-inner">
-                <ul class="footer-high-quicklinks">
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
-                    <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-                    <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
-                    <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
-                </ul>
-            </div>
-        </div>
+	<!--3. 푸터영역-->
+	<footer class="footer">
+		<!--상단-->
+		<div class="footer-high">
+			<div class="footer-high-inner">
+				<ul class="footer-high-quicklinks">
+					<li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
+					<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
+					<li><a
+						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
+					<li><a href="/greenUniv/college/college_humanities.do">주요인원
+							연락처</a></li>
+					<li><a
+						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
+				</ul>
+			</div>
+		</div>
 
-        <!--하단-->
-        <div class="footer-low">
-            <div class="footer-low-inner">
-                <div class="footer-logo">
-                    <img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
-                </div>
+		<!--하단-->
+		<div class="footer-low">
+			<div class="footer-low-inner">
+				<div class="footer-logo">
+					<img src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
+						class="logo" />
+				</div>
 
-                <div class="footer-info">
-                    <p class="footer-uniname">몬스터대학교</p>
-                    <p>
-                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
-                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
-                        팩스 : 051-123-3333
-                    </p>
-                     <p class="copy">copyright ©Monster University All rights reserved.</p>
-                </div>
+				<div class="footer-info">
+					<p class="footer-uniname">몬스터대학교</p>
+					<p>[12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 / 대표전화 : 051-123-1000 /
+						입학안내 : 051-123-1302 팩스 : 051-123-3333</p>
+					<p class="copy">copyright ©Monster University All rights
+						reserved.</p>
+				</div>
 
-                <div class="footer-select">
-                    <label for="site-select" class="sr-only">주요사이트</label>
-                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
-                        <option value="">주요사이트</option>
-                        <option value="https://www.moe.go.kr/">교육부</option>
-                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
-                        <option value="https://www.nrf.re.kr/">연구재단</option>
-                    </select>    
-                </div>
-            </div>
-        </div>
-    </footer>
+				<div class="footer-select">
+					<label for="site-select" class="sr-only">주요사이트</label> <select
+						id="site-select"
+						onchange="if(this.value) window.open(this.value, '_blank')">
+						<option value="">주요사이트</option>
+						<option value="https://www.moe.go.kr/">교육부</option>
+						<option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+						<option value="https://www.nrf.re.kr/">연구재단</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body>
 </html>

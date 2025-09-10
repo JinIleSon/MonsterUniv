@@ -35,7 +35,7 @@ public class ListController extends HttpServlet{
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding(StandardCharsets.UTF_8.name());
@@ -48,9 +48,10 @@ public class ListController extends HttpServlet{
 
         switch (result) {
         case LOGIN_SUCCESS:
-        	UserDTO user = userService.getUser(id);   // DB에서 role 포함 조회        
-            HttpSession session = req.getSession(true);
-            session.setAttribute("LOGIN_USER", user);
+        	UserDTO user = userService.getUser(id);   // DB에서 role 포함 조회    
+
+        	HttpSession session = req.getSession(true);
+            session.setAttribute("LOGIN_USER", user.getIdentification());    
             session.setAttribute("FLASH_MSG",user.getNickname() + "님 환영합니다!");
             resp.sendRedirect(req.getContextPath() + "/main.jsp");
             return;
@@ -71,7 +72,7 @@ public class ListController extends HttpServlet{
             return;
             }
     }
-	
+
 	private static String trim(String s) {
 	    return (s == null) ? "" : s.trim();
 	}

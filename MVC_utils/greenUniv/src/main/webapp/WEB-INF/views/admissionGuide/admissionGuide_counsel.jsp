@@ -14,164 +14,103 @@
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+hr{
+            border: none;
+            height: 2px;
+            background-color: black;
+        }
+        a {
+            text-decoration: none;
+        }
+        /* 배너 공간 */
+        .banner td {
+            height: 60px;
+            
+        }
+        .banner a {
+            display:block;
+            width:100%;
+            height:100%;
+            line-height: 60px;
+            padding-left:16px;
+        }
+        .board-select {
+            color: #666666; /* 글씨 색 */
+            appearance: none;           /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
+            -webkit-appearance: none;
+            -moz-appearance: none;
 
-@font-face {
-	font-family: 'NotoSansKR';
-	src: url('font/NotoSansKR-Regular.woff2') format('woff2');
-}
-
-body {
-	font-family: 'NotoSansKR', sans-serif;
-	font-size: 12px;
-
-	/* padding: 10px; */
-}
-/* 메인 컨테이너 */
-.container {
-	display: flex;
-	gap: 50px;
-	padding-top: 35px;
-}
-
-/* 메인 컨텐츠 */
-.main-content {
-	flex: 1;
-	padding: 0;
-}
-
-.content-header {
-	background-color: white;
-	border-bottom: 2px solid black;
-	padding: 20px 20px 20px 0;
-	font-size: 21px;
-	font-weight: bold;
-	height: 65px;
-	display: flex;
-	align-items: center;
-}
-
-.search-section {
-	background-color: white;
-	padding: 20px;
-	border-bottom: 2px solid black;
-	text-align: right;
-}
-
-.search-box {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.search-box select {
-	padding: 8px 12px;
-	border: 1px solid #ddd;
-	font-size: 12px;
-	border-radius: 3px;
-}
-
-.search-box input {
-	padding: 8px 12px;
-	border: 1px solid #ddd;
-	font-size: 12px;
-	width: 200px;
-	border-radius: 3px;
-}
-
-.search-btn {
-	background-color: #4a90e2;
-	color: white;
-	border: none;
-	padding: 9px 20px;
-	font-size: 12px;
-	cursor: pointer;
-	border-radius: 3px;
-}
-
-.search-btn:hover {
-	background-color: #3a7bc8;
-}
-
-/* 테이블 */
-.table-container {
-	background-color: white;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	font-size: 12px;
-}
-
-th {
-	background-color: #f8f9fa;
-	padding: 12px;
-	text-align: center;
-	font-weight: bold;
-	color: #333;
-}
-
-td {
-	border-top: 1px solid #ddd;
-	padding: 10px;
-	text-align: center;
-}
-
-.title-cell {
-	text-align: left;
-	padding-left: 20px;
-}
-
-.title-cell a {
-	text-decoration: none;
-	color: black;
-}
-
-/* 페이지네이션 */
-.pagination {
-	text-align: center;
-	padding: 30px;
-	background-color: white;
-}
-
-.pagination a {
-	display: inline-block;
-	padding: 8px 12px;
-	margin: 0 2px;
-	text-decoration: none;
-	color: #333;
-	border: 1px solid #ddd;
-	font-size: 12px;
-	border-radius: 3px;
-}
-
-.pagination a:hover:not(.current):not(.disabled) {
-	background-color: #f0f0f0;
-}
-
-.pagination .current {
-	background-color: #4a90e2;
-	color: white;
-	border-color: #4a90e2;
-}
-
-.pagination .disabled {
-	color: #ccc;
-	cursor: not-allowed;
-}
-
-main>:first-child {
-	margin-top: 0;
-}
-
-main {
-	background-color: white;
-}
+            background: url('/greenUniv/images/btn-sel-open01.png') 
+                        no-repeat right 8px center/12px auto;
+            padding-right: 24px;  /* 화살표 공간 확보 */
+        }
+        /* 게시판 아래버튼 부분 */
+        .first-page{
+            background: url('/greenUniv/images/btn-first-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .prev-page{
+            background: url('/greenUniv/images/btn-prev-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-right: 15px;
+            width: 33px;
+            height: 30px;
+        }
+        .next-page{
+            background: url('/greenUniv/images/btn-next-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-left: 15px;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .last-page{
+            background: url('/greenUniv/images/btn-last-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+        }
+        
+        /* 현재 위치 페이지 버튼 */
+        .current {
+ 		    border: 1px #eaeaea solid; 
+ 		    background-color: #5198f9; 
+ 		    color: white; 
+ 		    height: 30px; 
+ 		    width: 34px; 
+ 		    margin-right:3px;
+		}
+        
+        /* 다른 페이지 버튼 */
+        .off {
+        	border: 1px #eaeaea solid; 
+        	background-color: #ffffff; 
+        	color: #a6a6a6; 
+        	height: 30px; 
+        	width: 34px; 
+        	margin-right:3px;
+        }
+        
+        .sidebar a {
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		
+		.sidebar a.active {
+		    background-color: #4a90e2;
+		    color: white;
+		}
+		
+		.sidebar a:hover:not(.active) {
+		    background-color: #f0f0f0;
+		}
+        
+        /* 게시판 아래버튼 부분 끝 */
+        main > :first-child{ margin-top: 0; }
+		main {background-color: white;}
 </style>
 </head>
 <body>
@@ -182,9 +121,16 @@ main {
 			<div class="inner">
 				<div class="log-area">
 					<ul>
-						<li><a href="/greenUniv/main.jsp">HOME</a></li>
+						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-						<li><a href="/greenUniv/login/login.do">로그인</a></li>
+						<c:choose>
+						    <c:when test="${not empty sessionScope.LOGIN_USER}">
+						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+						    </c:when>
+						    <c:otherwise>
+						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+						    </c:otherwise>
+						</c:choose>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
 				</div>
@@ -194,7 +140,7 @@ main {
 		<div class="mainNav">
 			<div class="inner">
 				<!--로고-->
-				<a href="/greenUniv/main.jsp"><img
+				<a href="/greenUniv/main.do"><img
 					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
 
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
@@ -295,107 +241,130 @@ main {
 		</div>
 		</div>
 	</header>
-	<main style="background-color: white !important;">
-		<div
-			style="background-color: #ECF2F6; height: 42px; display: flex; align-items: center; justify-content: center;">
-			<div
-				style="width: 220px; height: 42px; position: absolute; transform: translateX(221%); display: flex; align-items: center;">
-				<img src="/greenUniv/images/ico-home.png" alt="홈"
-					style="width: 23px; height: 20px;"> <img
-					src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
-					style="width: 8px; height: 13px; margin-left: 15px;"> <span
-					style="font-weight: 350; font-size: 14px; color: #333333; margin-left: 15px;">입학안내</span>
-				<img src="/greenUniv/images/bg-path-arrow.png" alt="화살표"
-					style="width: 8px; height: 13px; margin-left: 15px;"> <span
-					style="font-weight: 350; font-size: 14px; color: #071F4B; margin-left: 15px;">입학상담</span>
-			</div>
-		</div>
-		<!-- 메인 컨테이너 -->
-		<div class="inner">
-			<div class="container">
-				<!-- 사이드바 -->
-				<div class="sidebar">
-					<div class="sidebar-header">입학안내</div>
-					<ul>
-						<li><a
-							href="/greenUniv/admissionGuide/admissionGuide_notice.do"
-							style="color: black !important;">공지사항</a></li>
-						<li><a
-							href="/greenUniv/admissionGuide/admissionGuide_early.do"
-							style="color: black !important;">수시모집</a></li>
-						<li><a
-							href="/greenUniv/admissionGuide/admissionGuide_regular.do"
-							style="color: black !important;">정시모집</a></li>
-						<li><a
-							href="/greenUniv/admissionGuide/admissionGuide_transfer.do"
-							style="color: black !important;">편입학</a></li>
-						<li><a href="#" class="active">입학상담</a></li>
-					</ul>
-				</div>
-
-				<!-- 메인 컨텐츠 -->
-				<div class="main-content">
-					<div class="content-header">입학상담</div>
-
-					<div class="search-section">
-						<div class="search-box">
-							<select>
-								<option>전체</option>
-							</select> <input type="text" placeholder="검색어를 입력해 주세요">
-							<button class="search-btn">검색</button>
-						</div>
-					</div>
-
-					<div class="table-container">
-						<table>
-							<thead>
-								<tr>
-									<th width="60">번호</th>
-									<th width="50%">제목</th>
-									<th width="80">작성자</th>
-									<th width="80">작성일</th>
-									<th width="80">상태</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>3</td>
-									<td class="title-cell"><img src="/greenUniv/images/ico-lock.png"
-										alt="ico-lock"> <a href="#">정시모집 관련해 문의드립니다.</a></td>
-									<td>담당자</td>
-									<td>24.04.09</td>
-									<td style="color: red;">답변대기</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="title-cell"><img src="/greenUniv/images/ico-lock.png"
-										alt="ico-lock"> <a href="#">정시모집 관련해 문의드립니다.</a></td>
-									<td>담당자</td>
-									<td>24.04.09</td>
-									<td style="color: green;">답변완료</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td class="title-cell"><img src="/greenUniv/images/ico-lock.png"
-										alt="ico-lock"> <a href="#">정시모집 관련해 문의드립니다.</a></td>
-									<td>담당자</td>
-									<td>24.04.09</td>
-									<td style="color: green;">답변완료</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="pagination">
-						<a href="#" class="disabled">«</a> <a href="#" class="disabled">‹</a>
-						<a href="#" class="current">1</a> <a href="#">2</a> <a href="#">3</a>
-						<a href="#">›</a> <a href="#">»</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div style="height: 100px;"></div>
-	</main>
+	<main style="background-color:white !important;">
+    <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
+        <div style="width:220px; height:42px;
+            position: absolute; 
+            transform: translateX(221%);
+            display:flex;
+            align-items: center;
+            ">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">입학안내</span>
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">입학상담</span>
+        </div>
+    </div>
+	<div style="height:100%;" class = "inner">
+        <div style="height:50px;"></div>
+        <div style="display: flex; gap: 60px;">
+            <div style=" width: 210px;" >
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">입학안내</b>
+                <table class="banner sidebar" style="border-collapse:collapse; width:100%; border-top:2px solid black;" >
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="/greenUniv/admissionGuide/admissionGuide_notice.do" style="color: black;">공지사항</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="/greenUniv/admissionGuide/admissionGuide_early.do" style="color: black;">수시모집</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="/greenUniv/admissionGuide/admissionGuide_regular.do" style="color: black;">정시모집</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="/greenUniv/admissionGuide/admissionGuide_transfer.do" style="color: black;">편입학</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=" background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white; font-weight:300;" class="active">입학상담</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-top:9px; width: 930px;">
+                <div style="padding-bottom:6px;">
+                    <b style="font-weight: 700; font-size:26px;">입학상담</b>
+                </div>
+               <hr style="border:none; border-top: 2px solid;">
+                <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
+                    <form action="/greenUniv/admissionGuide/admissionGuide_counsel_search.do" method="get" style="display: flex;">
+                        <select name="searchType" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
+                            <option value="all">전체</option>
+                            <option value="title">제목</option>
+                            <option value="nick">작성자</option>
+                        </select>
+                        <input type="text" name="keyword" placeholder="검색어를 입력해 주세요" style="border: 1px solid #e9e9e9; width:242px; height:32px; flex:1;padding-left:8px;"/>
+                        <input type="submit" value="검색" style="border: 1px solid #e9e9e9; background-color: #5198f9; width:60px; height:35px; color:white; font-weight: 200;">
+                    </form>
+                </div>
+                <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
+                    <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
+                        <td style="width: 93px;">번호</td>
+                        <td style="width: 139px;">구분</td>
+                        <td style="width: 372px;">제목</td>
+                        <td style="width:93px;">작성자</td>
+                        <td style="width:93px;">작성일</td>
+                        <td style="width: 139px;">상태</td>
+                    </tr>
+                    <c:forEach var="notice" items="${dtoList}" varStatus="status">
+			            <tr style="height:60px;">
+			                <td style=" border-bottom: 1px solid #b8b8b8;">${pagenationDTO.currentPageStartNum - status.index}</td>
+			                <td style=" border-bottom: 1px solid #b8b8b8;">${notice.classify}</td>
+			                <td style="border-bottom: 1px solid #b8b8b8;"><a href="#" style="color:black;">${notice.title}</a></td>
+			                <td style="border-bottom: 1px solid #b8b8b8;">${notice.nick}</td>
+			                <td style="border-bottom: 1px solid #b8b8b8;">${notice.date}</td>
+			                <td style=" border-bottom: 1px solid #b8b8b8;
+			                color: ${notice.condition == '답변완료' ? 'green' : 'red'}">${notice.condition}</td>
+			            </tr>
+		           		<c:set var="currentPageStartNum" value="${currentPageStartNum-1}" />
+	           	 	</c:forEach>
+                </table>
+                <div style=" height: 100px; margin-top:30px;">
+	                <form action="" method="get" style="text-align: center; display:flex; justify-content: center;">
+	
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.pageGroupStart}'" class="first-page">
+	                    <!-- 이전 페이지: 1페이지일 때 비활성화 -->
+						<c:choose>
+						  <c:when test="${pagenationDTO.currentPage == 1}">
+						    <input type="button" class="prev-page" disabled>
+						  </c:when>
+						  <c:otherwise>
+						    <input type="button"
+						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.currentPage-1}'"
+						           class="prev-page">
+						  </c:otherwise>
+						</c:choose>
+						
+						<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+	                    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${num}'" value="${num}" class="${pagenationDTO.currentPage == num ? 'current' : 'off'}" style="">
+	                    </c:forEach>
+						
+						<!-- 다음 페이지: 마지막 페이지일 때 비활성화 -->             
+            			<c:choose>
+						  <c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+						    <input type="button" class="next-page" disabled>
+						  </c:when>
+						  <c:otherwise>
+						    <input type="button"
+						           onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.currentPage+1}'"
+						           class="next-page">
+						  </c:otherwise>
+						</c:choose>
+	                    <input type="button" onclick="location.href='${pageContext.request.contextPath}/admissionGuide/admissionGuide_counsel.do?pg=${pagenationDTO.pageGroupEnd}'" class="last-page">
+	                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
 </body>
 <!--3. 푸터영역-->
 <footer class="footer">
@@ -403,7 +372,7 @@ main {
 	<div class="footer-high">
 		<div class="footer-high-inner">
 			<ul class="footer-high-quicklinks">
-				<li><a href="#">개인정보처리방침</a></li>
+				<li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
 				<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
 				<li><a
 					href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>

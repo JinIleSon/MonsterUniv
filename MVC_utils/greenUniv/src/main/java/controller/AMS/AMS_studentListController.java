@@ -25,6 +25,7 @@ public class AMS_studentListController extends HttpServlet {
 		PagenationDTO pagenationDTO = studentService.getPagenationDTO(pg, null, null);
 		
 		int start = pagenationDTO.getStart();
+		
 		List<AMS_studentDTO> dtoList = studentService.findAll(start);
 		
 		req.setAttribute("dtoList", dtoList);
@@ -33,7 +34,7 @@ public class AMS_studentListController extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studentList.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}
