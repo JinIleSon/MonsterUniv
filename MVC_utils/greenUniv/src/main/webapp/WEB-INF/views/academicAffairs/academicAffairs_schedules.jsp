@@ -45,8 +45,9 @@
                         	failureCallback(error);
                         });
                 }
-
+                
             });
+            
             calendar.render();
             
         });

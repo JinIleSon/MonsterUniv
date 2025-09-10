@@ -26,13 +26,13 @@ public class AA_schedulesDAO extends DBHelper {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(Sql_AA_schedules.SELECT_ALL_SCHEDULES);
+			logger.debug("AA_schedulesDAO - selectAll");
 			while (rs.next()) {
 				AA_schedulesDTO dto = new AA_schedulesDTO();
 				dto.setTitle(rs.getString("content"));
 				dto.setStart(rs.getString("date"));
 				dto.setEnd(rs.getString("date"));
 				
-				logger.debug("AA_schedulesDAO - selectAll");
 				logger.debug("dto : "+dto.toString());
 				
 				dtoList.add(dto);

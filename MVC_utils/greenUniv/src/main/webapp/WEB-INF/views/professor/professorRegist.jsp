@@ -27,6 +27,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         /* ================================
         Header
         ================================ */
@@ -235,6 +236,7 @@
         }
         .sidebar a {
         	text-decoration: none;
+        	color: black;
         }
         
         .sidebar a:visited { 
