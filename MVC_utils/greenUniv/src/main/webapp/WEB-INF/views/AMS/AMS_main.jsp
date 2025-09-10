@@ -70,7 +70,14 @@ aside ol {
 	margin-top: 9px;
 	padding: 0px 0px 0px 30px;
 }
+.sidebar a {
+        	text-decoration: none;
+}
 
+.sidebar a:visited { 
+	color:black; 
+}
+        
 .menu ul li::before {
 	content: "•";
 	font-size: 0.6em;
@@ -344,7 +351,8 @@ aside ol {
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="#">학생 목록 및 등록</a></li>
-								<li class="menu-item"><a href="#">교수 목록 및 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
+                    			<li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
 								<li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
 							</ul>
 						</div>
@@ -353,8 +361,8 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-college.png'><a href="#">인사관리</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">대학 및 학과 목록</a></li>
-								<li class="menu-item"><a href="#">대학 및 학과 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                   				<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
 							</ul>
 						</div>
 						<div class="menu menu5">
