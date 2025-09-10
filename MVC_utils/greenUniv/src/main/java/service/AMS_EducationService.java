@@ -2,9 +2,6 @@ package service;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import dao.AMS_EducationDAO;
 import dto.AMS_lectureDTO;
 import dto.PagenationDTO;
@@ -14,8 +11,6 @@ public enum AMS_EducationService {
 	INSTANCE;
 
 	private AMS_EducationDAO dao = AMS_EducationDAO.getInstance();
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public PagenationDTO getPagenationInfo(String pg, String searchType, String keyword) {
 
@@ -64,17 +59,11 @@ public enum AMS_EducationService {
 		dto.setPageGroupStart(currentPageGroupStart);
 		dto.setPageGroupEnd(currentPageGroupEnd);
 
-		logger.debug("LectureService\n"+dto.toString());
-
 		return dto;
 	}
 
 	public void insert(AMS_lectureDTO dto) {
 		dao.insert(dto);
-	}
-
-	public AMS_lectureDTO findByCode(String deptCode) {
-		return dao.select(deptCode);
 	}
 
 	public List<AMS_lectureDTO> findBySearch(int start, String searchType, String keyword) {
@@ -83,13 +72,5 @@ public enum AMS_EducationService {
 
 	public List<AMS_lectureDTO> findAll(int start){
 		return dao.selectAll(start);
-	}
-
-	public void modify(AMS_lectureDTO dto) {
-		dao.modify(dto);
-	}
-
-	public void delete(String deptCode) {
-		dao.delete(deptCode);
 	}
 }

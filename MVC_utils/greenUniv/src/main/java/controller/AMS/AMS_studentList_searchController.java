@@ -3,10 +3,7 @@ package controller.AMS;
 import java.io.IOException;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import dto.AMS_lectureDTO;
+import dto.AMS_studentDTO;
 import dto.PagenationDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,35 +11,32 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.AMS_EducationService;
+import service.AMS_StudentService;
 
-@WebServlet("/AMS/AMS_educationOperation/list.do")
-public class AMS_educationListController extends HttpServlet {
-
+@WebServlet("/AMS/AMS_studentList_search.do")
+public class AMS_studentList_searchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-	private AMS_EducationService lectureService = AMS_EducationService.INSTANCE;
-
+	private AMS_StudentService studentService = AMS_StudentService.INSTANCE;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 요청 페이지 번호 수신
 		String pg = req.getParameter("pg");
-
-		// 페이지네이션 처리 요청
-		PagenationDTO pagenationDTO = lectureService.getPagenationInfo(pg, null, null);
-
+		String searchType = req.getParameter("searchType");
+		String keyword = req.getParameter("keyword");
+		
+		PagenationDTO pagenationDTO = studentService.getPagenationDTO(pg, searchType, keyword);
 		int start = pagenationDTO.getStart();
-		List<AMS_lectureDTO> dtoList = lectureService.findAll(start);
-
+		List<AMS_studentDTO> dtoList = studentService.findAllSearch(start, searchType, keyword);
+		
 		req.setAttribute("dtoList", dtoList);
+		req.setAttribute("searchType", searchType);
+		req.setAttribute("keyword", keyword);
 		req.setAttribute("pagenationDTO", pagenationDTO);
-
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_educationOperation.jsp");
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studentList_search.jsp");
 		dispatcher.forward(req, resp);
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}

@@ -17,7 +17,7 @@ public enum AMS_StudentService {
 		if(keyword == null) {
 			total = dao.selectCountTotal();
 		} else {
-//			total = dao.selectCountSearch(searchType, keyword);
+			total = dao.selectCountSearch(searchType, keyword);
 		}
 		
 		int lastPageNum = 0;
@@ -57,6 +57,9 @@ public enum AMS_StudentService {
 		return dto;
 	}
 	
+	public List<AMS_studentDTO> findAllSearch(int start, String searchType, String keyword) {
+		return dao.selectStudentSearch(start, searchType, keyword);
+	}
 	public void register(AMS_studentDTO dto) {
 		dao.insert(dto);
 	}

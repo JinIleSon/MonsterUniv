@@ -735,7 +735,7 @@ tbody td span {
 					<option value="grade">학점</option>
 					<option value="room">강의장</option>
 				</select> <input type="text" id="search-title" name="keyword"> <input
-					type="submit" class="search-btn" value="검색">
+					type="submit" class="search-btn" value="검색" style="cursor:pointer">
 			</form>
 
 			<table style="height: auto !important;">

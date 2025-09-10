@@ -27,10 +27,6 @@ public class AMS_EducationDAO extends DBHelper {
 
 	}
 
-	public AMS_lectureDTO select(String deptCode) {
-		return null;
-	}
-
 	public int selectCountTotal() {
 		int count = 0;
 
@@ -45,7 +41,6 @@ public class AMS_EducationDAO extends DBHelper {
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		logger.debug("count : "+count);
 		return count;
 	}
 
@@ -90,7 +85,6 @@ public class AMS_EducationDAO extends DBHelper {
 			break;
 		}
 
-		logger.debug(sql.toString());
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
@@ -149,7 +143,6 @@ public class AMS_EducationDAO extends DBHelper {
 		sql.append(Sql.SEARCH_ORDER_DEPTCODE);
 		sql.append(Sql.SEARCH_OFFET_ROW);
 
-		logger.debug(sql.toString());
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
@@ -199,7 +192,6 @@ public class AMS_EducationDAO extends DBHelper {
 
 		try {
 			conn = getConnection();
-			logger.debug(sql.toString());
 			psmt = conn.prepareStatement(sql.toString());
 			psmt.setInt(1, start);
 
@@ -229,20 +221,11 @@ public class AMS_EducationDAO extends DBHelper {
 				dto.setNowNum(rs.getInt(20));
 
 				dtoList.add(dto);
-				logger.debug(dto.toString());
 			}
 			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
 		return dtoList;
-	}
-
-	public void modify(AMS_lectureDTO dto) {
-
-	}
-
-	public void delete(String deptCode) {
-
 	}
 }

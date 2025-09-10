@@ -65,17 +65,8 @@ public enum AMS_LectureService {
 	public void register(AMS_lectureDTO dto) {
 		dao.insert(dto);
 	}
-	public AMS_lectureDTO findById(String deptcode) {
-		return null;
-			//return dao.select(deptcode);
-	}
+	
 	public List<AMS_lectureDTO> findAll(int start) {
 		return dao.selectAll(start);
-	}
-	public void modify(AMS_lectureDTO dto) {
-		//dao.update(dto);
-	}
-	public void remove(String deptcode) {
-		//dao.delete(deptcode);
 	}
 }
