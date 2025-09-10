@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+    <script src="/greenUniv/js/validation.js"></script>
     <style>
     	html, body {
 		  height: 100%;      /* 화면 전체 높이 */
@@ -176,6 +177,7 @@
                         <td style="width:792px;">
                             <div style="display: flex; align-items: center;">
                                 <input type="text" name="identification" placeholder="아이디 입력"
+                                		<c:if test="${ not empty formValue.uid }">value="${ formValue.uid }"</c:if>
                                        style="width: 308.8px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; padding-bottom:2px; color:#333333;"
                                        minlength="4" maxlength="10" pattern="[A-Za-z0-9]{4,10}" required>
                                 <span style="font-weight:350; margin-left:9px; font-size:16px; color:#333333;">영문·숫자 조합 4~10자 이내</span>
@@ -211,6 +213,7 @@
                         <td style="width:792px;">
                             <div style="display: flex; align-items: center;">
                                 <input type="text" name="name" placeholder="이름 입력"
+                                		<c:if test="${ not empty formValue.name }">value="${ formValue.name }"</c:if>
                                        style="width: 308.8px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; padding-bottom:2px; color:#333333;"
                                        required>
                             </div>
@@ -222,6 +225,7 @@
                         <td style="width:792px;">
                             <div style="display: flex; align-items: center;">
                                 <input type="tel" name="phone" placeholder="휴대폰 입력 (예: 010-1234-5678)"
+                                		<c:if test="${ not empty formValue.phone }">value="${ formValue.phone }"</c:if>
                                        style="width: 308.8px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; padding-bottom:2px; color:#333333;"
                                        pattern="^01[0-9]-\d{3,4}-\d{4}$" required>
                             </div>
@@ -233,6 +237,7 @@
                         <td style="width:792px;">
                             <div style="display: flex; align-items: center;">
                                 <input type="email" name="email" placeholder="이메일 입력"
+                                		<c:if test="${ not empty formValue.email }">value="${ formValue.email }"</c:if>
                                        style="width: 308.8px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; padding-bottom:2px; color:#333333;"
                                        required>
                             </div>
@@ -248,10 +253,13 @@
                                     <input type="button" value="우편번호 선택" id="btnPostcode"
                                            style="background-color:#FFFFFF; width: 110px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; padding-bottom:2px; color:#333333; margin-bottom:5px;"><br>
                                     <input type="text" name="zip" id="zip" placeholder="우편번호"
+                                    		<c:if test="${ not empty formValue.zip }">value="${ formValue.zip }"</c:if>
                                            style="width: 150px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px; margin-bottom:5px;" readonly>
                                     <input type="text" name="addr1" id="addr1" placeholder="기본주소"
+                                    		<c:if test="${ not empty formValue.addr1 }">value="${ formValue.addr1 }"</c:if>
                                            style="width: 300px; height: 39px; border: 1px #CCCCCC solid; padding-left:8px; font-weight:350; font-size: 14px; margin-bottom:5px;" readonly><br>
                                     <input type="text" name="addr2" id="addr2" placeholder="상세주소 입력"
+                                    		<c:if test="${ not empty formValue.phone }">value="${ formValue.addr2 }"</c:if>
                                            style="width: 463.19px; height: 39px; border: 1px #CCCCCC solid; margin-left:8px; padding-left:8px; font-weight:350; font-size: 14px;">
                                 </div>
                             </div>

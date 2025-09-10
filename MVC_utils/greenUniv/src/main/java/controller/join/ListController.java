@@ -2,6 +2,7 @@ package controller.join;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 import dao.UserDAO;
 import dto.UserDTO;
@@ -55,6 +56,17 @@ public class ListController extends HttpServlet{
         String zip            = trim(req.getParameter("zip"));
         String addr1          = trim(req.getParameter("addr1"));
         String addr2          = trim(req.getParameter("addr2"));
+        
+        // 1-2) 입력 정보 저장 : 회원가입 화면으로 돌아갈 때 다시 채워넣을 정보
+        req.setAttribute("formValue", Map.of(
+        		"uid", identification,
+        		"name", name,
+        		"phone", phone,
+        		"email", email,
+        		"zip", zip,
+        		"addr1", addr1,
+        		"addr2", addr2
+        		));
 
         // 2) 서버 검증
         String err = validate(identification, password, passwordConfirm, name, phone, email);
