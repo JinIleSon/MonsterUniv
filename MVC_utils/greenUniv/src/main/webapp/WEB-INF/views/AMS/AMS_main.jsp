@@ -71,7 +71,8 @@ aside ol {
 	padding: 0px 0px 0px 30px;
 }
 .sidebar a {
-        	text-decoration: none;
+    text-decoration: none;
+    color: black;
 }
 
 .sidebar a:visited { 

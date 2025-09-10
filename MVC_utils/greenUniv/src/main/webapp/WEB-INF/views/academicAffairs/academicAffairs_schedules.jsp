@@ -26,28 +26,38 @@
 
                 views: {
                     dayGridMonth: { // name of view
-                    titleFormat: 'YYYY.MM',
+                    //titleFormat: 'YYYY.MM',
                     // other view-specific options here
                     fixedWeekCount: false
                     }
                 },
                 
-                events: function(info, successCallback, failureCallback) {
-                    // 서버에서 이벤트 데이터를 받아옵니다.
-                    fetch('/greenUniv/AA_schedules/getEvents.do')  // 이벤트를 가져오는 서버 API
-                        .then(response => response.json())
-                        .then(data => {
-                        	console.log(data);
-                        	successCallback(data);
-                        })
-                        .catch(error => {
-                        	console.error("error 발생 : " + error);
-                        	failureCallback(error);
+                events(info, success, failure) {
+                    fetch('/greenUniv/AA_schedules/getEvents.do')
+                      .then(res => res.json())
+                      .then(list => {
+                        // 서버 배열을 FullCalendar 형식으로 가공
+                        const events = list.map(e => {
+                          // 하루짜리(all-day)인데 end가 start와 같다면 end를 생략하거나 다음날로 보정
+                          let end = e.end;
+                          if (end === e.start) end = undefined; // 생략(권장)
+                          return {
+                            title: e.title,
+                            start: e.start,   // 'YYYY-MM-DD' 혹은 'YYYY-MM-DDTHH:mm:ss'
+                            end: end,
+                            allDay: true
+                          };
                         });
-                }
-                
-            });
+                        success(events);
+                      })
+                      .catch(err => {
+                        console.error('이벤트 로드 실패:', err);
+                        failure(err);
+                      });
+                  }
             
+            }); // FullCalendar.Calendar 끝
+                  
             calendar.render();
             
         });
