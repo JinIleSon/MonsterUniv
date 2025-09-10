@@ -354,7 +354,14 @@ main {
             <div class="footer-high-inner">
                 <ul class="footer-high-quicklinks">
                     <li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
-                    <li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
+                    <c:choose>
+						<c:when test="${sessionScope.LOGIN_USER eq 'admin'}">
+							<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="#" onclick="alert('통합정보시스템 접근 권한이 없습니다!'); return false;">통합정보시스템</a></li> <!-- 알림창 생각중 -->
+						</c:otherwise>
+					</c:choose>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
                     <li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
                     <li><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
