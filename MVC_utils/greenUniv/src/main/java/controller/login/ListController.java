@@ -48,9 +48,10 @@ public class ListController extends HttpServlet{
 
         switch (result) {
         case LOGIN_SUCCESS:
-        	UserDTO user = userService.getUser(id);   // DB에서 role 포함 조회        
-            HttpSession session = req.getSession(true);
-            session.setAttribute("LOGIN_USER", user);
+        	UserDTO user = userService.getUser(id);   // DB에서 role 포함 조회    
+
+        	HttpSession session = req.getSession(true);
+            session.setAttribute("LOGIN_USER", user.getIdentification());    
             session.setAttribute("FLASH_MSG",user.getNickname() + "님 환영합니다!");
             resp.sendRedirect(req.getContextPath() + "/main.jsp");
             return;
