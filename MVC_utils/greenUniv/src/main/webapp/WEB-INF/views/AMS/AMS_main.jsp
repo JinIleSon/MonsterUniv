@@ -329,12 +329,12 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-academic.png'><a href="#">학사운영</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">교육 운영 현황</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
 								<li class="menu-item"><a href="#">학년별 학생 현황</a></li>
 								<li class="menu-item"><a href="#">학과별 학생 현황</a></li>
-								<li class="menu-item"><a href="#">강의 목록</a></li>
-								<li class="menu-item"><a href="#">강의 등록</a></li>
-								<li class="menu-item"><a href="#">수강현황</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강현황</a></li>
 							</ul>
 						</div>
 						<div class="menu menu3">
@@ -343,8 +343,8 @@ aside ol {
 									목록 및 등록</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">학생 목록 및 등록</a></li>
-								<li class="menu-item"><a href="#">교수 목록 및 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록 및 등록</a></li>
 								<li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
 							</ul>
 						</div>
@@ -353,8 +353,8 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-college.png'><a href="#">인사관리</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">대학 및 학과 목록</a></li>
-								<li class="menu-item"><a href="#">대학 및 학과 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+								<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
 							</ul>
 						</div>
 						<div class="menu menu5">
@@ -362,13 +362,13 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-board.png'><a href="#">게시판관리</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">입학안내 공지사항</a></li>
-								<li class="menu-item"><a href="#">학사안내 공지사항</a></li>
-								<li class="menu-item"><a href="#">커뮤니티 공지사항</a></li>
-								<li class="menu-item"><a href="#">입학상담</a></li>
-								<li class="menu-item"><a href="#">질문 및 답변</a></li>
-								<li class="menu-item"><a href="#">식단안내</a></li>
-								<li class="menu-item"><a href="#">자료실</a></li>
+								<li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+								<li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+								<li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+								<li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+								<li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+								<li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+								<li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
 							</ul>
 						</div>
 					</nav>
