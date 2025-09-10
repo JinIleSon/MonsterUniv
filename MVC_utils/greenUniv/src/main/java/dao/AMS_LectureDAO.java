@@ -70,10 +70,6 @@ public class AMS_LectureDAO extends DBHelper {
 		return total;
 	}
 
-	public void select(AMS_lectureDTO dto) {
-
-	}
-
 	public List<AMS_lectureDTO> selectAll(int start) {
 		List<AMS_lectureDTO> dtoList = new ArrayList<>();
 
@@ -205,12 +201,5 @@ public class AMS_LectureDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return dtoList;
-	}
-	public void update(AMS_lectureDTO dto) {
-
-	}
-
-	public void delete(AMS_lectureDTO dto) {
-
 	}
 }

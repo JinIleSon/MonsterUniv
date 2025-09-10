@@ -229,26 +229,13 @@
                         <h3 class="board_title">학사안내</h3>
                         <button class="board_more" onclick="location.href='/greenUniv/academicAffairs/academicAffairs_notice.do'">+</button>
                     </header>
-                     <ul class="board_list">
-					    <c:choose>
-					      <c:when test="${not empty academicNotices}">
-					        <c:forEach var="n" items="${academicNotices}">
-					          <li>
-					            <a href="<c:url value='/academicAffairs/academicAffairs_notice.do'>
-								           <c:param name='id' value='${n.id}'/>
-								         </c:url>"
-								   style="color: black; text-decoration: none;">
-								   ${fn:escapeXml(n.title)}
-								</a>
-					            <span class="date">${fn:escapeXml(n.date)}</span>
-					          </li>
-					        </c:forEach>
-					      </c:when>
-					      <c:otherwise>
-					        <li>등록된 게시물이 없습니다.</li>
-					      </c:otherwise>
-					    </c:choose>
-					  </ul>
+
+                    <ul class="board_list">
+	                    <c:forEach var="notice" items="${ noticeList }">
+	                        <li>${ notice.title }</li>
+	                    </c:forEach>
+                    </ul>
+
                 </article>
 
                 <article class="board board_announce">
@@ -256,26 +243,13 @@
                         <h3 class="board_title">공지사항</h3>
                         <button class="board_more" aria-label="더보기" onclick="location.href='/greenUniv/community/community_announcement.do'">+</button>
                     </header>
-                     <ul class="board_list">
-					    <c:choose>
-					      <c:when test="${not empty academicNotices}">
-					        <c:forEach var="n" items="${academicNotices}">
-					          <li>
-					            <a href="<c:url value='/academicAffairs/academicAffairs_notice.do'>
-					                       <c:param name='id' value='${n.id}'/>
-					                     </c:url>"
-					                     style="color: white; text-decoration: none;">
-					              ${fn:escapeXml(n.title)}
-					            </a>
-					            <span class="date">${fn:escapeXml(n.date)}</span>
-					          </li>
-					        </c:forEach>
-					      </c:when>
-					      <c:otherwise>
-					        <li>등록된 게시물이 없습니다.</li>
-					      </c:otherwise>
-					    </c:choose>
-					  </ul>
+
+                    <ul class="board_list">
+                    	<c:forEach var="announce" items="${ annoList }">
+	                        <li>${ announce.title }</li>
+                        </c:forEach>
+                    </ul>
+
                 </article>
             </div>
         </section>
@@ -315,15 +289,11 @@
                         <button class="board_more" onclick="location.href='/greenUniv/community/community_newsAndColumn.do'">+</button>
                     </header>
                     <ul class="board_list">
-                        <c:forEach var="n" items="${recentNews}">
-						    <li>
-						      <a href="/greenUniv/community/community_newsAndColumn.do?id=${n.id}"
-						      style="color: black; text-decoration: none;">
-						        ${fn:escapeXml(n.title)}
-						      </a>
-						      <span class="date">${fn:escapeXml(n.date)}</span>
-						    </li>
-						  </c:forEach>
+
+                    	<c:forEach var="newsObj" items="${ newsList }">
+                        	<li>${ newsObj.title }</li>
+                       	</c:forEach>
+
                     </ul>
                 </article>
 

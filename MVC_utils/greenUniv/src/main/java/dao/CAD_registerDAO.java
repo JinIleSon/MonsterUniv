@@ -50,6 +50,8 @@ public class CAD_registerDAO extends DBHelper{
 			psmt.setString(2, dto.getColeng());
 			psmt.setString(3, dto.getColtit());
 			psmt.setString(4, dto.getColcont());
+			psmt.setString(5, dto.getColimgo());
+			psmt.setString(6, dto.getColimgs());
 
 			psmt.executeUpdate();
 

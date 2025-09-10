@@ -27,6 +27,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         /* ================================
         Header
         ================================ */
@@ -219,6 +220,9 @@
         .menu {
             margin-left:15px;
         }
+        .menu-item a {
+		    text-decoration: none;
+		}
         .sidebar .menu h3 {
             margin:9px 0px 9px 0px;
         }
@@ -233,6 +237,15 @@
             margin-top: 9px;
             padding: 0px 0px 0px 30px;
         }
+        .sidebar a {
+        	text-decoration: none;
+        	color: black;
+        }
+        
+        .sidebar a:visited { 
+        	color:black; 
+        }
+        
         .menu ul li::before {
             content: "•";
             font-size: 0.6em;
@@ -245,6 +258,9 @@
             height: 26px;
             /* height: 30px; */
         }
+        .menu ul li a {
+			color: #111111;
+		}
         .menu1 {
             width: 269px;
             height: 102px;
@@ -794,6 +810,34 @@
             margin-top: 20px;
         }
     </style>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script >
+	    function sample6_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+	
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('pzip').value = data.zonecode;
+	                document.getElementById("paddr1").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("paddr2").focus();
+	            }
+	        }).open();
+	    }
+    </script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -928,46 +972,47 @@
             <div class="menu menu1">
                 <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
-                    <li class="menu-item">기본환경정보</li>
-                    <li class="menu-item">약관관리</li>
+                    <li class="menu-item"><a href="#">기본환경정보</a></li>
+                    <li class="menu-item"><a href="#">약관관리</a></li>
                 </ul>
             </div>
             <div class="menu menu2">
                 <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
-                    <li class="menu-item">교육 운영 현황</li>
-                    <li class="menu-item">학년별 학생 현황</li>
-                    <li class="menu-item">학과별 학생 현황</li>
-                    <li class="menu-item">강의 목록</li>
-                    <li class="menu-item">강의 등록</li>
-                    <li class="menu-item" >수강 현황</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
                 </ul>
             </div>
             <div class="menu menu3">
                 <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
-                    <li class="menu-item">학생 목록 및 등록</li>
-                    <li class="menu-item">교수 목록 및 등록</li>
-                    <li class="menu-item">임직원 목록 및 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
+                    <li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu4">
                 <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item">대학 및 학과 목록</li>
-                    <li class="menu-item">대학 및 학과 등록</li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu5">
                 <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
                 <ul>
-                    <li class="menu-item">입학안내 공지사항</li>
-                    <li class="menu-item">학사안내 공지사항</li>
-                    <li class="menu-item">커뮤니티 공지사항</li>
-                    <li class="menu-item">입학상담</li>
-                    <li class="menu-item">질문 및 답변</li>
-                    <li class="menu-item">식단안내</li>
-                    <li class="menu-item">자료실</li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
                 </ul>
             </div>
         </nav>
@@ -1030,9 +1075,10 @@
 	                    <div></div>
 	                    <div>주소</div>
 	                    <div>
-	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호 선택">
-	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소 선택">
-	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소 선택">
+	                        <input type="text" name="pzip" id="pzip" placeholder="우편번호" readonly>
+	                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+	                        <input type="text" name="paddr1" id="paddr1" placeholder="기본주소" readonly>
+	                        <input type="text" name="paddr2" id="paddr2" placeholder="상세주소">
 	                    </div>
 	                </div>
 	            </div>

@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학사관리시스템::강의목록</title>
+    <title>학사관리시스템::학생목록</title>
+    
     <!--css연결-->
 	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
@@ -236,15 +237,6 @@
             margin-top: 9px;
             padding: 0px 0px 0px 30px;
         }
-        
-        .sidebar a {
-        	text-decoration: none;
-        }
-        
-        .sidebar a:visited { 
-        	color:black; 
-        }
-        
         .menu ul li::before {
             content: "•";
             font-size: 0.6em;
@@ -335,40 +327,38 @@
             border-top: 1px solid #A3A3A3;
             border-bottom: 1px solid #A3A3A3;
             height: 45.5px;
+            
         }
         thead th span {
             font-size: 13px;
             font-weight: 350;
         }
         thead th:nth-child(1) {
-            width: 109px;
+            width: 130.8px;
         }
         thead th:nth-child(2) {
             width: 109px;
         }
         thead th:nth-child(3) {
-            width: 54.5px;
+            width: 141.69px;
         }
         thead th:nth-child(4) {
-            width: 109px;
+            width: 141.69px;
         }
         thead th:nth-child(5) {
-            width: 163.5px;
+            width: 261.64px;
         }
         thead th:nth-child(6) {
-            width: 90.83px;
+            width: 109px;
         }
         thead th:nth-child(7) {
-            width: 90.83px;
+            width: 54.5px;
         }
         thead th:nth-child(8) {
-            width: 163.5px;
+            width: 54.5px;
         }
         thead th:nth-child(9) {
-            width: 90.84px;
-        }
-        thead th:nth-child(10) {
-            width: 109px;
+            width: 87.19px;
         }
         tbody td {
             border-top: 1px solid #D8D8D8;
@@ -379,7 +369,19 @@
             font-size: 13px;
             height: 19px;
         }
-
+        tbody td .status-green {
+            color: #008000;
+        }
+        tbody td .status-red {
+            color: #FF0000;
+        }
+        tbody td .status-yellow {
+            color: #FFA500;
+        }
+        tbody td .status-blue {
+            color: #0000FF;
+        }
+        
         .pagenation {
             width: 1090px;
             height: 62px;
@@ -436,7 +438,31 @@
         .pagenation .last {
             background-image: url('/greenUniv/images/btn-last-page.png');
         }
+
+        #button-setting{
+            position: relative;
+        }
+        #regist-button {
+            border: 1px solid #08305A;
+            background-color: #1A528E;
+            color: white;
+            height: 33px;
+            width: 100px;
+            position: absolute;
+            right: 0;
+            margin-right: 20px;
+        }
     </style>
+    <script>
+    	document.addEventListener("DOMContentLoaded", function() {
+    		const studentRegist_btn = document.getElementById("regist-button");
+    		
+    		studentRegist_btn.addEventListener("click", function() {
+    			window.location.href = "/greenUniv/AMS/AMS_studentRegist.do";
+    		});
+    	});
+    	
+    </script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -448,14 +474,7 @@
 					<ul>
 						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
-						<c:choose>
-						    <c:when test="${not empty sessionScope.LOGIN_USER}">
-						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
-						    </c:when>
-						    <c:otherwise>
-						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
-						    </c:otherwise>
-						</c:choose>
+						<li><a href="/greenUniv/login/login.do">로그인</a></li>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
 				</div>
@@ -618,79 +637,96 @@
 
         <main class="main-content">
             <div class="main-title">
-                <h3>강의 목록</h3>
-                <p>학사운영 &nbsp; > &nbsp; <span>강의 목록</span></p>
+                <h3>학생 목록</h3>
+                <p>인사관리 &nbsp; > &nbsp; <span>학생 목록</span></p>
             </div>
             
-            <form action="/greenUniv/AMS/AMS_lectureList_search.do" method="get" class="search-form">
+            <form action="/greenUniv/AMS/AMS_studentList_search.do" method="get" class="search-form">
                 <select id="search-select" name="searchType">
                     <option>검색조건</option>
                     <option value="all">전체</option>
-                    <option value="lname">과목명</option>
-                    <option value="prof">교수명</option>
+                    <option value="snum">학번</option>
+                    <option value="sname">학생명</option>
                 </select>
                 <input type="text" name="keyword" id="search-title" placeholder="키워드 입력">
                 <input type="submit" class="search-btn" value="검색" style="cursor:pointer">
             </form>
             
-            <table style="height: auto !important;">
+            <table>
                 <thead>
                     <tr>
-                        <th><span>과목코드</span></th>
+                        <th><span>학번</span></th>
+                        <th><span>이름</span></th>
+                        <th><span>주민번호</span></th>
+                        <th><span>휴대폰</span></th>
+                        <th><span>이메일</span></th>
                         <th><span>학과</span></th>
                         <th><span>학년</span></th>
-                        <th><span>구분</span></th>
-                        <th><span>과목명</span></th>
-                        <th><span>교수</span></th>
-                        <th><span>학점</span></th>
-                        <th><span>수업시간</span></th>
-                        <th><span>강의실</span></th>
-                        <th><span>최대 수강 인원</span></th>
+                        <th><span>학기</span></th>
+                        <th><span>상태</span></th>
                     </tr>
                 </thead>
                 <tbody>
-                	<c:forEach var="lecture" items="${dtoList}" varStatus="status">
-	                    <tr style="height:52px;">
-	                        <td><span>${lecture.deptCode}</span></td>
-	                        <td><span>${lecture.openMaj}</span></td>
-	                        <td><span>${lecture.year}</span></td>
-	                        <td><span>${lecture.compDiv}</span></td>
-	                        <td><span>${lecture.lname}</span></td>
-	                        <td><span>${lecture.prof}</span></td>
-	                        <td><span>${lecture.grade}</span></td>
-	                        <td><span>${lecture.timeD} ${lecture.timeS} ~ ${lecture.timeE}</span></td>
-	                        <td><span>${lecture.room}</span></td>
-	                        <td><span>${lecture.maxNum}</span></td>
+                	<c:forEach var="student" items="${dtoList}" varStatus="status">
+	                	<tr>
+	                        <td><span>${student.snum}</span></td>
+	                        <td><span>${student.sname}</span></td>
+	                        <td><span>${student.sregno}</span></td>
+	                        <td><span>${student.stel}</span></td>
+	                        <td><span>${student.semail}</span></td>
+	                        <td><span>${student.edept}</span></td>
+	                        <td><span>${student.egrade}</span></td>
+	                        <td><span>${student.eterm}</span></td>
+	                        <td>
+	                        	<c:choose>
+	                        		<c:when test="${student.condition eq '재학중'}">
+	                        			<span class="status-green">${student.condition}</span>
+	                        		</c:when>
+	                        		<c:when test="${student.condition eq '자퇴' or student.condition eq '제적'}">
+	                        			<span class="status-red">${student.condition}</span>
+	                        		</c:when>
+	                        		<c:when test="${student.condition eq '휴학중'}">
+	                        			<span class="status-yellow">${student.condition}</span>
+	                        		</c:when>
+	                        		<c:when test="${student.condition eq '졸업'}">
+	                        			<span class="status-blue">${student.condition}</span>
+	                        		</c:when>
+	                        	</c:choose>
+	                        </td>
 	                    </tr>
-                    </c:forEach>
+                	</c:forEach>              
                 </tbody>
             </table>
 
-            <ul class="pagenation">
-                <li><a href="${pageContext.request.contextPath}/AMS/AMS_lectureList.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
-                <c:choose>
-                	<c:when test="${pagenationDTO.currentPage == 1}">
-                		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
-                	</c:when>
-                	<c:otherwise>
-                		<li><a href="${pageContext.request.contextPath}/AMS/AMS_lectureList.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
-                	</c:otherwise>
-                </c:choose>
-                
-                <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-                	<li><a href="${pageContext.request.contextPath}/AMS/AMS_lectureList.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
-                </c:forEach>
-                
-                <c:choose>
-                	<c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
-                		<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
-                	</c:when>
-                	<c:otherwise>
-                		<li><a href="${pageContext.request.contextPath}/AMS/AMS_lectureList.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
-                	</c:otherwise>
-                </c:choose>
-                <li><a href="${pageContext.request.contextPath}/AMS/AMS_lectureList.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
-            </ul>
+            <div id="button-setting">
+                <ul class="pagenation">
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
+                    <c:choose>
+                    	<c:when test="${pagenationDTO.currentPage == 1}">
+                    		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
+                    	</c:when>        
+                    	<c:otherwise>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
+                    	</c:otherwise>       	
+                    </c:choose>
+                    
+                    <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                    	<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+                    </c:forEach>
+                    
+                    <c:choose>
+                    	<c:when test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+                    		<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
+                    	</c:otherwise>
+                    </c:choose>                   
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
+                    <button id="regist-button" style="cursor:pointer">등록</button>
+                </ul>
+            </div>
+            
         </main>
     </div>
     
@@ -700,7 +736,7 @@
 		<div class="footer-high">
 			<div class="footer-high-inner">
 				<ul class="footer-high-quicklinks">
-					<li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
 					<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
