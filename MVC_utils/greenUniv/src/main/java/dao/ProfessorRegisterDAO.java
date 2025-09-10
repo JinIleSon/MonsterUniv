@@ -1,5 +1,11 @@
 package dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import dto.ProfessorRegisterDTO;
 import util.DBHelper;
 import util.Sql_professor;
@@ -10,6 +16,47 @@ public class ProfessorRegisterDAO extends DBHelper{
 		return instance;
 	}
 	private ProfessorRegisterDAO() {}
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	//교수등록 담당학과
+	public List<String> listColName(){
+		List<String> listColName = new ArrayList<String>();
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(Sql_professor.SELECT_COLNAME);
+			
+			while(rs.next()) {
+				listColName.add(rs.getString("colname"));
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return listColName;
+	}
+	
+	public List<String> listDeptName(){
+		List<String> listDeptName = new ArrayList<String>();
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(Sql_professor.SELECT_DEPTNAME);
+			
+			while(rs.next()) {
+				listDeptName.add(rs.getString("deptname"));
+			}
+			
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return listDeptName;
+	}
 	
 	public void inster(ProfessorRegisterDTO dto) {
 		try {
@@ -38,7 +85,7 @@ public class ProfessorRegisterDAO extends DBHelper{
 			closeAll();
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 	}
 }

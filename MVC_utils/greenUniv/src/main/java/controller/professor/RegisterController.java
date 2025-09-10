@@ -1,6 +1,7 @@
 package controller.professor;
 
 import java.io.IOException;
+import java.util.List;
 
 import dto.ProfessorRegisterDTO;
 import jakarta.servlet.RequestDispatcher;
@@ -19,6 +20,13 @@ public class RegisterController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//담당학과 select option 가져오기
+		List<String> listColName = service.getColName();
+		List<String> listDeptName = service.getDeptName();
+		
+		req.setAttribute("listColName", listColName);
+		req.setAttribute("listDeptName", listDeptName);
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/professor/professorRegist.jsp");
 		dispatcher.forward(req, resp);
 	}
