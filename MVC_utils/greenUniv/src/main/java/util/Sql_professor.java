@@ -49,4 +49,10 @@ public class Sql_professor {
 	// 정렬 및 페이징
 	public static final String SEARCH_ORDER_PNUM = "ORDER BY `pnum` ASC ";
 	public static final String SEARCH_OFFSET_ROW = "LIMIT ?, 10";
+	
+	//교수등록 담당학과
+	public static final String SELECT_COLNAME = "SELECT DISTINCT colname FROM collmaj WHERE colname IS NOT NULL";
+	public static final String SELECT_DEPTNAME = "SELECT DISTINCT deptname FROM collmaj WHERE deptname IS NOT NULL";
+	
+	
 }
