@@ -3,7 +3,7 @@ package util;
 public class Sql_professor {
 	
 	//교수 신규 등록
-	public static final String INSERT_PROFESSOR = "INSERT INTO professor(pregno, pname, pengname, pgender, pnation, ptel, pemail, pzip, paddr1, paddr2, gradun, major, gradDate ,degree, takeCol, takeDept, appDate, role, condition) "
+	public static final String INSERT_PROFESSOR = "INSERT INTO professor(pregno, pname, pengname, pgender, pnation, ptel, pemail, pzip, paddr1, paddr2, gradun, major, gradDate ,degree, takeCol, takeDept, appDate, role, `condition`) "
 									            +               "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'professor', '재직중')";
 	
 	// 전체 교수 개수 조회
