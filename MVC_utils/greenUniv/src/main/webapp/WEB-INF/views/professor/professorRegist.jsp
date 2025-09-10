@@ -12,7 +12,7 @@
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
+            src: url('/greenUniv/font/NotoSansKR-Medium.ttf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
@@ -1053,7 +1053,7 @@
 	                    <div>국적</div>
 	                    <div>
 	                        <select name="pnation">
-	                            <option value="dafault">선택</option>
+	                            <option value="default"  selected>선택</option>
 	                            <option value="한국">한국</option>	
 	                            <option value="일본">일본</option>	
 	                            <option value="중국">중국</option>		
@@ -1103,7 +1103,7 @@
 	                    <div>학위</div>
 	                    <div>
 	                        <select name="degree">
-	                            <option value="default">선택</option>
+	                            <option value="default" selected>선택</option>
 	                            <option value="박사">박사</option>
 	                            <option value="학사">학사</option>
 	                        </select>
@@ -1132,7 +1132,7 @@
 	                    </div>
 	                </div>
 	            </div>
-            	<button id="regist-button" type="submit">등록</button>
+            	<button id="regist-button" type="submit" name="btnSubmit">등록</button>
             </form>
         </main>
     </div>
