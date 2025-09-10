@@ -234,14 +234,6 @@
             margin-top: 9px;
             padding: 0px 0px 0px 30px;
         }
-        .sidebar a {
-        	text-decoration: none;
-        }
-        
-        .sidebar a:visited { 
-        	color:black; 
-        }
-        
         .menu ul li::before {
             content: "•";
             font-size: 0.6em;
@@ -611,16 +603,15 @@
                 <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
                 <ul>
                     <li class="menu-item">학생 목록 및 등록</li>
-                    <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
-                    <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
+                    <li class="menu-item">교수 목록 및 등록</li>
                     <li class="menu-item">임직원 목록 및 등록</li>
                 </ul>
             </div>
             <div class="menu menu4">
                 <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
                 <ul>
-                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
-                   	<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
+                    <li class="menu-item">대학 및 학과 목록</li>
+                    <li class="menu-item">대학 및 학과 등록</li>
                 </ul>
             </div>
             <div class="menu menu5">
@@ -738,7 +729,7 @@
 		<div class="footer-high">
 			<div class="footer-high-inner">
 				<ul class="footer-high-quicklinks">
-					<li><a href="https://privacy.thewaltdisneycompany.com/ko/">개인정보처리방침</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
 					<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>

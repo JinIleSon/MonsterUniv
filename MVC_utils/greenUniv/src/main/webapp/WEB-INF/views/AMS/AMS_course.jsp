@@ -763,8 +763,8 @@ tbody td span {
 							    <span><fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyy"/></span>
 							</td>
 	                        <td><span>${course.semester}</span></td>
-	                        <td><span>${course.snum}</span></td> <!-- 학생 데이터 필요 -->
-	                        <td><span>${course.sname}</span></td>      <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.snum}</span></td> 
+	                        <td><span>${course.sname}</span></td>   
 	                        <td><span>${course.year}</span></td>
 	                        <td><span>${course.edept}</span></td>
 	                        <td><span>${course.deptcode}</span></td>
@@ -772,7 +772,7 @@ tbody td span {
 	                        <td><span>${course.compdiv}</span></td>
 	                        <td><span>${course.prof}</span></td>
 	                        <td><span>${course.grade}</span></td>
-	                        <td><span>${course.application}</span></td> <!-- 수강신청 데이터 필요 -->
+	                        <td><span>${course.application}</span></td>
                     	</tr>               
                 	</c:forEach>                  
                 </tbody>

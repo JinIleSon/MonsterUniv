@@ -650,8 +650,8 @@
 							    <span><fmt:formatDate value="<%= new java.util.Date() %>" pattern="yyyy"/></span>
 							</td>
 	                        <td><span>${course.semester}</span></td>
-	                        <td><span>${course.snum}</span></td> <!-- 학생 데이터 필요 -->
-	                        <td><span>${course.sname}</span></td>      <!-- 학생 데이터 필요 -->
+	                        <td><span>${course.snum}</span></td> 
+	                        <td><span>${course.sname}</span></td>      
 	                        <td><span>${course.year}</span></td>
 	                        <td><span>${course.edept}</span></td>
 	                        <td><span>${course.deptcode}</span></td>
