@@ -247,7 +247,7 @@ main {
 			</div>
 		</div>
 		<!-- 사이드바 시작-->
-		<div style="height: 1088px;" class="inner">
+		<div style="" class="inner">
 			<div style="height: 50px;"></div>
 			<div style="display: flex; gap: 60px; min-width: 205px;">
 				<div style="width: 203px; flex-shrink: 0;">
@@ -346,7 +346,7 @@ main {
 		</div>
 	</main>
 	<!--3. 푸터영역-->
-	<footer style="position: static !important; margin-top:100px !important;" class="footer">
+	<footer style="margin-top:50px !important;" class="footer">
 		<!--상단-->
 		<div class="footer-high">
 			<div class="footer-high-inner">
