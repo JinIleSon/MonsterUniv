@@ -187,5 +187,29 @@ public class Commu_newsDAO extends DBHelper{
 		}
 		return dtoList;
 	}
+	
+	// 최근 n개 뉴스 가져오기
+	public List<Commu_newsDTO> selectRecent(int limit) {
+	    List<Commu_newsDTO> list = new ArrayList<>();
+	    String sql = "SELECT id, title, `date` FROM commu_news ORDER BY id DESC LIMIT ?";
 
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(sql);
+	        psmt.setInt(1, limit);
+	        rs = psmt.executeQuery();
+	        while (rs.next()) {
+	            Commu_newsDTO dto = new Commu_newsDTO();
+	            dto.setId(rs.getInt("id"));
+	            dto.setTitle(rs.getString("title"));
+	            dto.setDate(rs.getString("date")); // DTO에 date 필드가 String이라면 그대로
+	            list.add(dto);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        try { closeAll(); } catch (Exception ignore) {}
+	    }
+	    return list;
+	}
 }

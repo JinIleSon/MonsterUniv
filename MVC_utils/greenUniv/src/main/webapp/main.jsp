@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>   
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,24 +150,59 @@
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="슬라이드 5"></button>
                 </div>
 
-                <!-- 슬라이드 아이템 -->
+                <!-- 슬라이드 아이템 -->                
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="images/hero_img1.png" class="d-block w-100" alt="대학 대표사진 1">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="images/hero_img5.jpg" class="d-block w-100" alt="대학 대표사진 2">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="images/hero_img4.jpg" class="d-block w-100" alt="대학 대표사진 3">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="images/hero_img3.jpg" class="d-block w-100" alt="대학 대표사진 4">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="images/hero_img2.jpg" class="d-block w-100" alt="대학 대표사진 5">
-                    </div>
-                </div>
+				  <div class="carousel-item active">
+				    <img src="images/hero_img1.png" class="d-block w-100" alt="대학 대표사진 1">
+				    <div class="carousel-caption d-none d-md-block"
+				    style="top: 30%; bottom: auto; transform: translateY(-50%);">
+				      <h2 style="font-size: 150px; font-weight: 700; color: #1e5aa8;text-shadow: -1px -1px 0 #fff,
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff;">Everyone</h2>
+				    </div>
+				  </div>
+				  <div class="carousel-item">
+				    <img src="images/hero_img5.jpg" class="d-block w-100" alt="대학 대표사진 2">
+				    <div class="carousel-caption d-none d-md-block"
+				    style="top: 30%; bottom: auto; transform: translateY(-50%);">
+				      <h2 style="font-size: 150px; font-weight: 700; color: #1e5aa8;text-shadow: -1px -1px 0 #fff,
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff;">Welcome</h2>
+				    </div>
+				  </div>
+				  <div class="carousel-item">
+				    <img src="images/hero_img4.jpg" class="d-block w-100" alt="대학 대표사진 3">
+				    <div class="carousel-caption d-none d-md-block"
+				    style="top: 30%; bottom: auto; transform: translateY(-50%);">
+				      <h2 style="font-size: 150px; font-weight: 700; color: #1e5aa8;text-shadow: -1px -1px 0 #fff,
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff;">To</h2>
+				    </div>
+				  </div>
+				  <div class="carousel-item">
+				    <img src="images/hero_img3.jpg" class="d-block w-100" alt="대학 대표사진 4">
+				    <div class="carousel-caption d-none d-md-block"
+				    style="top: 30%; bottom: auto; transform: translateY(-50%);">
+				      <h2 style="font-size: 150px; font-weight: 700; color: #1e5aa8;text-shadow: -1px -1px 0 #fff,
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff;">Monster</h2>
+				    </div>
+				  </div>
+				  <div class="carousel-item">
+				    <img src="images/hero_img2.jpg" class="d-block w-100" alt="대학 대표사진 5">
+				    <div class="carousel-caption d-none d-md-block"
+				    style="top: 30%; bottom: auto; transform: translateY(-50%);">
+				      <h2 style="font-size: 150px; font-weight: 700; color: #1e5aa8;text-shadow: -1px -1px 0 #fff,
+               1px -1px 0 #fff,
+              -1px  1px 0 #fff,
+               1px  1px 0 #fff;">University</h2>
+				    </div>
+				  </div>
+				</div>
 
                 <!-- 좌우 화살표 -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -178,8 +214,8 @@
                     <span class="visually-hidden">Next</span>
                 </button>
                 </div>
-
-                <!-- 가운데 버튼 (네가 쓰던 것 유지) -->
+                
+                <!-- 가운데 버튼-->
                 <button class="hero_cta" onclick="location.href='/greenUniv/college/college_humanities.do'">학과소개 바로가기</button>
             </div>
         </section>
@@ -193,11 +229,13 @@
                         <h3 class="board_title">학사안내</h3>
                         <button class="board_more" onclick="location.href='/greenUniv/academicAffairs/academicAffairs_notice.do'">+</button>
                     </header>
+
                     <ul class="board_list">
 	                    <c:forEach var="notice" items="${ noticeList }">
 	                        <li>${ notice.title }</li>
 	                    </c:forEach>
                     </ul>
+
                 </article>
 
                 <article class="board board_announce">
@@ -205,11 +243,13 @@
                         <h3 class="board_title">공지사항</h3>
                         <button class="board_more" aria-label="더보기" onclick="location.href='/greenUniv/community/community_announcement.do'">+</button>
                     </header>
+
                     <ul class="board_list">
                     	<c:forEach var="announce" items="${ annoList }">
 	                        <li>${ announce.title }</li>
                         </c:forEach>
                     </ul>
+
                 </article>
             </div>
         </section>
@@ -249,9 +289,11 @@
                         <button class="board_more" onclick="location.href='/greenUniv/community/community_newsAndColumn.do'">+</button>
                     </header>
                     <ul class="board_list">
+
                     	<c:forEach var="newsObj" items="${ newsList }">
                         	<li>${ newsObj.title }</li>
                        	</c:forEach>
+
                     </ul>
                 </article>
 
