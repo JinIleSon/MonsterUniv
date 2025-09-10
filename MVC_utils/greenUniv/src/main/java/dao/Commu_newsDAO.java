@@ -66,6 +66,35 @@ public class Commu_newsDAO extends DBHelper{
 		}
 		return dtoList;
 	}
+	// 기본 리스트 뿌려주기
+	public List<Commu_newsDTO> selectRecentFive(){
+		List<Commu_newsDTO> dtoList = new ArrayList<>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql_comm_news.SELECT_ARTICLE_RECENT_FIVE);
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				Commu_newsDTO dto = new Commu_newsDTO();
+				dto.setId(rs.getInt(1));
+				dto.setClassify(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setNick(rs.getString(4));
+				dto.setDate(rs.getString(5));
+				dto.setHits(rs.getInt(6));
+				
+				dtoList.add(dto);
+				logger.debug(dto.toString());
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
+	}
 	// 검색하면 나오는 테이블 왼쪽 인덱싱
 	public int selectCountSearch(String searchType, String keyword) {
 
