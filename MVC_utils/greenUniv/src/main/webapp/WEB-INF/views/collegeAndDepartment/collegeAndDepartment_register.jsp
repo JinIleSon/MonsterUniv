@@ -542,7 +542,7 @@
                 <!-- 대학 정보 입력 섹션 -->
                 <div class="form-section">
                     <h4>대학 정보 입력</h4>
-                    <form action="/greenUniv/collegeAndDepartment/register.do" method="post" id="collForm">
+                    <form action="/greenUniv/collegeAndDepartment/register.do" method="post" id="collForm" enctype="multipart/form-data">
                         <input type="hidden" name="formType" value="college">
                         <table class="form-table">
                             <tr>

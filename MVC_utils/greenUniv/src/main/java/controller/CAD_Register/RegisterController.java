@@ -5,6 +5,7 @@ import java.util.List;
 
 import dto.CAD_collegeDTO;
 import dto.CAD_deptDTO;
+import dto.FileDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,21 +36,25 @@ public class RegisterController extends HttpServlet{
 		String formType = req.getParameter("formType");
 
 		if(formType.equals("college")) {
-
+			
+			FileDTO fileDTO = service.fileUpload(req);
+			
 			String colname = req.getParameter("colname");
 			String coleng = req.getParameter("coleng");
 			String coltit = req.getParameter("coltit");
 			String colcont = req.getParameter("colcont");
-			//String colimgo = req.getParameter("colimgo");
-			//String colimgs = req.getParameter("colimgs");
-
+			String colimgo = fileDTO.getColimgo();
+			String colimgs = fileDTO.getColimgs();
+			
 			CAD_collegeDTO dto = new CAD_collegeDTO();
 
 			dto.setColname(colname);
 			dto.setColeng(coleng);
 			dto.setColtit(coltit);
 			dto.setColcont(colcont);
-
+			dto.setColimgo(colimgo);
+			dto.setColimgs(colimgs);
+			
 			service.collRegister(dto);
 
 		}else if(formType.equals("dept")) {
