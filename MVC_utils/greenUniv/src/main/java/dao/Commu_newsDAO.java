@@ -66,7 +66,7 @@ public class Commu_newsDAO extends DBHelper{
 		}
 		return dtoList;
 	}
-	// 기본 리스트 뿌려주기
+	// 기본 리스트 뿌려주기 (메인 전용)
 	public List<Commu_newsDTO> selectRecentFive(){
 		List<Commu_newsDTO> dtoList = new ArrayList<>();
 		
