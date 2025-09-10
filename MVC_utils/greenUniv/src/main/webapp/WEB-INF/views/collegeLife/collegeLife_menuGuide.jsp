@@ -329,6 +329,7 @@
             </div>
         </div>
     </div>
+    <div style="margin-bottom:50px;"></div>
     </main>
 </body>
 <!--3. 푸터영역-->    
