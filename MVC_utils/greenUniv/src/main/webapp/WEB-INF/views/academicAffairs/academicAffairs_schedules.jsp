@@ -44,12 +44,11 @@
                         	console.error("error 발생 : " + error);
                         	failureCallback(error);
                         });
-                },
-
+                }
+                
             });
             
             calendar.render();
-            calendar.addEvent(events);
             
         });
       
