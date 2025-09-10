@@ -136,7 +136,7 @@
             </div>  
         </div>
     </header>
-    
+    <main>
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:250px; height:42px;
             position: absolute; 
@@ -284,8 +284,9 @@
         </div>
 
     </div>
+    </main>
     <!--3. 푸터영역-->    
-    <footer class="footer">
+    <footer class="footer" style="margin-top:100px;">
         <!--상단-->
         <div class="footer-high">
             <div class="footer-high-inner">

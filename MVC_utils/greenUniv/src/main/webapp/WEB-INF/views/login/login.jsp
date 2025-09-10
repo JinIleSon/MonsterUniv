@@ -153,7 +153,7 @@
             </div>  
         </div>
     </header>
-    
+    <main>
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:250px; height:42px;
             position: absolute; 
@@ -232,10 +232,8 @@
                                                                                
                 <a href="/greenUniv/login/terms.do" style="text-decoration: none; color:black; float: right; margin-top:10px;">회원가입</a>
             </div>
-            <div style="position: absolute; top: 334px; width:600px; z-index:-1;">
-                <ul style="list-style-type: '- '; padding-left: 10px;">
-                <br>
-                <br>
+            <div style="position: absolute; top: 400px; width:600px; ">
+                <ul style="list-style-type: '- '; padding-left: 10px; margin-top:0px; padding-top:0px;">
                     <li style="list-style-type: none; margin-left:-10px; margin-bottom: 8px; color:#215075; font-size: 13pt; font-weight: 500; display:flex; align-items: center;">
                         <img src="/greenUniv/images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px;">아이디, 비밀번호 안내
                     </li>
@@ -247,9 +245,9 @@
             </div>
         </div>
     </div>
-    
+    </main>
     <!--3. 푸터영역-->    
-    <footer class="footer">
+    <footer class="footer" style="margin-top:100px !important;">
         <!--상단-->
         <div class="footer-high">
             <div class="footer-high-inner">
