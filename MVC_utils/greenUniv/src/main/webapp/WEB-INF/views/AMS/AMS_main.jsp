@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -196,7 +196,21 @@ aside ol {
 	border-bottom-color: #A3A3A3;
 }
 </style>
+
 <body>
+	<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+	<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+	
+	<c:set var="flashMsg" value="${not empty flash ? flash : sessionScope.FLASH_MSG}" />
+	
+	<c:if test="${not empty flashMsg}">
+	  <script>
+	    // 따옴표/특수문자 이스케이프
+	    alert('${fn:replace(fn:escapeXml(flashMsg), "\'", "\\\'")}');
+	  </script>
+	  <!-- 세션에 남아있다면 1회성으로 제거 -->
+	  <c:remove var="FLASH_MSG" scope="session"/>
+	</c:if>
 	<!--1.헤더영역-->
 	<header>
 		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
