@@ -349,7 +349,7 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-setting.png'><a href="#">환경설정</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">기본환경정보</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_environment.do">기본환경정보</a></li>
 								<li class="menu-item"><a href="#">약관관리</a></li>
 							</ul>
 						</div>
