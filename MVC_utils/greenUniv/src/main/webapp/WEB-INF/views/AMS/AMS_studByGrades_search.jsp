@@ -822,7 +822,7 @@ tbody td .status-blue {
 				</p>
 			</div>
 
-			<form action="/greenUniv/AMS/AMS_studentList_search.do" method="get"
+			<form action="/greenUniv/AMS/AMS_studByGrades_search.do" method="get"
 				class="search-form">
 				<select name="egrade" style="margin-left: 20px; margin-right: auto">
 					<option value="1학년">1학년</option>

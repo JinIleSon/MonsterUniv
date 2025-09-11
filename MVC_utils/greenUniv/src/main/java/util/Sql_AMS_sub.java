@@ -56,4 +56,6 @@ public class Sql_AMS_sub {
 		public static final String SELECT_STUDENT_COUNT_TOTAL_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ?";
 		public static final String SELECT_COUNTSTUDENT_SEARCH_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ? ";
 		public static final String SELECT_STUDENT_SEARCH_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE egrade = ? ";
+		public static final String AND_SNUM = "AND SNUM LIKE ?";
+		public static final String AND_SNAME = "AND SNAME LIKE ?";
 }
