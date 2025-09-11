@@ -3,21 +3,22 @@ package service;
 import java.util.List;
 
 import dao.AMS_StudentDAO;
+import dao.AMS_studByGradesDAO;
 import dto.AMS_studentDTO;
 import dto.PagenationDTO;
 
 public enum AMS_studByGradeService {
 	INSTANCE;
 	
-	private AMS_StudentDAO dao = AMS_StudentDAO.getInstance();
+	private AMS_studByGradesDAO dao = AMS_studByGradesDAO.getInstance();
 	
 	public PagenationDTO getPagenationDTO(String pg, String searchType, String keyword) {
 		int total = 0;
 		
 		if(keyword == null) {
-			total = dao.selectCountTotal();
+			total = dao.selectCountTotalWithGrade();
 		} else {
-			total = dao.selectCountSearch(searchType, keyword);
+			total = dao.selectCountSearchWitGrade(searchType, keyword);
 		}
 		
 		int lastPageNum = 0;

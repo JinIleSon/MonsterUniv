@@ -41,16 +41,19 @@ public class Sql_AMS_sub {
 				+ "ORDER BY snum DESC\r\n"
 				+ "LIMIT 10 OFFSET ?";
 		
-		public static final String SELECT_STUDENT_ALL_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
-				+ "WHERE egrade = ? "
-				+ "ORDER BY snum DESC\r\n"
-				+ "LIMIT 10 OFFSET ?";
-		
 		public static final String SELECT_COUNTSTUDENT_SEARCH = "SELECT COUNT(*) FROM student ";
 		public static final String SEARCH_WHERE_SNUM = "WHERE SNUM LIKE ?";
 		public static final String SEARCH_WHERE_SNAME = "WHERE SNAME LIKE ?";
 		public static final String SELECT_STUDENT_SEARCH = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student ";
 		public static final String STUDENT_SEARCH_ORDER_SNUM = " ORDER BY snum DESC ";
 		
+		// studWithGrades
+		public static final String SELECT_STUDENT_ALL_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "WHERE egrade = ? "
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
 		
+		public static final String SELECT_STUDENT_COUNT_TOTAL_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ?";
+		public static final String SELECT_COUNTSTUDENT_SEARCH_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ? ";
+		public static final String SELECT_STUDENT_SEARCH_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE egrade = ? ";
 }
