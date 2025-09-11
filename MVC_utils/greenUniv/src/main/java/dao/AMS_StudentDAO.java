@@ -100,7 +100,7 @@ public class AMS_StudentDAO extends DBHelper {
 		return dtoList;
 	}
 	
-	public List<AMS_studentDTO> selectAllWithGrade(int start, int year) {
+	public List<AMS_studentDTO> selectAllWithGrade(int start, String egrade) {
 		List<AMS_studentDTO> dtoList = new ArrayList<AMS_studentDTO>();
 		
 		try {
