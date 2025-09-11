@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.AMS_courseDTO;
 import util.DBHelper;
-import util.Sql_lecture;
+import util.Sql_AMS_sub;
 
 public class AMS_CourseDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -27,7 +27,7 @@ public class AMS_CourseDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql_lecture.SELECT_COURSE_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_AMS_sub.SELECT_COURSE_COUNT_TOTAL);
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -44,7 +44,7 @@ public class AMS_CourseDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_lecture.SELECT_COURSE);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_COURSE);
 			psmt.setInt(1, start);
 
 			rs = psmt.executeQuery();			
@@ -75,12 +75,12 @@ public class AMS_CourseDAO extends DBHelper {
 
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COURSECOUNT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COURSECOUNT_SEARCH);
 		
 		if(searchType.equals("lname")) {
-			sql.append(Sql_lecture.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
-			sql.append(Sql_lecture.SEARCH_WHERE_PROF);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_PROF);
 		}
 
 		try {
@@ -110,16 +110,16 @@ public class AMS_CourseDAO extends DBHelper {
 	public List<AMS_courseDTO> selectCourseSearch(int start, String searchType, String keyword) {
 		List<AMS_courseDTO> dtoList = new ArrayList<AMS_courseDTO>();
 		
-		StringBuilder sql = new StringBuilder(Sql_lecture.SELECT_COURSE_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COURSE_SEARCH);
 		
 		if(searchType.equals("lname")) {
-			sql.append(Sql_lecture.COURSE_SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.COURSE_SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
-			sql.append(Sql_lecture.COURSE_SEARCH_WHERE_PROF);
+			sql.append(Sql_AMS_sub.COURSE_SEARCH_WHERE_PROF);
 		}
 		
-		sql.append(Sql_lecture.COURSE_SEARCH_ORDER_DEPTCODE); 
-		sql.append(Sql_lecture.SEARCH_OFFSET_ROW); 
+		sql.append(Sql_AMS_sub.COURSE_SEARCH_ORDER_DEPTCODE); 
+		sql.append(Sql_AMS_sub.SEARCH_OFFSET_ROW); 
 		
 		try {
 			conn = getConnection();

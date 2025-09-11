@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/greenUniv/css/main_main.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
     <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
-    <script src="/greenUniv/js/validation.js"></script>
     <style>
     	html, body {
 		  height: 100%;      /* 화면 전체 높이 */
