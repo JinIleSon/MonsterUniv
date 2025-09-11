@@ -11,13 +11,13 @@ public enum AMS_studByGradeService {
 	
 	private AMS_studByGradesDAO dao = AMS_studByGradesDAO.getInstance();
 	
-	public PagenationDTO getPagenationDTO(String pg, String searchType, String keyword) {
+	public PagenationDTO getPagenationDTO(String pg, String searchType, String keyword, String egrade) {
 		int total = 0;
 		
 		if(keyword == null) {
-			total = dao.selectCountTotalWithGrade();
+			total = dao.selectCountTotalWithGrade(egrade);
 		} else {
-			total = dao.selectCountSearchWitGrade(searchType, keyword);
+			total = dao.selectCountSearchWithGrade(egrade, searchType, keyword);
 		}
 		
 		int lastPageNum = 0;
@@ -59,5 +59,9 @@ public enum AMS_studByGradeService {
 	
 	public List<AMS_studentDTO> findAllWithGrade(int start, String egrade) {
 		return dao.selectAllWithGrade(start, egrade);
+	}
+	
+	public List<AMS_studentDTO> findSearchWithGrade(int start, String egrade, String searchType, String keyword) {
+		return dao.selectStudentSearchWithGrade(start, egrade, searchType, keyword);
 	}
 }

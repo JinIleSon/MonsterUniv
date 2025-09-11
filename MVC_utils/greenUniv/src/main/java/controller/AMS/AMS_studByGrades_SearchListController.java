@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.AMS_studByGradeService;
 
-@WebServlet("/AMS/AMS_studByGrades.do")
-public class AMS_studByGrades_ListController extends HttpServlet {
+@WebServlet("/AMS/AMS_studByGrades_search.do")
+public class AMS_studByGrades_SearchListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,18 +29,26 @@ public class AMS_studByGrades_ListController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pg = req.getParameter("pg");
 		String egrade = req.getParameter("egrade");
-		// 학년 초기값 설정
-		if(egrade == null)
-			egrade = "1학년"; // 기본값 설정
+		String searchType = req.getParameter("searchType");
+		String keyword = req.getParameter("keyword");
 		
-		PagenationDTO pagenationDTO = ams_studByGradeService.getPagenationDTO(pg, null, null, egrade);
+		PagenationDTO pagenationDTO = ams_studByGradeService.getPagenationDTO(pg, searchType, keyword, egrade);
 		
-		List<AMS_studentDTO> dtoList = ams_studByGradeService.findAllWithGrade(pagenationDTO.getStart(), "1학년");
+		List<AMS_studentDTO> dtoList = null;
+		if(searchType == null || keyword == null)
+			dtoList = ams_studByGradeService.findAllWithGrade(pagenationDTO.getStart(), egrade);
+		else
+			dtoList = ams_studByGradeService.findSearchWithGrade(pagenationDTO.getStart(), egrade, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);
+		req.setAttribute("egrade", egrade);
+		if(searchType != null) {
+			req.setAttribute("searchType", searchType);
+			req.setAttribute("keyword", keyword);
+		}
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studByGrades.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/AMS/AMS_studByGrades_search.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

@@ -10,13 +10,9 @@
     <!--css연결-->
 	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
-        @font-face {
-            font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
-            font-weight: 350;
-            font-style: DemiLight;
-        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -717,18 +713,18 @@
 
             <div id="button-setting">
                 <ul class="pagenation">
-                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupStart}"><span class="first"></span></a></li>
                     <c:choose>
                     	<c:when test="${pagenationDTO.currentPage == 1}">
                     		<li><a href="#" style="pointer-events: none;"><span class="prev"></span></a></li>
                     	</c:when>        
                     	<c:otherwise>
-                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage-1}"><span class="prev"></span></a></li>
                     	</c:otherwise>       	
                     </c:choose>
                     
                     <c:forEach var="num" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
-                    	<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${num}" class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
                     </c:forEach>
                     
                     <c:choose>
@@ -736,10 +732,10 @@
                     		<li><a href="#" style="pointer-events: none;"><span class="next"></span></a></li>
                     	</c:when>
                     	<c:otherwise>
-                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
+                    		<li><a href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage+1}"><span class="next"></span></a></li>
                     	</c:otherwise>
                     </c:choose>                   
-                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studentList.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupEnd}"><span class="last"></span></a></li>
                 </ul>
             </div>
             

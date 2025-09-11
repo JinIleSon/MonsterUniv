@@ -25,8 +25,9 @@ public class AMS_studByGradesDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_STUDENT_ALL);
-			psmt.setInt(1, start);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_STUDENT_ALL_WITH_GRADE);
+			psmt.setString(1, egrade);
+			psmt.setInt(2, start);
 			
 			rs = psmt.executeQuery();
 			
@@ -53,7 +54,7 @@ public class AMS_studByGradesDAO extends DBHelper {
 	public List<AMS_studentDTO> selectStudentSearchWithGrade(int start, String egrade, String searchType, String keyword) {
 		List<AMS_studentDTO> dtoList = new ArrayList<AMS_studentDTO>();
 		
-		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_STUDENT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_STUDENT_SEARCH_WITH_GRADE);
 		
 		if(searchType.equals("snum")) {
 			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
@@ -67,15 +68,10 @@ public class AMS_studByGradesDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
-			
-			if(keyword != null && !keyword.trim().isEmpty()) {
-				psmt.setString(1, "%"+keyword+"%");
-				psmt.setInt(2, start);
-				rs = psmt.executeQuery();
-			} else {
-				psmt.setInt(1, start);
-				rs = psmt.executeQuery();
-			}
+			psmt.setString(1, egrade);
+			psmt.setString(2, keyword);
+			psmt.setInt(3, start);
+			rs = psmt.executeQuery();
 
 			while(rs.next()) {
 				AMS_studentDTO dto = new AMS_studentDTO();
@@ -102,8 +98,9 @@ public class AMS_studByGradesDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql_AMS_sub.SELECT_STUDENT_COUNT_TOTAL);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_STUDENT_COUNT_TOTAL_WITH_GRADE);
+			psmt.setString(1, egrade);
+			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -116,27 +113,24 @@ public class AMS_studByGradesDAO extends DBHelper {
 		return total;
 	}
 	
-	public int selectCountSearchWtihGrade(String searchType, String keyword) {
+	public int selectCountSearchWithGrade(String egrade, String searchType, String keyword) {
 		int total = 0;
 		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNTSTUDENT_SEARCH);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
 		} else if(searchType.equals("sname")) {
 			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
 		}
 		
 		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(sql.toString());
+			psmt.setString(1, egrade);
 			if(keyword != null && !keyword.trim().isEmpty()) {
-				conn = getConnection();
-				psmt = conn.prepareStatement(sql.toString());
-				psmt.setString(1, "%" + keyword + "%");
-				rs = psmt.executeQuery();
-			} else {
-				conn = getConnection();
-				psmt = conn.prepareStatement(sql.toString());
-				rs = psmt.executeQuery();
+				psmt.setString(2, "%" + keyword + "%");
 			}
+			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
 				total = rs.getInt(1);

@@ -41,10 +41,23 @@ public enum CAD_registerSrevice {
 		// 파일업로드 디렉터리 경로 생성
 		ServletContext ctx = req.getServletContext();
 		String path = ctx.getRealPath("/files");
+
+		File uploadPath = new File(path);	
 		
-		File uploadPath = new File(path);		
-		if(!uploadPath.exists()) {
-			uploadPath.mkdir();
+		// 디렉터리가 존재하지 않으면 생성
+		if (!uploadPath.exists()) {
+		    boolean created = uploadPath.mkdirs();
+		    System.out.println("디렉터리 생성 결과: " + created);
+		    
+		    if (created) {
+		        System.out.println("디렉터리 생성 성공: " + uploadPath.getAbsolutePath());
+		        System.out.println("쓰기 권한: " + uploadPath.canWrite());
+		    } else {
+		        System.out.println("디렉터리 생성 실패");
+		        // 상위 디렉터리 권한 확인
+		        File parent = uploadPath.getParentFile();
+		        System.out.println("상위 디렉터리 쓰기 권한: " + parent.canWrite());
+		    }
 		}
 				
 		try {
