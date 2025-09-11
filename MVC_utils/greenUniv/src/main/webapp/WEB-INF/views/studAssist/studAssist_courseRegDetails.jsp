@@ -217,15 +217,15 @@
     <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
         <div style="width:250px; height:42px;
             position: absolute; 
-            transform: translateX(201%);
+            transform: translateX(191%);
             display:flex;
             align-items: center;
             ">
                 <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
                 <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">커뮤니티</span>
+                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">학생지원</span>
                 <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
-                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">공지사항</span>
+                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청내역</span>
         </div>
     </div>
     <div style="height: 791px;" class = "inner">

@@ -230,10 +230,22 @@ a {
                 </div>
             </div>  
     </header>
-    <div
-		style="background-color: #ECF2F6; height: 42px; display: flex; align-items: center; justify-content: center;">
-	</div>
-	<div style="height: 791px;" class="inner">
+    <main style="background-color:white !important;">
+    <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
+        <div style="width:250px; height:42px;
+            position: absolute; 
+            transform: translateX(191%);
+            display:flex;
+            align-items: center;
+            ">
+                <img src="/greenUniv/images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">학생지원</span>
+                <img src="/greenUniv/images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청내역</span>
+        </div>
+    </div>
+	<div style="height:auto; margin-bottom:100px;" class="inner">
 		<div style="height: 54px;"></div>
 		<div style="display: flex; gap: 60px;">
 			<div style="width: 210px;">
@@ -242,25 +254,25 @@ a {
 				<table class="banner"
 					style="border-collapse: collapse; width: 100%; border-top: 2px solid black;">
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/courseReg/list.do"
 							style="color: black;">수강신청</a></td>
 					</tr>
 					<tr>
 						<td
 							style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-							<a href="#" style="color: white; font-weight: 300;">수강신청내역</a>
+							<a href="/greenUniv/studAssist/courseRegDetails/list.do" style="color: white; font-weight: 300;">수강신청내역</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/curric/list.do"
 							style="color: black;">교과과정</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/chkGrades/list.do"
 							style="color: black;">성적조회</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/studRecords/list.do"
 							style="color: black;">학적</a></td>
 					</tr>
 				</table>
@@ -331,6 +343,7 @@ a {
 			</div>
 		</div>
 	</div>
+	</main>
 	<!--3. 푸터영역-->
 	<footer class="footer">
 		<!--상단-->
