@@ -40,5 +40,14 @@ public class Sql_user {
     // 비밀번호 업데이트
     public static final String UPDATE_PASSWORD =
         "UPDATE `User` SET `password`=? WHERE `identification`=?";
-
+    
+    // 프로필 업데이트
+    public static final String UPDATE_PROFILE = """
+    	    UPDATE `User`
+    	       SET nickname = ?,
+    	           email    = ?,
+    	           phone    = ?,
+    	           address  = ?
+    	     WHERE identification = ?
+    	""";
 }
