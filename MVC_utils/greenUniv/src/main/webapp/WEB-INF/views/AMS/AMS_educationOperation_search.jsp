@@ -679,8 +679,8 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-setting.png'>환경설정
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="#">기본환경정보</a></li>
-                    <li class="menu-item"><a href="#">약관관리</a></li>
+					<li class="menu-item"><a href="/greenUniv/AMS/AMS_environment.do">기본환경정보</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_terms.do">약관관리</a></li>
 				</ul>
 			</div>
 			<div class="menu menu2">
@@ -704,7 +704,6 @@ tbody td span {
 					<li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
 					<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
                     <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
-					<li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
 				</ul>
 			</div>
 			<div class="menu menu4">
