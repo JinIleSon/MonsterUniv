@@ -1,4 +1,12 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+         import="jakarta.servlet.DispatcherType" %>
+<%
+    // 컨트롤러에서 forward된 요청이면 redirect 금지
+    if (request.getDispatcherType() != DispatcherType.FORWARD) {
+        response.sendRedirect(request.getContextPath() + "/main.do");
+        return;
+    }
+%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>   
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
