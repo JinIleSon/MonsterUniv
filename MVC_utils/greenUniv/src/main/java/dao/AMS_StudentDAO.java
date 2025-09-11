@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.AMS_studentDTO;
 import util.DBHelper;
-import util.Sql_AMS_subpages;
+import util.Sql_AMS_sub;
 
 public class AMS_StudentDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -23,7 +23,7 @@ public class AMS_StudentDAO extends DBHelper {
 	public void insert(AMS_studentDTO dto) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_subpages.INSERT_STUDENT);
+			psmt = conn.prepareStatement(Sql_AMS_sub.INSERT_STUDENT);
 			psmt.setInt(1, dto.getSnum());
 			psmt.setString(2, dto.getSname());
 			psmt.setString(3, dto.getSgender());
@@ -57,7 +57,7 @@ public class AMS_StudentDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql_AMS_subpages.SELECT_STUDENT_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_AMS_sub.SELECT_STUDENT_COUNT_TOTAL);
 			
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -75,7 +75,7 @@ public class AMS_StudentDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_subpages.SELECT_STUDENT_ALL);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_STUDENT_ALL);
 			psmt.setInt(1, start);
 			
 			rs = psmt.executeQuery();
@@ -105,7 +105,7 @@ public class AMS_StudentDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_subpages.SELECT_STUDENT_ALL);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_STUDENT_ALL);
 			psmt.setInt(1, start);
 			
 			rs = psmt.executeQuery();
@@ -132,12 +132,12 @@ public class AMS_StudentDAO extends DBHelper {
 	
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql_AMS_subpages.SELECT_COUNTSTUDENT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNTSTUDENT_SEARCH);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("sname")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_SNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
 		}
 		
 		try {
@@ -166,16 +166,16 @@ public class AMS_StudentDAO extends DBHelper {
 	public List<AMS_studentDTO> selectStudentSearch(int start, String searchType, String keyword) {
 		List<AMS_studentDTO> dtoList = new ArrayList<AMS_studentDTO>();
 		
-		StringBuilder sql = new StringBuilder(Sql_AMS_subpages.SELECT_STUDENT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_STUDENT_SEARCH);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_SNUM);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
 		} else if(searchType.equals("sname")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_SNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
 		}
 		
-		sql.append(Sql_AMS_subpages.STUDENT_SEARCH_ORDER_SNUM); 
-		sql.append(Sql_AMS_subpages.SEARCH_OFFSET_ROW); 
+		sql.append(Sql_AMS_sub.STUDENT_SEARCH_ORDER_SNUM); 
+		sql.append(Sql_AMS_sub.SEARCH_OFFSET_ROW); 
 		
 		try {
 			conn = getConnection();

@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.AMS_lectureDTO;
 import util.DBHelper;
-import util.Sql_AMS_subpages;
+import util.Sql_AMS_sub;
 
 public class AMS_LectureDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -23,7 +23,7 @@ public class AMS_LectureDAO extends DBHelper {
 	public void insert(AMS_lectureDTO dto) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_subpages.INSERT_LECTURE);
+			psmt = conn.prepareStatement(Sql_AMS_sub.INSERT_LECTURE);
 			psmt.setString(1, dto.getDeptCode());
 			psmt.setString(2, dto.getYear());
 			psmt.setString(3, dto.getSemester());
@@ -57,7 +57,7 @@ public class AMS_LectureDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql_AMS_subpages.SELECT_LECTURE_COUNT_TOTAL);
+			rs = stmt.executeQuery(Sql_AMS_sub.SELECT_LECTURE_COUNT_TOTAL);
 
 			if(rs.next()) {
 				total = rs.getInt(1);
@@ -75,7 +75,7 @@ public class AMS_LectureDAO extends DBHelper {
 
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(Sql_AMS_subpages.SELECT_LECTURE_ALL);
+			psmt = conn.prepareStatement(Sql_AMS_sub.SELECT_LECTURE_ALL);
 			psmt.setInt(1, start);
 
 			rs = psmt.executeQuery();
@@ -112,12 +112,12 @@ public class AMS_LectureDAO extends DBHelper {
 
 	public int selectCountSearch(String searchType, String keyword) {
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql_AMS_subpages.SELECT_COUNT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNT_SEARCH);
 
 		if(searchType.equals("lname")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_PROF);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_PROF);
 		}
 
 		try {
@@ -147,16 +147,16 @@ public class AMS_LectureDAO extends DBHelper {
 	public List<AMS_lectureDTO> selectLectureSearch(int start, String searchType, String keyword) {
 		List<AMS_lectureDTO> dtoList = new ArrayList<>();
 
-		StringBuilder sql = new StringBuilder(Sql_AMS_subpages.SELECT_LECTURE_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_LECTURE_SEARCH);
 
 		if(searchType.equals("lname")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
 		} else if(searchType.equals("prof")) {
-			sql.append(Sql_AMS_subpages.SEARCH_WHERE_PROF);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_PROF);
 		}
 		
-		sql.append(Sql_AMS_subpages.SEARCH_ORDER_DEPTCODE); 
-		sql.append(Sql_AMS_subpages.SEARCH_OFFSET_ROW); 
+		sql.append(Sql_AMS_sub.SEARCH_ORDER_DEPTCODE); 
+		sql.append(Sql_AMS_sub.SEARCH_OFFSET_ROW); 
 		
 		try {
 			conn = getConnection();
