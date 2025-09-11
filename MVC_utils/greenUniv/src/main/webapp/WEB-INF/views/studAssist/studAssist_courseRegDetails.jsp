@@ -228,7 +228,7 @@
                 <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">수강신청내역</span>
         </div>
     </div>
-    <div style="height: 791px;" class = "inner">
+    <div style="height: 791px; margin-bottom: 70px;" class = "inner">
         <div style="height:54px;"></div>
         <div style="display: flex; gap: 60px;">
             <div style=" width: 210px;">
