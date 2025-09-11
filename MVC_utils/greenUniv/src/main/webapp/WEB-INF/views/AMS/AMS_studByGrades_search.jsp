@@ -1,17 +1,39 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>학사관리시스템::교육운영현황</title>
-<link rel="stylesheet" href="/greenUniv/css/fonts.css">
+<title>학사관리시스템::학생목록</title>
+
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
+<script>
+   document.addEventListener("DOMContentLoaded", function(){
+	   function getQueryParam(param) {
+		    const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(param);  // 'name' 또는 'age' 같은 파라미터 이름을 넣으면 해당 값을 반환
+	 	}
+		
+		const selectedEgrade = getQueryParam("egrade");
+		console.log(selectedEgrade);
+		
+		const optionEgrade = document.querySelector('option[value="'+selectedEgrade+'"]');
+		
+		optionEgrade.selected = true;
+	   
+		const egrade = document.getElementsByName("egrade")[0];
+       
+		console.log(egrade);
+		egrade.addEventListener("change", function() {
+			console.log("egrade : " + egrade.value);
+			location.href = '/greenUniv/AMS/AMS_studByGrades_search.do?egrade='+egrade.value;
+       });
+   });
+</script>
 <style>
 * {
 	margin: 0;
@@ -284,9 +306,11 @@ header {
 .menu {
 	margin-left: 15px;
 }
+
 .menu-item a {
-    text-decoration: none;
+	text-decoration: none;
 }
+
 .sidebar .menu h3 {
 	margin: 9px 0px 9px 0px;
 }
@@ -303,14 +327,16 @@ header {
 	margin-top: 9px;
 	padding: 0px 0px 0px 30px;
 }
+
 .sidebar a {
-        	text-decoration: none;
-        }
-        
-.sidebar a:visited { 
-	color:black; 
+	text-decoration: none;
+	color: black;
 }
-        
+
+.sidebar a:visited {
+	color: black;
+}
+
 .menu ul li::before {
 	content: "•";
 	font-size: 0.6em;
@@ -324,9 +350,11 @@ header {
 	height: 26px;
 	/* height: 30px; */
 }
+
 .menu ul li a {
 	color: #111111;
 }
+
 .menu1 {
 	width: 269px;
 	height: 102px;
@@ -388,9 +416,10 @@ header {
 }
 
 .search-form #search-title {
+	border: 1px solid #959595;
 	width: 200px;
 	height: 35px;
-	border: 1px solid #959595;
+	padding-left: 10px;
 }
 
 .search-btn {
@@ -426,39 +455,35 @@ thead th:nth-child(1) {
 }
 
 thead th:nth-child(2) {
-	width: 95.38px;
+	width: 109px;
 }
 
 thead th:nth-child(3) {
-	width: 196.19px;
+	width: 141.69px;
 }
 
 thead th:nth-child(4) {
-	width: 95.38px;
+	width: 141.69px;
 }
 
 thead th:nth-child(5) {
-	width: 95.38px;
+	width: 261.64px;
 }
 
 thead th:nth-child(6) {
-	width: 95.38px;
+	width: 109px;
 }
 
 thead th:nth-child(7) {
-	width: 95.38px;
+	width: 54.5px;
 }
 
 thead th:nth-child(8) {
-	width: 95.38px;
+	width: 54.5px;
 }
 
 thead th:nth-child(9) {
-	width: 95.38px;
-}
-
-thead th:nth-child(10) {
-	width: 95.39px;
+	width: 87.19px;
 }
 
 tbody td {
@@ -470,6 +495,22 @@ tbody td {
 tbody td span {
 	font-size: 13px;
 	height: 19px;
+}
+
+tbody td .status-green {
+	color: #008000;
+}
+
+tbody td .status-red {
+	color: #FF0000;
+}
+
+tbody td .status-yellow {
+	color: #FFA500;
+}
+
+tbody td .status-blue {
+	color: #0000FF;
 }
 
 .pagenation {
@@ -487,7 +528,7 @@ tbody td span {
 	height: 32px;
 }
 
-.pagenation .current {
+.pagenation .page1 {
 	background-color: #1A528E;
 	color: white;
 	display: block;
@@ -497,7 +538,7 @@ tbody td span {
 	text-decoration: none;
 }
 
-.pagenation .off {
+.pagenation .page2, .pagenation .page3 {
 	color: #888888;
 	display: block;
 	width: 100%;
@@ -536,25 +577,51 @@ tbody td span {
 .pagenation .last {
 	background-image: url('/greenUniv/images/btn-last-page.png');
 }
+
+#button-setting {
+	position: relative;
+}
+
+#regist-button {
+	border: 1px solid #08305A;
+	background-color: #1A528E;
+	color: white;
+	height: 33px;
+	width: 100px;
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+}
 </style>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const studentRegist_btn = document.getElementById("regist-button");
+
+		studentRegist_btn.addEventListener("click", function() {
+			window.location.href = "/greenUniv/AMS/AMS_studentRegist.do";
+		});
+	});
+</script>
 </head>
 <body>
 	<!--1.헤더영역-->
 	<header>
 		<!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
 		<div class="topbar" style="">
-			<div class="inner" style=" max-width:1400px !important;">
+			<div class="inner" style="max-width: 1400px !important;">
 				<div class="log-area" style="">
 					<ul>
 						<li><a href="/greenUniv/main.do">HOME</a></li>
 						<li><a href="/greenUniv/about/about_location.do">사이트맵</a></li>
 						<c:choose>
-						    <c:when test="${not empty sessionScope.LOGIN_USER}">
-						      <li><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
-						    </c:when>
-						    <c:otherwise>
-						      <li><a href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
-						    </c:otherwise>
+							<c:when test="${not empty sessionScope.LOGIN_USER}">
+								<li><a
+									href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a
+									href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+							</c:otherwise>
 						</c:choose>
 						<li><a href="/greenUniv/studAssist/courseReg/list.do">학생지원</a></li>
 					</ul>
@@ -563,14 +630,16 @@ tbody td span {
 		</div>
 
 		<div class="mainNav" style="">
-			<div class="inner" style="display: flex; justify-content:center; max-width:1700px !important;">
+			<div class="inner"
+				style="display: flex; justify-content: center; max-width: 1700px !important;">
 				<!--로고-->
-				<div style=" margin-right:665px; margin-left:15px;">
-				<a href="/greenUniv/main.do"><img
-					src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo" /></a>
+				<div style="margin-right: 665px; margin-left: 15px;">
+					<a href="/greenUniv/main.do"><img
+						src="/greenUniv/images/mainpage-logo.webp" alt="몬스터대학교 로고"
+						class="logo" /></a>
 				</div>
 				<!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
-				<div class="menu-area" style="margin-right:30px; flex-shrink:0;">
+				<div class="menu-area" style="margin-right: 30px; flex-shrink: 0;">
 					<ul class="main-menu">
 						<li data-menu="intro"><a
 							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
@@ -673,8 +742,8 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-setting.png'>환경설정
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="/greenUniv/AMS/AMS_environment.do">기본환경정보</a></li>
-                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_terms.do">약관관리</a></li>
+					<li class="menu-item"><a href="#">기본환경정보</a></li>
+					<li class="menu-item"><a href="#">약관관리</a></li>
 				</ul>
 			</div>
 			<div class="menu menu2">
@@ -682,12 +751,16 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-academic.png'>학사운영
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
-                    <li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
-                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
-                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
-                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
-                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+					<li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
+					<li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+					<li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강
+							현황</a></li>
 				</ul>
 			</div>
 			<div class="menu menu3">
@@ -695,8 +768,12 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-persons.png'>인사관리
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
-					<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록 및 등록</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+					<li class="menu-item"><a href="/greenUniv/professor/list.do">교수
+							목록</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/professor/register.do">교수 등록</a></li>
 				</ul>
 			</div>
 			<div class="menu menu4">
@@ -704,8 +781,10 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
-                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
 				</ul>
 			</div>
 			<div class="menu menu5">
@@ -713,98 +792,140 @@ tbody td span {
 					<img src='/greenUniv/images/ico-admin-board.png'>게시판관리
 				</h3>
 				<ul>
-					<li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
-                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
-                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
-                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
-                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
-                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
-                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내
+							공지사항</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내
+							공지사항</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/community/community_announcement.do">커뮤니티
+							공지사항</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+					<li class="menu-item"><a
+						href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
 				</ul>
 			</div>
 		</nav>
 
 		<main class="main-content">
 			<div class="main-title">
-				<h3>교육 운영 현황</h3>
+				<h3>학년별 학생 현황</h3>
 				<p>
-					학사운영 &nbsp; > &nbsp; <span>교육 운영 현황</span>
+					학사운영 &nbsp; > &nbsp; <span>학년별 학생 현황</span>
 				</p>
 			</div>
 
-			<form class="search-form"
-				action="/greenUniv/AMS/AMS_educationOperation/search.do"
-				method="get">
+			<form action="/greenUniv/AMS/AMS_studByGrades_search.do" method="get"
+				class="search-form">
+				<select name="egrade" style="margin-left: 20px; margin-right: auto">
+					<option value="1학년">1학년</option>
+					<option value="2학년">2학년</option>
+					<option value="3학년">3학년</option>
+					<option value="4학년">4학년</option>
+				</select>
 				<select id="search-select" name="searchType">
-					<option value="" disabled selected>검색조건</option>
-					<option value="openMaj">학과</option>
-					<option value="deptCode">과목코드</option>
-					<option value="lname">강의명</option>
-					<option value="year">학년</option>
-					<option value="prof">담당교수</option>
-					<option value="compDiv">구분</option>
-					<option value="grade">학점</option>
-					<option value="room">강의장</option>
-				</select> <input type="text" id="search-title" name="keyword"> <input
-					type="submit" class="search-btn" value="검색" style="cursor:pointer">
+					<option>검색조건</option>
+					<option value="all">전체</option>
+					<option value="snum">학번</option>
+					<option value="sname">학생명</option>
+				</select> <input type="text" name="keyword" id="search-title"
+					placeholder="키워드 입력"> <input type="submit"
+					class="search-btn" value="검색" style="cursor: pointer">
 			</form>
 
 			<table style="height: auto !important;">
 				<thead>
 					<tr>
+						<th><span>학번</span></th>
+						<th><span>이름</span></th>
+						<th><span>주민번호</span></th>
+						<th><span>휴대폰</span></th>
+						<th><span>이메일</span></th>
 						<th><span>학과</span></th>
-						<th><span>과목코드</span></th>
-						<th><span>강의명</span></th>
 						<th><span>학년</span></th>
-						<th><span>담당교수</span></th>
-						<th><span>구분</span></th>
-						<th><span>학점</span></th>
-						<th><span>강의실</span></th>
-						<th><span>수강인원</span></th>
-						<th><span>수강률</span></th>
+						<th><span>학기</span></th>
+						<th><span>상태</span></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="lecture" items="${ dtoList }">
-						<tr style="height: 52px;">
-							<td><span>${ lecture.openMaj }</span></td>
-							<td><span>${ lecture.deptCode }</span></td>
-							<td><span>${ lecture.lname }</span></td>
-							<td><span>${ lecture.year }</span></td>
-							<td><span>${ lecture.prof }</span></td>
-							<td><span>${ lecture.compDiv }</span></td>
-							<td><span>${ lecture.grade }</span></td>
-							<td><span>${ lecture.room }</span></td>
-							<td><span>${ lecture.nowNum }/${ lecture.maxNum }</span></td>
-							<td><span> <fmt:formatNumber
-										value="${ lecture.nowNum / lecture.maxNum * 100 }"
-										maxFractionDigits="0" />%
-							</span></td>
+					<c:forEach var="student" items="${dtoList}" varStatus="status">
+						<tr style="height: 52px !important;">
+							<td><span>${student.snum}</span></td>
+							<td><span>${student.sname}</span></td>
+							<td><span>${student.sregno}</span></td>
+							<td><span>${student.stel}</span></td>
+							<td><span>${student.semail}</span></td>
+							<td><span>${student.edept}</span></td>
+							<td><span>${student.egrade}</span></td>
+							<td><span>${student.eterm}</span></td>
+							<td><c:choose>
+									<c:when test="${student.condition eq '재학중'}">
+										<span class="status-green">${student.condition}</span>
+									</c:when>
+									<c:when
+										test="${student.condition eq '자퇴' or student.condition eq '제적'}">
+										<span class="status-red">${student.condition}</span>
+									</c:when>
+									<c:when test="${student.condition eq '휴학중'}">
+										<span class="status-yellow">${student.condition}</span>
+									</c:when>
+									<c:when test="${student.condition eq '졸업'}">
+										<span class="status-blue">${student.condition}</span>
+									</c:when>
+								</c:choose></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 
-			<ul class="pagenation">
-				<li><a
-					href="/greenUniv/AMS/AMS_educationOperation/search.do?pg=1&searchType=${searchType}&keyword=${keyword}"><span
-						class="first"></span></a></li>
-				<li><a
-					href="/greenUniv/AMS/AMS_educationOperation/search.do?pg=${ pagenationDTO.currentPage > 1 ? pagenationDTO.currentPage - 1 : 1 }&searchType=${searchType}&keyword=${keyword}"><span
-						class="prev"></span></a></li>
-				<c:forEach var="num" begin="${ pagenationDTO.pageGroupStart }"
-					end="${ pagenationDTO.pageGroupEnd }">
+			<div id="button-setting">
+				<ul class="pagenation">
 					<li><a
-						href="/greenUniv/AMS/AMS_educationOperation/search.do?pg=${ num }&searchType=${searchType}&keyword=${keyword}"
-						class="${ pagenationDTO.currentPage == num ? 'current' : 'off' }">${ num }</a></li>
-				</c:forEach>
-				<li><a
-					href="/greenUniv/AMS/AMS_educationOperation/search.do?pg=${ pagenationDTO.currentPage < pagenationDTO.lastPageNum ? pagenationDTO.currentPage + 1 : pagenationDTO.lastPageNum }&searchType=${searchType}&keyword=${keyword}"><span
-						class="next"></span></a></li>
-				<li><a
-					href="/greenUniv/AMS/AMS_educationOperation/search.do?pg=${ pagenationDTO.lastPageNum }&searchType=${searchType}&keyword=${keyword}"><span
-						class="last"></span></a></li>
-			</ul>
+						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+							class="first"></span></a></li>
+					<c:choose>
+						<c:when test="${pagenationDTO.currentPage == 1}">
+							<li><a href="#" style="pointer-events: none;"><span
+									class="prev"></span></a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a
+								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+									class="prev"></span></a></li>
+						</c:otherwise>
+					</c:choose>
+
+					<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
+						end="${pagenationDTO.pageGroupEnd}">
+						<li><a
+							href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${num}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"
+							class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
+					</c:forEach>
+
+					<c:choose>
+						<c:when
+							test="${pagenationDTO.currentPage == pagenationDTO.lastPageNum}">
+							<li><a href="#" style="pointer-events: none;"><span
+									class="next"></span></a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a
+								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+									class="next"></span></a></li>
+						</c:otherwise>
+					</c:choose>
+					<li><a
+						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+							class="last"></span></a></li>
+				</ul>
+			</div>
+
 		</main>
 	</div>
 
@@ -820,12 +941,15 @@ tbody td span {
 							<li><a href="/greenUniv/AMS/AMS_main.do">통합정보시스템</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="#" onclick="alert('통합정보시스템 접근 권한이 없습니다!'); return false;">통합정보시스템</a></li> <!-- 알림창 생각중 -->
+							<li><a href="#"
+								onclick="alert('통합정보시스템 접근 권한이 없습니다!'); return false;">통합정보시스템</a></li>
+							<!-- 알림창 생각중 -->
 						</c:otherwise>
 					</c:choose>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_schedules.do">학사일정</a></li>
-					<li><a href="/greenUniv/college/college_humanities.do">주요인원 연락처</a></li>
+					<li><a href="/greenUniv/college/college_humanities.do">주요인원
+							연락처</a></li>
 					<li><a
 						href="/greenUniv/academicAffairs/academicAffairs_notice.do">교내공지사항</a></li>
 				</ul>

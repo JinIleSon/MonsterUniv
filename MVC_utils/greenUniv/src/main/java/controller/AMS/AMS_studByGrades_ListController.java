@@ -28,12 +28,8 @@ public class AMS_studByGrades_ListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String pg = req.getParameter("pg");
-		String egrade = req.getParameter("egrade");
-		// 학년 초기값 설정
-		if(egrade == null)
-			egrade = "1학년"; // 기본값 설정
 		
-		PagenationDTO pagenationDTO = ams_studByGradeService.getPagenationDTO(pg, null, null, egrade);
+		PagenationDTO pagenationDTO = ams_studByGradeService.getPagenationDTO(pg, null, null, "1학년");
 		
 		List<AMS_studentDTO> dtoList = ams_studByGradeService.findAllWithGrade(pagenationDTO.getStart(), "1학년");
 		

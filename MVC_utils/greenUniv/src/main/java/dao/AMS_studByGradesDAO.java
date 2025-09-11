@@ -57,9 +57,9 @@ public class AMS_studByGradesDAO extends DBHelper {
 		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_STUDENT_SEARCH_WITH_GRADE);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
+			sql.append(Sql_AMS_sub.AND_SNUM);
 		} else if(searchType.equals("sname")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
+			sql.append(Sql_AMS_sub.AND_SNAME);
 		}
 		
 		sql.append(Sql_AMS_sub.STUDENT_SEARCH_ORDER_SNUM); 
@@ -71,6 +71,8 @@ public class AMS_studByGradesDAO extends DBHelper {
 			psmt.setString(1, egrade);
 			psmt.setString(2, keyword);
 			psmt.setInt(3, start);
+			logger.debug("AMS_studByGradeSDAO - selectStudentSearchWithGrade");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
 			rs = psmt.executeQuery();
 
 			while(rs.next()) {
@@ -115,12 +117,12 @@ public class AMS_studByGradesDAO extends DBHelper {
 	
 	public int selectCountSearchWithGrade(String egrade, String searchType, String keyword) {
 		int total = 0;
-		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNTSTUDENT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNTSTUDENT_SEARCH_WITH_GRADE);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
+			sql.append(Sql_AMS_sub.AND_SNUM);
 		} else if(searchType.equals("sname")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
+			sql.append(Sql_AMS_sub.AND_SNAME);
 		}
 		
 		try {
@@ -130,6 +132,8 @@ public class AMS_studByGradesDAO extends DBHelper {
 			if(keyword != null && !keyword.trim().isEmpty()) {
 				psmt.setString(2, "%" + keyword + "%");
 			}
+			logger.debug("AMS_studByGradeSDAO - selectCountSearchWithGrade");
+			logger.debug(psmt.toString().substring(psmt.toString().indexOf(":")+2));
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
