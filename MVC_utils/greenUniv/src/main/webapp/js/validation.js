@@ -4,7 +4,7 @@
 
 //유효성 검사에 사용할 정규표현식
 const rePregno   = /^(?:[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-4][0-9]{6}$/;
-
+//const rePregno = /^[0-9]{6}-[0-9]{7}$/;
 
 document.addEventListener('DOMContentLoaded',function(){
 	
