@@ -77,8 +77,9 @@
 	<a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a><hr>
 	<br><br><br>
 	
-	<h2>교과과정</h2>
+	<h2>이름까지 지어야하나</h2>
 	<a href="/greenUniv/main/curriculum.do">교과과정</a><hr>
+	<a href="<c:url value='/mypage/mypage.do'/>">마이페이지</a><hr>
 	<hr>
 
 </body>
