@@ -74,6 +74,6 @@ public class RegisterController extends HttpServlet{
 		
 		service.register(dto);
 		
-		resp.sendRedirect("/greenUniv/professor/register.do");
+		resp.sendRedirect("/greenUniv/professor/list.do");
 	}
 }

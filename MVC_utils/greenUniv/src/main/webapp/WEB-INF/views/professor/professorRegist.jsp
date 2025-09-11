@@ -877,7 +877,7 @@
 						<li data-menu="intro"><a
 							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
 						<li data-menu="admission"><a
-							href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
+							href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내</a></li>
 						<li data-menu="college"><a
 							href="/greenUniv/college/college_education.do">대학·대학원</a></li>
 						<li data-menu="academic"><a
@@ -1137,8 +1137,9 @@
 	                        <input type="date" name="appdate">
 	                    </div>
 	                </div>
-	            </div>
-            	<button id="regist-button" type="submit" name="btnSubmit">등록</button>
+	                <button id="regist-button" type="submit" name="btnSubmit" style="cursor:pointer">등록</button>     
+	            </div>  
+	               	
             </form>
         </main>
     </div>
