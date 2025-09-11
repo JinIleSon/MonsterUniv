@@ -774,9 +774,9 @@ tbody td .status-blue {
 
 		<main class="main-content">
 			<div class="main-title">
-				<h3>학생 목록</h3>
+				<h3>학년별 학생 현황</h3>
 				<p>
-					인사관리 &nbsp; > &nbsp; <span>학생 목록</span>
+					학사운영 &nbsp; > &nbsp; <span>학년별 학생 현황</span>
 				</p>
 			</div>
 
