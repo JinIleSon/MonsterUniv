@@ -60,4 +60,8 @@ public enum AMS_studByGradeService {
 	public List<AMS_studentDTO> findAllWithGrade(int start, String egrade) {
 		return dao.selectAllWithGrade(start, egrade);
 	}
+	
+	public List<AMS_studentDTO> findSearchWithGrade(int start, String egrade, String searchType, String keyword) {
+		return dao.selectStudentSearchWithGrade(start, egrade, searchType, keyword);
+	}
 }
