@@ -221,4 +221,25 @@ public class UserDAO extends DBHelper{
         }
         return false;
     }
+    
+    // --- 프로필 업데이트 ---
+    public boolean updateProfile(String identification, String nickname, String email,
+            String phone, String address) {
+	try {
+		conn = getConnection();
+		psmt = conn.prepareStatement(util.Sql_user.UPDATE_PROFILE);
+		psmt.setString(1, nickname);
+		psmt.setString(2, email);
+		psmt.setString(3, phone);
+		psmt.setString(4, address);
+		psmt.setString(5, identification);
+		return psmt.executeUpdate() == 1;
+	} catch (Exception e) {
+		e.printStackTrace();
+		return false;
+	} finally {
+	try { closeAll(); } catch (Exception ignore) {}
+	}
+}
+
 }

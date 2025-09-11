@@ -10,6 +10,7 @@
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/fonts.css">
 </head>
 <style>
 html, body {
@@ -359,7 +360,7 @@ aside ol {
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
-			                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+			                    <li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
 			                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
 			                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
 			                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
