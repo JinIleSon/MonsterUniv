@@ -42,20 +42,20 @@ public class Sql_studAssist {
 	public static final String SEARCH_ORDER_DEPTCODE = " ORDER BY DEPTCODE";
 	public static final String SEARCH_OFFET_ROW = " LIMIT 5 OFFSET ?";
 
-	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	public static final String INSERT_TO_DETAIL = "INSERT INTO sa_details2 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	public static final String PLUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM+1 WHERE DEPTCODE = ";
 
 	// courseRegDetails
-	public static final String SELECT_REGDETAILS_WITH_SNUM = "SELECT * FROM sa_details WHERE SNUM = ?";
-	public static final String SELECT_WITH_YEAR_AND_SEM = "SELECT * FROM sa_details WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
-	public static final String SELECT_DETAILS_COUNT_WITH_SNUM = "SELECT COUNT(*) FROM sa_details WHERE SNUM = ?";
-	public static final String SELECT_DETAILS_COUNT_WITH_YEAR_AND_SEM = "SELECT COUNT(*) FROM sa_details WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
+	public static final String SELECT_REGDETAILS_WITH_SNUM = "SELECT * FROM sa_details2 WHERE SNUM = ?";
+	public static final String SELECT_WITH_YEAR_AND_SEM = "SELECT * FROM sa_details2 WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
+	public static final String SELECT_DETAILS_COUNT_WITH_SNUM = "SELECT COUNT(*) FROM sa_details2 WHERE SNUM = ?";
+	public static final String SELECT_DETAILS_COUNT_WITH_YEAR_AND_SEM = "SELECT COUNT(*) FROM sa_details2 WHERE YEAR(YCLASS) = ? AND SEMESTER = ? AND SNUM = ?";
 
-	public static final String GRADESUM_WITH_YEAR_AND_SEM = "SELECT SUM(GRADE) FROM sa_details "
+	public static final String GRADESUM_WITH_YEAR_AND_SEM = "SELECT SUM(GRADE) FROM sa_details2 "
 															+ "WHERE SNUM = ? AND YEAR(TIMES) = ? AND SEMESTER = ? "
 															+ "GROUP BY SNUM, YEAR(TIMES), SEMESTER";
 
-	public static final String DELETE_LECTURE = "DELETE FROM sa_details WHERE deptcode = ? AND snum = ?";
+	public static final String DELETE_LECTURE = "DELETE FROM sa_details2 WHERE deptcode = ? AND snum = ?";
 	public static final String MINUS_NOWNUM = "UPDATE lecture SET NOWNUM = NOWNUM-1 WHERE DEPTCODE = ";
 
 
@@ -85,7 +85,7 @@ public class Sql_studAssist {
 
 
 	// chkGrades
-	public static final String SELECT_GRADE_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT * FROM sa_grade WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
-	public static final String SELECT_COUNT_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT COUNT(*) FROM sa_grade WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
-	public static final String SELECT_SUM_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT SUM(GRADE) FROM sa_grade WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
+	public static final String SELECT_GRADE_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT * FROM sa_grade3 WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
+	public static final String SELECT_COUNT_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT COUNT(*) FROM sa_grade3 WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
+	public static final String SELECT_SUM_WITH_SNUM_AND_YEAR_AND_SEM = "SELECT SUM(GRADE) FROM sa_grade3 WHERE SNUM = ? AND YEAR(YCLASS) = ? AND SEMESTER = ?";
 }
