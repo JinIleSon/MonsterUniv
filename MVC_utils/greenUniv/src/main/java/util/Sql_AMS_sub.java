@@ -1,6 +1,6 @@
 package util;
 
-public class Sql_lecture {
+public class Sql_AMS_sub {
 		//lecture
 		public static final String INSERT_LECTURE = "INSERT INTO lecture (deptcode,`year`,semester,compdiv,lname,lexpl,opencol,openmaj,grade,prof,yclass,yclase,times,timee,timed,evaway,book,room,maxnum,nownum) " +
 													"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,32)";
