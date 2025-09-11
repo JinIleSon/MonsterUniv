@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>학사관리시스템::학년별 학생 현황</title>
+<title>학사관리시스템::학과별 학생 현황</title>
 
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
@@ -13,24 +13,12 @@
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <script>
    document.addEventListener("DOMContentLoaded", function(){
-	   function getQueryParam(param) {
-		    const urlParams = new URLSearchParams(window.location.search);
-			return urlParams.get(param);  // 'name' 또는 'age' 같은 파라미터 이름을 넣으면 해당 값을 반환
-	 	}
-		
-		const selectedEgrade = getQueryParam("egrade");
-		console.log(selectedEgrade);
-		
-		const optionEgrade = document.querySelector('option[value="'+selectedEgrade+'"]');
-		
-		optionEgrade.selected = true;
-	   
-		const egrade = document.getElementsByName("egrade")[0];
+       const edept = document.getElementsByName("edept")[0];
        
-		console.log(egrade);
-		egrade.addEventListener("change", function() {
-			console.log("egrade : " + egrade.value);
-			location.href = '/greenUniv/AMS/AMS_studByGrades_search.do?egrade='+egrade.value;
+       console.log(edept);
+       edept.addEventListener("change", function() {
+           console.log("edept : " + edept.value);
+           location.href = '/greenUniv/AMS/AMS_studByDepts_search.do?edept='+edept.value;
        });
    });
 </script>
@@ -433,7 +421,7 @@ header {
 table {
 	border-collapse: collapse;
 	width: 1090px;
-	height: 567px;
+	height: auto;
 	margin: 10px 20px 0 0;
 	margin-left: auto;
 }
@@ -735,83 +723,53 @@ tbody td .status-blue {
 			</div>
 		</div>
 	</header>
-	<div class="container">
-		<nav class="sidebar">
-			<div class="menu menu1">
-				<h3>
-					<img src='/greenUniv/images/ico-admin-setting.png'>환경설정
-				</h3>
-				<ul>
-					<li class="menu-item"><a href="#">기본환경정보</a></li>
-					<li class="menu-item"><a href="#">약관관리</a></li>
-				</ul>
-			</div>
-			<div class="menu menu2">
-				<h3>
-					<img src='/greenUniv/images/ico-admin-academic.png'>학사운영
-				</h3>
-				<ul>
-					<li class="menu-item"><a
-						href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
-					<li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
-					<li class="menu-item"><a href="#">학과별 학생 현황</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
-					<li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강
-							현황</a></li>
-				</ul>
-			</div>
-			<div class="menu menu3">
-				<h3>
-					<img src='/greenUniv/images/ico-admin-persons.png'>인사관리
-				</h3>
-				<ul>
-					<li class="menu-item"><a
-						href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
-					<li class="menu-item"><a href="/greenUniv/professor/list.do">교수
-							목록</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/professor/register.do">교수 등록</a></li>
-				</ul>
-			</div>
-			<div class="menu menu4">
-				<h3>
-					<img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과
-				</h3>
-				<ul>
-					<li class="menu-item"><a
-						href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
-				</ul>
-			</div>
-			<div class="menu menu5">
-				<h3>
-					<img src='/greenUniv/images/ico-admin-board.png'>게시판관리
-				</h3>
-				<ul>
-					<li class="menu-item"><a
-						href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내
-							공지사항</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내
-							공지사항</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/community/community_announcement.do">커뮤니티
-							공지사항</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
-					<li class="menu-item"><a
-						href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
-				</ul>
-			</div>
-		</nav>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="menu menu1">
+                <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
+                <ul>
+                    <li class="menu-item"><a href="#">기본환경정보</a></li>
+                    <li class="menu-item"><a href="#">약관관리</a></li>
+                </ul>
+            </div>
+            <div class="menu menu2">
+                <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
+                <ul>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_course.do">수강 현황</a></li>
+                </ul>
+            </div>
+            <div class="menu menu3">
+                <h3><img src='/greenUniv/images/ico-admin-persons.png'>인사관리</h3>
+                <ul>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
+                    <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록 및 등록</a></li>
+                </ul>
+            </div>
+            <div class="menu menu4">
+                <h3><img src='/greenUniv/images/ico-admin-college.png'>대학 및 학과</h3>
+                <ul>
+                    <li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>
+                   	<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/register.do">대학 및 학과 등록</a></li>
+                </ul>
+            </div>
+            <div class="menu menu5">
+                <h3><img src='/greenUniv/images/ico-admin-board.png'>게시판관리</h3>
+                <ul>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/academicAffairs/academicAffairs_notice.do">학사안내 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_announcement.do">커뮤니티 공지사항</a></li>
+                    <li class="menu-item"><a href="/greenUniv/admissionGuide/admissionGuide_counsel.do">입학상담</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_QnA.do">질문 및 답변</a></li>
+                    <li class="menu-item"><a href="/greenUniv/collegeLife/collegeLife_menuGuide.do">식단안내</a></li>
+                    <li class="menu-item"><a href="/greenUniv/community/community_referenceLibrary.do">자료실</a></li>
+                </ul>
+            </div>
+        </nav>
 
 		<main class="main-content">
 			<div class="main-title">
@@ -821,9 +779,15 @@ tbody td .status-blue {
 				</p>
 			</div>
 
-			<form action="/greenUniv/AMS/AMS_studByGrades_search.do" method="get"
+			<form action="/greenUniv/AMS/AMS_studByDepts_search.do" method="get"
 				class="search-form">
-				<select name="egrade" style="margin-left: 20px; margin-right: auto">
+				<select name="edept" style="margin-left: 20px;">
+					<option value="1학년">1학년</option>
+					<option value="2학년">2학년</option>
+					<option value="3학년">3학년</option>
+					<option value="4학년">4학년</option>
+				</select>
+				<select name="edept" style="margin-left: 20px; margin-right: auto">
 					<option value="1학년">1학년</option>
 					<option value="2학년">2학년</option>
 					<option value="3학년">3학년</option>
@@ -839,7 +803,7 @@ tbody td .status-blue {
 					class="search-btn" value="검색" style="cursor: pointer">
 			</form>
 
-			<table style="height: auto !important;">
+			<table>
 				<thead>
 					<tr>
 						<th><span>학번</span></th>
@@ -855,7 +819,7 @@ tbody td .status-blue {
 				</thead>
 				<tbody>
 					<c:forEach var="student" items="${dtoList}" varStatus="status">
-						<tr style="height: 52px !important;">
+						<tr style="height: 52px;">
 							<td><span>${student.snum}</span></td>
 							<td><span>${student.sname}</span></td>
 							<td><span>${student.sregno}</span></td>
@@ -887,7 +851,7 @@ tbody td .status-blue {
 			<div id="button-setting">
 				<ul class="pagenation">
 					<li><a
-						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+						href="${pageContext.request.contextPath}/AMS/AMS_studByDepts.do?pg=${pagenationDTO.pageGroupStart}"><span
 							class="first"></span></a></li>
 					<c:choose>
 						<c:when test="${pagenationDTO.currentPage == 1}">
@@ -896,7 +860,7 @@ tbody td .status-blue {
 						</c:when>
 						<c:otherwise>
 							<li><a
-								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+								href="${pageContext.request.contextPath}/AMS/AMS_studByDepts.do?pg=${pagenationDTO.currentPage-1}"><span
 									class="prev"></span></a></li>
 						</c:otherwise>
 					</c:choose>
@@ -904,7 +868,7 @@ tbody td .status-blue {
 					<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 						end="${pagenationDTO.pageGroupEnd}">
 						<li><a
-							href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${num}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"
+							href="${pageContext.request.contextPath}/AMS/AMS_studByDepts.do?pg=${num}"
 							class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
 					</c:forEach>
 
@@ -916,12 +880,12 @@ tbody td .status-blue {
 						</c:when>
 						<c:otherwise>
 							<li><a
-								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+								href="${pageContext.request.contextPath}/AMS/AMS_studByDepts.do?pg=${pagenationDTO.currentPage+1}"><span
 									class="next"></span></a></li>
 						</c:otherwise>
 					</c:choose>
 					<li><a
-						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
+						href="${pageContext.request.contextPath}/AMS/AMS_studByDepts.do?pg=${pagenationDTO.pageGroupEnd}"><span
 							class="last"></span></a></li>
 				</ul>
 			</div>

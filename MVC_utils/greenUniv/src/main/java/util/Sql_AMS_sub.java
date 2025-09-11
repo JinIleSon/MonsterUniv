@@ -58,4 +58,14 @@ public class Sql_AMS_sub {
 		public static final String SELECT_STUDENT_SEARCH_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE egrade = ? ";
 		public static final String AND_SNUM = "AND SNUM LIKE ?";
 		public static final String AND_SNAME = "AND SNAME LIKE ?";
+		
+		// studWithDepts
+		public static final String SELECT_STUDENT_ALL_WITH_DEPT = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "WHERE edept = ? "
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
+		
+		public static final String SELECT_STUDENT_COUNT_TOTAL_WITH_DEPT = "SELECT COUNT(*) FROM student WHERE edept = ?";
+		public static final String SELECT_COUNTSTUDENT_SEARCH_WITH_DEPT = "SELECT COUNT(*) FROM student WHERE edept = ? ";
+		public static final String SELECT_STUDENT_SEARCH_WITH_DEPT = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE edept = ? ";
 }
