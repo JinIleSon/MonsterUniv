@@ -242,7 +242,7 @@ a {
 				<table class="banner"
 					style="border-collapse: collapse; width: 100%; border-top: 2px solid black;">
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/courseReg/list.do"
 							style="color: black;">수강신청</a></td>
 					</tr>
 					<tr>
