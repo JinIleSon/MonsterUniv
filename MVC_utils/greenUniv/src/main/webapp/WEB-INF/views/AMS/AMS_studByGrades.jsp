@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>학사관리시스템::학생목록</title>
+<title>학사관리시스템::학년별 학생 현황</title>
 
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
