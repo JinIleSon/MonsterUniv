@@ -10,6 +10,7 @@ const rePtel     =  /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/;
 const rePemail   = /^[a-z0-9\.\-_]+@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
 const reChar = /^[가-힣a-zA-Z]+$/;
 
+
 document.addEventListener('DOMContentLoaded',function(){
 	
 	console.log('연결됨');

@@ -349,8 +349,8 @@ aside ol {
 								<img src='/greenUniv/images/ico-admin-setting.png'><a href="#">환경설정</a>
 							</h3>
 							<ul>
-								<li class="menu-item"><a href="#">기본환경정보</a></li>
-								<li class="menu-item"><a href="#">약관관리</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_environment.do">기본환경정보</a></li>
+								<li class="menu-item"><a href="/greenUniv/AMS/AMS_terms.do">약관관리</a></li>
 							</ul>
 						</div>
 						<div class="menu menu2">
@@ -368,19 +368,17 @@ aside ol {
 						</div>
 						<div class="menu menu3">
 							<h3>
-								<img src='/greenUniv/images/ico-admin-persons.png'><a href="#">학생
-									목록 및 등록</a>
+								<img src='/greenUniv/images/ico-admin-persons.png'><a href="#">인사 관리</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
 								<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
                     			<li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
-								<li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
 							</ul>
 						</div>
 						<div class="menu menu4">
 							<h3>
-								<img src='/greenUniv/images/ico-admin-college.png'><a href="#">인사관리</a>
+								<img src='/greenUniv/images/ico-admin-college.png'><a href="#">대학 및 학과</a>
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="/greenUniv/collegeAndDepartment/list.do">대학 및 학과 목록</a></li>

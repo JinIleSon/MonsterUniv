@@ -877,7 +877,7 @@
 						<li data-menu="intro"><a
 							href="/greenUniv/about/about_greeting.do">대학소개</a></li>
 						<li data-menu="admission"><a
-							href="/greenUniv/admissionGuide/admissionGuide_notice.do"">입학안내</a></li>
+							href="/greenUniv/admissionGuide/admissionGuide_notice.do">입학안내</a></li>
 						<li data-menu="college"><a
 							href="/greenUniv/college/college_education.do">대학·대학원</a></li>
 						<li data-menu="academic"><a
@@ -973,8 +973,8 @@
             <div class="menu menu1">
                 <h3><img src='/greenUniv/images/ico-admin-setting.png'>환경설정</h3>
                 <ul>
-                    <li class="menu-item"><a href="#">기본환경정보</a></li>
-                    <li class="menu-item"><a href="#">약관관리</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_environment.do">기본환경정보</a></li>
+                    <li class="menu-item"><a href="/greenUniv/AMS/AMS_terms.do">약관관리</a></li>
                 </ul>
             </div>
             <div class="menu menu2">
@@ -994,7 +994,6 @@
                     <li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
                     <li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
                     <li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
-                    <li class="menu-item"><a href="#">임직원 목록 및 등록</a></li>
                 </ul>
             </div>
             <div class="menu menu4">
@@ -1137,8 +1136,8 @@
 	                        <input type="date" name="appdate">
 	                    </div>
 	                </div>
-	            </div>
-            	<button id="regist-button" type="submit" name="btnSubmit">등록</button>
+	                <button id="regist-button" type="submit" name="btnSubmit" style="cursor:pointer">등록</button>     
+	            </div>  
             </form>
         </main>
     </div>
