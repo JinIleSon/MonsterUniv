@@ -4,7 +4,11 @@
 
 //유효성 검사에 사용할 정규표현식
 const rePregno   = /^(?:[0-9]{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[1,2][0-9]|3[0,1]))-[1-4][0-9]{6}$/;
-
+const rePname    = /^[가-힣]{2,4}$/;
+const rePengname = /^[a-zA-Z]+$/; 	
+const rePtel     =  /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/;
+const rePemail   = /^[a-z0-9\.\-_]+@([a-z0-9\-]+\.)+[a-z]{2,6}$/;
+const reChar = /^[가-힣a-zA-Z]+$/;
 
 document.addEventListener('DOMContentLoaded',function(){
 	
@@ -35,22 +39,25 @@ document.addEventListener('DOMContentLoaded',function(){
 		if(!pregno){
 			alert('주민번호를 입력하세요');
 			return;	
-		}else{
-			//주민번호 유효성 검사
-			if(!pregno.match(rePregno)){
-				alert('올바른 주민번호가 아닙니다.');
-				return;
-			}
+		}else if(!pregno.match(rePregno)){
+			alert('올바른 주민번호가 아닙니다.');
+			return;
 		}
 		
 		if(!pname){
 			alert('이름을 입력하세요');
+			return;	
+		}else if(!pname.match(rePname)){
+			alert('올바른 이름이 아닙니다');
 			return;	
 		}
 		
 		if(!pengname){
 			alert('영문명을 입력하세요');
 			return;	
+		}else if(!pengname.match(rePengname)){
+			alert('올바른 영문명이 아닙니다.');
+			return;
 		}
 
 		if(!pgender){
@@ -66,11 +73,17 @@ document.addEventListener('DOMContentLoaded',function(){
 		if(!ptel){
 			alert('휴대폰을 입력하세요');
 			return;	
+		}else if(!ptel.match(rePtel)){
+			alert('올바른 휴대폰번호를 입력하세요');
+			return;	
 		}
 		
 		if(!pemail){
 			alert('이메일을 입력하세요');
 			return;	
+		}else if(!pemail.match(rePemail)){
+			alert('올바른 이메일을 입력하세요');
+			return;
 		}
 		
 		if(!pzip){
@@ -81,10 +94,16 @@ document.addEventListener('DOMContentLoaded',function(){
 		if(!gradun){
 			alert('졸업대학을 입력하세요');
 			return;	
+		}else if(!gradun.match(reChar)){
+			alert('올바른 졸업대학을 입력하세요');
+			return;	
 		}
 		
 		if(!major){
 			alert('전공을 입력하세요');
+			return;	
+		}else if(!major.match(reChar)){
+			alert('올바른 전공을 입력하세요');
 			return;	
 		}
 		

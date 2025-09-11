@@ -24,7 +24,7 @@ public class Sql_professor {
 			+ "`condition`, "      // 재직상태
 			+ "DATE_FORMAT(`appDate`, '%Y-%m-%d') AS appDate "  // 임용일
 			+ "FROM `professor` "
-			+ "ORDER BY `pnum` ASC "
+			+ "ORDER BY `pnum` DESC "
 			+ "LIMIT ?, 10";
 	
 	// 교수 검색 조회 (기본)
@@ -47,7 +47,7 @@ public class Sql_professor {
 	public static final String SEARCH_WHERE_STATUS = "`condition` = ? ";  // 재직상태는 정확한 매칭
 	
 	// 정렬 및 페이징
-	public static final String SEARCH_ORDER_PNUM = "ORDER BY `pnum` ASC ";
+	public static final String SEARCH_ORDER_PNUM = "ORDER BY `pnum` DESC ";
 	public static final String SEARCH_OFFSET_ROW = "LIMIT ?, 10";
 	
 	//교수등록 담당학과
