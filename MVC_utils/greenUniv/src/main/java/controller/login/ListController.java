@@ -68,7 +68,7 @@ public class ListController extends HttpServlet{
             	resp.sendRedirect(req.getContextPath() + "/AMS/AMS_main.do");
             	return;
             }
-            resp.sendRedirect(req.getContextPath() + "/main.jsp");
+            resp.sendRedirect(req.getContextPath() + "/main.do");
             return;
 
         case LOGIN_INPUT_EMPTY:
