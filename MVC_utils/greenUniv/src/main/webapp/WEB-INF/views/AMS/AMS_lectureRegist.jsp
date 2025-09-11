@@ -987,7 +987,7 @@
                 <h3><img src='/greenUniv/images/ico-admin-academic.png'>학사운영</h3>
                 <ul>
                     <li class="menu-item"><a href="/greenUniv/AMS/AMS_educationOperation/list.do">교육 운영 현황</a></li>
-                    <li class="menu-item"><a href="#">학년별 학생 현황</a></li>
+                    <li class="menu-item"><a href="/greenUniv//AMS/AMS_studByGrades.do">학년별 학생 현황</a></li>
                     <li class="menu-item"><a href="#">학과별 학생 현황</a></li>
                     <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureList.do">강의 목록</a></li>
                     <li class="menu-item"><a href="/greenUniv/AMS/AMS_lectureRegist.do">강의 등록</a></li>
