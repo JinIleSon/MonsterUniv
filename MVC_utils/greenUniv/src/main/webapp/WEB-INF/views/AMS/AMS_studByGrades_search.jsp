@@ -13,12 +13,24 @@
 <link rel="stylesheet" href="/greenUniv/css/fonts.css">
 <script>
    document.addEventListener("DOMContentLoaded", function(){
-       const egrade = document.getElementsByName("egrade")[0];
+	   function getQueryParam(param) {
+		    const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(param);  // 'name' 또는 'age' 같은 파라미터 이름을 넣으면 해당 값을 반환
+	 	}
+		
+		const selectedEgrade = getQueryParam("egrade");
+		console.log(selectedEgrade);
+		
+		const optionEgrade = document.querySelector('option[value="'+selectedEgrade+'"]');
+		
+		optionEgrade.selected = true;
+	   
+		const egrade = document.getElementsByName("egrade")[0];
        
-       console.log(egrade);
-       egrade.addEventListener("change", function() {
-           console.log("egrade : " + egrade.value);
-           location.href = '/greenUniv/AMS/AMS_studByGrades_search.do?egrade='+egrade.value;
+		console.log(egrade);
+		egrade.addEventListener("change", function() {
+			console.log("egrade : " + egrade.value);
+			location.href = '/greenUniv/AMS/AMS_studByGrades_search.do?egrade='+egrade.value;
        });
    });
 </script>
@@ -828,7 +840,7 @@ tbody td .status-blue {
 					class="search-btn" value="검색" style="cursor: pointer">
 			</form>
 
-			<table>
+			<table style="height: auto !important;">
 				<thead>
 					<tr>
 						<th><span>학번</span></th>
@@ -844,7 +856,7 @@ tbody td .status-blue {
 				</thead>
 				<tbody>
 					<c:forEach var="student" items="${dtoList}" varStatus="status">
-						<tr>
+						<tr style="height: 52px !important;">
 							<td><span>${student.snum}</span></td>
 							<td><span>${student.sname}</span></td>
 							<td><span>${student.sregno}</span></td>
