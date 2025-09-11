@@ -1,0 +1,71 @@
+package util;
+
+public class Sql_AMS_sub {
+		//lecture
+		public static final String INSERT_LECTURE = "INSERT INTO lecture (deptcode,`year`,semester,compdiv,lname,lexpl,opencol,openmaj,grade,prof,yclass,yclase,times,timee,timed,evaway,book,room,maxnum,nownum) " +
+													"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,32)";
+
+		public static final String SELECT_LECTURE_COUNT_TOTAL = "SELECT COUNT(*) FROM lecture";
+		public static final String SELECT_LECTURE_COUNT_SEARCH = "SELECT COUNT(*) FROM lecture";
+		public static final String SELECT_LECTURE_ALL = "SELECT * FROM lecture\r\n"
+														+ "ORDER BY deptcode DESC\r\n"
+														+ "LIMIT 10 OFFSET ?";
+
+		public static final String SELECT_COUNT_SEARCH = "SELECT COUNT(*) FROM lecture ";
+
+		public static final String SEARCH_WHERE_LNAME = "WHERE LNAME LIKE ?";
+		public static final String SEARCH_WHERE_PROF = "WHERE PROF LIKE ?";
+		public static final String SEARCH_WHERE_ALL = "WHERE deptcode = ?\r\n"
+														+ "OR LNAME LIKE ?\r\n"
+														+ "OR PROF LIKE ?";
+
+		public static final String SELECT_LECTURE_SEARCH = "SELECT * FROM lecture ";
+		public static final String SEARCH_ORDER_DEPTCODE = "ORDER BY deptcode DESC ";
+		public static final String SEARCH_OFFSET_ROW = "LIMIT 10 OFFSET ?";
+		
+		//course
+		public static final String SELECT_COURSE = "SELECT b.semester,a.snum,a.sname,b.year,a.edept,b.deptcode,b.lname,b.compdiv,b.prof,b.grade FROM student a JOIN sa_details b ON a.snum = b.snum ORDER BY a.snum DESC LIMIT 10 OFFSET ?";
+		public static final String SELECT_COURSE_COUNT_TOTAL = "SELECT COUNT(*) FROM student a JOIN sa_details b ON a.snum = b.snum ";
+		public static final String SELECT_COURSE_SEARCH = "SELECT b.semester,a.snum,a.sname,b.year,a.edept,b.deptcode,b.lname,b.compdiv,b.prof,b.grade FROM student a JOIN sa_details b ON a.snum = b.snum ";
+		public static final String SELECT_COURSECOUNT_SEARCH = "SELECT COUNT(*) FROM student a JOIN sa_details b ON a.snum = b.snum ";
+		public static final String COURSE_SEARCH_WHERE_LNAME = "WHERE b.lname LIKE ?";
+		public static final String COURSE_SEARCH_WHERE_PROF = "WHERE b.prof LIKE ?";
+		public static final String COURSE_SEARCH_ORDER_DEPTCODE = "ORDER BY b.deptcode DESC ";
+		
+		//student
+		public static final String INSERT_STUDENT = "INSERT INTO student " + 
+				"VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'student','재학중')";
+		
+		public static final String SELECT_STUDENT_COUNT_TOTAL = "SELECT COUNT(*) FROM student";
+		public static final String SELECT_STUDENT_ALL = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
+		
+		public static final String SELECT_COUNTSTUDENT_SEARCH = "SELECT COUNT(*) FROM student ";
+		public static final String SEARCH_WHERE_SNUM = "WHERE SNUM LIKE ?";
+		public static final String SEARCH_WHERE_SNAME = "WHERE SNAME LIKE ?";
+		public static final String SELECT_STUDENT_SEARCH = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student ";
+		public static final String STUDENT_SEARCH_ORDER_SNUM = " ORDER BY snum DESC ";
+		
+		// studWithGrades
+		public static final String SELECT_STUDENT_ALL_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "WHERE egrade = ? "
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
+		
+		public static final String SELECT_STUDENT_COUNT_TOTAL_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ?";
+		public static final String SELECT_COUNTSTUDENT_SEARCH_WITH_GRADE = "SELECT COUNT(*) FROM student WHERE egrade = ? ";
+		public static final String SELECT_STUDENT_SEARCH_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE egrade = ? ";
+		public static final String AND_SNUM = "AND SNUM LIKE ?";
+		public static final String AND_SNAME = "AND SNAME LIKE ?";
+		
+		// studWithDepts
+		public static final String SELECT_STUDENT_ALL_WITH_DEPT = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "WHERE edept = ? "
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
+		
+		public static final String SELECT_STUDENT_COUNT_TOTAL_WITH_DEPT = "SELECT COUNT(*) FROM student WHERE edept = ?";
+		public static final String SELECT_COUNTSTUDENT_SEARCH_WITH_DEPT = "SELECT COUNT(*) FROM student WHERE edept = ? ";
+		public static final String SELECT_STUDENT_SEARCH_WITH_DEPT = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student WHERE edept = ? ";
+}

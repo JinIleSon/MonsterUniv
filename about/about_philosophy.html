@@ -1,134 +1,257 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>대학소개</title>
-<style>
-  /* 색상 변수를 root에 등록 */
-  :root{
-    --blue:#3F97F6; /* 포인트 색상 (파랑) */
-    --line:#e5e7eb; /* 구분선 색상 */
-    --text:#111827; /* 본문 텍스트 색상*/
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학소개_교육이념</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/about_main.style.css">
+    <style>
+        
+        hr{
+            border: none;
+            height: 2px;
+            background-color: black;
+        } 
+        a {
+            text-decoration: none;
+        }
+       
+        .banner td {
+            height: 60px;
+            
+        }
+        .banner a {
+            display:block;
+            width:100%;
+            height:100%;
+            line-height: 60px;
+            margin-left:16px;
+        }
+        .board-select {
+            color: #666666; /* 글씨 색 */
+            appearance: none;           /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
+            -webkit-appearance: none;
+            -moz-appearance: none;
 
-  /* 기본 세팅 */
-  *{box-sizing:border-box} /* padding, border 포함 크기 계산 */
-  body{
-    margin:0;
-    font-family:"Noto Sans KR",
-    system-ui,-apple-system,sans-serif; /* 글꼴 */
-    color:var(--text); /* 본문 글자색 */
-  }
-
-  /* 전체 레이아웃 */
-  .layout{
-    display:grid;                     /* CSS Grid 레이아웃 */
-    grid-template-columns:260px 1fr;  /* 왼쪽 260px, 오른쪽 나머지 */
-    column-gap:48px;                  /* 컬럼 간격 */
-    width:100%;     
-    min-height:100vh;                 /* 화면 전체 높이 */
-    padding:32px 40px;                /* 여백 */
-  }
-
-  /* 사이드 */
-  .snb .title{
-    font-size:36px;
-    font-weight:800;
-    margin:0 0 0 0; /* 큰 제목 */
-  }
-
-  .snb .title::after{
-    content:"";
-    display:block;
-    height:3px;
-    background:#111; /* 검은줄 */
-    margin-top: 8px;
-  }
-  .snb ul{list-style:none;margin:0;padding:0;width:240px} /* 메뉴 리스트 */
-  .snb li{border-bottom:1px solid var(--line)} /* 각 메뉴 항목 구분선 */
-  .snb a{
-    display:block;
-    padding:16px 18px;
-    text-decoration:none;
-    color:var(--text);
-    font-size:18px;
-  }
-
-  .snb a.active{          /* 현재 선택된 메뉴 */
-    background:var(--blue);
-    color:#fff;
-    border-top:none;
-  }
-  .snb a:hover:not(.active){  /* hover 시 효과 (active 제외) */
-    background:#3F97F6; 
-    color:#fff;
-  }
-
-  /* 콘텐츠 */
-  .content{max-width:100%}
-  .content h1{font-size:28px;margin:0 0 12px 0} /* 콘텐츠 제목 */
-  .content .divider{height:3px;background:#222;margin:0 0 24px 0} /* 구분선 */
-  .placeholder{color:#6b7280} /* 자리표시 텍스트 색상 */
-
-  /* 반응형 (가로폭 900px 이하) */
-  @media (max-width:900px){
-    .layout{grid-template-columns:1fr;row-gap:24px} /* 한 열로 배치 */
-    .snb ul{width:100%} /* 메뉴도 전체 폭 */
-  }
-</style>
-
+            background: url('../images/btn-sel-open01.png') 
+                        no-repeat right 8px center/12px auto;
+            padding-right: 24px;  /* 화살표 공간 확보 */
+        }
+        /* 게시판 아래버튼 부분 */
+        .first-page{
+            background: url('../images/btn-first-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .prev-page{
+            background: url('../images/btn-prev-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-right: 15px;
+            width: 33px;
+            height: 30px;
+        }
+        .next-page{
+            background: url('../images/btn-next-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            margin-left: 15px;
+            width: 33px;
+            height: 30px;
+            margin-right:3px;
+        }
+        .last-page{
+            background: url('../images/btn-last-page.png') no-repeat center;
+            border: 1px #eaeaea solid;
+            width: 33px;
+            height: 30px;
+        }
+        
+        /* 게시판 아래버튼 부분 끝 */
+    </style>
 </head>
 <body>
-  <div class="layout">
-    <!-- 사이드바 -->
-    <aside class="snb" aria-label="대학소개 메뉴">
-      <h2 class="title">대학소개</h2>
-      <ul>
-        <li><a href="about_greeting.html">총장 인사말</a></li>
-        <li><a href="#" class="active">교육이념</a></li>
-        <li><a href="about_history.html">연혁</a></li>
-        <li><a href="about_organization.html">조직도</a></li>
-        <li><a href="about_location.html">오시는길</a></li>
-      </ul>
-    </aside>
 
-    <!-- 본문 -->
-    <main class="content" role="main">
-      <h1>교육이념</h1>
-      <div class="divider" aria-hidden="true"></div>
+    <!--1.헤더영역-->
+    <header>
+        <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+        <div class="topbar">
+            <div class="inner">
+                <div class="log-area">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">학생지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-   
-        <strong>그린대학교 교육이념</strong>
-        <ol style="line-height:200%">
-        <li>교육목표</li>
-        그린대학교는 창의적 탐구 능력 배양, 학문과 실무의 융합적 인재 양성, 비판적 사고와 창의적 문제해결 역량 함양을 핵심 목표로 삼습니다.
-이를 위해 첨단 IT·지식재산 교육, 미래 융합기술 기반의 교과과정, 산학협력 프로젝트, 글로벌 연계 교육을 추진하여 교육 이념을 실현하고 교육 목표를 달성하고자 합니다.
-          <ul>
-            <li>학문적 기초와 실무 능력을 겸비한 전문 인재 양성</li>
-            <li>국제 협력과 교류를 통한 글로벌 리더십 배양</li>
-            <li>지역사회와 함께 성장하는 교육 모델 확립</li>
-          </ul>
+        <div class="mainNav">
+            <div class="inner">
+                <!--로고-->
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
 
-        <li>역할과 기능</li>
-
-그린대학교는 지역과 사회의 미래 인재들을 조기에 발굴하고, 최신 학문과 산업 지식을 제공하여 학생들이 지식·기술·가치관을 균형 있게 갖출 수 있도록 지원합니다.
-          <ul>
-            <li>교육 기능: 독창적이고 인간적인 교육 프로그램 운영을 통해 전인적 인재 양성</li>
-            <li>연구 기능: 학문과 산업을 연계한 연구 활성화, 창의적 지식재산 창출</li>
-            <li>정보화 기능: 교육·연구 성과를 체계적으로 관리하고 사회와 공유</li>      
-
-          </ul>
-
-          <li>종합 지향점</li>
-
-그린대학교는 미래 유능한 인재로서의 가치관·지식·역량의 기초 형성을 최종 목표로 합니다.
-이를 통해 학생들은 급변하는 4차 산업혁명 시대에 필요한 창의적 리더, 융합형 전문가, 사회적 책임을 다하는 글로벌 인재로 성장하게 될 것입니다.
-
-
-        </ol>
+                <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+                <div class="menu-area">
+                    <ul>
+                        <li><a href="#">대학소개</a></li>
+                        <li><a href="#">입학안내</a></li>
+                        <li><a href="#">대학·대학원</a></li>
+                        <li><a href="#">학사안내</a></li>
+                        <li><a href="#">대학생활</a></li>
+                        <li style="position: relative;">
+                            <a href="#">커뮤니티</a>
+                            <div style="width:197.25px; height:42px;
+                              position: absolute; top: 205%;
+                              transform: translateX(-65%);
+                              display:flex;
+                              align-items: center;
+                              ">
+                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:15px;">대학소개</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:15px;">
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:15px;">교육이념</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>     
+        </div>   
+    </header>
+    <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
     </div>
-    </main>
-  </div>
+        <!-- 사이드바 시작-->
+    <div style="height: 1088px;" class = "inner">
+        <div style="height:50px; "></div>
+        <div style="display: flex; gap: 60px; ">
+            <div style=" width: 210px; ">
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">대학소개</b>
+                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color:black;">총장 인사말</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: white">교육이념</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color:black;">연혁</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color:black;">조직도</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid #e9e9e9;">
+                            <a href="#" style="color: black;">오시는 길</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-top:9px; width: 930px;">
+                <div style="padding-bottom:6px;">
+                    <b style="font-weight: 700; font-size:26px;">교육이념</b>
+                </div>
+                    <!-- 사이드바 끝-->
+
+                    <!-- 본문 시작-->
+               <hr style="border:none; border-top: 2px solid;">
+               <div style="height:100px; margin-top:30px; display: flex; gap:23px;"> 
+                  <div style="">
+                    <div style="font-weight: 350; font-size: 26px; color:#3B88D4; margin-bottom:11px;">그린대학교 교육이념</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">교육목표</span>
+                </div>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 창의적 탐구 능력 배양, 학문과 실무의 융합적 인재 양성, 비판적 사고와 창의적 문제해결 역량 함양을 핵심 목표로 삼습니다. 이를 위해 첨단 IT·지식재산 교육, 미래 융합기술 기반의 교과과정, 산학협력 프로젝트, 글로벌 연계 교육을 추진하여 교육 이념을 실현하고 교육 목표를 달성하고자 합니다.
+                
+                    <ul>
+                      <li>학문적 기초와 실무 능력을 겸비한 전문 인재 양성</li>
+                      <li>국제 협력과 교류를 통한 글로벌 리더십 배양</li>
+                      <li>지역사회와 함께 성장하는 교육 모델 확립</li>
+                    </ul>                                      
+                </div> 
+
+                <div style="padding-bottom:50px;"></div>
+                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">역할과 기능</span>
+                </div>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 지역과 사회의 미래 인재들을 조기에 발굴하고, 최신 학문과 산업 지식을 제공하여 학생들이 지식·기술·가치관을 균형 있게 갖출 수 있도록 지원합니다.
+                    <ul> 
+                      <li>교육 기능: 독창적이고 인간적인 교육 프로그램 운영을 통해 전인적 인재 양성</li>
+                      <li>연구 기능: 학문과 산업을 연계한 연구 활성화, 창의적 지식재산 창출</li>
+                      <li>지역사회와 함께 성장하는 교육 모델 확립</li>
+                    </ul>                                      
+                </div>
+ 
+                
+                <div style="padding-bottom:50px;"></div>
+                <div style="display: flex; width:100%; margin-top:0px; margin-bottom:28px; align-items: center;">
+                      <img src="../images/bullet-h4.png" alt="" style="margin-right:6px; width:4px; height:18px; margin-top:5px;"><span style="color:#145074; font-size:18px; font-weight: 500;">종합 지향점</span>
+                </div>
+                <div style="font-weight: 350; font-size: 16px; color:#666666;"> 그린대학교는 미래 유능한 인재로서의 가치관·지식·역량의 기초 형성을 최종 목표로 합니다. 이를 통해 학생들은 급변하는 4차 산업혁명 시대에 필요한 창의적 리더, 융합형 전문가, 사회적 책임을 다하는 글로벌 인재로 성장하게 될 것입니다.
+                </div>
+                </div>
+
+                
+              </div>
+          </div>
+    </div>
+    <!--3. 푸터영역-->    
+    <footer class="footer">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
+
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

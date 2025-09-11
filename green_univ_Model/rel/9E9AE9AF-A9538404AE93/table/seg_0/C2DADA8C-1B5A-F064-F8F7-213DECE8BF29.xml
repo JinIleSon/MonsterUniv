@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C2DADA8C-1B5A-F064-F8F7-213DECE8BF29" name="User">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:17:01 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="identification" id="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:19:34 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="7DBD46E4-1120-E744-D736-879F821DC123">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:19:34 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nickname" id="001346EF-92A3-6C0E-9205-33958C988537">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:19:34 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="7C2EA5FD-06CF-F4B2-8BA7-CD007A80AFFB">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 01:49:01 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="1BBA6AA8-108C-B413-A237-67F6CCDADFAC">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 01:49:01 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="E7817160-6419-A34C-2C75-558D9E80F3AD">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 01:49:01 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>300 BYTE</dataTypeSize>
+<ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="role" id="1183E17B-149B-AAC3-560E-4289B9D81621">
+<createdBy>GGG</createdBy>
+<createdTime>2025-09-04 11:07:10 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2D0E333-243C-76BB-DED2-101FA56E15FA" name="user_PKv2">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:20:04 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD8C6F52-49B2-38F7-F962-E6C630B5C4D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="015FDDDE-6317-788A-1093-5334D9778AC5" name="User__UN_nickname">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 00:48:21 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="001346EF-92A3-6C0E-9205-33958C988537"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E82A7ED-5802-6676-B026-639AC98C072A" name="User__UN">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 05:36:17 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="001346EF-92A3-6C0E-9205-33958C988537"/>
+<colUsage columnID="7C2EA5FD-06CF-F4B2-8BA7-CD007A80AFFB"/>
+<colUsage columnID="1BBA6AA8-108C-B413-A237-67F6CCDADFAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

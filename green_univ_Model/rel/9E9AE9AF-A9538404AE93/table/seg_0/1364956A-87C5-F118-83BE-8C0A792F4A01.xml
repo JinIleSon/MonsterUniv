@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1364956A-87C5-F118-83BE-8C0A792F4A01" name="AA_schedules">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:00:35 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_18</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="D149919A-BFBD-392D-D220-A26313B691D4">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:01:56 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="content" id="DEDD7E91-476D-4F59-D449-D23D7B056B25">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:01:56 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F2284354-BADD-E9EE-D8A8-6EB9AC0D14C3" name="AA_schedules_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:01:56 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D149919A-BFBD-392D-D220-A26313B691D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D5CC9C2A-2875-C075-6D84-47C7B8B159E4" name="AA_FAQ">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:44:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_48</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1B301EB7-5947-81B1-7D50-E754CB566843">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:46:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="question" id="6D71B00E-39AC-3A0F-0BC1-03E7E735618B">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:46:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>500 BYTE</dataTypeSize>
+<ownDataTypeParameters>500 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="answer" id="CBC4F6B4-5B9D-4D89-F23A-01AAB6334B3B">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:46:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>500 BYTE</dataTypeSize>
+<ownDataTypeParameters>500 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A5CC447B-72D9-D293-41EA-6124E3D8D2B6" name="AA_FAQ_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 06:46:26 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B301EB7-5947-81B1-7D50-E754CB566843"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

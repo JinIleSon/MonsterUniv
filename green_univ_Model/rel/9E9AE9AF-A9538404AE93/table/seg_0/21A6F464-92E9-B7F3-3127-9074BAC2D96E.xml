@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="21A6F464-92E9-B7F3-3127-9074BAC2D96E" name="Commu_free">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="57E37BC9-6C00-5B1D-A5C7-AFD3E51C2559">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Commu_free_id</notNullConstraintName>
+</Column>
+<Column name="title" id="100FE7CE-965A-54CF-924C-DC7C1A2DC037">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>300 BYTE</dataTypeSize>
+<ownDataTypeParameters>300 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="67815316-7442-B082-B0DD-6A5A8AB8634E">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hits" id="7B9593B4-66A9-7DA3-A211-0EEA15A0DDD9">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43E68AA3-5616-BEAE-1DB2-C53998C7D679" name="Commu_free_PK">
+<createdBy>Son</createdBy>
+<createdTime>2025-08-31 02:38:00 UTC</createdTime>
+<ownerDesignName>green_univ_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57E37BC9-6C00-5B1D-A5C7-AFD3E51C2559"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

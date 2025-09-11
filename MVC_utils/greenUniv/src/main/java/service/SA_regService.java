@@ -1,0 +1,94 @@
+package service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dao.SA_regDAO;
+import dto.PagenationDTO;
+import dto.SA_regDTO;
+
+public enum SA_regService {
+	INSTANCE;
+
+	private SA_regDAO dao = SA_regDAO.getInstance();
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	public PagenationDTO getPagenationInfo(String cCode, String pg, String searchType, String keyword) {
+
+		int total = 0;
+
+		// 전체 게시물 갯수 구하기
+		if (keyword == null || searchType == null) {
+			total = dao.selectCountTotal(cCode);
+		} else {
+			total = dao.selectCountSearch(cCode, searchType, keyword);
+		}
+
+		// 마지막 페이지 번호 구하기
+		int lastPageNum = 0;
+		if (total % 5 == 0) {
+			lastPageNum = total / 5; // 5으로 나누어 떨어짐
+		} else {
+			lastPageNum = total / 5 + 1; // 5으로 나누어 떨어지지 않음
+		}
+
+		// 현재 페이지 번호 시작값 구하기
+		int currentPage = 1;
+		if (pg != null) {
+			currentPage = Integer.parseInt(pg);
+		}
+		int start = (currentPage - 1) * 5;
+
+		// 현재 페이지 그룹 구하기
+		int currentPageGroup = (int) Math.ceil(currentPage / 10.0);
+		int currentPageGroupStart = (currentPageGroup - 1) * 10 + 1;
+		int currentPageGroupEnd = currentPageGroup * 10;
+
+		if (currentPageGroupEnd > lastPageNum) {
+			currentPageGroupEnd = lastPageNum;
+		}
+
+		// 현재 페이지 글 시작 번호 구하기
+		int currentPageStartNum = total - (currentPage - 1) * 5;
+
+		PagenationDTO dto = new PagenationDTO();
+		dto.setTotal(total);
+		dto.setStart(start);
+		dto.setCurrentPage(currentPage);
+		dto.setCurrentPageStartNum(currentPageStartNum);
+		dto.setLastPageNum(lastPageNum);
+		dto.setPageGroupStart(currentPageGroupStart);
+		dto.setPageGroupEnd(currentPageGroupEnd);
+
+		logger.debug("SA_regService\n" + dto.toString());
+
+		return dto;
+	}
+
+	public void registerToDetail(int snum, SA_regDTO dto) {
+		dao.insertAndPlusNowNum(snum, dto);
+	}
+
+	public SA_regDTO findByCode(String deptCode) {
+		return dao.select(deptCode);
+	}
+
+	public List<SA_regDTO> findBySearch(String cCode, int start, String searchType, String keyword) {
+		return dao.selectWithSearch(cCode, start, searchType, keyword);
+	}
+
+	public List<SA_regDTO> findAll(int start, String cCode) {
+		return dao.selectAll(start, cCode);
+	}
+
+	public void modify(SA_regDTO dto) {
+		dao.modify(dto);
+	}
+
+	public void delete(String deptCode) {
+		dao.delete(deptCode);
+	}
+}

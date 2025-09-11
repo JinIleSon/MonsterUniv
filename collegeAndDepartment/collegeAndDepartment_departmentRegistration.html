@@ -3,248 +3,563 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>그린대학교 - 학과목록</title>
+    <title>몬스터대학교 - 대학 및 학과 등록</title>
     <style>
+        @font-face {
+            font-family: 'NotoSansKR-Light';
+            src: url('../font/NotoSansKR-Light.otf') format('opentype');
+            font-weight: 350;
+            font-style: DemiLight;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'NotoSansKR-Light';
         }
-        @font-face {
-            font-family: 'NotoSansKR';
-            src: url('font/NotoSansKR-Regular.woff2') format('woff2');
-        }
-        body {
-            font-family: 'NotoSansKR', sans-serif;
-            font-size: 12px;
-            background-color: #f0f2f5;
-        }
-        
-        /* 메인 컨테이너 */
-        .main-container {
+        .inner {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: white;
-            min-height: 600px;
+            padding: 0 20px;
         }
-        .container {
-            display: flex;
-            gap: 50px; 
-            padding-top: 35px;
-        }
-        
-        /* 사이드바 */
-        .sidebar {
-            width: 200px;
-            background-color: #f0f2f5; /* 사이드바 배경색 변경 */
-            padding: 15px 0;
-        }
-        .sidebar-category {
-            margin-bottom: 12px; /* 카테고리별 간격 */
-        }
-        .category-header {
-            color: black;
-            padding: 10px 20px;
-            font-weight: bold;
-            font-size: 14px;
-            display: flex;
-            align-items: center; 
-            gap: 10px; 
-        }
-        .category-header img {
-            width: 20px; 
-            height: 20px;
-            object-fit: contain;
+        /* ================================
+        Header
+        ================================ */
+        header {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
         }
 
-        /* 서브메뉴 */
-        .submenu {
-            list-style-type: disc; 
-            margin-left: 70px; 
-            padding-left: 0;
+        /* ---------- 상단 유틸바 ---------- */
+        .topbar {
+            background-color: #1e2732;
+            margin: 0;
         }
-        .submenu li {
-            border-bottom: none; /* 기존 항목의 하단 선 제거 */
+        .topbar .inner {
+            height: 27px;
+            display: flex;
+            align-items: center;
         }
-        .submenu a {
-            display: block;
-            padding: 5px 0; /* 서브메뉴 항목 패딩 조정 */
-            text-decoration: none;
-            color: #333;
-            font-size: 13px;
-            font-weight: normal; /* 서브메뉴 텍스트 굵기 조정 */
+
+        /* 로그인/회원 등 오른쪽 메뉴 */
+        .log-area {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 14px;
+            margin-left: auto;
         }
-        .submenu a:hover {
-            color: #4a90e2; /* 호버 시 색상 변경 */
-            background-color: transparent; /* 호버 시 배경색 제거 */
-        }
-        
-        /* 메인 컨텐츠 */
-        .main-content {
-            flex: 1;
+        .log-area ul {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
             padding: 0;
         }
-        .content-header {
-            background-color: white;
-            border-bottom: 2px solid black;
-            padding: 20px 20px 20px 0;
-            font-size: 21px; 
-            font-weight: bold;
-            height: 65px;
+        .log-area a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #b8c2cf;
+            transition: color 0.2s ease;
+        }
+        .log-area a:hover {
+            color: #fff;
+        }
+
+        /* ---------- 로고 ---------- */
+        .logo {
+            height: 77px;
+            display: block;
+        }
+
+        /* ---------- 메인 네비게이션 ---------- */
+        .mainNav .inner {
+            height: 77px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .breadcrumb {
-            font-size: 12px;
-            color: #666;
+        /* 메뉴 그룹 */
+        .menu-area {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .menu-area ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-area a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            transition: color 0.2s ease;
+        }
+        .menu-area a:hover {
+            color: rgb(80, 101, 133);
+        }
+        
+        /* ================================
+        Container
+        ================================ */
+        .container {
+            display: flex;
+            width: 1400px;
+            margin: 0 auto;
+            min-height: 600px;
+        }
+        
+        /* ================================
+        Sidebar
+        ================================ */
+        .sidebar {
+            background-color: #eaeaea;
+            border: 1px solid #C0C0C0;
+            display: inline-block;
+            width: 269px;
+            margin-left: 1px;
+        }
+        .menu {
+            margin-left: 15px;
+        }
+        .sidebar .menu h3 {
+            margin: 9px 0px 9px 0px;
+        }
+        .sidebar h3 img {
+            width: 1em;   
+            height: 1em;
+            vertical-align: middle; 
+            margin-right: 2px;
+        }
+        .sidebar .menu ul {
+            list-style: none; 
+            margin-top: 9px;
+            padding: 0px 0px 0px 30px;
+        }
+        .menu ul li::before {
+            content: "•";
+            font-size: 0.6em;
+            margin-right: 8px;
+            position: relative;
+            top: -2px;
+        }
+        .menu ul li {
+            cursor: pointer;
+            height: 26px;
+        }
+        .menu1 { width: 269px; height: 102px; } 
+        .menu2 { width: 269px; height: 222px; } 
+        .menu3 { width: 269px; height: 132px; } 
+        .menu4 { width: 269px; height: 102px; } 
+        .menu5 { width: 269px; height: 252px; }
+        
+        /* ================================
+        Main Content
+        ================================ */
+        .main-content {
+            flex: 1;
+            padding: 0;
+        }
+        .main-title {
+            align-items: center;
+            border-bottom: 1px solid #C0C0C0;
+            display: flex;
+            height: 46px;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding-bottom: 10px;
+            width: 1090px;
+        }
+        .main-title p span {
+            color: #145074;
+        }
+        
+        /* 폼 섹션 스타일 */
+        .form-container {
+            padding: 30px 20px;
+        }
+        .form-section {
+            margin-bottom: 40px;
+        }
+        .form-section h4 {
+            background-color: #f5f5f5;
+            padding: 12px 15px;
+            border-left: 4px solid #1A528E;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .form-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 13px;
+        }
+        .form-table td:first-child {
+            background-color: #f9f9f9;
+            width: 150px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-table input[type="text"], 
+        .form-table input[type="date"], 
+        .form-table select {
+            width: 250px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .form-table textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            resize: vertical;
+            font-size: 13px;
+        }
+        .form-table input[type="file"] {
+            font-size: 13px;
+        }
+        .submit-btn {
+            background-color: #1A528E;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #357abd;
+        }
+        .center-cell {
+            text-align: center;
+            padding: 15px !important;
+        }
+        
+        /* ================================
+        Footer
+        ================================ */
+        :root {
+            --footer-bg: #141b23;
+            --footer-top-bg: #1e2732;
+            --footer-text: #b8c2cf;
+            --footer-muted: #8893a1;
+            --footer-line: rgba(255,255,255,0.2);
+            --footer-link: #d7dee8;
+            --footer-link-hover: white;
+        }
+
+        .footer { background: var(--footer-bg); color: var(--footer-text); }
+
+        .footer-high { background: var(--footer-top-bg); }
+        .footer-high-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-high-quicklinks {
+            display: flex; justify-content: center; gap: 32px;
+            list-style: none; margin: 0; padding: 12px 0;
+            position: relative;
+        }
+        .footer-high-quicklinks li {
+            position: relative; padding: 6px 0 8px;
+        }
+        .footer-high-quicklinks li + li::before {
+            content: ""; position: absolute; left: -16px; top: 50%;
+            transform: translateY(-50%);
+            width: 1px; height: 16px; background: var(--footer-line);
+        }
+        .footer-high-quicklinks a {
+            color: var(--footer-link); text-decoration: none; font-size: 14px;
+        }
+        .footer-high-quicklinks a:hover { color: var(--footer-link-hover); }
+
+        .footer-low { border-top: 1px solid var(--footer-line); }
+        .footer-low-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px 36px;
+            display: grid;
+            grid-template-columns: 160px 1fr 220px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .footer-logo img {
+            display: block; width: 140px; height: auto; opacity: .85;
+        }
+
+        .footer-info { line-height: 1.7; }
+        .footer-info .footer-uniname {
+            margin: 0 0 6px; color: #e5ecf5; font-weight: 600; font-size: 15px;
+        }
+        .footer-info p {
+            margin: 0 0 6px; color: var(--footer-text); font-size: 13px;
+        }
+        .footer-info .copy {
+            margin-top: 10px; color: var(--footer-muted); font-size: 12px;
+        }
+
+        .footer-select {
+            margin-left: auto; display: flex; justify-content: flex-end;
+        }
+        .footer-select select {
+            width: 100%; max-width: 220px; height: 36px;
+            border: 0; outline: none;
+            background: #111820; color: #dfe6f1;
+            padding: 0 12px; border-radius: 4px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+        }
+        .footer-select select:hover {
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+            cursor: pointer;
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="container">
-            <!-- 사이드바 -->
-            <div class="sidebar">
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-setting.png" alt="환경설정 아이콘"> 환경설정</div>
-                <ul class="submenu">
-                    <li><a href="#">기본환경정보</a></li>
-                    <li><a href="#">약관관리</a></li>
+    <header>
+        <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+        <div class="topbar">
+            <div class="inner">
+                <div class="log-area">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">학생지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainNav">
+            <div class="inner">
+                <!--로고-->
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+
+                <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+                <div class="menu-area">
+                    <ul>
+                        <li><a href="#">대학소개</a></li>
+                        <li><a href="#">입학안내</a></li>
+                        <li><a href="#">대학·대학원</a></li>
+                        <li><a href="#">대학생활</a></li> 
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <div class="menu menu1">
+                <h3><img src='../images/ico-admin-setting.png'>환경설정</h3>
+                <ul>
+                    <li class="menu-item">기본환경정보</li>
+                    <li class="menu-item">약관관리</li>
                 </ul>
+            </div>
+            <div class="menu menu2">
+                <h3><img src='../images/ico-admin-academic.png'>학사운영</h3>
+                <ul>
+                    <li class="menu-item">교육 운영 현황</li>
+                    <li class="menu-item">학년별 학생 현황</li>
+                    <li class="menu-item">학과별 학생 현황</li>
+                    <li class="menu-item">강의 목록</li>
+                    <li class="menu-item">강의 등록</li>
+                    <li class="menu-item">수강 현황</li>
+                </ul>
+            </div>
+            <div class="menu menu3">
+                <h3><img src='../images/ico-admin-persons.png'>인사관리</h3>
+                <ul>
+                    <li class="menu-item">학생 목록 및 등록</li>
+                    <li class="menu-item">교수 목록 및 등록</li>
+                    <li class="menu-item">임직원 목록 및 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu4">
+                <h3><img src='../images/ico-admin-college.png'>대학 및 학과</h3>
+                <ul>
+                    <li class="menu-item">대학 및 학과 목록</li>
+                    <li class="menu-item">대학 및 학과 등록</li>
+                </ul>
+            </div>
+            <div class="menu menu5">
+                <h3><img src='../images/ico-admin-board.png'>게시판관리</h3>
+                <ul>
+                    <li class="menu-item">입학안내 공지사항</li>
+                    <li class="menu-item">학사안내 공지사항</li>
+                    <li class="menu-item">커뮤니티 공지사항</li>
+                    <li class="menu-item">입학상담</li>
+                    <li class="menu-item">질문 및 답변</li>
+                    <li class="menu-item">식단안내</li>
+                    <li class="menu-item">자료실</li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="main-title">
+                <h3>대학 및 학과 등록</h3>
+                <p>대학 및 학과 &nbsp; > &nbsp; <span>대학 및 학과 등록</span></p>
             </div>
             
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-academic.png" alt="학사운영 아이콘"> 학사운영</div>
-                <ul class="submenu">
-                    <li><a href="#">교육 운영 현황</a></li>
-                    <li><a href="#">학년별 학생 현황</a></li>
-                    <li><a href="#">학과별 학생 현황</a></li>
-                    <li><a href="#">강의 목록</a></li>
-                    <li><a href="#">강의 등록</a></li>
-                    <li><a href="#">수강 현황</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-persons.png" alt="인사관리 아이콘"> 인사관리</div>
-                <ul class="submenu">
-                    <li><a href="#">학생 목록 및 등록</a></li>
-                    <li><a href="#">교수 목록 및 등록</a></li>
-                    <li><a href="#">임직원 목록 및 등록</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-college.png" alt="대학 및 학과 아이콘"> 대학 및 학과</div>
-                <ul class="submenu">
-                    <li><a href="#">대학 및 학과 목록</a></li>
-                    <li><a href="#">대학 및 학과 등록</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-category">
-                <div class="category-header"><img src="images/ico-admin-board.png" alt="게시판관리 아이콘"> 게시판관리</div>
-                <ul class="submenu">
-                    <li><a href="#">입학안내 공지사항</a></li>
-                    <li><a href="#">학사안내 공지사항</a></li>
-                    <li><a href="#">커뮤니티 공지사항</a></li>
-                    <li><a href="#">입학상담</a></li>
-                    <li><a href="#">질문 및 답변</a></li>
-                    <li><a href="#">식단안내</a></li>
-                    <li><a href="#">자료실</a></li>
-                </ul>
-            </div>
-        </div>
-            <!-- 메인 컨텐츠 -->
-            <div class="main-content">
-                <div class="content-header">
-                    <span>대학 및 학과 등록</span>
-                    <div class="breadcrumb">대학 및 학과 > 학과 목록</div>
+            <div class="form-container">
+                <!-- 대학 정보 입력 섹션 -->
+                <div class="form-section">
+                    <h4>대학 정보 입력</h4>
+                    <form action="#" method="post">
+                        <table class="form-table">
+                            <tr>
+                                <td>대학명</td>
+                                <td><input type="text" name="uniName" placeholder="예) 인문사회대학"></td>
+                            </tr>
+                            <tr>
+                                <td>대학 영문명</td>
+                                <td><input type="text" name="uniEname" placeholder="예) College of Humanities"></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">대학소개</td>
+                                <td><input type="text" name="uniTitle" placeholder="대학 소개 제목 입력" style="width: 100%;"></td>
+                            </tr>
+                            <tr>
+                                <td><textarea name="uniIntroduction" placeholder="대학 소개 내용 입력"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><input type="file" name="uniFile"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-cell">
+                                    <input type="submit" class="submit-btn" value="등록">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
 
-                <div>
-                    <div>대학 정보 입력</div>
-                    <div>
-                        <form action="#" method="post">
-                            <table border="1">
-                                <tr>
-                                    <td>대학명</td>
-                                    <td><input type="text" name="uniName" placeholder="예)인문사회대학"></td>
-                                </tr>
-                                <tr>
-                                    <td>대학 영문명</td>
-                                    <td><input type="text" name="uniEname" placeholder="예)Computer"></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3">대학소개</td>
-                                    <td><input type="text" name="uniTitle" placeholder="대학 소개 제목 입력"></td>
-                                </tr>
-                                <tr>
-                                    <td><textarea name="uniIntroduction" id="" placeholder="대학 소개 내용 입력"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="file"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"> <input type="submit" value="등록"></td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                    <div>
-                        <div>학과 정보 입력</div>
-                        <form action="#" method="post">
-                            <table border="1">
-                                <tr>
-                                    <td>학과번호</td>
-                                    <td>고유 2자리숫자 자동생성</td>
-                                    <td>단과대학</td>
-                                    <td>
-                                        <select name="" id="">
-                                            <option value="default">선택</option>
-                                            <option value="">단과1</option>
-                                            <option value="">단과2</option>
-                                            <option value="">단과3</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>학과명</td>
-                                    <td><input type="text" name="deptName" placeholder="학과명 입력"></td>
-                                    <td>영문명</td>
-                                    <td><input type="text" name="deptEName" placeholder="학과 공식 영문 이름"></td>
-                                </tr>
-                                <tr>
-                                    <td>설립연도</td>
-                                    <td><input type="date" name="year"></td>
-                                    <td>학과장</td>
-                                    <td>
-                                        <select name="" id="">
-                                            <option value="default">선택</option>
-                                            <option value="">학과장1</option>
-                                            <option value="">학과장2</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                 <tr>
-                                    <td>학과 연락처</td>
-                                    <td><input type="text" name="deptTel" placeholder="학과 연락처 입력"></td>
-                                    <td>학과 사무실</td>
-                                    <td><input type="text" name="deptOffice" placeholder="인문관 3층 306호"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">
-                                        <input type="submit" value="등록">
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
+                <!-- 학과 정보 입력 섹션 -->
+                <div class="form-section">
+                    <h4>학과 정보 입력</h4>
+                    <form action="#" method="post">
+                        <table class="form-table">
+                            <tr>
+                                <td>학과번호</td>
+                                <td>고유 2자리숫자 자동생성</td>
+                                <td>단과대학</td>
+                                <td>
+                                    <select name="college">
+                                        <option value="default">선택</option>
+                                        <option value="">인문사회대학</option>
+                                        <option value="">자연과학대학</option>
+                                        <option value="">공과대학</option>
+                                        <option value="">경영대학</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>학과명</td>
+                                <td><input type="text" name="deptName" placeholder="학과명 입력"></td>
+                                <td>영문명</td>
+                                <td><input type="text" name="deptEName" placeholder="학과 공식 영문 이름"></td>
+                            </tr>
+                            <tr>
+                                <td>설립연도</td>
+                                <td><input type="date" name="year"></td>
+                                <td>학과장</td>
+                                <td>
+                                    <select name="deptHead">
+                                        <option value="default">선택</option>
+                                        <option value="">김교수</option>
+                                        <option value="">이교수</option>
+                                        <option value="">박교수</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>학과 연락처</td>
+                                <td><input type="text" name="deptTel" placeholder="학과 연락처 입력"></td>
+                                <td>학과 사무실</td>
+                                <td><input type="text" name="deptOffice" placeholder="인문관 3층 306호"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="center-cell">
+                                    <input type="submit" class="submit-btn" value="등록">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
+    
+    <footer class="footer">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                    <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
+
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

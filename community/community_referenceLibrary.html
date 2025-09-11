@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤니티_자료실</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../community_css/main.style.css">
     <style>
         /* 전체 컨테이너 위치 조정 */
         .container{
@@ -30,33 +32,33 @@
             line-height: 60px;
             margin-left:16px;
         }
-        select {
+        .board-select {
             color: #666666; /* 글씨 색 */
             appearance: none;           /* 기본 화살표 제거 (크로스브라우징 위해 vendor prefix) */
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background: url('images/btn-sel-open01.png') 
+            background: url('../images/btn-sel-open01.png') 
                         no-repeat right 8px center/12px auto;
             padding-right: 24px;  /* 화살표 공간 확보 */
         }
         /* 게시판 아래버튼 부분 */
         .first-page{
-            background: url('images/btn-first-page.png') no-repeat center;
+            background: url('../images/btn-first-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
             margin-right:3px;
         }
         .prev-page{
-            background: url('images/btn-prev-page.png') no-repeat center;
+            background: url('../images/btn-prev-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-right: 15px;
             width: 33px;
             height: 30px;
         }
         .next-page{
-            background: url('images/btn-next-page.png') no-repeat center;
+            background: url('../images/btn-next-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             margin-left: 15px;
             width: 33px;
@@ -64,7 +66,7 @@
             margin-right:3px;
         }
         .last-page{
-            background: url('images/btn-last-page.png') no-repeat center;
+            background: url('../images/btn-last-page.png') no-repeat center;
             border: 1px #eaeaea solid;
             width: 33px;
             height: 30px;
@@ -74,12 +76,63 @@
     </style>
 </head>
 <body>
-    <div style="height: 600px;" class = "container">
+    <!--1.헤더영역-->
+    <header>
+        <!--상단메뉴(HOME/사이트맵/로그인/학생지원)-->
+        <div class="topbar">
+            <div class="inner">
+                <div class="log-area">
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">학생지원</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainNav">
+            <div class="inner">
+                <!--로고-->
+                <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+
+                <!--메인메뉴(대학소개/입학안내/대학.대학원/대학생활/커뮤니티)-->
+                <div class="menu-area">
+                    <ul>
+                        <li><a href="#">대학소개</a></li>
+                        <li><a href="#">입학안내</a></li>
+                        <li><a href="#">대학·대학원</a></li>
+                        <li><a href="#">학사안내</a></li>
+                        <li><a href="#">대학생활</a></li>
+                        <li style="position: relative;">
+                            <a href="#">커뮤니티</a>
+                            <div style="width:197.25px; height:42px;
+                              position: absolute; top: 205%;
+                              transform: translateX(-65%);
+                              display:flex;
+                              align-items: center;
+                              ">
+                                <img src="../images/ico-home.png" alt="홈" style="width:23px; height:20px;">
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
+                                <span style="font-weight: 350; font-size:14px; color:#333333; margin-left:18px;">커뮤니티</span>
+                                <img src="../images/bg-path-arrow.png" alt="화살표" style="width:8px; height:13px; margin-left:18px;">
+                                <span style="font-weight: 350; font-size:14px; color:#071F4B; margin-left:18px;">자료실</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>     
+        </div>   
+    </header>
+    <div style="background-color: #ECF2F6; height:42px; display:flex; align-items: center; justify-content: center;">
+    </div>
+    <div style="height: 600px;" class = "inner">
         <div style="height:50px;"></div>
         <div style="display: flex; gap: 60px;">
-            <div style=" width: 200px;">
-                <b style="display:block; font-weight: 700; font-size:20pt; margin-bottom: 10px;">커뮤니티</b>
-                <table class="banner" style="border-collapse:collapse; width:100%; border-top:4px solid black;">
+            <div style=" width: 210px;">
+                <b style="display:block; font-weight: 700; font-size:32px; margin-bottom: 14px;">커뮤니티</b>
+                <table class="banner" style="border-collapse:collapse; width:100%; border-top:2px solid black;">
                     <tr>
                         <td style="border-bottom: 1px solid #e9e9e9">
                             <a href="#" style="color: black;">공지사항</a>
@@ -112,12 +165,14 @@
                     </tr>
                 </table>
             </div>
-            <div style="padding-top:10px; width: 950px;">
-                <b style="font-weight: 600; font-size:15pt;">자료실</b>
+            <div style="padding-top:9px; width: 930px;">
+                <div style="padding-bottom:6px;">
+                    <b style="font-weight: 700; font-size:26px;">자료실</b>
+                </div>
                 <hr style="border:none; border-top: 2px solid;">
                 <div style="display: flex; width:100%; margin-top:30px; margin-bottom:20px; justify-content: flex-end;">
                     <form action="" style="display: flex;">
-                        <select name="" id="" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
+                        <select name="" id="" class="board-select" style="border: 1px solid #e9e9e9; height:35px; width: 140px; margin-right:4px;padding-left:8px;">
                             <option value="" style="">전체</option>
                             <option value="">고치기</option>
                             <option value="">고치기</option>
@@ -128,7 +183,7 @@
                     </form>
                 </div>
                 <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
-                    <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 4px solid black; border-bottom: 1px solid #b8b8b8;">
+                    <tr style="height:62px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
                         <td style="width: 90px;">번호</td>
                         <td style="width: 530px;">제목</td>
                         <td style="width: 130px;">작성자</td>
@@ -174,5 +229,49 @@
             </div>
         </div>
     </div>
+    <!--3. 푸터영역-->    
+    <footer class="footer">
+        <!--상단-->
+        <div class="footer-high">
+            <div class="footer-high-inner">
+                <ul class="footer-high-quicklinks">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--하단-->
+        <div class="footer-low">
+            <div class="footer-low-inner">
+                <div class="footer-logo">
+                    <img src="../images/mainpage-logo.webp" alt="몬스터대학교 로고" class="logo"/>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-uniname">몬스터대학교</p>
+                    <p>
+                        [12345] 부산광역시 부산진구 부전대로 123 몬스터대학교 /
+                        대표전화 : 051-123-1000 / 입학안내 : 051-123-1302
+                        팩스 : 051-123-3333
+                    </p>
+                     <p class="copy">copyright ©Monster University All rights reserved.</p>
+                </div>
+
+                <div class="footer-select">
+                    <label for="site-select" class="sr-only">주요사이트</label>
+                    <select id="site-select" onchange="if(this.value) window.open(this.value, '_blank')">
+                        <option value="">주요사이트</option>
+                        <option value="https://www.moe.go.kr/">교육부</option>
+                        <option value="https://www.kocca.kr/">콘텐츠진흥원</option>
+                        <option value="https://www.nrf.re.kr/">연구재단</option>
+                    </select>    
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
