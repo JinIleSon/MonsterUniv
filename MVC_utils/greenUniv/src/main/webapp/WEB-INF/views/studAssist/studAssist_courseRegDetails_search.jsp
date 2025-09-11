@@ -242,25 +242,25 @@ a {
 				<table class="banner"
 					style="border-collapse: collapse; width: 100%; border-top: 2px solid black;">
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/courseReg/list.do"
 							style="color: black;">수강신청</a></td>
 					</tr>
 					<tr>
 						<td
 							style="background-color: #5198f9; border-bottom: 1px solid #e9e9e9;">
-							<a href="#" style="color: white; font-weight: 300;">수강신청내역</a>
+							<a href="/greenUniv/studAssist/courseRegDetails/list.do" style="color: white; font-weight: 300;">수강신청내역</a>
 						</td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/curric/list.do"
 							style="color: black;">교과과정</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/chkGrades/list.do"
 							style="color: black;">성적조회</a></td>
 					</tr>
 					<tr>
-						<td style="border-bottom: 1px solid #e9e9e9;"><a href="#"
+						<td style="border-bottom: 1px solid #e9e9e9;"><a href="/greenUniv/studAssist/studRecords/list.do"
 							style="color: black;">학적</a></td>
 					</tr>
 				</table>
