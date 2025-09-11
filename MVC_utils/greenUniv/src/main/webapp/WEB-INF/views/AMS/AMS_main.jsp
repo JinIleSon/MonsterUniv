@@ -10,6 +10,7 @@
 <!--css연결-->
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+<link rel="stylesheet" href="/greenUniv/css/fonts.css">
 </head>
 <style>
 html, body {

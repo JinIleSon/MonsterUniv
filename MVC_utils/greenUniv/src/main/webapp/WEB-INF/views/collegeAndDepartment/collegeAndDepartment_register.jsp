@@ -10,13 +10,8 @@
     <!--css연결-->
 	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
-        @font-face {
-            font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
-            font-weight: 350;
-            font-style: DemiLight;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -359,6 +354,7 @@
             white-space: nowrap; border: 0;
         }
     </style>
+    <script src="/greenUniv/js/CAD_validation.js"></script>
 </head>
 <body>
     <!--1.헤더영역-->
@@ -570,7 +566,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="center-cell">
-                                    <input type="submit" class="submit-btn" value="등록">
+                                    <input type="submit" class="submit-btn" id="btnCol"value="등록">
                                 </td>
                             </tr>
                         </table>
@@ -623,7 +619,7 @@
                             </tr>
                             <tr>
                                 <td colspan="4" class="center-cell">
-                                    <input type="submit" class="submit-btn" value="등록">
+                                    <input type="submit" class="submit-btn" id="btnDept"value="등록">
                                 </td>
                             </tr>
                         </table>
