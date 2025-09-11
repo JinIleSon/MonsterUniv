@@ -41,6 +41,11 @@ public class Sql_AMS_sub {
 				+ "ORDER BY snum DESC\r\n"
 				+ "LIMIT 10 OFFSET ?";
 		
+		public static final String SELECT_STUDENT_ALL_WITH_GRADE = "SELECT snum,sname,sregno,stel,semail,edept,egrade,eterm,`condition` FROM student\r\n"
+				+ "WHERE egrade = ? "
+				+ "ORDER BY snum DESC\r\n"
+				+ "LIMIT 10 OFFSET ?";
+		
 		public static final String SELECT_COUNTSTUDENT_SEARCH = "SELECT COUNT(*) FROM student ";
 		public static final String SEARCH_WHERE_SNUM = "WHERE SNUM LIKE ?";
 		public static final String SEARCH_WHERE_SNAME = "WHERE SNAME LIKE ?";
