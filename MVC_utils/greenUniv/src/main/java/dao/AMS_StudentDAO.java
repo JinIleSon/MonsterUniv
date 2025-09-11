@@ -105,7 +105,7 @@ public class AMS_StudentDAO extends DBHelper {
 		StringBuilder sql = new StringBuilder(Sql_AMS_sub.SELECT_COUNTSTUDENT_SEARCH);
 		
 		if(searchType.equals("snum")) {
-			sql.append(Sql_AMS_sub.SEARCH_WHERE_LNAME);
+			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNUM);
 		} else if(searchType.equals("sname")) {
 			sql.append(Sql_AMS_sub.SEARCH_WHERE_SNAME);
 		}
