@@ -32,19 +32,23 @@
     .container {
       max-width: 1080px; margin: 40px auto; padding: 0 20px;
     }
-    .page-title {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 28px; font-weight: 800; letter-spacing: -.2px;
-      margin: 6px 0 22px;
-    }
+    .page-title { justify-content: center; text-align: center; 
+    font-size: 28px; font-weight: 800;letter-spacing: -.2px;
+      margin: 6px 0 22px;}
+    
     .page-sub { color: var(--muted); font-size: 14px; }
     .grid {
-      display: grid; gap: 18px;
-      grid-template-columns: 320px 1fr;
+      display: flex;
+	  justify-content: center;   /* 가로 가운데 */
+	  gap: 18px;
     }
     .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); box-shadow: var(--shadow);
+      background: var(--card);
+	  border: 1px solid var(--border);
+	  border-radius: var(--radius);
+	  box-shadow: var(--shadow);
+	  width: 100%;
+	  max-width: 560px;          /* 카드 최대폭 */
     }
     .card .hd { padding: 16px 18px; border-bottom: 1px solid var(--border); font-weight: 700; }
     .card .bd { padding: 18px; }
@@ -157,6 +161,7 @@
           <div class="btns">
             <a class="btn primary" href="#" id="openProfileModal">프로필 수정</a>
             <a class="btn" href="<c:url value='/login/logout.do'/>">로그아웃</a>
+            <a class="btn" href="<c:url value='/main.do'/>">메인페이지로 돌아가기</a>
           </div>
         </div>
       </section>         
