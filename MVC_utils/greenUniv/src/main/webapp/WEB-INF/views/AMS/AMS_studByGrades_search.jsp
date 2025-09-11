@@ -888,7 +888,7 @@ tbody td .status-blue {
 			<div id="button-setting">
 				<ul class="pagenation">
 					<li><a
-						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupStart}"><span
+						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupStart}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
 							class="first"></span></a></li>
 					<c:choose>
 						<c:when test="${pagenationDTO.currentPage == 1}">
@@ -897,7 +897,7 @@ tbody td .status-blue {
 						</c:when>
 						<c:otherwise>
 							<li><a
-								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage-1}"><span
+								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage-1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
 									class="prev"></span></a></li>
 						</c:otherwise>
 					</c:choose>
@@ -905,7 +905,7 @@ tbody td .status-blue {
 					<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 						end="${pagenationDTO.pageGroupEnd}">
 						<li><a
-							href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${num}"
+							href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${num}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"
 							class="${pagenationDTO.currentPage == num ? 'page1' : 'page2'}">${num}</a></li>
 					</c:forEach>
 
@@ -917,12 +917,12 @@ tbody td .status-blue {
 						</c:when>
 						<c:otherwise>
 							<li><a
-								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage+1}"><span
+								href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.currentPage+1}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
 									class="next"></span></a></li>
 						</c:otherwise>
 					</c:choose>
 					<li><a
-						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupEnd}"><span
+						href="${pageContext.request.contextPath}/AMS/AMS_studByGrades.do?pg=${pagenationDTO.pageGroupEnd}&searchType=${searchType}&keyword=${keyword}&egrade=${egrade}"><span
 							class="last"></span></a></li>
 				</ul>
 			</div>
