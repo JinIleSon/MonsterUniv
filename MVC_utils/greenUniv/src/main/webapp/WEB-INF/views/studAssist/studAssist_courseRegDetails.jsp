@@ -285,7 +285,7 @@
                         </select>
                         <span style="line-height: 40px;">학기</span>
                     </form>
-                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">신청과목수 6과목, 총 신청학점 18학점</span>
+                    <span style="margin-top: 15px; margin-left:370px; font-weight: 700; font-size: 14pt;">신청과목수 ${ subNum }과목, 총 신청학점 ${ gradeSum }학점</span>
                 </div>
                 <table style="border-collapse: collapse; border:1px solid; width:100%; text-align: center; border:none;">
                     <tr style="height:60px; font-weight: 700; background-color: #fafafa; border-top: 2px solid black; border-bottom: 1px solid #b8b8b8;">
@@ -311,7 +311,9 @@
                         <td>${ regDetail.room }</td>
                         <form action="" method="">
                             <td>
-                                <input type="button" value="취소" style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none; ">
+                                <input type="button" value="취소" 
+                                onclick="window.location.href='/greenUniv/studAssist/courseRegDetails/delete.do?deptCode=${ regDetail.deptCode }';"
+                                style="background-color: #942626; color: white; font-weight: 300; height:30px; width:37px; border:none; ">
                             </td>
                         </form>
                     </tr>
