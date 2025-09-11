@@ -782,7 +782,7 @@
                     </c:if>
                 </ul>
                 
-                <button id="regist-button" onclick="location.href='/professor/register.do'">등록</button>
+                <button id="regist-button" onclick="location.href='/greenUniv/professor/register.do'" style="cursor:pointer">등록</button>
             </div>
             
         </main>
