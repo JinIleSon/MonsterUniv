@@ -372,8 +372,7 @@ aside ol {
 							</h3>
 							<ul>
 								<li class="menu-item"><a href="/greenUniv/AMS/AMS_studentList.do">학생 목록 및 등록</a></li>
-								<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록</a></li>
-                    			<li class="menu-item"><a href="/greenUniv/professor/register.do">교수 등록</a></li>
+								<li class="menu-item"><a href="/greenUniv/professor/list.do">교수 목록 및 등록</a></li>
 							</ul>
 						</div>
 						<div class="menu menu4">
