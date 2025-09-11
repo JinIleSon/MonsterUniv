@@ -12,7 +12,7 @@
     <style>
         @font-face {
             font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv/font/NotoSansKR-Medium.ttf') format('opentype');
+            src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
             font-weight: 350;
             font-style: DemiLight;
         }
