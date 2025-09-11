@@ -9,13 +9,8 @@
     <!--css연결-->
 	<link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 	<link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
+	<link rel="stylesheet" href="/greenUniv/css/fonts.css">
     <style>
-        @font-face {
-            font-family: 'NotoSansKR-Light';
-            src: url('/greenUniv//greenUniv/font/NotoSansKR-Light.ttf') format('opentype');
-            font-weight: 350;
-            font-style: DemiLight;
-        }
         * {
             margin: 0;
             padding: 0;

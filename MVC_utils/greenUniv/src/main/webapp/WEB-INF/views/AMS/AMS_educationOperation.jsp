@@ -12,13 +12,6 @@
 <link rel="stylesheet" href="/greenUniv/css/Header.style.css">
 <link rel="stylesheet" href="/greenUniv/css/Footer.style.css">
 <style>
-@font-face {
-	font-family: 'NotoSansKR-Light';
-	src: url('/greenUniv/font/NotoSansKR-Light.otf') format('opentype');
-	font-weight: 350;
-	font-style: DemiLight;
-}
-
 * {
 	margin: 0;
 	padding: 0;
