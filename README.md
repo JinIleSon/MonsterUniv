@@ -3,18 +3,6 @@
 > **HTML/CSS/JS + JSP/Servlet**로 구현한 “몬스터 대학교” 공식 웹사이트.  
 > 입학·학사·학과 소개부터 공지/커뮤니티까지, 실제 대학 포털처럼 **빠르고 직관적인 UX**로 구성했습니다.
 
-<p align="center">
-  <!-- ✅ 옵션A: data URI 직접 사용 -->
-  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIREhUSExMWFhUXGB0aFxgXGRgYGBgfGB0YFxYeIBcaHSggGRslGx0YIjEiJSkrLi4uGh8zODMtNygtLisBCgoKDg0OGxAQGzchICYtLS03LSs3LTIvLjAtLS0tLi8tKzUtNS8rLTUtLS0tLi0rLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcDBFUCCAH/xABPEAACAQMCAwUEBQYKCAQHAAABAgMABBEFIQYSMQcTIkFRMmFxgRRCUpGhFSMzYnSxNUOCkpOywcLh8CQlNFNyc7PRY3WD8QgWFyZkoqP/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAwQFAQIG/8QALBEBAAIBAwEIAQMFAAAAAAAAAAECAwQRITEFEhQiQVFhgRMyMzQjQpGhsf/aAAwDAQACEQMRAD8A..." alt="Monster University hero" width="800" />
-</p>
-
-<!-- ✅ 옵션B: 파일로 저장하여 사용 (권장)
-<p align="center">
-  <img src="./docs/hero.jpg" alt="Monster University hero" width="800" />
-</p>
--->
-
----
 
 ## 🚀 기술 스택
 
@@ -36,5 +24,4 @@
 
 ---
 
-## 🧩 아키텍처 개요
 
