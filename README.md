@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/github_readme_logo.jpg" alt="Monster University hero" width="800" />
+  <img src="./images/github_readme_logo.jpg" alt="Monster University hero" width="200" />
 </p>
 
 # Monster University Website
