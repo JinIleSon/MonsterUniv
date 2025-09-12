@@ -1,4 +1,8 @@
-# 🏫 Monster University Website
+<p align="center">
+  <img src="./docs/hero.jpg" alt="Monster University hero" width="800" />
+</p>
+
+# Monster University Website
 
 > **HTML/CSS/JS + JSP/Servlet**로 구현한 “몬스터 대학교” 공식 웹사이트.  
 > 입학·학사·학과 소개부터 공지/커뮤니티까지, 실제 대학 포털처럼 **빠르고 직관적인 UX**로 구성했습니다.
