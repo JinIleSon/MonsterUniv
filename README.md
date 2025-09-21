@@ -2,6 +2,20 @@
   <img src="./images/github_readme_logo.jpg" alt="Monster University hero" width="200" />
 </p>
 
+<p align="center">
+  <img width="1147" height="775" alt="image" src="https://github.com/user-attachments/assets/ed7a1dcd-aa04-4880-b52c-c55ed160d378" />
+</p>
+<p align="center">
+  <img width="962" height="943" alt="image" src="https://github.com/user-attachments/assets/4cbdd60f-77e8-417e-8213-06b9f1cba353" />
+</p>
+<p align="center">
+  <img width="1407" height="951" alt="image" src="https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb" />
+</p>
+
+## 유튜브 링크
+https://youtu.be/UTVsuxLt-o4
+
+
 # Monster University Website
 
 > **HTML/CSS/JS + JSP/Servlet**로 구현한 “몬스터 대학교” 공식 웹사이트.  
@@ -27,6 +41,4 @@
 
 ---
 
-## 유튜브 링크
-https://youtu.be/UTVsuxLt-o4
 
