@@ -13,6 +13,10 @@
 ## 통합정보시스템
 ![통합정보시스템](https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb)
 
+## 게시판
+![게시판](https://github.com/user-attachments/assets/92a387f3-e4bf-4fd5-8722-2d0b4b461508)
+
+
 ### ▶ 시연 영상
 - [YouTube 보러가기](https://youtu.be/UTVsuxLt-o4) | [Notion 버전](https://www.notion.so/MonsterUniv-JSP-Servlet-26cba5b0d4908016a2badf706197922b#26cba5b0d49080819ca1e01c27f63992)
 
