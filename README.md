@@ -4,8 +4,13 @@
 
 # Monster University Website
 
+### 메인
 ![메인 스크린샷](https://github.com/user-attachments/assets/ed7a1dcd-aa04-4880-b52c-c55ed160d378)
+
+### 로그인
 ![로그인](https://github.com/user-attachments/assets/4cbdd60f-77e8-417e-8213-06b9f1cba353)
+
+## 통합정보시스템
 ![통합정보시스템](https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb)
 
 ### ▶ 시연 영상
@@ -43,7 +48,7 @@ https://youtu.be/UTVsuxLt-o4
 
 세션 기반 인증/인가, 입력 검증 및 에러 핸들링
 게시판 페이징/검색
-DAO/Service 계층 분리(있다면)
+DAO/Service 계층 분리
 DB 설계 / MVC 설계
 대학 포털 전체 DB 연동
 
