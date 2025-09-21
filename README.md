@@ -14,10 +14,8 @@
 ![통합정보시스템](https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb)
 
 ### ▶ 시연 영상
-- [YouTube(Unlisted) 보러가기](https://youtu.be/UTVsuxLt-o4) | [Notion 버전](https://www.notion.so/MonsterUniv-JSP-Servlet-26cba5b0d4908016a2badf706197922b#26cba5b0d49080819ca1e01c27f63992)
+- [YouTube 보러가기](https://youtu.be/UTVsuxLt-o4) | [Notion 버전](https://www.notion.so/MonsterUniv-JSP-Servlet-26cba5b0d4908016a2badf706197922b#26cba5b0d49080819ca1e01c27f63992)
 
-## 유튜브 링크
-https://youtu.be/UTVsuxLt-o4
 
 > **HTML/CSS/JS + JSP/Servlet**로 구현한 “몬스터 대학교” 공식 웹사이트.  
 > 입학·학사·학과 소개부터 공지/커뮤니티까지, 실제 대학 포털처럼 **빠르고 직관적인 UX**로 구성했습니다.
