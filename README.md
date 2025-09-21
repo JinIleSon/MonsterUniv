@@ -2,7 +2,7 @@
   <img src="./images/github_readme_logo.jpg" alt="Monster University hero" width="200" />
 </p>
 
-<p align="center">
+<p align="center" style="margin-bottom:100px;">
   <img width="1147" height="775" alt="image" src="https://github.com/user-attachments/assets/ed7a1dcd-aa04-4880-b52c-c55ed160d378" />
 </p>
 <p align="center">
