@@ -4,10 +4,9 @@
 
 # Monster University Website
 
-![메인 스크린샷](<img width="1147" height="775" alt="image" src="https://github.com/user-attachments/assets/4495b887-d4e9-4f83-9ea1-827b23221e5d" />
-)
-![로그인](<img width="962" height="943" alt="image" src="https://github.com/user-attachments/assets/4cbdd60f-77e8-417e-8213-06b9f1cba353" />)
-![통합정보시스템](<img width="1407" height="951" alt="image" src="https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb" />)
+![메인 스크린샷]("https://github.com/user-attachments/assets/ed7a1dcd-aa04-4880-b52c-c55ed160d378")
+![로그인]("https://github.com/user-attachments/assets/4cbdd60f-77e8-417e-8213-06b9f1cba353")
+![통합정보시스템]("https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb")
 
 ### ▶ 시연 영상
 - [YouTube(Unlisted) 보러가기](https://youtu.be/UTVsuxLt-o4) | [Notion 버전](https://www.notion.so/MonsterUniv-JSP-Servlet-26cba5b0d4908016a2badf706197922b#26cba5b0d49080819ca1e01c27f63992)
@@ -29,9 +28,7 @@ https://youtu.be/UTVsuxLt-o4
 ---
 
 ## 아키텍처/ERD
-![Architecture](<img width="1603" height="1362" alt="image" src="https://github.com/user-attachments/assets/894004c3-7aaf-4f08-99f5-38f09a96a8b1" />)
-
-
+![Architecture]("https://github.com/user-attachments/assets/894004c3-7aaf-4f08-99f5-38f09a96a8b1")
 
 ## ✨ 주요 기능
 
