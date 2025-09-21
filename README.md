@@ -4,7 +4,8 @@
 
 # Monster University Website
 
-![메인 스크린샷](<img width="1147" height="775" alt="image" src="https://github.com/user-attachments/assets/ed7a1dcd-aa04-4880-b52c-c55ed160d378" />)
+![메인 스크린샷](<img width="1147" height="775" alt="image" src="https://github.com/user-attachments/assets/4495b887-d4e9-4f83-9ea1-827b23221e5d" />
+)
 ![로그인](<img width="962" height="943" alt="image" src="https://github.com/user-attachments/assets/4cbdd60f-77e8-417e-8213-06b9f1cba353" />)
 ![통합정보시스템](<img width="1407" height="951" alt="image" src="https://github.com/user-attachments/assets/9370ae3f-f78b-4846-8a84-8c6f4d7e0afb" />)
 
